@@ -1,0 +1,156 @@
+---
+layout: page
+title: TP4 Analyse de donnees d'expression
+---
+
+<h1>TP4: Analyse de donnees d'expression</h1>
+<p>Merci d'envoyer a <img src="tp4-files/email.png" alt="demandez l'adresse"/> les reponses aux questions en surlignees avec [TP4 Bioinfo] comme sujet. Vu qu'il necessite que plusieurs logiciels soient installes, il est conseille de le faire en salles Pol204.2 ou Bio1928.</p>
+<p>Votre sujet de recherche sont les tissus musculaires. En particulier, vous voulez caracteriser le coeur d'un point de vue moleculaire.</p>
+<p>A travers une recherche bibliographique vous trouvez une etude extensive des transcriptomes humains et murins. Peut-etre qu'il y aura des donnees interessantes! En 2004, Su et al., ont quantifie l'expression de genes au sein de 79 tissus humains et 61 tissus de souris a l'aide de puces a ADN. Pour l'Homme, ils se sont servis d'une puce Affymetrix basee sur la puce Affymetrix Human U133A. Dans l'<a href="http://www.pnas.org/cgi/content/full/101/16/6062" target="_blank">article</a> (tres cite) figure un lien vers les <a href="http://wombat.gnf.org/" target="_blank">donnees brutes</a>.</p>
+<h2>Mise en place des donnees</h2>
+<p>Telechargez le jeu de donnees Human U133A + GNF1H (MAS5-condensed).</p>
+<p>Decompressez ce jeu de donnees. Depuis Excel, ouvrez le fichier de donnees GNF1Hdata.txt qui est au format texte, chaque colonne etant separee par une "tabulation". Essayez de comprendre le contenu du fichier.</p> <div class="question">Que represente chaque ligne? Chaque colonne?</div>
+<p>Seuls certains tissus musculaires vous interessent. Dans un nouveau fichier Excel, regroupez les donnees concernant vos 5 tissus fetiches:</p>
+<ul><li>Heart</li>
+<li>SmoothMuscle</li>
+<li>CardiacMyocytes</li>
+<li>SkeletalMuscle</li>
+<li>Tongue</li>
+</ul>
+<p>N'oubliez pas d'y coller aussi la premiere colonne, comportant les identifiants des sondes/genes (ex: 1007_s_at, 1053_at, 117_at...).</p>
+<p>Et afin d'eviter des problemes lies a la transformation des donnees par la suite, <strong>toutes les cellules ayant la valeur 0 doivent etre remplacees par 1.</strong></p>
+<p>Enregistrez ce jeu de donnees reduit au format texte.</p>
+<h2>Normalisation des donnees</h2>
+<p>Vous savez que les donnees de puce a ADN se distinguent par leur variabilite (lies a l'efficacite de l'extraction d'ARNm, de l'incorporation et la degradation de fluorochromes, aux volumes de pipetage, a l'efficacite d'hybridation, du lavage post-hybridation...).</p>
+<p>Pour tenter de garder seulement la variabilite biologique entre les puces Affymetrix que nous utilisons, elles ont ete normalisees avec l'algorithme standard d'Affymetrix, MAS5.0.</p>
+<h2>Visualisation des donnees</h2>
+<p>Ouvrez R, changez de repertoire de travail pour que le repertoire de travail soit celui ou se trouve votre jeu de donnees reduit. Chargez ce jeu de donnees reduit dans R</p>
+<pre>> data = read.table("myData.txt", sep="\t", header=T, row.names=1)</pre>
+
+<p>Verifiez que ca ait bien marche en regardant les 10 premieres lignes. </p>
+
+<pre>
+> data[1:10,]
+          Heart Heart.1 CardiacMyocytes CardiacMyocytes.1 SmoothMuscle
+1007_s_at  1872    2320            1867              2184         2081
+1053_at     170     318             293               396          303
+117_at      137     333             418               497          319
+121_at     3957    4458            3674              5075         3925
+1255_g_at   303     247             268               338          247
+1294_at     570    1404             847              1159         1275
+1316_at     675     358             171              1068          273
+1320_at      70      75             269                98          133
+1405_i_at   659     365              20                26           22
+1431_at     242     222             159               683          188
+          SmoothMuscle.1 SkeletalMuscle SkeletalMuscle.1 TONGUE TONGUE.1
+1007_s_at           1932           1211             1171   2559     2741
+1053_at              214             38              127    156       31
+117_at               232            450              583    375      366
+121_at              3335           2928             2733   3953     3107
+1255_g_at            209            251              253    174      347
+1294_at             1197            658              893    755      888
+1316_at              276            354              245    721      488
+1320_at              258            138              122    283      107
+1405_i_at             23             80               42     42       29
+1431_at              201             94              320    163      106
+</pre>
+<p>Le graphe <code>boxplot(data)</code> et les donnees <code>boxplot(log(data), col=rainbow(n=20))</code> nous indiquent:</p>
+<ul><li>que le niveau d'expression est bas pour la plupart des genes</li>
+<li>que les medianes des niveaux d'expression sont homogenes entre puces</li>
+</ul>
+<p>Dans un cas reel on ferrait plusieurs autres analyses preliminaires pour valider la qualite des donnees. Plusieurs <a href="http://www.bioconductor.org/packages/release/Software.html">packages Bioconductor</a> pourront nous aider.</p>
+<h2>Transformation des donnees</h2>
+<p>Nous avons des valeurs d'expression absolues pour chaque gene. Deux questions biologiques peuvent se poser:</p>
+<ul>
+	<li>au sein d'un tissus, quels genes sont les plus (ou les moins) exprimes?</li>
+	<li>quels genes sont differemment exprimes entre tissus?</li>
+</ul>
+<p>On se penche sur la deuxieme. Il sera plus facile de travailler avec le log2 des donnees d'expression relatives. <strong>Avant de travailler sur notre jeu de donnees entier, reprenez l'exemple suivant sous Excel</strong>:</p>
+<pre>	gene	tissu A	tissu B	tissu C
+	Gp-9	600	900	300
+	actin	200	800	2400
+</pre>
+<p>Calculez le niveau d'expression moyen de chaque gene. Divisez chaque valeur d'expression par la moyenne du gene. </p>
+
+<p>Prenez le logarithme en base 2. (vous trouverez la fonction log(,2) avec Inserer fonction dans Excel):</p>
+
+<p>Dans R, effectuons la meme transformation sur le jeu de donnees entier:</p>
+<pre>
+> expressionMoyennePourChaqueGene = (data$Heart + data$Heart.1 + data$CardiacMyocytes + data$CardiacMyocytes.1 
+  + data$SmoothMuscle + data$SmoothMuscle.1 + data$SkeletalMuscle + data$SkeletalMuscle.1 + data$TONGUE 
+  + data$TONGUE.1) / 10</pre>
+<pre>
+> dataRelative = data / expressionMoyennePourChaqueGene
+
+> boxplot(dataRelative)</pre>
+<p>Ce boxplot des donnees relatives permet de mieux voir la distribution des donnees.</p>
+<pre>
+> dataLog2Relative = log2(dataRelative)
+> boxplot(dataLog2Relative) </pre>
+<div class="question">Quel est l'interet d'utiliser des valeur relatives? L'interet de prendre le log?</div>
+<h2>Selection de genes permettant de differencier les tissus</h2>
+<p>5 tissus * 2 microarrays * plus de 33000 transcrits = beaucoup de donnees a analyser!</p>
+<p>Pour travailler sur un jeu de donnees reduit, on va choisir les 200 genes qui differencient au mieux les 5 tissus. L'algorithme eBayes nous permet de le faire dans R. eBayes fait partie de BioConductor/limma qui est *la* reference pour le traitement de donnees de microarray. (attention on s'accroche). </p>
+<pre>
+> library(limma)
+</pre>
+<p>On precise que pour chaque tissus, on a deux microarrays, et on les nomme avec leurs initiales (H = heart, C = CardiacMyocyte...):</p>
+<pre>
+> design = model.matrix(~ -1 + factor(c(1,1,2,2,3,3,4,4,5,5))) 
+> colnames(design) = c("H", "C", "Sm", "Sk", "T")
+</pre>
+<p>on precise que toutes comparaisons de tissus 2 a 2 doivent etre faites:</p>
+<code>> contrast.matrix = makeContrasts(H-C, H-Sm, H-Sk, H-T, C-Sm, C-Sk, C-T, Sm-Sk, Sm-T, Sk-T, levels=design)</code>
+
+<p>les parametres du modele sont ajustes en fonction de nos donnees:</p>
+<pre>> fit = lmFit(dataRelative, design)</pre>
+
+<p>les differences significatives sont recherchees. Attention, le B de eBayes() doit etre majuscule!</p>
+<pre>> eBayesResultat = eBayes(contrasts.fit(fit, contrast.matrix))</pre>
+
+<p>on trie les resultats par p-value du test de F:</p>
+<pre>> eBayesResultatTrie = eBayesResultat[order(eBayesResultat$F.p.value,decreasing=FALSE),]</pre>
+
+<p>on exporte les 200 genes qui differencient au mieux les tissus etudies vers un fichier texte:</p>
+<pre>> meilleursGenes =merge(eBayesResultatTrie[1:200,], dataLog2Relative, by.x=0, by.y=0)
+> write.table(meilleursGenes, "top200genes-log2relative.txt",sep="\t", row.names=FALSE)</pre>
+<h2>Clustering</h2>
+<p>Ouvrez le logiciel MeV. <code>File / New Multiple Array Viewer. Load Data</code>. Dans la barre de menu, sous<code> File Format Descriptions</code>, choissisez <code>Tab-Delimited Multiple Sample Files (TDMS) *.*</code>. Ouvrez votre fichier des 200 genes qui differencient au mieux les tissus. Important: il faut indiquer ou commencent les donnees d'expression. Cette cellule est tres loin a droite (cf la capture d'ecran suivante): </p>
+<img src="tp4-files/mevShot.png" alt="loin a droite"/>
+?
+<div class="question">Que representent les lignes? les colonnes? le rouge? le vert? le noir? </div>
+<p>Effectuez un clustering hierarchique des donnees. Bouton<code> HCL</code>. Le resultat se trouve dans la colonne de gauche. <code>HCL / HCL Tree</code>.</p>
+<div class="question">Que pouvez-vous dire par rapport a l'ordre des 10 echantillons? </div>
+<div class="question">Quels genes differencient la langue des autres muscles? Y -a-t-il des genes exprimes uniquement dans le coeur?</div>
+<p>En cliquant sur une branche de l'arbre, vous pouvez n'en selectionner qu'une partie. Selectionnez le groupe de genes specifiquement exprimes dans le coeur). Click-droit puis Save Cluster vous permet d'enregistrer leurs donnees. Sous Excel, ne gardez que la liste des "genes" (Row.names) qui se terminent en _at. Il s'agit en fait d'identifiants Affymetrix. On ne gardera pas les identifiants qui commencent par gnf1h (ceux qui commencent par gnf1h sont des identifiants "maison" dont on ne se servira pas par la suite).</p>
+<p>Votre liste de genes "coeur-specifiques" ressemblera a la suivante:</p>
+<pre>209111_at
+207508_at
+214836_x_at
+201137_s_at
+220734_s_at
+215379_x_at
+...
+</pre>
+
+<div class="question">Joignez-la au compte-rendu</div>
+<h2>Test de sur- ou sous-representation de termes d'annotation fonctionnelle</h2>
+<p>Il est possible de tester si au sein d'une liste de genes, certaines categories Gene Ontology sont sur-representees par rapport a une reference. </p>
+<p>Connectez-vous a <a href="http://david.abcc.ncifcrf.gov/" target="_blank">DAVID</a>. Dans la colonne de gauche, sous Upload / Step 1 collez votre liste de genes. Il s'agit d'identifiants Affymerix. AFFY_ID. C'est une Gene List. Une fois uploadee, rajoutez HG-U133A comme liste Background.</p>
+<p>Functional Annotation Clustering.</p>
+<div class="question"> Quels types de genes sont surrepresentes parmi les genes surexprimes dans le coeur?</div>
+<h2>Conclusion</h2>
+<div class="question">Pourquoi ces genes sont-ils surexprimes dans le coeur? Emettez une hypothese biologique.</div>
+<p>Regardez dans les donnees supplementaires du <a href="http://www.pnas.org/cgi/content/full/101/16/6062" target="_blank">papier</a>.</p> 
+<div class="question">Comment ont ete obtenus les echantillons de tissus? Avez-vous une explication biologique alternative concernant les genes surexprimes dans le coeur? Que dire concernant le plan experimental?</div>
+
+<h2>Question bonus pour les rapides</h2>
+
+<p>Y a-t-il des genes exprimes significativement plus fortement dans la langue que dans tous des autres echantillons?
+Astuce 1: il faudra refaire un ajustement de modele lineaire avec:</p>
+
+<pre>> contrast.matrix = makeContrasts(T-H, T-C, T-Sm, T-Sk, levels=design)</pre>
+<p>Astuce 2: les fonctions <code>decideTests(eBayesResultat)</code> et <code>?apply</code> sont tes amis.... <code>summary()</code> peut servir aussi.</p>
+<h2>Compte-rendu</h2>
+<p>Merci d'envoyer a <img src="tp4-files/email.png" alt="demandez l'adresse"/> les reponses aux questions en surlignees avec [TP4 Bioinfo] comme sujet.</p>
+

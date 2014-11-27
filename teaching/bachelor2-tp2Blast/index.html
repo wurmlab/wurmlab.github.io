@@ -1,0 +1,216 @@
+---
+layout: page
+title: TP2 BLAST
+---
+
+<h1>Comprendre BLAST</h1>
+
+<p>Les fourmis sont parmis les especes les plus repandues sur terre;
+leur succes lie a des manieres d'organiser la vie en societe dont la
+complexite est proche des notres. Deux formes sociales coexistent chez
+la fourmi de feu Solenopsis invicta: la forme monogyne (avec une seule
+reine), et la forme polygyne (avec jusqu'a une centaine de reines).
+Lorsqu'une nouvelle reine tente de s'introduire au sein d'une colonie
+etablie, elle est parfois acceptee, parfois executee par les ouvrieres.
+L'equipe du professeur Keller de l'UNIL a montre que le choix des
+reines et de leur nombre depend des alleles d'un seul gene au sein des
+ouvrieres.</p>
+
+<p>Ce gene s'apelle <em>Gp-9</em> et servira d'objet d'etude pour ce TP:</p>
+<pre>&gt;gi|17981782 Gp-9 spliced coding sequence
+ATGAAGACGTTCGTATTGCATATTTTTATTTTTGCTCTCGTGGCTTTCGCTTCTGCATCTCGTGATAGCG
+CGAGGAAGATAGGATCCCAATATGACAATTACGCGACTTGCTTAGCCGAACATAGTCTAACAGAGGATGA
+CATCTTCTCGATTGGTGAAGTATCAAGTGGCCAGCACAAAACCAATCATGAAGATACCGAACTACACAAA
+AATGGTTGCGTCATGCAATGTTTGTTAGAAAAAGATGGACTGATGTCTGGAGCTGATTATGATGAAGAGA
+AAATGCGTGAGGACTATATCAAGGAAACAGGTGCTCAACCAGGAGATCAAAGGATAGAAGCTCTGAATGC
+CTGCATGCAAGAAACAAAAGACATGGAGGATAAATGTGACAAAAGCTTGCTCCTTGTAGCATGTGTCTTA
+GCAGCTGAAGCTGTGCTCGCCGATTCTAACGAAGGAGCATAA
+</pre>
+
+<h2>Comprendre un alignement</h2>
+<p>Pour essayer de comprendre le fonctionnement de ce gene on a
+effectue un BLASTN. Voici un extrait de l'alignement obtenu avec l'une
+des sequences retournees par BLAST:</p>
+<!-- Score = 46.4 bits (50),  Expect = 0.62  Identities = 108/158 (68%), Gaps = 19/158 (12%) Strand=Plus/Plus -->
+<pre>
+Gp-9   613   CGTATATAAATTTTAAAATCTAAGGAAAATTGTTTTATTTTAATTATATCTAAAAAATTG  672
+                ||||  ||| || | |        |||  ||||  ||||||||||||||||||||||
+Sbjct  1246  ATAATATTTATTATATAGT--------AAT--TTTTCCTTTAATTATATCTAAAAAATTG  1295
+</pre>
+
+<div class="question">A quoi correspondent les barres <code>|</code> ? Et les <code>-</code> ?</div>
+
+<h2>Score et E-value d'un alignement</h2>
+
+<p>Pour determiner le degre de similarite de deux sequences, BLAST
+calcule le bitscore de l'alignement. Dans BLASTN, chaque identite vaut
++1, et chaque difference vaut -3. Insertions et deletions n'affectent
+pas le score.</p>
+<div class="question">Calculez le score de l'alignement ci-dessus.</div>
+
+<p>BLAST convertit ensuite le score de votre alignement en bitscore
+"standardise", puis en E-value. Vous trouverez les formules
+correspondantes dans votre cours. Pour les calculs on prendra: n = la
+taille de Genbank Nucleotide soit 89*10e9 nucleotides, K = 0.63 et
+lambda = 1.61</p> <!--- had to reverse engineer some results on ncbi to find the K and lambda parameters for blastn -->
+
+<div class="question">Calculez le bitscore correspondant a votre score.</div>
+<div class="question">Calculez la E-value correspondant a votre score.</div>
+
+<h2>Comparaison avec d'autres resulats</h2>
+<p>La recherche BLAST a aussi donne d'autres resultats, resumes dans le tableau ci-dessous.</p>
+<img src="blastnscores.gif" alt="scores">
+
+
+Comparez les valeurs calculees a celles du tableau.
+
+<div class="question">Qu'est-ce qui pourrait expliquer pourquoi la E-value que vous avez calculee est aussi grande?</div>
+
+<h2>Limitation de BLAST</h2>
+<p>Il existe diverses variantes de BLAST. Grace a une autre recherche
+par BLASTP, vous savez que la sequence Gp-9 est apparentee a K2000.
+Mais a votre grand desarroi, celle-ci n'avait pas ete trouvee par
+BLASTN. En utilisant un autre algorithme (cf chapitre 4 du cours), vous
+obtenez malgre tout l'alignement des deux sequences au niveau
+nucleotidique:</p>
+
+<pre>Gp-9   1    ATGAAGACGTTCGTATTGCATATTTTTATTTTTGCTCTCGTGGCTTTCGCTTCTGCATCT  60
+            ||||||||||| |||||||||| |||||||||   |||||||| |||||||||| |||||
+K2000  1    ATGAAGACGTTGGTATTGCATAATTTTATTTT---TCTCGTGGATTTCGCTTCTCCATCT  57
+
+Gp-9   61   CGTGATAGCGCGAGGAAGATAGGATCCCAATATGACAATTACGCGACTTGCTTAGCCGAA  120
+            ||||| ||||||| || ||| ||||||||| |||||| |||||| ||||||||| |||||
+K2000  58   CGTGAGAGCGCGAAGACGATGGGATCCCAACATGACATTTACGCCACTTGCTTACCCGAA  117
+
+Gp-9   121  CATAGTCTAACAGAGGATGACATCTTCTCGATTGGTGAAGTATCAAGTGGCCAGCACAAA  180
+            |||| ||||| || |||| || | ||||||||| ||||||||| |||||||||| |||||
+K2000  118  CATAATCTAAGAGGGGATAACGTTTTCTCGATTCGTGAAGTATAAAGTGGCCAGGACAAA  177
+
+Gp-9   181  ACCAATCATGAAGATACCGAACTACACAAAAATGGTTGCGTCATGCAATGTTTGTTAGAA  240
+            |||| ||||||||| |||||||| ||||||||| || ||||||| |||||||| ||||||
+K2000  178  ACCAGTCATGAAGAAACCGAACTCCACAAAAATCGTCGCGTCATACAATGTTTATTAGAA  237
+
+Gp-9   241  AAAGATGGACTGATGTCTGGAGCTGATTATGATGAAGAGAAAATGCGTGAGGACTATATC  300
+             |||||||| |||||| ||| ||| ||||||||| ||| ||||||||||  |||||||||
+K2000  238  TAAGATGGAATGATGTGTGGGGCTAATTATGATGGAGAAAAAATGCGTGCTGACTATATC  297
+
+Gp-9   301  AAGGAA------ACAGGTGCTCAACCAGGAGATCAAAGGATAGAAGCTCTGAATGCCTGC  354
+            | ||||      || |||| |||||||||| |||| |||| |||| |||||||||| | |
+K2000  298  AGGGAATCAGGTACCGGTGGTCAACCAGGACATCAGAGGAGAGAACCTCTGAATGCGTAC  357
+
+Gp-9   355  ATGCAAGAAACAAAAGACATGGAGGATAAATGTGACAAAAGCTTGCTCCTTGTAGCATGT  414
+            ||||||||| ||||||| ||| ||| ||||||  |||||||||   | || ||| |||||
+K2000  358  ATGCAAGAATCAAAAGATATGCAGGTTAAATGGCACAAAAGCT---TTCTAGTAACATGT  414
+
+Gp-9   415  GTCTTAGCAGCTGAAGCTGTGCTCGCCGATTCTAACGAAGGAGCATAA  462
+             | |||||||| | |||||| ||||| |||||| ||||||||| ||||
+K2000  415  ATTTTAGCAGCGGGAGCTGTTCTCGCGGATTCTCACGAAGGAGAATAA  462
+</pre>
+
+<div class="question">Quel parametre de l'algorithme de BLAST pourrait etre responsable du fait que BLAST ne puisse pas trouver de similarite entre <em>Gp-9</em> et <em>K2000</em>?</div>
+</div>
+
+
+<div class="section">
+<h1>Utiliser BLAST</h1>
+<p>Le site americain du National Centre for Biotechnology Information
+(NCBI) regroupe de nombreux outils utilises tous les jours par plus de
+1,000,000 biologistes de part le monde. L'un d'entre eux est le portail
+BLAST. Utilisons la sequence genomique entiere de <em>Gp-9</em>:</p>
+
+<pre>&gt;gi|17981782|gb|AF427893.1| Gp-9 genomic sequence
+TTAATAATGAAGACGTTCGTATTGCATATTTTTATTTTTGCTCTCGTGGTGAGTTCTATTTTATAATAAT
+TAAATATTAGTATAAAATTTTTCTGTTTAATTTAGTAATGTATAATACAATAATGTGTTTTGCAACTTAA
+TTATAAATAAATTATAAGTATTACAATGCCCTTATTGCATGTAGACATATATTATAATGTCTACACGTTT
+GTTTATATTATAAGAAGATAATATTTTACGTTTATTTATACTTGTGCATGAAATAAAACTTAATTAAAAT
+AAGCAAAATAAAATTCCAAATCTAGGCTTTCGCTTCTGCATCTCGTGATAGCGCGAGGAAGATAGGATCC
+CAATATGACAATTACGCGACTTGCTTAGCCGAACATAGTCTAACAGAGGGTAAGTTATATTAGAGAATTT
+TACACAATTTACATGTCTTCTTAATTCATAAAGTACAGAAACAGATATTTTATGTTTGATTTTGAACCAA
+TACCTTTATAATAAAAGTGTATTATATATTATTTCCATATTATATACAGCTTTCTATACTGTATTAAATA
+TAAAATATTTTAATTACTTATACAAGATTTTTATTAAAAATACATCCCATAACGTATATAAATTTTAAAA
+TCTAAGGAAAATTGTTTTATTTTAATTATATCTAAAAAATTGTTTACATTTAAAAAATTTATAAATTTTA
+TATAATTTATATTGAGATTTTAACTATGGCCGCCTCAATAAGATTATTTCACGTCTGTGTTCACACTGCA
+CTCTCATGTTTGAGTTAAAATCCCAATAGTTTTTAACGTATAAGTCGTGTTTTGTAATTATTTAAGTAGA
+TACAAATTTAATATTTTCTAAATTTATTTTTTAGATGACATCTTCTCGATTGGTGAAGTATCAAGTGGCC
+AGCACAAAACCAATCATGAAGATACCGAACTACACAAAAATGGTTGCGTCATGCAATGTTTGTTAGAAAA
+AGATGGACTGGTAAGTAGCTATTATTTTCTATAAAAAAGAGAATATTTAAAATACAAACTATTACATAAG
+AAAATAAAACATTGCAAACAAAAATATAATTTTTTTCATAACGTCTTCCCATGTAGACCTATTTAACTTA
+TTGTTAGAATTGATTTCAATCATTAATTTTATTAAAAAATTAATATTTTTATATACATATATTATCACAT
+TATACAACATAATTTAATTCAAAAAATAGTACAAAATATCTTATCTTTATTTTAAAACGTAATCTAATGT
+ATTCAAATTATTGACGTTTTTGTCTTTCTTGTAAATATTAGATGTCTGGAGCTGATTATGATGAAGAGAA
+AATGCGTGAGGACTATATCAAGGAAACAGGTGCTCAACCAGGAGATCAAAGGATAGAAGCTCTGAATGCC
+TGCATGCAAGAAAGTAAGTTATAAAATTAGAAAGTAAGTTATAAAATTATACGTATAAGAGTAATTCCGT
+TAATTATATAAGAAATGTTAACTTTGTTTAATAAAATGTTTTATAGTATTACTTATATACATTATGGCTA
+TTTAAACATTATAATAAATTTTAAAAAATATGTTATTTTTTGTAACTTAATTATTTTTTTTTCTATTTTA
+GCAAAAGACATGGAGGATAAATGTGACAAAAGCTTGCTCCTTGTAGCATGTGTCTTAGCAGCTGAAGCTG
+TGCTCGCCGATTCTAACGAAGGAGCATAAGAAATGCAATTAAAAACAGCTGGCATACAACCATTATATGA
+AAATTTGCAACATATAGCATTTTAAATAAAGAAATAAAATTATACAGCTTTCTTTTGTATTGACATGTTA
+AAATAATACTATGAATAAATTTGATTCAATAAAGCAATTTTGTTAAAAAGGAAAAAGGATCAGAATTATC
+AATTTCTTCATTCTACTACTACTATTTATAATATCATCTCTAAAATCTTGATAAATAGAACAAGTAAATT
+AACAAAAATGTTAATTAAGATATATGTTCTTTTTGTTTTAATTTATATTTCAGAAATATTATATTTGCAA
+TATAATAAAGACACGCAATTAACAAATATACGTAAAAATTTCTATGTATCTTTAATATAATAATTATTCT
+AGTTAAGTATTTTTATTAGATATAAACTTATAAAACTATTTTTCAAACTTTATCTATATGTCAATAGACA
+AAATATTAGGAATGCTTTAAAGTATACATA
+</pre>
+
+<div class="question">Quelle variante de BLAST utilise-t-on pour trouver des sequences nucleotidiques similaires?</div>
+<p>Faites-le.</p>
+<p>Si vous n'obtenez aucun resultat, c'est peut-etre parce que le NCBI fait par defaut un MEGABLAST qui utilise une taille de mots tres grande (25). A cause de la limitation que vous avez vu en premiere partie, MEGABLAST ne trouvera rien. Modifiez-donc le <code>Program Selection</code> pour choisir <code>Somewhat similar sequences blastn).</code>
+
+<div class="question">Trouvez-vous uniquement des sequences humaines? Pourquoi?</div>
+
+
+<p>Elargissez la recherche en utilisant la "Nucleotide collection NR" (cette base <strong>N</strong>on-<strong>R</strong>edondante est tres vaste.</p>
+
+<div class="question">Est-ce que vous trouvez des genes similaires dans d'autres organismes?</div>
+<div class="question">Sur?...... ok: pourquoi n'en trouve-t-on pas?</div>
+
+<p>Il est possible de limiter la recherche par une "Entrez Query" lors de la soumission du BLAST. Entrez <code>filter[all] NOT solenopsis[organism]</code> afin que les resultats de fourmis <em>Solenopsis</em> ne soient pas affiches.</p>
+
+<div class="question">Que vous montre l'image en haut de la page de resultats?</div>
+
+<div class="question">Quelles sont les autres especes pour lesquelles vous trouvez des sequences similaires?</div>
+
+<h2>Recherche au niveau proteine</h2>
+<p>On sait que la sequence nucleotidique degenere beaucoup plus rapidement que la sequence d'acide amines.</p>
+
+<div class="question">Quelle variante de BLAST vous permettrait de comparer votre sequence a la banque de donnees de proteines?</div>
+<p>Faites le (sans utiliser de contrainte "Entrez Query")</p>
+
+<div class="question">A quoi correspondent les 3 segments qui s'alignent dans l'image resumant les resultats?</div>
+
+<p>On ne trouve comme resultat presque uniquement les proteines Gp-9 des differentes especes de fourmis <em>Solenopsis</em>. Les trois derniers resultats (avec tres grands E-value) ne sont pas biologiquement pertinents. </p>
+
+
+<h2>Recherche proteine-proteine</h2>
+<p>Servons-nous desormais de la sequence d'acides amines de <em>Gp-9</em>:</p>
+<pre>&gt;gi|17981783|gb|AAL51119.1| Gp-9 [Solenopsis invicta]
+MKTFVLHIFIFALVAFASASRDSARKIGSQYDNYATCLAEHSLTEDDIFSIGEVSSGQHKTNHEDTELHK
+NGCVMQCLLEKDGLMSGADYDEEKMREDYIKETGAQPGDQRIEALNACMQETKDMEDKCDKSLLLVACVL
+AAEAVLADSNEGA
+</pre>
+<div class="question">Quelle variante de BLAST devez-vous utiliser pour comparer sequence d'acides amines de <em>Gp-9</em> a l'ensemble des sequences d'acides amines de Genbank?</div>
+
+<p>Faites-le.</p>
+
+<div class="question">Expliquez pourquoi vous trouvez des E-values
+beaucoup plus petites (donc significatives), ainsi qu'un plus grand
+nombre de resultats par BLASTP que par BLASTX.)</div>
+
+<p>Regardez les alignements faibles (par exemple celui avec une proteine d'Aedes aegypti).</p>
+<div class="question">A quoi correspond la ligne <code>Query</code>?</div>
+<div class="question">A quoi correspond la ligne <code>Sbjct</code>?</div>
+<div class="question">A quoi correspondent les lettres de la ligne du milieu? Et les petits <code>+</code> ?</div>
+</div>
+
+<div class="section">
+<p>Quand Gp-9 avait ete identifie, la seule proteine homologue
+significative etait une "Odorant binding protein"... on peut essayer de
+s'imaginer comment un tel gene pourrait etre implique dans le choix de
+reines.</p>
+</div>
+<!--
+notes:
+  ********** change sequence name if E-value + score are different from whats manually calculated.
+  ****** K and lambda as given are for blosum62
+-->

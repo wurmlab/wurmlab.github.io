@@ -1,0 +1,1516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="generator" content=
+"HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org">
+<title>Intro to programming in R</title>
+<meta content="text/html; charset=us-ascii" http-equiv=
+"content-type">
+
+<style type="text/css">
+@import url('https://themes.googleusercontent.com/fonts/css?kit=MSSLfUayeNh9PW3ng9UWrqo0P1CSBNc3gBWclSzSx0c');.lst-kix_list_7-5>li{counter-increment:lst-ctn-kix_list_7-5}.lst-kix_list_15-5>li:before{content:"\00f0a7  "}.lst-kix_list_22-8>li:before{content:"\00f0a7  "}.lst-kix_list_6-3>li:before{content:"\0025cf  "}.lst-kix_list_6-7>li:before{content:"o  "}ol.lst-kix_list_8-2.start{counter-reset:lst-ctn-kix_list_8-2 0}.lst-kix_list_21-3>li:before{content:"" counter(lst-ctn-kix_list_21-3,decimal) ". "}.lst-kix_list_11-3>li:before{content:"\0025cf  "}.lst-kix_list_8-5>li:before{content:"" counter(lst-ctn-kix_list_8-5,lower-roman) ". "}ol.lst-kix_list_7-6.start{counter-reset:lst-ctn-kix_list_7-6 0}.lst-kix_list_21-2>li{counter-increment:lst-ctn-kix_list_21-2}ol.lst-kix_list_16-4.start{counter-reset:lst-ctn-kix_list_16-4 0}.lst-kix_list_8-4>li{counter-increment:lst-ctn-kix_list_8-4}.lst-kix_list_16-7>li{counter-increment:lst-ctn-kix_list_16-7}.lst-kix_list_22-1>li:before{content:"o  "}.lst-kix_usumams1pky1-4>li:before{content:"\0025cb  "}.lst-kix_list_18-0>li:before{content:"\0025cf  "}.lst-kix_list_3-6>li:before{content:"\0025cf  "}.lst-kix_list_13-4>li:before{content:"o  "}.lst-kix_list_5-2>li:before{content:"\00f0a7  "}.lst-kix_list_9-1>li:before{content:"o  "}.lst-kix_list_15-8>li:before{content:"\00f0a7  "}.lst-kix_list_7-2>li:before{content:"" counter(lst-ctn-kix_list_7-2,lower-roman) ". "}.lst-kix_list_7-7>li{counter-increment:lst-ctn-kix_list_7-7}.lst-kix_list_21-0>li{counter-increment:lst-ctn-kix_list_21-0}ol.lst-kix_list_16-3.start{counter-reset:lst-ctn-kix_list_16-3 0}.lst-kix_list_22-0>li:before{content:"\0025cf  "}.lst-kix_list_5-5>li:before{content:"\00f0a7  "}.lst-kix_list_9-3>li:before{content:"\0025cf  "}.lst-kix_list_9-6>li:before{content:"\0025cf  "}.lst-kix_list_2-0>li:before{content:"\0025cf  "}ol.lst-kix_list_7-4.start{counter-reset:lst-ctn-kix_list_7-4 0}.lst-kix_list_9-2>li:before{content:"\00f0a7  "}.lst-kix_list_2-4>li:before{content:"o  "}.lst-kix_list_8-8>li{counter-increment:lst-ctn-kix_list_8-8}ol.lst-kix_list_16-1{list-style-type:none}ol.lst-kix_list_16-2{list-style-type:none}ol.lst-kix_list_16-3{list-style-type:none}ol.lst-kix_list_16-4{list-style-type:none}ol.lst-kix_list_16-0{list-style-type:none}.lst-kix_list_20-4>li:before{content:"o  "}.lst-kix_list_7-4>li{counter-increment:lst-ctn-kix_list_7-4}.lst-kix_list_12-7>li:before{content:"o  "}ol.lst-kix_list_16-5{list-style-type:none}ol.lst-kix_list_16-6{list-style-type:none}ol.lst-kix_list_16-7{list-style-type:none}ol.lst-kix_list_16-8{list-style-type:none}.lst-kix_mj9osybqopn8-7>li:before{content:"\0025cb  "}.lst-kix_list_5-8>li:before{content:"\00f0a7  "}.lst-kix_list_14-5>li:before{content:"\00f0a7  "}.lst-kix_list_21-4>li:before{content:"" counter(lst-ctn-kix_list_21-4,lower-latin) ". "}.lst-kix_list_7-2>li{counter-increment:lst-ctn-kix_list_7-2}ul.lst-kix_list_22-6{list-style-type:none}ul.lst-kix_list_22-7{list-style-type:none}ul.lst-kix_list_22-4{list-style-type:none}ul.lst-kix_list_22-5{list-style-type:none}ul.lst-kix_list_22-2{list-style-type:none}ul.lst-kix_list_22-3{list-style-type:none}.lst-kix_list_8-5>li{counter-increment:lst-ctn-kix_list_8-5}ul.lst-kix_list_22-0{list-style-type:none}ul.lst-kix_list_22-1{list-style-type:none}ol.lst-kix_list_21-6{list-style-type:none}.lst-kix_list_21-1>li:before{content:"" counter(lst-ctn-kix_list_21-1,lower-latin) ". "}ol.lst-kix_list_21-5{list-style-type:none}ol.lst-kix_list_21-4{list-style-type:none}.lst-kix_list_15-3>li:before{content:"\0025cf  "}ol.lst-kix_list_21-3{list-style-type:none}ol.lst-kix_list_7-5.start{counter-reset:lst-ctn-kix_list_7-5 0}.lst-kix_list_8-1>li:before{content:"" counter(lst-ctn-kix_list_8-1,lower-latin) ". "}ol.lst-kix_list_21-8{list-style-type:none}ol.lst-kix_list_21-7{list-style-type:none}ul.lst-kix_list_20-1{list-style-type:none}ol.lst-kix_list_8-1{list-style-type:none}.lst-kix_list_11-8>li:before{content:"\00f0a7  "}ul.lst-kix_list_20-0{list-style-type:none}ol.lst-kix_list_8-2{list-style-type:none}ol.lst-kix_list_8-3{list-style-type:none}.lst-kix_list_18-3>li:before{content:"\0025cf  "}.lst-kix_list_6-0>li:before{content:"\0025cf  "}ol.lst-kix_list_8-4{list-style-type:none}ol.lst-kix_list_21-1{list-style-type:none}ol.lst-kix_list_8-5{list-style-type:none}ol.lst-kix_list_21-2{list-style-type:none}ol.lst-kix_list_8-6{list-style-type:none}ol.lst-kix_list_8-7{list-style-type:none}ol.lst-kix_list_21-0{list-style-type:none}ol.lst-kix_list_8-8{list-style-type:none}ul.lst-kix_list_20-8{list-style-type:none}ul.lst-kix_list_20-7{list-style-type:none}ul.lst-kix_list_20-6{list-style-type:none}ul.lst-kix_list_20-5{list-style-type:none}ul.lst-kix_list_20-4{list-style-type:none}ul.lst-kix_list_20-3{list-style-type:none}.lst-kix_list_4-0>li:before{content:"\0025cf  "}ul.lst-kix_list_20-2{list-style-type:none}ul.lst-kix_list_22-8{list-style-type:none}.lst-kix_list_16-8>li:before{content:"" counter(lst-ctn-kix_list_16-8,lower-roman) ". "}.lst-kix_list_10-7>li:before{content:"o  "}.lst-kix_list_8-7>li:before{content:"" counter(lst-ctn-kix_list_8-7,lower-latin) ". "}.lst-kix_list_14-6>li:before{content:"\0025cf  "}.lst-kix_list_7-1>li{counter-increment:lst-ctn-kix_list_7-1}.lst-kix_list_1-7>li:before{content:"o  "}.lst-kix_list_10-1>li:before{content:"o  "}.lst-kix_list_13-1>li:before{content:"o  "}.lst-kix_list_23-6>li:before{content:"o  "}.lst-kix_list_7-3>li:before{content:"" counter(lst-ctn-kix_list_7-3,decimal) ". "}ul.lst-kix_list_12-8{list-style-type:none}.lst-kix_list_8-6>li:before{content:"" counter(lst-ctn-kix_list_8-6,decimal) ". "}.lst-kix_list_1-2>li:before{content:"\0025aa  "}ul.lst-kix_list_12-7{list-style-type:none}ul.lst-kix_list_14-0{list-style-type:none}.lst-kix_list_22-3>li:before{content:"\0025cf  "}.lst-kix_list_7-6>li{counter-increment:lst-ctn-kix_list_7-6}.lst-kix_list_1-5>li:before{content:"\0025aa  "}ul.lst-kix_list_14-2{list-style-type:none}ul.lst-kix_list_14-1{list-style-type:none}ul.lst-kix_list_14-4{list-style-type:none}ul.lst-kix_list_14-3{list-style-type:none}ul.lst-kix_list_14-5{list-style-type:none}ul.lst-kix_list_14-6{list-style-type:none}ul.lst-kix_list_12-0{list-style-type:none}ul.lst-kix_list_14-7{list-style-type:none}ul.lst-kix_list_12-1{list-style-type:none}ul.lst-kix_list_14-8{list-style-type:none}ul.lst-kix_list_12-2{list-style-type:none}ul.lst-kix_list_12-3{list-style-type:none}.lst-kix_list_19-0>li:before{content:"\0025cf  "}ul.lst-kix_list_12-4{list-style-type:none}ol.lst-kix_list_8-1.start{counter-reset:lst-ctn-kix_list_8-1 0}ul.lst-kix_list_12-5{list-style-type:none}ul.lst-kix_list_12-6{list-style-type:none}.lst-kix_list_2-3>li:before{content:"\0025cf  "}.lst-kix_list_12-3>li:before{content:"\0025cf  "}.lst-kix_mj9osybqopn8-2>li:before{content:"\0025a0  "}.lst-kix_list_13-8>li:before{content:"\00f0a7  "}ol.lst-kix_list_21-0.start{counter-reset:lst-ctn-kix_list_21-0 0}.lst-kix_list_16-0>li{counter-increment:lst-ctn-kix_list_16-0}.lst-kix_list_2-7>li:before{content:"o  "}.lst-kix_usumams1pky1-2>li:before{content:"\0025a0  "}.lst-kix_list_20-2>li:before{content:"\00f0a7  "}.lst-kix_list_10-6>li:before{content:"\0025cf  "}.lst-kix_list_21-5>li:before{content:"" counter(lst-ctn-kix_list_21-5,lower-roman) ". "}.lst-kix_list_14-8>li:before{content:"\00f0a7  "}.lst-kix_mj9osybqopn8-6>li:before{content:"\0025cf  "}.lst-kix_list_10-2>li:before{content:"\00f0a7  "}.lst-kix_list_20-7>li:before{content:"o  "}.lst-kix_list_18-8>li:before{content:"\00f0a7  "}.lst-kix_list_21-2>li:before{content:"" counter(lst-ctn-kix_list_21-2,lower-roman) ". "}.lst-kix_usumams1pky1-5>li:before{content:"\0025a0  "}ol.lst-kix_list_8-5.start{counter-reset:lst-ctn-kix_list_8-5 0}.lst-kix_list_21-4>li{counter-increment:lst-ctn-kix_list_21-4}.lst-kix_list_14-4>li:before{content:"o  "}.lst-kix_list_6-1>li:before{content:"o  "}ol.lst-kix_list_21-1.start{counter-reset:lst-ctn-kix_list_21-1 0}.lst-kix_list_17-0>li:before{content:"\0025cf  "}.lst-kix_list_4-7>li:before{content:"o  "}.lst-kix_usumams1pky1-8>li:before{content:"\0025a0  "}.lst-kix_list_13-3>li:before{content:"\0025cf  "}.lst-kix_list_16-4>li:before{content:"" counter(lst-ctn-kix_list_16-4,lower-latin) ". "}.lst-kix_list_14-7>li:before{content:"o  "}.lst-kix_list_23-0>li:before{content:"  "}.lst-kix_list_23-8>li:before{content:"\0025ab  "}.lst-kix_list_17-1>li:before{content:"o  "}.lst-kix_list_12-6>li:before{content:"\0025cf  "}.lst-kix_list_3-7>li:before{content:"o  "}ul.lst-kix_list_13-2{list-style-type:none}.lst-kix_list_6-6>li:before{content:"\0025cf  "}ul.lst-kix_list_13-3{list-style-type:none}ul.lst-kix_list_13-4{list-style-type:none}ul.lst-kix_list_13-5{list-style-type:none}.lst-kix_list_16-6>li:before{content:"" counter(lst-ctn-kix_list_16-6,decimal) ". "}.lst-kix_list_21-5>li{counter-increment:lst-ctn-kix_list_21-5}ul.lst-kix_list_13-0{list-style-type:none}ul.lst-kix_list_13-1{list-style-type:none}.lst-kix_list_12-8>li:before{content:"\00f0a7  "}ul.lst-kix_list_13-7{list-style-type:none}ul.lst-kix_list_13-6{list-style-type:none}ol.lst-kix_list_16-7.start{counter-reset:lst-ctn-kix_list_16-7 0}ul.lst-kix_list_13-8{list-style-type:none}.lst-kix_list_9-8>li:before{content:"\00f0a7  "}.lst-kix_list_16-1>li:before{content:"" counter(lst-ctn-kix_list_16-1,lower-latin) ". "}.lst-kix_list_8-0>li:before{content:"\0025cf  "}ol.lst-kix_list_21-4.start{counter-reset:lst-ctn-kix_list_21-4 0}.lst-kix_list_20-1>li:before{content:"-  "}.lst-kix_list_5-3>li:before{content:"\0025cf  "}.lst-kix_list_11-0>li:before{content:"\0025cf  "}.lst-kix_list_10-3>li:before{content:"\0025cf  "}.lst-kix_list_16-1>li{counter-increment:lst-ctn-kix_list_16-1}.lst-kix_list_23-5>li:before{content:"\0025cf  "}.lst-kix_list_7-4>li:before{content:"" counter(lst-ctn-kix_list_7-4,lower-latin) ". "}.lst-kix_list_16-2>li{counter-increment:lst-ctn-kix_list_16-2}ul.lst-kix_list_4-8{list-style-type:none}ul.lst-kix_list_4-7{list-style-type:none}ol.lst-kix_list_16-8.start{counter-reset:lst-ctn-kix_list_16-8 0}ul.lst-kix_list_4-6{list-style-type:none}.lst-kix_list_17-2>li:before{content:"\0025aa  "}.lst-kix_list_11-4>li:before{content:"o  "}ul.lst-kix_list_4-1{list-style-type:none}.lst-kix_list_7-5>li:before{content:"" counter(lst-ctn-kix_list_7-5,lower-roman) ". "}ul.lst-kix_list_4-0{list-style-type:none}.lst-kix_list_10-4>li:before{content:"o  "}ul.lst-kix_list_4-5{list-style-type:none}ul.lst-kix_list_4-4{list-style-type:none}ul.lst-kix_list_4-3{list-style-type:none}ul.lst-kix_list_4-2{list-style-type:none}.lst-kix_list_7-8>li{counter-increment:lst-ctn-kix_list_7-8}.lst-kix_list_8-2>li:before{content:"" counter(lst-ctn-kix_list_8-2,lower-roman) ". "}ol.lst-kix_list_21-6.start{counter-reset:lst-ctn-kix_list_21-6 0}.lst-kix_list_14-3>li:before{content:"\0025cf  "}.lst-kix_list_8-8>li:before{content:"" counter(lst-ctn-kix_list_8-8,lower-roman) ". "}.lst-kix_list_15-6>li:before{content:"\0025cf  "}ol.lst-kix_list_16-1.start{counter-reset:lst-ctn-kix_list_16-1 0}.lst-kix_list_18-4>li:before{content:"o  "}.lst-kix_list_8-3>li{counter-increment:lst-ctn-kix_list_8-3}.lst-kix_list_10-5>li:before{content:"\00f0a7  "}ul.lst-kix_list_9-0{list-style-type:none}.lst-kix_list_17-3>li:before{content:"\0025cf  "}.lst-kix_list_22-4>li:before{content:"o  "}ol.lst-kix_list_8-4.start{counter-reset:lst-ctn-kix_list_8-4 0}ul.lst-kix_list_9-8{list-style-type:none}.lst-kix_usumams1pky1-7>li:before{content:"\0025cb  "}.lst-kix_mj9osybqopn8-8>li:before{content:"\0025a0  "}ul.lst-kix_list_9-7{list-style-type:none}.lst-kix_list_19-6>li:before{content:"\0025cf  "}ul.lst-kix_list_9-6{list-style-type:none}ul.lst-kix_list_9-5{list-style-type:none}.lst-kix_list_15-2>li:before{content:"\00f0a7  "}ul.lst-kix_list_9-4{list-style-type:none}.lst-kix_list_13-6>li:before{content:"\0025cf  "}ul.lst-kix_list_9-3{list-style-type:none}ul.lst-kix_list_9-2{list-style-type:none}ul.lst-kix_list_9-1{list-style-type:none}.lst-kix_list_6-2>li:before{content:"\00f0a7  "}ul.lst-kix_list_5-1{list-style-type:none}.lst-kix_list_19-1>li:before{content:"o  "}ul.lst-kix_list_5-2{list-style-type:none}ul.lst-kix_list_5-3{list-style-type:none}ul.lst-kix_list_5-4{list-style-type:none}.lst-kix_list_10-0>li:before{content:"\0025cf  "}.lst-kix_list_17-7>li:before{content:"o  "}ul.lst-kix_list_5-0{list-style-type:none}ol.lst-kix_list_7-1.start{counter-reset:lst-ctn-kix_list_7-1 0}.lst-kix_list_13-2>li:before{content:"\00f0a7  "}ul.lst-kix_list_5-5{list-style-type:none}ul.lst-kix_list_5-6{list-style-type:none}ul.lst-kix_list_5-7{list-style-type:none}ul.lst-kix_list_5-8{list-style-type:none}.lst-kix_list_4-3>li:before{content:"\0025cf  "}ol.lst-kix_list_16-0.start{counter-reset:lst-ctn-kix_list_16-0 0}ol.lst-kix_list_16-2.start{counter-reset:lst-ctn-kix_list_16-2 0}.lst-kix_list_19-4>li:before{content:"o  "}.lst-kix_list_14-1>li:before{content:"o  "}ol.lst-kix_list_21-2.start{counter-reset:lst-ctn-kix_list_21-2 0}.lst-kix_list_7-3>li{counter-increment:lst-ctn-kix_list_7-3}.lst-kix_list_6-8>li:before{content:"\00f0a7  "}ul.lst-kix_list_3-7{list-style-type:none}ul.lst-kix_list_3-8{list-style-type:none}.lst-kix_list_8-4>li:before{content:"" counter(lst-ctn-kix_list_8-4,lower-latin) ". "}.lst-kix_list_1-6>li:before{content:"\0025cf  "}ul.lst-kix_list_3-0{list-style-type:none}.lst-kix_mj9osybqopn8-3>li:before{content:"\0025cf  "}ul.lst-kix_list_3-1{list-style-type:none}ul.lst-kix_list_3-2{list-style-type:none}.lst-kix_list_16-6>li{counter-increment:lst-ctn-kix_list_16-6}ul.lst-kix_list_3-3{list-style-type:none}ul.lst-kix_list_3-4{list-style-type:none}ul.lst-kix_list_3-5{list-style-type:none}.lst-kix_list_16-7>li:before{content:"" counter(lst-ctn-kix_list_16-7,lower-latin) ". "}ul.lst-kix_list_1-0{list-style-type:none}ul.lst-kix_list_3-6{list-style-type:none}ul.lst-kix_list_1-2{list-style-type:none}ul.lst-kix_list_1-1{list-style-type:none}ul.lst-kix_list_1-4{list-style-type:none}ul.lst-kix_list_1-3{list-style-type:none}ul.lst-kix_list_1-6{list-style-type:none}ul.lst-kix_list_1-5{list-style-type:none}ul.lst-kix_list_1-8{list-style-type:none}ul.lst-kix_list_1-7{list-style-type:none}.lst-kix_list_12-1>li:before{content:"o  "}.lst-kix_list_2-1>li:before{content:"o  "}.lst-kix_list_4-8>li:before{content:"\00f0a7  "}.lst-kix_list_20-3>li:before{content:"\0025cf  "}.lst-kix_list_16-3>li:before{content:"" counter(lst-ctn-kix_list_16-3,decimal) ". "}ol.lst-kix_list_7-2.start{counter-reset:lst-ctn-kix_list_7-2 0}ol.lst-kix_list_8-3.start{counter-reset:lst-ctn-kix_list_8-3 0}.lst-kix_list_8-7>li{counter-increment:lst-ctn-kix_list_8-7}ul.lst-kix_list_11-3{list-style-type:none}ul.lst-kix_list_11-2{list-style-type:none}ul.lst-kix_list_11-1{list-style-type:none}.lst-kix_list_4-2>li:before{content:"\00f0a7  "}ul.lst-kix_list_11-0{list-style-type:none}ul.lst-kix_list_11-7{list-style-type:none}ul.lst-kix_list_6-1{list-style-type:none}ul.lst-kix_list_11-6{list-style-type:none}ul.lst-kix_list_6-0{list-style-type:none}ul.lst-kix_list_6-3{list-style-type:none}ul.lst-kix_list_11-5{list-style-type:none}ul.lst-kix_list_11-4{list-style-type:none}.lst-kix_list_22-7>li:before{content:"o  "}ul.lst-kix_list_6-2{list-style-type:none}ul.lst-kix_list_6-5{list-style-type:none}.lst-kix_mj9osybqopn8-0>li:before{content:"\0025cf  "}ul.lst-kix_list_6-4{list-style-type:none}ul.lst-kix_list_6-7{list-style-type:none}ul.lst-kix_list_6-6{list-style-type:none}.lst-kix_list_4-1>li:before{content:"o  "}.lst-kix_list_17-6>li:before{content:"\0025cf  "}ul.lst-kix_list_6-8{list-style-type:none}.lst-kix_usumams1pky1-1>li:before{content:"\0025cb  "}.lst-kix_list_21-0>li:before{content:"" counter(lst-ctn-kix_list_21-0,decimal) ". "}ul.lst-kix_usumams1pky1-2{list-style-type:none}ul.lst-kix_usumams1pky1-3{list-style-type:none}ul.lst-kix_usumams1pky1-4{list-style-type:none}.lst-kix_list_21-8>li:before{content:"" counter(lst-ctn-kix_list_21-8,lower-roman) ". "}ul.lst-kix_usumams1pky1-5{list-style-type:none}.lst-kix_usumams1pky1-0>li:before{content:"\0025cf  "}.lst-kix_list_1-0>li:before{content:"\0025cf  "}.lst-kix_mj9osybqopn8-1>li:before{content:"\0025cb  "}ul.lst-kix_usumams1pky1-0{list-style-type:none}ul.lst-kix_usumams1pky1-1{list-style-type:none}ol.lst-kix_list_8-8.start{counter-reset:lst-ctn-kix_list_8-8 0}.lst-kix_list_21-3>li{counter-increment:lst-ctn-kix_list_21-3}.lst-kix_list_18-5>li:before{content:"\00f0a7  "}ul.lst-kix_list_11-8{list-style-type:none}.lst-kix_list_21-6>li{counter-increment:lst-ctn-kix_list_21-6}ul.lst-kix_usumams1pky1-6{list-style-type:none}ul.lst-kix_usumams1pky1-7{list-style-type:none}ul.lst-kix_usumams1pky1-8{list-style-type:none}.lst-kix_list_3-4>li:before{content:"o  "}.lst-kix_list_1-3>li:before{content:"\0025cf  "}.lst-kix_list_8-3>li:before{content:"" counter(lst-ctn-kix_list_8-3,decimal) ". "}.lst-kix_list_18-6>li:before{content:"\0025cf  "}.lst-kix_list_14-0>li:before{content:"\0025cf  "}ol.lst-kix_list_7-8.start{counter-reset:lst-ctn-kix_list_7-8 0}.lst-kix_list_12-0>li:before{content:"\0025cf  "}.lst-kix_list_15-7>li:before{content:"o  "}.lst-kix_list_12-4>li:before{content:"o  "}.lst-kix_list_21-7>li:before{content:"" counter(lst-ctn-kix_list_21-7,lower-latin) ". "}ul.lst-kix_list_19-8{list-style-type:none}ol.lst-kix_list_21-5.start{counter-reset:lst-ctn-kix_list_21-5 0}ul.lst-kix_list_19-4{list-style-type:none}ul.lst-kix_list_19-5{list-style-type:none}.lst-kix_list_11-1>li:before{content:"o  "}ul.lst-kix_list_19-6{list-style-type:none}ul.lst-kix_list_19-7{list-style-type:none}.lst-kix_list_21-8>li{counter-increment:lst-ctn-kix_list_21-8}ul.lst-kix_list_19-0{list-style-type:none}ul.lst-kix_list_19-1{list-style-type:none}ul.lst-kix_list_19-2{list-style-type:none}ul.lst-kix_list_19-3{list-style-type:none}.lst-kix_list_19-5>li:before{content:"\00f0a7  "}.lst-kix_list_17-4>li:before{content:"o  "}ul.lst-kix_list_15-8{list-style-type:none}.lst-kix_list_7-8>li:before{content:"" counter(lst-ctn-kix_list_7-8,lower-roman) ". "}ul.lst-kix_list_15-7{list-style-type:none}ul.lst-kix_list_15-6{list-style-type:none}ul.lst-kix_list_15-5{list-style-type:none}.lst-kix_list_3-1>li:before{content:"o  "}ul.lst-kix_list_15-4{list-style-type:none}ul.lst-kix_list_15-2{list-style-type:none}ul.lst-kix_list_2-4{list-style-type:none}ul.lst-kix_list_15-3{list-style-type:none}ul.lst-kix_list_2-5{list-style-type:none}.lst-kix_usumams1pky1-6>li:before{content:"\0025cf  "}ul.lst-kix_list_15-0{list-style-type:none}ul.lst-kix_list_2-6{list-style-type:none}ul.lst-kix_list_15-1{list-style-type:none}.lst-kix_list_13-7>li:before{content:"o  "}ul.lst-kix_list_2-7{list-style-type:none}ul.lst-kix_list_2-0{list-style-type:none}ul.lst-kix_list_2-1{list-style-type:none}ul.lst-kix_list_2-2{list-style-type:none}.lst-kix_list_23-3>li:before{content:"\0025aa  "}ul.lst-kix_list_2-3{list-style-type:none}.lst-kix_list_5-1>li:before{content:"o  "}.lst-kix_list_9-7>li:before{content:"o  "}ul.lst-kix_list_2-8{list-style-type:none}.lst-kix_list_21-1>li{counter-increment:lst-ctn-kix_list_21-1}.lst-kix_list_23-2>li:before{content:"o  "}.lst-kix_list_22-6>li:before{content:"\0025cf  "}.lst-kix_list_15-0>li:before{content:"\0025cf  "}.lst-kix_list_1-1>li:before{content:"o  "}.lst-kix_list_3-2>li:before{content:"\0025aa  "}.lst-kix_list_7-0>li{counter-increment:lst-ctn-kix_list_7-0}ol.lst-kix_list_8-7.start{counter-reset:lst-ctn-kix_list_8-7 0}ol.lst-kix_list_8-6.start{counter-reset:lst-ctn-kix_list_8-6 0}.lst-kix_list_8-2>li{counter-increment:lst-ctn-kix_list_8-2}ul.lst-kix_list_10-0{list-style-type:none}.lst-kix_list_17-5>li:before{content:"\0025aa  "}.lst-kix_list_15-1>li:before{content:"o  "}ul.lst-kix_list_10-7{list-style-type:none}ul.lst-kix_list_10-8{list-style-type:none}ul.lst-kix_list_10-5{list-style-type:none}.lst-kix_list_11-5>li:before{content:"\00f0a7  "}ul.lst-kix_list_10-6{list-style-type:none}.lst-kix_mj9osybqopn8-5>li:before{content:"\0025a0  "}.lst-kix_list_11-2>li:before{content:"\00f0a7  "}ul.lst-kix_list_10-3{list-style-type:none}ul.lst-kix_list_10-4{list-style-type:none}ul.lst-kix_list_10-1{list-style-type:none}.lst-kix_list_22-5>li:before{content:"\00f0a7  "}.lst-kix_list_1-4>li:before{content:"o  "}ul.lst-kix_list_10-2{list-style-type:none}.lst-kix_list_23-7>li:before{content:"\0025aa  "}.lst-kix_list_20-8>li:before{content:"\00f0a7  "}.lst-kix_list_22-2>li:before{content:"\00f0a7  "}.lst-kix_list_11-7>li:before{content:"o  "}.lst-kix_list_16-5>li{counter-increment:lst-ctn-kix_list_16-5}.lst-kix_list_16-4>li{counter-increment:lst-ctn-kix_list_16-4}.lst-kix_list_5-7>li:before{content:"o  "}.lst-kix_list_9-4>li:before{content:"o  "}.lst-kix_list_18-1>li:before{content:"o  "}ul.lst-kix_mj9osybqopn8-1{list-style-type:none}ul.lst-kix_mj9osybqopn8-0{list-style-type:none}.lst-kix_list_20-5>li:before{content:"\00f0a7  "}ul.lst-kix_mj9osybqopn8-5{list-style-type:none}ul.lst-kix_mj9osybqopn8-4{list-style-type:none}ul.lst-kix_mj9osybqopn8-3{list-style-type:none}.lst-kix_list_1-8>li:before{content:"\0025aa  "}ul.lst-kix_mj9osybqopn8-2{list-style-type:none}ul.lst-kix_mj9osybqopn8-8{list-style-type:none}ul.lst-kix_mj9osybqopn8-7{list-style-type:none}ul.lst-kix_mj9osybqopn8-6{list-style-type:none}.lst-kix_list_19-2>li:before{content:"\00f0a7  "}.lst-kix_list_3-3>li:before{content:"\0025cf  "}.lst-kix_list_19-8>li:before{content:"\00f0a7  "}ol.lst-kix_list_16-5.start{counter-reset:lst-ctn-kix_list_16-5 0}.lst-kix_list_16-2>li:before{content:"" counter(lst-ctn-kix_list_16-2,lower-roman) ". "}.lst-kix_list_18-2>li:before{content:"\00f0a7  "}.lst-kix_list_6-4>li:before{content:"o  "}.lst-kix_list_9-5>li:before{content:"\00f0a7  "}.lst-kix_list_18-7>li:before{content:"o  "}.lst-kix_usumams1pky1-3>li:before{content:"\0025cf  "}ol.lst-kix_list_16-6.start{counter-reset:lst-ctn-kix_list_16-6 0}ul.lst-kix_list_18-2{list-style-type:none}ul.lst-kix_list_18-1{list-style-type:none}.lst-kix_list_16-0>li:before{content:"" counter(lst-ctn-kix_list_16-0,upper-latin) ". "}ul.lst-kix_list_18-4{list-style-type:none}ol.lst-kix_list_21-7.start{counter-reset:lst-ctn-kix_list_21-7 0}ul.lst-kix_list_18-3{list-style-type:none}ul.lst-kix_list_18-6{list-style-type:none}ul.lst-kix_list_18-5{list-style-type:none}ul.lst-kix_list_18-8{list-style-type:none}ul.lst-kix_list_18-7{list-style-type:none}.lst-kix_list_6-5>li:before{content:"\00f0a7  "}.lst-kix_list_16-5>li:before{content:"" counter(lst-ctn-kix_list_16-5,lower-roman) ". "}.lst-kix_list_2-6>li:before{content:"\0025cf  "}.lst-kix_list_23-4>li:before{content:"\0025ab  "}ol.lst-kix_list_21-8.start{counter-reset:lst-ctn-kix_list_21-8 0}ul.lst-kix_list_23-7{list-style-type:none}ul.lst-kix_list_23-8{list-style-type:none}ul.lst-kix_list_23-4{list-style-type:none}.lst-kix_list_2-2>li:before{content:"\0025aa  "}ul.lst-kix_list_23-3{list-style-type:none}ul.lst-kix_list_23-6{list-style-type:none}ul.lst-kix_list_23-5{list-style-type:none}ul.lst-kix_list_23-0{list-style-type:none}ul.lst-kix_list_23-2{list-style-type:none}ul.lst-kix_list_23-1{list-style-type:none}.lst-kix_list_7-7>li:before{content:"" counter(lst-ctn-kix_list_7-7,lower-latin) ". "}.lst-kix_list_7-1>li:before{content:"" counter(lst-ctn-kix_list_7-1,lower-latin) ". "}.lst-kix_list_20-6>li:before{content:"\0025cf  "}ul.lst-kix_list_18-0{list-style-type:none}.lst-kix_list_9-0>li:before{content:"\0025cf  "}.lst-kix_list_2-8>li:before{content:"\0025aa  "}.lst-kix_list_21-6>li:before{content:"" counter(lst-ctn-kix_list_21-6,decimal) ". "}.lst-kix_list_7-0>li:before{content:"" counter(lst-ctn-kix_list_7-0,decimal) ". "}.lst-kix_list_20-0>li:before{content:"\0025cf  "}.lst-kix_list_3-5>li:before{content:"\0025aa  "}ol.lst-kix_list_7-0.start{counter-reset:lst-ctn-kix_list_7-0 0}ol.lst-kix_list_7-7{list-style-type:none}.lst-kix_list_11-6>li:before{content:"\0025cf  "}.lst-kix_list_19-3>li:before{content:"\0025cf  "}ol.lst-kix_list_7-8{list-style-type:none}ol.lst-kix_list_7-5{list-style-type:none}ol.lst-kix_list_7-6{list-style-type:none}ol.lst-kix_list_7-3{list-style-type:none}ol.lst-kix_list_7-7.start{counter-reset:lst-ctn-kix_list_7-7 0}ol.lst-kix_list_7-4{list-style-type:none}ol.lst-kix_list_7-1{list-style-type:none}ol.lst-kix_list_7-2{list-style-type:none}.lst-kix_list_17-8>li:before{content:"\0025aa  "}.lst-kix_list_4-6>li:before{content:"\0025cf  "}.lst-kix_list_16-3>li{counter-increment:lst-ctn-kix_list_16-3}.lst-kix_list_4-5>li:before{content:"\00f0a7  "}ul.lst-kix_list_8-0{list-style-type:none}.lst-kix_list_12-5>li:before{content:"\00f0a7  "}.lst-kix_list_3-0>li:before{content:"\0025cf  "}.lst-kix_list_7-6>li:before{content:"" counter(lst-ctn-kix_list_7-6,decimal) ". "}.lst-kix_list_2-5>li:before{content:"\0025aa  "}.lst-kix_list_12-2>li:before{content:"\00f0a7  "}.lst-kix_list_19-7>li:before{content:"o  "}ol.lst-kix_list_7-0{list-style-type:none}.lst-kix_list_5-4>li:before{content:"o  "}.lst-kix_list_8-6>li{counter-increment:lst-ctn-kix_list_8-6}.lst-kix_mj9osybqopn8-4>li:before{content:"\0025cb  "}.lst-kix_list_4-4>li:before{content:"o  "}.lst-kix_list_5-0>li:before{content:"\0025cf  "}.lst-kix_list_14-2>li:before{content:"\00f0a7  "}.lst-kix_list_15-4>li:before{content:"o  "}.lst-kix_list_10-8>li:before{content:"\00f0a7  "}.lst-kix_list_3-8>li:before{content:"\0025aa  "}ul.lst-kix_list_17-6{list-style-type:none}ul.lst-kix_list_17-7{list-style-type:none}ul.lst-kix_list_17-8{list-style-type:none}.lst-kix_list_8-1>li{counter-increment:lst-ctn-kix_list_8-1}ul.lst-kix_list_17-2{list-style-type:none}ul.lst-kix_list_17-3{list-style-type:none}.lst-kix_list_21-7>li{counter-increment:lst-ctn-kix_list_21-7}ul.lst-kix_list_17-4{list-style-type:none}.lst-kix_list_13-5>li:before{content:"\00f0a7  "}ul.lst-kix_list_17-5{list-style-type:none}ol.lst-kix_list_7-3.start{counter-reset:lst-ctn-kix_list_7-3 0}.lst-kix_list_13-0>li:before{content:"\0025cf  "}.lst-kix_list_5-6>li:before{content:"\0025cf  "}.lst-kix_list_16-8>li{counter-increment:lst-ctn-kix_list_16-8}.lst-kix_list_23-1>li:before{content:"\0025cf  "}ol.lst-kix_list_21-3.start{counter-reset:lst-ctn-kix_list_21-3 0}ul.lst-kix_list_17-1{list-style-type:none}ul.lst-kix_list_17-0{list-style-type:none}ol{margin:0;padding:0}.c21{border-bottom-width:1pt;border-top-style:solid;width:213pt;border-right-style:solid;padding:0pt 5.4pt 0pt 5.4pt;border-bottom-color:#000000;border-top-width:1pt;border-bottom-style:solid;vertical-align:top;border-top-color:#000000;border-left-color:#000000;border-right-color:#000000;border-left-style:solid;border-right-width:1pt;border-left-width:1pt}.c17{color:#000000;font-size:12pt;font-style:normal;font-family:"Cambria";text-decoration:none}.c28{color:#000000;font-style:normal;font-family:"Arial";text-decoration:none}.c23{color:#000000;font-size:12pt;font-style:normal;text-decoration:none}.c10{line-height:1.0;padding-top:0pt;text-align:center;padding-bottom:0pt}.c29{line-height:1.0;padding-top:12pt;text-align:left;padding-bottom:3pt}.c27{line-height:1.0;padding-top:0pt;text-align:left;padding-bottom:0pt}.c31{margin-right:auto;border-collapse:collapse}.c30{max-width:566.5pt;background-color:#ffffff;padding:14.4pt 14.4pt 14.4pt 14.4pt}.c26{text-indent:-24pt;margin-left:24pt}.c5{padding-left:0pt;margin-left:72pt}.c24{margin:5px;border:1px solid black}.c3{padding-left:0pt;margin-left:36pt}.c14{color:#1155cc;text-decoration:underline}.c25{font-size:13pt;font-family:"Arial"}.c7{color:inherit;text-decoration:inherit}.c18{margin:0;padding:0}.c22{margin-left:36pt}.c0{vertical-align:baseline}.c20{font-weight:normal}.c16{margin-left:18pt}.c1{direction:ltr}.c2{font-family:"Courier New"}.c32{font-size:18pt}.c9{font-weight:bold}.c8{vertical-align:super}.c6{font-style:italic}.c4{height:12pt}.c19{font-size:11pt}.c11{font-size:10pt}.c12{color:#ff0000}.c13{margin-left:54pt}.c15{height:28pt}.title{padding-top:24pt;line-height:1.0;text-align:left;color:#000000;font-size:36pt;font-family:"Cambria";font-weight:bold;padding-bottom:6pt;page-break-after:avoid}.subtitle{padding-top:18pt;line-height:1.0;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt;page-break-after:avoid}li{color:#000000;font-size:12pt;font-family:"Cambria"}p{color:#000000;font-size:12pt;margin:0;font-family:"Cambria"}h1{padding-top:24pt;line-height:1.0;text-align:left;color:#345a8a;font-size:16pt;font-family:"Calibri";font-weight:bold;padding-bottom:0pt}h2{padding-top:12pt;line-height:1.0;text-align:left;color:#000000;font-style:italic;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:3pt}h3{padding-top:12pt;line-height:1.0;text-align:left;color:#000000;font-size:13pt;font-family:"Arial";font-weight:bold;padding-bottom:3pt}h4{padding-top:12pt;line-height:1.0;text-align:left;color:#000000;font-size:12pt;font-family:"Cambria";font-weight:bold;padding-bottom:2pt;page-break-after:avoid}h5{padding-top:11pt;line-height:1.0;text-align:left;color:#000000;font-size:11pt;font-family:"Cambria";font-weight:bold;padding-bottom:2pt;page-break-after:avoid}h6{padding-top:10pt;line-height:1.0;text-align:left;color:#000000;font-size:10pt;font-family:"Cambria";font-weight:bold;padding-bottom:2pt;page-break-after:avoid}
+</style>
+</head>
+<body class="c30">
+<h1 class="c1"><a name="h.u6t0l7eoe8da" id=
+"h.u6t0l7eoe8da"></a><span>Intro to programming in
+R</span><span class="c0 c9">&nbsp;Session 1</span></h1>
+<p>Part of <a href="http://sbcs.qmul.ac.uk">QMUL</a> RMC361-2013. &copy; <a href="http://intercrossing.wikispaces.com/Bob+Verity">Robert Verity</a> &amp; <a href="http://yannick.poulet.org">Yannick Wurm</a></p>
+<p class="c1"><span>If you&rsquo;re familiar with R, jump straight
+to &ldquo;New Stuff&rdquo;.</span></p>
+<p class="c1 c4"></p>
+<h1 class="c1"><a name="h.cq4w9uqsjcve" id=
+"h.cq4w9uqsjcve"></a><span>Table of Contents</span></h1>
+<p class="c16 c1"><span class="c14"><a class="c7" href=
+"#h.u6t0l7eoe8da">Research Methods and Communication - R Session
+1</a></span></p>
+<p class="c16 c1"><span class="c14"><a class="c7" href=
+"#h.cq4w9uqsjcve">Table of Contents</a></span></p>
+<p class="c1 c16"><span class="c14"><a class="c7" href=
+"#h.j79x1hsfcz8r">Reminder from last year: R - recapping the
+basics</a></span></p>
+<p class="c1 c13"><span class="c14"><a class="c7" href=
+"#h.qnk7f4ckvi16">The environment</a></span></p>
+<p class="c1 c13"><span class="c14"><a class="c7" href=
+"#h.d3dsv561kdv">Variables</a></span></p>
+<p class="c1 c13"><span class="c14"><a class="c7" href=
+"#h.l6szppex757d">Good coding practice</a></span></p>
+<p class="c16 c1"><span class="c14"><a class="c7" href=
+"#h.62ietc4d9z2i">Reminder from last year: Data
+Classes</a></span></p>
+<p class="c16 c1"><span class="c14"><a class="c7" href=
+"#h.vikloz2p6jp9">Reminder from last year: Types of
+Objects</a></span></p>
+<p class="c1 c13"><span class="c14"><a class="c7" href=
+"#h.3qbtzxbz9m5e">Scalars</a></span></p>
+<p class="c1 c13"><span class="c14"><a class="c7" href=
+"#h.3vpvo71zp9lv">Vectors</a></span></p>
+<p class="c1 c13"><span class="c14"><a class="c7" href=
+"#h.6583784ey49l">Matrices</a></span></p>
+<p class="c1 c13"><span class="c14"><a class="c7" href=
+"#h.zf3g08azr7yq">Data frames and data classes</a></span></p>
+<p class="c16 c1"><span class="c14"><a class="c7" href=
+"#h.h3ykh4awmogu">Reminder from last year:
+Subsetting</a></span></p>
+<p class="c1 c13"><span class="c14"><a class="c7" href=
+"#h.oe86xuyvznlt">How to subset a data frame</a></span></p>
+<p class="c16 c1"><span class="c14"><a class="c7" href=
+"#h.pknd8vpayr35">New stuff: Regular Expressions</a></span></p>
+<p class="c1 c13"><span class="c14"><a class="c7" href=
+"#h.t2tqjovo18ay">Basic find and replace</a></span></p>
+<p class="c1 c13"><span class="c14"><a class="c7" href=
+"#h.wqyyny5o170l">Using "fuzzy" searching</a></span></p>
+<p class="c16 c1"><span class="c14"><a class="c7" href=
+"#h.kat5xk64x3z5">*Bonus Section:
+importing/exporting</a></span></p>
+<p class="c1 c13"><span class="c14"><a class="c7" href=
+"#h.bq6z9foipsbv">Setting the working directory</a></span></p>
+<p class="c1 c13"><span class="c14"><a class="c7" href=
+"#h.q9jxrjeyky5p">Data output into various format</a></span></p>
+<h1 class="c1"><a name="h.j79x1hsfcz8r" id=
+"h.j79x1hsfcz8r"></a><span>Reminder from the
+past</span><span class="c0 c9">&nbsp;- recapping the basics
+&nbsp;</span></h1>
+<h3 class="c1"><a name="h.qnk7f4ckvi16" id=
+"h.qnk7f4ckvi16"></a><span class="c0 c9">The
+environment</span></h3>
+<p class="c1"><span class="c0">To start with, let us reacquaint
+ourselves with the R environment. First of all, launch R (in</span>
+<span>the computer room, probably the &ldquo;Bio&rdquo;
+version&rdquo; if there are several to choose from; but any R
+install should be fine).</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Once you have done this you should
+see a single window. This is called the</span> <span class=
+"c0 c6">console</span><span class="c0">&nbsp;(see</span>
+<span class="c0 c9">Figure 1</span><span class="c0">).</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span style=
+"overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 420.00px; height: 326.40px;">
+<img alt="" src="images/image00.jpg" style=
+"width: 420.00px; height: 326.40px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+title=""></span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c9 c19">Figure 1</span><span class=
+"c0 c19">&nbsp; &nbsp;Screenshot of R, showing the console and a
+new script.</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">The console is where you go to
+actually</span> <span class="c0 c6">run</span><span class=
+"c0">&nbsp;lines of code. One way of doing this is by simply typing
+commands directly into the console. For example, have a go at
+typing the following...</span></p>
+<ul class="c18 lst-kix_list_4-0 start">
+<li class="c3 c1"><span class="c0 c2">1+2</span></li>
+<li class="c3 c1"><span class="c0 c2">0.014*365</span></li>
+<li class="c3 c1"><span class="c0 c2">pi*30^2</span></li>
+<li class="c3 c1"><span class="c0 c2">"Hello World"</span></li>
+</ul>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Notice that as soon as you
+press</span> <span class="c0 c6">return</span><span class=
+"c0">&nbsp;the command is processed, and the console spits an
+output back at you. By typing directly into the console in this way
+you can write code that takes effect immediately. This method is
+sometimes referred to as programming</span> <span class="c0 c6">"on
+the fly".</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">The other major way in which you
+will program in R is by writing code in a separate file called
+a</span> <span class="c0 c6">script</span><span class="c0">. Create
+a new script by going to</span> <span class="c0 c9">File&gt; New
+script</span><span class="c0">. An empty window pops up, in which
+you can also type code. Try typing</span> <span class=
+"c0 c2">1+2</span><span class="c0">&nbsp;in this window and
+pressing</span> <span class="c0 c6">return</span><span class="c0">.
+Notice that no output is produced - the curser just moves to the
+next line. This is because</span> <span class="c0 c9">a script is
+fundamentally different from the console</span><span class="c0">,
+and in fact works just like any other text editor. In order to run
+the code that we have written in a script we need to select the
+line(s) that we want to run and go to</span> <span class=
+"c0 c9">Edit&gt;Run line or selection</span><span class="c0">. This
+copies the selected line(s) over to the console and evaluates them
+in the order they are written. In this way we can create a long
+sequence of commands (i.e. a</span> <span class=
+"c0 c6">program</span><span class="c0">) in a way that would not be
+possible by working directly in the console. In general you should
+work mainly with scripts, and only use the console for small tasks,
+like checking your script is working as planned.</span></p>
+<p class="c1 c4"></p>
+<hr>
+<p class="c1"><span class="c0">Tip - to run an entire script,
+first</span> <span class="c0 c6">select all</span><span class=
+"c0">&nbsp;with the keyboard shortcut</span> <span class=
+"c0 c9">Ctrl+a</span><span class="c0">, then run selected lines
+with the shortcut</span> <span class=
+"c0 c9">Ctrl+r</span><span class="c0">&nbsp;(Windows
+only).</span></p>
+<hr>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Although it is possible to save some
+of the code that you have evaluated in the console (through
+the</span> <span class="c0 c9">File&gt;Save Workspace</span>
+<span class="c0">option), this method has proven to be slightly
+temperamental on Queen Mary computers in the past! On the other
+hand, scripts are nothing more than simple text files, and are
+therefore very unlikely to cause problems. For this reason we
+strongly suggest that you write anything you want to keep in
+scripts, and that you save these scripts in your home directory or
+on a USB stick.</span></p>
+<p class="c1"><span class=
+"c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It is also
+worth keeping in mind that the R help is extremely good. Just put a
+question mark before any function that you do not understand
+(e.g.</span> <span class="c0 c2">?length</span><span class="c0">)
+to bring up the help file for that function. There are also many R
+websites and forums that you may find useful. The best way to learn
+any programming language is to fiddle - so please fiddle away with
+these tools to guide you!</span></p>
+<h3 class="c1"><a name="h.d3dsv561kdv" id=
+"h.d3dsv561kdv"></a><span class="c0 c9">Variables</span></h3>
+<p class="c1"><span class="c0">The simple lines of code described
+above use R as little more than a pocket calculator. We can produce
+much more powerful programs by using</span> <span class=
+"c0 c6">variables</span><span class="c0">. A variable is a symbolic
+way of storing a particular set of values and/or characters. For
+example, try typing</span> <span class=
+"c0 c2">x&lt;-5</span><span class="c0">&nbsp;into the console and
+hitting</span> <span class="c0 c6">return</span><span class="c0">.
+Once we have typed this command the symbol</span> <span class=
+"c0 c2">x</span><span class="c0">&nbsp;becomes essentially
+equivalent to the number</span> <span class=
+"c0 c2">5</span><span class="c0">&nbsp;from R's point of view. We
+can check this by typing</span> <span class=
+"c0 c2">x</span><span class="c0">&nbsp;into the console and
+hitting</span> <span class="c0 c6">return</span><span class="c0">.
+R outputs the number 5, exactly as it would do if we typed the
+number</span> <span class="c0 c2">5</span><span class=
+"c0">&nbsp;and hit return. Similarly, try typing</span>
+<span class="c0 c2">3*x^2</span><span class="c0">. We get the
+answer</span> <span class="c0 c2">75</span><span class="c0">, which
+is exactly what we would obtain by typing</span> <span class=
+"c0 c2">3*5^2</span><span class="c0">&nbsp;(the power operation is
+executed before the multiplication). We can say that</span>
+<span class="c0 c2">x</span><span class="c0">&nbsp;has been</span>
+<span class="c0 c6">assigned</span><span class="c0">&nbsp;the
+number</span> <span class="c0 c2">5</span><span class="c0">, and
+the</span> <span class="c0 c2">&lt;-</span><span class=
+"c0">&nbsp;operation is called the</span> <span class=
+"c0 c6">assignment</span><span class=
+"c0">&nbsp;operator.</span></p>
+<p class="c1 c4"></p>
+<hr>
+<p class="c1"><span class="c0">Note - the = symbol can also be used
+for assignment</span><span>&nbsp;instead of</span> <span class=
+"c2">&lt;-</span><span>, but this is frowned upon by most R users
+(it makes your code less readable). Thus please try to use</span>
+<span class="c0 c2">&lt;-</span><span>&nbsp;. When in doubt about
+how to write something, check</span> <span class="c14"><a class=
+"c7" href=
+"http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml">Google&rsquo;s
+R style guide</a></span><span>; it provides standard guidelines
+which most R users follow.</span></p>
+<hr>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">So, what would happen if we
+typed</span><span class=
+"c0 c2">&nbsp;y&lt;-3*x^2</span><span class="c0">? We have already
+seen that R sees the variable x as equivalent to the number</span>
+<span class="c0 c2">5</span><span class="c0">, meaning this must be
+the same as typing</span><span class=
+"c0 c2">&nbsp;y&lt;-3*5^2</span><span class="c0">. It follows that
+the command</span> <span class=
+"c0 c2">y&lt;-3*x^2</span><span class="c0">&nbsp;must assign the
+value</span> <span class="c0 c2">75</span><span class="c0">&nbsp;to
+the variable</span> <span class="c0 c2">y</span><span class="c0">.
+In this way it is possible to create new variables out of old
+variables, and thereby build up the complexity of a
+program.</span></p>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_19-0 start">
+<li class="c3 c1"><span class="c0 c9">Q1.</span><span class=
+"c0">&nbsp;Try making a new variable,</span> <span class=
+"c0 c2">z</span><span class="c0">, out of the values in</span>
+<span class="c0 c2">x</span><span class="c0">&nbsp;and</span>
+<span class="c0 c2">y</span><span class="c0">. You can choose any
+formula you want for</span> <span class=
+"c0 c2">z</span><span class="c0">, just as long as it contains
+both</span> <span class="c0 c2">x</span><span class=
+"c0">&nbsp;and</span> <span class="c0 c2">y</span><span class=
+"c0">.</span></li>
+</ul>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">It is worth pointing out that you
+don't have to give variables abstract mathematical names such
+as</span> <span class="c0 c2">x</span><span class=
+"c0">&nbsp;and</span> <span class="c0 c2">y</span><span class=
+"c0">, and in fact most of the time you are better off not doing
+so. At the other end of the spectrum, it is not a good idea to have
+variables like</span> <span class=
+"c0 c2">joebloggsresearchproject2013variable1</span><span class=
+"c0">. But in general naming variables is not rocket science! Just
+remember that variable names should be chosen so that if you return
+to a script after a number of months (or even years), the script
+will still make sense.</span></p>
+<p class="c1 c4"></p>
+<hr>
+<p class="c1"><span class="c0">Note - some variable names are not
+allowed. Typing</span> <span class=
+"c0 c2">?make.names</span><span class="c0">&nbsp;in the console
+brings up a help file describing the important variable name
+restrictions.</span></p>
+<hr>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<h3 class="c1"><a name="h.l6szppex757d" id=
+"h.l6szppex757d"></a><span class="c0 c9">Good coding
+practice</span></h3>
+<p class="c1"><span class="c0">Finally, remember to keep your code
+clean and tidy by making use of</span> <span class=
+"c0 c6">comments</span><span class="c0">&nbsp;and</span>
+<span class="c0 c6">white space</span><span class="c0">. &nbsp;Copy
+the following code into a new script and run it:</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2"># Copy from this
+line...</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2"># Define first
+variable</span></p>
+<p class="c1"><span class="c0 c2">var1 &lt;- 5</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2"># Define second
+variable</span></p>
+<p class="c1"><span class="c0 c2">var2 &lt;- 12</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2"># Multiply them
+together</span></p>
+<p class="c1"><span class="c0 c2">var1*var2</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2"># ...to this line</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Look at the output produced in the
+console. Notice that R has simply skipped over all lines starting
+with the</span> <span class="c0 c2">#</span><span class=
+"c0">&nbsp;symbol. This symbol starts a</span> <span class=
+"c0 c6">comment</span><span class="c0">, meaning you can type
+whatever you like after this symbol and it won't be read by the
+program. This allows you to</span> <span class=
+"c0 c6">annotate</span><span class="c0">&nbsp;your code, i.e. to
+write helpful notes in between all the raw program code. Notice
+also that</span> <span class="c0 c6">white space</span><span class=
+"c0">&nbsp;such as empty lines, spaces and indentations (obtained
+by pressing the</span> <span class="c0 c6">Tab</span><span class=
+"c0">&nbsp;key) are invisible to R. Making good use of white space
+helps keep your code readable.</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">The following two examples make this
+point clear. Both programs do exactly the same thing, but one will
+make sense one year from now, and the other will not!</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c9">Example 1</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2 c11">blah &lt;-0.01</span></p>
+<p class="c1"><span class="c0 c2 c11">blah2&lt;-0.005</span></p>
+<p class="c1"><span class="c0 c2 c11">blah3&lt;- 0.0036</span></p>
+<p class="c1"><span class="c0 c2 c11">bigblah&lt;- blah+ blah2+
+blah3</span></p>
+<p class="c1"><span class=
+"c0 c2 c11">bobob&lt;-100*exp(bigblah*10)</span></p>
+<p class="c1"><span class="c0 c2 c11">bobob</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c9">Example 2</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class=
+"c0 c2 c11">#--------------------------------</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2 c11">#
+Program:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PopSize.R</span></p>
+<p class="c1"><span class="c0 c2 c11">#
+Author:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bob
+Verity</span></p>
+<p class="c1"><span class="c0 c2 c11">#
+Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01/10/2013</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2 c11"># Purpose:</span></p>
+<p class="c1"><span class="c0 c2 c11"># Works out the size of a
+population under a simple model of exponential growth. The growth
+rate is assumed to be equal to the sum of the nutrient content (%
+sugars), the temperature (centigrade above 20), and the humidity
+(%). Other parameters include the starting population size (number
+of individuals) and the time allowed to grow (hours).</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class=
+"c0 c2 c11">#--------------------------------</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2 c11"># Define input
+parameters</span></p>
+<p class="c1"><span class="c0 c2 c11">nutrients &lt;-
+0.01</span></p>
+<p class="c1"><span class="c0 c2 c11">temp &nbsp; &nbsp;
+&nbsp;&lt;- 0.005</span></p>
+<p class="c1"><span class="c0 c2 c11">humidity</span><span class=
+"c2 c11">&nbsp;</span> <span class="c0 c2 c11">&lt;-
+0.0036</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2 c11">starting</span><span class=
+"c2 c11">.</span><span class="c0 c2 c11">size &lt;- 100</span></p>
+<p class="c1"><span class="c0 c2 c11">grow</span><span class=
+"c2 c11">.</span><span class="c0 c2 c11">time &nbsp; &nbsp; &lt;-
+10</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2 c11"># Calculate total growth
+rate</span></p>
+<p class="c1"><span class="c0 c2 c11">growth</span><span class=
+"c2 c11">.</span><span class="c0 c2 c11">rate &lt;-
+nutrients+temp+humidity</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2 c11"># Calculate population size
+at the end of the time period</span></p>
+<p class="c1"><span class="c0 c2 c11">end</span><span class=
+"c2 c11">.</span><span class="c0 c2 c11">size &lt;-
+starting</span><span class="c2 c11">.</span><span class=
+"c0 c2 c11">size*exp(growth</span><span class=
+"c2 c11">.r</span><span class=
+"c0 c2 c11">ate*grow</span><span class=
+"c2 c11">.</span><span class="c0 c2 c11">time)</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2 c11"># Return end population size
+in the console</span></p>
+<p class="c1"><span class="c0 c2 c11">end</span><span class=
+"c2 c11">.</span><span class="c0 c2 c11">size</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class=
+"c0 c2 c11">#--------------------------------</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c9">Q2.</span> <span class="c0">Write
+&nbsp;your own</span> <span class="c0 c6">well annotated and fully
+functional</span><span class="c0">&nbsp;script for calculating the
+volume of a rectangular room with the following
+dimensions:</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">length: 5m</span></p>
+<p class="c1"><span class="c0">width: 4m</span></p>
+<p class="c1"><span class="c0">height: 3m</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">The layout and design of the program
+are much more important than the calculations here!</span></p>
+<p class="c1 c4"></p>
+<h1 class="c1"><a name="h.62ietc4d9z2i" id=
+"h.62ietc4d9z2i"></a><span>Reminder from last year:</span>
+<span class="c0 c9">Data Classes</span></h1>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">One thing that it is important to
+keep in mind is the</span> <span class=
+"c0 c6">class</span><span class="c0">&nbsp;of your data. In simple
+terms, the class of your data tells you whether R interprets the
+data as numbers, letters, factors, logical values or a number of
+alternatives. You can find out the class of a variable using the
+function</span> <span class="c0 c2">class()</span><span class=
+"c0">. For example, create the variable</span> <span class=
+"c0 c2">mydata&lt;-1024</span><span class="c0">. When you
+evaluate</span> <span class=
+"c0 c2">class(mydata)</span><span class="c0">&nbsp;you will find
+that this data is of class "numeric". The majority of the data that
+you will be working with will be numeric, although there some other
+classes that you will come across when analyzing real
+data.</span></p>
+<p class="c1"><span class=
+"c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An important
+class of data that you might not be familiar with is</span>
+<span class="c0 c6">logical</span><span class="c0">&nbsp;data.
+Simply put, logical data can only take one of two possible
+values:</span> <span class="c0 c2">TRUE</span><span class=
+"c0">&nbsp;or</span> <span class="c0 c2">FALSE</span><span class=
+"c0">. There are a number of different ways of arriving at a
+logical variable. The most obvious is to simply define a variable
+as true, for example</span> <span class=
+"c0 c2">x&lt;-TRUE</span><span class="c0">&nbsp;(or just</span>
+<span class="c0 c2">x&lt;-T</span><span class="c0">&nbsp;for
+short), or false, for example</span> <span class=
+"c0 c2">x&lt;-FALSE</span><span class="c0">&nbsp;(or just</span>
+<span class="c0 c2">x&lt;-F</span><span class="c0">&nbsp;for
+short). Try creating a logical variable in this way, and look at
+the class of the variable - if you have done it correctly it should
+read "logical"(keep in mind that R is case-sensitive, i.e.</span>
+<span class="c0 c2">x&lt;-false</span><span class="c0">&nbsp;will
+throw an error). However, this is not the way that logical
+variables tend to be used in programming. More often than not we
+arrive at a logical variable through a particular type of
+calculation, called a</span> <span class="c0 c6">logical
+expression</span><span class="c0">. You can think of a logical
+expression as a statement that we send to R, which may be a true
+statement, or it may be a lie! For example, try evaluating the
+code</span> <span class="c0 c2">5&gt;4</span><span class="c0">.
+This statement is clearly true, and accordingly R returns a value
+"</span><span class="c0 c2">TRUE</span><span class="c0">". The
+statement</span> <span class="c0 c2">5&lt;4</span><span class=
+"c0">, on the other hand, returns the value "</span><span class=
+"c0 c2">FALSE</span><span class="c0">". We can assign this logical
+value to a variable by using the logical expression as input to the
+variable. This sounds complicated, but in practice it is very
+simple. Take the example</span> <span class=
+"c0 c2">x&lt;-(5&gt;4)</span><span class="c0">. You can read this
+to mean "the variable</span> <span class=
+"c0 c2">x</span><span class="c0">&nbsp;is assigned the outcome of
+the logical expression</span> <span class=
+"c0 c2">5&gt;4</span><span class="c0">". In this particular example
+the variable</span> <span class="c0 c2">x</span><span class=
+"c0">&nbsp;will be assigned the logical value "</span><span class=
+"c0 c2">TRUE</span><span class="c0">". Notice that the logical
+expression itself has been placed within curly brackets. This is
+not strictly required, but is good coding practice, as it avoids
+confusion between the assignment symbol and the logical
+expression.</span></p>
+<p class="c1"><span class=
+"c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The main
+logical</span> <span class="c0 c6">operators</span><span class=
+"c0">&nbsp;that you should be familiar with are the
+following:</span></p>
+<ol class="c18 lst-kix_list_21-0 start" start="1">
+<li class="c3 c1"><span class="c0 c2">&gt;</span><span class="c0">,
+is greater than</span></li>
+<li class="c3 c1"><span class="c0 c2">&lt;</span><span class="c0">,
+is less than</span></li>
+<li class="c3 c1"><span class="c0 c2">&gt;=</span><span class=
+"c0">, is greater than or equal to</span></li>
+<li class="c3 c1"><span class="c0 c2">&lt;=</span><span class=
+"c0">, is less than or equal to</span></li>
+<li class="c3 c1"><span class="c0 c2">==</span><span class="c0">,
+is equal to</span></li>
+<li class="c3 c1"><span class="c0 c2">!=</span><span class="c0">.
+is not equal to</span></li>
+</ol>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Have a play around with some of
+these operators in your own made-up logical expressions. Make sure
+you are comfortable assigning a logical value to a
+variable.</span></p>
+<p class="c1"><span class=
+"c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We can create
+more sophisticated logical expressions using the "and" command, and
+the "or" command. The "and" command is written</span> <span class=
+"c0 c2">&amp;</span><span class="c0">&nbsp;(keyboard
+shortcut</span> <span class="c0 c9">Shift+7</span><span class=
+"c0">), while the "or" command is written</span> <span class=
+"c0 c2">|</span><span class="c0">&nbsp;(keyboard shortcut</span>
+<span class="c0 c9">Shift+\</span><span class="c0">&nbsp;on a
+standard Windows keyboard). These operators can be placed between
+two or more logical expressions - exactly as you would do in a
+spoken sentence. For example, the expression</span> <span class=
+"c0 c2">(x&gt;5 &amp; x&lt;=10)</span><span class="c0">&nbsp;can be
+read "</span><span class="c0 c2">x</span><span class="c0">&nbsp;is
+greater than five,</span> <span class=
+"c0 c6">and</span><span class="c0">&nbsp;</span><span class=
+"c0 c2">x</span><span class="c0">&nbsp;is less than or equal to
+ten". Similarly, the expression</span> <span class="c0 c2">(x&lt;6
+| x==12)</span><span class="c0">&nbsp;can be read
+"</span><span class="c0 c2">x</span><span class="c0">&nbsp;is less
+than six,</span> <span class="c0 c6">or</span><span class=
+"c0">&nbsp;</span><span class="c0 c2">x</span><span class=
+"c0">&nbsp;is equal to twelve". By using a combination of these
+operators, while making good use of curly brackets, it is possible
+to come up with some quite complex statements.</span></p>
+<ul class="c18 lst-kix_list_22-0 start">
+<li class="c3 c1"><span class="c0 c9">Q3.</span><span class=
+"c0">&nbsp;Let us define the variable</span> <span class=
+"c0 c2">x&lt;-10</span><span class="c0">. What will be the outcome
+of the following logical expressions?</span></li>
+</ul>
+<ul class="c18 lst-kix_list_20-1 start">
+<li class="c5 c1"><span class="c0 c2">(x&gt;5)</span></li>
+<li class="c5 c1"><span class="c0 c2">(x&lt;=10)</span></li>
+<li class="c5 c1"><span class="c0 c2">(x!=10)</span></li>
+<li class="c5 c1"><span class="c0 c2">(x&gt;5 &amp;
+x&lt;105)</span></li>
+<li class="c5 c1"><span class="c0 c2">(x&gt;20 | x==8)</span></li>
+<li class="c5 c1"><span class="c0 c2">(x&lt;4 | x&gt;14 |
+x==10)</span></li>
+</ul>
+<p class="c1 c4 c22"></p>
+<p class="c22 c1 c4"></p>
+<ul class="c18 lst-kix_list_22-0">
+<li class="c3 c1"><span class="c0 c9">Q4.</span><span class=
+"c0">&nbsp;Given three variables, called</span> <span class=
+"c0 c2">x</span><span class="c0">,</span> <span class=
+"c0 c2">y</span><span class="c0">&nbsp;and</span> <span class=
+"c0 c2">z</span><span class="c0">, how would you write the
+following sentence in a logical expression: "</span><span class=
+"c0 c6">the variable</span> <span class=
+"c0 c2">x</span><span class="c0 c6">&nbsp;is less than the
+variable</span> <span class="c0 c2">y</span><span class="c0 c6">,
+or it is greater than the variable</span> <span class=
+"c0 c2">z</span><span class="c0">"?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">As well as numerical and logical
+data you will come across simple written words; such as species
+names, or the names of drugs used in a particular trial. Words such
+as this are represented in quotation marks. For example, try
+typing</span> <span class=
+"c0 c2">mydata&lt;-"Homo.sapiens"</span><span class="c0">&nbsp;and
+hitting</span> <span class="c0 c6">return</span><span class="c0">.
+By placing this name in quotation marks you tell R that the input
+data consists of a string of characters. &nbsp;Without the
+quotation marks R would think that</span> <span class=
+"c0 c2">Homo.sapiens</span><span class="c0">&nbsp;was another
+variable, and would then complain if it didn't find it. If you have
+input a string of characters correctly you will find that when you
+evaluate</span> <span class="c0 c2">class(mydata</span><span class=
+"c0">) the data is of class "character".</span></p>
+<p class="c1"><span class=
+"c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As you might
+expect, you cannot perform calculations on character data - there
+is no such thing as a word multiplied by 5! This is particularly
+important, as</span> <span class="c0 c9">numbers can be stored as
+either characters or numeric values</span><span class="c0">. For
+example, create the variable</span> <span class=
+"c0 c2">mydata&lt;-"4"</span><span class="c0">. If you type</span>
+<span class="c0 c2">class(mydata)</span><span class="c0">&nbsp;you
+will see that this data is stored as text, rather than as a
+numerical value. Often this can be the cause of hours of
+headache!</span></p>
+<p class="c1 c4"></p>
+<hr>
+<p class="c1"><span class="c0">Tip - if you have a number or a
+series of numbers that are stored in character form then you can
+convert them back to actual numbers using the function</span>
+<span class="c0 c2">as.numeric()</span><span class=
+"c0">.</span></p>
+<hr>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Conversely, you can perform
+calculations on logical data. When being used in a standard
+calculation, the logical value</span> <span class=
+"c0 c2">TRUE</span><span class="c0">&nbsp;is given a numeric value
+1, while the logical value</span> <span class=
+"c0 c2">FALSE</span><span class="c0">&nbsp;is given a numeric value
+0. You can check this with a simple calculation like</span>
+<span class="c0 c2">5+TRUE</span><span class="c0">, or</span>
+<span class="c0 c2">10*FALSE</span><span class="c0">. This may be
+confusing at first, but in fact there are times when this feature
+is extremely useful.</span></p>
+<h1 class="c1"><a name="h.vikloz2p6jp9" id=
+"h.vikloz2p6jp9"></a><span>Reminder from last year:</span>
+<span class="c0 c9">Types of Objects</span></h1>
+<h3 class="c1"><a name="h.3qbtzxbz9m5e" id=
+"h.3qbtzxbz9m5e"></a><span class="c0 c9">Scalars</span></h3>
+<p class="c1"><span class="c0">There are many different types of
+objects available in R. So far we only looked at objects that
+contain a single variable, as in the variable</span> <span class=
+"c0 c2">x&lt;-5</span><span class="c0">. This is called a</span>
+<span class="c0 c6">scalar</span><span class="c0">&nbsp;object,
+meaning the variable</span> <span class=
+"c0 c2">x</span><span class="c0">&nbsp;is assigned just a single
+value. Scalars are very useful, and it is rare for a program not to
+contain any scalar values, but it is unlikely that your actual data
+will be a single entry long! To deal with larger collections of
+data we need other types of objects.</span></p>
+<h3 class="c1"><a name="h.3vpvo71zp9lv" id=
+"h.3vpvo71zp9lv"></a><span class="c0 c9">Vectors</span></h3>
+<p class="c1"><span class="c0">Another very commonly used type of
+object is the</span> <span class="c0 c6">vector</span><span class=
+"c0">. You can create a vector in a number of different ways,
+including but not limited to the following:</span></p>
+<ul class="c18 lst-kix_list_8-0 start">
+<li class="c3 c1"><span class="c0 c2">vec1 &lt;-
+c(1,1,2,3,5,8)</span></li>
+<li class="c3 c1"><span class="c0 c2">vec2 &lt;- 5:10</span></li>
+<li class="c3 c1"><span class="c0 c2">vec3 &lt;-
+seq(0,10,0.25)</span></li>
+<li class="c3 c1"><span class="c0 c2">vec4 &lt;-
+rep(2,12)</span></li>
+<li class="c3 c1"><span class="c0 c2">vec5 &lt;- c("How", "Now",
+"Brown", "Cow")</span></li>
+<li class="c3 c1"><span class="c0 c2">vec6 &lt;-
+c(T,T,F,T,T,F)</span></li>
+</ul>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Hopefully you are familiar with at
+least some of these methods from last year. Evaluate each of these
+commands, and in each case have a look at the values that have been
+assigned to the variable. You will see that these variables do not
+contain single numbers, as in previous examples. Rather, each
+variable contains an array of numbers arranged one after the other.
+This is the defining feature of a vector. The individual values
+that make up a vector are called the</span> <span class=
+"c0 c6">elements</span><span class="c0">&nbsp;of the vector. For
+example, the number</span> <span class="c0 c2">3</span><span class=
+"c0">&nbsp;is the 4</span><span class="c8">th</span><span class=
+"c0">&nbsp;element of the vector</span> <span class=
+"c0 c2">vec1</span><span class="c0">. You can access the individual
+elements of a vector using square brackets. For example, the
+notation</span> <span class="c0 c2">vec1[4]</span><span class=
+"c0">&nbsp;returns the 4</span><span class=
+"c8">th</span><span class="c0">&nbsp;element of</span> <span class=
+"c0 c2">vec1</span><span class="c0">&nbsp;only.</span></p>
+<ul class="c18 lst-kix_list_9-0 start">
+<li class="c3 c1"><span class="c0 c9">Q5.</span><span class=
+"c0">&nbsp;What number would you obtain if you typed</span>
+<span class="c0 c2">vec2[3]</span><span class="c0">&nbsp;in the
+console? (try to work this one out before running it!)</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_9-0">
+<li class="c3 c1"><span class="c0 c9">Q6.</span><span class=
+"c0">&nbsp;What happens when you type</span> <span class=
+"c0 c2">vec3[1:5]</span><span class="c0">&nbsp;in the console and
+hit return? How can you explain this output?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_9-0">
+<li class="c3 c1"><span class="c0 c9">Q7.</span><span class=
+"c0">&nbsp;How would you index just the 8</span><span class=
+"c8">th</span><span class="c0">, 13</span><span class=
+"c8">th</span><span class="c0">, and 21</span><span class=
+"c8">st</span><span class="c0">&nbsp;elements of the vector</span>
+<span class="c0 c2">vec3</span><span class="c0">?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Simple calculations can be performed
+on vectors, in which case the operation is applied to every element
+of the vector separately. For example, try typing</span>
+<span class="c0 c2">vec1</span><span class=
+"c2">.</span><span class="c0 c2">squared&lt;-vec1^2</span><span class="c0">&nbsp;in
+the console. You will find that</span> <span class=
+"c0 c2">vec1</span><span class="c2">.</span><span class=
+"c0 c2">squared</span><span class="c0">&nbsp;contains values taken
+from</span> <span class="c0 c2">vec1</span><span class="c0">, where
+each element has been squared individually. You can also perform
+operations involving several vectors, as long as the vectors
+have</span> <span class="c0 c6">compatible</span><span class=
+"c0">&nbsp;lengths. For example, try typing</span> <span class=
+"c0 c2">combined</span><span class="c2">.</span><span class=
+"c0 c2">vec1&lt;-vec1*vec2</span><span class="c0">. You will find
+that each of the elements of</span> <span class=
+"c0 c2">combined</span><span class="c2">.</span><span class=
+"c0 c2">vec1</span><span class="c0">&nbsp;is equal to the product
+of the corresponding elements in</span> <span class=
+"c0 c2">vec1</span><span class="c0">&nbsp;and</span> <span class=
+"c0 c2">vec2</span><span class="c0">.</span></p>
+<ul class="c18 lst-kix_list_10-0 start">
+<li class="c3 c1"><span class="c0 c9">Q8.</span><span class=
+"c0">&nbsp;Try evaluating</span> <span class=
+"c0 c2">combined</span><span class="c2">.</span><span class=
+"c0 c2">vec2&lt;-vec1*vec3</span><span class="c0">&nbsp;in the
+console. What happens? Why?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_10-0">
+<li class="c3 c1"><span class="c0 c9">Q9.</span><span class=
+"c0">&nbsp;In fact,</span> <span class=
+"c0 c6">compatible</span><span class="c0">&nbsp;does not mean that
+vectors have to be exactly the same length. Try evaluating</span>
+<span class="c0 c2">combined</span><span class=
+"c2">.</span><span class=
+"c0 c2">vec3&lt;-vec1*vec4</span><span class="c0">&nbsp;in the
+console, and look at the result. What is the reasoning behind the
+values produced?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<h3 class="c1"><a name="h.6583784ey49l" id=
+"h.6583784ey49l"></a><span class="c0 c9">Matrices</span></h3>
+<p class="c1"><span class="c0">Moving forward, another major type
+of object in R is the</span> <span class=
+"c0 c6">matrix</span><span class="c0">. A matrix is simply a
+rectangular grid of values. One of the simplest ways of producing a
+matrix is by combining several vectors through the functions</span>
+<span class="c0 c2">rbind()</span><span class="c0">&nbsp;and</span>
+<span class="c0 c2">cbind()</span><span class="c0">.</span></p>
+<ul class="c18 lst-kix_list_11-0 start">
+<li class="c3 c1"><span class="c0 c9">Q10.</span><span class=
+"c0">&nbsp;What happens when you evaluate</span> <span class=
+"c0 c2">rbind(vec1,vec2)</span><span class="c0">? What happens when
+you evaluate</span> <span class=
+"c0 c2">cbind(vec1,vec2)</span><span class="c0">?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_11-0">
+<li class="c3 c1"><span class="c0 c9">Q11.</span><span class=
+"c0">&nbsp;When you evaluate</span><span class=
+"c0 c2">&nbsp;rbind(vec1,vec3)</span><span class="c0">&nbsp;you get
+a warning message. Why?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_11-0">
+<li class="c3 c1"><span class="c0 c9">Q12.</span><span class=
+"c0">&nbsp;What happens when you evaluate</span><span class=
+"c0 c2">&nbsp;rbind(vec1,vec4)</span><span class="c0">?
+Why?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">You can also create matrices
+directly in a number of different ways. Have a look at the matrices
+produced by the following methods, and try to understand where the
+values come from in each case:</span></p>
+<ul class="c18 lst-kix_list_12-0 start">
+<li class="c3 c1"><span class="c0 c2">mat1 &lt;- matrix(1:24,
+nrow=6, ncol=4)</span></li>
+<li class="c3 c1"><span class="c0 c2">mat2 &lt;- matrix(1:24,
+nrow=6, ncol=4, byrow=T)</span></li>
+<li class="c3 c1"><span class="c0 c2">mat3 &lt;-
+diag(x=5)</span></li>
+<li class="c3 c1"><span class="c0 c2">mat4 &lt;- outer(X=1:5,
+Y=4:8)</span></li>
+<li class="c3 c1"><span class="c0 c2">mat5 &lt;- matrix("Hello
+World",nrow=2,ncol=5)</span></li>
+</ul>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">As with vectors, you can index the
+elements of a matrix using square brackets. Because a matrix has
+rows and columns, you now need to tell R which row(s)</span>
+<span class="c0 c6">and</span><span class="c0">&nbsp;which
+column(s) you are interested in. The notation takes the form</span>
+<span class="c0 c2">matrix[row,column]</span><span class="c0">. For
+example, try evaluating</span> <span class=
+"c0 c2">mat1[4,3]</span><span class="c0">. You can look at multiple
+rows and/or columns by specifying a range of values. For example,
+try evaluating &nbsp;</span><span class="c0 c2">mat1[1:4,
+1:2]</span><span class="c0">.</span></p>
+<p class="c1"><span class=
+"c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One of the
+most useful tricks that you can use here is to look at</span>
+<span class="c0 c6">all</span><span class="c0">&nbsp;of the rows or
+columns of a particular matrix by leaving a particular argument
+blank. For example, you could look at all the rows in the
+2</span><span class="c8">nd</span><span class="c0">&nbsp;column
+of</span> <span class="c0 c2">mat1</span><span class="c0">&nbsp;by
+evaluating</span> <span class="c0 c2">mat1[ ,2]</span><span class=
+"c0">. Similarly, you could look at all of the columns in rows 1 to
+3 by evaluating</span> <span class="c0 c2">mat1[1:3,
+]</span><span class="c0">&nbsp;(it is even possible to leave out
+the blank, i.e.</span> <span class=
+"c0 c2">mat1[1:3,]</span><span class="c0">). Try playing around
+with different ways of accessing the elements of a matrix until you
+are comfortable with them. This skill will be very important later
+on when we look at subsetting objects.</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">As with vectors, you can perform
+simple calculations on matrices, in which case the calculation
+applies to each element separately. For example, try
+evaluating</span> <span class="c0 c2">(mat3+2)*2</span><span class=
+"c0">&nbsp;and looking at the output. You can also combine the
+values in several matrices, as long as the dimensions of the
+matrices are compatible. For example, try evaluating</span>
+<span class="c0 c2">(mat3*100)+mat4</span><span class="c0">.
+Finally, you can create logical expressions that apply to an entire
+matrix. For example, try evaluating</span> <span class=
+"c0 c2">(mat1&gt;10)</span><span class="c0">.</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">There are a number of useful
+functions that can be applied to matrices. Have a look at each of
+the following functions, and try to make sense of the
+output:</span></p>
+<ul class="c18 lst-kix_list_13-0 start">
+<li class="c3 c1"><span class="c0 c2">length()</span></li>
+<li class="c3 c1"><span class="c0 c2">dim()</span></li>
+<li class="c3 c1"><span class="c0 c2">t()</span></li>
+<li class="c3 c1"><span class="c0 c2">colSums()</span></li>
+<li class="c3 c1"><span class="c0 c2">summary()</span></li>
+</ul>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Keep in mind that if you ever need
+help in understanding a function, just bring up the help file for
+that function.</span></p>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_12-0">
+<li class="c3 c1"><span class="c0 c9">Q13.</span><span class=
+"c0">&nbsp;The variable</span> <span class=
+"c0 c2">mat1</span><span class="c0">&nbsp;describes a matrix,
+produced by the following code:</span></li>
+</ul>
+<p class="c1"><span class=
+"c0 c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mat1
+&lt;- matrix(1:50, nrow=10, ncol=5)</span></p>
+<p class="c1"><span class=
+"c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What number
+would we expect to see when we evaluate</span> <span class=
+"c0 c2">mat1[1,2]</span><span class="c0">?
+Why</span><span>&nbsp;not a different number?</span><span class=
+"c0">&nbsp;</span></p>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_20-0 start">
+<li class="c3 c1"><span class="c0 c9">Q14.</span><span class=
+"c0">&nbsp;Which of these commands would output the
+2</span><span class="c8">nd</span><span class="c0">&nbsp;and
+4</span><span class="c8">th</span><span class="c0">&nbsp;columns
+of</span> <span class="c0 c2">mat1</span><span class=
+"c0">&nbsp;only?</span></li>
+</ul>
+<ul class="c18 lst-kix_list_20-1">
+<li class="c5 c1"><span class="c0 c2">mat1[2,4]</span></li>
+<li class="c1 c5"><span class="c0 c2">mat1(,(2,4))</span></li>
+<li class="c5 c1"><span class="c0 c2">mat1[c(2,4),]</span></li>
+<li class="c5 c1"><span class="c0 c2">mat1[,c(2,4)]</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_20-0">
+<li class="c3 c1"><span class="c0 c9">Q15.</span><span class=
+"c0">&nbsp;Write your own (fully annotated) program for creating a
+matrix from three separate vectors. The first vector,</span>
+<span class="c0 c2">vec1</span><span class="c0">, should be 50
+elements long, and should simply contain the numbers 1 to 50. The
+second vector,</span> <span class="c0 c2">vec2</span><span class=
+"c0">, should contain the square of these numbers (i.e.</span>
+<span class="c0 c2">vec1</span><span class="c0">&nbsp;raised to the
+power 2). The third vector,</span> <span class=
+"c0 c2">vec3</span><span class="c0">, should contain the cube of
+these numbers (i.e.</span> <span class=
+"c0 c2">vec1</span><span class="c0">&nbsp;raised to the power 3).
+Finally, create a matrix,</span> <span class=
+"c0 c2">mymatrix</span><span class="c0">, which has</span>
+<span class="c0 c2">vec1</span><span class="c0">&nbsp;as the first
+row,</span> <span class="c0 c2">vec2</span><span class=
+"c0">&nbsp;as the second row, and</span> <span class=
+"c0 c2">vec3</span><span class="c0">&nbsp;as the third row. Ask a
+neighbour</span> <span>what they think?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<h3 class="c1"><a name="h.zf3g08azr7yq" id=
+"h.zf3g08azr7yq"></a><span class="c0 c9">Data frames and data
+classes</span></h3>
+<p class="c1"><span class="c0">The final type of object that we
+will consider is the</span> <span class="c0 c6">data
+frame</span><span class="c0">. On the face of it these look very
+similar to matrices, however, there are some important differences
+between data frames and matrices. The most important difference is
+that in a matrix all the elements need to be of the same class,
+while in a data frame different classes are allowed.</span></p>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Fortunately for us there are already
+a load of example data frames loaded into R by default. For the
+next few tasks we will work with the data set</span> <span class=
+"c0 c2">Puromycin</span><span class="c0">, which details the
+reaction velocity versus substrate concentration in an enzymatic
+reaction involving untreated cells or cells treated with Puromycin.
+First, load this data into your own personal variable by
+typing</span> <span class="c0 c2">puromycin</span><span class=
+"c2">.</span><span class=
+"c0 c2">data&lt;-Puromycin</span><span class="c0">. From now on we
+will work with the variable</span> <span class=
+"c0 c2">puromycin</span><span class="c2">.</span><span class=
+"c0 c2">data</span><span class="c0">, rather than</span>
+<span class="c0 c2">Puromycin</span><span class="c0">&nbsp;(this
+ensures that you do not accidentally overwrite the data already in
+R). Have a look at your variable</span> <span class=
+"c0 c2">puromycin</span><span class="c2">.</span><span class=
+"c0 c2">data</span><span class="c0">. Notice that the first two
+columns contain numbers, while the third column contains the words
+"treated" or "untreated".</span></p>
+<ul class="c18 lst-kix_list_14-0 start">
+<li class="c3 c1"><span class="c0">Type</span> <span class=
+"c0 c2">class(puromycin</span><span class="c2">.</span><span class=
+"c0 c2">data[,1])</span><span class="c0">&nbsp;to find the class of
+the first column. As we would expect, we find that this column is
+of class "numeric".</span></li>
+<li class="c3 c1"><span class="c0">Type</span> <span class=
+"c0 c2">class(puromycin</span><span class="c2">.</span><span class=
+"c0 c2">data[,2])</span><span class="c0">&nbsp;to find the class of
+the second column. Again, we find that this column is of class
+"numeric".</span></li>
+<li class="c3 c1"><span class="c0">Type</span> <span class=
+"c0 c2">class(puromycin</span><span class="c2">.</span><span class=
+"c0 c2">data[,3])</span><span class="c0">&nbsp;to find the class of
+the third column. This time we find that the column contains data
+of class "factor".</span></li>
+</ul>
+<p class="c1 c4"></p>
+<hr>
+<p class="c1"><span class="c0">Tip - one of the nice things about
+data frames is that columns often have names - in this case</span>
+<span class="c0 c2">conc</span><span class="c0">,</span>
+<span class="c0 c2">rate</span><span class="c0">, and</span>
+<span class="c0 c2">state</span><span class="c0">. This means that
+we can access a particular column using the dollar symbol, for
+instance</span> <span class="c0 c2">puromycin</span><span class=
+"c2">.</span><span class="c0 c2">data$conc</span><span class="c0">.
+This command is equivalent to selecting a column using square
+brackets, as in</span> <span class=
+"c0 c2">puromycin</span><span class="c2">.</span><span class=
+"c0 c2">data[,1]</span><span class="c0">.</span></p>
+<hr>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">We can see that different classes
+are stored within the same object in the data frame</span>
+<span class="c0 c2">puromycin</span><span class=
+"c2">.</span><span class="c0 c2">data</span><span class="c0">. This
+is only possible in a data frame, and would not be possible in a
+matrix. Clearly this is a great advantage in scientific research,
+in which we will often have data in a range of different</span>
+<span class="c0">classes</span><span class="c0">.</span></p>
+<p class="c1 c4"></p>
+<h1 class="c1"><a name="h.h3ykh4awmogu" id=
+"h.h3ykh4awmogu"></a><span>Reminder from last year:</span>
+<span class="c0 c9">Subsetting</span></h1>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Very often we will want to focus our
+attention on a particular part of a data frame - for example
+particular rows or columns. In such cases we ideally would like to
+cut out the part of the data frame that we are interested in, and
+leave the rest. This is called</span> <span class=
+"c0 c6">subsetting</span><span class="c0">&nbsp;a data
+frame.</span></p>
+<h3 class="c1"><a name="h.oe86xuyvznlt" id=
+"h.oe86xuyvznlt"></a><span class="c0 c9">How to subset a data
+frame</span></h3>
+<p class="c1"><span class="c0">We have already come across one way
+of subsetting through the use of square brackets. By typing, for
+example,</span> <span class="c0 c2">puromycin</span><span class=
+"c2">.</span><span class="c0 c2">data[1:3, ]</span><span class=
+"c0">&nbsp;we can isolate certain rows of the data frame that we
+are interested in. However, this would become very tedious in
+certain situations. Imagine that we wanted to look at the rows for
+which the rate (second column) was less than 100. This would
+require us to list all such rows manually, as follows</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2"># List all rows in
+puromycin</span><span class="c2">.</span><span class="c0 c2">data
+for which the rate is less than 100.</span></p>
+<p class="c1"><span class="c0 c2">subsetdata &lt;-
+puromycin</span><span class="c2">.</span><span class=
+"c0 c2">data[c(1,2,3,13,14,15,16,17), ]</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">This method becomes cumbersome very
+quickly, and is simply impossible for very large data sets. In
+fact, we could come up with a slightly better method using logical
+expressions (Brownie points to anyone who can figure out how!),
+although even this method can get tricky.</span></p>
+<p class="c1"><span class=
+"c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A much better
+method is available through the function</span> <span class=
+"c0 c2">subset()</span><span class="c0">. The first argument to
+this function is the name of the variable that you want to subset.
+For example, we could type</span> <span class=
+"c0 c2">subset(puromycin</span><span class=
+"c2">.</span><span class="c0 c2">data)</span><span class="c0">.
+Evaluating this expression on its own will not do anything, as we
+have not told R which parts of the data we are interested in. This
+information goes in the second argument to the function, through a
+logical expression. For example, we could type</span> <span class=
+"c0 c2">subset(puromycin</span><span class=
+"c2">.</span><span class="c0 c2">data,
+subset=(rate&lt;100))</span><span class="c0">. This tells R that we
+are only interested in those fields for which the rate is less than
+100.</span> <span>R does this by using the vector of
+logicals</span> <span class="c2">rate&lt;100</span><span>&nbsp;.
+Make sure you understand what this vector represents.</span>
+<span class="c0">Another example would be the code</span>
+<span class="c0 c2">subset(puromycin</span><span class=
+"c2">.</span><span class="c0 c2">data,
+subset=(state=="treated"))</span><span class="c0">. This will
+return all fields for which the state is equal to "treated". Notice
+that the factor must be written in quotation marks here, as R needs
+to know that it is looking for a particular set of characters,
+rather than a variable.</span></p>
+<ul class="c18 lst-kix_list_15-0 start">
+<li class="c3 c1"><span class="c0 c9">Q16.</span><span class=
+"c0">&nbsp;How would you subset the variable</span> <span class=
+"c0 c2">puromycin</span><span class="c2">.</span><span class=
+"c0 c2">data</span><span class="c0">&nbsp;to return only those
+fields for which the concentration is greater than 0.1?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_15-0">
+<li class="c3 c1"><span class="c0 c9">Q17.</span><span class=
+"c0">&nbsp;What is the average (mean) concentration for these
+cells?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_15-0">
+<li class="c3 c1"><span class="c0 c9">Q18.</span><span class=
+"c0">&nbsp;How would you subset the variable</span> <span class=
+"c0 c2">puromycin</span><span class="c2">.</span><span class=
+"c0 c2">data</span><span class="c0">&nbsp;to return only the fields
+for which the cells were</span> <span class=
+"c0 c6">not</span><span class="c0">&nbsp;treated?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_15-0">
+<li class="c3 c1"><span class="c0 c9">Q19.</span><span class=
+"c0">&nbsp;How would you subset the variable</span> <span class=
+"c0 c2">puromycin</span><span class="c2">.</span><span class=
+"c0 c2">data</span><span class="c0">&nbsp;to return only the fields
+for which the concentration is less than 0.5</span> <span class=
+"c0 c6">and</span><span class="c0">&nbsp;the rate is greater than
+100 (remember the "and" command from logical
+expressions)?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_15-0">
+<li class="c3 c1"><span class="c0 c9">Q20.</span><span class=
+"c0">&nbsp;How would you subset the variable</span> <span class=
+"c0 c2">puromycin</span><span class="c2">.</span><span class=
+"c0 c2">data</span><span class="c0">&nbsp;to return only the fields
+for which the concentration is greater than 0.2</span> <span class=
+"c0 c6">and</span><span class="c0">&nbsp;the cells have been
+treated?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_15-0">
+<li class="c3 c1"><span class="c0 c9">Q21.</span><span class=
+"c0">&nbsp;How would you subset the variable</span> <span class=
+"c0 c2">puromycin</span><span class="c2">.</span><span class=
+"c0 c2">data</span><span class="c0">&nbsp;to return only the fields
+for which the concentration is less than 0.1</span> <span class=
+"c0 c6">or</span><span class="c0">&nbsp;greater than
+0.2?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_15-0">
+<li class="c3 c1"><span class="c0 c9">Q22.</span><span class=
+"c0">&nbsp;How would you subset the variable</span> <span class=
+"c0 c2">puromycin</span><span class="c2">.</span><span class=
+"c0 c2">data</span><span class="c0">&nbsp;to return only the fields
+for which the concentration is less than 0.2</span> <span class=
+"c0 c6">and</span><span class="c0">&nbsp;the rate is less than
+70</span> <span class="c0 c6">and</span><span class="c0">&nbsp;the
+cells have been treated?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<h1 class="c1"><a name="h.pknd8vpayr35" id=
+"h.pknd8vpayr35"></a><span>New stuff:</span> <span class=
+"c0 c9">Regular Expressions</span></h1>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">So far we have assumed that it is
+only the</span> <span class="c0 c6">format</span><span class=
+"c0">&nbsp;of our data that needs changing. Unfortunately, there
+are situations in which the actual</span> <span class=
+"c0 c6">names</span><span class="c0">&nbsp;in our data file are
+incorrect, or inconsistent. For example, run the following line of
+code to import the</span> <span class=
+"c0 c2">reptile</span><span class="c2">.</span><span class=
+"c0 c2">data</span><span class="c0">&nbsp;data frame:</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2">reptile</span><span class=
+"c2">.</span><span class="c0 c2">data &lt;-</span> <span class=
+"c0 c2">read.table("http://yannick.poulet.org/teaching/2013stats/reptile</span><span class="c2">_</span><span class="c0 c2">data.txt",row.names=1)</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">This data frame details the genus
+and species names of 16 endangered reptiles, along with the date at
+which they were listed as endangered. You can load just the names
+into a separate variable by running the code</span> <span class=
+"c0 c2">reptile</span><span class="c2">.</span><span class=
+"c0 c2">names&lt;-row.names(reptile</span><span class=
+"c2">.</span><span class="c0 c2">data)</span><span class=
+"c0">.</span></p>
+<p class="c1"><span class=
+"c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have a close
+look at these names. Notice that each reptile has been given a
+unique identification number next to its name (don't look these
+numbers up - they don't mean anything)! Also, we can see that some
+names have been recorded incorrectly - the genus names for the
+Liopholis group have been recorded in lowercase, while we all know
+that genus names should be capitalized! All in all, this data
+appears quite "messy", and needs cleaning up.</span></p>
+<p class="c1"><span class=
+"c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The tools that
+allow us to deal with this sort of problem fall under the
+heading</span> <span class="c0 c6">regular
+expressions</span><span class="c0">. These consist of a suite of
+tools that allow us to search for, locate, and replace characters
+or words within a data set. The really powerful thing about regular
+expressions is that we can do a "fuzzy" search, meaning the pattern
+we are searching for has some flexibility built into it.</span></p>
+<h3 class="c1"><a name="h.t2tqjovo18ay" id=
+"h.t2tqjovo18ay"></a><span class="c0 c9">Basic find and
+replace</span></h3>
+<p class="c1"><span class="c0">To start with we will consider a
+simple case of finding a pattern within a vector of names.
+&nbsp;First of all we will search through the vector</span>
+<span class="c0 c2">reptile</span><span class=
+"c2">.</span><span class="c0 c2">names</span><span class=
+"c0">&nbsp;to find a list of the elements that contain the word
+"liopholis". The function that allows us to do this is</span>
+<span class="c0 c2">grep()</span><span class="c0">, which has two
+main arguments;</span> <span class=
+"c0 c2">pattern</span><span class="c0">&nbsp;and</span>
+<span class="c0 c2">x</span><span class="c0">. The</span>
+<span class="c0 c2">pattern</span><span class="c0">&nbsp;is the
+actual word, or part of a word, that we are looking for. The
+argument</span> <span class="c0 c2">x</span><span class=
+"c0">&nbsp;describes the variable that we are searching through. In
+our case we want to evaluate the following code:</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2"># Search through
+reptile</span><span class="c2">.</span><span class="c0 c2">names
+for the word "liopholis", and output positions</span></p>
+<p class="c1"><span class="c0 c2">grep(pattern="liopholis",
+x=reptile</span><span class="c2">.</span><span class=
+"c0 c2">names)</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">The output of this code is a list of
+numbers. Each of these numbers describes the position of an element
+in the vector</span> <span class="c0 c2">reptile</span><span class=
+"c2">.</span><span class="c0 c2">names</span><span class=
+"c0">&nbsp;that matches the pattern - in this case the
+12</span><span class="c8">th</span><span class="c0">&nbsp;and
+13</span><span class="c8">th</span><span class="c0">&nbsp;elements.
+Make sure you fully understand where these numbers came
+from!</span></p>
+<p class="c1"><span class=
+"c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sometimes it
+may be more useful to obtain the actual names within which the
+pattern was found, rather than a list of positions. We can do this
+by making use of the additional argument</span> <span class=
+"c0 c2">value=T</span><span class="c0">&nbsp;(see the help file for
+the</span> <span class="c0 c2">grep()</span><span class=
+"c0">&nbsp;function for a complete list of possible arguments). The
+new code reads:</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2"># Search through
+reptile</span><span class="c2">.</span><span class="c0 c2">names
+for the word "liopholis", and output names</span></p>
+<p class="c1"><span class="c0 c2">grep(pattern="liopholis",
+x=reptile</span><span class="c2">.</span><span class="c0 c2">names,
+value=T)</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Now we find that the output contains
+the actual elements of the vector that match the pattern, rather
+than just a list of positions. These names should correspond
+exactly with the positions found in the previous
+example.</span></p>
+<p class="c1"><span class=
+"c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finally, we
+may want to find and</span> <span class=
+"c0 c6">replace</span><span class="c0">&nbsp;the pattern. This can
+be done using the function</span> <span class=
+"c0 c2">gsub()</span><span class="c0">. The function</span>
+<span class="c0 c2">gsub()</span><span class="c0">&nbsp;takes
+arguments</span> <span class="c0 c2">pattern</span><span class=
+"c0">&nbsp;and</span> <span class="c0 c2">x</span><span class=
+"c0">, just like the function</span> <span class=
+"c0 c2">grep()</span><span class="c0">, but it also has an
+additional argument</span> <span class=
+"c0 c2">replacement</span><span class="c0">. The argument</span>
+<span class="c0 c2">replacement</span><span class=
+"c0">&nbsp;describes the new word, or words, that we want to insert
+in place of</span> <span class="c0 c2">pattern</span><span class=
+"c0">. For example, in the</span> <span class=
+"c0 c2">reptile</span><span class="c2">.</span><span class=
+"c0 c2">data</span><span class="c0">&nbsp;the word "liopholis" is a
+genus name, and so should be capitalized. Thus, we want to replace
+the word "liopholis" with "Liopholis", as follows:</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2"># Search through
+reptile</span><span class="c2">.</span><span class="c0 c2">names
+for the word "liopholis" and replace with the word
+"Liopholis."</span></p>
+<p class="c1"><span class="c0 c2">reptile</span><span class=
+"c2">.</span><span class="c0 c2">names2 &lt;-
+gsub(pattern="liopholis", x=reptile</span><span class=
+"c2">.</span><span class="c0 c2">names,
+replacement="Liopholis")</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">The output of this function is a new
+vector in which the desired replacement has been carried out.
+Notice that the code above stores this new vector in the
+variable</span> <span class="c0 c2">reptile</span><span class=
+"c2">.</span><span class="c0 c2">names2</span><span class=
+"c0">.</span></p>
+<p class="c1"><span class=
+"c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Experiment
+with</span> <span class="c0 c2">grep()</span><span class=
+"c0">&nbsp;and</span> <span class="c0 c2">gsub()</span><span class=
+"c0">&nbsp;until you are confident at using them. Then answer the
+following questions:</span></p>
+<ul class="c18 lst-kix_list_15-0">
+<li class="c3 c1"><span class="c0 c9">Q23.</span><span class=
+"c0">&nbsp;How could you use regular expressions to find the only
+element in the vector</span> <span class=
+"c0 c2">reptile</span><span class="c2">.</span><span class=
+"c0 c2">names</span><span class="c0">&nbsp;that contains a
+lowercase "q"? What is the position of this element in the
+vector?</span></li>
+</ul>
+<p class="c1"><span class=
+"c0 c12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<ul class="c18 lst-kix_list_15-0">
+<li class="c3 c1"><span class="c0 c9">Q24.</span><span class=
+"c0">&nbsp;You want to import the</span> <span class=
+"c0 c2">reptile</span><span class="c2">.</span><span class=
+"c0 c2">names</span><span class="c0">&nbsp;data into excel, but are
+having problems due to the spaces between the words (a common
+problem). How could you use</span> <span class=
+"c0 c2">gsub()</span><span class="c0">&nbsp;to replace all spaces
+with a full-stop?</span></li>
+</ul>
+<p class="c22 c1 c4"></p>
+<p class="c1 c4"></p>
+<h3 class="c1"><a name="h.wqyyny5o170l" id=
+"h.wqyyny5o170l"></a><span class="c0 c9">Using "fuzzy"
+searching</span><sup><a href="#cmnt1" name="cmnt_ref1" id=
+"cmnt_ref1">[a]</a></sup><sup><a href="#cmnt2" name="cmnt_ref2" id=
+"cmnt_ref2">[b]</a></sup></h3>
+<p class="c1"><span class="c0">One of the most powerful features of
+regular expressions is the ability to perform "fuzzy" searching.
+Simply put, by using special characters we can introduce some
+flexibility into the pattern that we are searching for. A complete
+list of these special characters can be obtained by typing</span>
+<span class="c0 c2">?regex</span><span class="c0">. A slightly
+reduced list of special characters and their meanings is given
+below.</span></p>
+<p class="c1 c4"></p>
+<a href="#" name="bacecc67f097f3307b7479d91a8ad3d01821fda2" id=
+"bacecc67f097f3307b7479d91a8ad3d01821fda2"></a><a href="#" name=
+"0"></a>
+<table cellpadding="0" cellspacing="0" class="c31">
+<tbody>
+<tr class="c15">
+<td class="c21">
+<p class="c10 c1"><span class="c17 c0 c9">Special
+Character</span></p>
+</td>
+<td class="c21">
+<p class="c10 c1"><span class="c0 c9 c17">Meaning</span></p>
+</td>
+</tr>
+<tr class="c15">
+<td class="c21">
+<p class="c10 c1"><span class="c0 c20 c2 c23">.</span></p>
+</td>
+<td class="c21">
+<p class="c10 c1"><span class="c17 c0 c20">Any character</span></p>
+</td>
+</tr>
+<tr class="c15">
+<td class="c21">
+<p class="c10 c1"><span class="c23 c0 c20 c2">?</span></p>
+</td>
+<td class="c21">
+<p class="c10 c1"><span class="c17 c0 c20">The preceding item is
+optional and will be matched at most once.</span></p>
+</td>
+</tr>
+<tr class="c15">
+<td class="c21">
+<p class="c1 c10"><span class="c23 c0 c20 c2">*</span></p>
+</td>
+<td class="c21">
+<p class="c10 c1"><span class="c17 c0 c20">The preceding item will
+be matched zero or more times.</span></p>
+</td>
+</tr>
+<tr class="c15">
+<td class="c21">
+<p class="c10 c1"><span class="c23 c0 c20 c2">+</span></p>
+</td>
+<td class="c21">
+<p class="c10 c1"><span class="c17 c0 c20">The preceding item will
+be matched one or more times.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">These special characters can be used
+on their own, or in combination with one another. To help you out
+with understanding these symbols, here are a few
+examples:</span></p>
+<ul class="c18 lst-kix_list_15-0">
+<li class="c3 c1"><span class="c0">The pattern</span> <span class=
+"c0 c2">".r"</span><span class="c0">&nbsp;means</span> <span class=
+"c0 c6">any character, followed by the letter "r" (e.g.
+&ldquo;er&rdquo;, &ldquo;or&rdquo;,
+&ldquo;tr&rdquo;)</span><span class="c0">.</span></li>
+<li class="c1 c3"><span class="c0">The pattern</span> <span class=
+"c0 c2">"...r"</span><span class="c0">&nbsp;means</span>
+<span class="c0 c6">any character, followed by any character,
+followed by any character, followed by the letter "r" (e.g.
+&ldquo;beer&rdquo;, &ldquo;deer&rdquo;,
+&ldquo;zekr&rdquo;)</span><span class="c0">.</span></li>
+<li class="c3 c1"><span class="c0">The pattern</span> <span class=
+"c0 c2">"l*at"</span><span class="c0">&nbsp;means</span>
+<span class="c0 c6">zero or more copies of the letter "l", followed
+by the letters "at" (e.g. &ldquo;at&rdquo;, &ldquo;lat&rdquo;,
+&ldquo;llllllllllat&rdquo;)</span><span class="c0">.</span></li>
+<li class="c3 c1"><span class="c0">The pattern</span> <span class=
+"c0 c2">"s.+s"</span><span class="c0">&nbsp;means</span>
+<span class="c0 c6">the letter "s", followed by one or more copies
+of any character, followed by the letter "s" (e.g.
+&ldquo;sas&rdquo;, &ldquo;sts&rdquo;, &ldquo;srs&rdquo;,
+&ldquo;serendipities&rdquo;, but NOT
+&ldquo;ss&rdquo;)</span><span class="c0">.</span></li>
+<li class="c3 c1"><span class="c0">The pattern</span> <span class=
+"c0 c2">".* .*"</span><span class="c0">&nbsp;means</span>
+<span class="c0 c6">zero or more copies of any character, followed
+by a space, followed by zero or more copies of any character (any
+combination of two words, e.g. &ldquo;test words</span><span class=
+"c6">&rdquo;</span><span class="c0 c6">).</span></li>
+</ul>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Some of these examples might seem
+very confusing at first, but if you learn what each special
+character means on its own and then go through the pattern one at a
+time you should find that it makes sense.</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">As an example of how "fuzzy"
+searching can be useful, we will now use these special characters
+to remove the ID tags from the reptile names. Notice that the ID
+numbers are of different lengths, but they are always separated
+with a colon from the part that we are interested in. Therefore, we
+can remove these characters by searching for</span> <span class=
+"c0 c6">zero or more copies of any character, followed by a
+colon</span><span class="c0">, and replacing this pattern with an
+empty string. The single line of code that achieves this is as
+follows:</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0 c2">reptile</span><span class=
+"c2">.</span><span class="c0 c2">names3 &lt;- gsub(pattern=".*:",
+x=reptile</span><span class="c2">.</span><span class=
+"c0 c2">names2, replacement="")</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c0">Have a look inside the
+variable</span><span class="c0 c2">&nbsp;reptile</span><span class=
+"c2">.</span><span class="c0 c2">names3</span><span class="c0">. We
+have successfully isolated the genus and species names away from
+the pesky ID tags, even though the exact format of the tags may
+vary between different entries. Tricks like this can save us a
+great deal of time - especially when our data set is thousands of
+lines long. In fact, we have only skimmed the surface of what
+regular expressions can do - I encourage anyone who is interested
+to take a deeper look.</span></p>
+<ul class="c18 lst-kix_list_15-0">
+<li class="c3 c1"><span class="c0 c9">Q25</span><span class="c0">.
+What does the pattern</span><span class=
+"c0 c2">&nbsp;"..x.."</span><span class="c0">&nbsp;mean in a
+regular expression?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_15-0">
+<li class="c3 c1"><span class="c0 c9">Q26</span><span class="c0">.
+What does the pattern</span><span class="c0 c2">&nbsp;"e+"</span>
+<span class="c0">mean in a regular expression?</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_17-0 start">
+<li class="c3 c1"><span class="c0 c9">Q27.</span><span class=
+"c0">&nbsp;How many reptile names (genus or species) contain a
+lowercase "o"</span> <span class="c0 c6">or</span><span class=
+"c0">&nbsp;an uppercase "E"? Hint - you will have to combine your
+knowledge of regular expressions with your knowledge of logical
+expressions to answer this one!</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_17-0">
+<li class="c3 c1"><span class="c9">Q28.</span> <span>Add three
+additional columns to the</span> <span class=
+"c2">reptile.data</span><span>&nbsp;table:</span></li>
+</ul>
+<ul class="c18 lst-kix_list_17-1 start">
+<li class="c5 c1"><span>one containing only the identifier numbers
+(e.g. 1423)</span></li>
+<li class="c5 c1"><span>one column containing only the genus (e.g.
+Egernia)</span></li>
+<li class="c5 c1"><span>one containing only the
+species.</span></li>
+</ul>
+<p class="c1 c4"></p>
+<ul class="c18 lst-kix_list_17-0">
+<li class="c3 c1"><span class="c9">Hacker Q29.
+&nbsp;</span><span>Figure out how to &ldquo;capture&rdquo; the
+first letter of the species, and transform it to make it uppercase.
+Do this in a generic manner (that would work on a table of
+thousands of species).</span></li>
+</ul>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<h1 class="c1"><a name="h.kat5xk64x3z5" id=
+"h.kat5xk64x3z5"></a><span class="c32">*Bonus Section</span><span>:
+importing/exporting</span></h1>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c25 c9">Data Input from files</span></p>
+<p class="c1"><span>Open source data plays an increasingly
+important role recently, so it is vital to know how to input the
+data with various formats into your program. Choosing the right way
+of importing data will save you time and boost your efficiency when
+cleaning the data. To test your abilities, download</span>
+<span class="c14"><a class="c7" href=
+"http://www.google.com/url?q=http%3A%2F%2Fyannick.poulet.org%2Fteaching%2F2013stats%2Friver.csv&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHO6K-rq_ovN3p7TWGDwpthMUhJzQ">
+river.csv</a></span><span>&nbsp;and</span> <span class=
+"c14"><a class="c7" href=
+"http://www.google.com/url?q=http%3A%2F%2Fyannick.poulet.org%2Fteaching%2F2013stats%2Fkaiser.xls&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHsWSgw7YTjn9u9e0T4EufOhJTSPw">
+kaiser.xls</a></span><span>&nbsp;and try loading them into
+R.</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c2">river.data &nbsp;&lt;-
+read.csv(&ldquo;river.csv&rdquo;) &nbsp; &nbsp; &nbsp;# if
+you&rsquo;re in the right directory</span></p>
+<p class="c1"><span class="c2">river.data &nbsp;&lt;-
+read.csv(file.choose()) &nbsp; &nbsp;# to choose the
+file</span></p>
+<p class="c1"><span class="c2">kaiser.data &lt;-
+read.xls(&ldquo;kaiser.xls&rdquo;, sheet=1)</span></p>
+<p class="c1"><span>&nbsp;</span></p>
+<h3 class="c1 c29"><a name="h.bq6z9foipsbv" id=
+"h.bq6z9foipsbv"></a><span class="c9 c25">Setting the working
+directory</span></h3>
+<p class="c1"><span>Setting directory is a highly intensely used
+function which helps group your code and your data, and access to
+different paths. For example, if you want to save a series of
+graphs that were generated by accessing data outside the current
+folder in a loop, it saves you time by grouping data for
+you.</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c2"># set the working
+directory</span></p>
+<p class="c1"><span class="c2">setwd(&ldquo;~/Documents/R&rdquo;)
+&nbsp; # or use the equivalent menu options.</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c2"># get all the file name in current
+directory</span></p>
+<p class="c1"><span class="c2">list.files(path=".")</span></p>
+<p class="c1 c4"></p>
+<p class="c1"><span class="c2"># get the current working
+directory</span></p>
+<p class="c1"><span class="c2">getwd()</span></p>
+<p class="c1"><span>&nbsp;</span></p>
+<h3 class="c29 c1"><a name="h.q9jxrjeyky5p" id=
+"h.q9jxrjeyky5p"></a><span class="c25 c9">Data output into various
+formats</span></h3>
+<p class="c1"><span>Most of the time, as either a data recorder or
+a data analyst, knowing the best way to output data is important.
+The reason to export data into various format is to make work
+easier when switching data analysis software (e.g. from R to Excel
+and back).</span></p>
+<p class="c1 c4"></p>
+<p class="c26 c1"><span class="c2"># write a new subsetted data
+frame (create this using your previous skills) into a CSV
+file</span></p>
+<p class="c1"><span class="c2">write.csv(my.river.subset, file =
+&ldquo;myRiverSubset.csv&rdquo;)</span></p>
+<p class="c1"><span class="c2"># import this into Excel</span></p>
+<p class="c1 c4"></p>
+<p class="c1 c4"></p>
+<p class="c1 c26"><span class="c2"># save variable a, b and c into
+.Rdata</span></p>
+<p class="c1"><span class="c2">save(a, b, c,
+file=&rdquo;nodeProperty.Rdata&rdquo;)</span></p>
+<div class="c24">
+<p class="c1 c27"><a href="#cmnt_ref1" name="cmnt1" id=
+"cmnt1">[a]</a><span class="c28 c0 c20 c19">Yannick - this bit
+didn't turn out exactly as planned, but hopefully it will do.
+Wanted to get them replacing genus names with abbreviated versions
+automatically, but this turned out to be way more complicated than
+they could handle!</span></p>
+</div>
+<div class="c24">
+<p class="c27 c1"><a href="#cmnt_ref2" name="cmnt2" id=
+"cmnt2">[b]</a><span class="c0 c20 c19 c28">Although it is not
+complicated to understand but this is for me hard to
+recite</span></p>
+</div>
+</body>
+</html>

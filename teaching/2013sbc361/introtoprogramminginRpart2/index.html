@@ -1,0 +1,1268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="generator" content=
+"HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.12), see www.w3.org">
+<title>Intro to programming in R - part 2</title>
+<meta content="text/html; charset=us-ascii" http-equiv=
+"content-type">
+<style type="text/css">
+@import url('https://themes.googleusercontent.com/fonts/css?kit=MSSLfUayeNh9PW3ng9UWrqo0P1CSBNc3gBWclSzSx0c');.lst-kix_list_7-5>li{counter-increment:lst-ctn-kix_list_7-5}.lst-kix_list_15-5>li:before{content:"\00f0a7  "}.lst-kix_list_22-8>li:before{content:"\00f0a7  "}.lst-kix_list_6-3>li:before{content:"\0025cf  "}.lst-kix_list_6-7>li:before{content:"o  "}ol.lst-kix_list_8-2.start{counter-reset:lst-ctn-kix_list_8-2 0}.lst-kix_list_21-3>li:before{content:"" counter(lst-ctn-kix_list_21-3,decimal) ". "}.lst-kix_list_11-3>li:before{content:"\0025cf  "}.lst-kix_list_20-4>li{counter-increment:lst-ctn-kix_list_20-4}.lst-kix_list_8-5>li:before{content:"" counter(lst-ctn-kix_list_8-5,lower-roman) ". "}.lst-kix_list_25-2>li:before{content:"\00f0a7  "}ol.lst-kix_list_19-1.start{counter-reset:lst-ctn-kix_list_19-1 0}ol.lst-kix_list_7-6.start{counter-reset:lst-ctn-kix_list_7-6 0}.lst-kix_list_21-2>li{counter-increment:lst-ctn-kix_list_21-2}.lst-kix_list_24-8>li:before{content:"\00f0a7  "}.lst-kix_list_8-4>li{counter-increment:lst-ctn-kix_list_8-4}.lst-kix_list_22-1>li:before{content:"o  "}.lst-kix_list_18-0>li:before{content:"" counter(lst-ctn-kix_list_18-0,decimal) ". "}.lst-kix_list_3-6>li:before{content:"\0025cf  "}.lst-kix_list_13-4>li:before{content:"o  "}.lst-kix_list_5-2>li:before{content:"\00f0a7  "}.lst-kix_list_9-1>li:before{content:"o  "}.lst-kix_list_18-0>li{counter-increment:lst-ctn-kix_list_18-0}.lst-kix_list_15-8>li:before{content:"\00f0a7  "}.lst-kix_list_7-2>li:before{content:"" counter(lst-ctn-kix_list_7-2,lower-roman) ". "}.lst-kix_list_7-7>li{counter-increment:lst-ctn-kix_list_7-7}.lst-kix_list_21-0>li{counter-increment:lst-ctn-kix_list_21-0}.lst-kix_list_22-0>li:before{content:"\0025cf  "}ol.lst-kix_list_18-3.start{counter-reset:lst-ctn-kix_list_18-3 0}.lst-kix_list_19-8>li{counter-increment:lst-ctn-kix_list_19-8}.lst-kix_list_5-5>li:before{content:"\00f0a7  "}.lst-kix_list_19-7>li{counter-increment:lst-ctn-kix_list_19-7}.lst-kix_list_9-3>li:before{content:"\0025cf  "}.lst-kix_list_18-5>li{counter-increment:lst-ctn-kix_list_18-5}.lst-kix_list_9-6>li:before{content:"\0025cf  "}.lst-kix_list_2-0>li:before{content:"\0025cf  "}ol.lst-kix_list_7-4.start{counter-reset:lst-ctn-kix_list_7-4 0}.lst-kix_list_9-2>li:before{content:"\00f0a7  "}.lst-kix_list_2-4>li:before{content:"o  "}.lst-kix_list_8-8>li{counter-increment:lst-ctn-kix_list_8-8}.lst-kix_list_20-4>li:before{content:"" counter(lst-ctn-kix_list_20-4,lower-latin) ". "}.lst-kix_list_7-4>li{counter-increment:lst-ctn-kix_list_7-4}.lst-kix_list_12-7>li:before{content:"o  "}.lst-kix_list_5-8>li:before{content:"\00f0a7  "}.lst-kix_list_14-5>li:before{content:"\00f0a7  "}.lst-kix_list_21-4>li:before{content:"" counter(lst-ctn-kix_list_21-4,lower-latin) ". "}ol.lst-kix_list_19-8.start{counter-reset:lst-ctn-kix_list_19-8 0}.lst-kix_list_7-2>li{counter-increment:lst-ctn-kix_list_7-2}ul.lst-kix_list_22-6{list-style-type:none}ul.lst-kix_list_22-7{list-style-type:none}ul.lst-kix_list_22-4{list-style-type:none}ul.lst-kix_list_22-5{list-style-type:none}ul.lst-kix_list_22-2{list-style-type:none}ul.lst-kix_list_22-3{list-style-type:none}.lst-kix_list_8-5>li{counter-increment:lst-ctn-kix_list_8-5}ul.lst-kix_list_22-0{list-style-type:none}ul.lst-kix_list_22-1{list-style-type:none}ol.lst-kix_list_21-6{list-style-type:none}.lst-kix_list_21-1>li:before{content:"" counter(lst-ctn-kix_list_21-1,lower-latin) ". "}ol.lst-kix_list_21-5{list-style-type:none}ol.lst-kix_list_21-4{list-style-type:none}.lst-kix_list_15-3>li:before{content:"\0025cf  "}ol.lst-kix_list_21-3{list-style-type:none}ol.lst-kix_list_7-5.start{counter-reset:lst-ctn-kix_list_7-5 0}.lst-kix_list_8-1>li:before{content:"" counter(lst-ctn-kix_list_8-1,lower-latin) ". "}ol.lst-kix_list_21-8{list-style-type:none}ol.lst-kix_list_21-7{list-style-type:none}ol.lst-kix_list_8-1{list-style-type:none}.lst-kix_list_11-8>li:before{content:"\00f0a7  "}ol.lst-kix_list_8-2{list-style-type:none}ol.lst-kix_list_8-3{list-style-type:none}.lst-kix_list_6-0>li:before{content:"\0025cf  "}.lst-kix_list_18-3>li:before{content:"" counter(lst-ctn-kix_list_18-3,decimal) ". "}ol.lst-kix_list_8-4{list-style-type:none}ol.lst-kix_list_21-1{list-style-type:none}ol.lst-kix_list_8-5{list-style-type:none}ol.lst-kix_list_21-2{list-style-type:none}ol.lst-kix_list_8-6{list-style-type:none}ol.lst-kix_list_8-7{list-style-type:none}ol.lst-kix_list_21-0{list-style-type:none}ol.lst-kix_list_8-8{list-style-type:none}.lst-kix_list_25-7>li:before{content:"o  "}.lst-kix_list_4-0>li:before{content:"\0025cf  "}ul.lst-kix_list_22-8{list-style-type:none}.lst-kix_list_24-6>li:before{content:"\0025cf  "}.lst-kix_list_16-8>li:before{content:"\0025aa  "}ol.lst-kix_list_20-5.start{counter-reset:lst-ctn-kix_list_20-5 0}ol.lst-kix_list_20-1.start{counter-reset:lst-ctn-kix_list_20-1 0}.lst-kix_list_10-7>li:before{content:"o  "}.lst-kix_list_8-7>li:before{content:"" counter(lst-ctn-kix_list_8-7,lower-latin) ". "}ol.lst-kix_list_19-7{list-style-type:none}.lst-kix_list_14-6>li:before{content:"\0025cf  "}ol.lst-kix_list_19-6{list-style-type:none}.lst-kix_list_7-1>li{counter-increment:lst-ctn-kix_list_7-1}.lst-kix_list_1-7>li:before{content:"o  "}ol.lst-kix_list_19-8{list-style-type:none}ol.lst-kix_list_19-3{list-style-type:none}ol.lst-kix_list_19-2{list-style-type:none}.lst-kix_list_10-1>li:before{content:"o  "}ol.lst-kix_list_19-5{list-style-type:none}ol.lst-kix_list_19-4{list-style-type:none}ol.lst-kix_list_19-1{list-style-type:none}.lst-kix_list_13-1>li:before{content:"o  "}ol.lst-kix_list_19-0{list-style-type:none}.lst-kix_list_23-6>li:before{content:"\0025cf  "}.lst-kix_list_7-3>li:before{content:"" counter(lst-ctn-kix_list_7-3,decimal) ". "}.lst-kix_list_20-1>li{counter-increment:lst-ctn-kix_list_20-1}.lst-kix_list_18-8>li{counter-increment:lst-ctn-kix_list_18-8}ol.lst-kix_list_20-4.start{counter-reset:lst-ctn-kix_list_20-4 0}ol.lst-kix_list_18-5.start{counter-reset:lst-ctn-kix_list_18-5 0}ul.lst-kix_list_12-8{list-style-type:none}.lst-kix_list_8-6>li:before{content:"" counter(lst-ctn-kix_list_8-6,decimal) ". "}.lst-kix_list_1-2>li:before{content:"\0025aa  "}ul.lst-kix_list_12-7{list-style-type:none}ul.lst-kix_list_14-0{list-style-type:none}.lst-kix_list_22-3>li:before{content:"\0025cf  "}.lst-kix_list_7-6>li{counter-increment:lst-ctn-kix_list_7-6}.lst-kix_list_1-5>li:before{content:"\0025aa  "}ul.lst-kix_list_14-2{list-style-type:none}ul.lst-kix_list_14-1{list-style-type:none}ul.lst-kix_list_14-4{list-style-type:none}ul.lst-kix_list_14-3{list-style-type:none}ul.lst-kix_list_14-5{list-style-type:none}ul.lst-kix_list_14-6{list-style-type:none}ul.lst-kix_list_12-0{list-style-type:none}ul.lst-kix_list_14-7{list-style-type:none}ul.lst-kix_list_12-1{list-style-type:none}.lst-kix_list_25-3>li:before{content:"\0025cf  "}ul.lst-kix_list_14-8{list-style-type:none}ul.lst-kix_list_12-2{list-style-type:none}ul.lst-kix_list_12-3{list-style-type:none}.lst-kix_list_19-0>li:before{content:"" counter(lst-ctn-kix_list_19-0,decimal) ". "}ul.lst-kix_list_12-4{list-style-type:none}ol.lst-kix_list_8-1.start{counter-reset:lst-ctn-kix_list_8-1 0}ul.lst-kix_list_12-5{list-style-type:none}ul.lst-kix_list_12-6{list-style-type:none}.lst-kix_list_24-1>li:before{content:"o  "}.lst-kix_list_2-3>li:before{content:"\0025cf  "}.lst-kix_list_20-8>li{counter-increment:lst-ctn-kix_list_20-8}.lst-kix_list_12-3>li:before{content:"\0025cf  "}.lst-kix_list_13-8>li:before{content:"\00f0a7  "}ol.lst-kix_list_21-0.start{counter-reset:lst-ctn-kix_list_21-0 0}.lst-kix_list_2-7>li:before{content:"o  "}.lst-kix_list_25-0>li:before{content:"" counter(lst-ctn-kix_list_25-0,decimal) ". "}.lst-kix_list_20-2>li:before{content:"" counter(lst-ctn-kix_list_20-2,lower-roman) ". "}.lst-kix_list_10-6>li:before{content:"\0025cf  "}.lst-kix_list_18-2>li{counter-increment:lst-ctn-kix_list_18-2}.lst-kix_list_21-5>li:before{content:"" counter(lst-ctn-kix_list_21-5,lower-roman) ". "}.lst-kix_list_14-8>li:before{content:"\00f0a7  "}.lst-kix_list_10-2>li:before{content:"\00f0a7  "}ol.lst-kix_list_19-6.start{counter-reset:lst-ctn-kix_list_19-6 0}.lst-kix_list_20-7>li:before{content:"" counter(lst-ctn-kix_list_20-7,lower-latin) ". "}.lst-kix_list_18-8>li:before{content:"" counter(lst-ctn-kix_list_18-8,lower-roman) ". "}.lst-kix_list_21-2>li:before{content:"" counter(lst-ctn-kix_list_21-2,lower-roman) ". "}ol.lst-kix_list_8-5.start{counter-reset:lst-ctn-kix_list_8-5 0}.lst-kix_list_21-4>li{counter-increment:lst-ctn-kix_list_21-4}.lst-kix_list_14-4>li:before{content:"o  "}.lst-kix_list_6-1>li:before{content:"o  "}ol.lst-kix_list_21-1.start{counter-reset:lst-ctn-kix_list_21-1 0}.lst-kix_list_17-0>li:before{content:"\0025cf  "}.lst-kix_list_4-7>li:before{content:"o  "}.lst-kix_list_18-4>li{counter-increment:lst-ctn-kix_list_18-4}.lst-kix_list_13-3>li:before{content:"\0025cf  "}.lst-kix_list_16-4>li:before{content:"o  "}.lst-kix_list_14-7>li:before{content:"o  "}.lst-kix_list_23-0>li:before{content:"\0025cf  "}.lst-kix_list_23-8>li:before{content:"\00f0a7  "}.lst-kix_list_17-1>li:before{content:"o  "}.lst-kix_list_12-6>li:before{content:"\0025cf  "}.lst-kix_list_3-7>li:before{content:"o  "}ul.lst-kix_list_13-2{list-style-type:none}.lst-kix_list_6-6>li:before{content:"\0025cf  "}ul.lst-kix_list_13-3{list-style-type:none}ul.lst-kix_list_13-4{list-style-type:none}ul.lst-kix_list_13-5{list-style-type:none}.lst-kix_list_16-6>li:before{content:"\0025cf  "}.lst-kix_list_21-5>li{counter-increment:lst-ctn-kix_list_21-5}ul.lst-kix_list_13-0{list-style-type:none}ul.lst-kix_list_13-1{list-style-type:none}.lst-kix_list_12-8>li:before{content:"\00f0a7  "}ul.lst-kix_list_13-7{list-style-type:none}ul.lst-kix_list_13-6{list-style-type:none}ul.lst-kix_list_13-8{list-style-type:none}.lst-kix_list_9-8>li:before{content:"\00f0a7  "}ol.lst-kix_list_18-4.start{counter-reset:lst-ctn-kix_list_18-4 0}.lst-kix_list_16-1>li:before{content:"o  "}.lst-kix_list_8-0>li:before{content:"\0025cf  "}ol.lst-kix_list_21-4.start{counter-reset:lst-ctn-kix_list_21-4 0}.lst-kix_list_24-5>li:before{content:"\00f0a7  "}.lst-kix_list_5-3>li:before{content:"\0025cf  "}.lst-kix_list_20-1>li:before{content:"" counter(lst-ctn-kix_list_20-1,lower-latin) ". "}.lst-kix_list_11-0>li:before{content:"\0025cf  "}.lst-kix_list_19-4>li{counter-increment:lst-ctn-kix_list_19-4}.lst-kix_list_10-3>li:before{content:"\0025cf  "}.lst-kix_list_23-5>li:before{content:"\00f0a7  "}.lst-kix_list_7-4>li:before{content:"" counter(lst-ctn-kix_list_7-4,lower-latin) ". "}.lst-kix_list_20-6>li{counter-increment:lst-ctn-kix_list_20-6}ul.lst-kix_list_4-8{list-style-type:none}.lst-kix_list_18-7>li{counter-increment:lst-ctn-kix_list_18-7}ul.lst-kix_list_4-7{list-style-type:none}ul.lst-kix_list_4-6{list-style-type:none}.lst-kix_list_17-2>li:before{content:"\0025aa  "}ol.lst-kix_list_20-3.start{counter-reset:lst-ctn-kix_list_20-3 0}.lst-kix_list_11-4>li:before{content:"o  "}ul.lst-kix_list_4-1{list-style-type:none}.lst-kix_list_7-5>li:before{content:"" counter(lst-ctn-kix_list_7-5,lower-roman) ". "}ul.lst-kix_list_4-0{list-style-type:none}.lst-kix_list_10-4>li:before{content:"o  "}ul.lst-kix_list_4-5{list-style-type:none}ul.lst-kix_list_4-4{list-style-type:none}ul.lst-kix_list_4-3{list-style-type:none}ul.lst-kix_list_4-2{list-style-type:none}.lst-kix_list_7-8>li{counter-increment:lst-ctn-kix_list_7-8}ol.lst-kix_list_19-4.start{counter-reset:lst-ctn-kix_list_19-4 0}.lst-kix_list_24-2>li:before{content:"\00f0a7  "}.lst-kix_list_8-2>li:before{content:"" counter(lst-ctn-kix_list_8-2,lower-roman) ". "}ol.lst-kix_list_21-6.start{counter-reset:lst-ctn-kix_list_21-6 0}.lst-kix_list_14-3>li:before{content:"\0025cf  "}.lst-kix_list_8-8>li:before{content:"" counter(lst-ctn-kix_list_8-8,lower-roman) ". "}ol.lst-kix_list_18-6.start{counter-reset:lst-ctn-kix_list_18-6 0}.lst-kix_list_15-6>li:before{content:"\0025cf  "}ol.lst-kix_list_20-6.start{counter-reset:lst-ctn-kix_list_20-6 0}.lst-kix_list_18-4>li:before{content:"" counter(lst-ctn-kix_list_18-4,lower-latin) ". "}.lst-kix_list_8-3>li{counter-increment:lst-ctn-kix_list_8-3}.lst-kix_list_10-5>li:before{content:"\00f0a7  "}ol.lst-kix_list_19-3.start{counter-reset:lst-ctn-kix_list_19-3 0}ul.lst-kix_list_9-0{list-style-type:none}.lst-kix_list_17-3>li:before{content:"\0025cf  "}.lst-kix_list_22-4>li:before{content:"o  "}ol.lst-kix_list_8-4.start{counter-reset:lst-ctn-kix_list_8-4 0}ul.lst-kix_list_9-8{list-style-type:none}ul.lst-kix_list_9-7{list-style-type:none}.lst-kix_list_19-6>li:before{content:"" counter(lst-ctn-kix_list_19-6,decimal) ". "}ul.lst-kix_list_9-6{list-style-type:none}ul.lst-kix_list_9-5{list-style-type:none}.lst-kix_list_15-2>li:before{content:"\00f0a7  "}ul.lst-kix_list_9-4{list-style-type:none}.lst-kix_list_13-6>li:before{content:"\0025cf  "}ul.lst-kix_list_9-3{list-style-type:none}ul.lst-kix_list_9-2{list-style-type:none}ul.lst-kix_list_9-1{list-style-type:none}.lst-kix_list_6-2>li:before{content:"\00f0a7  "}ul.lst-kix_list_5-1{list-style-type:none}ul.lst-kix_list_5-2{list-style-type:none}.lst-kix_list_19-1>li:before{content:"" counter(lst-ctn-kix_list_19-1,lower-latin) ". "}ul.lst-kix_list_5-3{list-style-type:none}ul.lst-kix_list_5-4{list-style-type:none}.lst-kix_list_10-0>li:before{content:"\0025cf  "}.lst-kix_list_17-7>li:before{content:"o  "}ul.lst-kix_list_5-0{list-style-type:none}ol.lst-kix_list_7-1.start{counter-reset:lst-ctn-kix_list_7-1 0}.lst-kix_list_13-2>li:before{content:"\00f0a7  "}ul.lst-kix_list_5-5{list-style-type:none}.lst-kix_list_19-0>li{counter-increment:lst-ctn-kix_list_19-0}ul.lst-kix_list_5-6{list-style-type:none}ul.lst-kix_list_5-7{list-style-type:none}ul.lst-kix_list_5-8{list-style-type:none}.lst-kix_list_4-3>li:before{content:"\0025cf  "}.lst-kix_list_19-4>li:before{content:"" counter(lst-ctn-kix_list_19-4,lower-latin) ". "}ul.lst-kix_list_25-2{list-style-type:none}.lst-kix_list_14-1>li:before{content:"o  "}ul.lst-kix_list_25-1{list-style-type:none}ul.lst-kix_list_25-4{list-style-type:none}ul.lst-kix_list_25-3{list-style-type:none}ol.lst-kix_list_21-2.start{counter-reset:lst-ctn-kix_list_21-2 0}ul.lst-kix_list_25-5{list-style-type:none}ul.lst-kix_list_25-6{list-style-type:none}ul.lst-kix_list_25-7{list-style-type:none}ul.lst-kix_list_25-8{list-style-type:none}ol.lst-kix_list_18-1.start{counter-reset:lst-ctn-kix_list_18-1 0}.lst-kix_list_7-3>li{counter-increment:lst-ctn-kix_list_7-3}.lst-kix_list_6-8>li:before{content:"\00f0a7  "}ul.lst-kix_list_3-7{list-style-type:none}ul.lst-kix_list_3-8{list-style-type:none}.lst-kix_list_8-4>li:before{content:"" counter(lst-ctn-kix_list_8-4,lower-latin) ". "}.lst-kix_list_1-6>li:before{content:"\0025cf  "}ul.lst-kix_list_3-0{list-style-type:none}ul.lst-kix_list_3-1{list-style-type:none}ul.lst-kix_list_3-2{list-style-type:none}ul.lst-kix_list_3-3{list-style-type:none}ul.lst-kix_list_3-4{list-style-type:none}ul.lst-kix_list_3-5{list-style-type:none}ul.lst-kix_list_3-6{list-style-type:none}.lst-kix_list_16-7>li:before{content:"o  "}ul.lst-kix_list_1-0{list-style-type:none}ul.lst-kix_list_1-2{list-style-type:none}ul.lst-kix_list_1-1{list-style-type:none}ul.lst-kix_list_1-4{list-style-type:none}ul.lst-kix_list_1-3{list-style-type:none}ul.lst-kix_list_1-6{list-style-type:none}ul.lst-kix_list_1-5{list-style-type:none}ul.lst-kix_list_1-8{list-style-type:none}ul.lst-kix_list_1-7{list-style-type:none}ol.lst-kix_list_19-5.start{counter-reset:lst-ctn-kix_list_19-5 0}.lst-kix_list_12-1>li:before{content:"o  "}.lst-kix_list_2-1>li:before{content:"o  "}.lst-kix_list_4-8>li:before{content:"\00f0a7  "}.lst-kix_list_19-5>li{counter-increment:lst-ctn-kix_list_19-5}.lst-kix_list_20-3>li:before{content:"" counter(lst-ctn-kix_list_20-3,decimal) ". "}.lst-kix_list_16-3>li:before{content:"\0025cf  "}.lst-kix_list_25-0>li{counter-increment:lst-ctn-kix_list_25-0}ol.lst-kix_list_7-2.start{counter-reset:lst-ctn-kix_list_7-2 0}ol.lst-kix_list_8-3.start{counter-reset:lst-ctn-kix_list_8-3 0}.lst-kix_list_8-7>li{counter-increment:lst-ctn-kix_list_8-7}ul.lst-kix_list_11-3{list-style-type:none}ul.lst-kix_list_11-2{list-style-type:none}.lst-kix_list_4-2>li:before{content:"\00f0a7  "}ul.lst-kix_list_11-1{list-style-type:none}ul.lst-kix_list_11-0{list-style-type:none}ol.lst-kix_list_20-8.start{counter-reset:lst-ctn-kix_list_20-8 0}ul.lst-kix_list_6-1{list-style-type:none}ul.lst-kix_list_11-7{list-style-type:none}ul.lst-kix_list_6-0{list-style-type:none}ul.lst-kix_list_11-6{list-style-type:none}.lst-kix_list_24-4>li:before{content:"o  "}ul.lst-kix_list_6-3{list-style-type:none}ul.lst-kix_list_11-5{list-style-type:none}ul.lst-kix_list_6-2{list-style-type:none}ul.lst-kix_list_11-4{list-style-type:none}.lst-kix_list_22-7>li:before{content:"o  "}ul.lst-kix_list_6-5{list-style-type:none}ul.lst-kix_list_6-4{list-style-type:none}ul.lst-kix_list_6-7{list-style-type:none}ul.lst-kix_list_6-6{list-style-type:none}.lst-kix_list_4-1>li:before{content:"o  "}.lst-kix_list_17-6>li:before{content:"\0025cf  "}ul.lst-kix_list_6-8{list-style-type:none}.lst-kix_list_21-0>li:before{content:"" counter(lst-ctn-kix_list_21-0,decimal) ". "}.lst-kix_list_21-8>li:before{content:"" counter(lst-ctn-kix_list_21-8,lower-roman) ". "}.lst-kix_list_1-0>li:before{content:"\0025cf  "}ol.lst-kix_list_8-8.start{counter-reset:lst-ctn-kix_list_8-8 0}.lst-kix_list_21-3>li{counter-increment:lst-ctn-kix_list_21-3}.lst-kix_list_18-5>li:before{content:"" counter(lst-ctn-kix_list_18-5,lower-roman) ". "}ul.lst-kix_list_11-8{list-style-type:none}.lst-kix_list_21-6>li{counter-increment:lst-ctn-kix_list_21-6}.lst-kix_list_3-4>li:before{content:"o  "}.lst-kix_list_1-3>li:before{content:"\0025cf  "}.lst-kix_list_8-3>li:before{content:"" counter(lst-ctn-kix_list_8-3,decimal) ". "}.lst-kix_list_18-6>li:before{content:"" counter(lst-ctn-kix_list_18-6,decimal) ". "}.lst-kix_list_14-0>li:before{content:"\0025cf  "}ol.lst-kix_list_20-7.start{counter-reset:lst-ctn-kix_list_20-7 0}ol.lst-kix_list_7-8.start{counter-reset:lst-ctn-kix_list_7-8 0}.lst-kix_list_19-1>li{counter-increment:lst-ctn-kix_list_19-1}.lst-kix_list_12-0>li:before{content:"\0025cf  "}ul.lst-kix_list_24-0{list-style-type:none}ul.lst-kix_list_24-1{list-style-type:none}ul.lst-kix_list_24-2{list-style-type:none}.lst-kix_list_15-7>li:before{content:"o  "}ul.lst-kix_list_24-3{list-style-type:none}ul.lst-kix_list_24-4{list-style-type:none}ul.lst-kix_list_24-5{list-style-type:none}ul.lst-kix_list_24-7{list-style-type:none}ul.lst-kix_list_24-6{list-style-type:none}.lst-kix_list_12-4>li:before{content:"o  "}.lst-kix_list_21-7>li:before{content:"" counter(lst-ctn-kix_list_21-7,lower-latin) ". "}ul.lst-kix_list_24-8{list-style-type:none}ol.lst-kix_list_21-5.start{counter-reset:lst-ctn-kix_list_21-5 0}.lst-kix_list_11-1>li:before{content:"o  "}.lst-kix_list_21-8>li{counter-increment:lst-ctn-kix_list_21-8}ol.lst-kix_list_19-0.start{counter-reset:lst-ctn-kix_list_19-0 0}.lst-kix_list_19-5>li:before{content:"" counter(lst-ctn-kix_list_19-5,lower-roman) ". "}.lst-kix_list_17-4>li:before{content:"o  "}ul.lst-kix_list_15-8{list-style-type:none}.lst-kix_list_7-8>li:before{content:"" counter(lst-ctn-kix_list_7-8,lower-roman) ". "}ul.lst-kix_list_15-7{list-style-type:none}ul.lst-kix_list_15-6{list-style-type:none}.lst-kix_list_3-1>li:before{content:"o  "}ul.lst-kix_list_15-5{list-style-type:none}ul.lst-kix_list_15-4{list-style-type:none}.lst-kix_list_24-3>li:before{content:"\0025cf  "}.lst-kix_list_25-1>li:before{content:"o  "}ul.lst-kix_list_15-2{list-style-type:none}ol.lst-kix_list_19-2.start{counter-reset:lst-ctn-kix_list_19-2 0}ul.lst-kix_list_2-4{list-style-type:none}ul.lst-kix_list_15-3{list-style-type:none}ul.lst-kix_list_2-5{list-style-type:none}ul.lst-kix_list_15-0{list-style-type:none}ul.lst-kix_list_2-6{list-style-type:none}ul.lst-kix_list_15-1{list-style-type:none}.lst-kix_list_13-7>li:before{content:"o  "}ul.lst-kix_list_2-7{list-style-type:none}ul.lst-kix_list_2-0{list-style-type:none}ul.lst-kix_list_2-1{list-style-type:none}ul.lst-kix_list_2-2{list-style-type:none}.lst-kix_list_23-3>li:before{content:"\0025cf  "}ul.lst-kix_list_2-3{list-style-type:none}ol.lst-kix_list_18-0.start{counter-reset:lst-ctn-kix_list_18-0 0}.lst-kix_list_5-1>li:before{content:"o  "}.lst-kix_list_9-7>li:before{content:"o  "}ul.lst-kix_list_2-8{list-style-type:none}.lst-kix_list_21-1>li{counter-increment:lst-ctn-kix_list_21-1}.lst-kix_list_23-2>li:before{content:"\00f0a7  "}.lst-kix_list_22-6>li:before{content:"\0025cf  "}.lst-kix_list_15-0>li:before{content:"\0025cf  "}.lst-kix_list_1-1>li:before{content:"o  "}.lst-kix_list_3-2>li:before{content:"\0025aa  "}.lst-kix_list_24-0>li:before{content:"\0025cf  "}.lst-kix_list_7-0>li{counter-increment:lst-ctn-kix_list_7-0}ol.lst-kix_list_8-7.start{counter-reset:lst-ctn-kix_list_8-7 0}ol.lst-kix_list_8-6.start{counter-reset:lst-ctn-kix_list_8-6 0}.lst-kix_list_8-2>li{counter-increment:lst-ctn-kix_list_8-2}ul.lst-kix_list_10-0{list-style-type:none}.lst-kix_list_25-5>li:before{content:"\00f0a7  "}.lst-kix_list_17-5>li:before{content:"\0025aa  "}.lst-kix_list_15-1>li:before{content:"o  "}ul.lst-kix_list_10-7{list-style-type:none}ul.lst-kix_list_10-8{list-style-type:none}ul.lst-kix_list_10-5{list-style-type:none}.lst-kix_list_11-5>li:before{content:"\00f0a7  "}ul.lst-kix_list_10-6{list-style-type:none}ol.lst-kix_list_18-8.start{counter-reset:lst-ctn-kix_list_18-8 0}.lst-kix_list_11-2>li:before{content:"\00f0a7  "}ul.lst-kix_list_10-3{list-style-type:none}ul.lst-kix_list_10-4{list-style-type:none}ul.lst-kix_list_10-1{list-style-type:none}.lst-kix_list_22-5>li:before{content:"\00f0a7  "}.lst-kix_list_1-4>li:before{content:"o  "}ul.lst-kix_list_10-2{list-style-type:none}.lst-kix_list_23-7>li:before{content:"o  "}.lst-kix_list_20-8>li:before{content:"" counter(lst-ctn-kix_list_20-8,lower-roman) ". "}.lst-kix_list_22-2>li:before{content:"\00f0a7  "}.lst-kix_list_11-7>li:before{content:"o  "}.lst-kix_list_18-3>li{counter-increment:lst-ctn-kix_list_18-3}ol.lst-kix_list_25-0{list-style-type:none}.lst-kix_list_5-7>li:before{content:"o  "}.lst-kix_list_25-6>li:before{content:"\0025cf  "}.lst-kix_list_9-4>li:before{content:"o  "}.lst-kix_list_20-3>li{counter-increment:lst-ctn-kix_list_20-3}.lst-kix_list_18-1>li:before{content:"" counter(lst-ctn-kix_list_18-1,lower-latin) ". "}.lst-kix_list_20-5>li:before{content:"" counter(lst-ctn-kix_list_20-5,lower-roman) ". "}.lst-kix_list_1-8>li:before{content:"\0025aa  "}.lst-kix_list_19-2>li:before{content:"" counter(lst-ctn-kix_list_19-2,lower-roman) ". "}.lst-kix_list_3-3>li:before{content:"\0025cf  "}.lst-kix_list_25-8>li:before{content:"\00f0a7  "}.lst-kix_list_20-5>li{counter-increment:lst-ctn-kix_list_20-5}.lst-kix_list_19-8>li:before{content:"" counter(lst-ctn-kix_list_19-8,lower-roman) ". "}.lst-kix_list_16-2>li:before{content:"\0025aa  "}.lst-kix_list_18-2>li:before{content:"" counter(lst-ctn-kix_list_18-2,lower-roman) ". "}ol.lst-kix_list_20-0.start{counter-reset:lst-ctn-kix_list_20-0 0}.lst-kix_list_18-1>li{counter-increment:lst-ctn-kix_list_18-1}.lst-kix_list_6-4>li:before{content:"o  "}.lst-kix_list_9-5>li:before{content:"\00f0a7  "}.lst-kix_list_18-7>li:before{content:"" counter(lst-ctn-kix_list_18-7,lower-latin) ". "}.lst-kix_list_18-6>li{counter-increment:lst-ctn-kix_list_18-6}.lst-kix_list_16-0>li:before{content:"\0025cf  "}ol.lst-kix_list_19-7.start{counter-reset:lst-ctn-kix_list_19-7 0}ol.lst-kix_list_21-7.start{counter-reset:lst-ctn-kix_list_21-7 0}ul.lst-kix_list_16-0{list-style-type:none}ul.lst-kix_list_16-2{list-style-type:none}ul.lst-kix_list_16-1{list-style-type:none}.lst-kix_list_6-5>li:before{content:"\00f0a7  "}.lst-kix_list_16-5>li:before{content:"\0025aa  "}.lst-kix_list_2-6>li:before{content:"\0025cf  "}.lst-kix_list_23-4>li:before{content:"o  "}ol.lst-kix_list_18-2.start{counter-reset:lst-ctn-kix_list_18-2 0}ol.lst-kix_list_21-8.start{counter-reset:lst-ctn-kix_list_21-8 0}ul.lst-kix_list_23-7{list-style-type:none}ul.lst-kix_list_23-8{list-style-type:none}ol.lst-kix_list_25-0.start{counter-reset:lst-ctn-kix_list_25-0 0}ul.lst-kix_list_23-4{list-style-type:none}.lst-kix_list_2-2>li:before{content:"\0025aa  "}.lst-kix_list_20-7>li{counter-increment:lst-ctn-kix_list_20-7}ul.lst-kix_list_23-3{list-style-type:none}ul.lst-kix_list_23-6{list-style-type:none}ul.lst-kix_list_23-5{list-style-type:none}ul.lst-kix_list_23-0{list-style-type:none}ul.lst-kix_list_23-2{list-style-type:none}ul.lst-kix_list_23-1{list-style-type:none}ul.lst-kix_list_16-3{list-style-type:none}.lst-kix_list_7-7>li:before{content:"" counter(lst-ctn-kix_list_7-7,lower-latin) ". "}ul.lst-kix_list_16-4{list-style-type:none}ul.lst-kix_list_16-5{list-style-type:none}.lst-kix_list_7-1>li:before{content:"" counter(lst-ctn-kix_list_7-1,lower-latin) ". "}ul.lst-kix_list_16-6{list-style-type:none}.lst-kix_list_20-6>li:before{content:"" counter(lst-ctn-kix_list_20-6,decimal) ". "}ul.lst-kix_list_16-7{list-style-type:none}ul.lst-kix_list_16-8{list-style-type:none}.lst-kix_list_9-0>li:before{content:"\0025cf  "}.lst-kix_list_2-8>li:before{content:"\0025aa  "}.lst-kix_list_21-6>li:before{content:"" counter(lst-ctn-kix_list_21-6,decimal) ". "}.lst-kix_list_7-0>li:before{content:"" counter(lst-ctn-kix_list_7-0,decimal) ". "}.lst-kix_list_20-0>li:before{content:"" counter(lst-ctn-kix_list_20-0,decimal) ". "}.lst-kix_list_19-6>li{counter-increment:lst-ctn-kix_list_19-6}.lst-kix_list_3-5>li:before{content:"\0025aa  "}ol.lst-kix_list_20-2.start{counter-reset:lst-ctn-kix_list_20-2 0}ol.lst-kix_list_7-0.start{counter-reset:lst-ctn-kix_list_7-0 0}ol.lst-kix_list_7-7{list-style-type:none}.lst-kix_list_11-6>li:before{content:"\0025cf  "}.lst-kix_list_19-3>li:before{content:"" counter(lst-ctn-kix_list_19-3,decimal) ". "}ol.lst-kix_list_7-8{list-style-type:none}ol.lst-kix_list_7-5{list-style-type:none}.lst-kix_list_19-3>li{counter-increment:lst-ctn-kix_list_19-3}ol.lst-kix_list_7-6{list-style-type:none}ol.lst-kix_list_7-3{list-style-type:none}ol.lst-kix_list_7-7.start{counter-reset:lst-ctn-kix_list_7-7 0}ol.lst-kix_list_7-4{list-style-type:none}ol.lst-kix_list_7-1{list-style-type:none}ol.lst-kix_list_7-2{list-style-type:none}.lst-kix_list_4-6>li:before{content:"\0025cf  "}.lst-kix_list_17-8>li:before{content:"\0025aa  "}.lst-kix_list_4-5>li:before{content:"\00f0a7  "}.lst-kix_list_20-2>li{counter-increment:lst-ctn-kix_list_20-2}ul.lst-kix_list_8-0{list-style-type:none}ol.lst-kix_list_20-1{list-style-type:none}ol.lst-kix_list_20-0{list-style-type:none}ol.lst-kix_list_20-3{list-style-type:none}.lst-kix_list_12-5>li:before{content:"\00f0a7  "}ol.lst-kix_list_20-2{list-style-type:none}ol.lst-kix_list_20-4{list-style-type:none}.lst-kix_list_3-0>li:before{content:"\0025cf  "}ol.lst-kix_list_20-5{list-style-type:none}ol.lst-kix_list_20-6{list-style-type:none}.lst-kix_list_7-6>li:before{content:"" counter(lst-ctn-kix_list_7-6,decimal) ". "}.lst-kix_list_2-5>li:before{content:"\0025aa  "}ol.lst-kix_list_20-7{list-style-type:none}.lst-kix_list_12-2>li:before{content:"\00f0a7  "}.lst-kix_list_19-7>li:before{content:"" counter(lst-ctn-kix_list_19-7,lower-latin) ". "}ol.lst-kix_list_20-8{list-style-type:none}ol.lst-kix_list_7-0{list-style-type:none}.lst-kix_list_5-4>li:before{content:"o  "}.lst-kix_list_8-6>li{counter-increment:lst-ctn-kix_list_8-6}.lst-kix_list_4-4>li:before{content:"o  "}.lst-kix_list_5-0>li:before{content:"\0025cf  "}ol.lst-kix_list_18-7{list-style-type:none}ol.lst-kix_list_18-8{list-style-type:none}ol.lst-kix_list_18-7.start{counter-reset:lst-ctn-kix_list_18-7 0}ol.lst-kix_list_18-5{list-style-type:none}.lst-kix_list_25-4>li:before{content:"o  "}ol.lst-kix_list_18-6{list-style-type:none}.lst-kix_list_14-2>li:before{content:"\00f0a7  "}ol.lst-kix_list_18-3{list-style-type:none}ol.lst-kix_list_18-4{list-style-type:none}ol.lst-kix_list_18-1{list-style-type:none}.lst-kix_list_15-4>li:before{content:"o  "}ol.lst-kix_list_18-2{list-style-type:none}ol.lst-kix_list_18-0{list-style-type:none}.lst-kix_list_10-8>li:before{content:"\00f0a7  "}.lst-kix_list_3-8>li:before{content:"\0025aa  "}ul.lst-kix_list_17-6{list-style-type:none}ul.lst-kix_list_17-7{list-style-type:none}ul.lst-kix_list_17-8{list-style-type:none}.lst-kix_list_8-1>li{counter-increment:lst-ctn-kix_list_8-1}ul.lst-kix_list_17-2{list-style-type:none}ul.lst-kix_list_17-3{list-style-type:none}.lst-kix_list_21-7>li{counter-increment:lst-ctn-kix_list_21-7}ul.lst-kix_list_17-4{list-style-type:none}.lst-kix_list_13-5>li:before{content:"\00f0a7  "}ul.lst-kix_list_17-5{list-style-type:none}ol.lst-kix_list_7-3.start{counter-reset:lst-ctn-kix_list_7-3 0}.lst-kix_list_13-0>li:before{content:"\0025cf  "}.lst-kix_list_5-6>li:before{content:"\0025cf  "}.lst-kix_list_23-1>li:before{content:"o  "}ol.lst-kix_list_21-3.start{counter-reset:lst-ctn-kix_list_21-3 0}.lst-kix_list_19-2>li{counter-increment:lst-ctn-kix_list_19-2}ul.lst-kix_list_17-1{list-style-type:none}ul.lst-kix_list_17-0{list-style-type:none}.lst-kix_list_20-0>li{counter-increment:lst-ctn-kix_list_20-0}.lst-kix_list_24-7>li:before{content:"o  "}ol{margin:0;padding:0}.c18{max-width:580.9pt;background-color:#ffffff;padding:7.2pt 7.2pt 7.2pt 7.2pt}.c21{line-height:1.0;padding-top:0pt;padding-bottom:0pt}.c12{color:#1155cc;text-decoration:underline}.c1{vertical-align:baseline;font-family:"Courier New"}.c6{padding-left:0pt;margin-left:36pt}.c16{color:#000000;font-family:"Cambria"}.c9{margin:0;padding:0}.c4{color:inherit;text-decoration:inherit}.c11{color:#ff0000}.c0{direction:ltr}.c15{text-indent:36pt}.c5{height:12pt}.c2{vertical-align:baseline}.c20{color:#980000}.c14{margin-left:54pt}.c19{margin-left:18pt}.c7{font-weight:bold}.c8{font-family:"Courier New"}.c13{font-size:11pt}.c17{font-size:18pt}.c10{font-style:italic}.c3{font-size:10pt}.title{padding-top:24pt;line-height:1.0;text-align:left;color:#000000;font-size:36pt;font-family:"Cambria";font-weight:bold;padding-bottom:6pt;page-break-after:avoid}.subtitle{padding-top:18pt;line-height:1.0;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt;page-break-after:avoid}li{color:#000000;font-size:12pt;font-family:"Cambria"}p{color:#000000;font-size:12pt;margin:0;font-family:"Cambria"}h1{padding-top:24pt;line-height:1.0;text-align:left;color:#345a8a;font-size:16pt;font-family:"Calibri";font-weight:bold;padding-bottom:0pt}h2{padding-top:12pt;line-height:1.0;text-align:left;color:#000000;font-style:italic;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:3pt}h3{padding-top:12pt;line-height:1.0;text-align:left;color:#000000;font-size:13pt;font-family:"Arial";font-weight:bold;padding-bottom:3pt}h4{padding-top:12pt;line-height:1.0;text-align:left;color:#000000;font-size:12pt;font-family:"Cambria";font-weight:bold;padding-bottom:2pt;page-break-after:avoid}h5{padding-top:11pt;line-height:1.0;text-align:left;color:#000000;font-size:11pt;font-family:"Cambria";font-weight:bold;padding-bottom:2pt;page-break-after:avoid}h6{padding-top:10pt;line-height:1.0;text-align:left;color:#000000;font-size:10pt;font-family:"Cambria";font-weight:bold;padding-bottom:2pt;page-break-after:avoid}
+</style>
+</head>
+<body class="c18">
+<h1 class="c0"><a name="h.6oob44gf6rza" id=
+"h.6oob44gf6rza"></a><span>Intro to programming in R part two</span>
+<span class="c2 c7">2</span></h1>
+<p>Part of <a href="http://sbcs.qmul.ac.uk">QMUL</a> RMC361-2013. &copy; <a href="http://intercrossing.wikispaces.com/Bob+Verity">Robert Verity</a> &amp; <a href="http://yannick.poulet.org">Yannick Wurm</a></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">In this session we will build on
+some of the skills learned in the previous practical, and will move
+on to consider some more advanced ways of controlling program flow.
+As before, you will want to refer frequently to the help files and
+your own notes when exploring these new concepts.</span></p>
+<p class="c0">
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To get your
+brains warmed up, here a a few questions on the previous
+material.</span></p>
+<p class="c0 c5"></p>
+<ul class="c9 lst-kix_list_17-0 start">
+<li class="c6 c0"><span class="c7">Intro Q1.</span><span>&nbsp;What
+would be the outcome of the code</span> <span class=
+"c8">my.matrix&lt;-diag(5)</span><span>? Then what would be the
+outcome of the code</span> <span class=
+"c8">colSums(my.matrix)</span><span>?</span></li>
+<li class="c6 c0"><span class="c7">Intro Q2.</span><span>&nbsp;Load
+the data</span> <span class="c8">Indometh</span><span>. Subset this
+data to return only those fields for which the concentration is
+between 1 and 2? What is the average (mean) growth rate for this
+subset?</span></li>
+<li class="c6 c0"><span class="c7">Intro Q3.</span><span>&nbsp;What
+is the regular expression code that corresponds
+to</span><span class="c10">&nbsp;one or more copies of the letter
+"e", followed by one or more copies of the letter
+"z"</span><span>?</span></li>
+</ul>
+<h1 class="c0"><a name="h.f9w9rgraskfu" id=
+"h.f9w9rgraskfu"></a><span>Table of Contents</span></h1>
+<p class="c0 c19"><span class="c12"><a class="c4" href=
+"#h.6oob44gf6rza">Research Methods and Communication - R Session
+2</a></span></p>
+<p class="c0 c19"><span class="c12"><a class="c4" href=
+"#h.f9w9rgraskfu">Table of Contents</a></span></p>
+<p class="c0 c19"><span class="c12"><a class="c4" href=
+"#h.83v1ckfatyxr">Functions</a></span></p>
+<p class="c0 c14"><span class="c12"><a class="c4" href=
+"#h.t1osnfi5kxha">Intro to functions</a></span></p>
+<p class="c0 c14"><span class="c12"><a class="c4" href=
+"#h.mm941169r9no">Defining a function and its inputs</a></span></p>
+<p class="c0 c14"><span class="c12"><a class="c4" href=
+"#h.5x6izniq7hjr">The main workings of a function</a></span></p>
+<p class="c0 c14"><span class="c12"><a class="c4" href=
+"#h.rad3935yw56">Outputs</a></span></p>
+<p class="c0 c14"><span class="c12"><a class="c4" href=
+"#h.qa0rfqq9ez9s">More complex functions</a></span></p>
+<p class="c0 c19"><span class="c12"><a class="c4" href=
+"#h.rszopxdvbaqk">Loops</a></span></p>
+<p class="c0 c14"><span class="c12"><a class="c4" href=
+"#h.81swa1nu6vdt">Intro to loops</a></span></p>
+<p class="c0 c14"><span class="c12"><a class="c4" href=
+"#h.kla0p74z211r">Slightly more complex loops</a></span></p>
+<p class="c0 c19"><span class="c12"><a class="c4" href=
+"#h.6v7yv5nk3bph">Creating Custom Data Sets</a></span></p>
+<p class="c0 c14"><span class="c12"><a class="c4" href=
+"#h.fmln3l612g2d">Reshaping data using loops</a></span></p>
+<p class="c0 c19"><span class="c12"><a class="c4" href=
+"#h.iktqzc3scruu">Bringing it Together &ndash; i.e. exam
+practice!</a></span></p>
+<p class="c0 c19"><span class="c12"><a class="c4" href=
+"#h.bbr6o2b3cols">*Bonus Section: default values</a></span></p>
+<p class="c0 c5"></p>
+<p class="c0 c5"></p>
+<h1 class="c0"><a name="h.83v1ckfatyxr" id=
+"h.83v1ckfatyxr"></a><span>Functions</span></h1>
+<h3 class="c0"><a name="h.t1osnfi5kxha" id=
+"h.t1osnfi5kxha"></a><span>Intro to functions</span></h3>
+<p class="c0"><span class="c2">We start by taking a more detailed
+look at functions. You have already encountered a number of
+different functions, and should be quite familiar with their usage.
+For example,</span> <span class="c1">rbind()</span><span class=
+"c2">,</span> <span class="c1">subset()</span><span class=
+"c2">,</span> <span class="c1">grep()</span><span class=
+"c2">&nbsp;and</span> <span class="c1">gsub()</span><span class=
+"c2">&nbsp;are all functions that you have used already (if you
+can't remember what these functions do then I suggest you take
+another look at your notes from the first session)! Although these
+functions all do different things, they have the same common
+structure to them. This structure is key to understanding how a
+function really works.</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">A function has three main
+parts:</span></p>
+<ol class="c9 lst-kix_list_18-0 start" start="1">
+<li class="c6 c0"><span class="c2">Inputs</span></li>
+<li class="c6 c0"><span class="c2">Main workings of the
+function</span></li>
+<li class="c6 c0"><span class="c2">Outputs</span></li>
+</ol>
+<p class="c0"><span class="c2">The inputs are what go into the
+function. For example, in the case of</span> <span class=
+"c1">grep()</span><span class="c2">&nbsp;we were required to input
+a</span> <span class="c1">pattern</span><span class="c2">&nbsp;that
+we were searching for, and a vector</span> <span class=
+"c1">x</span><span class="c2">&nbsp;within which to search. The
+main workings of the function are a set of rules or calculations
+describing what should be done using these inputs. Finally, the end
+result of these calculations is an output, or a series of outputs,
+that should be returned by the function.</span> <span class=
+"c2 c7">Figure 1</span><span class="c2">&nbsp;gives a rough
+schematic</span> <span>showing</span><span class="c2">&nbsp;how a
+function works. Don't worry if this does not make perfect sense to
+you at this stage - hopefully it will do shortly!</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span style=
+"overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 553.20px; height: 202.13px;">
+<img alt="" src="images/image00.png" style=
+"width: 553.20px; height: 202.13px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
+title=""></span></p>
+<p class="c0 c21"><span class="c2 c7 c13 c16">Figure
+1</span><span class="c16 c2 c13">&nbsp; &nbsp;Rough schematic of a
+function.</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Now take a look at the following
+code. This code is designed to take a number in seconds, and
+convert it into hours, minutes and remaining seconds:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c13"># Input raw number of
+seconds</span></p>
+<p class="c0"><span class="c1 c13">number.of.seconds &lt;-
+19845</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c13"># Convert number.of.seconds into
+hours, minutes, and seconds</span></p>
+<p class="c0"><span class=
+"c1 c13">hours&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-
+floor(number.of.seconds /(60*60))</span></p>
+<p class="c0"><span class=
+"c1 c13">minutes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-
+floor((number.of.seconds -hours*(60*60))/60)</span></p>
+<p class="c0"><span class=
+"c1 c13">seconds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-
+number.of.seconds -((hours*60)+minutes)*60</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c13"># Create a single vector
+containing all three quantities</span></p>
+<p class="c0"><span class="c1 c13">outputvec &lt;- c(hours,
+minutes, seconds)</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c13"># Output the solution to the
+console</span></p>
+<p class="c0"><span class="c1 c13">outputvec</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Try to understand roughly what this
+code does, although don't worry too much about the calculations in
+the middle. Copy the code into a new script window, and run the
+script. You should find that the program outputs the solution,
+which in this case is 5 hours, 30 minutes, and 45
+seconds.</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Notice that
+there are three clearly identifiable parts to the code above - the
+inputs (the variable</span> <span class=
+"c1">number.of.seconds</span><span class="c2">), the main workings
+of the code (where the actual calculations are performed), and the
+outputs (where the value of</span> <span class=
+"c1">outputvec</span><span class="c2">&nbsp;is returned). So, we
+can see that this script already has some similarities with our
+definition of a function. But! Now imagine that we need to carry
+out this operation not just once on the value</span> <span class=
+"c1">number.of.seconds=19845</span><span class="c2">, but many
+hundreds of times, and each time with a different input. At the
+moment we would have no choice but to copy the entire code many
+times over, varying the input each time. This is clearly an
+extremely wasteful and time-consuming way to program, and is not a
+practical solution to the problem.</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A much better
+solution is to write this code as a function, rather than as a
+standalone script. A function takes the input value - in this case
+the raw time in seconds - performs all of the necessary
+calculations</span> <span class="c2 c7">behind the
+scenes</span><span class="c2">, and then simply returns the desired
+output. We will now work through the process of converting this
+example script into a working function, looking at each of the
+stages in turn.</span></p>
+<h3 class="c0"><a name="h.mm941169r9no" id=
+"h.mm941169r9no"></a><span class="c2 c7">Defining a function and
+its inputs</span></h3>
+<p class="c0"><span class="c2">The first thing that we need is a
+name for our function. As with naming variables, this is not rocket
+science, and the name</span> <span class=
+"c1">timeconverter</span><span class="c2">&nbsp;will do fine
+here.</span></p>
+<p class="c0 c5"></p>
+<hr>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Note - there a many functions loaded
+into R by default. When coming up with a function name, make sure
+you are not overwriting one of these existing functions. Do this by
+searching the help for that function name. For example, if you
+wanted to call your function</span> <span class=
+"c1">prod</span><span class="c2">&nbsp;then type</span>
+<span class="c1">?prod</span><span class="c2">&nbsp;(in this</span>
+<span>example</span> <span class="c2">you will find that this
+function name is already taken).</span></p>
+<hr>
+<p class="c0 c5"></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Now we need to tell R that we want
+to create a new function called</span> <span class=
+"c1">timeconverter</span><span class="c2">. This can be done as
+follows:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c13">timeconverter &lt;-
+function(inputseconds) { }</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">(</span><span>d</span><span class=
+"c2">on't run this code on its own, as it will not do anything).
+The crucial part here, i.e. the part that cannot be fiddled with,
+is the word</span> <span class="c1">function()</span><span class=
+"c2">, which tells R that we want</span> <span class=
+"c1">timeconverter</span><span class="c2">&nbsp;to be a function,
+rather than an ordinary variable. The part that</span> <span class=
+"c2 c10">can</span><span class="c2">&nbsp;be fiddled with is the
+text inside the curly brackets. This is where we write the name, or
+names, of the inputs to the function. These are often called
+the</span> <span class="c2 c10">arguments</span><span class=
+"c2">&nbsp;of the function. You are already familiar with the
+arguments of several functions from previous work. For example, the
+function</span> <span class="c1">grep()</span><span class=
+"c2">&nbsp;has arguments</span> <span class=
+"c1">pattern</span><span class="c2">&nbsp;and</span> <span class=
+"c1">x</span><span class="c2">, as well as the optional
+arguments</span> <span class="c1">value</span><span class=
+"c2">&nbsp;and</span> <span class=
+"c1">ignore.case</span><span class="c2">. In the code above we are
+stating that our function</span> <span class=
+"c1">timeconverter</span><span class="c2">&nbsp;has a single
+argument, which is called</span> <span class=
+"c1">inputseconds</span><span class="c2">. So far so
+simple.</span></p>
+<p class="c0 c5"></p>
+<h3 class="c0"><a name="h.5x6izniq7hjr" id=
+"h.5x6izniq7hjr"></a><span class="c2 c7">The main workings of a
+function</span></h3>
+<p class="c0"><span class="c2">Once we have defined our function
+and stated the inputs, we can get stuck into the main body of the
+function. This section always opens with a squiggly bracket
+"</span><span class="c1">{</span><span class="c2">", and closes
+with another squiggly bracket "</span><span class=
+"c1">}</span><span class="c2">".
+&nbsp;Th</span><span>ese</span><span class="c2">&nbsp;tell R where
+the function starts, and where is stops. The overall format should
+look like this:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c13">timeconverter &lt;-
+function(inputseconds) {</span></p>
+<p class="c0"><span class=
+"c1 c13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# this is
+where the calculations go</span></p>
+<p class="c0"><span class=
+"c1 c13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class="c1 c13">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Notice that I have indented
+everything inside curly brackets using the</span> <span class=
+"c2 c10">Tab</span><span class="c2">&nbsp;key. This is not strictly
+required to make the function work, but is good coding practice as
+it makes it more obvious where the function starts and
+stops.</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this
+example we want to paste into this section the code that actually
+performs the time conversion. The new code should look like
+this:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">timeconverter &lt;-
+function(inputseconds) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Convert
+the inputseconds into hours, minutes, and seconds</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hours&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-
+floor(inputseconds/(60*60))</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minutes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-
+floor((inputseconds-hours*(60*60))/60)</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seconds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-
+inputseconds-((hours*60)+minutes)*60</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Create a
+single vector containing all three quantities</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;outputvec
+&lt;- c(hours, minutes, seconds)</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span>In the initial script we used the fixed
+variable</span> <span class=
+"c8 c13">number.of.seconds</span><span>&nbsp;in our calculations.
+In the code above we have replaced this with</span><span class=
+"c2">&nbsp;the variable</span> <span class=
+"c1">inputseconds</span><span class="c2">,</span> <span>which
+is</span><span class="c2">&nbsp;an argument of the function.
+T</span><span>he</span><span class="c2">&nbsp;value
+of</span><span>&nbsp;</span><span class=
+"c8">inputseconds</span><span>&nbsp;</span><span class="c2">can be
+different every time the function is
+run</span><span>,</span><span class="c2">&nbsp;while in the initial
+script we</span> <span>were stuck with</span> <span class="c2">the
+fixed</span> <span>value</span> <span class=
+"c1 c13">number.of.seconds=19845.</span><span class="c2">&nbsp;In
+other words, by writing this as a function the user will be able to
+decide whatever value they want for the value of</span>
+<span class="c1">inputseconds</span><span class="c2">.</span></p>
+<p class="c0 c5"></p>
+<h3 class="c0"><a name="h.rad3935yw56" id=
+"h.rad3935yw56"></a><span class="c2 c7">Outputs</span></h3>
+<p class="c0"><span class="c2 c7">The only thing missing from the
+function above is the code for outputting the
+solution</span><span class="c2">. At the moment the function simply
+takes the input, performs the calculations, and then keeps the
+solution to itself! This is no good.</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Telling a
+function which values to output is very simple. We simply need to
+use the command</span> <span class="c1">return()</span><span class=
+"c2">&nbsp;within the function, with the variable that we want to
+output written inside the brackets. For example, in this case we
+will write</span> <span class=
+"c1">return(outputvec)</span><span class="c2">. The complete code
+should look like this:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">timeconverter &lt;-
+function(inputseconds) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Convert
+the inputseconds into hours, minutes, and seconds</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hours&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-
+floor(inputseconds/(60*60))</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minutes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-
+floor((inputseconds-hours*(60*60))/60)</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seconds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-
+inputseconds-((hours*60)+minutes)*60</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Create a
+single vector containing all three quantities</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;outputvec
+&lt;- c(hours, minutes, seconds)</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Output
+the solution</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(outputvec)</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Copy this code over into a new
+script window, and run the script. Once this script has been</span>
+<span>evaluated</span><span class="c2">&nbsp;you will have access
+to the function</span> <span class=
+"c1">timeconverter()</span><span class="c2">. Try typing</span>
+<span class="c1">timeconverter(345)</span><span class="c2">&nbsp;in
+the console. You should find that all of the calculations required
+to convert this number into hours, minutes, and seconds, takes
+place behind the scenes, and just the final answer is output to the
+console.</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remember that
+you can assign the output of a function to a new variable. For
+example, try typing</span> <span class=
+"c1">converted&lt;-timeconverter(345)</span><span class=
+"c2">&nbsp;in the console. The variable</span> <span class=
+"c1">converted</span><span class="c2">&nbsp;should now contain the
+desired output.</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Returning to the beginning of this
+section, our initial problem was that we wanted to perform this
+time conversion many times over, and with different inputs each
+time. The unsatisfactory solution was to copy the entire script
+many times over, varying the input each time. We can now see that
+the way to solve this problem is as follows:</span></p>
+<ol class="c9 lst-kix_list_19-0 start" start="1">
+<li class="c6 c0"><span class="c2">Define the function</span>
+<span class="c1">timeconverter()</span><span class="c2">&nbsp;at
+the beginning of the script. Let the raw time in seconds be an
+argument to this function.</span></li>
+<li class="c6 c0"><span class="c2">Use the function</span>
+<span class="c1">timeconverter()</span><span class="c2">throughout
+the rest of the script whenever we need to</span>
+<span>perform</span><span class="c2">&nbsp;a
+conversion.</span></li>
+</ol>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">When using this approach it is
+important that you remember to define the function at the beginning
+of the script. Otherwise when you load up R the next time, or when
+you try to run the script on</span> <span>a
+different</span><span class="c2">&nbsp;machine, you will not have
+access to the function.</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2 c7">Q1.</span> <span class="c2">Write
+your own function for converting distances between different units.
+Your function should take the distance in kilometres as input, and
+return the distance in miles as output (8 kilometres is roughly
+equal to 5 miles). Remember to clearly annotate your code, and make
+appropriate use of white space.</span></p>
+<p class="c0 c5"></p>
+<h3 class="c0"><a name="h.qa0rfqq9ez9s" id=
+"h.qa0rfqq9ez9s"></a><span class="c2 c7">More complex
+functions</span></h3>
+<p class="c0"><span class="c2">Hopefully you can already see how
+functions can be very useful things. We can make them even more
+useful by considering some simple extensions.</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First, you can
+define multiple arguments to a function. For example, in the case
+of</span> <span class="c1">timeconverter()</span><span class=
+"c2">&nbsp;we might have another input - say, an additional number
+of hours that need to be added on to the solution. Lets call this
+argument</span> <span class="c1">additionalhours</span><span class=
+"c2">. This extra argument goes in at the point where we define the
+function, separated by a comma from the previous argument. The new
+code looks like this:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">timeconverter &lt;-
+function(inputseconds, additionalhours) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Convert
+the inputseconds into hours, minutes, and seconds</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hours&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-
+floor(inputseconds/(60*60))</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minutes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-
+floor((inputseconds-hours*(60*60))/60)</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seconds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;-
+inputseconds-((hours*60)+minutes)*60</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Create a
+single vector containing all three quantities</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;outputvec
+&lt;- c(additionalhours+hours, minutes, seconds)</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Output
+the solution</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(outputvec)</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">The value of</span> <span class=
+"c1">additionalhours</span><span class="c2">&nbsp;has been included
+in the calculations</span><span>, being added on to the existing
+solution</span><span class="c2">. Run this code and have a go at
+using the function with some different input values. Remember that
+you will now h</span><span>ave to specify values for both arguments
+when you run the function, i.e.</span> <span class=
+"c8">timeconverter(inputseconds=345,
+additionalhours=10)</span><span>. See the bonus section at the end
+for how to set default values for your arguments.</span></p>
+<p class="c0 c15"><span class="c2">It is also worth noting that
+functions do not have to take single numbers as input. They can
+take vectors, matrices, data frames, or any other type of object,
+and they can also take character and logical data as well as
+numerical. For example, the following function takes a vector of
+words as input, and outputs the number of characters in the longest
+word:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">maxcharacters &lt;-
+function(wordvec) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Find the
+number of characters in the longest word</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;characters</span><span class="c8 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1 c3">&lt;-
+nchar(wordvec)</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;largestvalue</span><span class="c8 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1 c3">&lt;-
+max(characters)</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Output
+the solution</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(largestvalue)</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Try creating &nbsp;a vector of words
+and running it through this function. If you want to understand how
+this function actually works, simply copy the main workings of the
+function over into a new script and look at each command in turn
+(you may not have encountered the functions</span> <span class=
+"c1">nchar()</span><span class="c2">&nbsp;and</span> <span class=
+"c1">max()</span><span class="c2">&nbsp;yet).</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2 c7">Q2.</span> <span class="c2">This
+task is a bit more challenging! Go back to your function for
+converting kilometres to miles; make a copy</span><span>&nbsp;with
+an appropriate new name. The new extended function you must create
+should:</span></p>
+<ol class="c9 lst-kix_list_20-0 start" start="1">
+<li class="c6 c0"><span class="c2">take a distance in
+kilometres</span> <span class="c2 c10">and</span><span class=
+"c2">&nbsp;a time in minutes as input.</span></li>
+<li class="c6 c0"><span class="c2">convert the distance into miles,
+and the time into hours. It should then calculate a speed in miles
+per hour.</span></li>
+<li class="c6 c0"><span class="c2">return the speed in miles per
+hour as</span> <span class="c2">output</span><span class=
+"c2">.</span></li>
+</ol>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">All of the skills required to</span>
+<span>complete this task</span><span class="c2">&nbsp;this are
+given above. Take your time, and approach this problem one step at
+a time.</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c7">Q3.</span><span>&nbsp;Go back to the
+script you wrote in the previous practical for calculating the
+volume of a rectangular room. Rewrite this as a function, with the
+width, length, and height as arguments.</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c7">Q4.</span><span>&nbsp;Write a
+function that makes use of logical expressions. For example, you
+might design a simple function that takes</span> <span class=
+"c8">x</span><span>&nbsp;and</span> <span class=
+"c8">y</span><span>&nbsp;as input, and returns</span> <span class=
+"c8">TRUE</span><span>&nbsp;if</span> <span class=
+"c8">x</span><span>&nbsp;is greater than</span> <span class=
+"c8">y</span><span>, or</span> <span class=
+"c8">FALSE</span><span>&nbsp;otherwise.</span></p>
+<h1 class="c0"><a name="h.rszopxdvbaqk" id=
+"h.rszopxdvbaqk"></a><span class="c2 c7">Loops</span></h1>
+<h3 class="c0"><a name="h.81swa1nu6vdt" id=
+"h.81swa1nu6vdt"></a><span>Intro to loops</span></h3>
+<p class="c0"><span class="c2">One of the main things that
+computers are useful for is doing the same task over and over again
+many times. Something that may take hours to do manually might take
+seconds on a computer, just as long as we have the right code to do
+it. The programming tool that allows you to perform a task many
+times over is the</span> <span class=
+"c2 c10">loop</span><span class="c2">.</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Have a look at the following code.
+This code takes a particular time value, converts it to hours,
+minutes, and seconds using the function</span> <span class=
+"c1">timeconverter()</span><span class="c2">, and then prints the
+output in the console. It does this for a range of different time
+values, one after the other:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3"># Convert first time and print
+output</span></p>
+<p class="c0"><span class="c1 c3">time &lt;- 178</span></p>
+<p class="c0"><span class="c1 c3">converted &lt;-
+timeconverter(inputseconds=time, additionalhours=0)</span></p>
+<p class="c0"><span class="c1 c3">print(converted)</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3"># Convert second time and print
+output</span></p>
+<p class="c0"><span class="c1 c3">time &lt;- 179</span></p>
+<p class="c0"><span class="c1 c3">converted &lt;-
+timeconverter(inputseconds=time, additionalhours=0)</span></p>
+<p class="c0"><span class="c1 c3">print(converted)</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3"># Convert third time and print
+output</span></p>
+<p class="c0"><span class="c1 c3">time &lt;- 180</span></p>
+<p class="c0"><span class="c1 c3">converted &lt;-
+timeconverter(inputseconds=time, additionalhours=0)</span></p>
+<p class="c0"><span class="c1 c3">print(converted)</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3"># Convert fourth time and print
+output</span></p>
+<p class="c0"><span class="c1 c3">time &lt;- 181</span></p>
+<p class="c0"><span class="c1 c3">converted &lt;-
+timeconverter(inputseconds=time, additionalhours=0)</span></p>
+<p class="c0"><span class="c1 c3">print(converted)</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Notice that at each stage we are
+simply overwriting the value of the variables</span> <span class=
+"c1">time</span><span class="c2">&nbsp;and</span> <span class=
+"c1">converted</span><span class="c2">&nbsp;as we need to. Notice
+also that the script is very repetitive, with the same block of
+code being copied many times over. This is very wasteful in terms
+of the space it takes up, and the amount of time it takes to write.
+Now imagine doing it thousands of times rather than just four
+times!</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A loop solves
+this problem by creating a block of code that will be evaluated
+many times over automatically. As part of this process we create a
+single variable, called the</span> <span class=
+"c2 c10">index</span><span class="c2">&nbsp;of the loop, that is
+overwritten with a different value each time the block is
+evaluated.</span><span>&nbsp;</span><span class="c2">As with
+functions, there is a standard</span> <span class=
+"c2 c10">syntax</span><span class="c2">&nbsp;(way of writing) that
+must be used when defining a loop. A simple example of a loop is as
+follows:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c11 c3">possible.values &lt;-
+1:5</span></p>
+<p class="c0"><span class="c1 c3">for (</span><span class=
+"c1 c11 c3">index</span><span class="c1 c3">&nbsp;in</span>
+<span class="c1 c11 c3">possible.values</span><span class="c1 c3">)
+{</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3 c11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(index)</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0 c5"></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Here I have used black text to show
+things that cannot be changed, and red text to show things that can
+be changed. To start with, the word "</span><span class=
+"c1">for</span><span class="c2">" simply tells R that you are
+defining a</span> <span class="c2 c10">for loop</span><span class=
+"c2">&nbsp;(the only type of loop that we will consider here). Then
+we write some curly brackets. The first thing inside these brackets
+is the name of the index variable of the loop. Here I have called
+it</span> <span class="c1">index</span><span class="c2">, although
+any valid variable name can be used. The index variable will take
+on a different value each time through the loop. Now we need to
+tell R what values to use for the variable</span> <span class=
+"c1">index</span><span class="c2">. These values are written after
+the word "</span><span class="c1">in</span><span class="c2">". Here
+I have used a simple vector of values going from 1 to 5. Thus, the
+first time through the loop the variable</span> <span class=
+"c1">index</span><span class="c2">&nbsp;will have a value 1, the
+second time through it will have a value 2, etc. Finally, we create
+a block using squiggly brackets, just as we did when defining a
+function. Everything inside of these brackets falls within
+the</span> <span class="c2 c10">scope</span><span class=
+"c2">&nbsp;of the loop, and will be evaluated each time through. In
+this example I have written a simple command that prints the value
+of the index to the console.</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Try running
+this code. You should see the numbers one to</span>
+<span>five</span><span class="c2">&nbsp;output in the console. It
+is important to understand exactly where these numbers come from.
+The complete workings of the loop can be written out as
+follows:</span></p>
+<ol class="c9 lst-kix_list_21-0 start" start="1">
+<li class="c6 c0"><span class="c2">First time through the loop.
+Set</span> <span class="c1">index=1</span><span class="c2">.
+Evaluate code within squiggly brackets.</span></li>
+<li class="c6 c0"><span class="c2">Second time through the loop.
+Set</span> <span class="c1">index=2</span><span class="c2">.
+Evaluate code within squiggly brackets.</span></li>
+<li class="c6 c0"><span class="c2">Third time through the loop.
+Set</span> <span class="c1">index=3</span><span class="c2">.
+Evaluate code within squiggly brackets.</span></li>
+<li class="c6 c0"><span class="c2">Fourth time through the loop.
+Set</span> <span class="c1">index=4</span><span class="c2">.
+Evaluate code within squiggly brackets.</span></li>
+<li class="c6 c0"><span class="c2">Fifth time through the loop.
+Set</span> <span class="c1">index=5</span><span class="c2">.
+Evaluate code within squiggly brackets.</span></li>
+</ol>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">This is an extremely simple example,
+but its easy to see how this method can be put to good use. Going
+back to the problem stated at the outset, we can now write the code
+for converting a series of different time values in a much more
+compact way as follows:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">time.values &lt;-
+178:181</span></p>
+<p class="c0"><span class="c1 c3">for (time in time.values)
+{</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Convert
+time and print output</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;converted
+&lt;- timeconverter(inputseconds=time,
+additionalhours=0)</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(converted)</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Notice that the index of the loop
+has been given a different name here, and the values that we are
+looping over have also changed. Run this code and look at the
+output. Really try to get your head around how the loop is
+operating at each</span> <span class=
+"c2 c10">iteration</span><span class="c2">&nbsp;(each time through
+the loop), and how the output is being produced.</span></p>
+<p class="c0 c5"></p>
+<h3 class="c0"><a name="h.kla0p74z211r" id=
+"h.kla0p74z211r"></a><span>Slightly more complex loops</span></h3>
+<p class="c0"><span class="c2">There are some interesting ways in
+which we can stretch our understanding of loops. First of all, it
+is important to recognise that the values that we are indexing over
+do not have to be sequential. The part where we write</span>
+<span class="c1">178:181</span><span class="c2">&nbsp;in the
+example above really just specifies a vector that we are indexing
+over. Compare this with the following code:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">loop.values &lt;-
+c(15,5,2.3,100,16)</span></p>
+<p class="c0"><span class="c1 c3">for (index in loop.values)
+{</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(index)</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Evaluate this code and look at the
+output. Notice that we have simply looped over the vector of values
+contained in</span> <span class="c1">loopvalues</span><span class=
+"c2">. We can even do away with numerical values altogether.
+Evaluate the following code:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">loop.text &lt;- c("How", "Now",
+"Brown", "Cow")</span></p>
+<p class="c0"><span class="c1 c3">for (index in loop.text)
+{</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(index)</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Looking at the output we can see
+that this loop indexes over a series of character strings. This
+technique can be useful in some situations.</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Another
+important way of extending loops is to consider</span> <span class=
+"c2 c10">nested</span><span class="c2">&nbsp;loops - in other
+words, loops within other loops! Have a look at the following
+code:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">for (i in 1:10) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (j in
+3:6) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(c(i,j))</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Here we have one loop (with
+index</span> <span class="c1">j</span><span class="c2">) nested
+within another loop (with index</span> <span class=
+"c1">i</span><span class="c2">).</span> <span>I have also defined
+the values that</span> <span class=
+"c8">i</span><span>&nbsp;and</span> <span class=
+"c8">j</span><span>&nbsp;can take directly within the loops, rather
+than outside of the loops as in previous examples - this is simply
+a way of saving space.</span> <span class="c2">Evaluate this code
+and try to make sense of the output. Fiddle around with the
+different elements of this code until you are comfortable with
+nested loops. You could even try writing a third-degree nested loop
+(put another loop inside the</span> <span class=
+"c1">j</span><span class="c2">-loop)! If you plan to do this then
+keep in mind the following warning...</span></p>
+<p class="c0 c5"></p>
+<hr>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Warning - loops require</span>
+<span>your</span><span class="c2">&nbsp;computer to perform many
+operations, and as such it is quite easy to crash R using loops. A
+simple block of code evaluated 100,000 times amounts to quite a big
+job. If you want to force R to exit a loop part way through, simply
+press</span> <span class="c2 c7">Esc</span><span class="c2">.
+Nested loops are particularly hazardous!</span></p>
+<hr>
+<p class="c0 c5"></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Once you are comfortable with loops,
+have a go at the following tasks:</span></p>
+<ul class="c9 lst-kix_list_23-0 start">
+<li class="c6 c0"><span class="c2 c7">Q3.</span><span class=
+"c2">&nbsp;Write a loop that iterates over the numbers 1 to 100,
+and prints out the index of the loop each time through.</span></li>
+<li class="c0 c6"><span class="c2 c7">Q4.</span><span class=
+"c2">&nbsp;Write a loop that iterates over the numbers 16 to 49,
+and prints out the square root of the index each time through (you
+may have to search around for the square root
+function).</span></li>
+<li class="c6 c0"><span class="c2 c7">Q</span><span class=
+"c7">5</span><span class="c2 c7">.</span><span class=
+"c2">&nbsp;Write a loop that iterates over all even numbers between
+2 and 1000. Each time round evaluate the function</span>
+<span class="c1">timeconverter()</span><span class="c2">&nbsp;on
+the indexed value, and print the solution to the
+console.</span></li>
+<li class="c6 c0"><span class="c7">Q6.</span><span>&nbsp;Write a
+loop that calculates the product of all numbers from 1 to
+10.</span></li>
+<li class="c6 c0"><span class="c2 c7">Q7.</span><span class=
+"c2">&nbsp;Create a nested loop. The outer loop should be over the
+words "Angry", "Lazy" and "Brown". The inner loop should be over
+the words "birds", "dogs", and "cows". The code inside the inner
+loop should print out a vector containing the indexes of both
+loops</span> <span>(for example &ldquo;Angry&rdquo; and
+&ldquo;birds&rdquo; in the first instance</span><span class=
+"c2">).</span></li>
+<li class="c6 c0"><span class="c7">Q8.</span><span>&nbsp;Write a
+third-degree nested loop. Be careful not to loop over too many
+values or you will crash R!</span></li>
+</ul>
+<h1 class="c0"><a name="h.6v7yv5nk3bph" id=
+"h.6v7yv5nk3bph"></a><span class="c2 c7">Creating Custom Data
+Sets</span></h1>
+<h3 class="c0"><a name="h.fmln3l612g2d" id=
+"h.fmln3l612g2d"></a><span class="c2 c7">Reshaping data using
+loops</span></h3>
+<p class="c0"><span class="c2">One way in which you might find
+loops particularly useful is in reformatting data. By looping
+through all of the fields of a particular data set, and at each
+iteration dropping the relevant entry into a new data structure, it
+is possible to convert from one data format to another.</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The data set
+that we will use in this example is typical of the sort of data
+that you might be faced with in the future. Load the data by
+running the following line of code:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c8">helianthus.data &lt;-
+as.matrix(read.table("http://www.antgenomes.org/~yannickwurm/tmp/HelianthusData_num.txt
+", header=T))</span></p>
+<p class="c0 c5">Alternatively download the file from <a href="data/HelianthusData_num.txt">here</a> and similarly read it into R:</p>
+<p class="c0"><span class="c8">helianthus.data &lt;-
+as.matrix( read.table(file.choose()), header=T)</span></p>
+<p class="c0"><span class="c2">Each row in this data set represents
+a different strain of</span> <span class="c2 c10">Helianthus
+annuus</span><span class="c2">&nbsp;(sunflowers), grown under
+controlled conditions. The first column tells us the</span>
+<span class="c1">Strain</span><span>&nbsp;</span><span class=
+"c2">(thes</span><span>e are numbered</span> <span class=
+"c8">1</span><span>&nbsp;to</span> <span class=
+"c8">5</span><span>).</span><span class="c2">&nbsp;The remaining
+columns describe the number of plants found in the study area at
+six different points in time. For example, looking at the first
+row, we can see that strain</span> <span class=
+"c8">1</span><span class="c2">&nbsp;started out with 12 plants, but
+by the final time point contained 57 plants.</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We want to get
+this data into a new format - sometimes called</span> <span class=
+"c2 c10">long format</span><span class="c2">&nbsp;- in which we
+have a matrix of three columns; the first column describes the
+strain, the second column describes the time point, and the third
+column describes the number of plants observed. The first few lines
+of this new data structure should look like this:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class=
+"c2">Strain&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count</span></p>
+<p class="c0"><span>1</span><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12</span></p>
+<p class="c0"><span>1</span><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;33</span></p>
+<p class="c0"><span>1</span><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;71</span></p>
+<p class="c0"><span>1</span><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;61</span></p>
+<p class="c0"><span>1</span><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;73</span></p>
+<p class="c0"><span>1</span><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;57</span></p>
+<p class="c0"><span>2</span><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</span></p>
+<p class="c0"><span>2</span><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;27</span></p>
+<p class="c0"><span class="c2">...</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">We can make the transition from
+the</span> <span class="c2 c10">wide</span><span class=
+"c2">&nbsp;format of</span> <span class=
+"c8">helianthus.data</span><span class="c2">&nbsp;to the</span>
+<span class="c2 c10">long</span><span class="c2">&nbsp;format
+described above using a nested loop. But first, let us create an
+empty matrix, called</span> <span class=
+"c1">long.data</span><span class="c2">, which we will eventually
+fill with our new values. This matrix must have 3 columns, and 30
+rows (the number 30 comes from the fact that we have five strains
+at six time points each). You should already know the code to
+produce this matrix. Have a go yourself before looking at the
+answer below...</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1"># Create an empty matrix</span></p>
+<p class="c0"><span class="c1">long.data &lt;- matrix(0, nrow=30,
+ncol=3)</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">What you might not know is how to
+name each of the columns of this matrix. This can be done as
+follows:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1">colnames(long.data) &lt;-
+c("Strain", "Time", "Count")</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">With this empty matrix created we
+can move on to the next part of the problem - populating it with
+values. We want to look at each of the elements of</span>
+<span class="c8">helianthus.data</span><span class="c2">&nbsp;one
+after the other, using a nested loop. The basic structure of this
+nested loop is as follows:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3"># Loop through all
+rows</span></p>
+<p class="c0"><span class="c1 c3">for (myrow in 1:5) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Loop
+through all columns except the first</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (mycol
+in 2:7) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+This is where the main code goes.</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Here we are using loops to index
+through each of the rows of the matrix</span> <span class=
+"c8">helianthus.data</span><span class="c2">, and for each row we
+are indexing through columns 2 to 7 (as these are the columns that
+contain relevant data). At any point in the two loops, the value
+that we are focusing on is given by</span> <span class=
+"c8">helianthus.data</span><span class=
+"c1">[myrow,mycol]</span><span class="c2">. For example, the
+following script could be used to print out each of the values that
+we are interested in one after the other:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3"># Loop through all
+rows</span></p>
+<p class="c0"><span class="c1 c3">for (myrow in 1:5) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Loop
+through all columns except the first</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (mycol
+in 2:7) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+Print out</span> <span class=
+"c8 c3">helianthus.data</span><span class="c1 c3">&nbsp;for this
+row and column</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(</span><span class="c8 c3">helianthus.data</span><span class="c1 c3">[myrow,mycol])</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Hopefully you can already see that
+these are the exact values &nbsp;we want to drop into the third
+column of our matrix</span> <span class=
+"c1">long.data</span><span class="c2">. However, we are presented
+with a problem - how do we drop these values one after the other
+into the right place in the matrix</span> <span class=
+"c1">long.data</span><span class="c2">? We cannot use the
+index</span> <span class="c1">myrow</span><span class="c2">&nbsp;to
+help us, as this only goes through values</span> <span class=
+"c1">1:5</span><span class="c2">. Similarly, we cannot use the
+index</span> <span class="c1">mycol</span><span class="c2">, as
+this only goes through values</span> <span class=
+"c1">2:7</span><span class="c2">. What we really need is a new
+index that goes all the way from 1 to 30, irrespective of the row
+or column that we are focusing on.</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If we want
+such an index then we will have to make it ourselves! Let us start
+by creating the variable</span> <span class=
+"c1">myindex</span><span class="c2">, and giving it a value of
+zero. Then, each time through the</span> <span class=
+"c2 c10">inner</span><span class="c2">&nbsp;loop we want to
+increase the value of</span> <span class=
+"c1">myindex</span><span class="c2">&nbsp;by 1; this can be done
+using the simple command</span> <span class="c1">myindex
+&lt;-</span><span class="c8">&nbsp;</span><span class=
+"c1">myindex+1</span><span class="c2">. This is called</span>
+<span class="c2 c10">incrementing</span><span class="c2">&nbsp;the
+variable</span> <span class="c1">myindex</span><span class=
+"c2">&nbsp;by a value of 1. At this point the script might look
+something like this:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3"># Create myindex</span></p>
+<p class="c0"><span class="c1 c3">myindex &lt;- 0</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3"># Loop through all
+rows</span></p>
+<p class="c0"><span class="c1 c3">for (myrow in 1:5) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Loop
+through all columns except the first</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (mycol
+in 2:7) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+Increment myindex by a value of 1</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myindex
+&lt;- myindex+1</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+Print values of all three indexes</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(c(myindex,myrow,mycol))</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">This example code prints out the
+values of all three indices each time through the inner loop. Have
+a look at the output produced by this code, and make sure you can
+explain the pattern of numbers that you see (ask a demonstrator to
+explain if you do not).</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now that we
+have three indices - one going through the rows of</span>
+<span class="c8">helianthus.data</span><span class="c2">, one going
+through the columns of</span> <span class=
+"c8">helianthus.data</span><span class="c2">, and one simply going
+from 1 to 30 - we have all the ingredients we need to populate the
+matrix</span> <span class="c1">long.data</span><span class="c2">.
+The adventurous among you might want to have a go at this
+yourselves! Otherwise, read on for the solution.</span></p>
+<p class="c0"><span class=
+"c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We have
+already seen that the values we want to drop into the third column
+of our matrix</span> <span class="c1">long.data</span><span class=
+"c2">&nbsp;are given by</span> <span class=
+"c8">helianthus.data</span><span class=
+"c1">[myrow,mycol]</span><span class="c2">. We have also created
+the variable</span> <span class="c1">myindex</span><span class=
+"c2">&nbsp;telling us the row of</span> <span class=
+"c1">longdata</span><span class="c2">&nbsp;that we want to drop
+into. Thus, the code we need at each iteration of the loop is the
+following:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1">long.data[myindex,3] &lt;-</span>
+<span class="c8">helianthus.data</span><span class=
+"c1">[myrow,mycol]</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">This is fairly straightforward. We
+also want to drop the time point in the second column of</span>
+<span class="c1">long.data</span><span class="c2">. Although we do
+not have a vector describing each of the time points, in fact the
+timings are very simply given by</span> <span class=
+"c1">mycol</span><span class="c2">&nbsp;minus two. For example, if
+we are looking at the fourth column then we are looking at the
+second time point. Therefore, we need the following line of code to
+extract the timings:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1">long.data[myindex,2] &lt;-
+mycol-2</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Finally, we want to drop the strain
+type into the first column of</span> <span class=
+"c1">long.data</span><span class="c2">. The strain type is given by
+the first element in every row, meaning it is given by</span>
+<span class="c8">helianthus.data</span><span class=
+"c1">[myrow,1]</span><span class="c2">. Therefore, we need the
+following line of code to extract the strain types:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1">long.data[myindex,1] &lt;-</span>
+<span class="c8">helianthus.data</span><span class=
+"c1">[myrow,1]</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">With the addition of these three
+lines of code we are finished! The final script should look
+something like this:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3"># Create an empty
+matrix</span></p>
+<p class="c0"><span class="c1 c3">long.data &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &lt;- matrix(0, nrow=30, ncol=3)</span></p>
+<p class="c0"><span class="c1 c3">colnames(long.data) &lt;-
+c("Strain", "Time", "Count")</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3"># Create myindex</span></p>
+<p class="c0"><span class="c1 c3">myindex &lt;- 0</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3"># Loop through all
+rows</span></p>
+<p class="c0"><span class="c1 c3">for (myrow in 1:5) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Loop
+through all columns except the first</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (mycol
+in 2:7) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+Increment myindex by a value of 1</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myindex
+&lt;- myindex+1</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+Drop the appropriate values into long.data</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;long.data[myindex,1]
+&lt;-</span> <span class="c8 c3">helianthus.data</span><span class=
+"c1 c3">[myrow,1]</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;long.data[myindex,2]
+&lt;- mycol-2</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;long.data[myindex,3]
+&lt;-</span> <span class="c8 c3">helianthus.data</span><span class=
+"c1 c3">[myrow,mycol]</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">After running this code the
+matrix</span> <span class="c1">long.data</span><span class=
+"c2">&nbsp;should contain the same data as</span> <span class=
+"c8">helianthus.data</span><span class="c2">, but in long format
+rather than wide format.</span></p>
+<h1 class="c0"><a name="h.iktqzc3scruu" id=
+"h.iktqzc3scruu"></a><span class="c2 c7">Bringing it
+Together</span></h1>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Well done for making it this far!
+Now try to bring all of your knowledge together. Have another look
+over your previous notes, and make sure these ideas are still fresh
+in your mind. Have a go at writing your own scripts, preferably
+combining a number of different concepts (for example, you could
+try making a function that acts on a matrix, and then using this
+function within a loop).</span> <span>Another good idea would be to
+come up with a problem that you want to solve (either for fun or
+for other coursework), and then write a function that solves
+it.</span></p>
+<p class="c0 c15"><span class="c2">Many of the ideas presented in
+this session and the last are designed to challenge you. Do not
+expect to understand them from a single read through the material.
+Rather, you will have to play around with many different examples
+and applications before the penny drops completely. On the plus
+side, structures such as loops and functions are common to almost
+all programming languages, and so once you understand these
+concepts the world of programming is your oyster!</span></p>
+<h1 class="c0"><a name="h.bbr6o2b3cols" id=
+"h.bbr6o2b3cols"></a><span class="c2 c7 c17">*Bonus
+Section</span><span class="c2 c7">: default values</span></h1>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c2">Returning to functions, another neat
+thing that we can do is set default values for our arguments. Have
+another look at the</span> <span class=
+"c1">timeconverter()</span><span class="c2">&nbsp;function. This
+function will complain if you try to run it without setting a value
+for both the argument</span> <span class=
+"c1">inputseconds</span><span class="c2">&nbsp;and the
+argument</span> <span class="c1">additionalhours</span><span class=
+"c2">&nbsp;- for example, if we tried to run the line</span>
+<span class="c1">timeconverter(inputseconds=123)</span><span class=
+"c2">&nbsp;we would get an error message. This might become very
+annoying - especially if the vast majority of the time the value
+of</span> <span class="c1">additionalhours</span><span class=
+"c2">&nbsp;will be set to zero. We can set a default value for this
+argument when we define the function as follows:</span></p>
+<p class="c0 c5"></p>
+<p class="c0"><span class="c1 c3">timeconverter &lt;-
+function(inputseconds, additionalhours=0) {</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# (the rest
+of the code)</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class="c1 c3">}</span></p>
+<p class="c0"><span class=
+"c1 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c0"><span class="c2">Make this change to your function,
+and then try running the line</span> <span class=
+"c1">timeconverter(inputseconds=123)</span><span class="c2">. You
+should find that this command goes through fine, using the
+value</span> <span class="c1">additionalhours=0</span><span class=
+"c2">&nbsp;as the default.</span></p>
+</body>
+</html>
