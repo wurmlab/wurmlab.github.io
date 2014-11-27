@@ -1,0 +1,6 @@
+Strain	Count.Time0	Count.Time1	Count.Time2	Count.Time3	Count.Time4	Count.Time5
+1	12	33	71	61	73	57
+2	10	27	62	71	56	75
+3	13	35	67	63	65	66
+4	7	16	42	66	73	55
+5	10	24	60	67	66	66

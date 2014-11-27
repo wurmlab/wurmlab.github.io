@@ -1,0 +1,16 @@
+"ID1423:Bellatorias obiri"	18	"Aug"	2006
+"ID2533:Caretta caretta"	16	"Jul"	2000
+"ID342:Cyclodomorphus praealtus"	24	"Dec"	2009
+"ID8777:Dermochelys coriacea"	8	"Jan"	2009
+"ID922:Egernia stokesii badia"	16	"Jul"	2000
+"ID164545:Elseya lavarackorum"	16	"Jul"	2000
+"ID253:Elusor macrurus"	16	"Jul"	2000
+"ID26343:Eulamprus leuraensis"	16	"Jul"	2000
+"ID2543:Eulamprus tympanum marnieae"	16	"Jul"	2000
+"ID9483:Lepidochelys olivacea"	16	"Jul"	2000
+"ID8374:Lerista allanae"	16	"Jul"	2000
+"ID3884:liopholis guthega"	23	"Feb"	2011
+"ID342:liopholis slateri slateri"	4	"Apr"	2001
+"ID746:Lucasium occultum"	18	"Aug"	2006
+"ID3988:Tiliqua adelaidensis"	16	"Jul"	2000
+"ID24:Tympanocryptis pinguicolla"	16	"Jul"	2000
