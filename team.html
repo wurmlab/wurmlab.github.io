@@ -1,0 +1,83 @@
+---
+layout: page
+title: The Team
+
+members:
+- name: Yannick Wurm
+  img: yannickwurm.jpg
+  about: "Strong interests in evolutionary genomics, social evolution,
+modern bioinformatics and genomics approaches, elegant software. [<a
+href='/cvYannickWurm.pdf'>Curriculum Vitae PDF</a>]. Some <a
+href='/talks'>invited talks</a>, <a href='/teaching/'>teaching
+material</a> and <a href='/#publications'>publications</a>."
+
+- name: Anurag Priyam
+  img: anuragpriyam.jpg
+  about: BBSRC-funded creator of a <a href="https://github.com/yeban/afra">tool for crowd-sourcing curation of gene predictions</a>. From IIT Kharagphur. Created the <a href="http://www.sequenceserver.com">easy BLASTing tool Sequenceserver</a>. [<a href="http://yeban.in">Personal website</a>] [<a href="https://github.com/yeban">GitHub</a>].
+
+- name: Rodrigo Pracana
+  img: rodrigopracana.jpg
+  about: Queen Mary University of London funded doctoral student.
+
+- name: Bruno Vieira
+  img: bmpvieira.jpg
+  about: Biologist javascript guru. BBSRC-funded developer of <a href="https://github.com/yeban/afra">tool for crowd-sourcing curation of gene predictions</a>. [<a href="http://bmpvieira.com">Personal website</a>] [<a href="https://github.com/bmpvieira">GitHub</a>] [<a href="https://medium.com/@bmpvieira">Blog</a>].
+
+- name: Natalia Araujo
+  img: peopleresized/nataliaaraujo.jpg
+  about: PhD student visitor from <a href="http://scholar.google.com/citations?user=DGM0c74AAAAJ&hl=en">Cristina Arias</a>' lab at University of Sao Paolo.
+
+- name: Dr. Eckart Stolle
+  img: peopleresized/eckartstolle.jpg
+  about: "Postdoc (<a
+  href='https://www.daad.de/deutschland/stipendium/en/'>DAAD
+  scholarship</a>) interested in the mechanisms underlying evolution
+  of genes, gene networks, behavior, castes and sociality. [<a
+  href='http://www.mol-ecol.uni-halle.de/staff/stolle-e/'>Personal
+  website</a>] [<a
+  href='http://scholar.google.com/citations?hl=de&user=p9qDNAYAAAAJ'>Google
+  Scholar</a>] [<a href='http://orcid.org/0000-0001-7638-4061'>ORCID</a>]. "
+
+- name: Kishor Dhaygude
+  img: kishordhaygude.jpg
+  about: <a href="http://www.helsinki.fi/science/ants/Antzz.html">Helsinki team ANTZZ</a>-based occasional visitor to the lab.
+
+- name: Monica Dragan
+  img: monicaandreeadragan.jpg
+  about: Zurich-based <a href="http://informatics.nescent.org/wiki/Phyloinformatics_Summer_of_Code_2013">NESCent Google Summer of Code 2013</a> student originally from Politehnica University of Bucharest. Developing <a href="https://github.com/monicadragan/GeneValidator">GeneValidator</a> a tool to identify problematic gene predictions. [<a href="http://gene-prediction.blogspot.co.uk/">Development Blog</a>].
+
+project_students:
+- name: Elena Shanti Franchina
+- name: Nazrath Nawaz
+- name: Hasan Al-Saidi
+- name: Ismail Moghul (2013)
+- name: Gideon Pomeranz (2013)
+
+
+Alumni:
+
+---
+<div class="row">
+  {% for member in page.members %}
+  <div class="span5">	
+    <div class="caption">
+      <h3>{{ member.name }}</h3>
+      <img src="/img/{{ member.img }}" align="left" style="margin-right:10px; height:150px;" class="img-rounded">
+      <p>{{ member.about }} </p>
+    </div>
+    
+  </div>
+  {% cycle '', '</div><div class="row">' %}
+  {% endfor %}
+</div>
+
+<div class="row">
+<div class="span10">
+<h3>Undergraduate project Students</h3>
+<ul>
+  {% for student in page.project_students %}
+  <li>{{ student.name }}</li>
+  {% endfor %}
+</ul>
+</div>
+</div>

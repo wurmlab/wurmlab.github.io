@@ -1,0 +1,22 @@
+---
+author: yannick
+comments: true
+date: 2013-12-22 17:07:12
+layout: post
+slug: 2013-nonews
+title: Long time no update
+categories: 
+ - labnews
+ - teaching
+---
+No real update here for a while! Major events include: 
+
+ * Publication of our [social chromosome paper in Nature](http://www.nature.com/nature/journal/vaop/ncurrent/full/nature11832.html)
+ * BBSRC & NESCent funding to [crowdsource gene curation](http://afra.sbcs.qmul.ac.uk)
+ * Google Summer of Code funding to help [identify problematic gene predictions](https://github.com/monicadragan/GeneValidator)
+ * Support form the [Software Sustainability Institute](http://software.ac.uk)
+ * [Lots of teaching](/teaching/)
+ * Some wonderful new [team members](/team.html), visitors, [colleagues](http://www.sbcs.qmul.ac.uk/people/index.html) & collaborators.
+
+Perhaps hope for more regular updates in 2014? We'll see. 
+

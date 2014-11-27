@@ -1,0 +1,27 @@
+---
+layout: page
+title: Compiling glut on MacOS X
+---
+     <h3> Compiling Linux Glut code on OS X - WITHOUT PROJECTBUILDER</h3>
+	<p><b>This tip works on os 10.1.x, but on jaguar, you systematically get a bus error</b></p>
+        <p>The machines we use at school are linux machines and we do all our c+ projects using emacs and gcc. OSX being a unix this stuff should work, right?</p>
+        <p>It doesn't compile" Why? Because we use glut and our #include GL/glut.h calls don't work since GL is not defined on macos.</p>
+         <p>This is how I ended up getting my code to compile. I'm sure this can be done much more elegantly... if you have something in mind please send me an <a href="mailto:idh@poulet.org">email</a></p>
+
+<ul>
+            <li> change the Glut/gl includes to <br>
+<code>
+                #ifdef _MAC_OS_X<br>
+                  #include &lt;OpenGL/gl.h&gt;<br>
+                  #include &lt;OpenGL/glu.h&gt;<br>
+                  #include &lt;GLUT/glut.h&gt;<br>
+                #else<br>
+                #include &lt;GL/gl.h&gt;<br>
+                #include &lt;GL/glu.h&gt;<br>
+                #include &lt;GL/glut.h&gt;<br>
+                #endif
+</code></li>
+            <li><p> in your makefile, change your x11/glut linked libs from <code>LDLIBS = -lglut -lGL -lGL</code> to <code>LDLIBS = -framework Foundation -framework OpenGL -framework GLUT</code></p></li>
+	    <li> that's it!type make and enjoy </li>
+</ul>
+

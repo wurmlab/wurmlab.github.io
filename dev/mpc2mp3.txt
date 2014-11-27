@@ -1,0 +1,54 @@
+#! /usr/bin/perl
+## Run with "perl ../path/to/mp2mp3.pl *.mpc" 
+## Requires mppdec and lame
+
+## MPC TO MP3 CONVERTER BY Seraphyn, http://www.linuxeinsteiger.info/anleitungen/media/media15.php
+## Modified by Yannick Wurm, idh@poulet.org, Oct 8, 2004
+## Tested on Mac OS X 10.3 Panther
+## Url: http://yannick.poulet.org/dev/index.php#mpc2mp3
+
+
+
+#opening current directory 
+
+local $/;
+foreach(@ARGV) {
+    next if (! -f $_);
+
+    $orig_file=$_;
+
+    ## If the extension of the file we have is not "mpc", get the next
+    if ($orig_file !~ /\.mpc$/i) {
+	next
+	};
+
+    print "Checking file: $orig_file\n";
+
+    #Getting name for new temporary wav file
+    $new_wav_file=$orig_file;
+    $new_wav_file=~s/\.mpc/\.wav/;
+    
+    #Getting name for new mp3 file
+    $new_mp3_file=$orig_file;
+    $new_mp3_file=~s/\.mpc/\.mp3/;
+
+
+#defining modification parameters (these change for each file)
+    $convert_to_wav="mppdec \"./$orig_file\" \"./$new_wav_file\"";
+    $convert_to_mp3="lame -h -m a \"./$new_wav_file\" \"./$new_mp3_file\"";
+    $remove_wav="rm  \"./$new_wav_file\"";
+
+
+    print "EXEC 1: $convert_to_wav from $orig_file to $new_wav_file\n";
+    $cmd=`$convert_to_wav`;
+
+    print "EXEC 2: $convert_to_mp3 from $new_wav_file to $new_mp3_file\n";
+    $cmd=`$convert_to_mp3`;
+
+    print "REMOVE WAV: $remove_wav\n";
+    $cmd=`$remove_wav`;
+
+    print "\n\n";
+}
+
+print "Done.\n"; 

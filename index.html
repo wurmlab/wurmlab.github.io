@@ -1,0 +1,162 @@
+---
+layout: page
+title: Ants, Genomes & Evolution Lab @ Queen Mary University London
+comments: false
+---
+<div class="row-fluid">
+<div class="span8 column" >
+<h3>Research</h3>
+  <p><strong>Evolutionary genomics of social insects. </strong>
+	Extensive theoretical work has explained how and why complex
+	  societies evolve. However, only little is known about the genes
+	  and molecular mechanisms responsible for social
+	  phenotypes. We have been identifying genes and mechanisms
+	  involved in the evolution of insect societies using modern
+	  genomics tools (Illumina, RNAseq, RADseq...). For example we recently:</p>
+	  <ul>
+		<li>sequenced and analyzed the genome of the invasive red fire ant <em>Solenopsis invicta</em> (<a
+	  href="http://dx.doi.org/10.1073/pnas.1009690108">PNAS 2011</a>)</li>
+	  <li>discovered that a fundamental social trait in this species (how many queens
+	  are accepted in the colony) is determined by
+	  variants of a social chromosome (<a href="http://dx.doi.org/10.1038/nature11832">Nature 2013</a>).</li>
+	  <li>described the gene expression changes that occur in a
+	  virgin queen when she is given the opportunity of replacing her
+	  mother (Mol Ecol 2010).</li>
+	</ul>
+
+	 <p> We are interested in themes including the genetics of behavior, the interplay between social evolution and genome evolution, and the molecular mechanisms responsible for differences between castes.</p>
+
+	<p><strong>Genomics &amp; Bioinformatics for emerging model organisms.</strong>
+	The recent 10,000-fold drop in the cost of DNA sequencing means 
+        that any lab can sequence anything - and
+	lots of it. This brings exciting opportunities but also new
+	  challenges. We develop innovative tools and approaches to
+	  facilitate modern biological work on emerging model
+	  organisms. For example:</p>
+	<ul>
+	  <li>BLAST is the most commonly used bioinformatics tool. But setting it up for private data and using it is counter-intuitive. We're
+	    developing <a href="http://www.sequenceserver.com">SequenceServer</a> to
+	    make BLAST easy to use.</li>
+	  <li>Sequencing genomes has become straightforward. But you 
+            quickly realize that most gene predictions need to be inspected 
+            and many need to be manually fixed before performing analyses. This makes
+	    multi-species, multi-gene analyses very challenging. We are developing infrastructure to obtain help for this using <a href="http://afra.sbcs.qmul.ac.uk">crowd-sourcing</a>.</li>
+	</ul>
+</div>
+
+
+<div class="span4">
+  <h3>Contact</h3>
+     {% include contact.html %}
+<div class="map">
+<!DOCTYPE html>
+<html>
+<head>
+<script
+src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+</script>
+
+<script>
+var myCenter=new google.maps.LatLng(51.5234907999994,-0.0422141920265707);
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:15,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker=new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+
+<body>
+<div id="googleMap" style="text-align:right; margin-left: 13%; width:87%; height:150px;"></div>
+</body>
+</html>
+</div>
+<p style="text-align:center;">[<a href="/map.html">Larger Map &amp; Local Directions</a>]</p>
+
+
+  <ul class="fa-ul">
+    <li><i class="fa-li fa fa-sign-in"></i><strong>Joining the
+    lab</strong>. <a
+    href="/news/2014-10-31-recruiting-population-genomicist/">We are
+    recruiting a postdoc for population genomics and transcriptomics
+    in pollinators</a>. Projects in the lab involve population
+    genomics, comparative analyses, bioinformatics, population
+	genetics, molecular biology, software development, and/or behavioral work. If you want to come do a Postdoc, a PhD or
+    an internship (min. 5 months), please provide by email a CV,
+    contact info of references and a short project proposal. </li>
+  </ul>
+</div>
+</div>
+<div class="row-fluid">
+<div class="span12" id="publications">
+  <p>We are grateful for the support from our recent funders: 
+  <img src='/img/logos/allstuck-bw.png' width='100%' alt="funding bodies" style='max-height: 200px;'/>
+</div
+<div class="span12" id="publications">
+  <h3>Publications <small>See also <a href="http://scholar.google.co.uk/citations?user=k6y0EGsAAAAJ">[Google Scholar]</a> &amp; <a href="/tools">[Software Tools]</a></small></h3>
+  
+
+	{% include publications.html %}	</section>
+
+<!--  <h3>Misc</h3>
+  <ul>
+
+	<li><a href="http://www.antgenomes.org">BLAST search ant genomes</a></li>
+	<li>Generic easy to deploy <a href="http://www.sequenceserver.com">local blast web server frontend (alternative to NCBI's wwwblast)</a></li>
+	<li>And: <a href="http://github.com/yannickwurm/">github</a>, <a href="http://del.icio.us/shihan">del.icio.us</a>, <a href="http://www.linkedin.com/in/sectgenomics">LinkedIn</a>, <a href="http://profile.to/yannickwurm">Facebook</a>, <a href="http://www.myspace.com/yannick.wurm">MySpace</a>, <a href="http://twitter.com/yannick__">Twitter</a>, skype, msn, icq...</li>
+	<li>Unsponsored advertising: <a
+	href="http://www.karatelausanne.com/" title="Karat&eacute;
+	traditionnel">Shotokan Karate in Lausanne</a>, <a
+	href="http://www.danielefraboulet.com" title="belles aquarelles">My
+	Mom's great Watercolor art</a>, <a
+	href="http://indraaziz.net">Jakarta Music</a>.</li>
+	<li><a
+	href="/archive.php">Some old stuff.</a></li>
+	<li><a
+	href="http://www.ownersdirect.co.uk/italy/it3092.htm">Beautiful
+	countryside vacation rental near Florence, Tuscany</a></li>
+		<li><a href="http://www.danielefraboulet.com">Cours de peinture/aquarelle &agrave; Lausanne</a></li>
+  </ul>
+
+-->
+<hr>
+</div>
+
+
+</div>
+<div class="row-fluid">
+<div class="span4 column">
+ <a class="twitter-timeline" href="https://twitter.com/yannick__" data-widget-id="368748443126099971">Tweets by @yannick__</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+</div>
+
+<div class="span4 column">
+  <p style="margin-left:0; padding-right:30px;"><em>Solenopsis invicta</em> workers defend the <a href="http://dx.doi.org/10.1073/pnas.1009690108">fire ant genome</a> against a <em>Pogonomyrmex rugosus</em> harvester ant worker.<br/> &copy; Romain Libbrecht &amp; Yannick Wurm.</p>
+  <a href="http://www.antgenomes.org/blast">
+  <img src="/img/fireAntsGenomePogo-600x438.jpg" alt="Fire ant genome" width="300" height="219"/></a>
+</div>
+
+<div class="span4 column">
+  <p style="margin-left:0;"><a href="http://www.danielefraboulet.com" title="watercolor paintings">Daniele Fraboulet Watercolor</a></p>
+  <a href="http://www.danielefraboulet.com" title="artiste lausanne"><img src="img/danielefraboulet.jpg"
+  height="219" alt="Aquarelliste Suisse"/>
+  </a>
+  
+</div>
+</div>
+

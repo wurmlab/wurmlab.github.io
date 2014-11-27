@@ -1,0 +1,29 @@
+markdown: rdiscount
+
+
+title: Ants, Genomes & Evolution @ Queen Mary University London
+
+url: /./
+
+permalink: "/news/:year-:month-:day-:title/"
+
+author:
+    name: Yannick Wurm
+    email: y.wurm@qmul.ac.uk
+    github: yannickwurm
+    twitter: yannick__
+    gravatar: 
+
+#comments:
+#    provider: disqusasdf
+#    disqus: yannickwurm
+#        short_name: "yannickwurm"
+#    disqus_name: "adsf"
+
+analytics:
+    provider: google 
+    google: 
+        tracking_id: 'UA-471841-2'
+        domain: 'yannick.poulet.org'
+
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'Rakefile']
