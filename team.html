@@ -5,11 +5,7 @@ title: The Team
 members:
 - name: Yannick Wurm
   img: yannickwurm.jpg
-  about: "Strong interests in evolutionary genomics, social evolution,
-modern bioinformatics and genomics approaches, elegant software. [<a
-href='/cvYannickWurm.pdf'>Curriculum Vitae PDF</a>]. Some <a
-href='/talks'>invited talks</a>, <a href='/teaching/'>teaching
-material</a> and <a href='/#publications'>publications</a>."
+  about: "Strong interests in evolutionary genomics, social evolution, modern bioinformatics and genomics approaches, elegant software. [<a href='/cvYannickWurm.pdf'>Curriculum Vitae PDF</a>]. Some <a href='/talks'>invited talks</a>, <a href='/teaching/'>teaching material</a> and <a href='/#publications'>publications</a>."
 
 - name: Anurag Priyam
   img: anuragpriyam.jpg
@@ -42,9 +38,9 @@ material</a> and <a href='/#publications'>publications</a>."
   img: kishordhaygude.jpg
   about: <a href="http://www.helsinki.fi/science/ants/Antzz.html">Helsinki team ANTZZ</a>-based occasional visitor to the lab.
 
-- name: Monica Dragan
-  img: monicaandreeadragan.jpg
-  about: Zurich-based <a href="http://informatics.nescent.org/wiki/Phyloinformatics_Summer_of_Code_2013">NESCent Google Summer of Code 2013</a> student originally from Politehnica University of Bucharest. Developing <a href="https://github.com/monicadragan/GeneValidator">GeneValidator</a> a tool to identify problematic gene predictions. [<a href="http://gene-prediction.blogspot.co.uk/">Development Blog</a>].
+- name: Emeline Favreau
+  img: emelinefavreau.jpg
+  about: Intern - evolution, entomology, gene annotation.
 
 project_students:
 - name: Elena Shanti Franchina
@@ -54,8 +50,11 @@ project_students:
 - name: Gideon Pomeranz (2013)
 
 
-Alumni:
-
+alumni:
+- name: Monica Dragan
+  img: monicadragan.jpg
+  about: Zurich-based <a href="http://informatics.nescent.org/wiki/Phyloinformatics_Summer_of_Code_2013">NESCent Google Summer of Code 2013</a> student originally from Politehnica University of Bucharest. Developing <a href="https://github.com/monicadragan/GeneValidator">GeneValidator</a> a tool to identify problematic gene predictions. [<a href="http://gene-prediction.blogspot.co.uk/">Development Blog</a>].
+ 
 ---
 <div class="row">
   {% for member in page.members %}
@@ -65,12 +64,11 @@ Alumni:
       <img src="/img/{{ member.img }}" align="left" style="margin-right:10px; height:150px;" class="img-rounded">
       <p>{{ member.about }} </p>
     </div>
-    
   </div>
   {% cycle '', '</div><div class="row">' %}
   {% endfor %}
 </div>
-
+<hr>
 <div class="row">
 <div class="span10">
 <h3>Undergraduate project Students</h3>
@@ -80,4 +78,18 @@ Alumni:
   {% endfor %}
 </ul>
 </div>
+</div>
+<hr>
+<div class="row">
+  {% for alumni in page.alumni %}
+<h3>Alumni</h3>
+  <div class="span5">	
+    <div class="caption">
+      <h4>{{ alumni.name }}</h4>
+      <img src="/img/{{ alumni.img }}" align="left" style="margin-right:10px; height:50px;" class="img-rounded">
+      <p>{{ alumni.about }} </p>
+    </div>
+  </div>
+  {% cycle '', '</div><div class="row">' %}
+  {% endfor %}
 </div>
