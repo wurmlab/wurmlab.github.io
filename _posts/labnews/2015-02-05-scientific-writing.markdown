@@ -30,7 +30,7 @@ Below are some thoughts about scientific writing that have helped students & mys
 
 * Please respect the style guidelines given by <a href="http://www.amazon.co.uk/gp/product/020530902X/ref=as_li_tf_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=020530902X&linkCode=as2&tag=yannickwurm-21">Strunk & White's "The Elements of Style"</a>.  Keep it concise.
 * Pay attention to detail (punctuation, spelling, consistency of formatting, species in italics...). Neglect of such simple things makes the reader think you do nothing properly.
-* Don't Randomly capitalize Words that Arent normally Capitalized. 
+* Don't Randomly capitalize Words that Aren't normally Capitalized. 
 * Most word processors have spell-checkers. And grammar-checkers. Use them. (Make sure that all rules are activated - e.g. in MS word you need to [manually activate the strict grammar rules](http://wordribbon.tips.net/T009322_Setting_Grammar-Checking_Options.html)). Neglecting to use such tools can feel insulting to the reader.
 * KISS:  Keep It Simple Stupid. If a word, sentence or piece of information is unnecessary, remove it! Otherwise, you complicate things for the reader. 
 * Again, use simple words, simple clear sentences. Scientific writing isn't Shakespeare or Voltaire.
@@ -57,5 +57,6 @@ New Scientist-type articles have additional challenges:
 ### Additional resources: 
 
 * [*How to write good*](http://www.plainlanguage.gov/examples/humor/writegood.cfm) - famous resource with wonderful examples.
+* [Some useful grammar exercices](http://www.bristol.ac.uk/arts/exercises/grammar/grammar_tutorial/page_41.htm) as well as thorough explanations at U Bristol.
 * Online course on [writing scientific papers](https://class.stanford.edu/courses/Medicine/Sci-Write/Fall2014/about).
 * <a href="http://www.amazon.co.uk/gp/product/020530902X/ref=as_li_tf_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=020530902X&linkCode=as2&tag=yannickwurm-21">Strunk & White's "The Elements of Style"</a>
