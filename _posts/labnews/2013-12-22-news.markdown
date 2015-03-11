@@ -16,7 +16,7 @@ No real update here for a while! Major events include:
  * Google Summer of Code funding to help [identify problematic gene predictions](https://github.com/monicadragan/GeneValidator)
  * Support form the [Software Sustainability Institute](http://software.ac.uk)
  * [Lots of teaching](/teaching/)
- * Some wonderful new [team members](/team.html), visitors, [colleagues](http://www.sbcs.qmul.ac.uk/people/index.html) & collaborators.
+ * Some wonderful new [team members](/team), visitors, [colleagues](http://www.sbcs.qmul.ac.uk/people/index.html) & collaborators.
 
 Perhaps hope for more regular updates in 2014? We'll see. 
 
