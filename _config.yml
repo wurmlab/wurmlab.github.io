@@ -27,3 +27,6 @@ analytics:
         domain: 'yannick.poulet.org'
 
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'Rakefile']
+
+gems:
+  - jekyll-redirect-from
