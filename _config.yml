@@ -24,7 +24,7 @@ analytics:
     provider: google 
     google: 
         tracking_id: 'UA-471841-2'
-        domain: 'yannick.poulet.org'
+        domain: 'wurmlab.github.io'
 
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'Rakefile']
 
