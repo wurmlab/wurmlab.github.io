@@ -1,0 +1,3363 @@
+---
+ENA|AAC06291|AAC06291.1:
+- !ruby/object:GeneValidator::LengthClusterValidationOutput
+  description: 'Check whether the prediction length fits most of the BLAST hit lengths,
+    by 1D hierarchical clusterization. Meaning of the output displayed: Query_length
+    [Main Cluster Length Interval]'
+  header: Length Cluster
+  short_header: LengthCluster
+  limits:
+  - 336
+  - 355
+  query_length: 337
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_1_len_clusters.json
+    type: :bars
+    title: 'Length Cluster Validation: Distribution of BLAST hit lengths'
+    footer: Query Sequence, black;Most Dense Cluster,red;Other Hits, blue
+    xtitle: Sequence Length
+    ytitle: Number of Sequences
+    aux1: 337
+    aux2: 
+  approach: 'If the query sequence is well conserved and similar sequences (BLAST
+    hits) are correct, we can expect query and hit sequences to have similar lengths.
+    Here, we cluster the lengths of hit sequences and compare the length of our query
+    sequence to the most dense cluster of hit lengths. '
+  explanation: The most dense length-cluster of BLAST hits includes sequences that
+    are from 336 to 355 amino-acids long. The query sequence is 337 amino-acids long
+    and is thus inside the most dense length-cluster of BLAST hits.
+  conclusion: There is no reason to believe there is any problem with the length of
+    the query sequence.
+  running_time: 0.000387
+- !ruby/object:GeneValidator::LengthRankValidationOutput
+  description: Check whether the rank of the prediction length lies among 80% of all
+    the BLAST hit lengths.
+  header: Length Rank
+  short_header: LengthRank
+  msg: ''
+  query_length: 337
+  no_of_hits: 10
+  median: 355
+  mean: 363
+  smallest_hit: 309
+  largest_hit: 467
+  extreme_hits: 2
+  percentage: 20
+  result: :yes
+  expected: :yes
+  approach: If the query sequence is well conserved and similar sequences (BLAST hits)
+    are correct, we can expect query and hit sequences to have similar lengths.
+  explanation: 'The query sequence is  337 amino-acids long. BLAST identified 10 hit
+    sequences with lengths from 309 to 467 amino-acids (median: 355; mean: 363). 2
+    of these hit sequences (i.e. 20%) are longer than the query sequence.'
+  conclusion: There is no reason to believe there is any problem with the length of
+    the query sequence.
+  running_time: 4.8e-05
+- !ruby/object:GeneValidator::GeneMergeValidationOutput
+  description: Check whether BLAST hits make evidence about a merge of two genes that
+    match the predicted gene.
+  header: Gene Merge
+  short_header: Gene_Merge
+  slope: 0.0
+  unimodality: false
+  threshold_down: 0.4
+  threshold_up: 1.2
+  result: :no
+  expected: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_1_match_2d.json
+    type: :scatter
+    title: 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)'
+    footer: ''
+    xtitle: Start Offset (most left hsp)
+    ytitle: End Offset (most right hsp)
+    aux1: 320.0
+    aux2: 0.0
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_1_match.json
+    type: :lines
+    title: 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)'
+    footer: ''
+    xtitle: Offset in Prediction
+    ytitle: Hit Number
+    aux1: 10
+    aux2: 
+  approach: We expect the query sequence to encode a single protein-coding gene. Here,
+    we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine
+    whether the query includes sequence from two or more genes.
+  explanation: The distribution of start and/or end-coordinates of HSPs are multi-modal.
+    To detect potential problems we performed a linear regression (with coordinates
+    weighted inversely proportionally to  hit strength). The resulting slope is 0.0.
+  conclusion: This slope is  outside our empirically calculated thresholds (0.4 and
+    1.2). There is no evidence that the query contains sequence from multiple genes.
+  running_time: 0.000827
+- !ruby/object:GeneValidator::DuplicationValidationOutput
+  description: Check whether there is a duplicated subsequence in the predicted gene
+    by counting the hsp residue coverage of the prediction, for each hit.
+  header: Duplication
+  short_header: Duplication
+  pvalue: 1
+  threshold: 0.05
+  result: :yes
+  expected: :yes
+  average: 1.0
+  approach: We expect each BLAST hit to match each region of the query at most once.
+    Here, we calculate the distribution of hit coverage against the query sequence
+    and use the Wilcoxon test to determine if it is higher than 1.
+  explanation: The Wilcoxon test produced a p-value of 1.
+  conclusion: This suggests that the query sequence contains no erroneous duplications.
+  running_time: 0.014627
+- !ruby/object:GeneValidator::BlastRFValidationOutput
+  description: Check whether there is a single reading frame among BLAST hits. Otherwise
+    there might be a reading frame shift in the query sequence.
+  header: Reading Frame
+  short_header: Frame
+  frames_histo:
+    1: 10
+  expected: :yes
+  result: :yes
+  msg: '10&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1; '
+  exp_msg: '10 HSPs align in frame 1; '
+  total_hsp: 10
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within
+    this ORF.
+  explanation: BLAST identified 10 High-scoring Segment Pairs (HSPs); all of these
+    align in frame 1.
+  conclusion: This is as expected.
+  running_time: 5.2e-05
+- !ruby/object:GeneValidator::ORFValidationOutput
+  description: Check whether there is a single main Open Reading Frame in the predicted
+    gene. Applicable only for nucleotide queries.
+  header: Main ORF
+  short_header: ORF
+  orfs:
+    1:
+      :frame: 1
+      :orf_start: 1
+      :orf_end: 330
+      :coverage: 100
+      :translated_length: 331
+    2:
+      :frame: 2
+      :orf_start: 20
+      :orf_end: 49
+      :coverage: 11
+      :translated_length: 330
+    3:
+      :frame: 2
+      :orf_start: 57
+      :orf_end: 81
+      :coverage: 10
+      :translated_length: 330
+    4:
+      :frame: 2
+      :orf_start: 100
+      :orf_end: 127
+      :coverage: 11
+      :translated_length: 330
+    5:
+      :frame: 2
+      :orf_start: 173
+      :orf_end: 200
+      :coverage: 11
+      :translated_length: 330
+    6:
+      :frame: 2
+      :orf_start: 208
+      :orf_end: 254
+      :coverage: 16
+      :translated_length: 330
+    7:
+      :frame: 3
+      :orf_start: 1
+      :orf_end: 24
+      :coverage: 9
+      :translated_length: 330
+    8:
+      :frame: 3
+      :orf_start: 80
+      :orf_end: 108
+      :coverage: 11
+      :translated_length: 330
+    9:
+      :frame: 3
+      :orf_start: 215
+      :orf_end: 239
+      :coverage: 10
+      :translated_length: 330
+    10:
+      :frame: -1
+      :orf_start: 80
+      :orf_end: 103
+      :coverage: 9
+      :translated_length: 331
+    11:
+      :frame: -1
+      :orf_start: 149
+      :orf_end: 178
+      :coverage: 11
+      :translated_length: 331
+    12:
+      :frame: -1
+      :orf_start: 219
+      :orf_end: 243
+      :coverage: 10
+      :translated_length: 331
+    13:
+      :frame: -2
+      :orf_start: 2
+      :orf_end: 76
+      :coverage: 25
+      :translated_length: 330
+    14:
+      :frame: -2
+      :orf_start: 93
+      :orf_end: 154
+      :coverage: 21
+      :translated_length: 330
+    15:
+      :frame: -2
+      :orf_start: 229
+      :orf_end: 301
+      :coverage: 24
+      :translated_length: 330
+    16:
+      :frame: -3
+      :orf_start: 74
+      :orf_end: 113
+      :coverage: 14
+      :translated_length: 330
+    17:
+      :frame: -3
+      :orf_start: 121
+      :orf_end: 180
+      :coverage: 20
+      :translated_length: 330
+    18:
+      :frame: -3
+      :orf_start: 200
+      :orf_end: 234
+      :coverage: 13
+      :translated_length: 330
+    19:
+      :frame: -3
+      :orf_start: 291
+      :orf_end: 325
+      :coverage: 13
+      :translated_length: 330
+  coverage: 100
+  threshold: 80
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_1_orfs.json
+    type: :lines
+    title: Open Reading Frames in all 6 Frames
+    footer: 'Open Reading Frame (Minimimum Length: 30 amino acids),red'
+    xtitle: Offset in the Prediction
+    ytitle: Reading Frame
+    aux1: 14
+    aux2: 
+  mainORFFrame: 1
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF) that occupies most of the query sequence.
+  explanation: " The longest ORF is in frame 1, where it occupies 100% of the query
+    sequence."
+  conclusion: There is no evidence to believe that there is any problem with the ORF
+    of the query sequence.
+  running_time: 0.004151
+- !ruby/object:GeneValidator::AlignmentValidationOutput
+  description: Finds missing and extra sequences in the prediction, based on the multiple
+    alignment of the best hits. Also counts the percentage of the conserved regions
+    that appear in the prediction.
+  header: Missing/Extra sequences
+  short_header: MA
+  gaps: 12%
+  extra_seq: 4%
+  consensus: 98%
+  threshold: 20
+  result: :yes
+  expected: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_1_ma.json
+    type: :align
+    title: 'Missing/Extra sequences Validation: Multiple Align. & Statistical model
+      of hits'
+    footer: Conserved Region, Yellow
+    xtitle: Offset in the Alignment
+    ytitle: ''
+    aux1: 12
+    aux2: Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5,
+      hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model
+  approach: We expect the query sequence to be similar to the top ten BLAST hits.
+    Here, we create a statistical consensus model of those top hits and compare the
+    query to this model.
+  explanation: The query sequence includes 98% amino-acid residues present in the
+    consensus model. 4% of residues in the query sequence are absent from the consensus
+    profile.  12% of residues in the consensus profile are absent from the query sequence.
+  conclusion: There is no evidence based on the top 10 BLAST hits to suggest any problems
+    with the query sequence.
+  running_time: 1.71534
+ENA|AEO89880|AEO89880.1:
+- !ruby/object:GeneValidator::LengthClusterValidationOutput
+  description: 'Check whether the prediction length fits most of the BLAST hit lengths,
+    by 1D hierarchical clusterization. Meaning of the output displayed: Query_length
+    [Main Cluster Length Interval]'
+  header: Length Cluster
+  short_header: LengthCluster
+  limits:
+  - 98
+  - 99
+  query_length: 99
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_2_len_clusters.json
+    type: :bars
+    title: 'Length Cluster Validation: Distribution of BLAST hit lengths'
+    footer: Query Sequence, black;Most Dense Cluster,red;Other Hits, blue
+    xtitle: Sequence Length
+    ytitle: Number of Sequences
+    aux1: 99
+    aux2: 
+  approach: 'If the query sequence is well conserved and similar sequences (BLAST
+    hits) are correct, we can expect query and hit sequences to have similar lengths.
+    Here, we cluster the lengths of hit sequences and compare the length of our query
+    sequence to the most dense cluster of hit lengths. '
+  explanation: The most dense length-cluster of BLAST hits includes sequences that
+    are from 98 to 99 amino-acids long. The query sequence is 99 amino-acids long
+    and is thus inside the most dense length-cluster of BLAST hits.
+  conclusion: There is no reason to believe there is any problem with the length of
+    the query sequence.
+  running_time: 0.00052
+- !ruby/object:GeneValidator::LengthRankValidationOutput
+  description: Check whether the rank of the prediction length lies among 80% of all
+    the BLAST hit lengths.
+  header: Length Rank
+  short_header: LengthRank
+  msg: ''
+  query_length: 99
+  no_of_hits: 291
+  median: 98
+  mean: 98
+  smallest_hit: 76
+  largest_hit: 99
+  extreme_hits: 
+  percentage: 100
+  result: :yes
+  expected: :yes
+  approach: If the query sequence is well conserved and similar sequences (BLAST hits)
+    are correct, we can expect query and hit sequences to have similar lengths.
+  explanation: 'The query sequence is  99 amino-acids long. BLAST identified 291 hit
+    sequences with lengths from 76 to 99 amino-acids (median: 98; mean: 98).  of these
+    hit sequences (i.e. 100%) are shorter than the query sequence.'
+  conclusion: There is no reason to believe there is any problem with the length of
+    the query sequence.
+  running_time: 0.000242
+- !ruby/object:GeneValidator::GeneMergeValidationOutput
+  description: Check whether BLAST hits make evidence about a merge of two genes that
+    match the predicted gene.
+  header: Gene Merge
+  short_header: Gene_Merge
+  slope: 0.0
+  unimodality: true
+  threshold_down: 0.4
+  threshold_up: 1.2
+  result: :no
+  expected: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_2_match_2d.json
+    type: :scatter
+    title: 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)'
+    footer: ''
+    xtitle: Start Offset (most left hsp)
+    ytitle: End Offset (most right hsp)
+    aux1: 
+    aux2: 
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_2_match.json
+    type: :lines
+    title: 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)'
+    footer: ''
+    xtitle: Offset in Prediction
+    ytitle: Hit Number
+    aux1: 291
+    aux2: 
+  approach: We expect the query sequence to encode a single protein-coding gene. Here,
+    we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine
+    whether the query includes sequence from two or more genes.
+  explanation: The start coordinates and the end coordinates of HSPs are unimodally
+    distributed.
+  conclusion: This suggest that the query sequence represents a single gene.
+  running_time: 0.004944
+- !ruby/object:GeneValidator::DuplicationValidationOutput
+  description: Check whether there is a duplicated subsequence in the predicted gene
+    by counting the hsp residue coverage of the prediction, for each hit.
+  header: Duplication
+  short_header: Duplication
+  pvalue: 1
+  threshold: 0.05
+  result: :yes
+  expected: :yes
+  average: 1.0
+  approach: We expect each BLAST hit to match each region of the query at most once.
+    Here, we calculate the distribution of hit coverage against the query sequence
+    and use the Wilcoxon test to determine if it is higher than 1.
+  explanation: The Wilcoxon test produced a p-value of 1.
+  conclusion: This suggests that the query sequence contains no erroneous duplications.
+  running_time: 0.002637
+- !ruby/object:GeneValidator::BlastRFValidationOutput
+  description: Check whether there is a single reading frame among BLAST hits. Otherwise
+    there might be a reading frame shift in the query sequence.
+  header: Reading Frame
+  short_header: Frame
+  frames_histo:
+    1: 291
+  expected: :yes
+  result: :yes
+  msg: '291&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1; '
+  exp_msg: '291 HSPs align in frame 1; '
+  total_hsp: 291
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within
+    this ORF.
+  explanation: BLAST identified 291 High-scoring Segment Pairs (HSPs); all of these
+    align in frame 1.
+  conclusion: This is as expected.
+  running_time: 0.000215
+- !ruby/object:GeneValidator::ORFValidationOutput
+  description: Check whether there is a single main Open Reading Frame in the predicted
+    gene. Applicable only for nucleotide queries.
+  header: Main ORF
+  short_header: ORF
+  orfs:
+    1:
+      :frame: 1
+      :orf_start: 1
+      :orf_end: 97
+      :coverage: 99
+      :translated_length: 98
+    2:
+      :frame: 3
+      :orf_start: 1
+      :orf_end: 89
+      :coverage: 92
+      :translated_length: 97
+    3:
+      :frame: -2
+      :orf_start: 12
+      :orf_end: 93
+      :coverage: 85
+      :translated_length: 97
+    4:
+      :frame: -3
+      :orf_start: 1
+      :orf_end: 37
+      :coverage: 39
+      :translated_length: 97
+  coverage: 99
+  threshold: 80
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_2_orfs.json
+    type: :lines
+    title: Open Reading Frames in all 6 Frames
+    footer: 'Open Reading Frame (Minimimum Length: 30 amino acids),red'
+    xtitle: Offset in the Prediction
+    ytitle: Reading Frame
+    aux1: 14
+    aux2: 
+  mainORFFrame: 1
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF) that occupies most of the query sequence.
+  explanation: " The longest ORF is in frame 1, where it occupies 99% of the query
+    sequence."
+  conclusion: There is no evidence to believe that there is any problem with the ORF
+    of the query sequence.
+  running_time: 0.000612
+- !ruby/object:GeneValidator::AlignmentValidationOutput
+  description: Finds missing and extra sequences in the prediction, based on the multiple
+    alignment of the best hits. Also counts the percentage of the conserved regions
+    that appear in the prediction.
+  header: Missing/Extra sequences
+  short_header: MA
+  gaps: 0%
+  extra_seq: 1%
+  consensus: 91%
+  threshold: 20
+  result: :yes
+  expected: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_2_ma.json
+    type: :align
+    title: 'Missing/Extra sequences Validation: Multiple Align. & Statistical model
+      of hits'
+    footer: Conserved Region, Yellow
+    xtitle: Offset in the Alignment
+    ytitle: ''
+    aux1: 12
+    aux2: Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5,
+      hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model
+  approach: We expect the query sequence to be similar to the top ten BLAST hits.
+    Here, we create a statistical consensus model of those top hits and compare the
+    query to this model.
+  explanation: The query sequence includes 91% amino-acid residues present in the
+    consensus model. 1% of residues in the query sequence are absent from the consensus
+    profile.  0% of residues in the consensus profile are absent from the query sequence.
+  conclusion: There is no evidence based on the top 10 BLAST hits to suggest any problems
+    with the query sequence.
+  running_time: 0.165134
+ENA|AAZ66996|AAZ66996.1:
+- !ruby/object:GeneValidator::LengthClusterValidationOutput
+  description: 'Check whether the prediction length fits most of the BLAST hit lengths,
+    by 1D hierarchical clusterization. Meaning of the output displayed: Query_length
+    [Main Cluster Length Interval]'
+  header: Length Cluster
+  short_header: LengthCluster
+  limits:
+  - 236
+  - 253
+  query_length: 239
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_3_len_clusters.json
+    type: :bars
+    title: 'Length Cluster Validation: Distribution of BLAST hit lengths'
+    footer: Query Sequence, black;Most Dense Cluster,red;Other Hits, blue
+    xtitle: Sequence Length
+    ytitle: Number of Sequences
+    aux1: 239
+    aux2: 
+  approach: 'If the query sequence is well conserved and similar sequences (BLAST
+    hits) are correct, we can expect query and hit sequences to have similar lengths.
+    Here, we cluster the lengths of hit sequences and compare the length of our query
+    sequence to the most dense cluster of hit lengths. '
+  explanation: The most dense length-cluster of BLAST hits includes sequences that
+    are from 236 to 253 amino-acids long. The query sequence is 239 amino-acids long
+    and is thus inside the most dense length-cluster of BLAST hits.
+  conclusion: There is no reason to believe there is any problem with the length of
+    the query sequence.
+  running_time: 0.002142
+- !ruby/object:GeneValidator::LengthRankValidationOutput
+  description: Check whether the rank of the prediction length lies among 80% of all
+    the BLAST hit lengths.
+  header: Length Rank
+  short_header: LengthRank
+  msg: ''
+  query_length: 239
+  no_of_hits: 118
+  median: 241
+  mean: 223
+  smallest_hit: 43
+  largest_hit: 270
+  extreme_hits: 47
+  percentage: 40
+  result: :yes
+  expected: :yes
+  approach: If the query sequence is well conserved and similar sequences (BLAST hits)
+    are correct, we can expect query and hit sequences to have similar lengths.
+  explanation: 'The query sequence is  239 amino-acids long. BLAST identified 118
+    hit sequences with lengths from 43 to 270 amino-acids (median: 241; mean: 223).
+    47 of these hit sequences (i.e. 40%) are longer than the query sequence.'
+  conclusion: There is no reason to believe there is any problem with the length of
+    the query sequence.
+  running_time: 0.000148
+- !ruby/object:GeneValidator::GeneMergeValidationOutput
+  description: Check whether BLAST hits make evidence about a merge of two genes that
+    match the predicted gene.
+  header: Gene Merge
+  short_header: Gene_Merge
+  slope: 0.0
+  unimodality: false
+  threshold_down: 0.4
+  threshold_up: 1.2
+  result: :no
+  expected: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_3_match_2d.json
+    type: :scatter
+    title: 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)'
+    footer: ''
+    xtitle: Start Offset (most left hsp)
+    ytitle: End Offset (most right hsp)
+    aux1: 238.72818557749758
+    aux2: -0.01246671527538646
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_3_match.json
+    type: :lines
+    title: 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)'
+    footer: ''
+    xtitle: Offset in Prediction
+    ytitle: Hit Number
+    aux1: 118
+    aux2: 
+  approach: We expect the query sequence to encode a single protein-coding gene. Here,
+    we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine
+    whether the query includes sequence from two or more genes.
+  explanation: The distribution of start and/or end-coordinates of HSPs are multi-modal.
+    To detect potential problems we performed a linear regression (with coordinates
+    weighted inversely proportionally to  hit strength). The resulting slope is 0.0.
+  conclusion: This slope is  outside our empirically calculated thresholds (0.4 and
+    1.2). There is no evidence that the query contains sequence from multiple genes.
+  running_time: 0.002305
+- !ruby/object:GeneValidator::DuplicationValidationOutput
+  description: Check whether there is a duplicated subsequence in the predicted gene
+    by counting the hsp residue coverage of the prediction, for each hit.
+  header: Duplication
+  short_header: Duplication
+  pvalue: 1
+  threshold: 0.05
+  result: :yes
+  expected: :yes
+  average: 1.0
+  approach: We expect each BLAST hit to match each region of the query at most once.
+    Here, we calculate the distribution of hit coverage against the query sequence
+    and use the Wilcoxon test to determine if it is higher than 1.
+  explanation: The Wilcoxon test produced a p-value of 1.
+  conclusion: This suggests that the query sequence contains no erroneous duplications.
+  running_time: 0.008828
+- !ruby/object:GeneValidator::BlastRFValidationOutput
+  description: Check whether there is a single reading frame among BLAST hits. Otherwise
+    there might be a reading frame shift in the query sequence.
+  header: Reading Frame
+  short_header: Frame
+  frames_histo:
+    1: 118
+  expected: :yes
+  result: :yes
+  msg: '118&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1; '
+  exp_msg: '118 HSPs align in frame 1; '
+  total_hsp: 118
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within
+    this ORF.
+  explanation: BLAST identified 118 High-scoring Segment Pairs (HSPs); all of these
+    align in frame 1.
+  conclusion: This is as expected.
+  running_time: 0.000129
+- !ruby/object:GeneValidator::ORFValidationOutput
+  description: Check whether there is a single main Open Reading Frame in the predicted
+    gene. Applicable only for nucleotide queries.
+  header: Main ORF
+  short_header: ORF
+  orfs:
+    1:
+      :frame: 1
+      :orf_start: 1
+      :orf_end: 235
+      :coverage: 100
+      :translated_length: 235
+    2:
+      :frame: 2
+      :orf_start: 195
+      :orf_end: 221
+      :coverage: 14
+      :translated_length: 234
+    3:
+      :frame: 3
+      :orf_start: 1
+      :orf_end: 54
+      :coverage: 25
+      :translated_length: 234
+    4:
+      :frame: 3
+      :orf_start: 141
+      :orf_end: 172
+      :coverage: 16
+      :translated_length: 234
+    5:
+      :frame: 3
+      :orf_start: 178
+      :orf_end: 211
+      :coverage: 16
+      :translated_length: 234
+    6:
+      :frame: -1
+      :orf_start: 1
+      :orf_end: 138
+      :coverage: 60
+      :translated_length: 235
+    7:
+      :frame: -1
+      :orf_start: 199
+      :orf_end: 228
+      :coverage: 15
+      :translated_length: 235
+    8:
+      :frame: -2
+      :orf_start: 1
+      :orf_end: 26
+      :coverage: 13
+      :translated_length: 234
+    9:
+      :frame: -2
+      :orf_start: 64
+      :orf_end: 124
+      :coverage: 28
+      :translated_length: 234
+    10:
+      :frame: -2
+      :orf_start: 147
+      :orf_end: 205
+      :coverage: 27
+      :translated_length: 234
+    11:
+      :frame: -3
+      :orf_start: 35
+      :orf_end: 75
+      :coverage: 19
+      :translated_length: 234
+    12:
+      :frame: -3
+      :orf_start: 101
+      :orf_end: 145
+      :coverage: 21
+      :translated_length: 234
+    13:
+      :frame: -3
+      :orf_start: 178
+      :orf_end: 212
+      :coverage: 17
+      :translated_length: 234
+  coverage: 100
+  threshold: 80
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_3_orfs.json
+    type: :lines
+    title: Open Reading Frames in all 6 Frames
+    footer: 'Open Reading Frame (Minimimum Length: 30 amino acids),red'
+    xtitle: Offset in the Prediction
+    ytitle: Reading Frame
+    aux1: 14
+    aux2: 
+  mainORFFrame: 1
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF) that occupies most of the query sequence.
+  explanation: " The longest ORF is in frame 1, where it occupies 100% of the query
+    sequence."
+  conclusion: There is no evidence to believe that there is any problem with the ORF
+    of the query sequence.
+  running_time: 0.001164
+- !ruby/object:GeneValidator::AlignmentValidationOutput
+  description: Finds missing and extra sequences in the prediction, based on the multiple
+    alignment of the best hits. Also counts the percentage of the conserved regions
+    that appear in the prediction.
+  header: Missing/Extra sequences
+  short_header: MA
+  gaps: 3%
+  extra_seq: 0%
+  consensus: 97%
+  threshold: 20
+  result: :yes
+  expected: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_3_ma.json
+    type: :align
+    title: 'Missing/Extra sequences Validation: Multiple Align. & Statistical model
+      of hits'
+    footer: Conserved Region, Yellow
+    xtitle: Offset in the Alignment
+    ytitle: ''
+    aux1: 12
+    aux2: Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5,
+      hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model
+  approach: We expect the query sequence to be similar to the top ten BLAST hits.
+    Here, we create a statistical consensus model of those top hits and compare the
+    query to this model.
+  explanation: The query sequence includes 97% amino-acid residues present in the
+    consensus model. 0% of residues in the query sequence are absent from the consensus
+    profile.  3% of residues in the consensus profile are absent from the query sequence.
+  conclusion: There is no evidence based on the top 10 BLAST hits to suggest any problems
+    with the query sequence.
+  running_time: 0.199343
+ENA|AAY44250|AAY44250.1:
+- !ruby/object:GeneValidator::LengthClusterValidationOutput
+  description: 'Check whether the prediction length fits most of the BLAST hit lengths,
+    by 1D hierarchical clusterization. Meaning of the output displayed: Query_length
+    [Main Cluster Length Interval]'
+  header: Length Cluster
+  short_header: LengthCluster
+  limits:
+  - 236
+  - 253
+  query_length: 223
+  expected: :yes
+  result: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_4_len_clusters.json
+    type: :bars
+    title: 'Length Cluster Validation: Distribution of BLAST hit lengths'
+    footer: Query Sequence, black;Most Dense Cluster,red;Other Hits, blue
+    xtitle: Sequence Length
+    ytitle: Number of Sequences
+    aux1: 223
+    aux2: 
+  approach: 'If the query sequence is well conserved and similar sequences (BLAST
+    hits) are correct, we can expect query and hit sequences to have similar lengths.
+    Here, we cluster the lengths of hit sequences and compare the length of our query
+    sequence to the most dense cluster of hit lengths. '
+  explanation: The most dense length-cluster of BLAST hits includes sequences that
+    are from 236 to 253 amino-acids long. The query sequence is 223 amino-acids long
+    and is thus outside the most dense length-cluster of BLAST hits.
+  conclusion: This suggests that the query sequence may be too short.
+  running_time: 0.002083
+- !ruby/object:GeneValidator::LengthRankValidationOutput
+  description: Check whether the rank of the prediction length lies among 80% of all
+    the BLAST hit lengths.
+  header: Length Rank
+  short_header: LengthRank
+  msg: ''
+  query_length: 223
+  no_of_hits: 117
+  median: 241
+  mean: 223
+  smallest_hit: 43
+  largest_hit: 270
+  extreme_hits: 26
+  percentage: 22
+  result: :yes
+  expected: :yes
+  approach: If the query sequence is well conserved and similar sequences (BLAST hits)
+    are correct, we can expect query and hit sequences to have similar lengths.
+  explanation: 'The query sequence is  223 amino-acids long. BLAST identified 117
+    hit sequences with lengths from 43 to 270 amino-acids (median: 241; mean: 223).
+    26 of these hit sequences (i.e. 22%) are longer than the query sequence.'
+  conclusion: There is no reason to believe there is any problem with the length of
+    the query sequence.
+  running_time: 0.000139
+- !ruby/object:GeneValidator::GeneMergeValidationOutput
+  description: Check whether BLAST hits make evidence about a merge of two genes that
+    match the predicted gene.
+  header: Gene Merge
+  short_header: Gene_Merge
+  slope: 0.0
+  unimodality: false
+  threshold_down: 0.4
+  threshold_up: 1.2
+  result: :no
+  expected: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_4_match_2d.json
+    type: :scatter
+    title: 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)'
+    footer: ''
+    xtitle: Start Offset (most left hsp)
+    ytitle: End Offset (most right hsp)
+    aux1: 223.75980082462357
+    aux2: -0.011629462226587365
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_4_match.json
+    type: :lines
+    title: 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)'
+    footer: ''
+    xtitle: Offset in Prediction
+    ytitle: Hit Number
+    aux1: 117
+    aux2: 
+  approach: We expect the query sequence to encode a single protein-coding gene. Here,
+    we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine
+    whether the query includes sequence from two or more genes.
+  explanation: The distribution of start and/or end-coordinates of HSPs are multi-modal.
+    To detect potential problems we performed a linear regression (with coordinates
+    weighted inversely proportionally to  hit strength). The resulting slope is 0.0.
+  conclusion: This slope is  outside our empirically calculated thresholds (0.4 and
+    1.2). There is no evidence that the query contains sequence from multiple genes.
+  running_time: 0.00231
+- !ruby/object:GeneValidator::DuplicationValidationOutput
+  description: Check whether there is a duplicated subsequence in the predicted gene
+    by counting the hsp residue coverage of the prediction, for each hit.
+  header: Duplication
+  short_header: Duplication
+  pvalue: 1
+  threshold: 0.05
+  result: :yes
+  expected: :yes
+  average: 1.0
+  approach: We expect each BLAST hit to match each region of the query at most once.
+    Here, we calculate the distribution of hit coverage against the query sequence
+    and use the Wilcoxon test to determine if it is higher than 1.
+  explanation: The Wilcoxon test produced a p-value of 1.
+  conclusion: This suggests that the query sequence contains no erroneous duplications.
+  running_time: 0.006507
+- !ruby/object:GeneValidator::BlastRFValidationOutput
+  description: Check whether there is a single reading frame among BLAST hits. Otherwise
+    there might be a reading frame shift in the query sequence.
+  header: Reading Frame
+  short_header: Frame
+  frames_histo:
+    2: 117
+  expected: :yes
+  result: :yes
+  msg: '117&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;2; '
+  exp_msg: '117 HSPs align in frame 2; '
+  total_hsp: 117
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within
+    this ORF.
+  explanation: BLAST identified 117 High-scoring Segment Pairs (HSPs); all of these
+    align in frame 2.
+  conclusion: This is as expected.
+  running_time: 0.000106
+- !ruby/object:GeneValidator::ORFValidationOutput
+  description: Check whether there is a single main Open Reading Frame in the predicted
+    gene. Applicable only for nucleotide queries.
+  header: Main ORF
+  short_header: ORF
+  orfs:
+    1:
+      :frame: 1
+      :orf_start: 133
+      :orf_end: 164
+      :coverage: 17
+      :translated_length: 219
+    2:
+      :frame: 1
+      :orf_start: 170
+      :orf_end: 203
+      :coverage: 18
+      :translated_length: 219
+    3:
+      :frame: 2
+      :orf_start: 1
+      :orf_end: 219
+      :coverage: 100
+      :translated_length: 219
+    4:
+      :frame: 3
+      :orf_start: 9
+      :orf_end: 38
+      :coverage: 16
+      :translated_length: 218
+    5:
+      :frame: 3
+      :orf_start: 44
+      :orf_end: 75
+      :coverage: 17
+      :translated_length: 218
+    6:
+      :frame: 3
+      :orf_start: 186
+      :orf_end: 212
+      :coverage: 14
+      :translated_length: 218
+    7:
+      :frame: -1
+      :orf_start: 1
+      :orf_end: 73
+      :coverage: 35
+      :translated_length: 219
+    8:
+      :frame: -1
+      :orf_start: 79
+      :orf_end: 137
+      :coverage: 29
+      :translated_length: 219
+    9:
+      :frame: -1
+      :orf_start: 148
+      :orf_end: 176
+      :coverage: 15
+      :translated_length: 219
+    10:
+      :frame: -1
+      :orf_start: 182
+      :orf_end: 219
+      :coverage: 19
+      :translated_length: 219
+    11:
+      :frame: -2
+      :orf_start: 57
+      :orf_end: 104
+      :coverage: 24
+      :translated_length: 219
+    12:
+      :frame: -2
+      :orf_start: 160
+      :orf_end: 198
+      :coverage: 20
+      :translated_length: 219
+    13:
+      :frame: -3
+      :orf_start: 28
+      :orf_end: 68
+      :coverage: 21
+      :translated_length: 218
+    14:
+      :frame: -3
+      :orf_start: 74
+      :orf_end: 165
+      :coverage: 44
+      :translated_length: 218
+    15:
+      :frame: -3
+      :orf_start: 171
+      :orf_end: 207
+      :coverage: 19
+      :translated_length: 218
+  coverage: 100
+  threshold: 80
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_4_orfs.json
+    type: :lines
+    title: Open Reading Frames in all 6 Frames
+    footer: 'Open Reading Frame (Minimimum Length: 30 amino acids),red'
+    xtitle: Offset in the Prediction
+    ytitle: Reading Frame
+    aux1: 14
+    aux2: 
+  mainORFFrame: 2
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF) that occupies most of the query sequence.
+  explanation: " The longest ORF is in frame 2, where it occupies 100% of the query
+    sequence."
+  conclusion: There is no evidence to believe that there is any problem with the ORF
+    of the query sequence.
+  running_time: 0.001032
+- !ruby/object:GeneValidator::AlignmentValidationOutput
+  description: Finds missing and extra sequences in the prediction, based on the multiple
+    alignment of the best hits. Also counts the percentage of the conserved regions
+    that appear in the prediction.
+  header: Missing/Extra sequences
+  short_header: MA
+  gaps: 19%
+  extra_seq: 18%
+  consensus: 13%
+  threshold: 20
+  result: :yes
+  expected: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_4_ma.json
+    type: :align
+    title: 'Missing/Extra sequences Validation: Multiple Align. & Statistical model
+      of hits'
+    footer: Conserved Region, Yellow
+    xtitle: Offset in the Alignment
+    ytitle: ''
+    aux1: 12
+    aux2: Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5,
+      hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model
+  approach: We expect the query sequence to be similar to the top ten BLAST hits.
+    Here, we create a statistical consensus model of those top hits and compare the
+    query to this model.
+  explanation: The query sequence includes 13% amino-acid residues present in the
+    consensus model. 18% of residues in the query sequence are absent from the consensus
+    profile.  19% of residues in the consensus profile are absent from the query sequence.
+  conclusion: There is no evidence based on the top 10 BLAST hits to suggest any problems
+    with the query sequence.
+  running_time: 0.213343
+ENA|ACR78454|ACR78454.1:
+- !ruby/object:GeneValidator::LengthClusterValidationOutput
+  description: 'Check whether the prediction length fits most of the BLAST hit lengths,
+    by 1D hierarchical clusterization. Meaning of the output displayed: Query_length
+    [Main Cluster Length Interval]'
+  header: Length Cluster
+  short_header: LengthCluster
+  limits:
+  - 208
+  - 254
+  query_length: 208
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_5_len_clusters.json
+    type: :bars
+    title: 'Length Cluster Validation: Distribution of BLAST hit lengths'
+    footer: Query Sequence, black;Most Dense Cluster,red;Other Hits, blue
+    xtitle: Sequence Length
+    ytitle: Number of Sequences
+    aux1: 208
+    aux2: 
+  approach: 'If the query sequence is well conserved and similar sequences (BLAST
+    hits) are correct, we can expect query and hit sequences to have similar lengths.
+    Here, we cluster the lengths of hit sequences and compare the length of our query
+    sequence to the most dense cluster of hit lengths. '
+  explanation: The most dense length-cluster of BLAST hits includes sequences that
+    are from 208 to 254 amino-acids long. The query sequence is 208 amino-acids long
+    and is thus inside the most dense length-cluster of BLAST hits.
+  conclusion: There is no reason to believe there is any problem with the length of
+    the query sequence.
+  running_time: 0.000366
+- !ruby/object:GeneValidator::LengthRankValidationOutput
+  description: Check whether the rank of the prediction length lies among 80% of all
+    the BLAST hit lengths.
+  header: Length Rank
+  short_header: LengthRank
+  msg: too&nbsp;short
+  query_length: 208
+  no_of_hits: 10
+  median: 229
+  mean: 217
+  smallest_hit: 113
+  largest_hit: 254
+  extreme_hits: 1
+  percentage: 10
+  result: :no
+  expected: :yes
+  approach: If the query sequence is well conserved and similar sequences (BLAST hits)
+    are correct, we can expect query and hit sequences to have similar lengths.
+  explanation: 'The query sequence is  208 amino-acids long. BLAST identified 10 hit
+    sequences with lengths from 113 to 254 amino-acids (median: 229; mean: 217). 1
+    of these hit sequences (i.e. 10%) are longer than the query sequence.'
+  conclusion: The sequence may be too short.
+  running_time: 5.4e-05
+- !ruby/object:GeneValidator::GeneMergeValidationOutput
+  description: Check whether BLAST hits make evidence about a merge of two genes that
+    match the predicted gene.
+  header: Gene Merge
+  short_header: Gene_Merge
+  slope: -0.1
+  unimodality: false
+  threshold_down: 0.4
+  threshold_up: 1.2
+  result: :no
+  expected: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_5_match_2d.json
+    type: :scatter
+    title: 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)'
+    footer: ''
+    xtitle: Start Offset (most left hsp)
+    ytitle: End Offset (most right hsp)
+    aux1: 207.3717421380405
+    aux2: -0.05259916038789571
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_5_match.json
+    type: :lines
+    title: 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)'
+    footer: ''
+    xtitle: Offset in Prediction
+    ytitle: Hit Number
+    aux1: 10
+    aux2: 
+  approach: We expect the query sequence to encode a single protein-coding gene. Here,
+    we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine
+    whether the query includes sequence from two or more genes.
+  explanation: The distribution of start and/or end-coordinates of HSPs are multi-modal.
+    To detect potential problems we performed a linear regression (with coordinates
+    weighted inversely proportionally to  hit strength). The resulting slope is -0.1.
+  conclusion: This slope is  outside our empirically calculated thresholds (0.4 and
+    1.2). There is no evidence that the query contains sequence from multiple genes.
+  running_time: 0.000703
+- !ruby/object:GeneValidator::DuplicationValidationOutput
+  description: Check whether there is a duplicated subsequence in the predicted gene
+    by counting the hsp residue coverage of the prediction, for each hit.
+  header: Duplication
+  short_header: Duplication
+  pvalue: 1
+  threshold: 0.05
+  result: :yes
+  expected: :yes
+  average: 1.0
+  approach: We expect each BLAST hit to match each region of the query at most once.
+    Here, we calculate the distribution of hit coverage against the query sequence
+    and use the Wilcoxon test to determine if it is higher than 1.
+  explanation: The Wilcoxon test produced a p-value of 1.
+  conclusion: This suggests that the query sequence contains no erroneous duplications.
+  running_time: 0.005185
+- !ruby/object:GeneValidator::BlastRFValidationOutput
+  description: Check whether there is a single reading frame among BLAST hits. Otherwise
+    there might be a reading frame shift in the query sequence.
+  header: Reading Frame
+  short_header: Frame
+  frames_histo:
+    1: 10
+  expected: :yes
+  result: :yes
+  msg: '10&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1; '
+  exp_msg: '10 HSPs align in frame 1; '
+  total_hsp: 10
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within
+    this ORF.
+  explanation: BLAST identified 10 High-scoring Segment Pairs (HSPs); all of these
+    align in frame 1.
+  conclusion: This is as expected.
+  running_time: 3.9e-05
+- !ruby/object:GeneValidator::ORFValidationOutput
+  description: Check whether there is a single main Open Reading Frame in the predicted
+    gene. Applicable only for nucleotide queries.
+  header: Main ORF
+  short_header: ORF
+  orfs:
+    1:
+      :frame: 1
+      :orf_start: 1
+      :orf_end: 203
+      :coverage: 100
+      :translated_length: 204
+    2:
+      :frame: 2
+      :orf_start: 8
+      :orf_end: 35
+      :coverage: 16
+      :translated_length: 203
+    3:
+      :frame: 2
+      :orf_start: 82
+      :orf_end: 142
+      :coverage: 32
+      :translated_length: 203
+    4:
+      :frame: 2
+      :orf_start: 148
+      :orf_end: 185
+      :coverage: 21
+      :translated_length: 203
+    5:
+      :frame: 3
+      :orf_start: 73
+      :orf_end: 98
+      :coverage: 15
+      :translated_length: 203
+    6:
+      :frame: 3
+      :orf_start: 108
+      :orf_end: 136
+      :coverage: 16
+      :translated_length: 203
+    7:
+      :frame: 3
+      :orf_start: 172
+      :orf_end: 198
+      :coverage: 15
+      :translated_length: 203
+    8:
+      :frame: -1
+      :orf_start: 1
+      :orf_end: 43
+      :coverage: 23
+      :translated_length: 204
+    9:
+      :frame: -1
+      :orf_start: 64
+      :orf_end: 123
+      :coverage: 31
+      :translated_length: 204
+    10:
+      :frame: -2
+      :orf_start: 2
+      :orf_end: 44
+      :coverage: 23
+      :translated_length: 203
+    11:
+      :frame: -2
+      :orf_start: 86
+      :orf_end: 119
+      :coverage: 19
+      :translated_length: 203
+    12:
+      :frame: -2
+      :orf_start: 139
+      :orf_end: 203
+      :coverage: 34
+      :translated_length: 203
+    13:
+      :frame: -3
+      :orf_start: 47
+      :orf_end: 75
+      :coverage: 16
+      :translated_length: 203
+  coverage: 100
+  threshold: 80
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_5_orfs.json
+    type: :lines
+    title: Open Reading Frames in all 6 Frames
+    footer: 'Open Reading Frame (Minimimum Length: 30 amino acids),red'
+    xtitle: Offset in the Prediction
+    ytitle: Reading Frame
+    aux1: 14
+    aux2: 
+  mainORFFrame: 1
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF) that occupies most of the query sequence.
+  explanation: " The longest ORF is in frame 1, where it occupies 100% of the query
+    sequence."
+  conclusion: There is no evidence to believe that there is any problem with the ORF
+    of the query sequence.
+  running_time: 0.001045
+- !ruby/object:GeneValidator::AlignmentValidationOutput
+  description: Finds missing and extra sequences in the prediction, based on the multiple
+    alignment of the best hits. Also counts the percentage of the conserved regions
+    that appear in the prediction.
+  header: Missing/Extra sequences
+  short_header: MA
+  gaps: 15%
+  extra_seq: 0%
+  consensus: 100%
+  threshold: 20
+  result: :yes
+  expected: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_5_ma.json
+    type: :align
+    title: 'Missing/Extra sequences Validation: Multiple Align. & Statistical model
+      of hits'
+    footer: Conserved Region, Yellow
+    xtitle: Offset in the Alignment
+    ytitle: ''
+    aux1: 12
+    aux2: Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5,
+      hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model
+  approach: We expect the query sequence to be similar to the top ten BLAST hits.
+    Here, we create a statistical consensus model of those top hits and compare the
+    query to this model.
+  explanation: The query sequence includes 100% amino-acid residues present in the
+    consensus model. 0% of residues in the query sequence are absent from the consensus
+    profile.  15% of residues in the consensus profile are absent from the query sequence.
+  conclusion: There is no evidence based on the top 10 BLAST hits to suggest any problems
+    with the query sequence.
+  running_time: 0.232733
+ENA|EEF42972|EEF42972.1:
+- !ruby/object:GeneValidator::LengthClusterValidationOutput
+  description: 'Check whether the prediction length fits most of the BLAST hit lengths,
+    by 1D hierarchical clusterization. Meaning of the output displayed: Query_length
+    [Main Cluster Length Interval]'
+  header: Length Cluster
+  short_header: LengthCluster
+  limits:
+  - 724
+  - 1208
+  query_length: 1020
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_6_len_clusters.json
+    type: :bars
+    title: 'Length Cluster Validation: Distribution of BLAST hit lengths'
+    footer: Query Sequence, black;Most Dense Cluster,red;Other Hits, blue
+    xtitle: Sequence Length
+    ytitle: Number of Sequences
+    aux1: 1020
+    aux2: 
+  approach: 'If the query sequence is well conserved and similar sequences (BLAST
+    hits) are correct, we can expect query and hit sequences to have similar lengths.
+    Here, we cluster the lengths of hit sequences and compare the length of our query
+    sequence to the most dense cluster of hit lengths. '
+  explanation: The most dense length-cluster of BLAST hits includes sequences that
+    are from 724 to 1208 amino-acids long. The query sequence is 1020 amino-acids
+    long and is thus inside the most dense length-cluster of BLAST hits.
+  conclusion: There is no reason to believe there is any problem with the length of
+    the query sequence.
+  running_time: 0.000935
+- !ruby/object:GeneValidator::LengthRankValidationOutput
+  description: Check whether the rank of the prediction length lies among 80% of all
+    the BLAST hit lengths.
+  header: Length Rank
+  short_header: LengthRank
+  msg: ''
+  query_length: 1020
+  no_of_hits: 24
+  median: 965
+  mean: 935
+  smallest_hit: 474
+  largest_hit: 1682
+  extreme_hits: 10
+  percentage: 42
+  result: :yes
+  expected: :yes
+  approach: If the query sequence is well conserved and similar sequences (BLAST hits)
+    are correct, we can expect query and hit sequences to have similar lengths.
+  explanation: 'The query sequence is  1020 amino-acids long. BLAST identified 24
+    hit sequences with lengths from 474 to 1682 amino-acids (median: 965; mean: 935).
+    10 of these hit sequences (i.e. 42%) are shorter than the query sequence.'
+  conclusion: There is no reason to believe there is any problem with the length of
+    the query sequence.
+  running_time: 5.2e-05
+- !ruby/object:GeneValidator::GeneMergeValidationOutput
+  description: Check whether BLAST hits make evidence about a merge of two genes that
+    match the predicted gene.
+  header: Gene Merge
+  short_header: Gene_Merge
+  slope: -0.3
+  unimodality: false
+  threshold_down: 0.4
+  threshold_up: 1.2
+  result: :no
+  expected: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_6_match_2d.json
+    type: :scatter
+    title: 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)'
+    footer: ''
+    xtitle: Start Offset (most left hsp)
+    ytitle: End Offset (most right hsp)
+    aux1: 922.7442778946414
+    aux2: -0.32157307130034835
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_6_match.json
+    type: :lines
+    title: 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)'
+    footer: ''
+    xtitle: Offset in Prediction
+    ytitle: Hit Number
+    aux1: 24
+    aux2: 
+  approach: We expect the query sequence to encode a single protein-coding gene. Here,
+    we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine
+    whether the query includes sequence from two or more genes.
+  explanation: The distribution of start and/or end-coordinates of HSPs are multi-modal.
+    To detect potential problems we performed a linear regression (with coordinates
+    weighted inversely proportionally to  hit strength). The resulting slope is -0.3.
+  conclusion: This slope is  outside our empirically calculated thresholds (0.4 and
+    1.2). There is no evidence that the query contains sequence from multiple genes.
+  running_time: 0.00096
+- !ruby/object:GeneValidator::DuplicationValidationOutput
+  description: Check whether there is a duplicated subsequence in the predicted gene
+    by counting the hsp residue coverage of the prediction, for each hit.
+  header: Duplication
+  short_header: Duplication
+  pvalue: 0.125
+  threshold: 0.05
+  result: :yes
+  expected: :yes
+  average: 1.0059999999999998
+  approach: We expect each BLAST hit to match each region of the query at most once.
+    Here, we calculate the distribution of hit coverage against the query sequence
+    and use the Wilcoxon test to determine if it is higher than 1.
+  explanation: The Wilcoxon test produced a p-value of 0.125.
+  conclusion: This suggests that the query sequence contains no erroneous duplications.
+- !ruby/object:GeneValidator::BlastRFValidationOutput
+  description: Check whether there is a single reading frame among BLAST hits. Otherwise
+    there might be a reading frame shift in the query sequence.
+  header: Reading Frame
+  short_header: Frame
+  frames_histo:
+    1: 33
+    3: 7
+  expected: :yes
+  result: :no
+  msg: '33&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1; 7&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;3; '
+  exp_msg: '33 HSPs align in frame 1; 7 HSPs align in frame 3; '
+  total_hsp: 40
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within
+    this ORF.
+  explanation: 'BLAST identified 40 High-scoring Segment Pairs (HSPs): 33 HSPs align
+    in frame 1; 7 HSPs align in frame 3.'
+  conclusion: The HSPs align in mulitple reading frames, this suggests there may be
+    a frame shift in the query sequence.
+  running_time: 8.1e-05
+- !ruby/object:GeneValidator::ORFValidationOutput
+  description: Check whether there is a single main Open Reading Frame in the predicted
+    gene. Applicable only for nucleotide queries.
+  header: Main ORF
+  short_header: ORF
+  orfs:
+    1:
+      :frame: 1
+      :orf_start: 1
+      :orf_end: 999
+      :coverage: 100
+      :translated_length: 1000
+    2:
+      :frame: 2
+      :orf_start: 156
+      :orf_end: 182
+      :coverage: 5
+      :translated_length: 999
+    3:
+      :frame: 2
+      :orf_start: 219
+      :orf_end: 230
+      :coverage: 4
+      :translated_length: 999
+    4:
+      :frame: 2
+      :orf_start: 252
+      :orf_end: 267
+      :coverage: 4
+      :translated_length: 999
+    5:
+      :frame: 2
+      :orf_start: 315
+      :orf_end: 324
+      :coverage: 3
+      :translated_length: 999
+    6:
+      :frame: 2
+      :orf_start: 463
+      :orf_end: 505
+      :coverage: 7
+      :translated_length: 999
+    7:
+      :frame: 2
+      :orf_start: 527
+      :orf_end: 555
+      :coverage: 5
+      :translated_length: 999
+    8:
+      :frame: 2
+      :orf_start: 577
+      :orf_end: 599
+      :coverage: 5
+      :translated_length: 999
+    9:
+      :frame: 2
+      :orf_start: 666
+      :orf_end: 675
+      :coverage: 3
+      :translated_length: 999
+    10:
+      :frame: 2
+      :orf_start: 697
+      :orf_end: 709
+      :coverage: 4
+      :translated_length: 999
+    11:
+      :frame: 2
+      :orf_start: 779
+      :orf_end: 788
+      :coverage: 3
+      :translated_length: 999
+    12:
+      :frame: 2
+      :orf_start: 882
+      :orf_end: 917
+      :coverage: 6
+      :translated_length: 999
+    13:
+      :frame: 2
+      :orf_start: 957
+      :orf_end: 966
+      :coverage: 3
+      :translated_length: 999
+    14:
+      :frame: 3
+      :orf_start: 64
+      :orf_end: 89
+      :coverage: 5
+      :translated_length: 999
+    15:
+      :frame: 3
+      :orf_start: 241
+      :orf_end: 258
+      :coverage: 4
+      :translated_length: 999
+    16:
+      :frame: 3
+      :orf_start: 479
+      :orf_end: 489
+      :coverage: 4
+      :translated_length: 999
+    17:
+      :frame: 3
+      :orf_start: 664
+      :orf_end: 685
+      :coverage: 5
+      :translated_length: 999
+    18:
+      :frame: 3
+      :orf_start: 839
+      :orf_end: 849
+      :coverage: 4
+      :translated_length: 999
+    19:
+      :frame: 3
+      :orf_start: 886
+      :orf_end: 906
+      :coverage: 5
+      :translated_length: 999
+    20:
+      :frame: 3
+      :orf_start: 946
+      :orf_end: 955
+      :coverage: 3
+      :translated_length: 999
+    21:
+      :frame: -1
+      :orf_start: 16
+      :orf_end: 37
+      :coverage: 5
+      :translated_length: 1000
+    22:
+      :frame: -1
+      :orf_start: 131
+      :orf_end: 164
+      :coverage: 6
+      :translated_length: 1000
+    23:
+      :frame: -1
+      :orf_start: 334
+      :orf_end: 360
+      :coverage: 5
+      :translated_length: 1000
+    24:
+      :frame: -1
+      :orf_start: 502
+      :orf_end: 555
+      :coverage: 8
+      :translated_length: 1000
+    25:
+      :frame: -1
+      :orf_start: 620
+      :orf_end: 629
+      :coverage: 3
+      :translated_length: 1000
+    26:
+      :frame: -1
+      :orf_start: 652
+      :orf_end: 686
+      :coverage: 6
+      :translated_length: 1000
+    27:
+      :frame: -1
+      :orf_start: 750
+      :orf_end: 769
+      :coverage: 4
+      :translated_length: 1000
+    28:
+      :frame: -1
+      :orf_start: 917
+      :orf_end: 940
+      :coverage: 5
+      :translated_length: 1000
+    29:
+      :frame: -1
+      :orf_start: 962
+      :orf_end: 997
+      :coverage: 6
+      :translated_length: 1000
+    30:
+      :frame: -2
+      :orf_start: 87
+      :orf_end: 125
+      :coverage: 6
+      :translated_length: 999
+    31:
+      :frame: -2
+      :orf_start: 172
+      :orf_end: 203
+      :coverage: 6
+      :translated_length: 999
+    32:
+      :frame: -2
+      :orf_start: 225
+      :orf_end: 267
+      :coverage: 7
+      :translated_length: 999
+    33:
+      :frame: -2
+      :orf_start: 289
+      :orf_end: 323
+      :coverage: 6
+      :translated_length: 999
+    34:
+      :frame: -2
+      :orf_start: 417
+      :orf_end: 458
+      :coverage: 7
+      :translated_length: 999
+    35:
+      :frame: -2
+      :orf_start: 593
+      :orf_end: 666
+      :coverage: 10
+      :translated_length: 999
+    36:
+      :frame: -2
+      :orf_start: 801
+      :orf_end: 811
+      :coverage: 4
+      :translated_length: 999
+    37:
+      :frame: -2
+      :orf_start: 833
+      :orf_end: 856
+      :coverage: 5
+      :translated_length: 999
+    38:
+      :frame: -2
+      :orf_start: 878
+      :orf_end: 929
+      :coverage: 8
+      :translated_length: 999
+    39:
+      :frame: -2
+      :orf_start: 979
+      :orf_end: 999
+      :coverage: 5
+      :translated_length: 999
+    40:
+      :frame: -3
+      :orf_start: 8
+      :orf_end: 17
+      :coverage: 3
+      :translated_length: 999
+    41:
+      :frame: -3
+      :orf_start: 68
+      :orf_end: 101
+      :coverage: 6
+      :translated_length: 999
+    42:
+      :frame: -3
+      :orf_start: 290
+      :orf_end: 339
+      :coverage: 7
+      :translated_length: 999
+    43:
+      :frame: -3
+      :orf_start: 363
+      :orf_end: 400
+      :coverage: 6
+      :translated_length: 999
+    44:
+      :frame: -3
+      :orf_start: 470
+      :orf_end: 497
+      :coverage: 5
+      :translated_length: 999
+    45:
+      :frame: -3
+      :orf_start: 519
+      :orf_end: 548
+      :coverage: 5
+      :translated_length: 999
+    46:
+      :frame: -3
+      :orf_start: 590
+      :orf_end: 611
+      :coverage: 5
+      :translated_length: 999
+    47:
+      :frame: -3
+      :orf_start: 745
+      :orf_end: 754
+      :coverage: 3
+      :translated_length: 999
+    48:
+      :frame: -3
+      :orf_start: 776
+      :orf_end: 808
+      :coverage: 6
+      :translated_length: 999
+    49:
+      :frame: -3
+      :orf_start: 852
+      :orf_end: 862
+      :coverage: 4
+      :translated_length: 999
+    50:
+      :frame: -3
+      :orf_start: 884
+      :orf_end: 911
+      :coverage: 5
+      :translated_length: 999
+    51:
+      :frame: -3
+      :orf_start: 948
+      :orf_end: 976
+      :coverage: 5
+      :translated_length: 999
+  coverage: 100
+  threshold: 80
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_6_orfs.json
+    type: :lines
+    title: Open Reading Frames in all 6 Frames
+    footer: 'Open Reading Frame (Minimimum Length: 30 amino acids),red'
+    xtitle: Offset in the Prediction
+    ytitle: Reading Frame
+    aux1: 14
+    aux2: 
+  mainORFFrame: 1
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF) that occupies most of the query sequence.
+  explanation: " The longest ORF is in frame 1, where it occupies 100% of the query
+    sequence."
+  conclusion: There is no evidence to believe that there is any problem with the ORF
+    of the query sequence.
+  running_time: 0.003812
+- !ruby/object:GeneValidator::AlignmentValidationOutput
+  description: Finds missing and extra sequences in the prediction, based on the multiple
+    alignment of the best hits. Also counts the percentage of the conserved regions
+    that appear in the prediction.
+  header: Missing/Extra sequences
+  short_header: MA
+  gaps: 13%
+  extra_seq: 3%
+  consensus: 100%
+  threshold: 20
+  result: :yes
+  expected: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_6_ma.json
+    type: :align
+    title: 'Missing/Extra sequences Validation: Multiple Align. & Statistical model
+      of hits'
+    footer: Conserved Region, Yellow
+    xtitle: Offset in the Alignment
+    ytitle: ''
+    aux1: 12
+    aux2: Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5,
+      hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model
+  approach: We expect the query sequence to be similar to the top ten BLAST hits.
+    Here, we create a statistical consensus model of those top hits and compare the
+    query to this model.
+  explanation: The query sequence includes 100% amino-acid residues present in the
+    consensus model. 3% of residues in the query sequence are absent from the consensus
+    profile.  13% of residues in the consensus profile are absent from the query sequence.
+  conclusion: There is no evidence based on the top 10 BLAST hits to suggest any problems
+    with the query sequence.
+  running_time: 2.599156
+ENA|AAT08493|AAT08493.1:
+- !ruby/object:GeneValidator::LengthClusterValidationOutput
+  description: 'Check whether the prediction length fits most of the BLAST hit lengths,
+    by 1D hierarchical clusterization. Meaning of the output displayed: Query_length
+    [Main Cluster Length Interval]'
+  header: Length Cluster
+  short_header: LengthCluster
+  limits:
+  - 227
+  - 228
+  query_length: 228
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_7_len_clusters.json
+    type: :bars
+    title: 'Length Cluster Validation: Distribution of BLAST hit lengths'
+    footer: Query Sequence, black;Most Dense Cluster,red;Other Hits, blue
+    xtitle: Sequence Length
+    ytitle: Number of Sequences
+    aux1: 228
+    aux2: 
+  approach: 'If the query sequence is well conserved and similar sequences (BLAST
+    hits) are correct, we can expect query and hit sequences to have similar lengths.
+    Here, we cluster the lengths of hit sequences and compare the length of our query
+    sequence to the most dense cluster of hit lengths. '
+  explanation: The most dense length-cluster of BLAST hits includes sequences that
+    are from 227 to 228 amino-acids long. The query sequence is 228 amino-acids long
+    and is thus inside the most dense length-cluster of BLAST hits.
+  conclusion: There is no reason to believe there is any problem with the length of
+    the query sequence.
+  running_time: 0.000864
+- !ruby/object:GeneValidator::LengthRankValidationOutput
+  description: Check whether the rank of the prediction length lies among 80% of all
+    the BLAST hit lengths.
+  header: Length Rank
+  short_header: LengthRank
+  msg: ''
+  query_length: 228
+  no_of_hits: 323
+  median: 227
+  mean: 236
+  smallest_hit: 64
+  largest_hit: 873
+  extreme_hits: 111
+  percentage: 34
+  result: :yes
+  expected: :yes
+  approach: If the query sequence is well conserved and similar sequences (BLAST hits)
+    are correct, we can expect query and hit sequences to have similar lengths.
+  explanation: 'The query sequence is  228 amino-acids long. BLAST identified 323
+    hit sequences with lengths from 64 to 873 amino-acids (median: 227; mean: 236).
+    111 of these hit sequences (i.e. 34%) are shorter than the query sequence.'
+  conclusion: There is no reason to believe there is any problem with the length of
+    the query sequence.
+  running_time: 0.000336
+- !ruby/object:GeneValidator::GeneMergeValidationOutput
+  description: Check whether BLAST hits make evidence about a merge of two genes that
+    match the predicted gene.
+  header: Gene Merge
+  short_header: Gene_Merge
+  slope: 0.0
+  unimodality: true
+  threshold_down: 0.4
+  threshold_up: 1.2
+  result: :no
+  expected: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_7_match_2d.json
+    type: :scatter
+    title: 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)'
+    footer: ''
+    xtitle: Start Offset (most left hsp)
+    ytitle: End Offset (most right hsp)
+    aux1: 
+    aux2: 
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_7_match.json
+    type: :lines
+    title: 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)'
+    footer: ''
+    xtitle: Offset in Prediction
+    ytitle: Hit Number
+    aux1: 323
+    aux2: 
+  approach: We expect the query sequence to encode a single protein-coding gene. Here,
+    we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine
+    whether the query includes sequence from two or more genes.
+  explanation: The start coordinates and the end coordinates of HSPs are unimodally
+    distributed.
+  conclusion: This suggest that the query sequence represents a single gene.
+  running_time: 0.005941
+- !ruby/object:GeneValidator::DuplicationValidationOutput
+  description: Check whether there is a duplicated subsequence in the predicted gene
+    by counting the hsp residue coverage of the prediction, for each hit.
+  header: Duplication
+  short_header: Duplication
+  pvalue: 1
+  threshold: 0.05
+  result: :yes
+  expected: :yes
+  average: 1.0
+  approach: We expect each BLAST hit to match each region of the query at most once.
+    Here, we calculate the distribution of hit coverage against the query sequence
+    and use the Wilcoxon test to determine if it is higher than 1.
+  explanation: The Wilcoxon test produced a p-value of 1.
+  conclusion: This suggests that the query sequence contains no erroneous duplications.
+  running_time: 0.005735
+- !ruby/object:GeneValidator::BlastRFValidationOutput
+  description: Check whether there is a single reading frame among BLAST hits. Otherwise
+    there might be a reading frame shift in the query sequence.
+  header: Reading Frame
+  short_header: Frame
+  frames_histo:
+    1: 323
+  expected: :yes
+  result: :yes
+  msg: '323&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1; '
+  exp_msg: '323 HSPs align in frame 1; '
+  total_hsp: 323
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within
+    this ORF.
+  explanation: BLAST identified 323 High-scoring Segment Pairs (HSPs); all of these
+    align in frame 1.
+  conclusion: This is as expected.
+  running_time: 0.000247
+- !ruby/object:GeneValidator::ORFValidationOutput
+  description: Check whether there is a single main Open Reading Frame in the predicted
+    gene. Applicable only for nucleotide queries.
+  header: Main ORF
+  short_header: ORF
+  orfs:
+    1:
+      :frame: 1
+      :orf_start: 1
+      :orf_end: 99
+      :coverage: 46
+      :translated_length: 224
+    2:
+      :frame: 1
+      :orf_start: 107
+      :orf_end: 217
+      :coverage: 51
+      :translated_length: 224
+    3:
+      :frame: 3
+      :orf_start: 35
+      :orf_end: 83
+      :coverage: 24
+      :translated_length: 223
+    4:
+      :frame: 3
+      :orf_start: 139
+      :orf_end: 165
+      :coverage: 14
+      :translated_length: 223
+    5:
+      :frame: 3
+      :orf_start: 171
+      :orf_end: 199
+      :coverage: 15
+      :translated_length: 223
+    6:
+      :frame: -2
+      :orf_start: 2
+      :orf_end: 31
+      :coverage: 15
+      :translated_length: 223
+    7:
+      :frame: -2
+      :orf_start: 37
+      :orf_end: 111
+      :coverage: 35
+      :translated_length: 223
+    8:
+      :frame: -2
+      :orf_start: 127
+      :orf_end: 184
+      :coverage: 28
+      :translated_length: 223
+    9:
+      :frame: -3
+      :orf_start: 23
+      :orf_end: 53
+      :coverage: 16
+      :translated_length: 223
+    10:
+      :frame: -3
+      :orf_start: 59
+      :orf_end: 107
+      :coverage: 24
+      :translated_length: 223
+    11:
+      :frame: -3
+      :orf_start: 196
+      :orf_end: 223
+      :coverage: 15
+      :translated_length: 223
+  coverage: 51
+  threshold: 80
+  expected: :yes
+  result: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_7_orfs.json
+    type: :lines
+    title: Open Reading Frames in all 6 Frames
+    footer: 'Open Reading Frame (Minimimum Length: 30 amino acids),red'
+    xtitle: Offset in the Prediction
+    ytitle: Reading Frame
+    aux1: 14
+    aux2: 
+  mainORFFrame: 1
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF) that occupies most of the query sequence.
+  explanation: " The longest ORF is in frame 1, where it occupies 51% of the query
+    sequence."
+  conclusion: This only represents a portion of the query sequence. In some cases
+    this indicates that a frame shift exists in the query sequence.
+  running_time: 0.001102
+- !ruby/object:GeneValidator::AlignmentValidationOutput
+  description: Finds missing and extra sequences in the prediction, based on the multiple
+    alignment of the best hits. Also counts the percentage of the conserved regions
+    that appear in the prediction.
+  header: Missing/Extra sequences
+  short_header: MA
+  gaps: 1%
+  extra_seq: 0%
+  consensus: 84%
+  threshold: 20
+  result: :yes
+  expected: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_7_ma.json
+    type: :align
+    title: 'Missing/Extra sequences Validation: Multiple Align. & Statistical model
+      of hits'
+    footer: Conserved Region, Yellow
+    xtitle: Offset in the Alignment
+    ytitle: ''
+    aux1: 12
+    aux2: Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5,
+      hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model
+  approach: We expect the query sequence to be similar to the top ten BLAST hits.
+    Here, we create a statistical consensus model of those top hits and compare the
+    query to this model.
+  explanation: The query sequence includes 84% amino-acid residues present in the
+    consensus model. 0% of residues in the query sequence are absent from the consensus
+    profile.  1% of residues in the consensus profile are absent from the query sequence.
+  conclusion: There is no evidence based on the top 10 BLAST hits to suggest any problems
+    with the query sequence.
+  running_time: 0.217026
+ENA|AAY44234|AAY44234.1:
+- !ruby/object:GeneValidator::LengthClusterValidationOutput
+  description: 'Check whether the prediction length fits most of the BLAST hit lengths,
+    by 1D hierarchical clusterization. Meaning of the output displayed: Query_length
+    [Main Cluster Length Interval]'
+  header: Length Cluster
+  short_header: LengthCluster
+  limits:
+  - 236
+  - 253
+  query_length: 192
+  expected: :yes
+  result: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_8_len_clusters.json
+    type: :bars
+    title: 'Length Cluster Validation: Distribution of BLAST hit lengths'
+    footer: Query Sequence, black;Most Dense Cluster,red;Other Hits, blue
+    xtitle: Sequence Length
+    ytitle: Number of Sequences
+    aux1: 192
+    aux2: 
+  approach: 'If the query sequence is well conserved and similar sequences (BLAST
+    hits) are correct, we can expect query and hit sequences to have similar lengths.
+    Here, we cluster the lengths of hit sequences and compare the length of our query
+    sequence to the most dense cluster of hit lengths. '
+  explanation: The most dense length-cluster of BLAST hits includes sequences that
+    are from 236 to 253 amino-acids long. The query sequence is 192 amino-acids long
+    and is thus outside the most dense length-cluster of BLAST hits.
+  conclusion: This suggests that the query sequence may be too short.
+  running_time: 0.002197
+- !ruby/object:GeneValidator::LengthRankValidationOutput
+  description: Check whether the rank of the prediction length lies among 80% of all
+    the BLAST hit lengths.
+  header: Length Rank
+  short_header: LengthRank
+  msg: too&nbsp;short
+  query_length: 192
+  no_of_hits: 112
+  median: 242
+  mean: 226
+  smallest_hit: 43
+  largest_hit: 270
+  extreme_hits: 11
+  percentage: 10
+  result: :no
+  expected: :yes
+  approach: If the query sequence is well conserved and similar sequences (BLAST hits)
+    are correct, we can expect query and hit sequences to have similar lengths.
+  explanation: 'The query sequence is  192 amino-acids long. BLAST identified 112
+    hit sequences with lengths from 43 to 270 amino-acids (median: 242; mean: 226).
+    11 of these hit sequences (i.e. 10%) are longer than the query sequence.'
+  conclusion: The sequence may be too short.
+  running_time: 0.000156
+- !ruby/object:GeneValidator::GeneMergeValidationOutput
+  description: Check whether BLAST hits make evidence about a merge of two genes that
+    match the predicted gene.
+  header: Gene Merge
+  short_header: Gene_Merge
+  slope: 0.0
+  unimodality: false
+  threshold_down: 0.4
+  threshold_up: 1.2
+  result: :no
+  expected: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_8_match_2d.json
+    type: :scatter
+    title: 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)'
+    footer: ''
+    xtitle: Start Offset (most left hsp)
+    ytitle: End Offset (most right hsp)
+    aux1: 193.0207199168809
+    aux2: -0.0016742894379508243
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_8_match.json
+    type: :lines
+    title: 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)'
+    footer: ''
+    xtitle: Offset in Prediction
+    ytitle: Hit Number
+    aux1: 112
+    aux2: 
+  approach: We expect the query sequence to encode a single protein-coding gene. Here,
+    we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine
+    whether the query includes sequence from two or more genes.
+  explanation: The distribution of start and/or end-coordinates of HSPs are multi-modal.
+    To detect potential problems we performed a linear regression (with coordinates
+    weighted inversely proportionally to  hit strength). The resulting slope is 0.0.
+  conclusion: This slope is  outside our empirically calculated thresholds (0.4 and
+    1.2). There is no evidence that the query contains sequence from multiple genes.
+  running_time: 0.002306
+- !ruby/object:GeneValidator::DuplicationValidationOutput
+  description: Check whether there is a duplicated subsequence in the predicted gene
+    by counting the hsp residue coverage of the prediction, for each hit.
+  header: Duplication
+  short_header: Duplication
+  pvalue: 1
+  threshold: 0.05
+  result: :yes
+  expected: :yes
+  average: 1.0
+  approach: We expect each BLAST hit to match each region of the query at most once.
+    Here, we calculate the distribution of hit coverage against the query sequence
+    and use the Wilcoxon test to determine if it is higher than 1.
+  explanation: The Wilcoxon test produced a p-value of 1.
+  conclusion: This suggests that the query sequence contains no erroneous duplications.
+  running_time: 0.005646
+- !ruby/object:GeneValidator::BlastRFValidationOutput
+  description: Check whether there is a single reading frame among BLAST hits. Otherwise
+    there might be a reading frame shift in the query sequence.
+  header: Reading Frame
+  short_header: Frame
+  frames_histo:
+    1: 112
+  expected: :yes
+  result: :yes
+  msg: '112&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1; '
+  exp_msg: '112 HSPs align in frame 1; '
+  total_hsp: 112
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within
+    this ORF.
+  explanation: BLAST identified 112 High-scoring Segment Pairs (HSPs); all of these
+    align in frame 1.
+  conclusion: This is as expected.
+  running_time: 9.7e-05
+- !ruby/object:GeneValidator::ORFValidationOutput
+  description: Check whether there is a single main Open Reading Frame in the predicted
+    gene. Applicable only for nucleotide queries.
+  header: Main ORF
+  short_header: ORF
+  orfs:
+    1:
+      :frame: 1
+      :orf_start: 1
+      :orf_end: 189
+      :coverage: 100
+      :translated_length: 189
+    2:
+      :frame: 2
+      :orf_start: 1
+      :orf_end: 31
+      :coverage: 18
+      :translated_length: 189
+    3:
+      :frame: 2
+      :orf_start: 36
+      :orf_end: 68
+      :coverage: 19
+      :translated_length: 189
+    4:
+      :frame: 3
+      :orf_start: 4
+      :orf_end: 38
+      :coverage: 20
+      :translated_length: 188
+    5:
+      :frame: 3
+      :orf_start: 130
+      :orf_end: 156
+      :coverage: 16
+      :translated_length: 188
+    6:
+      :frame: -1
+      :orf_start: 6
+      :orf_end: 47
+      :coverage: 24
+      :translated_length: 189
+    7:
+      :frame: -1
+      :orf_start: 52
+      :orf_end: 134
+      :coverage: 45
+      :translated_length: 189
+    8:
+      :frame: -2
+      :orf_start: 1
+      :orf_end: 115
+      :coverage: 62
+      :translated_length: 189
+    9:
+      :frame: -2
+      :orf_start: 125
+      :orf_end: 154
+      :coverage: 18
+      :translated_length: 189
+    10:
+      :frame: -2
+      :orf_start: 159
+      :orf_end: 189
+      :coverage: 18
+      :translated_length: 189
+    11:
+      :frame: -3
+      :orf_start: 34
+      :orf_end: 95
+      :coverage: 35
+      :translated_length: 188
+    12:
+      :frame: -3
+      :orf_start: 137
+      :orf_end: 176
+      :coverage: 23
+      :translated_length: 188
+  coverage: 100
+  threshold: 80
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_8_orfs.json
+    type: :lines
+    title: Open Reading Frames in all 6 Frames
+    footer: 'Open Reading Frame (Minimimum Length: 30 amino acids),red'
+    xtitle: Offset in the Prediction
+    ytitle: Reading Frame
+    aux1: 14
+    aux2: 
+  mainORFFrame: 1
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF) that occupies most of the query sequence.
+  explanation: " The longest ORF is in frame 1, where it occupies 100% of the query
+    sequence."
+  conclusion: There is no evidence to believe that there is any problem with the ORF
+    of the query sequence.
+  running_time: 0.000939
+- !ruby/object:GeneValidator::AlignmentValidationOutput
+  description: Finds missing and extra sequences in the prediction, based on the multiple
+    alignment of the best hits. Also counts the percentage of the conserved regions
+    that appear in the prediction.
+  header: Missing/Extra sequences
+  short_header: MA
+  gaps: 14%
+  extra_seq: 0%
+  consensus: 89%
+  threshold: 20
+  result: :yes
+  expected: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_8_ma.json
+    type: :align
+    title: 'Missing/Extra sequences Validation: Multiple Align. & Statistical model
+      of hits'
+    footer: Conserved Region, Yellow
+    xtitle: Offset in the Alignment
+    ytitle: ''
+    aux1: 12
+    aux2: Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5,
+      hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model
+  approach: We expect the query sequence to be similar to the top ten BLAST hits.
+    Here, we create a statistical consensus model of those top hits and compare the
+    query to this model.
+  explanation: The query sequence includes 89% amino-acid residues present in the
+    consensus model. 0% of residues in the query sequence are absent from the consensus
+    profile.  14% of residues in the consensus profile are absent from the query sequence.
+  conclusion: There is no evidence based on the top 10 BLAST hits to suggest any problems
+    with the query sequence.
+  running_time: 0.204827
+ENA|CAC41167|CAC41167.1:
+- !ruby/object:GeneValidator::LengthClusterValidationOutput
+  description: 'Check whether the prediction length fits most of the BLAST hit lengths,
+    by 1D hierarchical clusterization. Meaning of the output displayed: Query_length
+    [Main Cluster Length Interval]'
+  header: Length Cluster
+  short_header: LengthCluster
+  limits:
+  - 734
+  - 1007
+  query_length: 1735
+  expected: :yes
+  result: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_9_len_clusters.json
+    type: :bars
+    title: 'Length Cluster Validation: Distribution of BLAST hit lengths'
+    footer: Query Sequence, black;Most Dense Cluster,red;Other Hits, blue
+    xtitle: Sequence Length
+    ytitle: Number of Sequences
+    aux1: 1735
+    aux2: 
+  approach: 'If the query sequence is well conserved and similar sequences (BLAST
+    hits) are correct, we can expect query and hit sequences to have similar lengths.
+    Here, we cluster the lengths of hit sequences and compare the length of our query
+    sequence to the most dense cluster of hit lengths. '
+  explanation: The most dense length-cluster of BLAST hits includes sequences that
+    are from 734 to 1007 amino-acids long. The query sequence is 1735 amino-acids
+    long and is thus outside the most dense length-cluster of BLAST hits.
+  conclusion: This suggests that the query sequence may be too long.
+  running_time: 0.007215
+- !ruby/object:GeneValidator::LengthRankValidationOutput
+  description: Check whether the rank of the prediction length lies among 80% of all
+    the BLAST hit lengths.
+  header: Length Rank
+  short_header: LengthRank
+  msg: ''
+  query_length: 1735
+  no_of_hits: 131
+  median: 936
+  mean: 1606
+  smallest_hit: 734
+  largest_hit: 5147
+  extreme_hits: 35
+  percentage: 27
+  result: :yes
+  expected: :yes
+  approach: If the query sequence is well conserved and similar sequences (BLAST hits)
+    are correct, we can expect query and hit sequences to have similar lengths.
+  explanation: 'The query sequence is  1735 amino-acids long. BLAST identified 131
+    hit sequences with lengths from 734 to 5147 amino-acids (median: 936; mean: 1606).
+    35 of these hit sequences (i.e. 27%) are shorter than the query sequence.'
+  conclusion: There is no reason to believe there is any problem with the length of
+    the query sequence.
+  running_time: 0.000172
+- !ruby/object:GeneValidator::GeneMergeValidationOutput
+  description: Check whether BLAST hits make evidence about a merge of two genes that
+    match the predicted gene.
+  header: Gene Merge
+  short_header: Gene_Merge
+  slope: -0.4
+  unimodality: false
+  threshold_down: 0.4
+  threshold_up: 1.2
+  result: :no
+  expected: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_9_match_2d.json
+    type: :scatter
+    title: 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)'
+    footer: ''
+    xtitle: Start Offset (most left hsp)
+    ytitle: End Offset (most right hsp)
+    aux1: 1463.8251300816207
+    aux2: -0.3672836488570065
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_9_match.json
+    type: :lines
+    title: 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)'
+    footer: ''
+    xtitle: Offset in Prediction
+    ytitle: Hit Number
+    aux1: 131
+    aux2: 
+  approach: We expect the query sequence to encode a single protein-coding gene. Here,
+    we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine
+    whether the query includes sequence from two or more genes.
+  explanation: The distribution of start and/or end-coordinates of HSPs are multi-modal.
+    To detect potential problems we performed a linear regression (with coordinates
+    weighted inversely proportionally to  hit strength). The resulting slope is -0.4.
+  conclusion: This slope is  outside our empirically calculated thresholds (0.4 and
+    1.2). There is no evidence that the query contains sequence from multiple genes.
+  running_time: 0.003689
+- !ruby/object:GeneValidator::DuplicationValidationOutput
+  description: Check whether there is a duplicated subsequence in the predicted gene
+    by counting the hsp residue coverage of the prediction, for each hit.
+  header: Duplication
+  short_header: Duplication
+  pvalue: 0.03125
+  threshold: 0.05
+  result: :no
+  expected: :yes
+  average: 1.044
+  approach: We expect each BLAST hit to match each region of the query at most once.
+    Here, we calculate the distribution of hit coverage against the query sequence
+    and use the Wilcoxon test to determine if it is higher than 1.
+  explanation: The Wilcoxon test produced a p-value of 0.031 (average = 1.04).
+  conclusion: The null hypothesis is rejected - thus a region of the query sequence
+    is likely repeated more than once.
+- !ruby/object:GeneValidator::BlastRFValidationOutput
+  description: Check whether there is a single reading frame among BLAST hits. Otherwise
+    there might be a reading frame shift in the query sequence.
+  header: Reading Frame
+  short_header: Frame
+  frames_histo:
+    1: 320
+  expected: :yes
+  result: :yes
+  msg: '320&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1; '
+  exp_msg: '320 HSPs align in frame 1; '
+  total_hsp: 320
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within
+    this ORF.
+  explanation: BLAST identified 320 High-scoring Segment Pairs (HSPs); all of these
+    align in frame 1.
+  conclusion: This is as expected.
+  running_time: 0.000342
+- !ruby/object:GeneValidator::ORFValidationOutput
+  description: Check whether there is a single main Open Reading Frame in the predicted
+    gene. Applicable only for nucleotide queries.
+  header: Main ORF
+  short_header: ORF
+  orfs:
+    1:
+      :frame: 1
+      :orf_start: 1
+      :orf_end: 1700
+      :coverage: 100
+      :translated_length: 1701
+    2:
+      :frame: 2
+      :orf_start: 48
+      :orf_end: 57
+      :coverage: 3
+      :translated_length: 1700
+    3:
+      :frame: 2
+      :orf_start: 284
+      :orf_end: 294
+      :coverage: 3
+      :translated_length: 1700
+    4:
+      :frame: 2
+      :orf_start: 499
+      :orf_end: 499
+      :coverage: 3
+      :translated_length: 1700
+    5:
+      :frame: 2
+      :orf_start: 608
+      :orf_end: 606
+      :coverage: 2
+      :translated_length: 1700
+    6:
+      :frame: 2
+      :orf_start: 656
+      :orf_end: 659
+      :coverage: 3
+      :translated_length: 1700
+    7:
+      :frame: 2
+      :orf_start: 762
+      :orf_end: 784
+      :coverage: 4
+      :translated_length: 1700
+    8:
+      :frame: 2
+      :orf_start: 832
+      :orf_end: 844
+      :coverage: 3
+      :translated_length: 1700
+    9:
+      :frame: 2
+      :orf_start: 884
+      :orf_end: 896
+      :coverage: 3
+      :translated_length: 1700
+    10:
+      :frame: 2
+      :orf_start: 932
+      :orf_end: 972
+      :coverage: 5
+      :translated_length: 1700
+    11:
+      :frame: 2
+      :orf_start: 1008
+      :orf_end: 1027
+      :coverage: 4
+      :translated_length: 1700
+    12:
+      :frame: 2
+      :orf_start: 1078
+      :orf_end: 1091
+      :coverage: 3
+      :translated_length: 1700
+    13:
+      :frame: 2
+      :orf_start: 1156
+      :orf_end: 1152
+      :coverage: 2
+      :translated_length: 1700
+    14:
+      :frame: 2
+      :orf_start: 1216
+      :orf_end: 1218
+      :coverage: 3
+      :translated_length: 1700
+    15:
+      :frame: 2
+      :orf_start: 1255
+      :orf_end: 1287
+      :coverage: 4
+      :translated_length: 1700
+    16:
+      :frame: 2
+      :orf_start: 1327
+      :orf_end: 1374
+      :coverage: 5
+      :translated_length: 1700
+    17:
+      :frame: 2
+      :orf_start: 1440
+      :orf_end: 1438
+      :coverage: 2
+      :translated_length: 1700
+    18:
+      :frame: 2
+      :orf_start: 1525
+      :orf_end: 1530
+      :coverage: 3
+      :translated_length: 1700
+    19:
+      :frame: 3
+      :orf_start: 1
+      :orf_end: 2
+      :coverage: 3
+      :translated_length: 1700
+    20:
+      :frame: 3
+      :orf_start: 147
+      :orf_end: 145
+      :coverage: 2
+      :translated_length: 1700
+    21:
+      :frame: 3
+      :orf_start: 200
+      :orf_end: 212
+      :coverage: 3
+      :translated_length: 1700
+    22:
+      :frame: 3
+      :orf_start: 342
+      :orf_end: 340
+      :coverage: 2
+      :translated_length: 1700
+    23:
+      :frame: 3
+      :orf_start: 605
+      :orf_end: 610
+      :coverage: 3
+      :translated_length: 1700
+    24:
+      :frame: 3
+      :orf_start: 646
+      :orf_end: 668
+      :coverage: 4
+      :translated_length: 1700
+    25:
+      :frame: 3
+      :orf_start: 750
+      :orf_end: 781
+      :coverage: 4
+      :translated_length: 1700
+    26:
+      :frame: 3
+      :orf_start: 869
+      :orf_end: 864
+      :coverage: 2
+      :translated_length: 1700
+    27:
+      :frame: 3
+      :orf_start: 1112
+      :orf_end: 1115
+      :coverage: 3
+      :translated_length: 1700
+    28:
+      :frame: 3
+      :orf_start: 1321
+      :orf_end: 1334
+      :coverage: 3
+      :translated_length: 1700
+    29:
+      :frame: 3
+      :orf_start: 1387
+      :orf_end: 1395
+      :coverage: 3
+      :translated_length: 1700
+    30:
+      :frame: 3
+      :orf_start: 1511
+      :orf_end: 1513
+      :coverage: 3
+      :translated_length: 1700
+    31:
+      :frame: 3
+      :orf_start: 1560
+      :orf_end: 1580
+      :coverage: 4
+      :translated_length: 1700
+    32:
+      :frame: 3
+      :orf_start: 1616
+      :orf_end: 1613
+      :coverage: 2
+      :translated_length: 1700
+    33:
+      :frame: -1
+      :orf_start: 17
+      :orf_end: 55
+      :coverage: 5
+      :translated_length: 1701
+    34:
+      :frame: -1
+      :orf_start: 95
+      :orf_end: 100
+      :coverage: 3
+      :translated_length: 1701
+    35:
+      :frame: -1
+      :orf_start: 186
+      :orf_end: 231
+      :coverage: 5
+      :translated_length: 1701
+    36:
+      :frame: -1
+      :orf_start: 267
+      :orf_end: 301
+      :coverage: 4
+      :translated_length: 1701
+    37:
+      :frame: -1
+      :orf_start: 381
+      :orf_end: 491
+      :coverage: 9
+      :translated_length: 1701
+    38:
+      :frame: -1
+      :orf_start: 555
+      :orf_end: 556
+      :coverage: 3
+      :translated_length: 1701
+    39:
+      :frame: -1
+      :orf_start: 617
+      :orf_end: 687
+      :coverage: 7
+      :translated_length: 1701
+    40:
+      :frame: -1
+      :orf_start: 723
+      :orf_end: 882
+      :coverage: 12
+      :translated_length: 1701
+    41:
+      :frame: -1
+      :orf_start: 918
+      :orf_end: 1035
+      :coverage: 9
+      :translated_length: 1701
+    42:
+      :frame: -1
+      :orf_start: 1082
+      :orf_end: 1092
+      :coverage: 3
+      :translated_length: 1701
+    43:
+      :frame: -1
+      :orf_start: 1153
+      :orf_end: 1177
+      :coverage: 4
+      :translated_length: 1701
+    44:
+      :frame: -1
+      :orf_start: 1242
+      :orf_end: 1254
+      :coverage: 3
+      :translated_length: 1701
+    45:
+      :frame: -1
+      :orf_start: 1312
+      :orf_end: 1310
+      :coverage: 2
+      :translated_length: 1701
+    46:
+      :frame: -1
+      :orf_start: 1351
+      :orf_end: 1430
+      :coverage: 7
+      :translated_length: 1701
+    47:
+      :frame: -1
+      :orf_start: 1477
+      :orf_end: 1513
+      :coverage: 5
+      :translated_length: 1701
+    48:
+      :frame: -1
+      :orf_start: 1554
+      :orf_end: 1592
+      :coverage: 5
+      :translated_length: 1701
+    49:
+      :frame: -1
+      :orf_start: 1628
+      :orf_end: 1646
+      :coverage: 4
+      :translated_length: 1701
+    50:
+      :frame: -1
+      :orf_start: 1690
+      :orf_end: 1701
+      :coverage: 3
+      :translated_length: 1701
+    51:
+      :frame: -2
+      :orf_start: 2
+      :orf_end: 9
+      :coverage: 3
+      :translated_length: 1700
+    52:
+      :frame: -2
+      :orf_start: 45
+      :orf_end: 41
+      :coverage: 2
+      :translated_length: 1700
+    53:
+      :frame: -2
+      :orf_start: 77
+      :orf_end: 133
+      :coverage: 6
+      :translated_length: 1700
+    54:
+      :frame: -2
+      :orf_start: 202
+      :orf_end: 216
+      :coverage: 3
+      :translated_length: 1700
+    55:
+      :frame: -2
+      :orf_start: 265
+      :orf_end: 290
+      :coverage: 4
+      :translated_length: 1700
+    56:
+      :frame: -2
+      :orf_start: 359
+      :orf_end: 377
+      :coverage: 4
+      :translated_length: 1700
+    57:
+      :frame: -2
+      :orf_start: 455
+      :orf_end: 577
+      :coverage: 10
+      :translated_length: 1700
+    58:
+      :frame: -2
+      :orf_start: 633
+      :orf_end: 630
+      :coverage: 2
+      :translated_length: 1700
+    59:
+      :frame: -2
+      :orf_start: 666
+      :orf_end: 662
+      :coverage: 2
+      :translated_length: 1700
+    60:
+      :frame: -2
+      :orf_start: 698
+      :orf_end: 708
+      :coverage: 3
+      :translated_length: 1700
+    61:
+      :frame: -2
+      :orf_start: 744
+      :orf_end: 764
+      :coverage: 4
+      :translated_length: 1700
+    62:
+      :frame: -2
+      :orf_start: 800
+      :orf_end: 796
+      :coverage: 2
+      :translated_length: 1700
+    63:
+      :frame: -2
+      :orf_start: 832
+      :orf_end: 829
+      :coverage: 2
+      :translated_length: 1700
+    64:
+      :frame: -2
+      :orf_start: 935
+      :orf_end: 952
+      :coverage: 3
+      :translated_length: 1700
+    65:
+      :frame: -2
+      :orf_start: 1061
+      :orf_end: 1090
+      :coverage: 4
+      :translated_length: 1700
+    66:
+      :frame: -2
+      :orf_start: 1149
+      :orf_end: 1169
+      :coverage: 4
+      :translated_length: 1700
+    67:
+      :frame: -2
+      :orf_start: 1295
+      :orf_end: 1297
+      :coverage: 3
+      :translated_length: 1700
+    68:
+      :frame: -2
+      :orf_start: 1333
+      :orf_end: 1332
+      :coverage: 2
+      :translated_length: 1700
+    69:
+      :frame: -2
+      :orf_start: 1375
+      :orf_end: 1374
+      :coverage: 2
+      :translated_length: 1700
+    70:
+      :frame: -2
+      :orf_start: 1410
+      :orf_end: 1446
+      :coverage: 5
+      :translated_length: 1700
+    71:
+      :frame: -2
+      :orf_start: 1520
+      :orf_end: 1558
+      :coverage: 5
+      :translated_length: 1700
+    72:
+      :frame: -2
+      :orf_start: 1598
+      :orf_end: 1595
+      :coverage: 2
+      :translated_length: 1700
+    73:
+      :frame: -3
+      :orf_start: 4
+      :orf_end: 29
+      :coverage: 4
+      :translated_length: 1700
+    74:
+      :frame: -3
+      :orf_start: 132
+      :orf_end: 139
+      :coverage: 3
+      :translated_length: 1700
+    75:
+      :frame: -3
+      :orf_start: 332
+      :orf_end: 331
+      :coverage: 2
+      :translated_length: 1700
+    76:
+      :frame: -3
+      :orf_start: 378
+      :orf_end: 380
+      :coverage: 3
+      :translated_length: 1700
+    77:
+      :frame: -3
+      :orf_start: 432
+      :orf_end: 452
+      :coverage: 4
+      :translated_length: 1700
+    78:
+      :frame: -3
+      :orf_start: 535
+      :orf_end: 537
+      :coverage: 3
+      :translated_length: 1700
+    79:
+      :frame: -3
+      :orf_start: 608
+      :orf_end: 603
+      :coverage: 2
+      :translated_length: 1700
+    80:
+      :frame: -3
+      :orf_start: 689
+      :orf_end: 698
+      :coverage: 3
+      :translated_length: 1700
+    81:
+      :frame: -3
+      :orf_start: 837
+      :orf_end: 849
+      :coverage: 3
+      :translated_length: 1700
+    82:
+      :frame: -3
+      :orf_start: 949
+      :orf_end: 956
+      :coverage: 3
+      :translated_length: 1700
+    83:
+      :frame: -3
+      :orf_start: 1018
+      :orf_end: 1023
+      :coverage: 3
+      :translated_length: 1700
+    84:
+      :frame: -3
+      :orf_start: 1139
+      :orf_end: 1149
+      :coverage: 3
+      :translated_length: 1700
+    85:
+      :frame: -3
+      :orf_start: 1224
+      :orf_end: 1224
+      :coverage: 3
+      :translated_length: 1700
+    86:
+      :frame: -3
+      :orf_start: 1264
+      :orf_end: 1302
+      :coverage: 5
+      :translated_length: 1700
+    87:
+      :frame: -3
+      :orf_start: 1340
+      :orf_end: 1343
+      :coverage: 3
+      :translated_length: 1700
+    88:
+      :frame: -3
+      :orf_start: 1426
+      :orf_end: 1422
+      :coverage: 2
+      :translated_length: 1700
+    89:
+      :frame: -3
+      :orf_start: 1473
+      :orf_end: 1468
+      :coverage: 2
+      :translated_length: 1700
+    90:
+      :frame: -3
+      :orf_start: 1557
+      :orf_end: 1563
+      :coverage: 3
+      :translated_length: 1700
+    91:
+      :frame: -3
+      :orf_start: 1599
+      :orf_end: 1603
+      :coverage: 3
+      :translated_length: 1700
+    92:
+      :frame: -3
+      :orf_start: 1671
+      :orf_end: 1682
+      :coverage: 3
+      :translated_length: 1700
+  coverage: 100
+  threshold: 80
+  expected: :yes
+  result: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_9_orfs.json
+    type: :lines
+    title: Open Reading Frames in all 6 Frames
+    footer: 'Open Reading Frame (Minimimum Length: 30 amino acids),red'
+    xtitle: Offset in the Prediction
+    ytitle: Reading Frame
+    aux1: 14
+    aux2: 
+  mainORFFrame: 1
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF) that occupies most of the query sequence.
+  explanation: " The longest ORF is in frame 1, where it occupies 100% of the query
+    sequence."
+  conclusion: There is no evidence to believe that there is any problem with the ORF
+    of the query sequence.
+  running_time: 0.008791
+- !ruby/object:GeneValidator::AlignmentValidationOutput
+  description: Finds missing and extra sequences in the prediction, based on the multiple
+    alignment of the best hits. Also counts the percentage of the conserved regions
+    that appear in the prediction.
+  header: Missing/Extra sequences
+  short_header: MA
+  gaps: 44%
+  extra_seq: 2%
+  consensus: 71%
+  threshold: 20
+  result: :no
+  expected: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_9_ma.json
+    type: :align
+    title: 'Missing/Extra sequences Validation: Multiple Align. & Statistical model
+      of hits'
+    footer: Conserved Region, Yellow
+    xtitle: Offset in the Alignment
+    ytitle: ''
+    aux1: 12
+    aux2: Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5,
+      hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model
+  approach: We expect the query sequence to be similar to the top ten BLAST hits.
+    Here, we create a statistical consensus model of those top hits and compare the
+    query to this model.
+  explanation: The query sequence includes 71% amino-acid residues present in the
+    consensus model. 2% of residues in the query sequence are absent from the consensus
+    profile.  44% of residues in the consensus profile are absent from the query sequence.
+  conclusion: These results suggest that there may be some problems with the query
+    sequence. The query sequence has a high percentage (44%) of missing residues when
+    compared to the statistical profile (the cut-off is 20%).
+  running_time: 44.535214
+ENA|AEV14992|AEV14992.1:
+- !ruby/object:GeneValidator::LengthClusterValidationOutput
+  description: 'Check whether the prediction length fits most of the BLAST hit lengths,
+    by 1D hierarchical clusterization. Meaning of the output displayed: Query_length
+    [Main Cluster Length Interval]'
+  header: Length Cluster
+  short_header: LengthCluster
+  limits:
+  - 505
+  - 541
+  query_length: 217
+  expected: :yes
+  result: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_10_len_clusters.json
+    type: :bars
+    title: 'Length Cluster Validation: Distribution of BLAST hit lengths'
+    footer: Query Sequence, black;Most Dense Cluster,red;Other Hits, blue
+    xtitle: Sequence Length
+    ytitle: Number of Sequences
+    aux1: 217
+    aux2: 
+  approach: 'If the query sequence is well conserved and similar sequences (BLAST
+    hits) are correct, we can expect query and hit sequences to have similar lengths.
+    Here, we cluster the lengths of hit sequences and compare the length of our query
+    sequence to the most dense cluster of hit lengths. '
+  explanation: The most dense length-cluster of BLAST hits includes sequences that
+    are from 505 to 541 amino-acids long. The query sequence is 217 amino-acids long
+    and is thus outside the most dense length-cluster of BLAST hits.
+  conclusion: This suggests that the query sequence may be too short.
+  running_time: 0.013648
+- !ruby/object:GeneValidator::LengthRankValidationOutput
+  description: Check whether the rank of the prediction length lies among 80% of all
+    the BLAST hit lengths.
+  header: Length Rank
+  short_header: LengthRank
+  msg: too&nbsp;short
+  query_length: 217
+  no_of_hits: 229
+  median: 517
+  mean: 531
+  smallest_hit: 58
+  largest_hit: 873
+  extreme_hits: 6
+  percentage: 3
+  result: :no
+  expected: :yes
+  approach: If the query sequence is well conserved and similar sequences (BLAST hits)
+    are correct, we can expect query and hit sequences to have similar lengths.
+  explanation: 'The query sequence is  217 amino-acids long. BLAST identified 229
+    hit sequences with lengths from 58 to 873 amino-acids (median: 517; mean: 531).
+    6 of these hit sequences (i.e. 3%) are longer than the query sequence.'
+  conclusion: The sequence may be too short.
+  running_time: 0.000343
+- !ruby/object:GeneValidator::GeneMergeValidationOutput
+  description: Check whether BLAST hits make evidence about a merge of two genes that
+    match the predicted gene.
+  header: Gene Merge
+  short_header: Gene_Merge
+  slope: 0.0
+  unimodality: true
+  threshold_down: 0.4
+  threshold_up: 1.2
+  result: :no
+  expected: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_10_match_2d.json
+    type: :scatter
+    title: 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)'
+    footer: ''
+    xtitle: Start Offset (most left hsp)
+    ytitle: End Offset (most right hsp)
+    aux1: 
+    aux2: 
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_10_match.json
+    type: :lines
+    title: 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)'
+    footer: ''
+    xtitle: Offset in Prediction
+    ytitle: Hit Number
+    aux1: 229
+    aux2: 
+  approach: We expect the query sequence to encode a single protein-coding gene. Here,
+    we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine
+    whether the query includes sequence from two or more genes.
+  explanation: The start coordinates and the end coordinates of HSPs are unimodally
+    distributed.
+  conclusion: This suggest that the query sequence represents a single gene.
+  running_time: 0.004252
+- !ruby/object:GeneValidator::DuplicationValidationOutput
+  description: Check whether there is a duplicated subsequence in the predicted gene
+    by counting the hsp residue coverage of the prediction, for each hit.
+  header: Duplication
+  short_header: Duplication
+  pvalue: 1
+  threshold: 0.05
+  result: :yes
+  expected: :yes
+  average: 1.0
+  approach: We expect each BLAST hit to match each region of the query at most once.
+    Here, we calculate the distribution of hit coverage against the query sequence
+    and use the Wilcoxon test to determine if it is higher than 1.
+  explanation: The Wilcoxon test produced a p-value of 1.
+  conclusion: This suggests that the query sequence contains no erroneous duplications.
+  running_time: 0.074093
+- !ruby/object:GeneValidator::BlastRFValidationOutput
+  description: Check whether there is a single reading frame among BLAST hits. Otherwise
+    there might be a reading frame shift in the query sequence.
+  header: Reading Frame
+  short_header: Frame
+  frames_histo:
+    2: 229
+  expected: :yes
+  result: :yes
+  msg: '229&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;2; '
+  exp_msg: '229 HSPs align in frame 2; '
+  total_hsp: 229
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within
+    this ORF.
+  explanation: BLAST identified 229 High-scoring Segment Pairs (HSPs); all of these
+    align in frame 2.
+  conclusion: This is as expected.
+  running_time: 0.000283
+- !ruby/object:GeneValidator::ORFValidationOutput
+  description: Check whether there is a single main Open Reading Frame in the predicted
+    gene. Applicable only for nucleotide queries.
+  header: Main ORF
+  short_header: ORF
+  orfs:
+    1:
+      :frame: 1
+      :orf_start: 34
+      :orf_end: 113
+      :coverage: 39
+      :translated_length: 213
+    2:
+      :frame: 1
+      :orf_start: 147
+      :orf_end: 213
+      :coverage: 33
+      :translated_length: 213
+    3:
+      :frame: 2
+      :orf_start: 9
+      :orf_end: 59
+      :coverage: 26
+      :translated_length: 213
+    4:
+      :frame: 2
+      :orf_start: 65
+      :orf_end: 104
+      :coverage: 21
+      :translated_length: 213
+    5:
+      :frame: 2
+      :orf_start: 110
+      :orf_end: 164
+      :coverage: 28
+      :translated_length: 213
+    6:
+      :frame: 2
+      :orf_start: 170
+      :orf_end: 213
+      :coverage: 23
+      :translated_length: 213
+    7:
+      :frame: -1
+      :orf_start: 59
+      :orf_end: 88
+      :coverage: 16
+      :translated_length: 213
+    8:
+      :frame: -1
+      :orf_start: 151
+      :orf_end: 189
+      :coverage: 20
+      :translated_length: 213
+    9:
+      :frame: -2
+      :orf_start: 1
+      :orf_end: 79
+      :coverage: 39
+      :translated_length: 213
+    10:
+      :frame: -2
+      :orf_start: 85
+      :orf_end: 176
+      :coverage: 45
+      :translated_length: 213
+    11:
+      :frame: -2
+      :orf_start: 184
+      :orf_end: 211
+      :coverage: 15
+      :translated_length: 213
+    12:
+      :frame: -3
+      :orf_start: 73
+      :orf_end: 156
+      :coverage: 41
+      :translated_length: 212
+  coverage: 45
+  threshold: 80
+  expected: :yes
+  result: :no
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_10_orfs.json
+    type: :lines
+    title: Open Reading Frames in all 6 Frames
+    footer: 'Open Reading Frame (Minimimum Length: 30 amino acids),red'
+    xtitle: Offset in the Prediction
+    ytitle: Reading Frame
+    aux1: 14
+    aux2: 
+  mainORFFrame: -2
+  approach: We expect the query sequence to encode a single gene, thus it should contain
+    one main Open Reading Frame (ORF) that occupies most of the query sequence.
+  explanation: " The longest ORF is in frame -2, where it occupies 45% of the query
+    sequence."
+  conclusion: This only represents a portion of the query sequence. In some cases
+    this indicates that a frame shift exists in the query sequence.
+  running_time: 0.001326
+- !ruby/object:GeneValidator::AlignmentValidationOutput
+  description: Finds missing and extra sequences in the prediction, based on the multiple
+    alignment of the best hits. Also counts the percentage of the conserved regions
+    that appear in the prediction.
+  header: Missing/Extra sequences
+  short_header: MA
+  gaps: 60%
+  extra_seq: 6%
+  consensus: 14%
+  threshold: 20
+  result: :no
+  expected: :yes
+  plot_files:
+  - !ruby/struct:GeneValidator::Plot
+    filename: subset.fa_10_ma.json
+    type: :align
+    title: 'Missing/Extra sequences Validation: Multiple Align. & Statistical model
+      of hits'
+    footer: Conserved Region, Yellow
+    xtitle: Offset in the Alignment
+    ytitle: ''
+    aux1: 12
+    aux2: Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5,
+      hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model
+  approach: We expect the query sequence to be similar to the top ten BLAST hits.
+    Here, we create a statistical consensus model of those top hits and compare the
+    query to this model.
+  explanation: The query sequence includes 14% amino-acid residues present in the
+    consensus model. 6% of residues in the query sequence are absent from the consensus
+    profile.  60% of residues in the consensus profile are absent from the query sequence.
+  conclusion: These results suggest that there may be some problems with the query
+    sequence. The query sequence has a high percentage (60%) of missing residues when
+    compared to the statistical profile (the cut-off is 20%).
+  running_time: 0.535253
