@@ -149,3 +149,25 @@ p, ol, li {
 [class^="icon-"], [class*=" icon-"], [class^="fa-"] {
   padding-right: 3px;
 }
+
+.accordion-group {
+		 border: 0px;
+}
+
+
+.accordion-heading a {
+		  color: black;	
+		  text-decoration: none;
+}
+.accordion-heading a:hover {
+                  background-color: #f5f5f5;
+
+}
+.accordion-heading img {
+		   padding-left: 5px;
+		   
+}
+
+.accordion-inner {
+		 border: 0px;
+}
