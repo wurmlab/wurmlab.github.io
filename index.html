@@ -11,7 +11,7 @@ comments: false
         <div class="accordion-heading">
           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" title="Tell me more...">
             <h3>Evolutionary genomics of social insects</h3>
-            <img src="/img/frontpage/fireants-ongenome480w.jpg" class="img-rounded"  style="float:right;" width="240"/>
+            <img src="/img/frontpage/fireants-ongenome480w.jpg" class="img-rounded"  style="float:right;" width="240" alt="fire ants on the genomic sequence of their social chromosome"/>
             <p>Extensive theoretical work has explained how and why complex societies evolve. However, only little is known about the genes and molecular mechanisms responsible for social phenotypes.</p>
             <p>We have been identifying genes and mechanisms involved in the evolution of insect societies using modern genomics approaches, combining comparative genomics and transcriptomics with  population genomics and behavioral experiments.</p>
           </a>
@@ -34,7 +34,7 @@ comments: false
           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo" title="Tell me more...">
 
             <h3>Genome bioinformatics</h3>
-            <img src="/img/frontpage/analyze-final.gif" class="img-rounded"  style="float:right;" width="240" height="120"/>
+            <img src="/img/frontpage/analyze-final.gif" class="img-rounded"  style="float:right;" width="240" height="120" alt="how tools should be"/>
             <p>The recent 10,000-fold drop in the cost of DNA sequencing means
               that any lab can sequence anything - and
               lots of it. This brings exciting opportunities but also new
@@ -64,7 +64,7 @@ comments: false
         <div class="accordion-heading">
 	  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">	    
             <h3>Pollinator health</h3>
-	    <img src="/img/frontpage/bumblebee-240.jpg" class="img-rounded"  width="240" class="img-rounded"  style="float:right;" />	
+	    <img src="/img/frontpage/bumblebee-240.jpg" class="img-rounded"  width="240" style="float:right;" alt="bumblebee on flower"/>	
 	    <p>Pollinators (bess in particular) are essential pollinators for preserving biodiversity and ensuring agricultural yields, thus their worldwide decline poses important risks. Taking inspiration from biomedical approaches for understanding cancer biology, we are using modern molecular tools to determine how pollinators are affected by changing environments (e.g., pesticide exposure, habitat loss, changing climates) and their ability to cope with such changes. </p>	    
 	  </a>
         </div>
@@ -132,16 +132,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </div>
 </div>
 <div class="row-fluid">
-<div class="span12" id="publications">
-  <p>We are grateful for the support from our recent funders:
-  <img src='/img/logos/allstuck-bw.png' width='100%' alt="funding bodies" style='max-height: 200px;'/>
-</div
-<div class="span12" id="publications">
-  <h3>Publications <small>See also <a href="http://scholar.google.co.uk/citations?user=k6y0EGsAAAAJ">[Google Scholar]</a> &amp; <a href="/tools">[Software Tools]</a></small></h3>
+  <div class="span12">
+    <p>We are grateful for support from our funders:</p>
+    <img src='/img/logos/allstuck-bw.png'  alt="funding bodies" style='max-height: 200px;'/>
+  </div>
+  <div class="span12" id="publications">
+    <h3>Publications <small>See also <a href="http://scholar.google.co.uk/citations?user=k6y0EGsAAAAJ">[Google Scholar]</a> &amp; <a href="/tools">[Software Tools]</a></small></h3>
+    
+    
+    {% include publications.html %}	
 
-
-	{% include publications.html %}	
-</section>
+    
+  </div>
+  
 
 <!--  <h3>Misc</h3>
   <ul>
@@ -164,29 +167,29 @@ google.maps.event.addDomListener(window, 'load', initialize);
   </ul>
 
 -->
-<hr>
-</div>
 
 
 </div>
+<hr/>
 <div class="row-fluid">
-<div class="span4 column">
- <a class="twitter-timeline" href="https://twitter.com/yannick__" data-widget-id="368748443126099971">Tweets by @yannick__</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <div class="span4 column">
+    <a class="twitter-timeline" href="https://twitter.com/yannick__" data-widget-id="368748443126099971">Tweets by @yannick__</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    
+  </div>
 
-</div>
-
-<div class="span4 column">
-  <p style="margin-left:0; padding-right:30px;"><em>Solenopsis invicta</em> workers defend the <a href="http://dx.doi.org/10.1073/pnas.1009690108">fire ant genome</a> against a <em>Pogonomyrmex rugosus</em> harvester ant worker.<br/> &copy; Romain Libbrecht &amp; Yannick Wurm.</p>
-  <a href="http://www.antgenomes.org/blast">
-  <img src="/img/fireAntsGenomePogo-600x438.jpg" alt="Fire ant genome" width="300" height="219"/></a>
-</div>
-
-<div class="span4 column">
-  <p style="margin-left:0;"><a href="http://www.danielefraboulet.com" title="watercolor paintings">Daniele Fraboulet Watercolor</a></p>
-  <a href="http://www.danielefraboulet.com" title="artiste lausanne"><img src="img/danielefraboulet.jpg"
-  height="219" alt="Aquarelliste Suisse"/>
-  </a>
-
-</div>
+  <div class="span4 column">
+    <p style="margin-left:0; padding-right:30px;"><em>Solenopsis invicta</em> workers defend the <a href="http://dx.doi.org/10.1073/pnas.1009690108">fire ant genome</a> against a <em>Pogonomyrmex rugosus</em> harvester ant worker.<br/> &copy; Romain Libbrecht &amp; Yannick Wurm.</p>
+    <a href="http://www.antgenomes.org/blast">
+      <img src="/img/fireAntsGenomePogo-600x438.jpg" alt="Fire ant genome" width="300" height="219"/></a>
+  </div>
+  
+  <div class="span4 column">
+    <p style="margin-left:0;"><a href="http://www.danielefraboulet.com" title="watercolor paintings">Daniele Fraboulet Watercolor</a></p>
+    <a href="http://www.danielefraboulet.com" title="artiste lausanne">
+      <img src="img/danielefraboulet.jpg"
+	   height="219" alt="Aquarelliste Suisse"/>
+    </a>
+    
+  </div>
 </div>
