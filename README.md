@@ -1,5 +1,14 @@
 Based on https://github.com/cboettig/labnotebook
 
+## Install
+```bash
+git clone git@github.com:wurmlab/wurmlab.github.io.git
+cd wurmlab.github.io.git
+gem install jekyll bundler
+bundle update
+bundle install
+jekyll serve -w
+```
 
 ## How this works
 
