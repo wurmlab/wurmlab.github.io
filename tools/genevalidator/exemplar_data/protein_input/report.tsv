@@ -1,0 +1,26 @@
+ No	Score	          Identifier	No_Hits	LengthCluster	LengthRank	GeneMerge	Duplication	MissingExtraSequences
+  1	    0	          GB10034-PA	      3	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence
+  7	    0	          GB10091-PA	      0	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence
+ 10	    0	sp|P83011|13KDA_SCYCA	      0	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence
+  3	  100	          GB10056-PA	     10	339 [317, 365]	40%	-3.5	1.0	95% conserved; 1% extra; 10% missing.
+  6	   25	          GB10071-PA	     27	494 [379, 402]	0% (too long)	-7.0	0.0	79% conserved; 21% extra; 6% missing.
+ 11	   75	 sp|Q8GBW6|12S_PROFR	    499	611 [256, 336]	2% (too long)	0.0	1.0	86% conserved; 13% extra; 5% missing.
+ 13	    0	       SI2.2.0_07054	      0	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence
+ 15	    0	          PB26730-RA	      0	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence
+ 16	    0	        Or13a-like-1	      0	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence
+  5	  100	          GB10063-PA	    309	615 [105, 657]	42%	0.0	1.0	94% conserved; 5% extra; 7% missing.
+ 18	    0	         Pbar_fem-RF	      0	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence	Not enough evidence
+ 17	   50	          PB18762-RA	     35	207 [237, 327]	0% (too short)	-6.0	1.0	63% conserved; 1% extra; 48% missing.
+  9	  100	          GB10113-PA	     18	659 [300, 506]	39%	-2.3	0.25	96% conserved; 19% extra; 9% missing.
+  8	  100	          GB10098-PA	     98	826 [633, 965]	38%	0.0	1.0	88% conserved; 2% extra; 18% missing.
+ 19	   50	          PB18775-RA	     20	1160 [682, 801]	0% (too long)	-1.1	1.0	79% conserved; 45% extra; 8% missing.
+  4	  100	          GB10058-PA	    114	1052 [1106, 1567]	40%	-0.3	1.0	83% conserved; 2% extra; 19% missing.
+  2	   71	          GB10040-PA	     23	1070 [694, 810]	22%	0.0	1.0	94% conserved; 16% extra; 23% missing.
+ 25	   75	          PB18768-RA	      7	132 [124, 137]	43%	0.0	1.0	Not enough evidence
+ 21	  100	          PB13750-RA	    166	974 [661, 1132]	20%	0.0	1.0	44% conserved; 18% extra; 18% missing.
+ 24	   75	          PB18752-RA	     71	794 [594, 698]	0% (too long)	-0.2	1.0	80% conserved; 16% extra; 0% missing.
+ 20	   50	          PB11933-RA	     50	845 [667, 885]	38%	1.1	1.0	89% conserved; 2% extra; 22% missing.
+ 23	   75	          PB20127-RA	     13	679 [555, 640]	8% (too long)	0.3	1.0	89% conserved; 15% extra; 11% missing.
+ 22	   50	          PB13758-RA	    167	751 [813, 1531]	3% (too short)	0.0	1.0	85% conserved; 0% extra; 25% missing.
+ 14	   71	       SI2.2.0_02651	     34	660 [404, 1242]	18% (too short)	0.0	1.0	100% conserved; 2% extra; 20% missing.
+ 12	  100	       SI2.2.0_02565	     18	1761 [1603, 1677]	50%	-0.1	1.0	100% conserved; 0% extra; 6% missing.
