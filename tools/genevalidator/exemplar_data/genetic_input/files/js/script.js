@@ -59,3 +59,13 @@ $(document).ready(function() {
     }
   });
 });
+
+$( document ).on( "click", "td, .plot_btn", function( event ) {
+    if ($(this).hasClass('success') || $(this).hasClass('danger')){
+      var title = $(this).attr('title');
+      var val = title.replace(/[ \/]/g, '');  
+      addData(this, val);
+    } else if ($(this).hasClass('plot_btn')){
+      addData(this, 'all');
+    }
+});

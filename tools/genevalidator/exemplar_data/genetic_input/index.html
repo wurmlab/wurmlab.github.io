@@ -1,464 +1,174 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>GeneValidator: identify problems with gene predictions</title>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-
-  <script type="text/javascript" src="files/js/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="files/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="files/js/jquery.tablesorter.min.js"></script>
-  <script type="text/javascript" src="files/js/d3.v3.min.js"></script>
-  <script type="text/javascript" src="files/js/script.js"></script>
-  <script type="text/javascript" src="files/js/plots.js"></script>
-
-  <link href="files/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="files/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="files/css/style.css" rel="stylesheet" type="text/css">
-
-</head>
+<!DOCTYPE html><html><head><title>GeneValidator: identify problems with gene predictions</title><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><script type="text/javascript" src="files/js/jquery-2.1.1.min.js"></script><script type="text/javascript" src="files/js/bootstrap.min.js"></script><script type="text/javascript" src="files/js/jquery.tablesorter.min.js"></script><script type="text/javascript" src="files/js/d3.v3.min.js"></script><script type="text/javascript" src="files/js/script.js"></script><script type="text/javascript" src="files/js/plots.js"></script><link href="files/css/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="files/css/font-awesome.min.css" rel="stylesheet" type="text/css"><link href="files/css/style.css" rel="stylesheet" type="text/css"></head>
 <body>
-  <div class="container">
-    <span class="menu_icon pull-right"><a href="#" id="show_all_plots" onclick="show_all_plots(this);"><i class="fa fa-2x fa-bar-chart-o"></i><br>Show All Charts</a></span>
-    <span class="menu_icon pull-right"><a href="https://github.com/monicadragan/GeneValidator" target="_blank"><i class="fa fa-2x fa-github"></i><br>Source Code</a></span>
-    <span class="menu_icon pull-right"><a href="http://wurmlab.github.io/tools/genevalidator/documentation/v1/"><i class="fa fa-2x fa-info-circle"></i><br>About</a></span>
-    <div class="clearfix"></div>
-    <img class="logo" src="files/img/gene.png" alt="logo">
-    <div class="page-title">
-      <h1>Gene Validator <small>v1.5.4</small></h1>
-      <h4 class="subheading">Identify Problems with Gene Predictions</h4>
-    </div>
-    <br/><br/>
-    <div id="report">
-      <div id="report_1"></div>
-    </div>
-    <br><br>
-      <table id="sortable_table" class="table table-collapsed table-bordered table-condensed tablesorter">
-        <thead>
-          <tr id="header">
-            <th>#</th>
-            <th>Ranking</th>
-            <th>Sequence Definition
-              <span data-toggle="tooltip" title="Query definition as it apears in the input fasta file." data-placement="top"><i class="fa fa-question-circle"></i></span>
-            </th>
-            <th>No. Hits
-              <span data-toggle="tooltip" title="Number of non-identical hits found by BLAST." data-placement="top"><i class="fa fa-question-circle"></i></span>
-            </th>
-                        <th class="sorter-false">
-              <b>Length Cluster</b>
-                                  <span data-toggle="tooltip" title="Charts available for this validation" data-placement="top"><i class="fa fa-bar-chart-o chartIcon"></i></span>&nbsp;<span data-toggle="tooltip" title="Check whether the prediction length fits most of the BLAST hit lengths, by 1D hierarchical clusterization. Meaning of the output displayed: Query_length [Main Cluster Length Interval]" data-placement="top"><i class="fa fa-question-circle"></i></span>
-                            </th>
-                        <th class="sorter-false">
-              <b>Length Rank</b>
-                                   <span data-toggle="tooltip" title="Check whether the rank of the prediction length lies among 80% of all the BLAST hit lengths." data-placement="top"><i class="fa fa-question-circle"></i></span>
-                            </th>
-                        <th class="sorter-false">
-              <b>Gene Merge</b>
-                                  <span data-toggle="tooltip" title="Charts available for this validation" data-placement="top"><i class="fa fa-bar-chart-o chartIcon"></i></span>&nbsp;<span data-toggle="tooltip" title="Check whether BLAST hits make evidence about a merge of two genes that match the predicted gene." data-placement="top"><i class="fa fa-question-circle"></i></span>
-                            </th>
-                        <th class="sorter-false">
-              <b>Duplication</b>
-                                   <span data-toggle="tooltip" title="Check whether there is a duplicated subsequence in the predicted gene by counting the hsp residue coverage of the prediction, for each hit." data-placement="top"><i class="fa fa-question-circle"></i></span>
-                            </th>
-                        <th class="sorter-false">
-              <b>Reading Frame</b>
-                                   <span data-toggle="tooltip" title="Check whether there is a single reading frame among BLAST hits. Otherwise there might be a reading frame shift in the query sequence." data-placement="top"><i class="fa fa-question-circle"></i></span>
-                            </th>
-                        <th class="sorter-false">
-              <b>Main ORF</b>
-                                  <span data-toggle="tooltip" title="Charts available for this validation" data-placement="top"><i class="fa fa-bar-chart-o chartIcon"></i></span>&nbsp;<span data-toggle="tooltip" title="Check whether there is a single main Open Reading Frame in the predicted gene. Applicable only for nucleotide queries." data-placement="top"><i class="fa fa-question-circle"></i></span>
-                            </th>
-                        <th class="sorter-false">
-              <b>Missing/Extra sequences</b>
-                                  <span data-toggle="tooltip" title="Charts available for this validation" data-placement="top"><i class="fa fa-bar-chart-o chartIcon"></i></span>&nbsp;<span data-toggle="tooltip" title="Finds missing and extra sequences in the prediction, based on the multiple alignment of the best hits. Also counts the percentage of the conserved regions that appear in the prediction." data-placement="top"><i class="fa fa-question-circle"></i></span>
-                            </th>
-                        <th class="sorter-false chart-column"></th>
-          </tr>
-        </thead>
-        <tbody><tr>
-  <td>1</td>
-  <td data-score="100"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:85.0%;"></div></div></td>
-  <td title="Definition" class="seq_definition">ENA|AAC06291|AAC06291.1  Arabidopsis thaliana (thale cress) syntaxin of plants 31 </td>
-  <td title="No. Hits">10</td>
-      <td title="Length Cluster" class="success my-btn-success" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths. Here, we cluster the lengths of hit sequences and compare the length of our query sequence to the most dense cluster of hit lengths. " data-explanation="The most dense length-cluster of BLAST hits includes sequences that are from 336 to 355 amino-acids long. The query sequence is 337 amino-acids long and is thus inside the most dense length-cluster of BLAST hits." data-conclusion="There is no reason to believe there is any problem with the length of the query sequence." onclick="showDiv(this, 'toggle1');
-          addPlot('toggle1', 'files/json/subset.fa_1_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '337', '');
-    AddExplanation(this, 'toggle1');">337&nbsp;[336,&nbsp;355]</td>
-        <td title="Length Rank" class="success" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths." data-explanation="The query sequence is  337 amino-acids long. BLAST identified 10 hit sequences with lengths from 309 to 467 amino-acids (median: 355; mean: 363). 2 of these hit sequences (i.e. 20%) are longer than the query sequence." data-conclusion="There is no reason to believe there is any problem with the length of the query sequence." onclick="showDiv(this, 'toggle1'); AddExplanation(this,'toggle1');">20%</td>
-        <td title="Gene Merge" class="success my-btn-success" data-approach="We expect the query sequence to encode a single protein-coding gene. Here, we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine whether the query includes sequence from two or more genes." data-explanation="The distribution of start and/or end-coordinates of HSPs are multi-modal. To detect potential problems we performed a linear regression (with coordinates weighted inversely proportionally to  hit strength). The resulting slope is 0.0." data-conclusion="This slope is  outside our empirically calculated thresholds (0.4 and 1.2). There is no evidence that the query contains sequence from multiple genes." onclick="showDiv(this, 'toggle1');
-          addPlot('toggle1', 'files/json/subset.fa_1_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '320.0', '0.0');
-          addPlot('toggle1', 'files/json/subset.fa_1_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '10', '');
-    AddExplanation(this, 'toggle1');">0.0</td>
-        <td title="Duplication" class="success" data-approach="We expect each BLAST hit to match each region of the query at most once. Here, we calculate the distribution of hit coverage against the query sequence and use the Wilcoxon test to determine if it is higher than 1." data-explanation="The Wilcoxon test produced a p-value of 1." data-conclusion="This suggests that the query sequence contains no erroneous duplications." onclick="showDiv(this, 'toggle1'); AddExplanation(this,'toggle1');">1.0</td>
-        <td title="Reading Frame" class="success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within this ORF." data-explanation="BLAST identified 10 High-scoring Segment Pairs (HSPs); all of these align in frame 1." data-conclusion="This is as expected." onclick="showDiv(this, 'toggle1'); AddExplanation(this,'toggle1');">10&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
-        <td title="Main ORF" class="success my-btn-success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF) that occupies most of the query sequence." data-explanation=" The longest ORF is in frame 1, where it occupies 100% of the query sequence." data-conclusion="There is no evidence to believe that there is any problem with the ORF of the query sequence." onclick="showDiv(this, 'toggle1');
-          addPlot('toggle1', 'files/json/subset.fa_1_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');
-    AddExplanation(this, 'toggle1');">100%&nbsp;(frame&nbsp;1)</td>
-        <td title="Missing/Extra sequences" class="success my-btn-success" data-approach="We expect the query sequence to be similar to the top ten BLAST hits. Here, we create a statistical consensus model of those top hits and compare the query to this model." data-explanation="The query sequence includes 98% amino-acid residues present in the consensus model. 4% of residues in the query sequence are absent from the consensus profile.  12% of residues in the consensus profile are absent from the query sequence." data-conclusion="There is no evidence based on the top 10 BLAST hits to suggest any problems with the query sequence." onclick="showDiv(this, 'toggle1');
-          addPlot('toggle1', 'files/json/subset.fa_1_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');
-    AddExplanation(this, 'toggle1');">98%&nbsp;conserved; 4%&nbsp;extra; 12%&nbsp;missing.</td>
-  
-  <td>
-    <button title="Show plots" name="plot_btn" class="plot_btn btn btn-default" onclick="showDiv(this, 'toggle1');
-                   addPlot('toggle1', 'files/json/subset.fa_1_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '337', '');                                   addPlot('toggle1', 'files/json/subset.fa_1_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '320.0', '0.0'); addPlot('toggle1', 'files/json/subset.fa_1_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '10', '');                                             addPlot('toggle1', 'files/json/subset.fa_1_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');                         addPlot('toggle1', 'files/json/subset.fa_1_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');          "><i class="fa fa-bar-chart-o"></i></button>
-  </td>
-</tr>
-<tr class="tablesorter-childRow" name="plot_row" style="display:none;">
-  <td colspan="14" id="toggle1row">
-    <div id="toggle1" class="expanded-child"></div>
-  </td>
-</tr>
-<tr>
-  <td>2</td>
-  <td data-score="100"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:85.0%;"></div></div></td>
-  <td title="Definition" class="seq_definition">ENA|AEO89880|AEO89880.1  Homo sapiens (human) NADH dehydrogenase subunit 4L </td>
-  <td title="No. Hits">291</td>
-      <td title="Length Cluster" class="success my-btn-success" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths. Here, we cluster the lengths of hit sequences and compare the length of our query sequence to the most dense cluster of hit lengths. " data-explanation="The most dense length-cluster of BLAST hits includes sequences that are from 98 to 99 amino-acids long. The query sequence is 99 amino-acids long and is thus inside the most dense length-cluster of BLAST hits." data-conclusion="There is no reason to believe there is any problem with the length of the query sequence." onclick="showDiv(this, 'toggle2');
-          addPlot('toggle2', 'files/json/subset.fa_2_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '99', '');
-    AddExplanation(this, 'toggle2');">99&nbsp;[98,&nbsp;99]</td>
-        <td title="Length Rank" class="success" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths." data-explanation="The query sequence is  99 amino-acids long. BLAST identified 291 hit sequences with lengths from 76 to 99 amino-acids (median: 98; mean: 98).  of these hit sequences (i.e. 100%) are shorter than the query sequence." data-conclusion="There is no reason to believe there is any problem with the length of the query sequence." onclick="showDiv(this, 'toggle2'); AddExplanation(this,'toggle2');">100%</td>
-        <td title="Gene Merge" class="success my-btn-success" data-approach="We expect the query sequence to encode a single protein-coding gene. Here, we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine whether the query includes sequence from two or more genes." data-explanation="The start coordinates and the end coordinates of HSPs are unimodally distributed." data-conclusion="This suggest that the query sequence represents a single gene." onclick="showDiv(this, 'toggle2');
-          addPlot('toggle2', 'files/json/subset.fa_2_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '', '');
-          addPlot('toggle2', 'files/json/subset.fa_2_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '291', '');
-    AddExplanation(this, 'toggle2');">0.0</td>
-        <td title="Duplication" class="success" data-approach="We expect each BLAST hit to match each region of the query at most once. Here, we calculate the distribution of hit coverage against the query sequence and use the Wilcoxon test to determine if it is higher than 1." data-explanation="The Wilcoxon test produced a p-value of 1." data-conclusion="This suggests that the query sequence contains no erroneous duplications." onclick="showDiv(this, 'toggle2'); AddExplanation(this,'toggle2');">1.0</td>
-        <td title="Reading Frame" class="success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within this ORF." data-explanation="BLAST identified 291 High-scoring Segment Pairs (HSPs); all of these align in frame 1." data-conclusion="This is as expected." onclick="showDiv(this, 'toggle2'); AddExplanation(this,'toggle2');">291&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
-        <td title="Main ORF" class="success my-btn-success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF) that occupies most of the query sequence." data-explanation=" The longest ORF is in frame 1, where it occupies 99% of the query sequence." data-conclusion="There is no evidence to believe that there is any problem with the ORF of the query sequence." onclick="showDiv(this, 'toggle2');
-          addPlot('toggle2', 'files/json/subset.fa_2_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');
-    AddExplanation(this, 'toggle2');">99%&nbsp;(frame&nbsp;1)</td>
-        <td title="Missing/Extra sequences" class="success my-btn-success" data-approach="We expect the query sequence to be similar to the top ten BLAST hits. Here, we create a statistical consensus model of those top hits and compare the query to this model." data-explanation="The query sequence includes 91% amino-acid residues present in the consensus model. 1% of residues in the query sequence are absent from the consensus profile.  0% of residues in the consensus profile are absent from the query sequence." data-conclusion="There is no evidence based on the top 10 BLAST hits to suggest any problems with the query sequence." onclick="showDiv(this, 'toggle2');
-          addPlot('toggle2', 'files/json/subset.fa_2_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');
-    AddExplanation(this, 'toggle2');">91%&nbsp;conserved; 1%&nbsp;extra; 0%&nbsp;missing.</td>
-  
-  <td>
-    <button title="Show plots" name="plot_btn" class="plot_btn btn btn-default" onclick="showDiv(this, 'toggle2');
-                   addPlot('toggle2', 'files/json/subset.fa_2_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '99', '');                                   addPlot('toggle2', 'files/json/subset.fa_2_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '', ''); addPlot('toggle2', 'files/json/subset.fa_2_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '291', '');                                             addPlot('toggle2', 'files/json/subset.fa_2_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');                         addPlot('toggle2', 'files/json/subset.fa_2_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');          "><i class="fa fa-bar-chart-o"></i></button>
-  </td>
-</tr>
-<tr class="tablesorter-childRow" name="plot_row" style="display:none;">
-  <td colspan="14" id="toggle2row">
-    <div id="toggle2" class="expanded-child"></div>
-  </td>
-</tr>
-<tr>
-  <td>3</td>
-  <td data-score="100"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:85.0%;"></div></div></td>
-  <td title="Definition" class="seq_definition">ENA|AAZ66996|AAZ66996.1  Erymnochelys madagascariensis partial brain-derived neurotrophic factor </td>
-  <td title="No. Hits">118</td>
-      <td title="Length Cluster" class="success my-btn-success" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths. Here, we cluster the lengths of hit sequences and compare the length of our query sequence to the most dense cluster of hit lengths. " data-explanation="The most dense length-cluster of BLAST hits includes sequences that are from 236 to 253 amino-acids long. The query sequence is 239 amino-acids long and is thus inside the most dense length-cluster of BLAST hits." data-conclusion="There is no reason to believe there is any problem with the length of the query sequence." onclick="showDiv(this, 'toggle3');
-          addPlot('toggle3', 'files/json/subset.fa_3_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '239', '');
-    AddExplanation(this, 'toggle3');">239&nbsp;[236,&nbsp;253]</td>
-        <td title="Length Rank" class="success" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths." data-explanation="The query sequence is  239 amino-acids long. BLAST identified 118 hit sequences with lengths from 43 to 270 amino-acids (median: 241; mean: 223). 47 of these hit sequences (i.e. 40%) are longer than the query sequence." data-conclusion="There is no reason to believe there is any problem with the length of the query sequence." onclick="showDiv(this, 'toggle3'); AddExplanation(this,'toggle3');">40%</td>
-        <td title="Gene Merge" class="success my-btn-success" data-approach="We expect the query sequence to encode a single protein-coding gene. Here, we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine whether the query includes sequence from two or more genes." data-explanation="The distribution of start and/or end-coordinates of HSPs are multi-modal. To detect potential problems we performed a linear regression (with coordinates weighted inversely proportionally to  hit strength). The resulting slope is 0.0." data-conclusion="This slope is  outside our empirically calculated thresholds (0.4 and 1.2). There is no evidence that the query contains sequence from multiple genes." onclick="showDiv(this, 'toggle3');
-          addPlot('toggle3', 'files/json/subset.fa_3_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '238.72818557749758', '-0.01246671527538646');
-          addPlot('toggle3', 'files/json/subset.fa_3_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '118', '');
-    AddExplanation(this, 'toggle3');">0.0</td>
-        <td title="Duplication" class="success" data-approach="We expect each BLAST hit to match each region of the query at most once. Here, we calculate the distribution of hit coverage against the query sequence and use the Wilcoxon test to determine if it is higher than 1." data-explanation="The Wilcoxon test produced a p-value of 1." data-conclusion="This suggests that the query sequence contains no erroneous duplications." onclick="showDiv(this, 'toggle3'); AddExplanation(this,'toggle3');">1.0</td>
-        <td title="Reading Frame" class="success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within this ORF." data-explanation="BLAST identified 118 High-scoring Segment Pairs (HSPs); all of these align in frame 1." data-conclusion="This is as expected." onclick="showDiv(this, 'toggle3'); AddExplanation(this,'toggle3');">118&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
-        <td title="Main ORF" class="success my-btn-success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF) that occupies most of the query sequence." data-explanation=" The longest ORF is in frame 1, where it occupies 100% of the query sequence." data-conclusion="There is no evidence to believe that there is any problem with the ORF of the query sequence." onclick="showDiv(this, 'toggle3');
-          addPlot('toggle3', 'files/json/subset.fa_3_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');
-    AddExplanation(this, 'toggle3');">100%&nbsp;(frame&nbsp;1)</td>
-        <td title="Missing/Extra sequences" class="success my-btn-success" data-approach="We expect the query sequence to be similar to the top ten BLAST hits. Here, we create a statistical consensus model of those top hits and compare the query to this model." data-explanation="The query sequence includes 97% amino-acid residues present in the consensus model. 0% of residues in the query sequence are absent from the consensus profile.  3% of residues in the consensus profile are absent from the query sequence." data-conclusion="There is no evidence based on the top 10 BLAST hits to suggest any problems with the query sequence." onclick="showDiv(this, 'toggle3');
-          addPlot('toggle3', 'files/json/subset.fa_3_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');
-    AddExplanation(this, 'toggle3');">97%&nbsp;conserved; 0%&nbsp;extra; 3%&nbsp;missing.</td>
-  
-  <td>
-    <button title="Show plots" name="plot_btn" class="plot_btn btn btn-default" onclick="showDiv(this, 'toggle3');
-                   addPlot('toggle3', 'files/json/subset.fa_3_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '239', '');                                   addPlot('toggle3', 'files/json/subset.fa_3_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '238.72818557749758', '-0.01246671527538646'); addPlot('toggle3', 'files/json/subset.fa_3_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '118', '');                                             addPlot('toggle3', 'files/json/subset.fa_3_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');                         addPlot('toggle3', 'files/json/subset.fa_3_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');          "><i class="fa fa-bar-chart-o"></i></button>
-  </td>
-</tr>
-<tr class="tablesorter-childRow" name="plot_row" style="display:none;">
-  <td colspan="14" id="toggle3row">
-    <div id="toggle3" class="expanded-child"></div>
-  </td>
-</tr>
-<tr>
-  <td>4</td>
-  <td data-score="100"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:85.0%;"></div></div></td>
-  <td title="Definition" class="seq_definition">ENA|AAY44250|AAY44250.1  Ramphotyphlops sp. YPM 13663 partial brain-derived neurotrophic factor </td>
-  <td title="No. Hits">117</td>
-      <td title="Length Cluster" class="danger my-btn-danger" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths. Here, we cluster the lengths of hit sequences and compare the length of our query sequence to the most dense cluster of hit lengths. " data-explanation="The most dense length-cluster of BLAST hits includes sequences that are from 236 to 253 amino-acids long. The query sequence is 223 amino-acids long and is thus outside the most dense length-cluster of BLAST hits." data-conclusion="This suggests that the query sequence may be too short." onclick="showDiv(this, 'toggle4');
-          addPlot('toggle4', 'files/json/subset.fa_4_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '223', '');
-    AddExplanation(this, 'toggle4');">223&nbsp;[236,&nbsp;253]</td>
-        <td title="Length Rank" class="success" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths." data-explanation="The query sequence is  223 amino-acids long. BLAST identified 117 hit sequences with lengths from 43 to 270 amino-acids (median: 241; mean: 223). 26 of these hit sequences (i.e. 22%) are longer than the query sequence." data-conclusion="There is no reason to believe there is any problem with the length of the query sequence." onclick="showDiv(this, 'toggle4'); AddExplanation(this,'toggle4');">22%</td>
-        <td title="Gene Merge" class="success my-btn-success" data-approach="We expect the query sequence to encode a single protein-coding gene. Here, we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine whether the query includes sequence from two or more genes." data-explanation="The distribution of start and/or end-coordinates of HSPs are multi-modal. To detect potential problems we performed a linear regression (with coordinates weighted inversely proportionally to  hit strength). The resulting slope is 0.0." data-conclusion="This slope is  outside our empirically calculated thresholds (0.4 and 1.2). There is no evidence that the query contains sequence from multiple genes." onclick="showDiv(this, 'toggle4');
-          addPlot('toggle4', 'files/json/subset.fa_4_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '223.75980082462357', '-0.011629462226587365');
-          addPlot('toggle4', 'files/json/subset.fa_4_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '117', '');
-    AddExplanation(this, 'toggle4');">0.0</td>
-        <td title="Duplication" class="success" data-approach="We expect each BLAST hit to match each region of the query at most once. Here, we calculate the distribution of hit coverage against the query sequence and use the Wilcoxon test to determine if it is higher than 1." data-explanation="The Wilcoxon test produced a p-value of 1." data-conclusion="This suggests that the query sequence contains no erroneous duplications." onclick="showDiv(this, 'toggle4'); AddExplanation(this,'toggle4');">1.0</td>
-        <td title="Reading Frame" class="success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within this ORF." data-explanation="BLAST identified 117 High-scoring Segment Pairs (HSPs); all of these align in frame 2." data-conclusion="This is as expected." onclick="showDiv(this, 'toggle4'); AddExplanation(this,'toggle4');">117&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;2</td>
-        <td title="Main ORF" class="success my-btn-success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF) that occupies most of the query sequence." data-explanation=" The longest ORF is in frame 2, where it occupies 100% of the query sequence." data-conclusion="There is no evidence to believe that there is any problem with the ORF of the query sequence." onclick="showDiv(this, 'toggle4');
-          addPlot('toggle4', 'files/json/subset.fa_4_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');
-    AddExplanation(this, 'toggle4');">100%&nbsp;(frame&nbsp;2)</td>
-        <td title="Missing/Extra sequences" class="success my-btn-success" data-approach="We expect the query sequence to be similar to the top ten BLAST hits. Here, we create a statistical consensus model of those top hits and compare the query to this model." data-explanation="The query sequence includes 13% amino-acid residues present in the consensus model. 18% of residues in the query sequence are absent from the consensus profile.  19% of residues in the consensus profile are absent from the query sequence." data-conclusion="There is no evidence based on the top 10 BLAST hits to suggest any problems with the query sequence." onclick="showDiv(this, 'toggle4');
-          addPlot('toggle4', 'files/json/subset.fa_4_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');
-    AddExplanation(this, 'toggle4');">13%&nbsp;conserved; 18%&nbsp;extra; 19%&nbsp;missing.</td>
-  
-  <td>
-    <button title="Show plots" name="plot_btn" class="plot_btn btn btn-default" onclick="showDiv(this, 'toggle4');
-                   addPlot('toggle4', 'files/json/subset.fa_4_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '223', '');                                   addPlot('toggle4', 'files/json/subset.fa_4_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '223.75980082462357', '-0.011629462226587365'); addPlot('toggle4', 'files/json/subset.fa_4_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '117', '');                                             addPlot('toggle4', 'files/json/subset.fa_4_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');                         addPlot('toggle4', 'files/json/subset.fa_4_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');          "><i class="fa fa-bar-chart-o"></i></button>
-  </td>
-</tr>
-<tr class="tablesorter-childRow" name="plot_row" style="display:none;">
-  <td colspan="14" id="toggle4row">
-    <div id="toggle4" class="expanded-child"></div>
-  </td>
-</tr>
-<tr>
-  <td>5</td>
-  <td data-score="100"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:85.0%;"></div></div></td>
-  <td title="Definition" class="seq_definition">ENA|ACR78454|ACR78454.1  Heliothis virescens (tobacco budworm) attacin </td>
-  <td title="No. Hits">10</td>
-      <td title="Length Cluster" class="success my-btn-success" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths. Here, we cluster the lengths of hit sequences and compare the length of our query sequence to the most dense cluster of hit lengths. " data-explanation="The most dense length-cluster of BLAST hits includes sequences that are from 208 to 254 amino-acids long. The query sequence is 208 amino-acids long and is thus inside the most dense length-cluster of BLAST hits." data-conclusion="There is no reason to believe there is any problem with the length of the query sequence." onclick="showDiv(this, 'toggle5');
-          addPlot('toggle5', 'files/json/subset.fa_5_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '208', '');
-    AddExplanation(this, 'toggle5');">208&nbsp;[208,&nbsp;254]</td>
-        <td title="Length Rank" class="danger" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths." data-explanation="The query sequence is  208 amino-acids long. BLAST identified 10 hit sequences with lengths from 113 to 254 amino-acids (median: 229; mean: 217). 1 of these hit sequences (i.e. 10%) are longer than the query sequence." data-conclusion="The sequence may be too short." onclick="showDiv(this, 'toggle5'); AddExplanation(this,'toggle5');">10%&nbsp;(too&nbsp;short)</td>
-        <td title="Gene Merge" class="success my-btn-success" data-approach="We expect the query sequence to encode a single protein-coding gene. Here, we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine whether the query includes sequence from two or more genes." data-explanation="The distribution of start and/or end-coordinates of HSPs are multi-modal. To detect potential problems we performed a linear regression (with coordinates weighted inversely proportionally to  hit strength). The resulting slope is -0.1." data-conclusion="This slope is  outside our empirically calculated thresholds (0.4 and 1.2). There is no evidence that the query contains sequence from multiple genes." onclick="showDiv(this, 'toggle5');
-          addPlot('toggle5', 'files/json/subset.fa_5_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '207.3717421380405', '-0.05259916038789571');
-          addPlot('toggle5', 'files/json/subset.fa_5_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '10', '');
-    AddExplanation(this, 'toggle5');">-0.1</td>
-        <td title="Duplication" class="success" data-approach="We expect each BLAST hit to match each region of the query at most once. Here, we calculate the distribution of hit coverage against the query sequence and use the Wilcoxon test to determine if it is higher than 1." data-explanation="The Wilcoxon test produced a p-value of 1." data-conclusion="This suggests that the query sequence contains no erroneous duplications." onclick="showDiv(this, 'toggle5'); AddExplanation(this,'toggle5');">1.0</td>
-        <td title="Reading Frame" class="success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within this ORF." data-explanation="BLAST identified 10 High-scoring Segment Pairs (HSPs); all of these align in frame 1." data-conclusion="This is as expected." onclick="showDiv(this, 'toggle5'); AddExplanation(this,'toggle5');">10&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
-        <td title="Main ORF" class="success my-btn-success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF) that occupies most of the query sequence." data-explanation=" The longest ORF is in frame 1, where it occupies 100% of the query sequence." data-conclusion="There is no evidence to believe that there is any problem with the ORF of the query sequence." onclick="showDiv(this, 'toggle5');
-          addPlot('toggle5', 'files/json/subset.fa_5_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');
-    AddExplanation(this, 'toggle5');">100%&nbsp;(frame&nbsp;1)</td>
-        <td title="Missing/Extra sequences" class="success my-btn-success" data-approach="We expect the query sequence to be similar to the top ten BLAST hits. Here, we create a statistical consensus model of those top hits and compare the query to this model." data-explanation="The query sequence includes 100% amino-acid residues present in the consensus model. 0% of residues in the query sequence are absent from the consensus profile.  15% of residues in the consensus profile are absent from the query sequence." data-conclusion="There is no evidence based on the top 10 BLAST hits to suggest any problems with the query sequence." onclick="showDiv(this, 'toggle5');
-          addPlot('toggle5', 'files/json/subset.fa_5_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');
-    AddExplanation(this, 'toggle5');">100%&nbsp;conserved; 0%&nbsp;extra; 15%&nbsp;missing.</td>
-  
-  <td>
-    <button title="Show plots" name="plot_btn" class="plot_btn btn btn-default" onclick="showDiv(this, 'toggle5');
-                   addPlot('toggle5', 'files/json/subset.fa_5_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '208', '');                                   addPlot('toggle5', 'files/json/subset.fa_5_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '207.3717421380405', '-0.05259916038789571'); addPlot('toggle5', 'files/json/subset.fa_5_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '10', '');                                             addPlot('toggle5', 'files/json/subset.fa_5_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');                         addPlot('toggle5', 'files/json/subset.fa_5_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');          "><i class="fa fa-bar-chart-o"></i></button>
-  </td>
-</tr>
-<tr class="tablesorter-childRow" name="plot_row" style="display:none;">
-  <td colspan="14" id="toggle5row">
-    <div id="toggle5" class="expanded-child"></div>
-  </td>
-</tr>
-<tr>
-  <td>6</td>
+<div aria-hidden="true" aria-labelledby="myModalLabel3" class="modal" id="spinner1" role="dialog" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body text-center"><h2>Loading ...</h2><i class="fa fa-spinner fa-5x fa-spin"></i></div></div></div></div>
+<div class="modal fade" id="alert" aria-hidden="true" aria-labelledby="myModalLabel5" role="dialog" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><h4 class="modal-title">Oops, Something went wrong!</h4></div><div class="modal-body"><p>This operation is not posible. There seems to be too many queries...</p></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div>
+<div class="modal fade" id="browseralert" aria-hidden="true" aria-labelledby="browser" role="dialog" tabindex="-1"><div class="modal-dialog"><div class="modal-content browser-alert"><div class="modal-header"><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><h4 class="modal-title">Incompatible Browser - Please use Mozilla Firefox!</h4></div><div class="modal-body" id="browseralertbody"><p id="browseralertText">The plugin that we use to display the validation plots means that your browser is currently unsupported.</p><p>Please use <strong>Mozilla FireFox</strong> to view this file.</p></div></div></div></div>
+<div class="container"><span class="menu_icon pull-right"><a href="#" id="show_all_plots" onclick="show_all_plots(this);"><i class="fa fa-2x fa-bar-chart-o"></i><br>Show All Charts</a></span><span class="menu_icon pull-right"><a href="https://github.com/wurmlab/GeneValidator" target="_blank"><i class="fa fa-2x fa-github"></i><br>Source Code</a></span><span class="menu_icon pull-right"><a href="http://wurmlab.github.io/tools/genevalidator/documentation/v1/"><i class="fa fa-2x fa-info-circle"></i><br>About</a></span><div class="clearfix"></div><img class="logo" src="files/img/gene.png" alt="logo"><div class="page-title"><h1>Gene Validator <small>v1.6.1</small></h1><h4 class="subheading">Identify Problems with Gene Predictions</h4></div><br/><br/>
+<div id="report"><div id="report_1"></div></div><br><br>
+<table id="sortable_table" class="table table-striped table-collapsed table-bordered table-condensed tablesorter"><thead>
+<tr id="header"><th>#</th><th>Ranking</th><th>Sequence Definition&nbsp;<span data-toggle="tooltip" title="Query definition as it apears in the input fasta file." data-placement="top"><i class="fa fa-question-circle"></i></span></th><th>No. Hits&nbsp;<span data-toggle="tooltip" title="Number of non-identical hits found by BLAST." data-placement="top"><i class="fa fa-question-circle"></i></span></th>
+  <th class="sorter-false"><b>Length Cluster</b>
+      <span data-toggle="tooltip" title="Charts available for this validation" data-placement="top"><i class="fa fa-bar-chart-o chartIcon"></i></span>&nbsp;<span data-toggle="tooltip" title="Check whether the prediction length fits most of the BLAST hit lengths, by 1D hierarchical clusterization. Meaning of the output displayed: Query_length [Main Cluster Length Interval]" data-placement="top"><i class="fa fa-question-circle"></i></span>
+  </th>
+  <th class="sorter-false"><b>Length Rank</b>
+       <span data-toggle="tooltip" title="Check whether the rank of the prediction length lies among 80% of all the BLAST hit lengths." data-placement="top"><i class="fa fa-question-circle"></i></span>
+  </th>
+  <th class="sorter-false"><b>Gene Merge</b>
+      <span data-toggle="tooltip" title="Charts available for this validation" data-placement="top"><i class="fa fa-bar-chart-o chartIcon"></i></span>&nbsp;<span data-toggle="tooltip" title="Check whether BLAST hits make evidence about a merge of two genes that match the predicted gene." data-placement="top"><i class="fa fa-question-circle"></i></span>
+  </th>
+  <th class="sorter-false"><b>Duplication</b>
+       <span data-toggle="tooltip" title="Check whether there is a duplicated subsequence in the predicted gene by counting the hsp residue coverage of the prediction, for each hit." data-placement="top"><i class="fa fa-question-circle"></i></span>
+  </th>
+  <th class="sorter-false"><b>Reading Frame</b>
+       <span data-toggle="tooltip" title="Check whether there is a single reading frame among BLAST hits. Otherwise there might be a reading frame shift in the query sequence." data-placement="top"><i class="fa fa-question-circle"></i></span>
+  </th>
+  <th class="sorter-false"><b>Main ORF</b>
+      <span data-toggle="tooltip" title="Charts available for this validation" data-placement="top"><i class="fa fa-bar-chart-o chartIcon"></i></span>&nbsp;<span data-toggle="tooltip" title="Check whether there is a single main Open Reading Frame in the predicted gene. Applicable only for nucleotide queries." data-placement="top"><i class="fa fa-question-circle"></i></span>
+  </th>
+  <th class="sorter-false"><b>Missing/Extra Sequences</b>
+      <span data-toggle="tooltip" title="Charts available for this validation" data-placement="top"><i class="fa fa-bar-chart-o chartIcon"></i></span>&nbsp;<span data-toggle="tooltip" title="Finds missing and extra sequences in the prediction, based on the multiple alignment of the best hits. Also counts the percentage of the conserved regions that appear in the prediction." data-placement="top"><i class="fa fa-question-circle"></i></span>
+  </th>
+<th class="sorter-false chart-column"></th></tr></thead><tbody><tr data-target="toggle7" data-jsonFile="files/json/subset.fa_7.json">
+  <td title="idx">7</td>
   <td data-score="83"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:70.55%;"></div></div></td>
-  <td title="Definition" class="seq_definition">ENA|EEF42972|EEF42972.1  Ricinus communis (castor bean) calmodulin-binding transcription activator (camta), plants, putative</td>
-  <td title="No. Hits">24</td>
-      <td title="Length Cluster" class="success my-btn-success" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths. Here, we cluster the lengths of hit sequences and compare the length of our query sequence to the most dense cluster of hit lengths. " data-explanation="The most dense length-cluster of BLAST hits includes sequences that are from 724 to 1208 amino-acids long. The query sequence is 1020 amino-acids long and is thus inside the most dense length-cluster of BLAST hits." data-conclusion="There is no reason to believe there is any problem with the length of the query sequence." onclick="showDiv(this, 'toggle6');
-          addPlot('toggle6', 'files/json/subset.fa_6_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '1020', '');
-    AddExplanation(this, 'toggle6');">1020&nbsp;[724,&nbsp;1208]</td>
-        <td title="Length Rank" class="success" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths." data-explanation="The query sequence is  1020 amino-acids long. BLAST identified 24 hit sequences with lengths from 474 to 1682 amino-acids (median: 965; mean: 935). 10 of these hit sequences (i.e. 42%) are shorter than the query sequence." data-conclusion="There is no reason to believe there is any problem with the length of the query sequence." onclick="showDiv(this, 'toggle6'); AddExplanation(this,'toggle6');">42%</td>
-        <td title="Gene Merge" class="success my-btn-success" data-approach="We expect the query sequence to encode a single protein-coding gene. Here, we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine whether the query includes sequence from two or more genes." data-explanation="The distribution of start and/or end-coordinates of HSPs are multi-modal. To detect potential problems we performed a linear regression (with coordinates weighted inversely proportionally to  hit strength). The resulting slope is -0.3." data-conclusion="This slope is  outside our empirically calculated thresholds (0.4 and 1.2). There is no evidence that the query contains sequence from multiple genes." onclick="showDiv(this, 'toggle6');
-          addPlot('toggle6', 'files/json/subset.fa_6_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '922.7442778946414', '-0.32157307130034835');
-          addPlot('toggle6', 'files/json/subset.fa_6_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '24', '');
-    AddExplanation(this, 'toggle6');">-0.3</td>
-        <td title="Duplication" class="success" data-approach="We expect each BLAST hit to match each region of the query at most once. Here, we calculate the distribution of hit coverage against the query sequence and use the Wilcoxon test to determine if it is higher than 1." data-explanation="The Wilcoxon test produced a p-value of 0.125." data-conclusion="This suggests that the query sequence contains no erroneous duplications." onclick="showDiv(this, 'toggle6'); AddExplanation(this,'toggle6');">0.13</td>
-        <td title="Reading Frame" class="danger" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within this ORF." data-explanation="BLAST identified 40 High-scoring Segment Pairs (HSPs): 33 HSPs align in frame 1; 7 HSPs align in frame 3." data-conclusion="The HSPs align in mulitple reading frames, this suggests there may be a frame shift in the query sequence." onclick="showDiv(this, 'toggle6'); AddExplanation(this,'toggle6');">33&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1; 7&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;3</td>
-        <td title="Main ORF" class="success my-btn-success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF) that occupies most of the query sequence." data-explanation=" The longest ORF is in frame 1, where it occupies 100% of the query sequence." data-conclusion="There is no evidence to believe that there is any problem with the ORF of the query sequence." onclick="showDiv(this, 'toggle6');
-          addPlot('toggle6', 'files/json/subset.fa_6_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');
-    AddExplanation(this, 'toggle6');">100%&nbsp;(frame&nbsp;1)</td>
-        <td title="Missing/Extra sequences" class="success my-btn-success" data-approach="We expect the query sequence to be similar to the top ten BLAST hits. Here, we create a statistical consensus model of those top hits and compare the query to this model." data-explanation="The query sequence includes 100% amino-acid residues present in the consensus model. 3% of residues in the query sequence are absent from the consensus profile.  13% of residues in the consensus profile are absent from the query sequence." data-conclusion="There is no evidence based on the top 10 BLAST hits to suggest any problems with the query sequence." onclick="showDiv(this, 'toggle6');
-          addPlot('toggle6', 'files/json/subset.fa_6_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');
-    AddExplanation(this, 'toggle6');">100%&nbsp;conserved; 3%&nbsp;extra; 13%&nbsp;missing.</td>
-  
-  <td>
-    <button title="Show plots" name="plot_btn" class="plot_btn btn btn-default" onclick="showDiv(this, 'toggle6');
-                   addPlot('toggle6', 'files/json/subset.fa_6_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '1020', '');                                   addPlot('toggle6', 'files/json/subset.fa_6_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '922.7442778946414', '-0.32157307130034835'); addPlot('toggle6', 'files/json/subset.fa_6_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '24', '');                                             addPlot('toggle6', 'files/json/subset.fa_6_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');                         addPlot('toggle6', 'files/json/subset.fa_6_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');          "><i class="fa fa-bar-chart-o"></i></button>
-  </td>
-</tr>
-<tr class="tablesorter-childRow" name="plot_row" style="display:none;">
-  <td colspan="14" id="toggle6row">
-    <div id="toggle6" class="expanded-child"></div>
-  </td>
-</tr>
-<tr>
-  <td>7</td>
-  <td data-score="83"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:70.55%;"></div></div></td>
-  <td title="Definition" class="seq_definition">ENA|AAT08493|AAT08493.1  Rhineura floridana cytochrome c oxidase subunit II </td>
+  <td title="Definition">ENA|AAT08493|AAT08493.1 Rhineura floridana cytochrome c oxidase subunit II </td>
   <td title="No. Hits">323</td>
-      <td title="Length Cluster" class="success my-btn-success" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths. Here, we cluster the lengths of hit sequences and compare the length of our query sequence to the most dense cluster of hit lengths. " data-explanation="The most dense length-cluster of BLAST hits includes sequences that are from 227 to 228 amino-acids long. The query sequence is 228 amino-acids long and is thus inside the most dense length-cluster of BLAST hits." data-conclusion="There is no reason to believe there is any problem with the length of the query sequence." onclick="showDiv(this, 'toggle7');
-          addPlot('toggle7', 'files/json/subset.fa_7_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '228', '');
-    AddExplanation(this, 'toggle7');">228&nbsp;[227,&nbsp;228]</td>
-        <td title="Length Rank" class="success" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths." data-explanation="The query sequence is  228 amino-acids long. BLAST identified 323 hit sequences with lengths from 64 to 873 amino-acids (median: 227; mean: 236). 111 of these hit sequences (i.e. 34%) are shorter than the query sequence." data-conclusion="There is no reason to believe there is any problem with the length of the query sequence." onclick="showDiv(this, 'toggle7'); AddExplanation(this,'toggle7');">34%</td>
-        <td title="Gene Merge" class="success my-btn-success" data-approach="We expect the query sequence to encode a single protein-coding gene. Here, we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine whether the query includes sequence from two or more genes." data-explanation="The start coordinates and the end coordinates of HSPs are unimodally distributed." data-conclusion="This suggest that the query sequence represents a single gene." onclick="showDiv(this, 'toggle7');
-          addPlot('toggle7', 'files/json/subset.fa_7_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '', '');
-          addPlot('toggle7', 'files/json/subset.fa_7_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '323', '');
-    AddExplanation(this, 'toggle7');">0.0</td>
-        <td title="Duplication" class="success" data-approach="We expect each BLAST hit to match each region of the query at most once. Here, we calculate the distribution of hit coverage against the query sequence and use the Wilcoxon test to determine if it is higher than 1." data-explanation="The Wilcoxon test produced a p-value of 1." data-conclusion="This suggests that the query sequence contains no erroneous duplications." onclick="showDiv(this, 'toggle7'); AddExplanation(this,'toggle7');">1.0</td>
-        <td title="Reading Frame" class="success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within this ORF." data-explanation="BLAST identified 323 High-scoring Segment Pairs (HSPs); all of these align in frame 1." data-conclusion="This is as expected." onclick="showDiv(this, 'toggle7'); AddExplanation(this,'toggle7');">323&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
-        <td title="Main ORF" class="danger my-btn-danger" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF) that occupies most of the query sequence." data-explanation=" The longest ORF is in frame 1, where it occupies 51% of the query sequence." data-conclusion="This only represents a portion of the query sequence. In some cases this indicates that a frame shift exists in the query sequence." onclick="showDiv(this, 'toggle7');
-          addPlot('toggle7', 'files/json/subset.fa_7_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');
-    AddExplanation(this, 'toggle7');">51%&nbsp;(frame&nbsp;1)</td>
-        <td title="Missing/Extra sequences" class="success my-btn-success" data-approach="We expect the query sequence to be similar to the top ten BLAST hits. Here, we create a statistical consensus model of those top hits and compare the query to this model." data-explanation="The query sequence includes 84% amino-acid residues present in the consensus model. 0% of residues in the query sequence are absent from the consensus profile.  1% of residues in the consensus profile are absent from the query sequence." data-conclusion="There is no evidence based on the top 10 BLAST hits to suggest any problems with the query sequence." onclick="showDiv(this, 'toggle7');
-          addPlot('toggle7', 'files/json/subset.fa_7_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');
-    AddExplanation(this, 'toggle7');">84%&nbsp;conserved; 0%&nbsp;extra; 1%&nbsp;missing.</td>
-  
-  <td>
-    <button title="Show plots" name="plot_btn" class="plot_btn btn btn-default" onclick="showDiv(this, 'toggle7');
-                   addPlot('toggle7', 'files/json/subset.fa_7_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '228', '');                                   addPlot('toggle7', 'files/json/subset.fa_7_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '', ''); addPlot('toggle7', 'files/json/subset.fa_7_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '323', '');                                             addPlot('toggle7', 'files/json/subset.fa_7_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');                         addPlot('toggle7', 'files/json/subset.fa_7_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');          "><i class="fa fa-bar-chart-o"></i></button>
-  </td>
-</tr>
-<tr class="tablesorter-childRow" name="plot_row" style="display:none;">
-  <td colspan="14" id="toggle7row">
-    <div id="toggle7" class="expanded-child"></div>
-  </td>
-</tr>
-<tr>
-  <td>8</td>
+  <td title="Length Cluster" class="success">228&nbsp;[227,&nbsp;228]</td>
+  <td title="Length Rank" class="success">34%</td>
+  <td title="Gene Merge" class="success">0.0</td>
+  <td title="Duplication" class="success">1.0</td>
+  <td title="Reading Frame" class="success">323&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
+  <td title="Main ORF" class="danger">51%&nbsp;(frame&nbsp;1)</td>
+  <td title="Missing/Extra Sequences" class="success">84%&nbsp;conserved; 0%&nbsp;extra; 1%&nbsp;missing.</td>
+  <td><button title="Show plots" class="plot_btn btn btn-default"><i class="fa fa-bar-chart-o"></i></button></td>
+</tr><tr data-target="toggle2" data-jsonFile="files/json/subset.fa_2.json">
+  <td title="idx">2</td>
+  <td data-score="100"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:85.0%;"></div></div></td>
+  <td title="Definition">ENA|AEO89880|AEO89880.1 Homo sapiens (human) NADH dehydrogenase subunit 4L </td>
+  <td title="No. Hits">291</td>
+  <td title="Length Cluster" class="success">99&nbsp;[98,&nbsp;99]</td>
+  <td title="Length Rank" class="success">100%</td>
+  <td title="Gene Merge" class="success">0.0</td>
+  <td title="Duplication" class="success">1.0</td>
+  <td title="Reading Frame" class="success">291&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
+  <td title="Main ORF" class="success">99%&nbsp;(frame&nbsp;1)</td>
+  <td title="Missing/Extra Sequences" class="success">91%&nbsp;conserved; 1%&nbsp;extra; 0%&nbsp;missing.</td>
+  <td><button title="Show plots" class="plot_btn btn btn-default"><i class="fa fa-bar-chart-o"></i></button></td>
+</tr><tr data-target="toggle5" data-jsonFile="files/json/subset.fa_5.json">
+  <td title="idx">5</td>
+  <td data-score="100"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:85.0%;"></div></div></td>
+  <td title="Definition">ENA|ACR78454|ACR78454.1 Heliothis virescens (tobacco budworm) attacin </td>
+  <td title="No. Hits">10</td>
+  <td title="Length Cluster" class="success">208&nbsp;[208,&nbsp;254]</td>
+  <td title="Length Rank" class="danger">10%&nbsp;(too&nbsp;short)</td>
+  <td title="Gene Merge" class="success">-0.1</td>
+  <td title="Duplication" class="success">1.0</td>
+  <td title="Reading Frame" class="success">10&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
+  <td title="Main ORF" class="success">100%&nbsp;(frame&nbsp;1)</td>
+  <td title="Missing/Extra Sequences" class="success">100%&nbsp;conserved; 0%&nbsp;extra; 15%&nbsp;missing.</td>
+  <td><button title="Show plots" class="plot_btn btn btn-default"><i class="fa fa-bar-chart-o"></i></button></td>
+</tr><tr data-target="toggle4" data-jsonFile="files/json/subset.fa_4.json">
+  <td title="idx">4</td>
+  <td data-score="100"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:85.0%;"></div></div></td>
+  <td title="Definition">ENA|AAY44250|AAY44250.1 Ramphotyphlops sp. YPM 13663 partial brain-derived neurotrophic factor </td>
+  <td title="No. Hits">117</td>
+  <td title="Length Cluster" class="danger">223&nbsp;[236,&nbsp;253]</td>
+  <td title="Length Rank" class="success">22%</td>
+  <td title="Gene Merge" class="success">0.0</td>
+  <td title="Duplication" class="success">1.0</td>
+  <td title="Reading Frame" class="success">117&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;2</td>
+  <td title="Main ORF" class="success">100%&nbsp;(frame&nbsp;2)</td>
+  <td title="Missing/Extra Sequences" class="success">13%&nbsp;conserved; 18%&nbsp;extra; 19%&nbsp;missing.</td>
+  <td><button title="Show plots" class="plot_btn btn btn-default"><i class="fa fa-bar-chart-o"></i></button></td>
+</tr><tr data-target="toggle8" data-jsonFile="files/json/subset.fa_8.json">
+  <td title="idx">8</td>
   <td data-score="83"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:70.55%;"></div></div></td>
-  <td title="Definition" class="seq_definition">ENA|AAY44234|AAY44234.1  Corallus caninus partial brain-derived neurotrophic factor </td>
+  <td title="Definition">ENA|AAY44234|AAY44234.1 Corallus caninus partial brain-derived neurotrophic factor </td>
   <td title="No. Hits">112</td>
-      <td title="Length Cluster" class="danger my-btn-danger" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths. Here, we cluster the lengths of hit sequences and compare the length of our query sequence to the most dense cluster of hit lengths. " data-explanation="The most dense length-cluster of BLAST hits includes sequences that are from 236 to 253 amino-acids long. The query sequence is 192 amino-acids long and is thus outside the most dense length-cluster of BLAST hits." data-conclusion="This suggests that the query sequence may be too short." onclick="showDiv(this, 'toggle8');
-          addPlot('toggle8', 'files/json/subset.fa_8_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '192', '');
-    AddExplanation(this, 'toggle8');">192&nbsp;[236,&nbsp;253]</td>
-        <td title="Length Rank" class="danger" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths." data-explanation="The query sequence is  192 amino-acids long. BLAST identified 112 hit sequences with lengths from 43 to 270 amino-acids (median: 242; mean: 226). 11 of these hit sequences (i.e. 10%) are longer than the query sequence." data-conclusion="The sequence may be too short." onclick="showDiv(this, 'toggle8'); AddExplanation(this,'toggle8');">10%&nbsp;(too&nbsp;short)</td>
-        <td title="Gene Merge" class="success my-btn-success" data-approach="We expect the query sequence to encode a single protein-coding gene. Here, we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine whether the query includes sequence from two or more genes." data-explanation="The distribution of start and/or end-coordinates of HSPs are multi-modal. To detect potential problems we performed a linear regression (with coordinates weighted inversely proportionally to  hit strength). The resulting slope is 0.0." data-conclusion="This slope is  outside our empirically calculated thresholds (0.4 and 1.2). There is no evidence that the query contains sequence from multiple genes." onclick="showDiv(this, 'toggle8');
-          addPlot('toggle8', 'files/json/subset.fa_8_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '193.0207199168809', '-0.0016742894379508243');
-          addPlot('toggle8', 'files/json/subset.fa_8_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '112', '');
-    AddExplanation(this, 'toggle8');">0.0</td>
-        <td title="Duplication" class="success" data-approach="We expect each BLAST hit to match each region of the query at most once. Here, we calculate the distribution of hit coverage against the query sequence and use the Wilcoxon test to determine if it is higher than 1." data-explanation="The Wilcoxon test produced a p-value of 1." data-conclusion="This suggests that the query sequence contains no erroneous duplications." onclick="showDiv(this, 'toggle8'); AddExplanation(this,'toggle8');">1.0</td>
-        <td title="Reading Frame" class="success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within this ORF." data-explanation="BLAST identified 112 High-scoring Segment Pairs (HSPs); all of these align in frame 1." data-conclusion="This is as expected." onclick="showDiv(this, 'toggle8'); AddExplanation(this,'toggle8');">112&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
-        <td title="Main ORF" class="success my-btn-success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF) that occupies most of the query sequence." data-explanation=" The longest ORF is in frame 1, where it occupies 100% of the query sequence." data-conclusion="There is no evidence to believe that there is any problem with the ORF of the query sequence." onclick="showDiv(this, 'toggle8');
-          addPlot('toggle8', 'files/json/subset.fa_8_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');
-    AddExplanation(this, 'toggle8');">100%&nbsp;(frame&nbsp;1)</td>
-        <td title="Missing/Extra sequences" class="success my-btn-success" data-approach="We expect the query sequence to be similar to the top ten BLAST hits. Here, we create a statistical consensus model of those top hits and compare the query to this model." data-explanation="The query sequence includes 89% amino-acid residues present in the consensus model. 0% of residues in the query sequence are absent from the consensus profile.  14% of residues in the consensus profile are absent from the query sequence." data-conclusion="There is no evidence based on the top 10 BLAST hits to suggest any problems with the query sequence." onclick="showDiv(this, 'toggle8');
-          addPlot('toggle8', 'files/json/subset.fa_8_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');
-    AddExplanation(this, 'toggle8');">89%&nbsp;conserved; 0%&nbsp;extra; 14%&nbsp;missing.</td>
-  
-  <td>
-    <button title="Show plots" name="plot_btn" class="plot_btn btn btn-default" onclick="showDiv(this, 'toggle8');
-                   addPlot('toggle8', 'files/json/subset.fa_8_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '192', '');                                   addPlot('toggle8', 'files/json/subset.fa_8_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '193.0207199168809', '-0.0016742894379508243'); addPlot('toggle8', 'files/json/subset.fa_8_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '112', '');                                             addPlot('toggle8', 'files/json/subset.fa_8_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');                         addPlot('toggle8', 'files/json/subset.fa_8_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');          "><i class="fa fa-bar-chart-o"></i></button>
-  </td>
-</tr>
-<tr class="tablesorter-childRow" name="plot_row" style="display:none;">
-  <td colspan="14" id="toggle8row">
-    <div id="toggle8" class="expanded-child"></div>
-  </td>
-</tr>
-<tr>
-  <td>9</td>
-  <td data-score="64"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:54.4%;"></div></div></td>
-  <td title="Definition" class="seq_definition">ENA|CAC41167|CAC41167.1  Spodoptera frugiperda (fall armyworm) hypothetical protein </td>
-  <td title="No. Hits">131</td>
-      <td title="Length Cluster" class="danger my-btn-danger" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths. Here, we cluster the lengths of hit sequences and compare the length of our query sequence to the most dense cluster of hit lengths. " data-explanation="The most dense length-cluster of BLAST hits includes sequences that are from 734 to 1007 amino-acids long. The query sequence is 1735 amino-acids long and is thus outside the most dense length-cluster of BLAST hits." data-conclusion="This suggests that the query sequence may be too long." onclick="showDiv(this, 'toggle9');
-          addPlot('toggle9', 'files/json/subset.fa_9_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '1735', '');
-    AddExplanation(this, 'toggle9');">1735&nbsp;[734,&nbsp;1007]</td>
-        <td title="Length Rank" class="success" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths." data-explanation="The query sequence is  1735 amino-acids long. BLAST identified 131 hit sequences with lengths from 734 to 5147 amino-acids (median: 936; mean: 1606). 35 of these hit sequences (i.e. 27%) are shorter than the query sequence." data-conclusion="There is no reason to believe there is any problem with the length of the query sequence." onclick="showDiv(this, 'toggle9'); AddExplanation(this,'toggle9');">27%</td>
-        <td title="Gene Merge" class="success my-btn-success" data-approach="We expect the query sequence to encode a single protein-coding gene. Here, we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine whether the query includes sequence from two or more genes." data-explanation="The distribution of start and/or end-coordinates of HSPs are multi-modal. To detect potential problems we performed a linear regression (with coordinates weighted inversely proportionally to  hit strength). The resulting slope is -0.4." data-conclusion="This slope is  outside our empirically calculated thresholds (0.4 and 1.2). There is no evidence that the query contains sequence from multiple genes." onclick="showDiv(this, 'toggle9');
-          addPlot('toggle9', 'files/json/subset.fa_9_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '1463.8251300816207', '-0.3672836488570065');
-          addPlot('toggle9', 'files/json/subset.fa_9_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '131', '');
-    AddExplanation(this, 'toggle9');">-0.4</td>
-        <td title="Duplication" class="danger" data-approach="We expect each BLAST hit to match each region of the query at most once. Here, we calculate the distribution of hit coverage against the query sequence and use the Wilcoxon test to determine if it is higher than 1." data-explanation="The Wilcoxon test produced a p-value of 0.031 (average = 1.04)." data-conclusion="The null hypothesis is rejected - thus a region of the query sequence is likely repeated more than once." onclick="showDiv(this, 'toggle9'); AddExplanation(this,'toggle9');">0.03</td>
-        <td title="Reading Frame" class="success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within this ORF." data-explanation="BLAST identified 320 High-scoring Segment Pairs (HSPs); all of these align in frame 1." data-conclusion="This is as expected." onclick="showDiv(this, 'toggle9'); AddExplanation(this,'toggle9');">320&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
-        <td title="Main ORF" class="success my-btn-success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF) that occupies most of the query sequence." data-explanation=" The longest ORF is in frame 1, where it occupies 100% of the query sequence." data-conclusion="There is no evidence to believe that there is any problem with the ORF of the query sequence." onclick="showDiv(this, 'toggle9');
-          addPlot('toggle9', 'files/json/subset.fa_9_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');
-    AddExplanation(this, 'toggle9');">100%&nbsp;(frame&nbsp;1)</td>
-        <td title="Missing/Extra sequences" class="danger my-btn-danger" data-approach="We expect the query sequence to be similar to the top ten BLAST hits. Here, we create a statistical consensus model of those top hits and compare the query to this model." data-explanation="The query sequence includes 71% amino-acid residues present in the consensus model. 2% of residues in the query sequence are absent from the consensus profile.  44% of residues in the consensus profile are absent from the query sequence." data-conclusion="These results suggest that there may be some problems with the query sequence. The query sequence has a high percentage (44%) of missing residues when compared to the statistical profile (the cut-off is 20%)." onclick="showDiv(this, 'toggle9');
-          addPlot('toggle9', 'files/json/subset.fa_9_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');
-    AddExplanation(this, 'toggle9');">71%&nbsp;conserved; 2%&nbsp;extra; 44%&nbsp;missing.</td>
-  
-  <td>
-    <button title="Show plots" name="plot_btn" class="plot_btn btn btn-default" onclick="showDiv(this, 'toggle9');
-                   addPlot('toggle9', 'files/json/subset.fa_9_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '1735', '');                                   addPlot('toggle9', 'files/json/subset.fa_9_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '1463.8251300816207', '-0.3672836488570065'); addPlot('toggle9', 'files/json/subset.fa_9_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '131', '');                                             addPlot('toggle9', 'files/json/subset.fa_9_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');                         addPlot('toggle9', 'files/json/subset.fa_9_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');          "><i class="fa fa-bar-chart-o"></i></button>
-  </td>
-</tr>
-<tr class="tablesorter-childRow" name="plot_row" style="display:none;">
-  <td colspan="14" id="toggle9row">
-    <div id="toggle9" class="expanded-child"></div>
-  </td>
-</tr>
-<tr>
-  <td>10</td>
+  <td title="Length Cluster" class="danger">192&nbsp;[236,&nbsp;253]</td>
+  <td title="Length Rank" class="danger">10%&nbsp;(too&nbsp;short)</td>
+  <td title="Gene Merge" class="success">0.0</td>
+  <td title="Duplication" class="success">1.0</td>
+  <td title="Reading Frame" class="success">112&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
+  <td title="Main ORF" class="success">100%&nbsp;(frame&nbsp;1)</td>
+  <td title="Missing/Extra Sequences" class="success">89%&nbsp;conserved; 0%&nbsp;extra; 14%&nbsp;missing.</td>
+  <td><button title="Show plots" class="plot_btn btn btn-default"><i class="fa fa-bar-chart-o"></i></button></td>
+</tr><tr data-target="toggle3" data-jsonFile="files/json/subset.fa_3.json">
+  <td title="idx">3</td>
+  <td data-score="100"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:85.0%;"></div></div></td>
+  <td title="Definition">ENA|AAZ66996|AAZ66996.1 Erymnochelys madagascariensis partial brain-derived neurotrophic factor </td>
+  <td title="No. Hits">118</td>
+  <td title="Length Cluster" class="success">239&nbsp;[236,&nbsp;253]</td>
+  <td title="Length Rank" class="success">40%</td>
+  <td title="Gene Merge" class="success">0.0</td>
+  <td title="Duplication" class="success">1.0</td>
+  <td title="Reading Frame" class="success">118&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
+  <td title="Main ORF" class="success">100%&nbsp;(frame&nbsp;1)</td>
+  <td title="Missing/Extra Sequences" class="success">97%&nbsp;conserved; 0%&nbsp;extra; 3%&nbsp;missing.</td>
+  <td><button title="Show plots" class="plot_btn btn btn-default"><i class="fa fa-bar-chart-o"></i></button></td>
+</tr><tr data-target="toggle1" data-jsonFile="files/json/subset.fa_1.json">
+  <td title="idx">1</td>
+  <td data-score="100"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:85.0%;"></div></div></td>
+  <td title="Definition">ENA|AAC06291|AAC06291.1 Arabidopsis thaliana (thale cress) syntaxin of plants 31 </td>
+  <td title="No. Hits">10</td>
+  <td title="Length Cluster" class="success">337&nbsp;[336,&nbsp;355]</td>
+  <td title="Length Rank" class="success">20%</td>
+  <td title="Gene Merge" class="success">0.0</td>
+  <td title="Duplication" class="success">1.0</td>
+  <td title="Reading Frame" class="success">10&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
+  <td title="Main ORF" class="success">100%&nbsp;(frame&nbsp;1)</td>
+  <td title="Missing/Extra Sequences" class="success">98%&nbsp;conserved; 4%&nbsp;extra; 12%&nbsp;missing.</td>
+  <td><button title="Show plots" class="plot_btn btn btn-default"><i class="fa fa-bar-chart-o"></i></button></td>
+</tr><tr data-target="toggle10" data-jsonFile="files/json/subset.fa_10.json">
+  <td title="idx">10</td>
   <td data-score="50"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:42.5%;"></div></div></td>
-  <td title="Definition" class="seq_definition">ENA|AEV14992|AEV14992.1  Xenopipo atronitens (black manakin) partial cytochrome oxidase subunit 1 </td>
+  <td title="Definition">ENA|AEV14992|AEV14992.1 Xenopipo atronitens (black manakin) partial cytochrome oxidase subunit 1 </td>
   <td title="No. Hits">229</td>
-      <td title="Length Cluster" class="danger my-btn-danger" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths. Here, we cluster the lengths of hit sequences and compare the length of our query sequence to the most dense cluster of hit lengths. " data-explanation="The most dense length-cluster of BLAST hits includes sequences that are from 505 to 541 amino-acids long. The query sequence is 217 amino-acids long and is thus outside the most dense length-cluster of BLAST hits." data-conclusion="This suggests that the query sequence may be too short." onclick="showDiv(this, 'toggle10');
-          addPlot('toggle10', 'files/json/subset.fa_10_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '217', '');
-    AddExplanation(this, 'toggle10');">217&nbsp;[505,&nbsp;541]</td>
-        <td title="Length Rank" class="danger" data-approach="If the query sequence is well conserved and similar sequences (BLAST hits) are correct, we can expect query and hit sequences to have similar lengths." data-explanation="The query sequence is  217 amino-acids long. BLAST identified 229 hit sequences with lengths from 58 to 873 amino-acids (median: 517; mean: 531). 6 of these hit sequences (i.e. 3%) are longer than the query sequence." data-conclusion="The sequence may be too short." onclick="showDiv(this, 'toggle10'); AddExplanation(this,'toggle10');">3%&nbsp;(too&nbsp;short)</td>
-        <td title="Gene Merge" class="success my-btn-success" data-approach="We expect the query sequence to encode a single protein-coding gene. Here, we analyse the High-scoring Segment Pairs (HSPs) identified by BLAST to determine whether the query includes sequence from two or more genes." data-explanation="The start coordinates and the end coordinates of HSPs are unimodally distributed." data-conclusion="This suggest that the query sequence represents a single gene." onclick="showDiv(this, 'toggle10');
-          addPlot('toggle10', 'files/json/subset.fa_10_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '', '');
-          addPlot('toggle10', 'files/json/subset.fa_10_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '229', '');
-    AddExplanation(this, 'toggle10');">0.0</td>
-        <td title="Duplication" class="success" data-approach="We expect each BLAST hit to match each region of the query at most once. Here, we calculate the distribution of hit coverage against the query sequence and use the Wilcoxon test to determine if it is higher than 1." data-explanation="The Wilcoxon test produced a p-value of 1." data-conclusion="This suggests that the query sequence contains no erroneous duplications." onclick="showDiv(this, 'toggle10'); AddExplanation(this,'toggle10');">1.0</td>
-        <td title="Reading Frame" class="success" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF). All BLAST hits are thus expected to align within this ORF." data-explanation="BLAST identified 229 High-scoring Segment Pairs (HSPs); all of these align in frame 2." data-conclusion="This is as expected." onclick="showDiv(this, 'toggle10'); AddExplanation(this,'toggle10');">229&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;2</td>
-        <td title="Main ORF" class="danger my-btn-danger" data-approach="We expect the query sequence to encode a single gene, thus it should contain one main Open Reading Frame (ORF) that occupies most of the query sequence." data-explanation=" The longest ORF is in frame -2, where it occupies 45% of the query sequence." data-conclusion="This only represents a portion of the query sequence. In some cases this indicates that a frame shift exists in the query sequence." onclick="showDiv(this, 'toggle10');
-          addPlot('toggle10', 'files/json/subset.fa_10_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');
-    AddExplanation(this, 'toggle10');">45%&nbsp;(frame&nbsp;-2)</td>
-        <td title="Missing/Extra sequences" class="danger my-btn-danger" data-approach="We expect the query sequence to be similar to the top ten BLAST hits. Here, we create a statistical consensus model of those top hits and compare the query to this model." data-explanation="The query sequence includes 14% amino-acid residues present in the consensus model. 6% of residues in the query sequence are absent from the consensus profile.  60% of residues in the consensus profile are absent from the query sequence." data-conclusion="These results suggest that there may be some problems with the query sequence. The query sequence has a high percentage (60%) of missing residues when compared to the statistical profile (the cut-off is 20%)." onclick="showDiv(this, 'toggle10');
-          addPlot('toggle10', 'files/json/subset.fa_10_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');
-    AddExplanation(this, 'toggle10');">14%&nbsp;conserved; 6%&nbsp;extra; 60%&nbsp;missing.</td>
-  
-  <td>
-    <button title="Show plots" name="plot_btn" class="plot_btn btn btn-default" onclick="showDiv(this, 'toggle10');
-                   addPlot('toggle10', 'files/json/subset.fa_10_len_clusters.json', 'bars', 'Length Cluster Validation: Distribution of BLAST hit lengths', 'Query Sequence, black;Most Dense Cluster,red;Other Hits, blue', 'Sequence Length', 'Number of Sequences', '217', '');                                   addPlot('toggle10', 'files/json/subset.fa_10_match_2d.json', 'scatter', 'Gene Merge Validation: Start/end of matching hit coord. on query (1 point/hit)', '', 'Start Offset (most left hsp)', 'End Offset (most right hsp)', '', ''); addPlot('toggle10', 'files/json/subset.fa_10_match.json', 'lines', 'Gene Merge Validation: Query coord covered by blast hit (1 line/hit)', '', 'Offset in Prediction', 'Hit Number', '229', '');                                             addPlot('toggle10', 'files/json/subset.fa_10_orfs.json', 'lines', 'Open Reading Frames in all 6 Frames', 'Open Reading Frame (Minimimum Length: 30 amino acids),red', 'Offset in the Prediction', 'Reading Frame', '14', '');                         addPlot('toggle10', 'files/json/subset.fa_10_ma.json', 'align', 'Missing/Extra sequences Validation: Multiple Align. & Statistical model of hits', 'Conserved Region, Yellow', 'Offset in the Alignment', '', '12', 'Prediction, hit&nbsp;1, hit&nbsp;2, hit&nbsp;3, hit&nbsp;4, hit&nbsp;5, hit&nbsp;6, hit&nbsp;7, hit&nbsp;8, hit&nbsp;9, hit&nbsp;10, Statistical Model');          "><i class="fa fa-bar-chart-o"></i></button>
-  </td>
-</tr>
-<tr class="tablesorter-childRow" name="plot_row" style="display:none;">
-  <td colspan="14" id="toggle10row">
-    <div id="toggle10" class="expanded-child"></div>
-  </td>
-</tr>
-</tbody>
-</table>
+  <td title="Length Cluster" class="danger">217&nbsp;[505,&nbsp;541]</td>
+  <td title="Length Rank" class="danger">3%&nbsp;(too&nbsp;short)</td>
+  <td title="Gene Merge" class="success">0.0</td>
+  <td title="Duplication" class="success">1.0</td>
+  <td title="Reading Frame" class="success">229&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;2</td>
+  <td title="Main ORF" class="danger">45%&nbsp;(frame&nbsp;-2)</td>
+  <td title="Missing/Extra Sequences" class="danger">14%&nbsp;conserved; 6%&nbsp;extra; 60%&nbsp;missing.</td>
+  <td><button title="Show plots" class="plot_btn btn btn-default"><i class="fa fa-bar-chart-o"></i></button></td>
+</tr><tr data-target="toggle6" data-jsonFile="files/json/subset.fa_6.json">
+  <td title="idx">6</td>
+  <td data-score="83"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:70.55%;"></div></div></td>
+  <td title="Definition">ENA|EEF42972|EEF42972.1 Ricinus communis (castor bean) calmodulin-binding transcription activator (camta), plants, putative</td>
+  <td title="No. Hits">24</td>
+  <td title="Length Cluster" class="success">1020&nbsp;[724,&nbsp;1208]</td>
+  <td title="Length Rank" class="success">42%</td>
+  <td title="Gene Merge" class="success">-0.3</td>
+  <td title="Duplication" class="success">0.13</td>
+  <td title="Reading Frame" class="danger">33&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1; 7&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;3</td>
+  <td title="Main ORF" class="success">100%&nbsp;(frame&nbsp;1)</td>
+  <td title="Missing/Extra Sequences" class="success">100%&nbsp;conserved; 3%&nbsp;extra; 13%&nbsp;missing.</td>
+  <td><button title="Show plots" class="plot_btn btn btn-default"><i class="fa fa-bar-chart-o"></i></button></td>
+</tr><tr data-target="toggle9" data-jsonFile="files/json/subset.fa_9.json">
+  <td title="idx">9</td>
+  <td data-score="64"><div class="ratings"><div class="empty-stars"></div><div class="full-stars" style="width:54.4%;"></div></div></td>
+  <td title="Definition">ENA|CAC41167|CAC41167.1 Spodoptera frugiperda (fall armyworm) hypothetical protein </td>
+  <td title="No. Hits">131</td>
+  <td title="Length Cluster" class="danger">1735&nbsp;[734,&nbsp;1007]</td>
+  <td title="Length Rank" class="success">27%</td>
+  <td title="Gene Merge" class="success">-0.4</td>
+  <td title="Duplication" class="danger">0.03</td>
+  <td title="Reading Frame" class="success">320&nbsp;HSPs&nbsp;align&nbsp;in&nbsp;frame&nbsp;1</td>
+  <td title="Main ORF" class="success">100%&nbsp;(frame&nbsp;1)</td>
+  <td title="Missing/Extra Sequences" class="danger">68%&nbsp;conserved; 2%&nbsp;extra; 44%&nbsp;missing.</td>
+  <td><button title="Show plots" class="plot_btn btn btn-default"><i class="fa fa-bar-chart-o"></i></button></td>
+</tr></tbody></table>
 <script>
   var evaluation_div = document.getElementById('report_1');
   var content_less = "<br>Overall Query Score Evaluation:<br>10 predictions were validated, from which there were:<br>8 are good prediction(s),<br>2 are possibly weak prediction(s).<br><div class=\"clearfix\"></div><br><button type=\"button\" onClick='add_content()' class=\"btn btn-primary btn-sm\"> Show More</button>";
-  var content = "<br>Overall Query Score Evaluation:<br>10 predictions were validated, from which there were:<br>8 are good prediction(s),<br>2 are possibly weak prediction(s).<br><br><br>Average running time for LengthCluster Validation: 0.003s per validation<br>Average running time for LengthRank Validation: 0.0s per validation<br>Average running time for Gene_Merge Validation: 0.003s per validation<br>Average running time for Duplication Validation: 0.015s per validation<br>Average running time for Frame Validation: 0.0s per validation<br>Average running time for ORF Validation: 0.002s per validation<br>Average running time for MA Validation: 5.062s per validation <div class=\"clearfix\"></div><br><button type=\"button\" onClick='evaluation_div.innerHTML=content_less' class=\"btn btn-primary btn-sm\"> Show Less</button>";
+  var content = "<br>Overall Query Score Evaluation:<br>10 predictions were validated, from which there were:<br>8 are good prediction(s),<br>2 are possibly weak prediction(s).<br><br><br>Average running time for LengthCluster Validation: 0.004s per validation<br>Average running time for LengthRank Validation: 0.0s per validation<br>Average running time for GeneMerge Validation: 0.002s per validation<br>Average running time for Duplication Validation: 0.528s per validation<br>Average running time for ReadingFrame Validation: 0.0s per validation<br>Average running time for MainORF Validation: 0.024s per validation<br>Average running time for MissingExtraSequences Validation: 6.77s per validation <div class=\"clearfix\"></div><br><button type=\"button\" onClick='evaluation_div.innerHTML=content_less' class=\"btn btn-primary btn-sm\"> Show Less</button>";
   evaluation_div.innerHTML = content_less;
   function add_content(){
-    evaluation_div = document.getElementById('report_1')
+    evaluation_div = document.getElementById('report_1');
     evaluation_div.innerHTML=content;
-    addPlot('report_1', 'files/json/subset.fa_statistics.json', 'simplebars', 'Overall evaluation', '', 'validation score', 'number of queries');
+    addOverallPlot('files/json/overview.json');
   }
 </script>
-    <div aria-hidden="true" aria-labelledby="myModalLabel3" class="modal" id="spinner1" role="dialog" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body text-center">
-            <h2>Loading ...</h2>
-            <i class="fa fa-spinner fa-5x fa-spin"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="alert" aria-hidden="true" aria-labelledby="myModalLabel5" role="dialog" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title">Oops, Something went wrong!</h4>
-          </div>
-          <div class="modal-body">
-            <p>This operation is not posible. There seems to be too many queries...</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="browseralert" aria-hidden="true" aria-labelledby="browser" role="dialog" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content browser-alert">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title">Incompatible Browser - Please use Mozilla Firefox!</h4>
-          </div>
-          <div class="modal-body" id="browseralertbody">
-            <p id="browseralertText">The plugin that we use to display the validation plots means that your browser is currently unsupported.</p>
-            <p>Please use <strong>Mozilla FireFox</strong> to view this file.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
 </div>
-
-<footer >
-  <div class="container center-block">
-  <p class="text-muted text-center">Please cite: "Dragan M, Moghul MI, Priyam A & Wurm Y <em>(in prep)</em> GeneValidator: identify problematic gene predictions"<br/>
-  Developed at <a href="http://yannick.poulet.org" target="_blank">Wurm Lab</a>, <a href="http://www.sbcs.qmul.ac.uk" target="_blank">QMUL</a> with funding by <a href="http://www.bbsrc.ac.uk/home/home.aspx" target="_blank">BBSRC</a> and <a href="https://www.google-melange.com/gsoc/homepage/google/gsoc2013" target="_blank">Google Summer of Code 2013</a><br/>
-  This page was created by <a href="https://github.com/monicadragan/GeneValidator" target="_blank" >GeneValidator</a> v1.5.4</p>
-  </div>
-</footer>
-
-</body>
-</html>
+<footer><div class="container center-block"><p class="text-muted text-center">Please cite: "Dragan M, Moghul MI, Priyam A &amp; Wurm Y <em>(in prep)</em> GeneValidator: identify problematic gene predictions"<br/>  Developed at <a href="http://yannick.poulet.org" target="_blank">Wurm Lab</a>, <a href="http://www.sbcs.qmul.ac.uk" target="_blank">QMUL</a> with funding by <a href="http://www.bbsrc.ac.uk/home/home.aspx" target="_blank">BBSRC</a> and <a href="https://www.google-melange.com/gsoc/homepage/google/gsoc2013" target="_blank">Google Summer of Code 2013</a><br/>This page was created by <a href="https://github.com/wurmlab/GeneValidator" target="_blank" >GeneValidator</a> v1.6.1</p></div></footer></body></html>
