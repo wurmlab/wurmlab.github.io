@@ -7,11 +7,12 @@ title: GeneValidator
   class="media">
   <a
     href="/img/genevalidator.png"
-    class="pull-left thumbnail">
+    class="pull-right thumbnail"
+    style="margin: 50px 0 0 30px">
     <img
     class="media-object"
     src="/img/genevalidator.png" alt="GeneValidator screenshot"
-    style="margin-right:10px; height:360px;">
+    style="height:380px;">
   </a>
   <div
     class="media-body">
@@ -21,56 +22,47 @@ title: GeneValidator
     </h3>
     <p
       style="text-align: justify;">
-      GeneValidator is a tool to identify problematic gene predictions based on comparisons between gene predictions and similar sequences in
-       public databases (e.g., SwissProt). Funded by
+      GeneValidator is a tool to identify problematic gene predictions based on
+      comparisons between gene predictions and similar sequences in public
+      databases (e.g., SwissProt). Funded by
       <a
         href="http://informatics.nescent.org/wiki/Phyloinformatics_Summer_of_Code_2013">
-        NESCent Google Summer of Code 2013</a> and BBSRC TRDF.
+        NESCent Google Summer of Code 2013</a>
+      and BBSRC TRDF.
     </p>
     <p
       style="text-align: justify;">
-      GeneValidator works locally from the command line or from a web
-      browser (suitable for &lt;100 queries).  Both amino acid and nucleotide
-      sequences (e.g., putative CDS) can be evaluated. Output formats include
-      HTML reports and plain (parseable) text. Some examples below.
+      GeneValidator works locally from the command line or from a web browser
+      (suitable for &lt;100 queries). Either amino acid sequences or nucleotide
+      sequences (e.g., putative CDS) can be used as input. Output formats
+      include HTML report and plain (parseable) text. Some examples below.
     </p>
-    <table class="table table-condensed table-bordered gv-example-data-table">
+    <table
+      class="table table-condensed"
+      style="margin-bottom: 5px">
       <thead>
         <tr>
           <th>
-            Source
+            Description
           </th>
           <th style="width: 10%">
             Input
           </th>
           <th style="width: 30%">
-            Output
+            Output<sup>*</sup>
           </th>
         </tr>
       </thead>
       <tr>
         <td style="text-align: justify;">
-          Protein sequences randomly sampled from
-          honey bee genome project.
+          Nucleotide sequences (picked from <a href="http://www.ebi.ac.uk/ena">
+            European Nucleotide Archive</a>)
         </td>
         <td>
-          <a href="tools/genevalidator/exemplar_data/protein_input/query.fa">FASTA</a>
-        </td>
-        <td>
-          <a href="exemplar_data/protein_input">HTML</a>,&nbsp;
-          <a href="exemplar_data/protein_input/report.json">JSON</a>,&nbsp;
-          <a href="exemplar_data/protein_input/report.tsv">Tab-delimited</a>
-        </td>
-      </tr>
-      <tr>
-        <td style="text-align: justify;">
-          Nucleotide sequences randomly sampled from
           <a
-            href="http://www.ebi.ac.uk/ena">
-            European Nucleotide Archive</a>.
-        </td>
-        <td>
-          <a href="tools/genevalidator/exemplar_data/genetic_input/query.fa">FASTA</a>
+            href="tools/genevalidator/exemplar_data/genetic_input/query.fa">
+            FASTA
+          </a>
         </td>
         <td class="col-md-2">
           <a href="exemplar_data/genetic_input">HTML</a>,&nbsp;
@@ -78,39 +70,59 @@ title: GeneValidator
           <a href="exemplar_data/genetic_input/report.tsv">Tab-delimited</a>
         </td>
       </tr>
+      <tr>
+        <td style="text-align: justify;">
+          Amino acid sequences (picked from ongoing genome projects)
+        </td>
+        <td>
+          <a
+            href="tools/genevalidator/exemplar_data/protein_input/query.fa">
+            FASTA
+          </a>
+        </td>
+        <td>
+          <a href="exemplar_data/protein_input">HTML</a>,&nbsp;
+          <a href="exemplar_data/protein_input/report.json">JSON</a>,&nbsp;
+          <a href="exemplar_data/protein_input/report.tsv">Tab-delimited</a>
+        </td>
+      </tr>
     </table>
+    <p>
+      <small>
+        <small>
+          <sup>*</sup> Generated using GeneValidator 1.6.1, using SwissProt
+          database downloaded on 10th April, 2015 as reference.
+        </small>
+      </small>
+    </p>
 
-    <h3>Installing &amp; using GeneValidator</h3> 
-      <ul
-        style="padding-left: 15px;">
-        <li>
-          <a
-            href="https://github.com/wurmlab/GeneValidator">
-            From the command line.
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/wurmlab/GeneValidatorApp">
-            As a web app.
-          </a>
-        </li>
-      </ul>
+    <h4>Installation and usage</h4> 
+    <ul
+      style="padding-left: 15px;">
+      <li>
+        <a
+          href="https://github.com/wurmlab/GeneValidator">
+          From the command line.
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/wurmlab/GeneValidatorApp">
+          As a web app.
+        </a>
+      </li>
+    </ul>
     <p
       style="text-align: justify;">
-      Alternatively, we host a web server appropriate for &lt; 10 query sequences at a time:</p>
-      <ul
-        style="padding-left: 15px;">
-        <li>
-          <a
-            href="http://genevalidator.sbcs.qmul.ac.uk">
-            GeneValidator web app.
-          </a>
-        </li>
-      </ul>
-   
+      Alternatively, we host a
+      <a
+        href="http://genevalidator.sbcs.qmul.ac.uk">
+        web server
+      </a>
+      appropriate for &lt; 10 query sequences at a time.</p>
   </div>
-  <h3>Mini-tutorial for interactive use on one or few gene predictions</h3>
+
+  <h4>Mini-tutorial for interactive use on one or few gene predictions</h4>
   <p>Despite recent improvements in genome sequencing and gene prediction technologies, many gene predictions remain problematic. GeneValidator can be used to help assess the quality of a large set of gene predictions, but also for individual sequences. Here we focus on the latter.</p>
 
   <ol>
