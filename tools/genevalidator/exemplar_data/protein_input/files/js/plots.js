@@ -1,76 +1,64 @@
-function show_all_plots(button){
-  'use strict';
+'use strict';
+/*global window: false, $:false, d3:false*/
+
+// Check if using Chrome (checked on load and on before displaying graphs)
+function checkIfUsingChromeLocally() {
+  if (window.chrome && (window.location.protocol === 'file:')) {
+    if (($('#browser-alert').length) === 0) {
+      $('#browseralert').modal();
+    }
+  }
+  return true;
+}
+
+//  SHOW ALL PLOTS button
+function toggle_all_plots(btn){
+  checkIfUsingChromeLocally();
   var plotBtns = $('.plot_btn');
   if (plotBtns.length > 30){
     $('#alert').modal();
   } else {
-    if (window.chrome && (window.location.protocol === 'file:') ) {
-      createChromeModal();
-    } else {
-
-      // show activity spinner
       $('#spinner1').modal({ backdrop: 'static', keyboard: 'false' });
 
-      if (button.status !== 'pressed'){
-        button.status = 'pressed';
-        button.innerHTML = '<i class="fa fa-2x fa-bar-chart-o"></i><br>Hide All Charts';
-        button.onclick = function() {
-          hide_all_plots(button);
-        };
+      if (btn.status !== 'pressed'){
+        btn.status = 'pressed';
+        $('#show_all_plots').html('Hide All Charts');
+        show_all_plots();
+      } else {
+        btn.status = 'released';
+        $('#show_all_plots').html('Show All Charts');
+        remove_all_plots();
       }
 
-      remove_all_plots();       // remove all plots
-
-      //iterate over the plot_btns and add data to each childRow
-      $('.plot_btn').each (function(){
-        addData(this, 'all');
-      });
-
       $('#spinner1').modal('hide');      // remove activity spinner
-    }
   }
 }
 
-function createChromeModal() {
-  if (($('#browser-alert').length) === 0) {
-    $('#browseralertText').html('<stong>Sorry, this feature is not supported in your browser.');
-    $('#browseralert').modal();
-  }
+function show_all_plots() {
+  //iterate over the plot_btns and add data to each childRow
+  $('.plot_btn').each (function(){
+    if (this.status !== 'pressed') {
+      addData(this, 'all');
+    }
+  });
 }
 
 function remove_all_plots() {
-  'use strict';
   $('.tablesorter-childRow').each (function(){
     $(this).remove();
   });
-
   $('.plot_btn').each (function(){
     this.status = 'released';
   });
 }
 
-function hide_all_plots(button){
-  'use strict';
-  button.status = 'released';
-  button.innerHTML = '<i class="fa fa-2x fa-bar-chart-o"></i><br>Show All Charts';
-  button.onclick = function() {
-    show_all_plots(button);
-  };
-  remove_all_plots();
-}
-
 function addData(source, val){
-  'use strict';
-  if (window.chrome && (window.location.protocol === 'file:') ) {
-    createChromeModal();
-    return true;
-  }
-  var graphs      = '',
-      graphData   = '',
-      $currentRow = $(source).closest('tr'),
+  checkIfUsingChromeLocally();
+
+  var $currentRow = $(source).closest('tr'),
       target      = $currentRow.attr("data-target"),
       $childRow   = $('#mainrow' + target);
-  
+
   if ($childRow.length && source.status !== 'pressed') {
     // if you click on another td...
     emptyChildRow($currentRow, target, source);
@@ -83,18 +71,29 @@ function addData(source, val){
   }
 
   $('table').trigger('update');
-
 }
 
-function addOverallPlot(file){
-  $.getJSON(file, function( json ) {
-    addPlot(json.data, 'report_1', json.type, json.title, json.footer, json.xtitle, json.ytitle);
+function toggle_overview_btn() {
+  var jsonFile = 'files/json/overview.json';
+  $.getJSON(jsonFile, function( json ) {
+    var overview = $('<span>' + json.less + '</span><br>');
+    var full_overview  = $('<span>' + json.evaluation + '</span><br>');
+    if ( $('#overview_btn').hasClass('active')){
+      $('#overview_text').html(full_overview);
+      $('#overview_btn').text('Show Less');
+      addPlot(json.data, 'overview', json.type, json.title, json.footer, json.xtitle, json.ytitle);
+    } else {
+      $('#overview').find('svg').remove();
+      $('#overview_text').html(overview);
+      $('#overview_btn').text('Show More');
+    }
   });
 }
 
 function createChildRow($currentRow, target, source){
-  var childRowHTML = '<tr class="tablesorter-childRow" id="mainrow' + target + '"><td colspan="12" id="row' +
-                     target + '"><div id="' + target + '" class="expanded-child"></div></td></tr>';
+  var childRowHTML = '<tr class="tablesorter-childRow" id="mainrow' + target +
+                     '"><td colspan="12" id="row' + target + '"><div id="' +
+                     target + '" class="expanded-child"></div></td></tr>';
   $currentRow.addClass('tablesorter-hasChildRow');
   $currentRow.after(childRowHTML);
   source.status = 'pressed';
@@ -153,7 +152,6 @@ function generatePlotCommands(graphs, target) {
 }
 
 function addExplanation(target, jsonData){
-  'use strict';
   var row = '#row' + target;
   var approach_html = '<p><b>Approach:</b> ' + jsonData.approach + '</p>';
   var explanation_html = '<p><b>Explanation:</b> ' + jsonData.explanation + '</p>';
@@ -164,8 +162,8 @@ function addExplanation(target, jsonData){
   $(row).prepend(explain);
 }
 
+// Functions that produce the plots in D3
 function addPlot(jsonData, target, type, title, footer, xtitle, ytitle, aux1, aux2){
-  'use strict';
   var legend;
   if (footer === '') {
     legend = [];
@@ -201,7 +199,6 @@ function addPlot(jsonData, target, type, title, footer, xtitle, ytitle, aux1, au
 }
 
 function color_beautification(color){
-  'use strict';
   switch(color){
     case 'red':
       return d3.rgb(189,54,47);
@@ -227,7 +224,6 @@ function plot_bars(alldata, target, title, footer, xTitle, yTitle, bar){
   var margin = {top: 70, right: 50, bottom: 75, left: 50},
     width = 600 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
-  var legend_width = 15;
 
   var svg = d3.select("#".concat(target)).append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -242,25 +238,22 @@ function plot_bars(alldata, target, title, footer, xTitle, yTitle, bar){
     .style("font-size", "16px")
     .text(title);
 
-  var colors = new Array("orange", "blue", "green", "yellow", "brown");
-  var no_colors = colors.length;
-
   var padding = 100;
 
-  flattened_data = [].concat.apply([], alldata);
+  var flattened_data = [].concat.apply([], alldata);
   var yMax = d3.max(flattened_data, function(d) { return d.value; }) + 3;
   var y = d3.scale.linear()
     .domain([0, yMax + yMax/10])
     .range([height, 0]);
 
   var xMin = d3.min(flattened_data, function(d) { return d.key; });
-  if (bar!=undefined){
-    var xMin = Math.min(xMin, bar);
+  if (bar != undefined){
+    xMin = Math.min(xMin, bar);
   }
 
   var xMax = d3.max(flattened_data, function(d) { return d.key; });
-  if (bar!=undefined){
-    var xMax = Math.max(xMax, bar);
+  if (bar != undefined){
+    xMax = Math.max(xMax, bar);
   }
 
   var x = d3.scale.linear()
@@ -300,9 +293,7 @@ function plot_bars(alldata, target, title, footer, xTitle, yTitle, bar){
       .style("text-anchor", "start")
       .text(yTitle);
 
-    alldata.map( function(data, i) {
-
-      color = colors[i % (no_colors - 1)];
+    alldata.map( function(data) {
       svg.selectAll(".bar")
         .data(data)
         .enter().append("rect")
@@ -310,10 +301,10 @@ function plot_bars(alldata, target, title, footer, xTitle, yTitle, bar){
           .attr("width", 6)
           .attr("y", function(d) { return y(d.value); })
           .attr("height", function(d) { return height - y(d.value); })
-          .attr("fill", function(d) { if (d.main == true) return color_beautification("red"); return color_beautification("blue");});
+          .attr("fill", function(d) { if (d.main === true) return color_beautification("red"); return color_beautification("blue");});
     });
 
-    if (bar!=undefined){
+    if (bar != undefined){
       svg.append("rect")
         .attr("x", x(bar))
         .attr("width", 4)
@@ -332,36 +323,33 @@ function plot_bars(alldata, target, title, footer, xTitle, yTitle, bar){
   var offset = 0;
   var total_len = 0;
   for (var i = 0; i < footer.length; i++) {
-  var array = footer[i].split(",");
-  total_len = total_len + array[0].length*8 + 15;
+    var array = footer[i].split(",");
+    total_len = total_len + array[0].length*8 + 15;
   }
 
-  for (var i = 0; i < footer.length; i++) {
+  for (var j = 0; j < footer.length; j++) {
 
-  var array = footer[i].split(",");
-  svg.append("rect")
-      .attr("x", (width-total_len)/2 + offset)
-      .attr("y", -30)
-      .attr("width", 10)
-      .attr("height", 10)
-      .style("fill", color_beautification(array[1].replace(/\s+/g, '')));
+    var footer_array = footer[j].split(",");
+    svg.append("rect")
+        .attr("x", (width-total_len)/2 + offset)
+        .attr("y", -30)
+        .attr("width", 10)
+        .attr("height", 10)
+        .style("fill", color_beautification(footer_array[1].replace(/\s+/g, '')));
 
-  svg.append("text")
-      .attr("x", (width-total_len)/2 + offset + 15)
-      .attr("y", -20)
-      .text(array[0]);
-    offset = offset + array[0].length*8 + 15;
+    svg.append("text")
+        .attr("x", (width-total_len)/2 + offset + 15)
+        .attr("y", -20)
+        .text(footer_array[0]);
+    offset = offset + footer_array[0].length*8 + 15;
   }
 }
 
 // bars plot
 function plot_simple_bars(alldata, target, title, footer, xTitle, yTitle){
-  'use strict';
-
   var margin = {top: 70, right: 50, bottom: 75, left: 50},
     width = 600 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
-  var legend_width = 15;
 
   var svg = d3.select("#".concat(target)).append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -375,9 +363,6 @@ function plot_simple_bars(alldata, target, title, footer, xTitle, yTitle){
     .attr("text-anchor", "middle")
     .style("font-size", "16px")
     .text(title);
-
-  var colors = new Array("orange", "blue", "green", "yellow", "brown");
-  var no_colors = colors.length;
 
   var padding = 0;
 
@@ -427,27 +412,22 @@ function plot_simple_bars(alldata, target, title, footer, xTitle, yTitle){
        .style("text-anchor", "start")
        .text(yTitle);
 
-  alldata.map( function(data, i) {
-
-  var color = colors[i % (no_colors - 1)];
-
-  svg.selectAll(".bar")
-     .data(data)
-     .enter().append("rect")
-             .attr("x", function(d) { return x(d.key); })
-             .attr("width", 6)
-             .attr("y", function(d) { return y(d.value); })
-             .attr("height", function(d) { return height - y(d.value); })
-             .attr("fill", function(d) { if (d.main == true) return color_beautification("red"); return color_beautification("blue");});
-    });
+  alldata.map( function(data) {
+    svg.selectAll(".bar")
+       .data(data)
+       .enter().append("rect")
+               .attr("x", function(d) { return x(d.key); })
+               .attr("width", 6)
+               .attr("y", function(d) { return y(d.value); })
+               .attr("height", function(d) { return height - y(d.value); })
+               .attr("fill", function(d) { if (d.main == true) return color_beautification("red"); return color_beautification("blue");});
+  });
 }
 
 
 // scatter plot
 // ecuation of the line: slope * x + yLine
 function plot_scatter(data, target, title, footer, xTitle, yTitle, yLine, slope){
-  'use strict';
-
   var margin = {top: 50, right: 30, bottom: 75, left: 50},
   width = 500 - margin.left - margin.right,
   height = 500 - margin.top - margin.bottom;
@@ -524,7 +504,7 @@ function plot_scatter(data, target, title, footer, xTitle, yTitle, yLine, slope)
        .attr("r", 2)
        .attr("cx", function(d) { return x(d.x); })
        .attr("cy", function(d) { return y(d.y); })
-       .style("fill", function(d) { return color_beautification("red"); })
+       .style("fill", function() { return color_beautification("red"); })
        .style("opacity",0.6);
 
   if ((slope!=undefined && slope != "") && (yLine!=undefined && yLine != "")){
@@ -566,11 +546,9 @@ function plot_scatter(data, target, title, footer, xTitle, yTitle, yLine, slope)
 // line plot
 // maximum 80 lines
 function plot_lines(data, target, title, footer, xTitle, yTitle, no_lines, yValues){
-  'use strict';
   var margin = {top: 70, right: 50, bottom: 75, left: 50},
   width = 600 - margin.left - margin.right,
   height = 500 - margin.top - margin.bottom;
-  var legend_width = 17;
 
   var x = d3.scale.linear()
             .range([0, width]);
@@ -578,14 +556,14 @@ function plot_lines(data, target, title, footer, xTitle, yTitle, no_lines, yValu
             .range([height, 0]);
 
   var color = d3.scale.category10();
-
+  var xAxis = '';
   if (title === 'Open Reading Frames in all 6 Frames') {
-    var xAxis = d3.svg.axis()
+    xAxis = d3.svg.axis()
                   .scale(x)
                   .orient("bottom")
                   .ticks(0);
   } else {
-    var xAxis = d3.svg.axis()
+    xAxis = d3.svg.axis()
                   .scale(x)
                   .orient("bottom")
                   .ticks(5);
@@ -629,10 +607,10 @@ function plot_lines(data, target, title, footer, xTitle, yTitle, no_lines, yValu
     svg.append("g")
          .attr("class", "y axis")
          .call(yAxis.ticks(yValues.length)
-         .tickFormat(function (d) {
-            idx = idx + 1;
-            return yValues[idx];
-          }))
+                    .tickFormat(function() {
+                       idx = idx + 1;
+                       return yValues[idx];
+                    }))
        .append("text")
          .attr("class", "label")
          .attr("transform", "rotate(-90)")
@@ -682,8 +660,6 @@ function plot_lines(data, target, title, footer, xTitle, yTitle, no_lines, yValu
                   .attr("width", 100)
                   .attr('transform', 'translate(-20,50)');
 
-  var h = 0;
-
   var offset = 40;
   var total_len = 0;
   for (var i = 0; i < footer.length; i++) {
@@ -691,32 +667,29 @@ function plot_lines(data, target, title, footer, xTitle, yTitle, no_lines, yValu
     total_len = total_len + array[0].length*8 + 15;
   }
 
-  for (var i = 0; i < footer.length; i++) {
-    var array = footer[i].split(",");
+  for (var j = 0; j < footer.length; j++) {
+    var footer_array = footer[j].split(",");
     svg.append("rect")
          .attr("x", (width-total_len)/2 + offset)
          .attr("y", -30)
          .attr("width", 10)
          .attr("height", 10)
-         .style("fill", color_beautification(array[1].replace(/\s+/g, '')));
+         .style("fill", color_beautification(footer_array[1].replace(/\s+/g, '')));
 
     svg.append("text")
          .attr("x", (width-total_len)/2 + offset + 15)
          .attr("y", -20)
-         .text(array[0]);  
-    offset = offset + array[0].length*8 + 15;
+         .text(footer_array[0]);
+    offset = offset + footer_array[0].length*8 + 15;
   }
 }
 
 // line plot
 // maximum 80 lines
 function plot_align(data, target, title, footer, xTitle, yTitle, no_lines, yValues){
-  'use strict';
-
   var margin = {top: 75, right: 50, bottom: 75, left: 150},
   width = 600 - margin.left - margin.right,
   height = 300 - margin.top - margin.bottom;
-  var legend_width = 17;
 
   var x = d3.scale.linear()
             .range([0, width]);
@@ -769,7 +742,7 @@ function plot_align(data, target, title, footer, xTitle, yTitle, no_lines, yValu
     svg.append("g")
          .attr("class", "y axis")
          .call(yAxis.ticks(yValues.length)
-                    .tickFormat(function (d) {
+                    .tickFormat(function() {
                       idx = idx + 1;
                       return yValues[idx];
                     }))
@@ -810,19 +783,19 @@ function plot_align(data, target, title, footer, xTitle, yTitle, no_lines, yValu
     total_len = total_len + array[0].length*8 + 15;
   }
 
-  for (var i = 0; i < footer.length; i++) {
-    var array = footer[i].split(",");
+  for (var j = 0; j < footer.length; j++) {
+    var footer_array = footer[j].split(",");
     svg.append("rect")
          .attr("x", (width-total_len)/2 + offset)
          .attr("y", -30)
          .attr("width", 10)
          .attr("height", 10)
-         .style("fill", color_beautification(array[1].replace(/\s+/g, '')));
+         .style("fill", color_beautification(footer_array[1].replace(/\s+/g, '')));
 
     svg.append("text")
          .attr("x", (width-total_len)/2 + offset + 15)
          .attr("y", -20)
-         .text(array[0]);
-    offset = offset + array[0].length*8 + 15;
+         .text(footer_array[0]);
+    offset = offset + footer_array[0].length*8 + 15;
   }
 }
