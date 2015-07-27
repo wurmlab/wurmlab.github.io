@@ -30,14 +30,55 @@ title: GeneValidator
     <p
       style="text-align: justify;">
       GeneValidator works locally from the command line or from a web
-      browser (suitable for &lt;100 queries). Output formats include HTML reports and plain (parseable) text. Some examples:</p>
-    <ul>
-      <li>Protein input: [<a
-			     href="exemplar_data/protein_input">HTML</a>] [<a href="exemplar_data/protein_input/report.json">JSON</a>] [<a href="exemplar_data/protein_input/report.tsv">Tab-delimited</a>].
-      </li>
-      <li>Putative transcript (e.g., cDNA) input: [<a href="exemplar_data/genetic_input">HTML</a>] [<a href="exemplar_data/genetic_input/report.json">JSON</a>] [<a href="exemplar_data/genetic_input/report.tsv">Tab-delimited</a>].
-      </li>
-    </ul>
+      browser (suitable for &lt;100 queries).  Both amino acid and nucleotide
+      sequences (e.g., putative CDS) can be evaluated. Output formats include
+      HTML reports and plain (parseable) text. Some examples below.
+    </p>
+    <table class="table table-condensed table-bordered gv-example-data-table">
+      <thead>
+        <tr>
+          <th>
+            Source
+          </th>
+          <th style="width: 10%">
+            Input
+          </th>
+          <th style="width: 30%">
+            Output
+          </th>
+        </tr>
+      </thead>
+      <tr>
+        <td style="text-align: justify;">
+          Protein sequences randomly sampled from
+          honey bee genome project.
+        </td>
+        <td>
+          <a href="tools/genevalidator/exemplar_data/protein_input/query.fa">FASTA</a>
+        </td>
+        <td>
+          <a href="exemplar_data/protein_input">HTML</a>,&nbsp;
+          <a href="exemplar_data/protein_input/report.json">JSON</a>,&nbsp;
+          <a href="exemplar_data/protein_input/report.tsv">Tab-delimited</a>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: justify;">
+          Nucleotide sequences randomly sampled from
+          <a
+            href="http://www.ebi.ac.uk/ena">
+            European Nucleotide Archive</a>.
+        </td>
+        <td>
+          <a href="tools/genevalidator/exemplar_data/genetic_input/query.fa">FASTA</a>
+        </td>
+        <td class="col-md-2">
+          <a href="exemplar_data/genetic_input">HTML</a>,&nbsp;
+          <a href="exemplar_data/genetic_input/report.json">JSON</a>,&nbsp;
+          <a href="exemplar_data/genetic_input/report.tsv">Tab-delimited</a>
+        </td>
+      </tr>
+    </table>
 
     <h3>Installing &amp; using GeneValidator</h3> 
       <ul
