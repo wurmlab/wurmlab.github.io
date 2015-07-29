@@ -19,26 +19,49 @@ members:
   img: bmpvieira.jpg
   about: Biologist javascript guru. BBSRC-funded developer of <a href="https://github.com/yeban/afra">tool for crowd-sourcing curation of gene predictions</a>. [<a href="http://bmpvieira.com">Personal website</a>] [<a href="https://github.com/bmpvieira">GitHub</a>] [<a href="https://medium.com/@bmpvieira">Blog</a>].
 
-- name: Natalia Araujo
-  img: peopleresized/nataliaaraujo.jpg
-  about: PhD student visitor from <a href="http://scholar.google.com/citations?user=DGM0c74AAAAJ&hl=en">Cristina Arias</a>' lab at University of Sao Paolo.
-
 - name: <a href='/team/estolle.html'>Eckart Stolle</a>
   img: peopleresized/eckartstolle.jpg
   about: "Postdoc (<a href='http://ec.europa.eu/research/mariecurieactions/' target='_blank'>Marie Curie IEF</a>) interested in the mechanisms underlying evolution of genomes, chromosomes and genes in relation to behavior, castes and sociality.[<a href='https://scholar.google.com/citations?hl=de&user=p9qDNAYAAAAJ&view_op=list_works&pagesize=100' target='_blank'>Google Scholar</a>] [<a href='http://orcid.org/0000-0001-7638-4061' target='_blank'>ORCID</a>]."
-
-- name: Kishor Dhaygude
-  img: kishordhaygude.jpg
-  about: <a href="http://www.helsinki.fi/science/ants/Antzz.html">Helsinki team ANTZZ</a>-based occasional visitor to the lab.
 
 - name: Emeline Favreau
   img: emelinefavreau.jpg
   about: Intern - evolution, entomology, gene annotation.
 
+- name: Joe Colgan
+  img: joecolgan.jpg
+  about: Postdoctoral researcher interested in examining how organisms respond to environmental stressors
+through the use of genomic, molecular and computational techniques. [<a href='https://scholar.google.com/citations?user=g5BZ5IIAAAAJ&hl=en'>Google Scholar</a>] [<a href='https://www.researchgate.net/profile/Thomas_Colgan'>Researchgate</a>].
+
+- name: Leandro Rodrigues Santiago
+  img: leandrorodrigues.jpg
+  about: BSc Biological Sciences, Universidade Estadual de Goiás (2006), MSc Genetics, Universidade de São Paulo (2013), Brazil, working on population genetics of social insects. Current PhD student at QMUL, funded by Science Without Borders, CNPq, Brazil. Research interests: population genetics, molecular biology, epigenetics and bioinformatics.
+
+- name: Ilya Levantis
+  img: ilyalevantis.jpg
+  about: Evolution, social insects, and bioinformatic approaches. Rookie pythonist. Director of <a href="biohackspace.org">London Biohackspace</a> in spare time. [<a href="twitter.com/MouldGod">Twitter</a>].
+
+- name: Filip Ter
+  img: filipter.jpg
+  about: Summer Intern - Programmer working on wurmlab projects, currently studying Computer Science (2nd year) [<a href="http://www.github.com/Filip-Ter">Github</a>]
+
+- name: Elie Gordon
+  img: eliegordon.jpg
+  about:  Currently working towards a masters degree in Ecology and Evolutionary Biology at Queen Mary. Masters projec focussing on viruses in honeybees and the geographical similarities and differences between four populations.
+
+
+occaisional_visitors:
+- name: Natalia Araujo
+  img: peopleresized/nataliaaraujo.jpg
+  about: PhD student visitor from <a href="http://scholar.google.com/citations?user=DGM0c74AAAAJ&hl=en">Cristina Arias</a>' lab at University of Sao Paolo.
+
+- name: Kishor Dhaygude
+  img: kishordhaygude.jpg
+  about: <a href="http://www.helsinki.fi/science/ants/Antzz.html">Helsinki team ANTZZ</a>-based occasional visitor to the lab.
+
+
 project_students:
-- name: Elena Shanti Franchina
-- name: Nazrath Nawaz
-- name: Hasan Al-Saidi
+- name: Elena Shanti Franchina (2014)
+- name: Nazrath Nawaz (2014)
 - name: Ismail Moghul (2013)
 - name: Gideon Pomeranz (2013)
 
@@ -63,6 +86,20 @@ alumni:
 </div>
 <hr>
 <div class="row">
+<h3>Occaisional Visitors</h3>  
+  {% for occaisional_visitor in page.occaisional_visitors %}
+  <div class="span5"> 
+    <div class="caption">
+      <h4>{{ occaisional_visitor.name }}</h4>
+      <img src="/img/{{ occaisional_visitor.img }}" align="left" style="margin-right:10px; height:50px;" class="img-rounded">
+      <p>{{ occaisional_visitor.about }} </p>
+    </div>
+  </div>
+  {% cycle '', '</div><div class="row">' %}
+  {% endfor %}
+</div>
+<hr>
+<div class="row">
 <div class="span10">
 <h3>Undergraduate project Students</h3>
 <ul>
@@ -74,8 +111,8 @@ alumni:
 </div>
 <hr>
 <div class="row">
+<h3>Alumni</h3>  
   {% for alumni in page.alumni %}
-<h3>Alumni</h3>
   <div class="span5">	
     <div class="caption">
       <h4>{{ alumni.name }}</h4>
