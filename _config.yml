@@ -4,6 +4,7 @@ markdown: rdiscount
 title: Ants, Genomes & Evolution @ Queen Mary University London
 
 url: '//wurmlab.github.io'
+production_url: 'https://wurmlab.github.io'
 
 permalink: "/news/:year-:month-:day-:title/"
 
