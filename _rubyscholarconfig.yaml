@@ -12,7 +12,7 @@ email: y.wurm@qmul.ac.uk
 
 
 # Show "[Cited Nx]" if N > the following number
-minCitations: 10
+minCitations: 5
 
 # Words to italicize (emphasize). These will have "<em>" around them. 
 italicize: 
@@ -33,7 +33,7 @@ altmetricDOIs:
 # Article titles for which we have urls to PDFs
 pdfs:
   "A Y-like social chromosome causes alternative colony organization in fire ants" : "/publications/wangwurm2013socialChromosome.pdf"
-  "Duplication and concerted evolution in a master sex determiner under balancing selection" : "/publications/procb2013.pdf"
+  "Duplication and concerted evolution in a master sex determiner under balancing selection" : "/publications/SexlocusDuplicationConcertedEvolution2013Procb.pdf"
   "Comparative genomics of chemosensory protein genes reveals rapid evolution and positive selection in ant-specific duplicates" : "/publications/hdy2012122a.pdf"
   "The Molecular Clockwork of the Fire Ant Solenopsis invicta" : "/publications/ingram2012-fireAntClockGenes.pdf"
   "Epigenetics: The Making of Ant Castes" : "/publications/2012CurrBiolAntepigenetics.pdf"
@@ -51,4 +51,11 @@ pdfs:
   "An annotated cDNA library and microarray for large-scale gene-expression studies in the ant Solenopsis invicta" : "/publications/wang2007fireAntMicroarrays.pdf"
   "Sociogenomics of cooperation and conflict during colony founding in the fire ant Solenopsis invicta" : "/publications/manfredini2013plosg.pdf"
   "Vitellogenin underwent subfunctionalization to acquire caste and behavioral specific expression in the harvester ant Pogonomyrmex barbatus" : "/publications/corona2013plosg.pdf"
-  "Discovery and molecular characterization of an ambisense densovirus from South American populations of Solenopsis invicta" : "/publications/Valles2013SolenopsisDensovirusBiologicalControl.pdf "
+  "Discovery and molecular characterization of an ambisense densovirus from South American populations of Solenopsis invicta" : "/publications/Valles2013SolenopsisDensovirusBiologicalControl.pdf"
+  "Convergent genetic architecture underlies social organization in ants" : "/publications/ConvergentSocialChromosomesFormica2014CurrentBiol.pdf"
+  "Social chromosome variants differentially affect queen determination and the survival of workers in the fire ant Solenopsis invicta" : "/publications/Buechel2014MolEcolGp9Pupae.pdf"
+  "Transposable element islands facilitate adaptation to novel environments in an invasive species" : "/publications/Transposableelement2014ScraderCardio.pdf"
+  "Effects of ploidy and sex-locus genotype on gene expression patterns in the fire ant Solenopsis invicta" : "/publications/Nipitwattanaphon2014effectsofploidyHaploid.pdf"
+  "Ant genomics (Hymenoptera: Formicidae): challenges to overcome and opportunities to seize" : "/publications/sannewurm2015myrmecologicalgenomics.pdf"
+  "Avoid having to retract your genomics analysis" : "/publications/wurm2015avoidRetractingGenomics.pdf"
+  "Social insect genomes exhibit dramatic evolution in gene composition and regulation while preserving regulatory features linked to sociality" : "/publications/socialinsectgenomes2013genomeresearch.pdf"
