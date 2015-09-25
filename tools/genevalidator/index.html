@@ -16,10 +16,25 @@ title: GeneValidator
   </a>
   <div
     class="media-body">
-    <h3
+    <h2
       class="media-heading">
       GeneValidator
-    </h3>
+      <small>
+        [
+          <a
+            href="https://github.com/wurmlab/genevalidator">
+            <i class="fa fa-github"></i> Source code
+          </a>
+        ]
+        &nbsp;
+        [
+          <a
+            href="http://genevalidator.sbcs.qmul.ac.uk">
+            <i class="fa fa-server"></i> Demo server
+          </a>
+        ]
+      </small>
+    </h2>
     <p
       style="text-align: justify;">
       GeneValidator is a tool to identify problematic gene predictions based on
@@ -101,13 +116,13 @@ title: GeneValidator
       style="padding-left: 15px;">
       <li>
         <a
-          href="https://github.com/wurmlab/GeneValidator">
+          href="https://github.com/wurmlab/genevalidator">
           From the command line.
         </a>
       </li>
       <li>
         <a
-          href="https://github.com/wurmlab/GeneValidatorApp">
+          href="https://github.com/wurmlab/genevalidatorapp">
           As a web app.
         </a>
       </li>
@@ -131,7 +146,7 @@ title: GeneValidator
   <p>Despite recent improvements in genome sequencing and gene prediction technologies, many gene predictions remain problematic. GeneValidator can be used to help assess the quality of a large set of gene predictions, but also for individual sequences. Here we focus on the latter.</p>
 
   <ol>
-     <li>Take one or several gene predictions in FASTA format - protein (e.g., <a href="tutorial/A.fasta">A</a>., <a href="tutorial/B.fasta">B</a>., <a href="tutorial/C.fasta">C</a>.) or nucleotide sequence (e.g., <a href="tutorial/D.fasta">D</a>.).</li>
+     <li>Take one or several gene predictions in FASTA format - protein (e.g., <a href="tutorial/A.fasta">A</a>, <a href="tutorial/B.fasta">B</a>, <a href="tutorial/C.fasta">C</a>) or nucleotide sequence (e.g., <a href="tutorial/D.fasta">D</a>).</li>
      <li>Go to the <a href="http://genevalidator.sbcs.qmul.ac.uk">GeneValidator web app</a>.</li>
      <li>Paste your gene prediction into the text field and click the <strong>Analyse Sequences</strong> button. <br/><small>GeneValidator will BLAST your gene prediction against a database (default: SwissProt), and perform multiple comparisons between your gene prediction and the sequences in the database. This should take less than 2 minutes.</small></li>
      <li>Examine the output report:
