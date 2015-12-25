@@ -87,13 +87,13 @@ alumni:
 </div>
 <hr>
 <div class="row">
-<h3>Occaisional Visitors</h3>  
-  {% for occaisional_visitor in page.occaisional_visitors %}
+<h3>Occasional Visitors</h3>  
+  {% for occasional_visitor in page.occasional_visitors %}
   <div class="span5"> 
     <div class="caption">
-      <h4>{{ occaisional_visitor.name }}</h4>
-      <img src="/img/{{ occaisional_visitor.img }}" align="left" style="margin-right:10px; height:50px;" class="img-rounded">
-      <p>{{ occaisional_visitor.about }} </p>
+      <h4>{{ occasional_visitor.name }}</h4>
+      <img src="/img/{{ occasional_visitor.img }}" align="left" style="margin-right:10px; height:50px;" class="img-rounded">
+      <p>{{ occasional_visitor.about }} </p>
     </div>
   </div>
   {% cycle '', '</div><div class="row">' %}
