@@ -3,22 +3,21 @@ layout: page
 title: tools and code
 
 tools:
-- name        : Antgenomes.org
-  img         : antgenomes.png
-  url         : http://antgenomes.org
-  about       : Initially known as Fourmidable. Community database centralizing genomic and transcriptomic sequence information for ants. 
-  paper : /publications/wurm2009antDatabase.pdf
-  status      : Used by hundreds of researchers. 
-  status_icon : fa-certificate
-
 - name        : SequenceServer
   img         : sequenceserver.png
   url         : http://sequenceserver.com
   code        : http://github.com/wurmlab/sequenceserver
   about       : "BLAST is the most commonly used bioinformatics tool. But setting it up for private data and using it is counter-intuitive. We're developing SequenceServer to make BLAST easy to use."
-  status      : Deployed in dozens of institutions.
+  status      : Deployed in >50 institutions.
   status_icon : fa-certificate
   paper       : http://biorxiv.org/content/early/2015/11/27/033142
+
+- name        : oswitch
+  img         : oswitch.png
+  code        : https://github.com/wurmlab/oswitch
+  about       : One-line switching between operating systems on your macbook and on the cluster. Uses <a href="http://docker.io/">docker</a>, funded by <a href="http://environmentalomics.org/portfolio/big-data-infrastructure/">NERC Environmental Omics (EOS) Cloud</a>.
+  status_icon : fa-certificate
+  status      : Used in production.
 
 - name        : BioNode
   img         : tools/bionode.png
@@ -28,14 +27,13 @@ tools:
   about       : <a href="http://bionode.io">BioNode</a> is <a href="http://nodejs.org">Node.js</a> JavaScript library for <a href="http://bionode.io">client and server side bioinformatics</a>.
   status_icon : fa-certificate
 
-
-- name        : "Codename Afra"
-  img         : afra.png
-  url         : http://afra.sbcs.qmul.ac.uk
-  code        : http://github.com/wurmlab/afra
-  about       : <a href="http://bbsrc.ac.uk">BBSRC</a>-funded tool for crowd-sourcing curation of gene predictions.
-  status      : Alpha. Work in progress.
-  status_icon : fa-warning
+- name        : Antgenomes.org
+  img         : antgenomes.png
+  url         : http://antgenomes.org
+  about       : Initially known as Fourmidable. Community database centralizing genomic and transcriptomic sequence information for ants. 
+  paper : /publications/wurm2009antDatabase.pdf
+  status      : Used by hundreds of researchers. 
+  status_icon : fa-certificate
 
 - name        : GeneValidator
   img         : genevalidator.png
@@ -52,6 +50,14 @@ tools:
   status_icon : fa-certificate
   status      : Used for <a href="http://www.pnas.org/content/early/2011/01/24/1009690108">fire ant genome</a> project. Published in <a href="http://bioinformatics.oxfordjournals.org/lookup/doi/10.1093/bioinformatics/btr569">Bioinformatics</a>. 
 
+- name        : "Codename Afra"
+  img         : afra.png
+  url         : http://afra.sbcs.qmul.ac.uk
+  code        : http://github.com/wurmlab/afra
+  about       : <a href="http://bbsrc.ac.uk">BBSRC</a>-funded tool for crowd-sourcing curation of gene predictions.
+  status      : Alpha. Work in progress.
+  status_icon : fa-warning
+
 - name        : NeuroPeptide Search
   img         : NpSearch.png
   code        : https://github.com/IsmailM/NeuroPeptideSearch
@@ -59,15 +65,10 @@ tools:
   status      : Beta used for research.
   status_icon : fa-warning
 
-- name        : oswitch
-  img         : oswitch.png
-  code        : https://github.com/wurmlab/oswitch
-  about       : A <a href="http://docker.io/">docker</a> wrapper to facilitate its use in running analyses and creating pipelines. Development funded as part of <a href="http://environmentalomics.org/portfolio/big-data-infrastructure/">NERC Environmental Omics (EOS) Cloud</a>.
-  status_icon : fa-certificate
-  status      : Beta.
-
 
 repositories:
+ - name: Lab
+   repository: https://github.com/wurmlab
  - name: Anurag Priyam
    repository: https://github.com/yeban
  - name: Yannick Wurm
