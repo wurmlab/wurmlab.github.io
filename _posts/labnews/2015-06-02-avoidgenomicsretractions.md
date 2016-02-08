@@ -13,6 +13,13 @@ categories:
 ---
 ![]({{ site.url }}/img/news/reproducibilitybanner.png)
 
+[Please cite the Winnower version of this article](https://thewinnower.com/papers/avoid-having-to-retract-your-genomics-analysis)
+
+<strong> <a href="//www.slideshare.net/yannickwurm/2015-1218-popgroup-reproducibleresearch" title="2015 12-18- Avoid having to retract your genomics analysis - Popgroup Reproducible research presentation" target="_blank"><i>2016 Edit: slides are from a  15 minute talk representative of this blog at Popgroup december 2015 in Edinburgh:</i></a></strong>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/Mc53Rs4vUFB1km" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-left: 100px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
 ## Biology is a data-science
 
 The dramatic [plunge in DNA sequencing costs](http://www.genome.gov/images/content/cost_megabase_.jpg) means that a single MSc or PhD student can now generate data that would have cost $15,000,000 only ten years ago. We are thus leaping from lab-notebook-scale science to research that requires extensive programming, statistics and high performance computing.
@@ -39,7 +46,7 @@ Geoffrey Chang's story is an emblematic example. By the mid-2000s this young sup
 * **Journal of Molecular Biology** (2003) Chang. *Structure of MsbA from Vibrio cholera: a multidrug resistance ABC transporter homolog in a closed conformation.* 
 * **Science** (2005) Reyes & Chang. *Structure of the ABC transporter MsbA in complex with ADP vanadate and lipopolysaccharide.*
 * **Science** (2005) Pornillos et al. *X-ray structure of the EmrE multidrug transporter in complex with a substrate.* 310:1950-1953.
-* **PNAS** (2004) Ma & Chang *Structure of the multidrug resistance efflux transporter EmrE from Escherichia coli.* 
+* **PNAS** (2004) Ma & Chang. *Structure of the multidrug resistance efflux transporter EmrE from Escherichia coli.* 
 
 But in 2006, others independently obtained the 3D structure of [an ortholog to one of those proteins](http://www.nature.com/nature/journal/v443/n7108/full/nature05155.html). Surprisingly, the orthologous structure was essentially a **mirror-image** of Geoffrey Chang's result. 
 
@@ -84,4 +91,4 @@ Thankfully, multiple initiatives are improving visibility of the data challenges
 
 *This post came together thanks to the [SSI Collaborations workshop](http://software.ac.uk), [Bosco K Ho's post on Geoffrey Chang](http://boscoh.com/protein/a-sign-a-flipped-structure-and-a-scientific-flameout-of-epic-proportions.html), discussions in [my lab](http://wurmlab.github.io) and through interactions with colleagues at the [social insect genomics conference](https://meetings.cshl.edu/meetings/2015/insect15.shtml) and the [NESCent Genome Curation group](http://genomecuration.github.io). YW is funded by the Biotechnology and Biological Sciences Research Council [BB/K004204/1], the Natural Environment Research Council [NE/L00626X/1, [EOS Cloud](http://environmentalomics.org/portfolio/big-data-infrastructure/)] and is a fellow of the [Software Sustainablity Institute](http://software.ac.uk).*
 
-[Cross-posted at The Winnower](https://thewinnower.com/papers/avoid-having-to-retract-your-genomics-analysis)
+[Please cite The Winnower version of this article](https://thewinnower.com/papers/avoid-having-to-retract-your-genomics-analysis)
