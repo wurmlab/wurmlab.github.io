@@ -1,5 +1,4 @@
-markdown: rdiscount
-
+markdown: kramdown
 
 title: Ants, Genomes & Evolution @ Queen Mary University London
 
