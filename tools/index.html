@@ -7,17 +7,20 @@ tools:
   img         : sequenceserver.png
   url         : http://sequenceserver.com
   code        : http://github.com/wurmlab/sequenceserver
-  about       : "BLAST is the most commonly used bioinformatics tool. But setting it up for private data and using it is counter-intuitive. We're developing SequenceServer to make BLAST easy to use."
-  status      : Deployed in >50 institutions.
+  about       : "BLAST is the most commonly used bioinformatics tool. But setting it up for private data and using it is counter-intuitive. We developed SequenceServer to make BLAST easy to use."
+  status      : Downloaded over 30,000 times.
   status_icon : fa-certificate
-  paper       : http://biorxiv.org/content/early/2015/11/27/033142
+  publication_url : http://biorxiv.org/content/early/2015/11/27/033142
+  publication_txt : "A Priyam, BJ Woodcroft, V Rai, A Munagala, I Moghul, F Ter, MA Gibbins, H Moon, G Leonard, W Rumpf, Y Wurm. 2015. Sequenceserver: a modern graphical user interface for custom BLAST databases. biorxiv doi: 10.1101/033142."
 
-- name        : oswitch
-  img         : oswitch.png
-  code        : https://github.com/wurmlab/oswitch
-  about       : One-line switching between operating systems on your macbook and on the cluster. Uses <a href="http://docker.io/">docker</a>, funded by <a href="http://environmentalomics.org/portfolio/big-data-infrastructure/">NERC Environmental Omics (EOS) Cloud</a>.
+- name        : GeneValidator
+  img         : genevalidator.png
+  code        : https://wurmlab.github.io/tools/genevalidator
+  about       : Tool to identify problematic gene predictions based on comparison with gene predictions in public databases. Funded by <a href="http://informatics.nescent.org/wiki/Phyloinformatics_Summer_of_Code_2013">NESCent Google Summer of Code 2013</a>.
+  status      : Stable.
   status_icon : fa-certificate
-  status      : Used in production.
+  publication_url : http://bioinformatics.oxfordjournals.org/content/early/2016/01/18/bioinformatics.btw015
+  publication_txt : "MA Dragan, I Moghul, A Priyam, C Bustos, Y Wurm. 2016. GeneValidator: identify problems with protein-coding gene predictions. Bioinformatics, doi: 10.1093/bioinformatics/btw015."
 
 - name        : BioNode
   img         : tools/bionode.png
@@ -27,45 +30,45 @@ tools:
   about       : <a href="http://bionode.io">BioNode</a> is <a href="http://nodejs.org">Node.js</a> JavaScript library for <a href="http://bionode.io">client and server side bioinformatics</a>.
   status_icon : fa-certificate
 
-- name        : Antgenomes.org
-  img         : antgenomes.png
-  url         : http://antgenomes.org
-  about       : Initially known as Fourmidable. Community database centralizing genomic and transcriptomic sequence information for ants. 
-  paper : /publications/wurm2009antDatabase.pdf
-  status      : Used by hundreds of researchers. 
+- name        : oswitch
+  img         : oswitch.png
+  code        : https://github.com/wurmlab/oswitch
+  about       : Provides quick and simple Docker based virtual environments on Macs and compute clusters alike for reproducible bioinformatics. Funded by <a href="http://environmentalomics.org/portfolio/big-data-infrastructure/">NERC Environmental 'omics (EOS) Cloud</a>.
   status_icon : fa-certificate
-
-- name        : GeneValidator
-  img         : genevalidator.png
-  code        : https://wurmlab.github.io/tools/genevalidator/
-  about       : Tool to identify problematic gene predictions based on comparison with gene predictions in public databases. Funded by <a href="http://informatics.nescent.org/wiki/Phyloinformatics_Summer_of_Code_2013">NESCent Google Summer of Code 2013</a>.
   status      : Stable.
-  status_icon : fa-certificate
-  paper       : http://bioinformatics.oxfordjournals.org/content/early/2016/01/18/bioinformatics.btw015
 
-- name        : Transcript-genome consistency network
-  img         : tgnet.jpg
-  code        : https://github.com/ksanao/TGNet
-  about       : <a href="https://github.com/ksanao/TGNet">TGNet</a> is a <a href="http://www.cytoscape.org">Cytoscape</a>-based tool for visualization and quality assessment of de novo genome assemblies. Specifically it facilitates rapid detection of inconsistencies between a genome assembly and an independently derived transcriptome assembly. Developed by <a href="http://scholar.google.co.uk/citations?user=aovYPpkAAAAJ&hl=en">Oksana Riba-Grognuz</a>.
-  paper       : http://bioinformatics.oxfordjournals.org/content/27/24/3425
-  status_icon : fa-certificate
-  status      : Used for <a href="http://www.pnas.org/content/early/2011/01/24/1009690108">fire ant genome</a> project. Published in <a href="http://bioinformatics.oxfordjournals.org/lookup/doi/10.1093/bioinformatics/btr569">Bioinformatics</a>. 
-
-- name        : "Codename Afra"
+- name        : Afra
   img         : afra.png
   url         : http://afra.sbcs.qmul.ac.uk
   code        : http://github.com/wurmlab/afra
   about       : <a href="http://bbsrc.ac.uk">BBSRC</a>-funded tool for crowd-sourcing curation of gene predictions.
-  status      : Alpha. Work in progress.
+  status      : Beta. Used in Bioinforatics MSc course at QMUL.
   status_icon : fa-warning
 
 - name        : NeuroPeptide Search
   img         : NpSearch.png
   code        : https://github.com/IsmailM/NeuroPeptideSearch
-  about       : NeuroPeptide Search uses HMM models and common features of neuropeptides to identify neuropeptide homologs and potential novel neuropeptide precursors. Neuropeptide Search has already been successfully used to analyse the transcriptomes of ten different species, resulting in the discovery in numerous novel neuropeptides. Collaboration with <a href="http://www.sbcs.qmul.ac.uk/staff/mauriceelphick.html">M. Elphick</a>.  
-  status      : Beta used for research.
+  about       : NeuroPeptide Search uses HMM models and common features of neuropeptides to identify neuropeptide homologs and potential novel neuropeptide precursors. Neuropeptide Search has already been successfully used to analyse the transcriptomes of ten different species, resulting in the discovery in numerous novel neuropeptides. Collaboration with <a href="http://www.sbcs.qmul.ac.uk/staff/mauriceelphick.html">M. Elphick</a>.
+  status      : Beta. Being prepped for release.
   status_icon : fa-warning
 
+- name        : Transcript-genome consistency network
+  img         : tgnet.jpg
+  code        : https://github.com/ksanao/TGNet
+  about       : <a href="https://github.com/ksanao/TGNet">TGNet</a> is a <a href="http://www.cytoscape.org">Cytoscape</a>-based tool for visualization and quality assessment of de novo genome assemblies. Specifically it facilitates rapid detection of inconsistencies between a genome assembly and an independently derived transcriptome assembly. Developed by <a href="http://scholar.google.co.uk/citations?user=aovYPpkAAAAJ&hl=en">Oksana Riba-Grognuz</a>.
+  publication_url : http://bioinformatics.oxfordjournals.org/content/27/24/3425
+  publication_txt : "O Grognuz, L Keller, L Falquet, I Xenarios, Y Wurm. 2011. Visualization and quality assessment of <em>de novo</em> genome assemblies. <em>Bioinformatics</em> doi: 10.1093/bioinformatics/btr569."
+  status_icon : fa-certificate
+  status      : Stable. Used for <a href="http://www.pnas.org/content/early/2011/01/24/1009690108">fire ant genome</a> project.
+
+- name        : Fourmidable / antgenomes.org
+  img         : antgenomes.png
+  url         : http://antgenomes.org
+  about       : Community database centralizing genomic and transcriptomic sequence information for ants and related species (e.g., bees and wasps). Provides BLAST search and data download.
+  publication_url : /publications/wurm2009antDatabase.pdf
+  publication_txt : "Y Wurm, P Uva, F Ricci, J Wang, S Jemielity, C Iseli, L Falquet, L Keller. 2009. Fourmidable: a database for ant genomics. BMC Genomics 10:5."
+  status      : Stable. Updated periodically with latest data and new tools. Used by hundreds of researchers worldwide.
+  status_icon : fa-certificate
 
 repositories:
  - name: Lab
@@ -83,54 +86,93 @@ repositories:
 
 ---
 
-<div class="row">
-  <h3>Major tools we develop include:</h3>
-  {% for tool in page.tools %}
-  <div class="span5">
-    <div class="caption">
-      <h4>{{ tool.name }}</h4>
-	<div class="row">
-	  <a href="{{ tool.url }}"><img src="/img/{{ tool.img }}" alt="{{ tool.name }}" align="right" class="img-rounded"
-				    style="margin-right:10px; height:90px;"/></a>
-	  <ul class="fa-ul">
-	    <li><i class="fa-li fa {{tool.status_icon}}"></i>{{tool.status}}</li>
-	    <li><i class="fa-li fa fa-info-circle"></i>{{ tool.about }}</li>
-	    {% if tool.code %}  <li><i class="fa-li fa fa-code"></i><a href="{{tool.code}}">{{ tool.code }}</a></li>{%endif%}
-	    {% if tool.url %}   <li><i class="fa-li fa fa-external-link-square"></i><a href="{{tool.url}}">{{ tool.url }}</a></li>{%endif%}
-  	    {% if tool.paper %} <li><i class="fa-li fa fa-file-text"></i><a href="{{tool.paper}}">Publication</a></li>{%endif%}
-	  </ul>
-	</div>
+<h3>Major tools we develop include:</h3>
+{% for tool in page.tools %}
+  <div class="media">
+    <a
+      class="pull-left" href="{{ tool.url }}">
+      <img
+      src="/img/{{ tool.img }}" alt="{{ tool.name }}"
+      style="width: 180px; height: 150px;"
+      class="media-object img-rounded"/>
+    </a>
+    <div
+      class="media-body">
+      <h4
+        class="media-heading">
+        <a
+          href="{{ tool.url }}">
+          {{ tool.name }}
+        </a>
+      </h4>
+      <ul class="fa-ul" style="text-align: justify;">
+        <!-- tool status and about is compulsory -->
+        <li>
+          <i class="fa-li fa fa-info-circle"></i>{{ tool.about }}
+        </li>
+
+        {% if tool.publication_url %}
+        <li>
+          <i class="fa-li fa fa-file-text"></i><a href="{{ tool.publication_url
+            }}">{{ tool.publication_txt }}</a>
+        </li>
+        {% endif %}
+
+        {% if tool.code %}
+        <li>
+          <i class="fa-li fa fa-code"></i><a href="{{tool.code}}">{{ tool.code
+            }}</a>
+        </li>
+        {% endif %}
+
+        <li>
+          <i class="fa-li fa {{tool.status_icon}}"></i>{{ tool.status }}
+        </li>
+      </ul>
     </div>
   </div>
-  {% cycle '', '</div><div class="row">' %} 
-  {% endfor %}
-</div>
+{% endfor %}
 
-<h3>Approaches</h3>
-<p>We believe in <a
-href="http://www.nature.com/nature/focus/reproducibility/">Reproducible
-Research</a> &amp; <a href="http://software.ac.uk">Software
-Sustainability</a>. When possible we respect style guides and use unit
-testing &amp; continuous integration. We develop mostly in:</p>
+<h3>
+  Approaches
+</h3>
+<p>
+  We believe in <a
+    href="http://www.nature.com/nature/focus/reproducibility/">Reproducible
+    Research</a> &amp; <a href="http://software.ac.uk">Software
+    Sustainability</a>. When possible we respect style guides and use unit
+  testing &amp; continuous integration. We develop mostly in:
+</p>
 <ul>
-  <li><a href="http://bioruby.org">ruby/bioruby</a> when making
-    pipelines, text &amp; backends</li>
-  <li><a href="http://rproject.org">R</a> for number crunching</li>
-  <li>javascript/html/css for client-side stuff and some <a href="http://bionode.io">bioinformatics analysis pipelines</a></li>
-  <li>But also use bash/python/perl when convenient or necessary...</li>
+  <li>
+    <a href="http://bioruby.org">ruby/bioruby</a> when making
+    pipelines, text &amp; backends
+  </li>
+  <li>
+    <a href="http://rproject.org">R</a> for number crunching
+  </li>
+  <li>
+    javascript/html/css for client-side stuff and some <a
+      href="http://bionode.io">bioinformatics analysis pipelines</a>
+  </li>
+  <li>
+    But also use bash/python/perl when convenient or necessary...
+  </li>
 </ul>
-<p>But we love quick and dirty hacks too <i class="fa fa-smile-o"></i>.</p>
+<p>
+  But we love quick and dirty hacks too <i class="fa fa-smile-o"></i>.
+</p>
 
 <h3>Source code repositories</h3>
-<p>Several <a href="/team">team members</a> have open source
-  code repositories which include all sorts of useful scripts: </p>
+<p>
+  Several <a href="/team">team members</a> have open source code repositories
+  which include all sorts of useful scripts:
+</p>
 <ul class="fa-ul">
-	{%for member in page.repositories %}
-	<li><i class="fa-li fa fa-github"></i><a
-	href="{{member.repository}}">{{ member.name }}'s GitHub</a></li>
-	{%endfor %}
+  {% for member in page.repositories %}
+  <li>
+    <i class="fa-li fa fa-github"></i> <a href="{{member.repository}}">{{
+      member.name }}'s GitHub</a>
+  </li>
+  {% endfor %}
 </ul>
-
-  
-
-
