@@ -12,7 +12,7 @@ categories:
 
 Our department is recruiting a bioinformatician/genomicist. Apply by **March 29th**. 
 
-<a href=""https://twitter.com/yannick__/status/576020469356318720"><img src="/img/news/qmul_bioinformatician_job.gif" width="100%"></img></a>
+![Bioinformatician animation ad](/img/news/qmul_bioinformatician_job.gif)
 
 
 
