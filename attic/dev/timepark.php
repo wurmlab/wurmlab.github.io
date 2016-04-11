@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"
+xml:lang="en-US">
+<head profile="http://www.w3.org/2000/08/w3c-synd/#">
+   <meta name="keywords" content="Yannick Wurm, CSI, DAS, San Francisco, Lyon, MacOS, Freelance, Development, Apple, Cocoa, Macintosh, Apple, Bioinformatics, Insa, bioinformatique et modelisation, timepark, simulation" />
+   <meta name="description" content="A French-German student's personal web page"/>
+   <link rel="stylesheet" type="text/css" href="/tools/main.css" />
+   <title>Timepark</title>
+</head>
+
+<body>
+  <?php include '../tools/header.inc.php'; ?>
+
+<div class="section">
+     <h2>Timepark</h2>
+	<p>Development report (for my school, Insa de Lyon). <a href="timepark_report-jan2004.pdf">Timepark-report January 2004</a>.</p>
+  </div>
+
+<div class="section">
+	<h2>Timepark</h2>
+	<p>Timepark pre-alpha development preview. This software is neither stable nor polished, it is merely a proof of feasibility prototype. <a href="Timepark.zip">Download</a> for Mac OS X 10.3.</p>
+</div>
+
+<div class="section">
+ 	<h2>Timepark framework</h2>
+	<p>An open source modeling and simulation framework, used as the backend for Timepark. Permits object-oriented modeling of dynamic systems. </p>
+	<ul>
+		<li>An object's position is defined by it's (x,y,z) properties; object classes may inherit these and additionally defined properties.</li>
+		<li>A property's value can be defined by ordinary differential equations (ODEs).</li>
+		<li>A property can evolve differently depending on the system's state through the use of control statements which are functions of any of the system's objects properties (eg: if <em>light is green</em> then <em>d(x)/dt = 10</em> else <em>d(x)/dt =0</em>.</li>
+	</ul>
+	<p>Technologies: C++ STL, Flex/Yacc, Xerces, OpenGL</p>
+	<p>Download Source and documentation soon...</p>
+</div>
+  <?php include '../tools/footer.inc.php'; ?>
+</body>
+</html>

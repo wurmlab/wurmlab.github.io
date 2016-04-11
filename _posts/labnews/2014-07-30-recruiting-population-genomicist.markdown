@@ -9,6 +9,6 @@ categories:
  - labnews
  - jobs
 ---
- [Apply by November 15th 2014](2014-10-31-recruiting-population-genomicist). 
+ [Apply by November 15th 2014](/news/2014-10-31-recruiting-population-genomicist). 
 
 
