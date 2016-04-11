@@ -39,7 +39,7 @@ Les Fourmis
     
 Projet Regulation
     Ok. This isn't code. But Am,ao?(C)lie V,ao?(C)ron and I spent a lot of time on the computer for it! It's an attempt at modeling part of _E. coli_'s global regulation, using a tool called [Genetic Network Analyzer](http://www.inrialpes.fr/helix/logic_GNA_mn.html), developed at Helix Inria. We did this as part of a fourth-year project at Insa de Lyon. (more info in the pdf file's intro). [This is it](/attic/dev/gna2003.pdf).
-[Timepark](/attic/development/timepark)
+[Timepark](/attic/dev/timepark)
     2003-2004 first semester project: an edo-based modeling framework (C++) and graphical end-user app (Obj-C).
 
 
