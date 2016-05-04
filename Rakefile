@@ -79,3 +79,23 @@ end
 task :uploadToPoulet do
    system "lftp -e 'mirror --ignore-time -R _site/ /httpdocs' -u yannick taho.p4x.net"
 end
+
+task :validate_website do 
+  require 'anemone'
+  Anemone.crawl("http://wurmlab.github.io/") do |anemone|
+    anemone.on_every_page do |page|
+      next unless page.headers['content-type'][0] =~ %r{text/html}
+      next if page.code == 301 # skip permenently redirected urls
+      if page.code == 200
+        require 'open-uri'
+        require 'html_validation'
+        h = PageValidations::HTMLValidation.new
+        v = h.validation(open(page.url.to_s).read, 'Wurmlab')
+        puts "####  #{page.code} => #{page.url}\n"
+        puts "# HTML Validation: #{v.valid?}"
+        puts v.exceptions unless v.valid?
+        puts "\n\n"
+      end
+    end
+  end
+end

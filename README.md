@@ -17,6 +17,13 @@ Then running `jekyll serve -w`  will rebuild the pages (into `_site`) every time
    `linklint  -http -host  wurmlab.github.io -doc webstatus /@`
    outputs information into webstatus folder. 
  * check html integrity? 
+
+```bash
+brew install tidy-html5
+bundle install
+bundle exec rake validate_website 
+```
+
  * check css integrity?
 
 
