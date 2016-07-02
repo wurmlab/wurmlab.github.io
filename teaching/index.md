@@ -6,11 +6,9 @@ title: Teaching
 
 ## Bioinformatics & Population Genomics
 
-Practicals for the May/June 2016 [Spring School in Bioinformatics & Population Genomics ](//www.isb-sib.ch/events/training/joint-spring-school-bioinformatics-and-population-genomics) organized by the [SIB PhD Training Network](//www.isb-sib.ch/training/for-sib-phd-students) and the [Staromics](//biologie.cuso.ch/staromics/welcome/) and [Ecology-Evolution](//biologie.cuso.ch/ecologie-evolution/welcome/) doctoral programs.
+We prepared a [set of practicals](//wurmlab.github.io/genomicscourse/2016-SIB/practicals/) with Rodrigo Pracana, Julien Roux, Rob Waterhouse and Stefan Schiffels for a  [Spring School in Bioinformatics & Population Genomics ](//www.isb-sib.ch/events/training/joint-spring-school-bioinformatics-and-population-genomics) .  [Overview slides](http://www.slideshare.net/yannickwurm/2016-0529introsibspringschoolleuker-bad). Topics included:
 
-We prepared a [set of practicals](//wurmlab.github.io/genomicscourse/2016-SIB/practicals/) with Rodrigo Pracana, Julien Roux, Rob Waterhouse and Stefan Schiffels, this course includes introductory examples to the following topics:
-
-* [Reads to genome to gene predictions](//wurmlab.github.io/genomicscourse/2016-SIB/practicals/reference_genome/assembly):  Short read cleaning, genome assembly, quality control, gene prediction, quality control.
+* [Reads to genome to gene predictions](//wurmlab.github.io/genomicscourse/2016-SIB/practicals/reference_genome/assembly):  Short read cleaning, genome assembly, quality control, gene prediction, quality control. [[Slides](http://www.slideshare.net/yannickwurm/2016-0530mondayassembly)
 * Population sequencing to genotypes to population genetics statistics:
      * [Mapping reads, calling variants, visualizing variant calls.](//wurmlab.github.io/genomicscourse/2016-SIB/practicals/population_genetics/map_call)
      * [Analysing variants: PCA, measuring Differentiation & Diversity.](//wurmlab.github.io/genomicscourse/2016-SIB/practicals/population_genetics/popgen)
@@ -20,7 +18,6 @@ We prepared a [set of practicals](//wurmlab.github.io/genomicscourse/2016-SIB/pr
 * [Gene-level clustering and differential expression analysis.](//wurmlab.github.io/genomicscourse/2016-SIB/practicals/rnaseq/TP2)
 
 A variant of this is used during our BIO721p on [QMUL's MSc in Bioinformatics](//www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169225.htmll) and our [MSc in Ecological and Evolutionary Genomics](//www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169221.html).
-
 
 ## Ecological and Evolutionary Genomics
 
