@@ -18,6 +18,6 @@ Positions to be filled:
    * [Evolutionary Genomics in Ants](http://london-nerc-dtp.org/2013/11/27/evolutionary-genomics-in-ants/) co-supervised by [Steve Rossiter](http://www.sbcs.qmul.ac.uk/staff/stephenrossiter.html)
 
 
-Please get in touch by email with a CV for more details. NERC PhD application deadline is mid-february. Cheers, Yannick.
+Please get in touch by email with a CV for more details. NERC PhD application deadline is mid-February. Cheers, Yannick.
 
-[![NERC logo]({{ site.url }}/img/logos/nerc-logo.png =250x)](http://www.sbcs.qmul.ac.uk/prospectivestudents/research/nercdtpstudentships/118400.html)
+<a href="http://www.sbcs.qmul.ac.uk/prospectivestudents/research/nercdtpstudentships/118400.html"><img src="{{site.url }}/img/logos/nerc-logo-large.jpg" width="200" alt="NERC logo"></a>
