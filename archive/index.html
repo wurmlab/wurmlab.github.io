@@ -5,32 +5,26 @@ description: Yannick Wurm. I am an evolutionary biologist trying to understand t
 ---
 
 <h3>Some old stuff</h3>
-
-  <p>This stuff may still want to remain on the internet even though it is very
-  outdated!</p>
-
-  <ul>
-	<li><a
-	href="/publications/other/Earth88-Wilson1998-The_Diversity_of_Life.pdf">Wilson's
-	The Diversity of Life from Earth'88 National Geographic Centennial
-	Symposium.</a></li>
-	<li><a href="http://yannick.poulet.org/xlg">Excellgene web page</a>.</li>
-	<li><a href='/dev/oldIndex.html'>Bebetes project etc (2002)</a>.</li>
-	<li><a href='/wordpress/'>An old blog attempt 2004/2004  - actually shown below</a></li>
-	<li><a href="http://yannick.poulet.org/karateFlyers">Shotokan Karate Lausanne Flyers</a> -
-	inspired by <a href="http://montrealshotokan.com/">Montreal Shotokan</a></li>
-	<li><a href="/coverIdeas">Some cover proposals for the fire ant
-	genome</a>. And <a href="http://www.flickr.com/photos/yannickwurm/sets/72157632468655515/">more here</a></li>
-	
-  </ul>
-
+<p>This stuff may still want to remain on the internet even though it is very outdated!
+</p>
+<ul>
+    <li><a href="/publications/other/Earth88-Wilson1998-The_Diversity_of_Life.pdf">Wilson's
+  The Diversity of Life from Earth'88 National Geographic Centennial
+  Symposium.</a></li>
+    <li><a href="http://yannick.poulet.org/xlg">Excellgene web page</a>.</li>
+    <li><a href='/dev/oldIndex.html'>Bebetes project etc (2002)</a>.</li>
+    <li><a href='/wordpress/'>An old blog attempt 2004/2004  - actually shown below</a></li>
+    <li><a href="http://yannick.poulet.org/karateFlyers">Shotokan Karate Lausanne Flyers</a> - inspired by <a href="http://montrealshotokan.com/">Montreal Shotokan</a></li>
+    <li><a href="/coverIdeas">Some cover proposals for the fire ant
+  genome</a>. And <a href="http://www.flickr.com/photos/yannickwurm/sets/72157632468655515/">more here</a></li>
+</ul>
 <h3>Very old blogging</h3>
 <div class="span10 column">
-<p>From past lives</p>
-<br>
-{% for post in site.categories.oldblogarchive offset: 0 limit: 50 %}
-<div class="row">
-  <span class="pull-left"><strong><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></strong></span>
-    <span class="pull-right">{{ post.date | date: "%B %e, %Y" }}</span>
+    <p>From past lives</p>
+    <br> {% for post in site.categories.oldblogarchive offset: 0 limit: 50 %}
+    <div class="row">
+        <span class="pull-left"><strong><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></strong></span>
+        <span class="pull-right">{{ post.date | date: "%B %e, %Y" }}</span>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}

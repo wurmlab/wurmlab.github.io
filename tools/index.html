@@ -77,102 +77,71 @@ repositories:
    repository: https://github.com/yeban
  - name: Yannick Wurm
    repository: https://github.com/yannickwurm
- - name: Monica Dragan
-   repository: https://github.com/monicadragan
  - name: Bruno Vieira
    repository: https://github.com/bmpvieira
  - name: Ismail Moghul
    repository: https://github.com/IsmailM
+ - name: Monica Dragan
+   repository: https://github.com/monicadragan
 
 ---
 
 <h3>Major tools we develop include:</h3>
 {% for tool in page.tools %}
   <div class="media">
-    <a
-      class="pull-left" href="{{ tool.url }}">
-      <img
-      src="/img/{{ tool.img }}" alt="{{ tool.name }}"
-      style="width: 180px; height: 150px;"
-      class="media-object img-rounded"/>
-    </a>
-    <div
-      class="media-body">
-      <h4
-        class="media-heading">
-        <a
-          href="{{ tool.url }}">
-          {{ tool.name }}
-        </a>
-      </h4>
-      <ul class="fa-ul" style="text-align: justify;">
-        <!-- tool status and about is compulsory -->
-        <li>
-          <i class="fa-li fa fa-info-circle"></i>{{ tool.about }}
-        </li>
-
-        {% if tool.publication_url %}
-        <li>
-          <i class="fa-li fa fa-file-text"></i><a href="{{ tool.publication_url
-            }}">{{ tool.publication_txt }}</a>
-        </li>
-        {% endif %}
-
-        {% if tool.code %}
-        <li>
-          <i class="fa-li fa fa-code"></i><a href="{{tool.code}}">{{ tool.code
-            }}</a>
-        </li>
-        {% endif %}
-
-        <li>
-          <i class="fa-li fa {{tool.status_icon}}"></i>{{ tool.status }}
-        </li>
-      </ul>
-    </div>
+      <a class="pull-left" href="{{ tool.url }}">
+          <img src="/img/{{ tool.img }}" alt="{{ tool.name }}" style="width: 180px; height: 150px;" class="media-object img-rounded" />
+      </a>
+      <div class="media-body">
+          <h4 class="media-heading">
+            <a href="{{ tool.url }}">{{ tool.name }}</a>
+          </h4>
+          <ul class="fa-ul" style="text-align: justify;">
+              <!-- tool status and about is compulsory -->
+              <li>
+                  <i class="fa-li fa fa-info-circle"></i>{{ tool.about }}
+              </li>
+              {% if tool.publication_url %}
+              <li>
+                  <i class="fa-li fa fa-file-text"></i><a href="{{ tool.publication_url}}">{{ tool.publication_txt }}</a>
+              </li>
+              {% endif %} {% if tool.code %}
+              <li>
+                  <i class="fa-li fa fa-code"></i><a href="{{tool.code}}">{{ tool.code}}</a>
+              </li>
+              {% endif %}
+              <li>
+                  <i class="fa-li fa {{tool.status_icon}}"></i>{{ tool.status }}
+              </li>
+          </ul>
+      </div>
   </div>
 {% endfor %}
 
-<h3>
-  Approaches
-</h3>
-<p>
-  We believe in <a
-    href="http://www.nature.com/nature/focus/reproducibility/">Reproducible
-    Research</a> &amp; <a href="http://software.ac.uk">Software
-    Sustainability</a>. When possible we respect style guides and use unit
-  testing &amp; continuous integration. We develop mostly in:
-</p>
+<h3>Approaches</h3>
+<p>We believe in <a href="http://www.nature.com/nature/focus/reproducibility/">Reproducible Research</a> &amp; <a href="http://software.ac.uk">Software Sustainability</a>. When possible we respect style guides and use unit testing &amp; continuous integration. We develop mostly in:</p>
 <ul>
-  <li>
-    <a href="http://bioruby.org">ruby/bioruby</a> when making
-    pipelines, text &amp; backends
-  </li>
-  <li>
-    <a href="http://rproject.org">R</a> for number crunching
-  </li>
-  <li>
-    javascript/html/css for client-side stuff and some <a
-      href="http://bionode.io">bioinformatics analysis pipelines</a>
-  </li>
-  <li>
-    But also use bash/python/perl when convenient or necessary...
-  </li>
+    <li>
+        <a href="http://bioruby.org">ruby/bioruby</a> when making pipelines, text &amp; backends
+    </li>
+    <li>
+        <a href="http://rproject.org">R</a> for number crunching
+    </li>
+    <li>
+        javascript/html/css for client-side stuff and some <a href="http://bionode.io">bioinformatics analysis pipelines</a>
+    </li>
+    <li>
+        But also use bash/python/perl when convenient or necessary...
+    </li>
 </ul>
-<p>
-  But we love quick and dirty hacks too <i class="fa fa-smile-o"></i>.
-</p>
+<p>But we love quick and dirty hacks too <i class="fa fa-smile-o"></i>.</p>
 
 <h3>Source code repositories</h3>
-<p>
-  Several <a href="/team">team members</a> have open source code repositories
-  which include all sorts of useful scripts:
-</p>
+<p>Several <a href="/team">team members</a> have open source code repositories which include all sorts of useful scripts:</p>
 <ul class="fa-ul">
-  {% for member in page.repositories %}
-  <li>
-    <i class="fa-li fa fa-github"></i> <a href="{{member.repository}}">{{
-      member.name }}'s GitHub</a>
-  </li>
-  {% endfor %}
+    {% for member in page.repositories %}
+    <li>
+        <i class="fa-li fa fa-github"></i> <a href="{{member.repository}}">{{member.name }}'s GitHub</a>
+    </li>
+    {% endfor %}
 </ul>
