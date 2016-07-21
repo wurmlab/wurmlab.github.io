@@ -2,13 +2,13 @@
 layout: page
 title: "Yannick Wurm' News Archive"
 ---
-<div class="span10 column">
+<div class="column col-sm-12 col-md-12">
 <p>Updates are irregular...</p>
 <br>    
 {% for post in site.categories.labnews offset: 0 limit: 50 %}
 <div class="row">
         <span class="pull-left"><strong><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></strong></span>
-	<span class="pull-right">{{ post.date | date: "%B %e, %Y" }}</span>
+  <span class="pull-right">{{ post.date | date: "%B %e, %Y" }}</span>
 </div>
 <hr>   
 {% endfor %} 

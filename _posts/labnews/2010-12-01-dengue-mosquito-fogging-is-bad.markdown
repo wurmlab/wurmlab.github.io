@@ -15,10 +15,9 @@ Jakartans use "fogger" chemical sprays to fight dengue-transmitting _Aedes_ mosq
 
 
 
-
-[![Dengue Fogging Classroom by Hermitianta P. Putra](http://farm4.static.flickr.com/3575/3324727909_81fc3908a2.jpg)](http://www.flickr.com/photos/hermitianta/3324727909/)Photo (C) Hermitianta P. Putra
-
-
+<a href="http://www.flickr.com/photos/hermitianta/3324727909/"> <img alt="Dengue Fogging Classroom by Hermitianta P. Putra" src="http://farm4.static.flickr.com/3575/3324727909_81fc3908a2.jpg"></a>
+<br>
+<span style="font-size: 90%;color: #818a91;">Photo (C) Hermitianta P. Putra</span>
 
 
 Whatever was meant to target the mosquitoes made cockroaches jumped into our swimming pool and drown themselves, and made "normal" ants frantically run in circles. This suggests that **whatever they use for fogging is a generalist poison that screws up all insect brains and likely affects larger things as well**. That is bad for controlling dengue, because many small animals compete with the mosquitos for food and reproductive space, or may even eat them (eg: larvae from other insects, or chick-chacks).

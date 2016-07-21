@@ -1,16 +1,16 @@
 ---
 layout: page
 ---
-<div class="span10 column">
+<div class="column col-sm-12 ">
     <h2>{{ page.title }}</h2> {{ content }}
     <br/>
     <p style='text-align:right'><i class="icon-calendar"></i> {{ page.date | date: "%B %e, %Y" }}</p>
 </div>
-<div class="pager hidden-phone hidden-tablet">
+<div class="pager hidden-sm hidden-md">
     <a class="prev" href="{{ page.previous.url }}" title="Previous Post: {{page.previous.title}}"><i class="icon-arrow-left icon-white"></i></a>
     <a class="next" href="{{ page.next.url }}" title="Previous Post: {{page.next.title}}"><i class=" icon-arrow-right icon-white"></i></a>
 </div>
-<div class="span10 column">
+<div class="column col-sm-12">
     <p>
         <!--    | <a href="#disqus_thread" data-disqus-identifier="{{ page.url }}"><i class="icon-comment"></i></a>    
     <br /> -->
@@ -26,8 +26,6 @@ layout: page
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     /* var disqus_shortname = '{{ site.comments.disqus_name }}' ;*/
     var disqus_shortname = 'yannickwurm';
-
-
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {

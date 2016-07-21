@@ -5,25 +5,25 @@ title: "Yannick Wurm' News"
 <p></p>
 
 <div class="row">
-  <div class="span10">    
-	{% for post in site.categories.labnews offset: 0 limit: 10 %}    
-	<br>
+  <div class="col-sm-12 col-md-12">    
+  {% for post in site.categories.labnews offset: 0 limit: 10 %}    
+  <br>
         <h3><strong><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></strong></h3>      
         <p>
           {{ post.content }}
         </p>
-		<p style='text-align:right'>
-		 <i class="icon-calendar"></i> {{ post.date | date: "%B %e, %Y" }}
-	  
+    <p style="text-align:right">
+     <i class="icon-calendar"></i> {{ post.date | date: "%B %e, %Y" }}
+    
           <!--| <i class="icon-comment"></i> <a href="{{ site.url }}{{ post.url }}#disqus_thread" data-disqus-identifier="{{ site.url }}{{ post.url }}"></a>     
-		  <br />-->
+      <br />-->
            {% if (post.tags).size > 0 %}
-		  <i class="icon-tags"></i> Tags :{% for tag in post.tags %} <a href="{{ site.url }}/tags/{{ tag }}" rel="tooltip" title="View posts tagged with &quot;{{ tag }}&quot;"><span class="label label-info">{{ tag }}</span></a>  {% if forloop.last != true %} {% endif %} {% endfor %}		            
-	  {% endif %}
+      <i class="icon-tags"></i> Tags :{% for tag in post.tags %} <a href="{{ site.url }}/tags/{{ tag }}" rel="tooltip" title="View posts tagged with &quot;{{ tag }}&quot;"><span class="label label-info">{{ tag }}</span></a>  {% if forloop.last != true %} {% endif %} {% endfor %}               
+    {% endif %}
         </p>
-	<hr>
+  <hr>
 
-{% endfor %}	
-	<h5 class="pull-right"><a href="archive">All Posts >> </a></h5>
+{% endfor %}  
+  <h5 class="pull-right"><a href="archive">All Posts &gt;&gt; </a></h5>
  </div>
 </div>

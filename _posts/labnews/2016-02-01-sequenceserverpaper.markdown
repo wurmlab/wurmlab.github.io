@@ -10,7 +10,7 @@ categories:
 
 ---
 
-<a href="http://www.sequenceserver.com/paper/fig2interactive/" alt="Interactive Figure" title="Interactive Figure">![figure](/img/news/sequenceserverresult.png){:style="float:right; width:300px;"}</a>
+<a href="http://www.sequenceserver.com/paper/fig2interactive/" alt="Interactive Figure" title="Interactive Figure"><img src="{{ site.url }}/img/news/sequenceserverresult.png" style="float:right; width:300px;"></a>
 
 Happy to announce that we now have a <a href="http://dx.doi.org/10.1101/033142">manuscript describing the rationale and current features of SequenceServer</a> - our easy to setup <a href="http://sequenceserver.com">BLAST frontend</a>. Importantly, the manuscript also provides extensive detail about the sustainable software development and user-centric design approaches we used to build this software. The full bioRxiv reference is:
 

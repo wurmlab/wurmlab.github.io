@@ -81,43 +81,46 @@ repositories:
    repository: https://github.com/bmpvieira
  - name: Ismail Moghul
    repository: https://github.com/IsmailM
- - name: Monica Dragan
-   repository: https://github.com/monicadragan
 
 ---
 
-<h3>Major tools we develop include:</h3>
+<h3>Major tools that we develop include:</h3>
 {% for tool in page.tools %}
-  <div class="media">
-      <a class="pull-left" href="{{ tool.url }}">
-          <img src="/img/{{ tool.img }}" alt="{{ tool.name }}" style="width: 180px; height: 150px;" class="media-object img-rounded" />
-      </a>
-      <div class="media-body">
-          <h4 class="media-heading">
-            <a href="{{ tool.url }}">{{ tool.name }}</a>
-          </h4>
-          <ul class="fa-ul" style="text-align: justify;">
-              <!-- tool status and about is compulsory -->
-              <li>
-                  <i class="fa-li fa fa-info-circle"></i>{{ tool.about }}
-              </li>
-              {% if tool.publication_url %}
-              <li>
-                  <i class="fa-li fa fa-file-text"></i><a href="{{ tool.publication_url}}">{{ tool.publication_txt }}</a>
-              </li>
-              {% endif %} {% if tool.code %}
-              <li>
-                  <i class="fa-li fa fa-code"></i><a href="{{tool.code}}">{{ tool.code}}</a>
-              </li>
-              {% endif %}
-              <li>
-                  <i class="fa-li fa {{tool.status_icon}}"></i>{{ tool.status }}
-              </li>
-          </ul>
-      </div>
-  </div>
+<div class="row">
+    <div class="thumbnail team-member">
+        <div class="col-sm-2 col-md-2 hidden-xs">
+            <img src="{{ site.url }}/img/{{ tool.img }}" alt="{{ tool.name }}" style="height: 150px; margin-top: 15px;" class="img-rounded center-block img-responsive">
+        </div>
+        <div class="col-sm-10 col-md-9">
+            <div class="caption">
+                <h3><a href="{{ tool.url }}">{{ tool.name }}</a></h3>
+                <ul class="fa-ul" style="text-align: justify;">
+                    <!-- tool status and about is compulsory -->
+                    <li>
+                        <i class="fa-li fa fa-info-circle"></i>{{ tool.about }}
+                    </li>
+                    {% if tool.publication_url %}
+                    <li>
+                        <i class="fa-li fa fa-file-text"></i><a href="{{ tool.publication_url}}">{{ tool.publication_txt }}</a>
+                    </li>
+                    {% endif %} {% if tool.code %}
+                    <li>
+                        <i class="fa-li fa fa-code"></i><a href="{{tool.code}}">{{ tool.code}}</a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        <i class="fa-li fa {{tool.status_icon}}"></i>{{ tool.status }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-2 col-md-2 visible-xs-inline ">
+            <img src="{{ site.url }}/img/{{ tool.img }}" alt="{{ tool.name }}" style="height: 150px; margin-top: 15px;" class="img-rounded center-block img-responsive">
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
 {% endfor %}
-
 <h3>Approaches</h3>
 <p>We believe in <a href="http://www.nature.com/nature/focus/reproducibility/">Reproducible Research</a> &amp; <a href="http://software.ac.uk">Software Sustainability</a>. When possible we respect style guides and use unit testing &amp; continuous integration. We develop mostly in:</p>
 <ul>
@@ -135,7 +138,6 @@ repositories:
     </li>
 </ul>
 <p>But we love quick and dirty hacks too <i class="fa fa-smile-o"></i>.</p>
-
 <h3>Source code repositories</h3>
 <p>Several <a href="/team">team members</a> have open source code repositories which include all sorts of useful scripts:</p>
 <ul class="fa-ul">

@@ -227,3 +227,50 @@ th {
 .table-condensed > tfoot > tr > td {
   padding: 5px;
 }
+
+.highlight {text-decoration: underline;}
+a {text-decoration: none;}
+
+.jumbotron h1 {
+  padding-top: 20px;
+  padding-left:0;
+}
+
+.jumbotron {
+  padding: 0;
+  margin-top: 80px;
+  padding-left:0;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  .jumbotron {
+    padding: 0 !important;
+    margin-top:0;
+  }
+  .jumbotron h1 {
+    padding-top: 80px;
+  } 
+}
+
+@media only screen and (min-width: 768px) {
+  .jumbotron {
+    padding: 0 !important;
+    margin-top:0;
+  }
+  .jumbotron h1 {
+    padding-top: 130px;
+  }
+}
+
+.team-member{
+  padding:15px;
+}
+
+.team-member h3{
+  margin-top:0;
+}
+
+.thumbnail {
+  border: none;
+}
+

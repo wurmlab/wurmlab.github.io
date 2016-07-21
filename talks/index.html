@@ -52,7 +52,7 @@ prediction quality (including beautiful graphs!)</a></li>
 ---
 
 <div class="row">
-    <div class="span11">
+    <div class="col-sm-11 col-md-11">
         <p>A subset of invited talks for which there are things to look at.
         </p>
         <p>Additional documents are available in <a href="/teaching/">teaching section</a> of this site and on <a href="http://www.slideshare.net/yannickwurm">slideshare</a>.</p>
@@ -60,7 +60,7 @@ prediction quality (including beautiful graphs!)</a></li>
 </div>
 <div class="row">
     {% for talk in page.talks %}
-      <div class="span5">
+      <div class="col-sm-5 col-md-5">
           {% if talk.label %}
           <a name="{{talk.label}}"></a>
           {% endif %} {% if talk.contexturl %}
@@ -70,7 +70,7 @@ prediction quality (including beautiful graphs!)</a></li>
           {% if talk.youtubeid %}
           <iframe id="ytplayer{{talk.youtubeid}}" type="text/html" width="320" height="240" src="http://www.youtube.com/embed/{{ talk.youtubeid }}" frameborder="0"></iframe>
           {% endif %} {% if talk.slideshareid %}
-          <iframe src="http://www.slideshare.net/slideshow/embed_code/{{talk.slideshareid}}" width="320" height="240" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+          <iframe src="http://www.slideshare.net/slideshow/embed_code/{{talk.slideshareid}}" width="320" height="240" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""> </iframe>
           {% endif %}
       </div>
     {% cycle '', '</div> <div class="row">' %}

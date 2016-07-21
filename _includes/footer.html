@@ -1,41 +1,8 @@
 <footer class="footer">
   <div class="container">
-	<p class="pull-right">{% if page.previous.url %} <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&laquo; Previous Blog Post</a> 	{% endif %} 
+	<p class="pull-xs-right">{% if page.previous.url %} <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">&laquo; Previous Blog Post</a> 	{% endif %} 
 	  <!-- |  <a href="#">Back to top</a>  | -->
 	  {% if page.next.url %} 	<a href="{{page.next.url}}" title="Next Post: {{page.next.title}}">Next Blog Post &raquo; </a> 	{% endif %} </p>        
 	<p>&copy; Wurm lab. All rights reserved.</p>
 	  </div>
 </footer>
-
-<!--<script type="text/javascript">
-/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-var disqus_shortname = '{{ site.comments.disqus.short_name }}';
-
-/* * * DON'T EDIT BELOW THIS LINE * * */
-(function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());
-</script>
--->
-<!-- Google Analytics -->
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
-  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
-  _gaq.push(['_setAccount', '{{ site.analytics.google.tracking_id }}']);
-  _gaq.push(['_setDomainName', '{{ site.analytics.google.domain }}']);
-  _gaq.push(['_setAllowLinker', true]);
-  
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>

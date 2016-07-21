@@ -31,31 +31,30 @@ genomedynamics:
 ---
 
 <div class="row">
-  <div class="span12">
-	<h2>Theme 1: Methods for week 2</h2>
-	<p>PDFs to papers we're studying:</p>
-	<ul>
-	  {% for file in page.methodspapers %}
+  <div class="col-sm-12 col-md-12">
+  <h2>Theme 1: Methods for week 2</h2>
+  <p>PDFs to papers we're studying:</p>
+  <ul>
+    {% for file in page.methodspapers %}
       <li><a href="{{file}}">{{ file }}</a></li>
-	  {% endfor %}
-	</ul>
+    {% endfor %}
+  </ul>
 
-	<h2>Theme 2: Genomics underlying social evolution for week 3</h2>
-	<p>PDFs to papers we're studying:</p>
-	<ul>
-	  {% for file in page.theme1papers %}
+  <h2>Theme 2: Genomics underlying social evolution for week 3</h2>
+  <p>PDFs to papers we're studying:</p>
+  <ul>
+    {% for file in page.theme1papers %}
       <li><a href="theme1/{{file}}">{{ file }}</a></li>
-	  {% endfor %}
-	</ul>
+    {% endfor %}
+  </ul>
 
-	<h2>Theme 3: Genome dynamics & adaptation for later</h2>
-	<p>PDFs to papers we're studying:</p>
-	<ul>
-	  {% for file in page.genomedynamics %}
+  <h2>Theme 3: Genome dynamics &amp; adaptation for later</h2>
+  <p>PDFs to papers we're studying:</p>
+  <ul>
+    {% for file in page.genomedynamics %}
       <li><a href="{{file}}">{{ file }}</a></li>
-	  {% endfor %}
-	</ul>
+    {% endfor %}
+  </ul>
 
   </div>
 </div>
-

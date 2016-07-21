@@ -79,39 +79,28 @@ occasional_visitors:
 
 
 project_students:
-- name: Elena Shanti Franchina (2014)
-- name: Nazrath Nawaz (2014)
-- name: Ismail Moghul (2013)
-- name: Gideon Pomeranz (2013)
-
-
-
-alumni:
-- name: Monica Dragan
-  img: monicadragan.jpg
-  about: Zurich-based <a href="http://informatics.nescent.org/wiki/Phyloinformatics_Summer_of_Code_2013">NESCent Google Summer of Code 2013</a> student originally from Politehnica University of Bucharest. Developing <a href="https://github.com/wurmlab/genevalidator">GeneValidator</a> a tool to identify problematic gene predictions. [<a href="http://gene-prediction.blogspot.co.uk/">Development Blog</a>].
-
-- name: Filip Ter
-  img: filipter.jpg
-  about: "Summer Intern - Programmer working on wurmlab projects, currently studying Computer Science (2nd year) [<a href='http://www.github.com/terfn'>Github</a>]."
-
-- name: Elie Gordon
-  img: eliegordon.jpg
-  about:  Currently working towards a masters degree in Ecology and Evolutionary Biology at Queen Mary. Masters project focussing on viruses in honeybees and the geographical similarities and differences between four populations.
+- name: Elie Gordon (QMUL Masters Project 2015)
+- name: Nazrath Nawaz (QMUL Undergraduate Project 2015)
+- name: Elena Shanti Franchina (QMUL Undergraduate Project 2015)
+- name: Filip Ter (Summer Intern 2015)
+- name: Gideon Pomeranz (QMUL Undergraduate Project 2014)
+- name: Monica Dragan (Google Summer of Code 2014)
 
 ---
 
 <div class="row">
-    {% for member in page.members %}
-        <div class="span5">
-            <div class="caption">
-                <h3>{{ member.name }}</h3>
-                <img src="/img/{{ member.img }}" align="left" style="margin-right:10px; height:150px;" class="img-rounded">
-                <p>{{ member.about }}</p>
-            </div>
-            <div class="clearfix"></div>
+    {% for person in page.members %}
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail team-member">
+              <div class="caption">
+                  <h3>{{ person.name }}</h3>
+                  <img src="{{ site.url }}/img/{{ person.img }}" align="left" style="margin-right:10px; height:150px;" class="img-rounded">
+                  <p>{{ person.about }}</p>
+              </div>
+              <div class="clearfix"></div>
+          </div>
         </div>
-        {% cycle '', '</div><div class="row">' %}
+        {% cycle 'group1': '', '</div><div class="row">' %}
     {% endfor %}
 </div>
 
@@ -119,41 +108,28 @@ alumni:
 
 <div class="row">
     <h3>Visitors</h3>
-    {% for occasional_visitor in page.occasional_visitors %}
-        <div class="span5">
-            <div class="caption">
-                <h4>{{ occasional_visitor.name }}</h4>
-                <img src="/img/{{ occasional_visitor.img }}" align="left" style="margin-right:10px; height:50px;" class="img-rounded">
-                <p>{{ occasional_visitor.about }} </p>
-            </div>
+    {% for person in page.occasional_visitors %}
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail team-member">
+              <div class="caption">
+                  <h3>{{ person.name }}</h3>
+                  <img src="{{ site.url }}/img/{{ person.img }}" align="left" style="margin-right:10px; height:50px;" class="img-rounded">
+                  <p>{{ person.about }}</p>
+              </div>
+              <div class="clearfix"></div>
+          </div>
         </div>
-        {% cycle '', '</div><div class="row">' %}
+        {% cycle 'group2': '', '</div><div class="row">' %}
     {% endfor %}
-</div>
-
-<hr>
-
-<div class="row">
-    <h3>Undergraduate project Students</h3>
-    <ul>
-        {% for student in page.project_students %}
-          <li>{{ student.name }}</li>
-        {% endfor %}
-    </ul>
 </div>
 
 <hr>
 
 <div class="row">
     <h3>Alumni</h3>
-    {% for alumni in page.alumni %}
-        <div class="span5">
-            <div class="caption">
-                <h4>{{ alumni.name }}</h4>
-                <img src="/img/{{ alumni.img }}" align="left" style="margin-right:10px; height:50px;" class="img-rounded">
-                <p>{{ alumni.about }} </p>
-            </div>
-        </div>
-        {% cycle '', '</div><div class="row">' %}
-    {% endfor %}
+    <ul>
+        {% for student in page.project_students %}
+          <li>{{ student.name }}</li>
+        {% endfor %}
+    </ul>
 </div>
