@@ -141,11 +141,6 @@ background-color: rgb(29, 210, 175);
   }
 }
 
-
-p, ol, li {
-  padding-left:5px;
-}
-
 [class^="icon-"], [class*=" icon-"], [class^="fa-"] {
   padding-right: 3px;
 }
