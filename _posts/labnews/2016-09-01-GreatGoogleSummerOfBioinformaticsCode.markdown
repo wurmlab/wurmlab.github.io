@@ -11,7 +11,7 @@ categories:
 
 Google summer of code 2016 has just came to an end. Thanks to our host organisations [Open Genome Informatics](//summerofcode.withgoogle.com/organizations/6212058194378752/) and [Open Bioinformatics Foundation](//www.open-bio.org/wiki/Main_Page), we've had a productive summer with two excellent students. Both students wrote blog posts summarizing their work.
 
- * <a href="//github.com/aniarya82">Hiten Chowdhary</a> added novel BLAST result visualization methods for [SequenceServer](//www.sequenceserver.com). He wrote an [overview of his work](/news/2016-08-23-hiten-blast-visualization-gsoc).
+ * <a href="//github.com/aniarya82">Hiten Chowdhary</a> created novel BLAST result visualization methods for [SequenceServer](//www.sequenceserver.com). He wrote an [overview of his work](/news/2016-08-23-hiten-blast-visualization-gsoc).
    <a href="/news/2016-08-23-hiten-blast-visualization-gsoc"><img src="/img/news/2016-08-23-hiten/length-hover.png" class="img-responsive center-block" /></a>
    <a href="/news/2016-08-23-hiten-blast-visualization-gsoc"><img src="/img/news/2016-08-23-hiten/circos-final.png" class="img-responsive center-block"/></a>
 
