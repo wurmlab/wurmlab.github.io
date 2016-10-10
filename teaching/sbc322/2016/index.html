@@ -10,7 +10,7 @@ methodspapers:
 # - simulations.pdf
 # - assembly.pdf
 
-theme1papers:
+theme2papers:
  - Andersen2013.pdf
  - Manfredini.pdf
  - MolBiolEvol-2014-Roux-1661-85.pdf
@@ -22,12 +22,16 @@ theme1papers:
  - Helmkampf_et_al-2016-Molecular_Ecology.pdf
 
 genomedynamics:
- - genomedynamics/kaessman2014ychromosome.pdf
  - genomedynamics/bdelloid2013.pdf
- - genomedynamics/WagnerBeesNatureGenetics2014.pdf
- - genomedynamics/Poelstra2014Science.pdf
+ - genomedynamics/darwinFinchBeaks2015.pdf
+ - genomedynamics/mosquitoIntrogression2015.pdf
+ - genomedynamics/monarchButterflyMigration2014.pdf
+ - genomedynamics/kaessman2014ychromosome.pdf
+ - genomedynamics/aboriginalAustralians2016.pdf
+# - genomedynamics/WagnerBeesNatureGenetics2014.pdf
+# - genomedynamics/Poelstra2014Science.pdf
 # - genomedynamics/Soria-Carrasco2014Science.pdf
- - genomedynamics/mosquito.pdf
+# - genomedynamics/mosquito.pdf
 
 ---
 
@@ -46,20 +50,20 @@ genomedynamics:
   <h2>Theme 2: Genomics underlying social evolution for week 3</h2>
   <p>PDFs to papers we're studying:</p>
   <ul>
-    {% for file in page.theme1papers %}
+    {% for file in page.theme2papers %}
       <li><a href="theme1/{{file}}">{{ file }}</a></li>
     {% endfor %}
   </ul>
 
-  <!--
-  <h2>Theme 3: Genome dynamics &amp; adaptation for later</h2>
+ 
+  <h2>Theme 3: Genome dynamics &amp; adaptation</h2>
   <p>PDFs to papers we're studying:</p>
   <ul>
     {% for file in page.genomedynamics %}
       <li><a href="{{file}}">{{ file }}</a></li>
     {% endfor %}
   </ul>
-  -->
+ 
   
   </div>
 </div>
