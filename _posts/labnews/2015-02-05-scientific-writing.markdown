@@ -56,6 +56,7 @@ New Scientist-type articles have additional challenges:
 
 ### Additional resources: 
 
+* [*Ten simple rules for structuring papers*](http://biorxiv.org/content/early/2016/11/28/088278)
 * [*How to write good*](http://www.plainlanguage.gov/examples/humor/writegood.cfm) - famous resource with wonderful examples.
 * [Some useful grammar exercices](http://www.bristol.ac.uk/arts/exercises/grammar/grammar_tutorial/page_41.htm) as well as thorough explanations at U Bristol.
 * Online course on [writing scientific papers](https://class.stanford.edu/courses/Medicine/Sci-Write/Fall2014/about).
