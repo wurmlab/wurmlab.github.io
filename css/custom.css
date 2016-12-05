@@ -261,15 +261,17 @@ a {text-decoration: none;}
   }
 }
 
-.team-member{
-  padding:15px;
+/**
+ * Required by landing page and /team.
+ */
+h3 {
+  margin-top:0;
 }
 
-.team-member h3{
-  margin-top:0;
+.team-member {
+  padding: 15px;
 }
 
 .thumbnail {
   border: none;
 }
-
