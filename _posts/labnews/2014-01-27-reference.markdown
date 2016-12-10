@@ -23,7 +23,7 @@ Your draft should in the form of a letter from me about you (yes, it can feel aw
 * Whatever you do, don't lie. Any lies will come back to hurt you 1000-fold (karma). 
 * Send it as a document I can edit (not a PDF).
 
-** 2015 update: a much more [exhaustive list of writing tips here]({% post_url 2015-02-05-scientific-writing %}).**
+** 2015 update: a much more [exhaustive list of writing tips here]({% post_url /labnews/2015-02-05-scientific-writing %}).**
 
 ### Structure 
 
