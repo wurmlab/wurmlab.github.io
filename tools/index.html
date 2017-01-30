@@ -8,8 +8,6 @@ tools:
   url         : http://sequenceserver.com
   code        : http://github.com/wurmlab/sequenceserver
   about       : "BLAST is the most commonly used bioinformatics tool. But setting it up for private data and using it is counter-intuitive. We developed SequenceServer to make BLAST easy to use."
-  status      : Downloaded over 30,000 times.
-  status_icon : fa-certificate
   publication_url : http://biorxiv.org/content/early/2015/11/27/033142
   publication_txt : "A Priyam, BJ Woodcroft, V Rai, A Munagala, I Moghul, F Ter, MA Gibbins, H Moon, G Leonard, W Rumpf, Y Wurm. 2015. Sequenceserver: a modern graphical user interface for custom BLAST databases. biorxiv doi: 10.1101/033142."
 
@@ -18,8 +16,6 @@ tools:
   url         : https://wurmlab.github.io/tools/genevalidator
   code        : https://github.com/wurmlab/genevalidator
   about       : Tool to identify problematic gene predictions based on comparison with gene predictions in public databases. Funded by <a href="http://informatics.nescent.org/wiki/Phyloinformatics_Summer_of_Code_2013">NESCent Google Summer of Code 2013</a>.
-  status      : Stable.
-  status_icon : fa-certificate
   publication_url : http://doi.org/10.1093/bioinformatics/btw015
   publication_txt : "MA Dragan†, I Moghul†, A Priyam, C Bustos, Y Wurm. 2016. GeneValidator: identify problems with protein-coding gene predictions. Bioinformatics, doi: 10.1093/bioinformatics/btw015."
 
@@ -27,17 +23,13 @@ tools:
   img         : tools/bionode.png
   url         : http://bionode.io
   code        : http://bionode.io
-  status      : Used in production. Development ongoing. Contributors welcome. 
-  about       : <a href="http://bionode.io">BioNode</a> is <a href="http://nodejs.org">Node.js</a> JavaScript library for <a href="http://bionode.io">client and server side bioinformatics</a>.
-  status_icon : fa-certificate
+  about       : <a href="http://bionode.io">BioNode</a> is <a href="http://nodejs.org">Node.js</a> JavaScript library for <a href="http://bionode.io">client and server side bioinformatics</a>. Used in production. Development ongoing. Contributors welcome.
 
 - name        : oswitch
   img         : oswitch.png
   url         : https://github.com/wurmlab/oswitch
   code        : https://github.com/wurmlab/oswitch
   about       : Provides quick and simple Docker based virtual environments on Macs and compute clusters alike for reproducible bioinformatics. Funded by <a href="http://environmentalomics.org/portfolio/big-data-infrastructure/">NERC Environmental 'omics (EOS) Cloud</a>.
-  status_icon : fa-certificate
-  status      : Stable.
 
 - name        : Afra
   img         : afra.png
@@ -50,20 +42,16 @@ tools:
 - name        : Transcript-genome consistency network
   img         : tgnet.jpg
   code        : https://github.com/ksanao/TGNet
-  about       : <a href="https://github.com/ksanao/TGNet">TGNet</a> is a <a href="http://www.cytoscape.org">Cytoscape</a>-based tool for visualization and quality assessment of de novo genome assemblies. Specifically it facilitates rapid detection of inconsistencies between a genome assembly and an independently derived transcriptome assembly. Developed by <a href="http://scholar.google.co.uk/citations?user=aovYPpkAAAAJ&hl=en">Oksana Riba-Grognuz</a>.
+  about       : <a href="https://github.com/ksanao/TGNet">TGNet</a> is a <a href="http://www.cytoscape.org">Cytoscape</a>-based tool for visualization and quality assessment of de novo genome assemblies. Specifically it facilitates rapid detection of inconsistencies between a genome assembly and an independently derived transcriptome assembly. Developed by <a href="http://scholar.google.co.uk/citations?user=aovYPpkAAAAJ&hl=en">Oksana Riba-Grognuz</a>. Used for <a href="http://www.pnas.org/content/early/2011/01/24/1009690108">fire ant genome</a> project.
   publication_url : http://bioinformatics.oxfordjournals.org/content/27/24/3425
   publication_txt : "O Grognuz, L Keller, L Falquet, I Xenarios, Y Wurm. 2011. Visualization and quality assessment of <em>de novo</em> genome assemblies. <em>Bioinformatics</em> doi: 10.1093/bioinformatics/btr569."
-  status_icon : fa-certificate
-  status      : Stable. Used for <a href="http://www.pnas.org/content/early/2011/01/24/1009690108">fire ant genome</a> project.
 
 - name        : Fourmidable / antgenomes.org
   img         : antgenomes.png
   url         : http://antgenomes.org
-  about       : Community database centralizing genomic and transcriptomic sequence information for ants and related species (e.g., bees and wasps). Provides BLAST search and data download.
+  about       : Community database centralizing genomic and transcriptomic sequence information for ants and related species (e.g., bees and wasps). Provides BLAST search and data download. Updated periodically with latest data and new tools.
   publication_url : /publications/wurm2009antDatabase.pdf
   publication_txt : "Y Wurm, P Uva, F Ricci, J Wang, S Jemielity, C Iseli, L Falquet, L Keller. 2009. Fourmidable: a database for ant genomics. BMC Genomics 10:5."
-  status      : Stable. Updated periodically with latest data and new tools. Used by hundreds of researchers worldwide.
-  status_icon : fa-certificate
 
 repositories:
  - name: Lab
@@ -103,9 +91,11 @@ repositories:
                         <i class="fa-li fa fa-code"></i><a href="{{tool.code}}">{{ tool.code}}</a>
                     </li>
                     {% endif %}
+                    {% if tool.status %}
                     <li>
                         <i class="fa-li fa {{tool.status_icon}}"></i>{{ tool.status }}
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -133,12 +123,3 @@ repositories:
     </li>
 </ul>
 <p>But we love quick and dirty hacks too <i class="fa fa-smile-o"></i>.</p>
-<h3>Source code repositories</h3>
-<p>Several <a href="/team">team members</a> have open source code repositories which include all sorts of useful scripts:</p>
-<ul class="fa-ul">
-    {% for member in page.repositories %}
-    <li>
-        <i class="fa-li fa fa-github"></i> <a href="{{member.repository}}">{{member.name }}'s GitHub</a>
-    </li>
-    {% endfor %}
-</ul>
