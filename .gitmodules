@@ -1,0 +1,3 @@
+[submodule "genomicscourse"]
+	path = genomicscourse
+	url = https://github.com/wurmlab/genomicscourse.git
