@@ -86,7 +86,7 @@ comments: false
     <div class="col-sm-4 col-md-4">
         <h3>Contact</h3>
         {% include contact.html %}
-        <div class="map">
+        <div class="map" style="pointer-events: none;">
             <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
             </script>
             <script>
@@ -95,7 +95,7 @@ comments: false
             function initialize() {
                 var mapProp = {
                     center: myCenter,
-                    zoom: 15,
+                    zoom: 10,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
 
@@ -110,12 +110,16 @@ comments: false
 
             google.maps.event.addDomListener(window, 'load', initialize);
             </script>
-            <div id="googleMap" style="text-align:right; margin-left: 13%; width:87%; height:150px;"></div>
-        </div>
+            <a href="/map"><div id="googleMap" style="text-align:right; margin-left: 13%; width:87%; height:150px;"></div>
+        </div></a>
         <p style="text-align:center;">[<a href="/map">Larger Map &amp; Local Directions</a>]</p>
+	<hr/>
 	<ul class="fa-ul">
 	  <li><i class="fa-li fa fa-sign-in"></i><a href="/postdoc_phd_positions"><strong>Joining the lab</strong></a></li>
 	</ul>
+	<div class="row text-center">
+	  <hr/>
+	  <a class="twitter-timeline" data-width="300" data-height="500" data-dnt="true" href="https://twitter.com/yannick__">Twitter feed</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 </div>
 <br>
@@ -150,32 +154,7 @@ comments: false
 
 -->
 </div>
-<hr/>
-<div class="row">
-    <div class="column col-sm-4 col-md-4">
-        <a class="twitter-timeline" href="https://twitter.com/yannick__" data-widget-id="368748443126099971">Tweets by @yannick__</a>
-        <script>
-        ! function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0],
-                p = /^http:/.test(d.location) ? 'http' : 'https';
-            if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = p + "://platform.twitter.com/widgets.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }(document, "script", "twitter-wjs");
-        </script>
-    </div>
-    <div class="column col-sm-4 col-md-4">
-        <p style="margin-left:0; padding-right:30px;"><em>Solenopsis invicta</em> workers defend the <a href="http://dx.doi.org/10.1073/pnas.1009690108">fire ant genome</a> against a <em>Pogonomyrmex rugosus</em> harvester ant worker.
-            <br> © Romain Libbrecht &amp; Yannick Wurm.</p>
-        <a href="http://www.antgenomes.org/blast/">
-            <img class="img-responsive center-block" src="{{ site.url }}/img/fireAntsGenomePogo-600x438.jpg" alt="Fire ant genome" width="300" height="219"></a>
-    </div>
-    <div class="column col-sm-4 col-md-4">
-    </div>
-</div>
+
 <!--  LocalWords:  visualisation SequenceServer genomes genome curation html Sk
  -->
 <!--  LocalWords:  genomics
