@@ -1,12 +1,12 @@
 # Google Scholar page (you can choose how you sort it)
 url: "http://scholar.google.com/citations?hl=en&user=k6y0EGsAAAAJ&sortby=pubdate&view_op=list_works&pagesize=1000"
 
-# Name to highlight 
+# Name to highlight
 highlight: "Y Wurm"
 
-# Need an Email address that has been registered with CrossRef to obtain DOIs 
-# using their OpenURL service. 
-# e.g. the following should provide an XML file: 
+# Need an Email address that has been registered with CrossRef to obtain DOIs
+# using their OpenURL service.
+# e.g. the following should provide an XML file:
 # http://www.crossref.org/openurl?redirect=false&pid=YOUR@EMAIL>COM&aulast=Wurm&atitle=Behavioral%20Genomics:%20A,%20Bee,%20C,%20G,%20T
 email: y.wurm@qmul.ac.uk
 
@@ -14,15 +14,15 @@ email: y.wurm@qmul.ac.uk
 # Show "[Cited Nx]" if N > the following number
 minCitations: 5
 
-# Words to italicize (emphasize). These will have "<em>" around them. 
-italicize: 
+# Words to italicize (emphasize). These will have "<em>" around them.
+italicize:
  - Solenopsis invicta
  - Acromyrmex echinatior
  - de novo
  - Pogonomyrmex barbatus
 
-# DOIs of articles for which we should show altmetric.org badges. 
-altmetricDOIs: 
+# DOIs of articles for which we should show altmetric.org badges.
+altmetricDOIs:
  - "10.1038/nature11832"
  - "10.1101/gr.121392.111"
  - "10.1073/pnas.1009690108"
@@ -59,3 +59,6 @@ pdfs:
   "Ant genomics (Hymenoptera: Formicidae): challenges to overcome and opportunities to seize" : "/publications/sannewurm2015myrmecologicalgenomics.pdf"
   "Avoid having to retract your genomics analysis" : "/publications/wurm2015avoidRetractingGenomics.pdf"
   "Social insect genomes exhibit dramatic evolution in gene composition and regulation while preserving regulatory features linked to sociality" : "/publications/socialinsectgenomes2013genomeresearch.pdf"
+  "Sequenceserver: a modern graphical user interface for custom BLAST databases" : "/publications/Priyam2015CustomBlast.pdf"
+  "Transcriptomic identification of starfish neuropeptide precursors yields new insights into neuropeptide evolution" : "/publications/semmens_2016_neuropeptide_precursors.pdf"
+  "Desktop as a Service Supporting Environmental 'omics" : "/publications/wallom_2015_IEEE_cloud_computing.pdf"
