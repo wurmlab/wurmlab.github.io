@@ -38,7 +38,16 @@ Please get in touch if you want to put in an application.
 
 ## Internships
 
-We can in some cases host interns. This is much easier if you come with your own funding. Minimal duration is 5 months. 
+We can in some cases host interns (par exemple pour les stages de M2 ou equivalent).
+This is much easier if you come with your own funding. Minimal duration is 5 months. 
+
+## MSc students
+
+Our department hosts at least 3 MSc progams that are relevant to our research - these programs typically last one year for full-time students,include taught courses and a 6-9 month research project.
+
+ * [Bioinformatics MSc program](http://www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169225.html)
+ * [Evolutionary Genomics MSc program](http://www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169221.html)
+ * [Ecology and Evolution MSc program](http://www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169220.html)
 
 
 
