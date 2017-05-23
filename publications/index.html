@@ -14,6 +14,7 @@ papers:
   citationUrl: ''
   citationCount: 
   showAltmetric: true
+  highlight: true
   doi: 10.1111/mec.14054
   pdf: 
 - title: Impact of controlled neonicotinoid exposure on bumblebees in a realistic
@@ -31,6 +32,7 @@ papers:
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=14298470380952669240
   citationCount: 
   showAltmetric: true
+  highlight: true
   doi: 10.1111/1365-2664.12792
   pdf: 
 - title: 'GeneValidator: identify problems with protein-coding gene predictions'
@@ -44,6 +46,7 @@ papers:
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=9250379437569563574
   citationCount: '5'
   showAltmetric: true
+  highlight: true
   doi: 10.1093/bioinformatics/btw015
   pdf: 
 - title: Transcriptomic identification of starfish neuropeptide precursors yields
@@ -78,6 +81,7 @@ papers:
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=1402758369189668961,11563166650580964198
   citationCount: '15'
   showAltmetric: true
+  highlight: true
   doi: 10.1101/033142
   pdf: "/publications/Priyam2015CustomBlast.pdf"
 - title: 'Arthropod genomics beyond fruit flies: bridging the gap between proximate
@@ -174,6 +178,7 @@ papers:
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=6435126482567707687
   citationCount: '34'
   showAltmetric: true
+  highlight: true
   doi: 10.1016/j.cub.2014.09.071
   pdf: "/publications/ConvergentSocialChromosomesFormica2014CurrentBiol.pdf"
 - title: Discovery and molecular characterization of an ambisense densovirus from
@@ -246,6 +251,7 @@ papers:
   - L Keller
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=16907568776802051404
   citationCount: '105'
+  highlight: true
   showAltmetric: true
   doi: 10.1038/nature11832
   pdf: "/publications/wangwurm2013socialChromosome.pdf"
@@ -417,6 +423,7 @@ papers:
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=12348417339928582737
   citationCount: '231'
   showAltmetric: true
+  highlight: true
   doi: 10.1073/pnas.1009690108
   pdf: "/publications/wurm2011fireAntGenome.pdf"
 - title: 'Odorant binding proteins of the red imported fire ant, Solenopsis invicta:
@@ -474,6 +481,7 @@ papers:
   - L Keller
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=15213592036556127283
   citationCount: '31'
+  highlight: true
   doi: 10.1111/j.1365-294X.2010.04561.x
   pdf: "/publications/wurm2010fireAntQueenDealationExpression.pdf"
 - title: 'Fourmidable: a database for ant genomics'
@@ -490,6 +498,7 @@ papers:
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=13666556200731709117
   citationCount: '34'
   showAltmetric: true
+  highlight: true
   doi: 10.1186/1471-2164-10-5
   pdf: "/publications/wurm2009antDatabase.pdf"
 - title: Sociogenetics of fire ants
@@ -539,13 +548,21 @@ papers:
 <div class="publication">
   <ol>
     {% for paper in page.papers %}
-    <li value="{{ forloop.rindex }}" style="margin-bottom: 8px">
+      {% if paper.highlight %}
+      <li value="{{ forloop.rindex }}" style="margin-bottom: 8px; background: #eee">
+      {% else %}
+      <li value="{{ forloop.rindex }}" style="margin-bottom: 8px">
+      {% endif %}
       {% if paper.img %}
       <img style="float:right; width:150px;" src="{{ paper.img }}"/>
       {% endif %}
+      {% if paper.doi %}
       <a href="http://dx.doi.org/{{ paper.doi }}">
         <b>{{ paper.title }}</b>
       </a>
+      {% else %}
+        <b>{{ paper.title }}</b>
+      {% endif %}
       {% if paper.pdf %}
       <a href="{{ paper.pdf }}">[PDF]</a>
       {% endif %}
