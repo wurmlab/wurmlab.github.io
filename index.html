@@ -22,6 +22,7 @@ comments: false
                 <p>For example we:</p>
                 <ul>
                     <li>discovered that the number of queens accepted in a fire ant colony is determined by variants of a social chromosome (<a href="http://dx.doi.org/10.1038/nature11832">Nature 2013</a>).</li>
+                    <li>characterized the genomic features of the variants of the social chromosome, showing high genetic diversity between them (<a href="http://onlinelibrary.wiley.com/doi/10.1111/mec.14054/abstract">Mol Ecol</a>).</li>
                     <li>sequenced and analyzed the genome of the invasive red fire ant <em>Solenopsis invicta</em> (<a href="http://dx.doi.org/10.1073/pnas.1009690108">PNAS 2011</a>).</li>
                     <li>described the gene expression changes that occur in a virgin queen when she is given the opportunity of replacing her mother (Mol Ecol 2010).</li>
                     <li>examined selective regime (positive vs. neutral selection) and fate of duplicated genes (conserved vs. subfunctionalized vs. neofunctionalization) for gene families including <a href="http://rspb.royalsocietypublishing.org/content/280/1758/20122968">sex-determination loci (tranfsormer/feminiser)</a>, <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045715">clock genes</a>, <a href="http://www.nature.com/hdy/journal/v110/n6/full/hdy2012122a.html">chemosensory proteins (CSPs)</a>, <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0016289">olfactory binding proteins (OBPs)</a>, <a href="http://dx.doi.org/10.1073/pnas.1009690108">olfactory receptors</a> and <a href="http://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1003730">vitellogenin genes</a>.</li>
@@ -56,6 +57,7 @@ comments: false
                       </ul>
                   </li>
                   <li>Because genomics data types and analysis algorithms remain young, many analyses require jumping back and forth between multiple tools. The tools themselves are young, can be challenging to install and can require frequent updates. But for reproducibility a given project may want to stick to specific versions of specific tools. Based on the <a href="http://docker.io/">docker</a> container architecture, <a href="https://github.com/yeban/oswitch">oSwitch enables lightweight switching from one virtual operating system to another</a>. It is a powerful tool for pipelines and for hacking.
+                  <li>We are also developping <a href="http://www.bionode.io/">BioNode</a>, an Open Source community to build highly reusable tools and code for bioinformatics by leveraging the Node.JS ecosystem. We want to process big genomic data using Node.JS Streams. We welcome all kinds of contributions at all levels of experience.
                   </li>
               </ul>
             <btn id="section2-less-btn" style="margin-bottom:20px;" onclick="$('#section2-extra').hide();$('#section2-more-btn').show();" class="btn btn-default btn-sm">Read Less</btn>
@@ -84,6 +86,15 @@ comments: false
         </div>
     </div>
     <div class="col-sm-4 col-md-4">
+        <h3>Latest news</h3>
+        <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee">
+        {% for post in site.categories.labnews offset: 0 limit: 3 %}
+        <li>
+          <strong><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></strong> <br>{{ post.date | date: "%B %e, %Y" }}</br></p>
+        </li>
+        {% endfor %}
+      </ul>
+
         <h3>Contact</h3>
         {% include contact.html %}
 	<hr/>
