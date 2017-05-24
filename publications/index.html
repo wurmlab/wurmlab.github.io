@@ -206,7 +206,7 @@ papers:
   - J Zhang
   - R Libbrecht
   - <b>Y Wurm</b>
-  - O Riba-grognuz
+  - O Riba-Grognuz
   - R Studer
   - L Keller
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=4430849371016808930
@@ -219,7 +219,7 @@ papers:
   authors:
   - F Manfredini
   - N Tsutsui
-  - O Riba-grognuz
+  - O Riba-Grognuz
   - <b>Y Wurm</b>
   - L Keller
   - D Shoemaker
@@ -247,7 +247,7 @@ papers:
   - J Wang*°
   - <b>Y Wurm*°</b>
   - M Nipitwattanaphon
-  - O Riba-grognuz
+  - O Riba-Grognuz
   - Y Huang
   - D Shoemaker
   - L Keller°
@@ -262,8 +262,8 @@ papers:
   journal: Proceedings of the Royal Society B 280, 1471-2954, 2013
   authors:
   - E Privman
-  - <b>Y Wurm</b>
-  - L Keller
+  - <b>Y Wurm°</b>
+  - L Keller°
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=5220131159490079704,4852988017184585360
   citationCount: '13'
   highlight: true
@@ -383,7 +383,7 @@ papers:
   authors:
   - <b>Y Wurm°</b>
   - J Wang
-  - O Riba-grognuz
+  - O Riba-Grognuz
   - M Corona
   - S Nygaard
   - B Hunt
@@ -462,6 +462,7 @@ papers:
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=8076426669169271847
   citationCount: 
   pdf: '/publications/wurm2011antGenomeBehindTheScenes.pdf'
+  url: 'http://entsocjournal.yabee.com.tw/Preview.aspx?SendDOI=10.6661/TESFE.2011012'
 - title: 'Parasitoid wasps: from natural history to genomic studies'
   journal: Current Biology 20 (5), R242-R244, 2010
   authors:
@@ -502,6 +503,7 @@ papers:
 - title: Sociogenetics of fire ants
   journal: PhD Thesis; University of Lausanne, Switzerland, 2009
   authors: <b>Y Wurm</b>
+  pdf: "/publications/wurm2009phd-sociogenetics-fire-ants.pdf"
 - title: 'Behavioral genomics: A, bee, C, G, T'
   journal: Current Biology 17 (2), R51-R53, 2007
   authors:
@@ -551,6 +553,10 @@ papers:
       {% endif %}
       {% if paper.doi %}
       <a href="http://dx.doi.org/{{ paper.doi }}">
+        <b>{{ paper.title }}</b>
+      </a>
+      {% elsif paper.url %}
+      <a href="{{ paper.url }}">
         <b>{{ paper.title }}</b>
       </a>
       {% else %}
