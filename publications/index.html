@@ -48,6 +48,7 @@ papers:
   highlight: true
   doi: 10.1093/bioinformatics/btw015
   pdf: /publications/draganAndMoghul2016GeneValidator.pdf
+  software: https://wurmlab.github.io/tools/genevalidator
 - title: Transcriptomic identification of starfish neuropeptide precursors yields
     new insights into neuropeptide evolution
   journal: Open Biology 6 (2), 150224, 2016
@@ -83,6 +84,7 @@ papers:
   highlight: true
   doi: 10.1101/033142
   pdf: "/publications/Priyam2015CustomBlast.pdf"
+  software: http://sequenceserver.com
 - title: 'Arthropod genomics beyond fruit flies: bridging the gap between proximate
     and ultimate causation'
   journal: Briefings in Functional Genomics 14 (6), 381-383, 2015
@@ -553,6 +555,9 @@ papers:
       </a>
       {% else %}
         <b>{{ paper.title }}</b>
+      {% endif %}
+      {% if paper.software %}
+      <a href="{{ paper.software }}">[Website]</a>
       {% endif %}
       {% if paper.pdf %}
       <a href="{{ paper.pdf }}">[PDF]</a>
