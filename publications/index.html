@@ -12,11 +12,13 @@ papers:
   - R Nichols
   - <b>Y Wurm°</b>
   citationUrl: ''
-  citationCount: 
+  citationCount:
   showAltmetric: true
   highlight: true
   doi: 10.1111/mec.14054
-  pdf: 
+  pdf:
+  img: /img/pracana_2017_2.png
+  img_width: 230
 - title: Impact of controlled neonicotinoid exposure on bumblebees in a realistic
     field setting
   journal: Journal of Applied Ecology, 2016
@@ -28,12 +30,11 @@ papers:
   - <b>T Colgan</b>
   - <b>Y Wurm</b>
   - R Gill
-  - M Pocock
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=14298470380952669240
-  citationCount: 
+  citationCount:
   showAltmetric: true
   doi: 10.1111/1365-2664.12792
-  pdf: 
+  pdf:
 - title: 'GeneValidator: identify problems with protein-coding gene predictions'
   journal: Bioinformatics 32 (10), 1559-1561, 2016
   authors:
@@ -49,6 +50,8 @@ papers:
   doi: 10.1093/bioinformatics/btw015
   pdf: /publications/draganAndMoghul2016GeneValidator.pdf
   software: https://wurmlab.github.io/tools/genevalidator
+  img: /img/GV_graphs.png
+  img_width: 140
 - title: Transcriptomic identification of starfish neuropeptide precursors yields
     new insights into neuropeptide evolution
   journal: Open Biology 6 (2), 150224, 2016
@@ -85,16 +88,19 @@ papers:
   doi: 10.1101/033142
   pdf: "/publications/Priyam2015CustomBlast.pdf"
   software: http://sequenceserver.com
+  img: /img/sequenceserver_2.png
+  img_width: 140
 - title: 'Arthropod genomics beyond fruit flies: bridging the gap between proximate
     and ultimate causation'
   journal: Briefings in Functional Genomics 14 (6), 381-383, 2015
   authors:
   - <b>Y Wurm</b>
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=2818198123985232926
-  citationCount: 
+  citationCount:
   doi: 10.1093/bfgp/elv034
-  pdf: 
+  pdf:
   img: /img/arthropod_genomics_briefings_cover-small.jpg
+  img_width: 50
 - title: 'Ant genomics (Hymenoptera: Formicidae): challenges to overcome and opportunities
     to seize'
   journal: Myrmecological News, 2015
@@ -108,7 +114,7 @@ papers:
   journal: IEEE 11th International Conference on e-Science, 214, 2015
   authors: DCH Wallom, T Booth, A Bowery, B Collier, P Kershaw, <b>A Priyam</b>, <b>Y Wurm</b>, D Field
   citationUrl: ''
-  citationCount: 
+  citationCount:
   doi: 10.1109/eScience.2015.53
   pdf: "/publications/wallom_2015_IEEE_cloud_computing.pdf"
 - title: Avoid having to retract your genomics analysis
@@ -183,6 +189,8 @@ papers:
   highlight: true
   doi: 10.1016/j.cub.2014.09.071
   pdf: "/publications/ConvergentSocialChromosomesFormica2014CurrentBiol.pdf"
+  img: /img/supergene_sinvicta_fselisi.png
+  img_width: 62
 - title: Discovery and molecular characterization of an ambisense densovirus from
     South American populations of <em>Solenopsis invicta</em>
   journal: Biological Control 67, 431-39, 2013
@@ -257,6 +265,8 @@ papers:
   showAltmetric: true
   doi: 10.1038/nature11832
   pdf: "/publications/wangwurm2013socialChromosome.pdf"
+  img: /img/big_vs_little_b.png
+  img_width: 140
 - title: Duplication and concerted evolution in a master sex determiner under balancing
     selection
   journal: Proceedings of the Royal Society B 280, 1471-2954, 2013
@@ -269,6 +279,8 @@ papers:
   highlight: true
   doi: 10.1098/rspb.2012.2968
   pdf: "/publications/SexlocusDuplicationConcertedEvolution2013Procb.pdf"
+  img: /img/transformer_duplicates.png
+  img_width: 95
 - title: Social insect genomes exhibit dramatic evolution in gene composition and
     regulation while preserving regulatory features linked to sociality
   journal: Genome Research, gr.155408.113, 2013
@@ -456,11 +468,12 @@ papers:
   doi: 10.1016/j.tig.2011.08.005
   pdf: "/publications/TiG2011.pdf"
   img: /img/tigs-ant-genomes-cover-small.jpg
+  img_width: 50
 - title: Behind the scenes of an ant genome project
   journal: Formosan Entomologist 31 (2), 149-56, 2011
   authors: <b>Y Wurm</b>
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=8076426669169271847
-  citationCount: 
+  citationCount:
   pdf: '/publications/wurm2011antGenomeBehindTheScenes.pdf'
   url: 'http://entsocjournal.yabee.com.tw/Preview.aspx?SendDOI=10.6661/TESFE.2011012'
 - title: 'Parasitoid wasps: from natural history to genomic studies'
@@ -534,7 +547,7 @@ papers:
   - L Ballabas
   - J Martin
   citationUrl: http://scholar.google.com/scholar?oi=bibs&hl=en&cites=11271193541041782490,3808162917858233716
-  citationCount: 
+  citationCount:
   doi: 10.1007/1-4020-3103-3_79
 ---
 
@@ -549,7 +562,9 @@ papers:
       <li value="{{ forloop.rindex }}" style="margin-bottom: 3px; padding: 5px">
       {% endif %}
       {% if paper.img %}
-      <img style="float:right; width:150px;" src="{{ paper.img }}"/>
+      <a href="http://dx.doi.org/{{ paper.doi }}">
+        <img style="float:right; width:{{ paper.img_width }}px;" src="{{ paper.img }}"/>
+      </a>
       {% endif %}
       {% if paper.doi %}
       <a href="http://dx.doi.org/{{ paper.doi }}">
