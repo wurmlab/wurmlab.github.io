@@ -18,4 +18,4 @@ The Wurmlab travelled there to hear about current research on evolutionary biolo
 
 The meeting was a wonderful occasion to catch up with collaborators and presenting the Wurmlab research to this (mainly) North American audience. Next year, Evolution will join [ESEB in Montpellier (France)](http://www.eseb2017.nl/), for a joint meeting.
 
-![alt text](img/news/2017_06_portland.jpg "Portland and Mount Hood")
+![alt text](../../img/news/2017_06_portland.jpg "Portland and Mount Hood")
