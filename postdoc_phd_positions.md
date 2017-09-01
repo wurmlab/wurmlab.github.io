@@ -32,6 +32,7 @@ PhD funding exists as part of multiple schemes. These include:
     * CONACYT (Mexico)
     * Commonwealth Scholarships
     * Newton fund
+	* US citizens can come with [Marshall](http://www.marshallscholarship.org/applications/eligible) or [Fullbright](http://www.fulbright.org.uk/going-to-the-uk/postgraduate-student-awards) scholarships.
  * Occasionally, we have specific funding for PhD positions.
 
 Please get in touch if you want to put in an application.
