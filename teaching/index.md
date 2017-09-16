@@ -82,7 +82,7 @@ Much of the material we use is QMUL's QMPlus content management system. Some of 
       <li><a href="https://qmecoevogenomics.wordpress.com/2014/11/25/comparative-population-genomics-in-animals-uncovers-the-determinants-of-genetic-diversity/">Comparative population genomics in animals uncovers the determinants of genetic diversity</a></li>
       <li><a href="https://qmecoevogenomics.wordpress.com/2014/11/24/genome-chronicles-the-giant-pandas-history/">Genome chronicles &ndash; The Giant Panda&rsquo;s (hi)story</a></li>
     </ul>
-    
+
 </div>
 
 <div class="col-sm-12 col-md-12">
@@ -123,11 +123,10 @@ Much of the material we use is QMUL's QMPlus content management system. Some of 
     <h3>2012 Swiss Bioinformatics Institute Summerschool</h3> From 2012 Swiss Bioinformatics Institute <a href="//www.isb-sib.ch/education/sib-phd-training-network/events/past-events/phd-summer-school-2012.html">summerschool in Bioinformatics and Population Genomics</a> (with Oksana Riba-Grognuz, Kate Ridout and Eyal Privman). This is largely superceded by the newer version (see above):
     <ul>
         <li><a href="//www.slideshare.net/yannickwurm/20120622-fridayadelboden" title="20120622 fridayadelboden" target="_blank">Overview and summary slides</a></li>
-        <li><a href="DAY1_exercises.docx.html">UNIX introduction, <em>de novo</em> genome assembly &amp; <em>de novo</em> transcriptome assembly, and cross-validation using Cytoscape of the genome and transcriptome assemblies</a>. [<a href="//docs.google.com/document/pub?id=1lx8cGQlyBZV8RXm7gSLqFafcOUfPq6_GjadqBxqiAzQ">Google Docs link.</a>]</li>
-        <li><a href="MWAS%20practical.docx.html">Automated gene model prediction and manual refinement</a>.[<a href="//docs.google.com/document/pub?id=10P7oSJ3M_Jg6EzSPbsKx1HV6WQprOURcpvIBxa5Yk6g">Google Docs link.</a>]</li>
-        <li><a href="DAY3_exercises_Oksana_WORKS_denovo.docx.html">Differential gene expression with tophat/cufflinks/cummerbund</a>.[<a href="//docs.google.com/document/pub?id=1UB8I67AqW1nPbIo1JN4td76Bbyu1b1hGxnr9Yoe2t-k">Google Docs link.</a>]</li>
-        <li><a href="//www.slideshare.net/yannickwurm/20120622-fridayadelboden">Some random tips</a> and <a href="Experimental%20design%20for%20genomics.html">discussion topics</a>. [
-            <a href="//docs.google.com/document/pub?id=1WcHIJPzkOXXjnViwJt_ZVERlJz2YUqhM6yXQ1OLQTxQ">Google Docs link.</a>]</li>
+        <li><a href="DAY1_exercises.docx.html">UNIX introduction, <em>de novo</em> genome assembly &amp; <em>de novo</em> transcriptome assembly, and cross-validation using Cytoscape of the genome and transcriptome assemblies</a> [<a href="//docs.google.com/document/pub?id=1lx8cGQlyBZV8RXm7gSLqFafcOUfPq6_GjadqBxqiAzQ">Google Docs link</a>]</li>
+        <li><a href="MWAS%20practical.docx.html">Automated gene model prediction and manual refinement</a> [<a href="//docs.google.com/document/pub?id=10P7oSJ3M_Jg6EzSPbsKx1HV6WQprOURcpvIBxa5Yk6g">Google Docs link</a>]</li>
+        <li><a href="DAY3_exercises_Oksana_WORKS_denovo.docx.html">Differential gene expression with tophat/cufflinks/cummerbund</a> [<a href="//docs.google.com/document/pub?id=1UB8I67AqW1nPbIo1JN4td76Bbyu1b1hGxnr9Yoe2t-k">Google Docs link</a>]</li>
+        <li><a href="//www.slideshare.net/yannickwurm/20120622-fridayadelboden">Some random tips</a> and <a href="Experimental%20design%20for%20genomics.html">discussion topics</a> [<a href="//docs.google.com/document/pub?id=1WcHIJPzkOXXjnViwJt_ZVERlJz2YUqhM6yXQ1OLQTxQ">Google Docs link</a>]</li>
     </ul>
 </div>
 <div class="col-sm-12 col-md-12">
