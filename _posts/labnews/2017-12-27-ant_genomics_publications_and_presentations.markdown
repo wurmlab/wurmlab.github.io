@@ -4,7 +4,7 @@ comments: true
 date: 2017-12-27 12:07:12
 layout: post
 slug: ant_genomics_publications_and_presentations
-title: Brief end of year update: publications & presentations
+title: "Brief end of year update - publications and presentations"
 categories:
  - labnews
 ---
