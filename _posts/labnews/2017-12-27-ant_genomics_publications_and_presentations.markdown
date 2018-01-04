@@ -13,7 +13,7 @@ Despite the lack of updates, things have been happening!
 
 ### Analyzing the genomes of all the ants
 
-After our discovery of <a href="http://onlinelibrary.wiley.com/doi/10.1111/mec.14054/full">extremely low genetic diversity in the Sb variant of the fire ant social chromosome</a>, we asked what is going on with <em>Gp-9</em>? This is the original odorant binding protein that Ken Ross found - using starch gel electrophoresis - to be fully associated with single vs multiple-queen colonies. 
+After our discovery of <a href="http://onlinelibrary.wiley.com/doi/10.1111/mec.14054/full">extremely low genetic diversity in the Sb variant of the fire ant social chromosome</a>, we asked what is going on with <em>Gp-9</em>? This is the original odorant binding protein that Ken Ross found - using starch gel electrophoresis - to be fully associated with single vs multiple-queen colonies.
 
 The patterns described back then still hold, but surprisingly we find that <a href="http://onlinelibrary.wiley.com/doi/10.1002/evl3.22/full"> nine additional Gp-9-like odorant binding protein genes are in the social chromosome region of suppressed recombination</a>. The descriptions of all 23 fire ant Odorant Binding Proteins, their expression profiles, and the differences between social chromosome alleles are detailed in <a href="http://onlinelibrary.wiley.com/doi/10.1002/evl3.22/full">Evolution Letters</a>:
 
@@ -27,14 +27,14 @@ In a different paper, we review findings from the most recent analyses of the <a
 
 ### Conference presentations
 
-Lab members had the opportunity to present at many occassions, including: 
- * Roddy Pracana presenting at the London Epigenetics Club meeting on <em>Gene-Environment interactions in non-traditional model organisms</em>. 
+Lab members had the opportunity to present at many occassions, including:
+ * Roddy Pracana presenting at the London Epigenetics Club meeting on <em>Gene-Environment interactions in non-traditional model organisms</em>.
  * Recently finished MSc student Gino Brignoli presenting his <em>Lasius flavus</em> at the Northwest europe IUSSI meeting in York
  * Current BBSRC Lido rotation student Isabel Fletcher showing the impact of pesticide on gene expression in bumblebees at the Northwest europe IUSSI meeting in York
- * Yannick's giving a Keynote at the annual meeting of the french section of society for the study of social insects, as well as presenting at ENS Lyon, the London Next Generation Sequencing Congress and the joint Genome 10k and Genome Sciences conference in Norwich. The latter was elegantly Illustrated by Sanger's Alex Cagan: <br/><a href="https://twitter.com/EvolLetters/status/902869818176622592"><img src="/img/news/yannick_talk_sketch_cagan.jpg" width="50%" class="center-block img-responsive"/></a> 
- 
- 
-### Degrees degrees degress
+ * Yannick's giving a Keynote at the annual meeting of the french section of society for the study of social insects, as well as presenting at ENS Lyon, the London Next Generation Sequencing Congress and the joint Genome 10k and Genome Sciences conference in Norwich. The latter was elegantly Illustrated by Sanger's Alex Cagan: <br/><a href="https://twitter.com/EvolLetters/status/902869818176622592"><img src="/img/news/yannick_talk_sketch_cagan.jpg" width="50%" class="center-block img-responsive"/></a>
+
+
+### Degrees degrees degrees
 
 Finally, we congratulate Gino Brignoli & Abdoulie Kanteh for the high marks achieved for their MSc disserations, and Roddy Pracana for submitting his PhD:
 
