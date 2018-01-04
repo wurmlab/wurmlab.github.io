@@ -9,7 +9,7 @@ categories:
  - labnews
 ---
 
-It shouldn't really be necessary to share this. But it keeps popping up.
+It shouldn't really be necessary to share this. But it keeps popping up (in particular when students are [learning to program in R](/teaching#programming_in_r). 
 
 It is nonsensical to compare text to numbers. But R will let you. For example:
 
@@ -36,7 +36,7 @@ input_number <- readline(prompt="Enter a number: ")
 
 ```
 
-This comes into R as text, not as a number. Unless you run `as.numeric()` on the input, it will remain text. Comparisons are then equivalent to the following.
+This comes into R as text, not as a number. Unless you run `as.numeric()` or `strtoi()` on the input, it will remain text. Comparisons are then equivalent to the following.
 
 
 ```R
@@ -64,5 +64,5 @@ R does not show an error message; it acts as is everything is ok, and gives you 
 
 ## How can this type of number comparison problem in R be prevented or detected?
 
-* Always check/force the type. If you run `as.numeric()` on something text that is not unambiguously a number, R will show an error message.
+* Always check/force the type. If you run `as.numeric()` or `strtoi` on something text that is not unambiguously a number, R will show an error message or return `NA`.
 * Use a testing framework such as `testtthat` to ensure that even the small pieces of code you write behave as you would expect.
