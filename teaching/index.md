@@ -35,7 +35,7 @@ Much of the material we use is QMUL's QMPlus content management system. Some of 
     </ul>
 </div>
 
-<div class="col-sm-10 col-md-10">
+<div class="col-sm-10 col-md-10" id="programming_in_r">
     <h2>2016 Learning how to program in R</h2> As biology is becoming a data science its increasingly important to be able to wrangle large datasets. We use variations of the following for QMUL's SBC361 (3rd year Research Methods) and Bio781p (MSc Statistics &amp; Bioinformatics):
     <ul>
         <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical1.html">Practical 1: R refresher and regular expressions</a></li>
