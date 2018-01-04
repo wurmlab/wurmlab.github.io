@@ -9,7 +9,7 @@ categories:
  - labnews
 ---
 
-It shouldn't really be necessary to share this. But it keeps popping up (in particular when students are [learning to program in R](/teaching#programming_in_r). 
+It shouldn't really be necessary to share this. But it keeps popping up (in particular when students are [learning to program in R](/teaching#programming_in_r)).
 
 It is nonsensical to compare text to numbers. But R will let you. For example:
 
@@ -26,7 +26,7 @@ It is nonsensical to compare text to numbers. But R will let you. For example:
 I suspect that this is a remnant of the desire to be able to compare letters (e.g., for sorting ASCII characters alphabetically "A" < "D").
 
 
-# Problem comparing numbers and "text as numbers" in R.
+## Problem comparing numbers and "text as numbers" in R
 
 When new to programming in R, you might ask the user to input a number. For example with
 
@@ -36,7 +36,7 @@ input_number <- readline(prompt="Enter a number: ")
 
 ```
 
-This comes into R as text, not as a number. Unless you run `as.numeric()` or `strtoi()` on the input, it will remain text. Comparisons are then equivalent to the following.
+This comes into R as text, not as a number. Unless you run `as.numeric()` or `strtoi()` on the input, it will remain text. Comparisons are then equivalent to the following
 
 
 ```R
@@ -57,7 +57,7 @@ This comes into R as text, not as a number. Unless you run `as.numeric()` or `st
 ```
 
 
-Note that *some* of these comparisons yield the result you would expect if only comparing numbers. **But some of them (e.g., the last 2) give you an incorrect response**. This is dangerous.
+Note that *some* of these comparisons yield the result that you would expect if only comparing numbers. **But some of them (e.g., the last 2) give you an incorrect response**. This is dangerous.
 
 R does not show an error message; it acts as is everything is ok, and gives you a response that looks reasonable (i.e., TRUE or FALSE). It would thus be easy for this type of mistake to go undetected.
 
