@@ -11,7 +11,7 @@ bundle install
 ```
 Then you can test what the web site looks like. Run: 
 ```
-bundle exec jekyll serve
+bundle exec jekyll serve --incremental --watch
 ``` 
 This will rebuild the pages (into `_site`) every time you save a change, and serve them on a local http server (e.g. http://127.0.0.1:4000). 
 

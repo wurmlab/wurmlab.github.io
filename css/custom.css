@@ -275,3 +275,12 @@ h3 {
 .thumbnail {
   border: none;
 }
+
+a.filter-by.active {
+  font-weight: bold;
+}
+
+a.filter-by:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
