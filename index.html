@@ -21,10 +21,11 @@ comments: false
                 <p> We are interested in themes including the genetics of behavior, the interplay between social evolution and genome evolution, and the molecular mechanisms responsible for differences between castes.</p>
                 <p>For example we:</p>
                 <ul>
+                    <li>reviewed the most up-to-date research on ant omics (<a href="https://doi.org/10.1016/j.cois.2017.12.001">Current Opinion in Insect Science 2018</a>).</li>
+                    <li>characterized the genomic features of the variants of the social chromosome, showing high genetic diversity between them (<a href="http://onlinelibrary.wiley.com/doi/10.1111/mec.14054/abstract">Molecular Ecology 2017</a> and <a href="http://dx.doi.org/10.1002/evl3.22">Evolution Letters 2017</a>).</li>
                     <li>discovered that the number of queens accepted in a fire ant colony is determined by variants of a social chromosome (<a href="http://dx.doi.org/10.1038/nature11832">Nature 2013</a>).</li>
-                    <li>characterized the genomic features of the variants of the social chromosome, showing high genetic diversity between them (<a href="http://onlinelibrary.wiley.com/doi/10.1111/mec.14054/abstract">Mol Ecol</a>).</li>
                     <li>sequenced and analyzed the genome of the invasive red fire ant <em>Solenopsis invicta</em> (<a href="http://dx.doi.org/10.1073/pnas.1009690108">PNAS 2011</a>).</li>
-                    <li>described the gene expression changes that occur in a virgin queen when she is given the opportunity of replacing her mother (Mol Ecol 2010).</li>
+                    <li>described the gene expression changes that occur in a virgin queen when she is given the opportunity of replacing her mother (<a href= "http://dx.doi.org/10.1111/j.1365-294X.2010.04561.x">Molecular Ecology 2010</a>).</li>
                     <li>examined selective regime (positive vs. neutral selection) and fate of duplicated genes (conserved vs. subfunctionalized vs. neofunctionalization) for gene families including <a href="http://rspb.royalsocietypublishing.org/content/280/1758/20122968">sex-determination loci (tranfsormer/feminiser)</a>, <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045715">clock genes</a>, <a href="http://www.nature.com/hdy/journal/v110/n6/full/hdy2012122a.html">chemosensory proteins (CSPs)</a>, <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0016289">olfactory binding proteins (OBPs)</a>, <a href="http://dx.doi.org/10.1073/pnas.1009690108">olfactory receptors</a> and <a href="http://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1003730">vitellogenin genes</a>.</li>
                 </ul>
                 <btn id="section1-less-btn" onclick="$('#section1-extra').hide();$('#section1-more-btn').show();" class="btn btn-default btn-sm">Read Less</btn>
@@ -77,14 +78,14 @@ comments: false
 	    <btn id="section3-more-btn" onclick="$('#section3-extra').show();$('#section3-more-btn').hide();" class="btn btn-default btn-sm">Read More</btn>
 	  </div>
 
-         
+
           <div class="col-md-5 hidden-xs hidden-sm">
               <img src="{{ site.url }}/img/frontpage/bumblebee-240.jpg" class="img-rounded img-responsive center-block" alt="bumblebee on flower">
           </div>
 
 	  <div id="section3-extra" class="col-sm-12" style="display:none;">
           <ul>
-	    
+
 	      <li>We are quantifying the effects of pesticide exposure on gene expression in bee brains.</li>
 	      <li>We are characterising the selection pressures affecting wild bees using population genomics approaches.</li>
 	      <li>We have contributed to several experiments examining the impact of pesticides on field colonies.</li>
@@ -94,7 +95,7 @@ comments: false
 	</div>
     </div>
     <div class="col-sm-4 col-md-4">
-      <h3>Latest news</h3>
+      <h3><strong><a href="/news">Latest news</a></strong></h3>
       <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee">
         {% for post in site.categories.labnews offset: 0 limit: 3 %}
         <li style="line-height:120%; margin-bottom: 5pt">
@@ -103,7 +104,7 @@ comments: false
 	{% endfor %}
       </ul>
 
-      <h3>Latest publications</h3>
+      <h3><strong><a href="/publications">Latest publications</a></strong></h3>
       <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee;  line-height:120% ">
 	<li style="margin-bottom:5pt">
      	   <a href="http://dx.doi.org/10.1016/j.cois.2017.12.001">
