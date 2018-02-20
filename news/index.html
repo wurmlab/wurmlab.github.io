@@ -5,13 +5,13 @@ title: "Yannick Wurm' News"
 <div class="row">
   <div class="col-sm-12 col-md-12">
     {% for post in site.categories.labnews offset: 0 limit: 10 %}
-    <h3>
+    <h2>
       <strong>
         <a href="{{ site.url }}{{ post.url }}">
           {{ post.title }}
         </a>
       </strong>
-    </h3>
+    </h2>
     <p>
       {{ post.content }}
     </p>
