@@ -73,17 +73,25 @@ comments: false
               <h3>Pollinator health</h3>
           </div>
           <div class="col-md-7">
-            <p>
-              Pollinators (bees in particular) are essential for preserving biodiversity and ensuring agricultural yields, thus their worldwide decline poses important risks. Taking inspiration from biomedical approaches for understanding cancer biology, we are using modern molecular tools to determine how pollinators are affected by changing environments (e.g., pesticide exposure, habitat loss, changing climates) and their ability to cope with such changes.
-            </p>
-            <p>
-              We recently began sequencing hundreds of pollinator genomes and are performing population genomics analyses.
-            </p>
-          </div>
+            <p>Bees and other pollinators are essential for preserving biodiversity and ensuring agricultural yields. Reports of their declines worldwide are thus concerning. We take inspiration from biomedical approaches for understanding cancer biology and personalised medecine to improve our understanding of pollinator health. In particular, we use modern molecular tools including population genomics and gene expression analyses to understand how pollinators are affected by changing environments (e.g., pesticide exposure, habitat loss, changing climates) and their ability to cope with such changes.</p>
+	    <btn id="section3-more-btn" onclick="$('#section3-extra').show();$('#section3-more-btn').hide();" class="btn btn-default btn-sm">Read More</btn>
+	  </div>
+
+         
           <div class="col-md-5 hidden-xs hidden-sm">
               <img src="{{ site.url }}/img/frontpage/bumblebee-240.jpg" class="img-rounded img-responsive center-block" alt="bumblebee on flower">
           </div>
-        </div>
+
+	  <div id="section3-extra" class="col-sm-12" style="display:none;">
+          <ul>
+	    
+	      <li>We are quantifying the effects of pesticide exposure on gene expression in bee brains.</li>
+	      <li>We are characterising the selection pressures affecting wild bees using population genomics approaches.</li>
+	      <li>We have contributed to several experiments examining the impact of pesticides on field colonies.</li>
+          </ul>
+	  <btn id="section3-less-btn" onclick="$('#section3-extra').hide();$('#section3-more-btn').show();" class="btn btn-default btn-sm">Read Less</btn>
+</div>
+    </div>
     </div>
     <div class="col-sm-4 col-md-4">
         <h3>Latest news</h3>
@@ -97,7 +105,7 @@ comments: false
 
 
 	<ul class="fa-ul">
-	  <li><i class="fa-li fa fa-sign-in"></i><a href="/postdoc_phd_positions"><h3>Joining the lab</h3></a></li>
+	  <li><i class="fa-li fa fa-sign-in"></i><a href="/postdoc_phd_positions"><h3><strong>Joining the lab</strong></h3></a></li>
 	</ul>
 	<hr/>
         <h3>Contact</h3>
