@@ -291,3 +291,7 @@ a.filter-by:hover {
   right: 20px;
   z-index: 0;
 }
+
+body {
+    line-heigth: 120%;
+}
