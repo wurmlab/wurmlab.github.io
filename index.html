@@ -97,29 +97,28 @@ comments: false
       <h3>Latest news</h3>
       <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee">
         {% for post in site.categories.labnews offset: 0 limit: 3 %}
-        <li>
+        <li style="line-height:95%; margin-bottom: 5pt">
 	  <strong><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></strong> ({{ post.date | date: "%B %d" }})
 	</li>
 	{% endfor %}
       </ul>
 
       <h3>Latest publications</h3>
-      <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee">
-
-	 <li class="publication">
+      <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee;  line-height:95% ">
+	<li style="margin-bottom:5pt">
      	   <a href="http://dx.doi.org/10.1016/j.cois.2017.12.001">
              <b>Genes and genomic processes underpinning the social lives of ants. </b>
 	   </a></br>
 	   Favreau <em>et al</em> Current Opinion in Insect Science (2018).
 	 </li>
-         <li class="publication">
+	<li style="margin-bottom:5pt">
            <a href="http://dx.doi.org/10.1002/evl3.22">
              <b>Fire ant social chromosomes: Differences in number, sequence and expression of odorant binding proteins.</b>
 	   </a><br/>
 	   Pracana <em>et al</em> Evolution Letters (2017).
 	 </li>
 
-	 <li value="36" class="publication">
+	<li style="margin-bottom:5pt">
            <a href="http://dx.doi.org/10.1111/mec.14054">
              <b>The fire ant social chromosome supergene variant Sb shows low diversity but high divergence from SB.</b>
 	   </a><br/>
