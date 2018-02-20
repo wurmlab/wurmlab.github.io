@@ -227,7 +227,8 @@ th {
   padding: 5px;
 }
 
-.highlight {text-decoration: underline;}
+span.highlight {text-decoration: underline;}
+
 a {text-decoration: none;}
 
 .jumbotron h1 {
