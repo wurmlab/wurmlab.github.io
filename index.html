@@ -90,19 +90,42 @@ comments: false
 	      <li>We have contributed to several experiments examining the impact of pesticides on field colonies.</li>
           </ul>
 	  <btn id="section3-less-btn" onclick="$('#section3-extra').hide();$('#section3-more-btn').show();" class="btn btn-default btn-sm">Read Less</btn>
-</div>
-    </div>
+	  </div>
+	</div>
     </div>
     <div class="col-sm-4 col-md-4">
-        <h3>Latest news</h3>
-        <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee">
+      <h3>Latest news</h3>
+      <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee">
         {% for post in site.categories.labnews offset: 0 limit: 3 %}
         <li>
-          <strong><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></strong> <br>{{ post.date | date: "%B %e, %Y" }}</br></p>
-        </li>
-        {% endfor %}
+	  <strong><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></strong> ({{ post.date | date: "%B %d" }})
+	</li>
+	{% endfor %}
       </ul>
 
+      <h3>Latest publications</h3>
+      <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee">
+
+	 <li class="publication">
+     	   <a href="http://dx.doi.org/10.1016/j.cois.2017.12.001">
+             <b>Genes and genomic processes underpinning the social lives of ants. </b>
+	   </a></br>
+	   Favreau <em>et al</em> Current Opinion in Insect Science (2018).
+	 </li>
+         <li class="publication">
+           <a href="http://dx.doi.org/10.1002/evl3.22">
+             <b>Fire ant social chromosomes: Differences in number, sequence and expression of odorant binding proteins.</b>
+	   </a><br/>
+	   Pracana <em>et al</em> Evolution Letters (2017).
+	 </li>
+
+	 <li value="36" class="publication">
+           <a href="http://dx.doi.org/10.1111/mec.14054">
+             <b>The fire ant social chromosome supergene variant Sb shows low diversity but high divergence from SB.</b>
+	   </a><br/>
+	   Pracana <em>et al</em> Molecular Ecology (2017).
+	   </li>
+      </ul>
 
 	<ul class="fa-ul">
 	  <li><i class="fa-li fa fa-sign-in"></i><a href="/postdoc_phd_positions"><h3><strong>Joining the lab</strong></h3></a></li>
