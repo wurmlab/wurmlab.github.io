@@ -634,6 +634,17 @@ papers:
       $(this).addClass('active');
       return false;
     });
+
+    var old_width = undefined;
+    $('ol img').hover(function () {
+      old_width = $(this).css('width');
+      $(this).css('width', '80%');
+      $(this).css('z-index', 1);
+    }, function () {
+      $(this).css('width', old_width);
+      $(this).css('z-index', 0);
+      old_width = undefined;
+    });
   });
 </script>
 
@@ -658,7 +669,7 @@ papers:
       {% endif %}
       {% if paper.img %}
       <a href="http://dx.doi.org/{{ paper.doi }}">
-        <img style="float:right; width:{{ paper.img_width }}px;" src="{{ paper.img }}"/>
+        <img class="img-publication" style="float:right; width:{{ paper.img_width }}px;" src="{{ paper.img }}"/>
       </a>
       {% endif %}
       {% if paper.doi %}

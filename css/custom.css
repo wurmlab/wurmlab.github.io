@@ -285,3 +285,9 @@ a.filter-by:hover {
   font-weight: bold;
   text-decoration: none;
 }
+
+.img-publication {
+  position: absolute;
+  right: 20px;
+  z-index: 0;
+}
