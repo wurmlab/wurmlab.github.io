@@ -38,6 +38,7 @@ padding:2px;
  /* border: 1px solid #2c3e50;
  border-top: 0; */
  font-weight: bold;
+ margin-bottom: 0;
 }
 
 .jumbotron h1 {
@@ -294,4 +295,8 @@ a.filter-by:hover {
 
 body {
     line-heigth: 120%;
+}
+
+.column {
+  padding-top: 30px;
 }
