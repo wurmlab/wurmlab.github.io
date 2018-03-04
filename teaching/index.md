@@ -14,8 +14,16 @@ We teach on several courses, including:
 Much of the material we use is QMUL's QMPlus content management system. Some of the material we use is on GitHub or provided below.
 
 <div class="col-sm-12 col-md-12">
-    <h2 id="bioinformatics--population-genomics">2016 Bioinformatics &amp; Population Genomics</h2>
-    <p><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/">Practicals</a> prepared with Rodrigo Pracana, Julien Roux, Rob Waterhouse and Stefan Schiffels for a 1 week <a href="//www.isb-sib.ch/events/training/joint-spring-school-bioinformatics-and-population-genomics">Bioinformatics &amp; Population Genomics </a> course. <a href="//www.slideshare.net/yannickwurm/2016-0529introsibspringschoolleuker-bad">[Overview slides]</a>. We use similar material for <a href="//www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169225.htmll">QMUL’s Bioinformatics MSc</a> and our <a href="//www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169221.html">Ecological and Evolutionary Genomics MSc</a>:</p>
+    <h2 id="genome-bioinformatics">Genome Bioinformatics (Masters)</h2>
+    <p>This module from the <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL's Bioinformatics MSc</a> covers the essential aspects of next generation sequence  analysis, including genome assembly, variant calling and population genetics. Also covers essential computer skills needed for bioinformatics, such as Linux and using our high performance computing cluster.</p>
+    <ul>
+      <li><a href="https://wurmlab.github.io/genomicscourse/2017/practicals/reference_genome/read-cleaning">Practical 1:</a> Read cleaning.</li>
+      <li><a href="https://wurmlab.github.io/genomicscourse/2017/practicals/reference_genome/assembly">Practical 2:</a> Genome assembly.</li>
+      <li><a href="https://wurmlab.github.io/genomicscourse/2017/practicals/population_genetics/map_call">Practical 3:</a> Read mapping and variant calling.</li>
+      <li/><a href="http://wurmlab.github.io/genomicscourse/2017/practicals/population_genetics/popgen">Practical 4:</a> Population genetics in R.</li>
+    </ul>
+    <h2 id="bioinformatics--population-genomics">Bioinformatics &amp; Population Genomics</h2>
+    <p><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/">Practicals</a> prepared with Rodrigo Pracana, Julien Roux, Rob Waterhouse and Stefan Schiffels for a 1 week <a href="//www.isb-sib.ch/events/training/joint-spring-school-bioinformatics-and-population-genomics">Bioinformatics &amp; Population Genomics </a> course. <a href="//www.slideshare.net/yannickwurm/2016-0529introsibspringschoolleuker-bad">[Overview slides]</a>. We use similar material for <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL’s Bioinformatics MSc</a> and our <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121430.html">Ecological and Evolutionary Genomics MSc</a>:</p>
     <ul>
         <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/reference_genome/assembly">Reads to genome to gene predictions</a>:
             <br> Short read cleaning, genome assembly, quality control, gene prediction, quality control. <a href="//www.slideshare.net/yannickwurm/2016-0530mondayassembly">[Slides]</a></li>
@@ -36,7 +44,7 @@ Much of the material we use is QMUL's QMPlus content management system. Some of 
 </div>
 
 <div class="col-sm-10 col-md-10" id="programming_in_r">
-    <h2>2016 Learning how to program in R</h2> As biology is becoming a data science its increasingly important to be able to wrangle large datasets. We use variations of the following for QMUL's SBC361 (3rd year Research Methods) and Bio781p (MSc Statistics &amp; Bioinformatics):
+    <h2>Learning how to program in R</h2> As biology is becoming a data science its increasingly important to be able to wrangle large datasets. We use variations of the following for QMUL's SBC361 (3rd year Research Methods) and Bio781p (MSc Statistics &amp; Bioinformatics):
     <ul>
         <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical1.html">Practical 1: R refresher and regular expressions</a></li>
         <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical2.html">Practical 2: Functions and for loops</a></li>
