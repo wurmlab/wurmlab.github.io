@@ -21,26 +21,29 @@
 </head>
 
 <body data-spy="scroll" data-target=".subnav" data-offset="50">
-    {% include navigation.html %}
-    <!-- Push down container due to fixed navbar -->
-    <div class="container">
-        <div class="row">
-           <div class="col-sm-12 col-md-12">
-                <div class="jumbotron">
-                    <div class="container">
-                        <h1>Ants, Bees, Genomes &amp; Evolution</h1>
-                        <h2>@ Queen Mary University London</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-12">
-                {{ content }}
-            </div>
-        </div>
-    </div>
-    <hr /> {% include footer.html %}
+  {% include navigation.html %}
+
+  <!-- Push down container due to fixed navbar -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <div class="jumbotron">
+          <div class="container">
+            <h1>Ants, Bees, Genomes &amp; Evolution</h1>
+            <h2>@ Queen Mary University London</h2>
+          </div> <!-- container --> 
+        </div> <!-- jumbotron --> 
+      </div><!-- colsm12 --> 
+    </div> <!-- row --> 
+  
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+	{{ content }}
+      </div> <!-- colsm12-->
+    </div> <!-- row-->
+  </div><!-- container-->
+  
+  <hr /> {% include footer.html %}
 
 
     <!-- Jquery libraries for additional client side functionalities

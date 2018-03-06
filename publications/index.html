@@ -650,7 +650,7 @@ papers:
 </script>
 
 <div class="publication">
-  <p><strong>Legend:</strong> *Joint first authors, °Corresponding authors, <b>Authors from the Wurmlab</b></p/>
+  <p><strong>Legend:</strong> *Joint first authors, °Corresponding authors, <b>Authors from the Wurmlab</b></p>
   <strong>Categories:</strong>&nbsp;&nbsp;
   {% for tag in page.all_tags %}
   <a href="#" class="filter-by"
@@ -670,7 +670,7 @@ papers:
       {% endif %}
       {% if paper.img %}
       <a href="http://dx.doi.org/{{ paper.doi }}">
-        <img class="img-publication" style="float:right; width:{{ paper.img_width }}px;" src="{{ paper.img }}"/>
+        <img class="img-publication" style="float:right; width:{{ paper.img_width }}px;" src="{{ paper.img }}" alt="{{ paper.title }}"/>
       </a>
       {% endif %}
       {% if paper.doi %}
