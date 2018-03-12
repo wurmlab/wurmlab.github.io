@@ -664,9 +664,17 @@ papers:
   <ol>
     {% for paper in page.papers %}
       {% if paper.highlight %}
-      <li value="{{ forloop.rindex }}" style="margin-bottom: 8px; padding: 5px; background: #eee" class="publication" data-tag="{{ paper.tag }}">
+        {% if paper.img %}
+          <li value="{{ forloop.rindex }}" style="margin-bottom: 8px; padding: 5px; background: #eee; padding-right:{{ paper.img_width }}px; " class="publication" data-tag="{{ paper.tag }}">
+        {% else %}
+          <li value="{{ forloop.rindex }}" style="margin-bottom: 8px; padding: 5px; background: #eee" class="publication" data-tag="{{ paper.tag }}">
+        {% endif %}
       {% else %}
-      <li value="{{ forloop.rindex }}" style="margin-bottom: 3px; padding: 5px" class="publication" data-tag="{{ paper.tag }}">
+	 {% if paper.img %}
+           <li value="{{ forloop.rindex }}" style="margin-bottom: 3px; padding: 5px; padding-right:{{ paper.img_width }}px;" class="publication" data-tag="{{ paper.tag }}">
+	 {% else %}
+	   <li value="{{ forloop.rindex }}" style="margin-bottom: 3px; padding: 5px" class="publication" data-tag="{{ paper.tag }}">
+	 {% endif %}
       {% endif %}
       {% if paper.img %}
       <a href="http://dx.doi.org/{{ paper.doi }}">
