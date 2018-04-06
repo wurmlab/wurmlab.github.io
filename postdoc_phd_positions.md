@@ -9,7 +9,11 @@ We are always eager for smart & motivated people to come and work with us. The [
 
 If you're interested in joining us, please provide by email a CV, and a short proposal. Projects should address major evolutionary or ecologically relevant questions, and/or major challenges in bioinformatics/genomics. We are happy for projects to include population genomics, comparative analyses, bioinformatics, molecular biology, software development, hacking, field or behavioral work.
 
+
+
 ## Postdocs
+
+** April 2018: We have an open 1-year position for a postdoc to adress questions about the recent evolution of bumblebee genomes (population genomics, comparative genomics, molecular evolution). Official advertisement to follow. Feel free to get in touch informally before then.**
 
 We invite applications for Marie Sk&#322;odowska-Curie fellowships. The biggest effort is usually to come up with a good project. Once a proposal is written it is often worth applying to several funding sources.
 
