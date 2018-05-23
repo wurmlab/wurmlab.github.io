@@ -13,7 +13,7 @@ If you're interested in joining us, please provide by email a CV, and a short pr
 
 ## Postdocs
 
-**May 2018: We have an open 1-year position for a postdoc to adress questions about the recent evolution of bumblebee genomes (population genomics, comparative genomics, molecular evolution). We particularly welcome candidates who may also be interested in putting together a joint fellowship application to extend funding. Apply by June 5th.  [Official advertisement here.](https://webapps2.is.qmul.ac.uk/jobs/job.action?jobID=3310) Feel free to get in touch informally before then.**
+<p style="background-color: lemonChiffon"><Strong>May 2018: We have an open 1-year position for a postdoc to adress questions about the recent evolution of bumblebee genomes (population genomics, comparative genomics, molecular evolution). We particularly welcome candidates who may also be interested in putting together a joint fellowship application to extend funding. <br/>Apply by June 5th.  <a href="https://webapps2.is.qmul.ac.uk/jobs/job.action?jobID=3310">Official advertisement here</a>. Feel free to get in touch informally before then.</strong></p>
 
 We invite applications for Marie Sk&#322;odowska-Curie fellowships. The biggest effort is usually to come up with a good project. Once a proposal is written it is often worth applying to several funding sources.
 
