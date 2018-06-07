@@ -13,8 +13,6 @@ If you're interested in joining us, please provide by email a CV, and a short pr
 
 ## Postdocs
 
-<p style="background-color: lemonChiffon"><Strong>May 2018: We have an open 1-year position for a postdoc to adress questions about the recent evolution of bumblebee genomes (population genomics, comparative genomics, molecular evolution). We particularly welcome candidates who may also be interested in putting together a joint fellowship application to extend funding. <br/>Apply by June 5th.  <a href="https://webapps2.is.qmul.ac.uk/jobs/job.action?jobID=3310">Official advertisement here</a>. Feel free to get in touch informally before then.</strong></p>
-
 We invite applications for Marie Sk&#322;odowska-Curie fellowships. The biggest effort is usually to come up with a good project. Once a proposal is written it is often worth applying to several funding sources.
 
 These can include:
@@ -33,6 +31,7 @@ PhD funding exists as part of multiple schemes. These include:
 
  * Many national schemes exist (e.g., from your country of origin). Some of these are listed [on QMUL's page](http://www.sbcs.qmul.ac.uk/postgraduate/research/index.html) including:
     * CONACYT (Mexico)
+    * Colfuturo (Colombia) provide 2 years of funding and we can potentially figure out the rest.
     * Commonwealth Scholarships
     * Newton fund
 	* US citizens can come with [Marshall](http://www.marshallscholarship.org/applications/eligible) or [Fullbright](http://www.fulbright.org.uk/going-to-the-uk/postgraduate-student-awards) scholarships.
