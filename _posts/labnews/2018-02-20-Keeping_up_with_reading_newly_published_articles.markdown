@@ -19,4 +19,4 @@ Because there are so many articles being published it can be quite difficult to 
 Each month, each Wurmlab member gets a list of three journals to review from our own journal generator. The script is on Github [here](https://github.com/wurmlab/crowdCheckingTableOfContents). Three articles that are relevant to the group or a particular lab member are picked form each journal's table of contents. These articles are added to a document that anyone in the lab group can read at any time.
 
 **Great, where can I see an example?**
-See the last instalment of the Index [here](/index_pdfs/index2018-03.pdf).
+See the last instalment of the Index [here](/index_pdfs/index2018-04.pdf).
