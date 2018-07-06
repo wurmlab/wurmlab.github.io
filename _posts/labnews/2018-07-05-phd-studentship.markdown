@@ -12,13 +12,18 @@ categories:
 
 **Interested in supercharging the productivity of genome biologist researchers?**
 
-We have an exciting bioinformatics PhD position open through the [London BBSRC LiDO Doctoral Training Programme](http://lido-dtp.ac.uk/npif2018.html). 
+We have an exciting 4-year bioinformatics PhD position open through the [London BBSRC LiDO Doctoral Training Programme](http://lido-dtp.ac.uk/npif2018.html). 
 
 [**Apply by 5pm July 12th** here at LIDO](http://lido-dtp.ac.uk/npif2018.html) to start in September.
 
-A description of the project is below. It is *highly* interdisciplinary - so you should not expect to be able to understand all the details today. The ideal candidate is smart, hard working, and not scared of data analysis or coding.
+A description of the project is below. It is *highly* interdisciplinary - no need to already be able to understand all the details today. 
+
+Great candidates fulfill 3 of the following four criteria: smart, hard working, understands genomes, and not scared of data analysis or coding. 
 
 If you have any questions regarding scope or nature of the project, or whether your skills are potentially sufficient, please don't hesitate to get in touch with me (Yannick).
+
+(Standard UKRI eligibility criteria apply (i.e. I *think* one must be UK resident). - the LiDO people can explain this better). 
+
 
 ## Project summary
 
