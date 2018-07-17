@@ -14,7 +14,7 @@ categories:
 
 We have an exciting 4-year bioinformatics PhD position open through the [London BBSRC LiDO Doctoral Training Programme](http://lido-dtp.ac.uk/npif2018.html). 
 
-[**Apply by 5pm July 12th** here at LIDO](http://lido-dtp.ac.uk/npif2018.html) to start in September.
+[**Apply by 5pm July 20th** here at LIDO](http://lido-dtp.ac.uk/npif2018.html) to start in September.
 
 A description of the project is below. It is *highly* interdisciplinary - no need to already be able to understand all the details today. 
 
