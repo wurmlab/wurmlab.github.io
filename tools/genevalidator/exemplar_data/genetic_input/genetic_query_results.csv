@@ -1,0 +1,11 @@
+AnalysisNumber,GVScore,Identifier,NumberOfHits,LengthCluster,LengthRank,GeneMerge,Duplication,ReadingFrame,MainORF,MissingExtraSequences
+1,90,ENA|AAC06291|AAC06291.1,,337 [336 - 355],20%,0.0,1.0,10 HSPs align in frame 1,100% (frame 1),98% conserved; 5% extra; 12% missing.
+2,90,ENA|AEO89880|AEO89880.1,,99 [98 - 99],100%,0.0,1.0,257 HSPs align in frame 1,99% (frame 1),92% conserved; 1% extra; 0% missing.
+3,90,ENA|AAZ66996|AAZ66996.1,,239 [236 - 253],39%,0.0,1.0,110 HSPs align in frame 1,100% (frame 1),97% conserved; 0% extra; 3% missing.
+4,90,ENA|AAY44250|AAY44250.1,,223 [236 - 253],22%,0.0,1.0,109 HSPs align in frame 2,100% (frame 2),12% conserved; 18% extra; 19% missing.
+5,90,ENA|ACR78454|ACR78454.1,,208 [208 - 254],10% (too short),-0.1,1.0,10 HSPs align in frame 1,100% (frame 1),100% conserved; 0% extra; 15% missing.
+6,75,ENA|EEF42972|EEF42972.1,,1020 [724 - 1208],38%,-0.3,0.25,36 HSPs align in frame 1; 8 HSPs align in frame 3,100% (frame 1),76% conserved; 4% extra; 11% missing.
+7,75,ENA|AAT08493|AAT08493.1,,228 [227 - 228],35%,0.0,1.0,299 HSPs align in frame 1,51% (frame 1),84% conserved; 0% extra; 1% missing.
+8,75,ENA|AAY44234|AAY44234.1,,192 [236 - 253],10% (too short),0.0,1.0,105 HSPs align in frame 1,100% (frame 1),89% conserved; 0% extra; 13% missing.
+9,74,ENA|CAC41167|CAC41167.1,,1735 [734 - 1007],25%,-0.4,0.06,331 HSPs align in frame 1,100% (frame 1),67% conserved; 2% extra; 45% missing.
+10,45,ENA|AEV14992|AEV14992.1,,217 [505 - 541],2% (too short),0.0,1.0,211 HSPs align in frame 2,45% (frame -2),14% conserved; 6% extra; 60% missing.

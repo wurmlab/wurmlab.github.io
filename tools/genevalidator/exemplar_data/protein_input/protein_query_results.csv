@@ -1,0 +1,11 @@
+AnalysisNumber,GVScore,Identifier,NumberOfHits,LengthCluster,LengthRank,GeneMerge,Duplication,MissingExtraSequences
+1,90,GB10056-PA,,339 [317 - 365],40%,-3.5,1.0,95% conserved; 2% extra; 11% missing.
+2,90,GB10063-PA,,615 [105 - 668],42%,0.0,1.0,97% conserved; 4% extra; 4% missing.
+3,90,GB10113-PA,,659 [300 - 506],37%,-2.4,0.25,95% conserved; 19% extra; 9% missing.
+4,90,SI2.2.0_02565,,1761 [1603 - 1677],50%,-0.1,1.0,100% conserved; 0% extra; 6% missing.
+5,67,PB18768-RA,,132 [124 - 137],43%,0.0,1.0,Not enough evidence
+6,64,SI2.2.0_02651,,660 [404 - 1242],18% (too short),0.0,1.0,100% conserved; 2% extra; 20% missing.
+7,45,PB11933-RA,,845 [667 - 885],37%,1.1,1.0,81% conserved; 2% extra; 23% missing.
+8,45,PB13758-RA,,751 [763 - 1531],3% (too short),0.0,1.0,81% conserved; 0% extra; 27% missing.
+9,22,GB10071-PA,,494 [379 - 402],0% (too long),-7.0,0.0,79% conserved; 21% extra; 6% missing.
+10,0,PB26730-RA,,Not enough evidence,Not enough evidence,Not enough evidence,Not enough evidence,Not enough evidence

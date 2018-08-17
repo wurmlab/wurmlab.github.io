@@ -1,0 +1,7 @@
+num_predictions,10
+num_good_predictions,8
+num_bad_predictions,2
+num_predictions_with_insufficient_blast_hits,0
+first_quartile_of_scores,75.0
+second_quartile_of_scores,82.5
+third_quartile_of_scores,90.0
