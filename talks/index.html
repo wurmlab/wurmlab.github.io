@@ -2,6 +2,12 @@
 layout: page
 title: Public presentations
 talks:
+- context: "2018 Harnessing FAIR Data."
+  label: "fair"
+  contexturl: "http://www.ses.ac.uk/2018/10/04/fair"
+  youtubeid: 2_ViAw2LMbc
+  about: "A very very brief intro to ants (until 4:15) and to my experience of the benefits and costs of FAIR and open approaches in evolutionary genomics. FAIR stands for Findable, Accessible, Interoperable and Reusable. <a href='https://www.slideshare.net/yannickwurm/2018-0903ses-openfairpracticesinevolutionarygenomics'>Slides on slideshare.</a>"
+
 - context: "2015 October: NextBug @ Edinburgh"
   label: "nextbug"
   contexturl: "https://genomics.ed.ac.uk/ngbug/next-meeting-edinburgh-2014"
@@ -68,11 +74,11 @@ prediction quality (including beautiful graphs!)</a></li>
           <h3>{{ talk.context }}</h3> {% endif %}
           <p>{{ talk.about }} </p>
           {% if talk.youtubeid %}
-          <iframe id="ytplayer{{talk.youtubeid}}" type="text/html" width="320" height="240" src="http://www.youtube.com/embed/{{ talk.youtubeid }}" frameborder="0"></iframe>
+          <iframe id="ytplayer{{talk.youtubeid}}" type="text/html" width="400" height="300" src="http://www.youtube.com/embed/{{ talk.youtubeid }}" frameborder="0"></iframe>
           {% endif %} {% if talk.slideshareid %}
           <iframe src="http://www.slideshare.net/slideshow/embed_code/{{talk.slideshareid}}" width="320" height="240" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""> </iframe>
           {% endif %}
-      </div>
+      </div><br/>
     {% cycle '', '</div> <div class="row">' %}
   {% endfor %}
 </div>
