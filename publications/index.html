@@ -18,7 +18,7 @@ papers:
   - CA Castillo-Carrillo
   - SJ Rossiter
   - <b>Y Wurm°</b>
-highlight: true
+  highlight: true
   pdf: https://academic.oup.com/mbe/advance-article-pdf/doi/10.1093/molbev/msy236/27697773/msy236.pdf
   img: /img/2018-05-22-bionano_insertions.png
   img_width: 150
@@ -623,8 +623,8 @@ highlight: true
     {{ tag }}
   </a>&nbsp;
   {% endfor %}
-  <br>
-  <br>
+  <br/>
+  <br/>
   <ol>
     {% for paper in page.papers %}
       {% if paper.highlight %}
@@ -662,9 +662,9 @@ highlight: true
       {% if paper.pdf %}
       <a href="{{ paper.pdf }}">[PDF]</a>
       {% endif %}
-      <br>
+      <br/>
       {{ paper.authors | join: ', ' }}
-      <br>
+      <br/>
       {{ paper.journal }}
 
       {% if paper.doi %}
