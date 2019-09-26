@@ -17,10 +17,10 @@ Much of the material we use is QMUL's QMPlus content management system. Some of 
     <h2 id="genome-bioinformatics">Genome Bioinformatics (Masters)</h2>
     <p>This module from the <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL's Bioinformatics MSc</a> covers the essential aspects of next generation sequence  analysis, including genome assembly, variant calling and population genetics. Also covers essential computer skills needed for bioinformatics, such as Linux and using our high performance computing cluster.</p>
     <ul>
-      <li><a href="https://wurmlab.github.io/genomicscourse/2017/practicals/reference_genome/read-cleaning">Practical 1:</a> Read cleaning.</li>
-      <li><a href="https://wurmlab.github.io/genomicscourse/2017/practicals/reference_genome/assembly">Practical 2:</a> Genome assembly.</li>
-      <li><a href="https://wurmlab.github.io/genomicscourse/2017/practicals/population_genetics/map_call">Practical 3:</a> Read mapping and variant calling.</li>
-      <li><a href="http://wurmlab.github.io/genomicscourse/2017/practicals/population_genetics/popgen">Practical 4:</a> Population genetics in R.</li>
+      <li><a href="https://wurmlab.github.io/genomicscourse/2019/practicals/reference_genome/read-cleaning">Practical 1:</a> Read cleaning.</li>
+      <li><a href="https://wurmlab.github.io/genomicscourse/2019/practicals/reference_genome/assembly">Practical 2:</a> Genome assembly.</li>
+      <li><a href="https://wurmlab.github.io/genomicscourse/2019/practicals/population_genetics/map_call">Practical 3:</a> Read mapping and variant calling.</li>
+      <li><a href="http://wurmlab.github.io/genomicscourse/2019/practicals/population_genetics/popgen">Practical 4:</a> Population genetics in R.</li>
     </ul>
     <h2 id="bioinformatics--population-genomics">Bioinformatics &amp; Population Genomics</h2>
     <p><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/">Practicals</a> prepared with Rodrigo Pracana, Julien Roux, Rob Waterhouse and Stefan Schiffels for a 1 week <a href="https://www.sib.swiss/training/course/2016-05-joint-spring-school-bioinformatics-and-population-genomics">Bioinformatics &amp; Population Genomics </a> course. <a href="//www.slideshare.net/yannickwurm/2016-0529introsibspringschoolleuker-bad">[Overview slides]</a>. We use similar material for <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL’s Bioinformatics MSc</a> and our <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121430.html">Ecological and Evolutionary Genomics MSc</a>:</p>
