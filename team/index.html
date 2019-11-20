@@ -146,15 +146,15 @@ project_students:
 
 <hr>
 
+<h3>Visitors</h3>
 <div class="row">
-    <h3>Visitors</h3>
     {% for person in page.occasional_visitors %}
         <div class="col-sm-6 col-md-6">
-          <div class="thumbnail team-member">
+          <div class="thumbnail" style="padding:0px;margin-bottom:0;">
               <div class="caption">
                   <h3>{{ person.name }}</h3>
                   <img src="{{ site.url }}/img/{{ person.img }}" align="left" style="margin-right:10px; height:50px;" class="img-rounded">
-                  <p>{{ person.about }}</p>
+                  <p style="margin-bottom:0;">{{ person.about }}</p>
               </div>
               <div class="clearfix"></div>
           </div>
@@ -164,15 +164,16 @@ project_students:
 </div>
 
 <hr>
+
+<h3>Alumni</h3>
 <div class="row">
-    <h3>Alumni</h3>
     {% for person in page.alumni %}
         <div class="col-sm-6 col-md-6">
-          <div class="thumbnail team-member"  style="padding:0px;">
+          <div class="thumbnail" style="padding:0px;margin-bottom:0;">
               <div class="caption">
                   <h3>{{ person.name }}</h3>
                   <img src="{{ site.url }}/img/{{ person.img }}" align="left" style="margin-right:10px; height:50px;" class="img-rounded">
-                  <p>{{ person.about }}</p>
+                  <p style="margin-bottom:0;">{{ person.about }}</p>
               </div>
               <div class="clearfix"></div>
           </div>
@@ -180,9 +181,9 @@ project_students:
         {% cycle 'group1': '', '</div><div class="row">' %}
     {% endfor %}
 </div>
-
+<br>
+<h4>Former project students</h4>
 <div class="row">
-    <h3>Former project students</h3>
     <ul>
         {% for student in page.project_students %}
           <li>{{ student.name }}. {{ student.about }}</li>
