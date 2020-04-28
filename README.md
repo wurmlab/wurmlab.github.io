@@ -1,7 +1,7 @@
 Based on https://github.com/cboettig/labnotebook
 
 ## Install
-Requires ruby 2.0
+Requires ruby 2.7
 ```bash
 git clone git@github.com:wurmlab/wurmlab.github.io.git
 cd wurmlab.github.io.git
