@@ -4,7 +4,7 @@ Based on https://github.com/cboettig/labnotebook
 Requires ruby 2.7
 ```bash
 git clone git@github.com:wurmlab/wurmlab.github.io.git
-cd wurmlab.github.io.git
+cd wurmlab.github.io
 bundle install
 ```
 Then you can test what the web site looks like. Run: 
