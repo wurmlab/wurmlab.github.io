@@ -3,16 +3,17 @@ layout: page
 title: Teaching
 ---
 <br/>
-We teach on several courses, including:
-
- * [BIO113 Evolution (first year)](http://qmplus.qmul.ac.uk/course/view.php?id=3972)
- * [SBC322 Ecological and Evolutionary Genomics (3rd year)](http://www.sbcs.qmul.ac.uk/undergraduate/undergraduate/UG_modules/189312.html)
- * [SBC361 Research Methods and Communication 2 (3rd year)](http://www.sbcs.qmul.ac.uk/undergraduate/undergraduate/UG_modules/189319.html)
- * BIO721P Genome Bioinformatics (Masters)
- * BIO781P Statistics and Bioinformatics (Masters)
-
-Much of the material we use is QMUL's QMPlus content management system. Some of the material we use is on GitHub or provided below.
-
+<div class="col-sm-12 col-md-12">
+	<p>We teach on several courses, including:</p>
+	<ul>
+		<li> BIO113 Evolution (first year)</li>
+		<li> SBC322 Ecological and Evolutionary Genomics (3rd year)</li>
+		<li> SBC361 Research Methods and Communication 2 (3rd year)</li>
+		<li> BIO721P Genome Bioinformatics (Masters)</li>
+		<li> BIO781P Statistics and Bioinformatics (Masters)</li>
+	</ul>
+	<p>Much of the material we use is QMUL's QMPlus content management system. Some of the material we use is on GitHub or provided below.</p>
+</div>
 <div class="col-sm-12 col-md-12">
     <h2 id="genome-bioinformatics">Genome Bioinformatics (Masters)</h2>
     <p>This module from the <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL's Bioinformatics MSc</a> covers the essential aspects of next generation sequence  analysis, including genome assembly, variant calling and population genetics. Also covers essential computer skills needed for bioinformatics, such as Linux and using our high performance computing cluster.</p>
@@ -127,8 +128,11 @@ Much of the material we use is QMUL's QMPlus content management system. Some of 
         <iframe src="//www.slideshare.net/slideshow/embed_code/key/LOuf0tvzOMHvwr" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%; position: absolute;"> </iframe>
     </div>
 </div>
+
+<br/><hr/><br/>
+
 <div class="col-sm-12 col-md-12">
-    <h2>Older stuff</h2>
+    <h1>Older stuff</h1>
     <h3>2012 Swiss Bioinformatics Institute Summerschool</h3> From 2012 Swiss Bioinformatics Institute <a href="//www.isb-sib.ch/education/sib-phd-training-network/events/past-events/phd-summer-school-2012.html">summerschool in Bioinformatics and Population Genomics</a> (with Oksana Riba-Grognuz, Kate Ridout and Eyal Privman). This is largely superceded by the newer version (see above):
     <ul>
         <li><a href="//www.slideshare.net/yannickwurm/20120622-fridayadelboden" title="20120622 fridayadelboden" target="_blank">Overview and summary slides</a></li>
