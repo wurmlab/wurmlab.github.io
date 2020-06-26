@@ -2,67 +2,65 @@
 layout: page
 title: Teaching
 ---
-
-We teach on several courses, including:
-
- * [BIO113 Evolution (first year)](http://qmplus.qmul.ac.uk/course/view.php?id=3972)
- * [SBC322 Ecological and Evolutionary Genomics (3rd year)](http://www.sbcs.qmul.ac.uk/undergraduate/undergraduate/UG_modules/189312.html)
- * [SBC361 Research Methods and Communication 2 (3rd year)](http://www.sbcs.qmul.ac.uk/undergraduate/undergraduate/UG_modules/189319.html)
- * BIO721P Genome Bioinformatics (Masters)
- * BIO781P Statistics and Bioinformatics (Masters)
-
-Much of the material we use is QMUL's QMPlus content management system. Some of the material we use is on GitHub or provided below.
-
+<br/>
 <div class="col-sm-12 col-md-12">
-    <h2 id="genome-bioinformatics">Genome Bioinformatics (Masters)</h2>
-    <p>This module from the <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL's Bioinformatics MSc</a> covers the essential aspects of next generation sequence  analysis, including genome assembly, variant calling and population genetics. Also covers essential computer skills needed for bioinformatics, such as Linux and using our high performance computing cluster.</p>
-    <ul>
-      <li><a href="https://wurmlab.github.io/genomicscourse/2019/practicals/reference_genome/read-cleaning">Practical 1:</a> Read cleaning.</li>
-      <li><a href="https://wurmlab.github.io/genomicscourse/2019/practicals/reference_genome/assembly">Practical 2:</a> Genome assembly.</li>
-      <li><a href="http://wurmlab.github.io/genomicscourse/2019/practicals/reference_genome/prediction">Practical 3:</a> Gene prediction.</li>
-        <li><a href="https://wurmlab.github.io/genomicscourse/2019/practicals/population_genetics/map_call">Practical 4:</a> Read mapping and variant calling.</li>
-      <li><a href="http://wurmlab.github.io/genomicscourse/2019/practicals/population_genetics/popgen">Practical 5:</a> Population genetics in R.</li>
-    </ul>
-    <h2 id="bioinformatics--population-genomics">Bioinformatics &amp; Population Genomics</h2>
-    <p><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/">Practicals</a> prepared with Rodrigo Pracana, Julien Roux, Rob Waterhouse and Stefan Schiffels for a 1 week <a href="https://www.sib.swiss/training/course/2016-05-joint-spring-school-bioinformatics-and-population-genomics">Bioinformatics &amp; Population Genomics </a> course. <a href="//www.slideshare.net/yannickwurm/2016-0529introsibspringschoolleuker-bad">[Overview slides]</a>. We use similar material for <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL’s Bioinformatics MSc</a> and our <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121430.html">Ecological and Evolutionary Genomics MSc</a>:</p>
-    <ul>
-        <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/reference_genome/assembly">Reads to genome to gene predictions</a>:
-            <br> Short read cleaning, genome assembly, quality control, gene prediction, quality control. <a href="//www.slideshare.net/yannickwurm/2016-0530mondayassembly">[Slides]</a></li>
-        <li>Population sequencing to genotypes to population genetics statistics:
-            <ul>
-                <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/population_genetics/map_call">Mapping reads, calling variants, visualizing variant calls.</a></li>
-                <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/population_genetics/popgen">Analysing variants: PCA, measuring Differentiation &amp; Diversity.</a></li>
-            </ul>
-        </li>
-        <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/msmc/msmc-tutorial/guide">Inferring population sizes and gene flow.</a></li>
-        <li>Gene expression:
-            <ul>
-                <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/rnaseq/TP1">From raw sequencing data to transcript expression levels.</a></li>
-                <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/rnaseq/TP2">Gene-level clustering and differential expression analysis.</a></li>
-            </ul>
-        </li>
-    </ul>
+  <p>Courses Yannick has taught on include: Evolution, Ecological and Evolutionary Genomics, Genome Bioinformatics, Research Frontiers, Research Methods.</p> 
+  <p>Much of the material we use is QMUL's QMPlus content management system. Some of is also on GitHub or below.</p>
+</div>
+<div class="col-sm-12 col-md-12">
+  <h2 id="genome-bioinformatics">Genome Bioinformatics (Masters)</h2>
+  <p>This module from the <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL's Bioinformatics MSc</a> covers the essential aspects of next generation sequence  analysis, including genome assembly, variant calling and population genetics. Also covers essential computer skills needed for bioinformatics, such as Linux and using our high performance computing cluster.</p>
+  <ul>
+    <li><a href="https://wurmlab.github.io/genomicscourse/2019/practicals/reference_genome/read-cleaning">Practical 1:</a> Read cleaning.</li>
+    <li><a href="https://wurmlab.github.io/genomicscourse/2019/practicals/reference_genome/assembly">Practical 2:</a> Genome assembly.</li>
+    <li><a href="http://wurmlab.github.io/genomicscourse/2019/practicals/reference_genome/prediction">Practical 3:</a> Gene prediction.</li>
+    <li><a href="https://wurmlab.github.io/genomicscourse/2019/practicals/population_genetics/map_call">Practical 4:</a> Read mapping and variant calling.</li>
+    <li><a href="http://wurmlab.github.io/genomicscourse/2019/practicals/population_genetics/popgen">Practical 5:</a> Population genetics in R.</li>
+  </ul>
 </div>
 
 <div class="col-sm-10 col-md-10" id="programming_in_r">
-    <h2>Learning how to program in R</h2> As biology is becoming a data science its increasingly important to be able to wrangle large datasets. We use variations of the following for QMUL's SBC361 (3rd year Research Methods) and Bio781p (MSc Statistics &amp; Bioinformatics):
-    <ul>
-        <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical1.html">Practical 1: R refresher and regular expressions</a></li>
-        <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical2.html">Practical 2: Functions and for loops</a></li>
-        <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical3.html">Practical 3: Practice to pull it all together</a></li>
-    </ul>
+  <h2>Learning how to program in R</h2> As biology is becoming a data science its increasingly important to be able to wrangle large datasets. We use variations of the following for QMUL's SBC361 (3rd year Research Methods) and Bio781p (MSc Statistics &amp; Bioinformatics):
+  <ul>
+    <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical1.html">Practical 1: R refresher and regular expressions</a></li>
+    <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical2.html">Practical 2: Functions and for loops</a></li>
+    <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical3.html">Practical 3: Practice to pull it all together</a></li>
+  </ul>
 </div>
 <div class="col-sm-2 col-md-2">
-    <div style="left: 0px; width: 100%; height: 0px; position: relative; padding-bottom: 75.0019%; padding-top: 38px;">
-        <iframe src="//www.slideshare.net/slideshow/embed_code/key/jCQoRUBEZOsam0" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="top: 0px; left: 0px; width: 100%; height: 100%; position: absolute;"></iframe>
-    </div>
+  <div style="left: 0px; width: 100%; height: 0px; position: relative; padding-bottom: 75.0019%; padding-top: 38px;">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/jCQoRUBEZOsam0" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="top: 0px; left: 0px; width: 100%; height: 100%; position: absolute;"></iframe>
+  </div>
+</div>
+
+<div class="col-sm-10 col-md-10" id="programming_in_r">
+  <h1>Some older stuff</h1>
+  <h2 id="bioinformatics--population-genomics">Bioinformatics &amp; Population Genomics</h2>
+  <p><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/">Practicals</a> prepared with Rodrigo Pracana, Julien Roux, Rob Waterhouse and Stefan Schiffels for a 1 week <a href="https://www.sib.swiss/training/course/2016-05-joint-spring-school-bioinformatics-and-population-genomics">Bioinformatics &amp; Population Genomics </a> course. <a href="//www.slideshare.net/yannickwurm/2016-0529introsibspringschoolleuker-bad">[Overview slides]</a>. We use similar material for <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL’s Bioinformatics MSc</a> and our <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121430.html">Ecological and Evolutionary Genomics MSc</a>:</p>
+  <ul>
+    <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/reference_genome/assembly">Reads to genome to gene predictions</a>:
+      <br> Short read cleaning, genome assembly, quality control, gene prediction, quality control. <a href="//www.slideshare.net/yannickwurm/2016-0530mondayassembly">[Slides]</a></li>
+    <li>Population sequencing to genotypes to population genetics statistics:
+      <ul>
+        <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/population_genetics/map_call">Mapping reads, calling variants, visualizing variant calls.</a></li>
+        <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/population_genetics/popgen">Analysing variants: PCA, measuring Differentiation &amp; Diversity.</a></li>
+      </ul>
+    </li>
+    <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/msmc/msmc-tutorial/guide">Inferring population sizes and gene flow.</a></li>
+    <li>Gene expression:
+      <ul>
+        <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/rnaseq/TP1">From raw sequencing data to transcript expression levels.</a></li>
+        <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/rnaseq/TP2">Gene-level clustering and differential expression analysis.</a></li>
+      </ul>
+    </li>
+  </ul>
 </div>
 
 <div class="col-sm-12 col-md-12">
-    <h2 id="ecological-and-evolutionary-genomics">Ecological and Evolutionary Genomics</h2>
-    <p>Our students did some great blogging.</p>
-    <p>2016: <a href="https://ecoevo2016.wordpress.com">Ecoevo @ Wordpress</a></p>
-    <ul>
+  <h2 id="ecological-and-evolutionary-genomics">Ecological and Evolutionary Genomics</h2>
+  <p>Our students did some great blogging.</p>
+  <p>2016: <a href="https://ecoevo2016.wordpress.com">Ecoevo @ Wordpress</a></p>
+  <ul>
       <li><a href="https://ecoevo2016.wordpress.com/2016/12/05/origin-and-functional-evolution-of-y-chromosomes-across-mammals/">Origin and functional evolution of Y chromosomes across mammals</a></li>
       <li><a href="https://ecoevo2016.wordpress.com/2016/12/02/fight-or-flight-monarch-butterflies-and-their-migratory-journey/">Fight or flight? Monarch butterflies and their migratory journey.</a></li>
       <li><a href="https://ecoevo2016.wordpress.com/2016/11/28/speciation-of-darwins-finches-one-gene-that-rules-it-all/">Speciation of Darwin&rsquo;s Finches: One gene that rules it all</a></li>
@@ -127,9 +125,14 @@ Much of the material we use is QMUL's QMPlus content management system. Some of 
         <iframe src="//www.slideshare.net/slideshow/embed_code/key/LOuf0tvzOMHvwr" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%; position: absolute;"> </iframe>
     </div>
 </div>
+
+<br/>
+<hr>
+
+
 <div class="col-sm-12 col-md-12">
-    <h2>Older stuff</h2>
-    <h3>2012 Swiss Bioinformatics Institute Summerschool</h3> From 2012 Swiss Bioinformatics Institute <a href="//www.isb-sib.ch/education/sib-phd-training-network/events/past-events/phd-summer-school-2012.html">summerschool in Bioinformatics and Population Genomics</a> (with Oksana Riba-Grognuz, Kate Ridout and Eyal Privman). This is largely superceded by the newer version (see above):
+  <br/>
+  <h3>2012 Swiss Bioinformatics Institute Summerschool</h3> From 2012 Swiss Bioinformatics Institute <a href="//www.isb-sib.ch/education/sib-phd-training-network/events/past-events/phd-summer-school-2012.html">summerschool in Bioinformatics and Population Genomics</a> (with Oksana Riba-Grognuz, Kate Ridout and Eyal Privman). This is largely superceded by the newer version (see above):
     <ul>
         <li><a href="//www.slideshare.net/yannickwurm/20120622-fridayadelboden" title="20120622 fridayadelboden" target="_blank">Overview and summary slides</a></li>
         <li><a href="DAY1_exercises.docx.html">UNIX introduction, <em>de novo</em> genome assembly &amp; <em>de novo</em> transcriptome assembly, and cross-validation using Cytoscape of the genome and transcriptome assemblies</a> [<a href="//docs.google.com/document/pub?id=1lx8cGQlyBZV8RXm7gSLqFafcOUfPq6_GjadqBxqiAzQ">Google Docs link</a>]</li>
