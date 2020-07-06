@@ -33,7 +33,8 @@ PhD funding exists as part of multiple schemes. These include:
     * CONACYT (Mexico)
     * Colfuturo (Colombia) provide 2 years of funding and we can potentially figure out the rest.
     * Commonwealth Scholarships
-    * Newton fund
+    * Newton fund (e.g., [Newton-Bhabha](https://www.britishcouncil.in/programmes/higher-education/newton-fund))
+	* [Commonwealth scholarships  for high income countries (Canada, Australia, Trinidad...)](http://cscuk.dfid.gov.uk/apply/phd-scholarships-high-income-countries/)
 	* US citizens can come with [Marshall](http://www.marshallscholarship.org/applications/eligible) or [Fullbright](http://www.fulbright.org.uk/going-to-the-uk/postgraduate-student-awards) scholarships.
  * Occasionally, we have specific funding for PhD positions.
  * In some circumstances we accept self-funded PhD candidates.
