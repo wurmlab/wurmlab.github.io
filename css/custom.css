@@ -371,3 +371,16 @@ input[type='checkbox'] {
   border-bottom-right-radius: 7px; */
 /*  padding: .5rem;*/
 }
+
+
+
+img[src*='#left'] {
+    float: left;
+}
+img[src*='#right'] {
+    float: right;
+}
+img[src*='#center'] {
+    display: block;
+    margin: auto;
+}
