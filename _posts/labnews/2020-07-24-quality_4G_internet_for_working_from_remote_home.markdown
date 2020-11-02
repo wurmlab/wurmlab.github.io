@@ -34,7 +34,7 @@ But plug in a dual antenna and it's crazy fast.
 
 FYI, those 180 Mbps are despite having only 3 bars of reception. 
 
-It turns out that this router is [Category 12 LTE](https://en.wikipedia.org/wiki/E-UTRA#UE_Category), which means that it connects to the cell tower 3 times. So you get **more combined bandwidth, and more resilience to interruptions** - say if one of the cell tower's were to become overloaded or fail.
+It turns out that this router is [Category 12 LTE](https://en.wikipedia.org/wiki/E-UTRA#UE_Category), which means that it connects to the cell tower 3 times. So you get **more combined bandwidth, and more resilience to interruptions** - say if one of the cell towers were to become overloaded or fail.
 
 MikroTik design and build these in Latvia. Most of their stuff is geared towards  professionals. So the user interface offers immense flexibility - but is not easy to use. And it didn't just "plug and play". 
 
