@@ -13,7 +13,9 @@ If you're interested in joining us, please provide by email a CV, and a short pr
 
 ## Postdocs
 
-We invite applications for Marie Sk&#322;odowska-Curie fellowships. The biggest effort is usually to come up with a good project. Once a proposal is written it is often worth applying to several funding sources.
+**[Currently open postdoc position](https://webapps2.is.qmul.ac.uk/jobs/job.action?jobRef=QMUL23204). Apply by November 23rd**
+
+We invite applications for fellowships (Marie Sk&#322;odowska-Curie & Royal Society). The biggest effort is usually to come up with a good project. Once a proposal is written it is often worth applying to several funding sources.
 
 These can include:
  * many national sources of funding (e.g., [Swiss NSF](http://www.snf.ch/en/Pages/default.aspx), [Fondation Fyssen](http://www.fondationfyssen.fr/), [DAAD](https://www.daad.de/))
