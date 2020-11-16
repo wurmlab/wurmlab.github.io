@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/yannickwurm
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://wurmlab.com
+  * I am yannickwurm (https://keybase.io/yannickwurm) on keybase.
+  * I have a public key ASAc2uIUfWuRgyD_pL3W24qhH4QIrd41fz8nqpUiuzSzIAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01201cdae2147d6b918320ffa4bdd6db8aa11f8408adde357f3f27aa9522bb34b3200a",
+      "host": "keybase.io",
+      "kid": "01201cdae2147d6b918320ffa4bdd6db8aa11f8408adde357f3f27aa9522bb34b3200a",
+      "uid": "0c22755f0e7f0d12fd07721a36dff919",
+      "username": "yannickwurm"
+    },
+    "merkle_root": {
+      "ctime": 1605553303,
+      "hash": "d128d11c79c91ca4957a102599ec8c6f66172dda2ff58ff143084a40184871f8fcbfdd2955e05c496bda583c7654a29d8a8db2325f724636188551bbb012f62b",
+      "hash_meta": "05fdb5bf7f353f13e6cd62c5d259a5c60282b14e09ab34ae12060d1bff2fe29d",
+      "seqno": 18141245
+    },
+    "service": {
+      "entropy": "Q54KFwCc6k+6asrIf27H1uzp",
+      "hostname": "wurmlab.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.0"
+  },
+  "ctime": 1605553357,
+  "expire_in": 504576000,
+  "prev": "32050ad39ab9aac32869bd5c8e4b39410adbb978b2f319de1c9877bc0603b44b",
+  "seqno": 6,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgHNriFH1rkYMg/6S91tuKoR+ECK3eNX8/J6qVIrs0syAKp3BheWxvYWTESpcCBsQgMgUK05q5qsMoab1cjks5QQrbuXiy8xneHJh3vAYDtEvEIEUOIue8aDe/K/g/daJ62Nq3SwMGvSgordeuSKIT6n2qAgHCo3NpZ8RAXvySLRdpKtwpwCq3xVLJKryKsVykVcg3lViTYa8M5Z9bOZRHpkFg3l4R7D4PuT25xCifXXZ/2ra50nEiUjcbA6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIOtn1VFKUajufYWi+RqVIwXCVenIe07CPk2qvZA/sHQWo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/yannickwurm
+
+==================================================================
