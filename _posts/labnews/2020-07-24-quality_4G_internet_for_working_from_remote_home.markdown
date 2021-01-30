@@ -38,7 +38,7 @@ It turns out that this router is [Category 12 LTE](https://en.wikipedia.org/wiki
 
 MikroTik design and build these in Latvia. Most of their stuff is geared towards  professionals. So the user interface offers immense flexibility - but is not easy to use. And it didn't just "plug and play". 
 
-FWIW the router is [~200 GBP in UK](https://amzn.to/2B2gZhP). 
+FWIW the Microtik Chateau is [~200 GBP in UK](https://amzn.to/2B2gZhP). If out of stock, or you want something more user friendly, the [Netgear Orbi](https://amzn.to/2MEjXOS) is super-fast, or [TP-link Archer MR600](https://amzn.to/3ovQ0xH) is cheap but slower (Cat 6). All of these have antennas built in - so if signal is strong enough, no external antenna is needed.  
 
 <br/>
 
@@ -48,7 +48,7 @@ This had to be pointed at the nearest 4G phone tower - which I located using thi
 
 This made a huge improvement in cell reception. 
 
-(FWIW, I paid [~100 GBP for the antenna](https://amzn.to/2ZYz9ug))
+(This type of [pair of directional antennas is ~100 GBP](https://amzn.to/3teeZsT)). If you want to avoid the hassle of precise pointing, at the cost of lower sensitivity, get an [omni-directional antenna](https://amzn.to/2YHF4mp) that can just be stuck to the wall or window. 
 
 
 ![coflex_mimo_lte_antenna.jpg](/img/news/2020-07-lte_setup/coflex_mimo_lte_antenna.jpg#center)
@@ -74,5 +74,13 @@ However, it didn't work right away. I had to specifically:
 **3.  In the WebFig interface**
 * Tell it to accept incoming SMS
 
+<br/>
 
-Now I just need to figure out how to [correctly ground the antenna](https://longrangesignal.com/tv-antenna-basics-how-to-ground-an-outdoor-tv-antenna/)...
+
+### Getting internet while traveling
+
+On the road (train, hotel rooms...), tethering to the iPhone is sometimes ok... but throughput is really much better with a dedicated device. 
+
+I stick a SIM card into a [Netgear Aircard 790](https://amzn.to/3oyCqd0). Its wonderful and works right away; their newer [NightHawk M2](https://amzn.to/36r3cO5) is likely even better. If signal is weak, I take a [portable mini LTE-antenna](https://amzn.to/2MICl9a) that can just be plugged into the aircard or nighthawk and stick that to the window. Obviously, if signal is very weak, a bigger antenna setup (like above) is needed...
+
+
