@@ -24,6 +24,7 @@ Your draft should in the form of a letter from me about you (yes, it can feel aw
 * Send it as a document I can edit (not a PDF).
 
 ** 2015 update: a much more [exhaustive list of writing tips here]({% post_url /labnews/2015-02-05-scientific-writing %}).**
+** 2020 update: ** please use an automatic grammar and style checker such as [Grammarly](https://grammarly.go2cloud.org/SH2na) or Microsoft Word's grammar checker. They aren't magical solutions, but can help you a lot!
 
 ### Structure 
 
