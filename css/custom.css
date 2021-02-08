@@ -5,6 +5,8 @@ a {
     color: black;
 }
 
+p a, li a {text-decoration: underline;}
+
 .Flexible-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -30,6 +32,9 @@ a {
 .badge {
 padding:2px;
 }
+.navbar-nav a {
+    text-decoration: none;
+}
 
 .jumbotron {
  background-image:url('{{ site.url }}/img/fireAntMicroarrays.jpg');
@@ -43,6 +48,9 @@ padding:2px;
  border-top: 0; */
  font-weight: bold;
  margin-bottom: 5px;
+}
+.jumbotron a {
+    text-decoration: none;
 }
 
 .jumbotron p {
@@ -235,7 +243,7 @@ th {
 
 span.highlight {text-decoration: underline;}
 
-a {text-decoration: none;}
+
 
 .jumbotron h1 {
   padding-top: 20px;
