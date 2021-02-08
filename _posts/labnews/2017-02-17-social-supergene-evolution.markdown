@@ -10,13 +10,11 @@ categories:
 ---
 
 
-
-<div class="intro">
-<p>Scientists from Queen Mary University of London (QMUL) have
+<h4 style="margin-left: 30px"><strong>Scientists from Queen Mary University of London (QMUL) have
 discovered that the chromosome responsible for the social
 organisation of colonies of the highly invasive fire ant is likely
-to have evolved via a single event rather than over time.</p>
-</div>
+to have evolved via a single event rather than over time.</strong></h4>
+
 
 
 
@@ -25,12 +23,10 @@ colonies have a single queen while other colonies contain dozens of
 queens. The team had previously discovered that colony type is
 determined by a chromosome that carries one of two variants of a
 ‘supergene’ region containing more than 500 genes.</p>
-<p>In a new research paper, published in the journal <a href=
-`"http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1365-294X"><em>
-Molecular Ecology</em></a>, the team from QMUL’s <a href=
+<p>In a new research paper, published in the journal <em>Molecular Ecology</em>, the team from QMUL’s <a href=
 "http://www.sbcs.qmul.ac.uk/">School of Biological and Chemical
-Sciences</a> sequenced the DNA and compared the genomes of two
-types of individuals: those carrying the supergene version
+Sciences</a> <a href="https://doi.org/10.1111/mec.14054">sequenced the DNA and compared the genomes of two
+types of individuals: those carrying the supergene version</a>
 responsible for colonies with a single queen, and those carrying
 the supergene variant responsible for colonies with multiple
 queens.</p>
