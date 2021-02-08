@@ -271,8 +271,9 @@ a {text-decoration: none;}
 /**
  * Required by landing page and /team.
  */
-h3 {
-  margin-top:0;
+h1 {
+    margin-top:0;
+    font-size:24pt;
 }
 
 .team-member {

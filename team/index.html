@@ -17,7 +17,7 @@ members:
   about: "Postdoctoral researcher. Evolutionary genomics of social wasps and bumblebees."
 - name: <a href='/team/ghernandez'>Gabriel Hernandez-Gomez</a>
   img: ghernandez.jpg
-  about: "Queen Mary University of London PhD student co-funded by Colfuturo. I am interested in answering evolutionary questions through the understanding of genomes. I studied chordates immune system in the past and now I am happy to explore the fire ants and their supergene."
+  about: "PhD student co-funded by Colfuturo. I am interested in answering evolutionary questions through the understanding of genomes. I studied chordates immune system in the past and now I am happy to explore the fire ants and their supergene."
 - name: Guy Mercer
   img: guy_mercer.png
   about: "London NERC DTP PhD student investigating p450 enzyme mediated pesticide detoxification in pollinators."
@@ -120,7 +120,7 @@ project_students:
 
 
 ---
-
+<h1>Team of social insect & genomics researchers</h1>
 <div class="row">
   <div class="col-sm-12 col-md-12">
     <img src="{{ site.url }}/img/2019_website_pic_iwo_small.jpg" style="max-width:100%;"
@@ -135,10 +135,10 @@ project_students:
 
 <div class="row">
     {% for person in page.members %}
-        <div class="col-sm-6 col-md-6">
-          <div class="thumbnail team-member" style="padding:0px;">
+        <div class="col-sm-6">
+          <div class="thumbnail team-member" style="padding:0px">
               <div class="caption">
-                  <h3 style="padding:0px;">{{ person.name }}</h3>
+                  <h3 style="padding:0px; margin:0px;">{{ person.name }}</h3>
                   <img src="{{ site.url }}/img/{{ person.img }}" align="left" style="margin-right:10px; height:125px;" class="img-rounded">
                   <p>{{ person.about }}</p>
               </div>

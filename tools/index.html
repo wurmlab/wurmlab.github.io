@@ -1,6 +1,6 @@
 ---
 layout: page
-title: tools and code
+title: Genome analysis tools, software and code
 
 tools:
 - name        : SequenceServer - implement, visualize & interpret BLAST analyses
@@ -47,15 +47,13 @@ oldtools:
 
 - name        : Afra
   img         : afra.png
-  url         : http://afra.sbcs.qmul.ac.uk
   code        : http://github.com/wurmlab/afra
   about       : <a href="http://bbsrc.ac.uk">BBSRC</a>-funded tool for crowd-sourcing curation of gene predictions.
   status      : Beta. Used in Bioinforatics MSc course at QMUL.
   status_icon : fa-warning
 
 ---
-<br/>
-<h3>Major bioinformatic software tools that we develop include:</h3>
+<h1>Major bioinformatic software tools that we develop include:</h1>
 {% for tool in page.tools %}
 <div class="row">
         <div class="col-sm-2 col-md-2 hidden-xs">
@@ -95,7 +93,7 @@ oldtools:
 
 <br/><br/>
 
-<h3>Software development approaches</h3>
+<h2>Software development approaches</h2>
 <p>We believe in <a href="http://www.nature.com/nature/focus/reproducibility/">Reproducible Research</a> &amp; <a href="http://software.ac.uk">Software Sustainability</a>. When possible we respect style guides and use unit testing &amp; continuous integration. We aim to respect these approaches in our research on specific biological questions and in our tool development. We develop mostly in:</p>
 <ul>
     <li>
@@ -119,7 +117,7 @@ oldtools:
 
 <br/><br/>
 
-<h3>Some tools now have limited relevance</h3>
+<h2>Some tools now have limited relevance</h2>
 <p>oSwitch has been superceded by updates in docker. Afra has been used in our MSc course; it is currently somewhat out of sync with main Apollo. </p>
 {% for tool in page.oldtools %}
 <div class="row">
