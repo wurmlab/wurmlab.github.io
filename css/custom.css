@@ -38,25 +38,26 @@ padding:2px;
 /* width: 1070px;
  height: 240px;*/
  background-size: cover;
- background-postion: right;
+ background-postion: right:
  /* border: 1px solid #2c3e50;
  border-top: 0; */
  font-weight: bold;
- margin-bottom: 0;
+ margin-bottom: 5px;
 }
 
-.jumbotron h1 {
-  padding-left: 10px;
-  padding-top: 10%;
-  padding-bottom: 0px;
+.jumbotron p {
+  font-size:24pt;
+  font-weight:bold;
+  padding-left: -10px;
+  padding-top: 120px;
+  padding-bottom: 00px;
   margin-bottom:0;
   letter-spacing: -1px;
 }
 
-.jumbotron h2 {
-  padding-left: 10px;	
-  padding-top: -10;
-  margin-top: 0;
+.jumbotron span.subtitle {
+    font-size:16pt;
+#    color: white;
 }
 
 ul.buttons li {
