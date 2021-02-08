@@ -8,11 +8,10 @@ production_url: 'https://wurmlab.github.io'
 permalink: "/news/:year-:month-:day-:title/"
 
 author:
-    name: Yannick Wurm
+    name: Yannick Wurm Laboratory
     email: y.wurm@qmul.ac.uk
-    github: yannickwurm
+    github: wurmlab
     twitter: yannick__
-    gravatar: 
 
 #comments:
 #    provider: disqusasdf
