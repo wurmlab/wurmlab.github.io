@@ -785,7 +785,7 @@ papers:
       {% if paper.supplementary_pdf %}
       <a href="{{ paper.supplementary_pdf }}" target="_blank">[Supplementary]</a>
       {% endif %}
-      {% if paper.abstract %}
+      {% if paper.abstract and paper.doi %}
       <span class="wrap-collabsible">
 	<input id="collapsible-{{paper.doi}}" class="toggle" type="checkbox"/>
 	<label for="collapsible-{{paper.doi}}" class="lbl-toggle" title="Show here">[Abstract]</label>

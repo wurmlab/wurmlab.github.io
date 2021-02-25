@@ -347,6 +347,7 @@ input[type='checkbox'] {
 }
 
 .lbl-toggle {
+    display: inline;
     margin-bottom: 0px;
     font-weight: normal;
 }
