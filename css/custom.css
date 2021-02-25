@@ -396,3 +396,7 @@ img[src*='#center'] {
     display: block;
     margin: auto;
 }
+
+.caption > p {
+  padding-left: 43px;
+}
