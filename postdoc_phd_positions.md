@@ -13,8 +13,6 @@ If you're interested in joining us, please provide by email a CV, and a short pr
 
 ## Postdocs
 
-**[Currently open postdoc position](https://webapps2.is.qmul.ac.uk/jobs/job.action?jobRef=QMUL23204). Apply by November 23rd**
-
 We invite applications for fellowships (Marie Sk&#322;odowska-Curie & Royal Society). The biggest effort is usually to come up with a good project. Once a proposal is written it is often worth applying to several funding sources.
 
 These can include:
