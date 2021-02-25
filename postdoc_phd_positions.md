@@ -13,7 +13,7 @@ If you're interested in joining us, please provide by email a CV, and a short pr
 
 ## Postdocs
 
-We invite applications for Marie Sk&#322;odowska-Curie fellowships. The biggest effort is usually to come up with a good project. Once a proposal is written it is often worth applying to several funding sources.
+We invite applications for fellowships (Marie Sk&#322;odowska-Curie & Royal Society). The biggest effort is usually to come up with a good project. Once a proposal is written it is often worth applying to several funding sources.
 
 These can include:
  * many national sources of funding (e.g., [Swiss NSF](http://www.snf.ch/en/Pages/default.aspx), [Fondation Fyssen](http://www.fondationfyssen.fr/), [DAAD](https://www.daad.de/))
@@ -33,7 +33,8 @@ PhD funding exists as part of multiple schemes. These include:
     * CONACYT (Mexico)
     * Colfuturo (Colombia) provide 2 years of funding and we can potentially figure out the rest.
     * Commonwealth Scholarships
-    * Newton fund
+    * Newton fund (e.g., [Newton-Bhabha](https://www.britishcouncil.in/programmes/higher-education/newton-fund))
+	* [Commonwealth scholarships  for high income countries (Canada, Australia, Trinidad...)](http://cscuk.dfid.gov.uk/apply/phd-scholarships-high-income-countries/)
 	* US citizens can come with [Marshall](http://www.marshallscholarship.org/applications/eligible) or [Fullbright](http://www.fulbright.org.uk/going-to-the-uk/postgraduate-student-awards) scholarships.
  * Occasionally, we have specific funding for PhD positions.
  * In some circumstances we accept self-funded PhD candidates.

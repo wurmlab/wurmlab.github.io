@@ -13,6 +13,10 @@ categories:
 
 Scientific writing isn't poetry. Our aim is to communicate information clearly - not to be the next [Proust](http://fr.wikipedia.org/wiki/Marcel_Proust).
 
+This requires good structure and good style. 
+
+**[2021 update]: everything I wrote here remains valid. Computers have improved though. Thus, in addition to thinking critically about your writing, I strongly now recommend running it through [Grammarly](https://grammarly.go2cloud.org/SH2na). I now use it for most of my lab's writing.**
+
 Below are some thoughts about scientific writing that have helped students & myself. The list isn't exhaustive:
 
 ### Structure & Content:
@@ -31,7 +35,7 @@ Below are some thoughts about scientific writing that have helped students & mys
 * Please respect the style guidelines given by <a href="http://www.amazon.co.uk/gp/product/020530902X/ref=as_li_tf_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=020530902X&linkCode=as2&tag=yannickwurm-21">Strunk & White's "The Elements of Style"</a>.  Keep it concise.
 * Pay attention to detail (punctuation, spelling, consistency of formatting, species in italics...). Neglect of such simple things makes the reader think you do nothing properly.
 * Don't Randomly capitalize Words that Aren't normally Capitalized. 
-* Most word processors have spell-checkers. And grammar-checkers. Use them. (Make sure that all rules are activated - e.g. in MS word you need to [manually activate the strict grammar rules](http://wordribbon.tips.net/T009322_Setting_Grammar-Checking_Options.html)). Neglecting to use such tools can feel insulting to the reader.
+* Most word processors have spell-checkers. And [automated grammar-checkers](https://grammarly.go2cloud.org/SH2na). Use them (Make sure that all rules are activated - e.g. in MS word you need to [manually activate the strict grammar rules](http://wordribbon.tips.net/T009322_Setting_Grammar-Checking_Options.html)). Neglecting to use such tools can feel insulting to the reader. 
 * KISS:  Keep It Simple Stupid. If a word, sentence or piece of information is unnecessary, remove it! Otherwise, you complicate things for the reader. 
 * Again, use simple words, simple clear sentences. Scientific writing isn't Shakespeare or Voltaire.
 * If you decide to use funky formatting (columns, photos, sophisticated fonts, etc.) - don't mess it up! Better to be plain and functional (Helvetica, single column...) than have something that print incorrectly or is illegible.
@@ -43,6 +47,7 @@ Below are some thoughts about scientific writing that have helped students & mys
 * You may disagree with the exact feedback/suggestion someone gives you. But the fact they highlighted/raised an issue is sufficient to indicate that you need to change something. Do something about it.  
 * Any writing requires writing, editing and rewriting many times before obtaining a satisfactory result (the need for this reduces as you get older/more experienced). 
 
+Again, tools like [Grammarly](https://grammarly.go2cloud.org/SH2na) or Microsoft Word's grammar checker can help you with some aspects of writing. I strongly recommend you use such tools. We do. However, you still need to think very carefully and critically about your message, and the software's recommendations. 
 
 ---
 

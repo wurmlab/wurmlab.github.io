@@ -5,6 +5,8 @@ a {
     color: black;
 }
 
+p a, li a {text-decoration: underline;}
+
 .Flexible-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -30,6 +32,9 @@ a {
 .badge {
 padding:2px;
 }
+.navbar-nav a {
+    text-decoration: none;
+}
 
 .jumbotron {
  background-image:url('{{ site.url }}/img/fireAntMicroarrays.jpg');
@@ -38,25 +43,29 @@ padding:2px;
 /* width: 1070px;
  height: 240px;*/
  background-size: cover;
- background-postion: right;
+ background-postion: right:
  /* border: 1px solid #2c3e50;
  border-top: 0; */
  font-weight: bold;
- margin-bottom: 0;
+ margin-bottom: 5px;
+}
+.jumbotron a {
+    text-decoration: none;
 }
 
-.jumbotron h1 {
-  padding-left: 10px;
-  padding-top: 10%;
-  padding-bottom: 0px;
+.jumbotron p {
+  font-size:24pt;
+  font-weight:bold;
+  padding-left: -10px;
+  padding-top: 120px;
+  padding-bottom: 00px;
   margin-bottom:0;
   letter-spacing: -1px;
 }
 
-.jumbotron h2 {
-  padding-left: 10px;	
-  padding-top: -10;
-  margin-top: 0;
+.jumbotron span.subtitle {
+    font-size:16pt;
+#    color: white;
 }
 
 ul.buttons li {
@@ -234,7 +243,7 @@ th {
 
 span.highlight {text-decoration: underline;}
 
-a {text-decoration: none;}
+
 
 .jumbotron h1 {
   padding-top: 20px;
@@ -270,8 +279,10 @@ a {text-decoration: none;}
 /**
  * Required by landing page and /team.
  */
-h3 {
-  margin-top:0;
+h1 {
+    margin-top:0;
+    padding-top:10pt;
+    font-size:24pt;
 }
 
 .team-member {
@@ -336,6 +347,7 @@ input[type='checkbox'] {
 }
 
 .lbl-toggle {
+    display: inline;
     margin-bottom: 0px;
     font-weight: normal;
 }
@@ -370,4 +382,17 @@ input[type='checkbox'] {
 /*  border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px; */
 /*  padding: .5rem;*/
+}
+
+
+
+img[src*='#left'] {
+    float: left;
+}
+img[src*='#right'] {
+    float: right;
+}
+img[src*='#center'] {
+    display: block;
+    margin: auto;
 }

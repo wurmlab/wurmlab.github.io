@@ -3,7 +3,7 @@ layout:  page
 title: "Bioinformatics consulting; genome analysis consulting"
 ---    
 
-## Consulting
+# Consulting
 
 We are available for consultancy work on bioinformatics and genomics projects. We have extensive experience on topics including:
 

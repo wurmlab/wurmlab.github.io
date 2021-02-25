@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Teaching
+title: Data Science, Bioinformatics & Evolutionary Genomics Teaching
 ---
+<h1>Teaching: Data Science, Bioinformatics & Evolutionary Genomics</h1>
 <br/>
 <div class="col-sm-12 col-md-12">
   <p>Courses Yannick has taught on include: Evolution, Ecological and Evolutionary Genomics, Genome Bioinformatics, Research Frontiers, Research Methods.</p> 
