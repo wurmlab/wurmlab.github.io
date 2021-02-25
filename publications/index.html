@@ -767,8 +767,7 @@ papers:
       {% endif %}
       {% if paper.doi %}
       <a href="http://dx.doi.org/{{ paper.doi }}" target="_blank">
-        <b>{{ paper.title }}</b>
-      </a>
+        <b>{{ paper.title }}</b></a>
       {% elsif paper.url %}
       <a href="{{ paper.url }}"  target="_blank">
         <b>{{ paper.title }}</b>
