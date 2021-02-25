@@ -12,6 +12,7 @@ talks:
   label: "nextbug"
   contexturl: "https://genomics.ed.ac.uk/ngbug/next-meeting-edinburgh-2014"
   slideshareid: 46160926
+  slidesharekey: "FZ68pDX894fHZ4"
   slideshareurl: http://www.slideshare.net/yannickwurm/2014-1015nextbug-edinburgh
   about: "Presenting our ant genomics research, some bioinformatics challenges we've faced &amp; the solutions we're overcoming them
 with. These include our software for:
@@ -27,13 +28,12 @@ prediction quality (including beautiful graphs!)</a></li>
 - context: "2014 May: Balti and Bioinformatics @ Birmingham"
   label: "balti2014"
   contexturl: "http://pathogenomics.bham.ac.uk/blog/2014/05/balti-and-bioinformatics-27th-may-2014"
-  slideshareid: 35172594
-  slideshareurl: "https://www.slideshare.net/yannickwurm/2014-0527-opinion-computing-for-genomics-sucks"
   youtubeid: mmMQw2gIozI
   about: "Nick Loman asked me (with 2 days notice!!) to share some thoughts on challenges and opportunities for computing infrastructure for genomics analysis."
 
 - context: "2013 November: A Social Chromosome in the red fire ant @ Sheffield."
   slideshareid: 38133221
+  slidesharekey: "ywhZJx6uuY6x3i"
   slideshareurl: "http://www.slideshare.net/yannickwurm/2013-1125sheffield"
   about: "Departmental seminar at University of Sheffield on our
   finding that <a href='/publications/wangwurm2013socialChromosome.pdf'>a social chromosome determines social behavior in the red fire ant</a>."
@@ -47,6 +47,7 @@ prediction quality (including beautiful graphs!)</a></li>
 - context: "2013 September: Cream Teas and Bioinformatics  Exeter"
   contexturl: "http://pathogenomics.bham.ac.uk/blog/2013/09/cream-teas-and-bioinformatics-meeting-report-in-pictures-and-slides/"
   slideshareid: 25977819
+  slidesharekey: "iLF5FFTszRKT5x"
   slideshareurl: "http://www.slideshare.net/yannickwurm/2013-0905cream-teasexeter"
   about: "Some ant stuff, some bioinformatics stuff."
 
@@ -59,6 +60,7 @@ prediction quality (including beautiful graphs!)</a></li>
 <br/>
 <div class="row">
     <div class="col-sm-11 col-md-11">
+        <p>Apologies a lot of this is rather outdated.</p>
         <p>A subset of invited talks for which there are things to look at.
         </p>
         <p>Additional documents are available in <a href="/teaching/">teaching section</a> of this site and on <a href="http://www.slideshare.net/yannickwurm">slideshare</a>.</p>
@@ -76,9 +78,14 @@ prediction quality (including beautiful graphs!)</a></li>
           {% if talk.youtubeid %}
           <iframe id="ytplayer{{talk.youtubeid}}" type="text/html" width="400" height="300" src="http://www.youtube.com/embed/{{ talk.youtubeid }}" frameborder="0"></iframe>
           {% endif %} {% if talk.slideshareid %}
-          <iframe src="http://www.slideshare.net/slideshow/embed_code/{{talk.slideshareid}}" width="320" height="240" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""> </iframe>
+          <iframe src="http://www.slideshare.net/slideshow/embed_code/key/{{talk.slidesharekey}}" width="320" height="240" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""> </iframe>
           {% endif %}
       </div><br/>
     {% cycle '', '</div> <div class="row">' %}
   {% endfor %}
 </div>
+
+
+
+
+
