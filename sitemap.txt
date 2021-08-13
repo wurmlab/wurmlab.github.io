@@ -7,15 +7,15 @@ title : Sitemap
 {% for post in site.posts %}
 {{site.production_url}}{{ post.url }}{% endfor %}
 
-http://wurmlab.github.io/genomicscourse/
-http://wurmlab.github.io/genomicscourse/2020/practicals/
-http://wurmlab.github.io/genomicscourse/2020/practicals/reference_genome/read-cleaning.html
-http://wurmlab.github.io/genomicscourse/2020/practicals/reference_genome/assembly.html
-http://wurmlab.github.io/genomicscourse/2020/practicals/reference_genome/prediction.html
-http://wurmlab.github.io/genomicscourse/2020/practicals/population_genetics/map_call.html
-http://wurmlab.github.io/genomicscourse/2020/practicals/population_genetics/popgen.html
+http://wurmlab.com/genomicscourse/
+{{site.production_url}}/genomicscourse/2020/practicals/
+{{site.production_url}}/genomicscourse/2020/practicals/reference_genome/read-cleaning.html
+{{site.production_url}}/genomicscourse/2020/practicals/reference_genome/assembly.html
+{{site.production_url}}/genomicscourse/2020/practicals/reference_genome/prediction.html
+{{site.production_url}}/genomicscourse/2020/practicals/population_genetics/map_call.html
+{{site.production_url}}/genomicscourse/2020/practicals/population_genetics/popgen.html
 
-https://wurmlab.github.io/SBC361-programming-in-R/practical0.html
-https://wurmlab.github.io/SBC361-programming-in-R/practical1.html
-https://wurmlab.github.io/SBC361-programming-in-R/practical2.html
-https://wurmlab.github.io/SBC361-programming-in-R/practical3.html
+{{site.production_url}}/SBC361-programming-in-R/practical0.html
+{{site.production_url}}/SBC361-programming-in-R/practical1.html
+{{site.production_url}}/SBC361-programming-in-R/practical2.html
+{{site.production_url}}/SBC361-programming-in-R/practical3.html
