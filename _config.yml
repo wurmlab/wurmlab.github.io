@@ -2,8 +2,8 @@ markdown: kramdown
 
 title: Ants, Genomes & Evolution @ Queen Mary University London
 
-url: '//wurmlab.com'
-production_url: 'http://wurmlab.com'
+url: '//wurmlab.github.io'
+production_url: 'http://wurmlab.github.io'
 
 permalink: "/news/:year-:month-:day-:title/"
 
