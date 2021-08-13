@@ -37,7 +37,7 @@ padding:2px;
 }
 
 .jumbotron {
- background-image:url('{{ site.url }}/img/fireAntMicroarrays.jpg');
+    background-image: url('/img/fireAntMicroarrays.jpg');
  background-repeat: no-repeat; 
  /* height:202px;  width:900px;*/
 /* width: 1070px;
