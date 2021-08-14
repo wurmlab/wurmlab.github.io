@@ -24,7 +24,7 @@ title: "Yannick Wurm' News"
     {% endfor %}
   </div>
   <div class="col-sm-3 col-md-3">
-    <h4>All posts</h4>
+    <h3>All posts</h3>
     {% for post in site.categories.labnews offset: 0 limit: 50 %}
     <div>
       <strong><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></strong> ({{ post.date | date: "%Y/%m" }})

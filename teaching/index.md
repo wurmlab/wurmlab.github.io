@@ -35,8 +35,8 @@ title: Data Science, Bioinformatics & Evolutionary Genomics Teaching
 </div>
 
 <div class="col-sm-10 col-md-10" id="programming_in_r">
-  <h1>Some older stuff</h1>
-  <h2 id="bioinformatics--population-genomics">Bioinformatics &amp; Population Genomics</h2>
+  <h2>Some older stuff</h2>
+  <h3 id="bioinformatics--population-genomics">Bioinformatics &amp; Population Genomics</h3>
   <p><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/">Practicals</a> prepared with Rodrigo Pracana, Julien Roux, Rob Waterhouse and Stefan Schiffels for a 1 week <a href="https://www.sib.swiss/training/course/2016-05-joint-spring-school-bioinformatics-and-population-genomics">Bioinformatics &amp; Population Genomics </a> course. <a href="//www.slideshare.net/yannickwurm/2016-0529introsibspringschoolleuker-bad">[Overview slides]</a>. We use similar material for <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL’s Bioinformatics MSc</a> and our <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121430.html">Ecological and Evolutionary Genomics MSc</a>:</p>
   <ul>
     <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/reference_genome/assembly">Reads to genome to gene predictions</a>:
