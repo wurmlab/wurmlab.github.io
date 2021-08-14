@@ -27,5 +27,11 @@ analytics:
 
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'Rakefile']
 
-gems:
-  - jekyll-redirect-from
+
+## Deprecation: The 'gems' configuration option has been renamed to 'plugins'. updated the config file accordingly. see below -mh
+# gems:
+#   - jekyll-redirect-from
+
+plugins:
+    - jekyll-seo-tag
+    - jekyll-redirect-from
