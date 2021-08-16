@@ -65,7 +65,7 @@ padding:2px;
 
 .jumbotron span.subtitle {
   font-size:16pt;
-  color: white;
+  /* color: white; */
 }
 
 ul.buttons li {
@@ -316,9 +316,9 @@ a.filter-by:hover {
 }
 
 
-body {
-  line-height: 140%;
-}
+/* body {
+   line-height: 120%;
+} */
 
 .column {
   padding-top: 30px;
