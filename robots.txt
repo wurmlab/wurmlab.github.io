@@ -1,3 +1,7 @@
+---
+layout: none
+---
+
 User-Agent: *
 Allow: /
-Sitemap: /sitemap.txt
+Sitemap: {{ site.production_url }}/sitemap.txt
