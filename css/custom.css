@@ -15,8 +15,8 @@ p a, li a {text-decoration: underline;}
     overflow: hidden;
 }
 
-.Flexible-container iframe,   
-.Flexible-container object,  
+.Flexible-container iframe,
+.Flexible-container object,
 .Flexible-container embed {
     position: absolute;
     top: 0;
@@ -38,12 +38,12 @@ padding:2px;
 
 .jumbotron {
     background-image: url('/img/fireAntMicroarrays.jpg');
- background-repeat: no-repeat; 
+ background-repeat: no-repeat;
  /* height:202px;  width:900px;*/
 /* width: 1070px;
  height: 240px;*/
  background-size: cover;
- background-postion: right:
+ background-postion: right;
  /* border: 1px solid #2c3e50;
  border-top: 0; */
  font-weight: bold;
@@ -64,8 +64,8 @@ padding:2px;
 }
 
 .jumbotron span.subtitle {
-    font-size:16pt;
-#    color: white;
+  font-size:16pt;
+  /* color: white; */
 }
 
 ul.buttons li {
@@ -145,7 +145,7 @@ margin-left:100px;
 background-color: rgb(29, 210, 175);
 }
 
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
   .jumbotron h1 {
     font-size: 28px;
     padding-top: 0;
@@ -169,7 +169,7 @@ p {
 
 
 .accordion-heading a {
-		  color: black;	
+		  color: black;
 		  text-decoration: none;
 }
 .accordion-heading a:hover {
@@ -178,7 +178,7 @@ p {
 }
 .accordion-heading img {
 		   padding-left: 5px;
-		   
+
 }
 
 .accordion-inner {
@@ -263,7 +263,7 @@ span.highlight {text-decoration: underline;}
   }
   .jumbotron h1 {
     padding-top: 80px;
-  } 
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -305,17 +305,24 @@ a.filter-by:hover {
 .img-publication {
   position: absolute;
   right: 20px;
-  z-index: 0;
 }
 
-body {
-    line-heigth: 120%;
+.img-publication:hover  {
+  z-index: 2;
 }
+
+.img-publication:hover img {
+  z-index: 3;
+}
+
+
+/* body {
+   line-height: 120%;
+} */
 
 .column {
   padding-top: 30px;
 }
-
 
 /* collapsible abstracts - derived from https://alligator.io/css/collapsible/ */
 .wrap-collabsible {
@@ -352,9 +359,9 @@ input[type='checkbox'] {
     font-weight: normal;
 }
 
-.toggle:checked + .lbl-toggle::before {
-    /*  transform: rotate(90deg) translateX(-3px);*/
-}
+/* .toggle:checked + .lbl-toggle::before {
+    transform: rotate(90deg) translateX(-3px);
+} */
 
 .collapsible-content {
   max-height: 0px;
@@ -376,13 +383,13 @@ input[type='checkbox'] {
   border-bottom-left-radius: 0;
 }
 
-.collapsible-content .content-inner {
-/*  background: rgba(250, 224, 66, .2);
-  border-bottom: 1px solid rgba(250, 224, 66, .45);*/
-/*  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px; */
-/*  padding: .5rem;*/
-}
+/* .collapsible-content .content-inner {
+ background: rgba(250, 224, 66, .2);
+  border-bottom: 1px solid rgba(250, 224, 66, .45);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .5rem;
+} */
 
 
 

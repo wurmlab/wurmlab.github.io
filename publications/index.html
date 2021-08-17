@@ -6,6 +6,65 @@ all_tags:
   - 'primary research'
   - 'review'
 papers:
+# added by -mh
+- title: 'Social Isolation and Group Size are Associated with Divergent Gene Expression in the Brain of Ant Queens'
+  doi: 10.1111/gbb.12758
+  journal: "Genes, Brain and Behavior. (2021)e12758"
+  authors:
+  - F Manfredini
+  - <b>C Martinez-Ruiz</b>
+  - Y Wurm
+  - DW Shoemaker
+  - MJF Brown
+  abstract: 'Social life and isolation pose a complex suite of challenges to organisms prompting significant changes in neural state. However, plasticity in how brains respond to social challenges remains largely unexplored. The fire ants Solenopsis invicta provide an ideal scenario for examining this. Fire ant queens may found colonies individually or in groups of up to 30 queens, depending on key factors such as density of newly mated queens and availability of nesting sites. We artificially manipulated availability of nesting sites to test how the brain responds to social vs. solitary colony founding at two key timepoints (early vs. late colony founding) and to group size (large vs. small groups). We adopted a powerful neurogenomic approach to identify even subtle differences of gene expression between treatment groups, and we built a global gene co‐expression network of the fire ant brain to identify gene modules specifically'
+  tag: 'primary research'
+# added by -mh
+- title: 'Parameter exploration improves the accuracy of long-read genome assembly'
+  doi: 10.1101/2021.05.28.446135
+  journal: "bioRxiv 2021.05.28.446135"
+  authors:
+  - <b>A Priyam</b>
+  - <b>A Witwicka</b>
+  - <b>A Brahma</b>
+  - <b>E Stolle</b>
+  - <b>Y Wurm°</b>
+  abstract: 'Long-molecule sequencing is now routinely applied to generate high-quality reference genome assemblies. However, datasets differ in repeat composition, heterozygosity, read lengths and error profiles. The assembly parameters that provide the best results could thus differ across datasets. By integrating four complementary and biologically meaningful metrics, we show that simple fine-tuning of assembly parameters can substantially improve the quality of long-read genome assemblies. In particular, modifying estimates of sequencing error rates improves some metrics more than two-fold. We provide a flexible software, CompareGenomeQualities, that automates comparisons of assembly qualities for researchers wanting a straightforward mechanism for choosing among multiple assemblies.'
+  tag: 'primary research'
+# added by -mh
+- title: 'Genomic signatures of recent adaptation in a wild bumblebee'
+  doi: 10.1101/2021.05.27.445509
+  journal: "bioRxiv 2021.05.27.445509"
+  authors:
+  - <b>TJ Colgan</b>
+  - AN Arce
+  - RJ Gill
+  - A Ramos Rodrigues
+  - <b>A Kanteh</b>
+  - EJ Duncan
+  - L Li
+  - L Chittka
+  - <b>Y Wurm°</b>
+  abstract: 'Behavioral experiments and analyses of observation records have shown that environmental changes threaten insect pollinators, creating risks for agriculture and ecosystem stability. Despite their importance, we know little about how wild insects or other animals can adapt in response to environmental pressures. To understand the genomic bases of adaptation in an ecologically important pollinator, we analyzed genomes of Bombus terrestris bumblebees collected across Great Britain. We reveal extensive genetic diversity within this population, and strong signatures of recent adaptation throughout the genome. More specifically, we find that selection recently affected key processes underpinning environmental interactions, including neurobiology, wing development, and response to xenobiotics. We also discover unusual features of the genome, including a 53-gene region that lacks genetic diversity in many bee species, and a horizontal gene transfer from a Wolbachia bacteria. The genetic diversity and gene flow we observe for this species could support its resilience to ongoing and future challenges. Overall, we provide important insight on the genetic health of an ecologically and economically important pollinator and reveal mechanisms by which it has recently adapted. The approach we used could help to understand how species differ in their adaptive potential, and to develop conservation strategies for those most at risk.'
+  tag: 'primary research'
+# added by -mh
+- title: 'Recurring adaptive introgression of a supergene that determines social organization'
+  doi: 10.1101/2021.04.11.439370
+  journal: "bioRxiv 2021.04.11.439370"
+  authors:
+  - <b>E Stolle</b>
+  - <b>R Pracana</b>
+  - <b>M K Priebe</b>
+  - GL Hernández
+  - C Castillo-Carrillo
+  - MC Arias
+  - CI Paris
+  - M Bollazzi
+  - <b>A Priyam</b>
+  - <b>F López-Osorio</b>
+  - <b>Y Wurm°</b>
+  abstract: 'Introgression has been proposed as an essential source of trait adaptation. However, a key barrier to adaptive introgression is that recombination can break down combinations of alleles that underpin many traits. Supergene regions, where suppressed recombination leads to joint inheritance of alleles at many loci, could overcome this challenge. Here, we study the evolution of a large supergene region that determines a major social and ecological trait in Solenopsis fire ants: whether colonies have one queen or multiple queens. Using coalescent-based phylogenies built from the genomes of 365 haploid fire ant males, we show that the supergene variant responsible for multiple-queen colonies evolved in one species and repeatedly spread to other species through introgressive hybridization. This finding highlights how supergene architecture can enable a complex adaptive phenotype to recurrently permeate species boundaries.'
+  tag: 'primary research'
+
 - title: 'Genomic architecture and evolutionary antagonism drive allelic expression bias in the social supergene of red fire ants'
   doi: 10.7554/eLife.55862
   journal: "eLife (2020) 9:e55862"
@@ -761,8 +820,8 @@ papers:
 	 {% endif %}
       {% endif %}
       {% if paper.img %}
-      <a href="http://dx.doi.org/{{ paper.doi }}" target="_blank">
-        <img class="img-publication" style="float:right; width:{{ paper.img_width }}px;" src="{{ paper.img }}" alt="{{ paper.title }}"/>
+      <a href="http://dx.doi.org/{{ paper.doi }}" class="img-publication" target="_blank">
+        <img  style="float:right; width:{{ paper.img_width }}px;" src="{{ paper.img }}" alt="{{ paper.title }}"/>
       </a>
       {% endif %}
       {% if paper.doi %}
