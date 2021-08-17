@@ -3,6 +3,8 @@ markdown: kramdown
 title: Ants, Genomes & Evolution @ Queen Mary University London
 description: "We examine the evolutionary and genomic tradeoffs of social behavior in ants and other social animals. We develop data-rich approaches to understand the health of wild animals including pollinating bees. We produce bioinformatics tools to accelerate biological insight from large and complex molecular-genomic datasets."
 url: '//wurmlab.com'
+
+url: 'https://wurmlab.com'
 production_url: 'https://wurmlab.com'
 
 permalink: "/news/:year-:month-:day-:title/"
