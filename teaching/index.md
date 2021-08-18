@@ -2,10 +2,13 @@
 layout: page
 title: Data Science, Bioinformatics & Evolutionary Genomics Teaching
 ---
+
+<div class="row">
+
 <h1>Teaching: Data Science, Bioinformatics & Evolutionary Genomics</h1>
-<br/>
+<p>
 <div class="col-sm-12 col-md-12">
-  <p>Courses Yannick has taught on include: Evolution, Ecological and Evolutionary Genomics, Genome Bioinformatics, Research Frontiers, Research Methods.</p> 
+  <p>Courses Yannick has taught on include: Evolution, Ecological and Evolutionary Genomics, Genome Bioinformatics, Research Frontiers, Research Methods.</p>
   <p>Much of the material we use is QMUL's QMPlus content management system. Some of is also on GitHub or below.</p>
 </div>
 <div class="col-sm-12 col-md-12">
@@ -90,7 +93,6 @@ title: Data Science, Bioinformatics & Evolutionary Genomics Teaching
       <li><a href="https://qmecoevogenomics.wordpress.com/2014/11/25/comparative-population-genomics-in-animals-uncovers-the-determinants-of-genetic-diversity/">Comparative population genomics in animals uncovers the determinants of genetic diversity</a></li>
       <li><a href="https://qmecoevogenomics.wordpress.com/2014/11/24/genome-chronicles-the-giant-pandas-history/">Genome chronicles &ndash; The Giant Panda&rsquo;s (hi)story</a></li>
     </ul>
-
 </div>
 
 <div class="col-sm-12 col-md-12">
@@ -128,7 +130,6 @@ title: Data Science, Bioinformatics & Evolutionary Genomics Teaching
 </div>
 
 <br/>
-<hr>
 
 
 <div class="col-sm-12 col-md-12">
@@ -142,6 +143,7 @@ title: Data Science, Bioinformatics & Evolutionary Genomics Teaching
         <li><a href="//www.slideshare.net/yannickwurm/20120622-fridayadelboden">Some random tips</a> and <a href="Experimental%20design%20for%20genomics.html">discussion topics</a> [<a href="//docs.google.com/document/pub?id=1WcHIJPzkOXXjnViwJt_ZVERlJz2YUqhM6yXQ1OLQTxQ">Google Docs link</a>]</li>
     </ul>
 </div>
+
 <div class="col-sm-12 col-md-12">
     <h3>2006-2010 stuff from Uni Lausanne:</h3>
     <ul>

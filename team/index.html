@@ -140,10 +140,11 @@ project_students:
 
 
 <div class="row">
+
     {% for person in page.members %}
         <div class="col-sm-6">
-          <div class="thumbnail team-member" style="padding:0px">
-              <div class="caption">
+          <div class="thumbnail team-member" style="padding:0px; margin-bottom: 21px;">
+            <div class="caption">
                   <h3 style="padding:0px; margin:0px;">{{ person.name }}</h3>
                   <img src="{{ site.url }}/img/{{ person.img }}" align="left" style="margin-right:10px; height:125px;" class="img-rounded">
                   <p>{{ person.about }}</p>
@@ -160,7 +161,7 @@ project_students:
 <div class="row">
     {% for person in page.occasional_visitors %}
         <div class="col-sm-6 col-md-6">
-          <div class="thumbnail" style="padding:0px;margin-bottom:0;">
+          <div class="thumbnail" style="padding:0px; margin-top: 21px;">
               <div class="caption">
                   <h3>{{ person.name }}</h3>
                   <img src="{{ site.url }}/img/{{ person.img }}" align="left" style="margin-right:10px; height:50px;" class="img-rounded">
@@ -179,7 +180,7 @@ project_students:
 <div class="row">
     {% for person in page.alumni %}
         <div class="col-sm-6 col-md-6">
-          <div class="thumbnail" style="padding:0px;margin-bottom:0;">
+          <div class="thumbnail" style="padding:0px;margin-bottom:0; margin-top: 21px;">
               <div class="caption">
                   <h3>{{ person.name }}</h3>
                   <img src="{{ site.url }}/img/{{ person.img }}" align="left" style="margin-right:10px; height:50px;" class="img-rounded">
