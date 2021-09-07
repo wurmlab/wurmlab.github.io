@@ -38,12 +38,12 @@ tools:
   code        : http://bionode.io
   about       : <a href="http://bionode.io">BioNode</a> is <a href="http://nodejs.org">Node.js</a> JavaScript library for <a href="http://bionode.io">client and server side bioinformatics</a>.
 
-oldtools: 
+oldtools:
 - name        : oswitch
   img         : oswitch.png
   url         : https://github.com/wurmlab/oswitch
   code        : https://github.com/wurmlab/oswitch
-  about       : Provides quick and simple Docker based virtual environments on Macs and compute clusters alike for reproducible bioinformatics. Funded by <a href="http://environmentalomics.org/portfolio/big-data-infrastructure/">NERC Environmental 'omics (EOS) Cloud</a>. Given improvements to Docker this isn't really needed anymore. 
+  about       : Provides quick and simple Docker based virtual environments on Macs and compute clusters alike for reproducible bioinformatics. Funded by <a href="http://environmentalomics.org/portfolio/big-data-infrastructure/">NERC Environmental 'omics (EOS) Cloud</a>. Given improvements to Docker this isn't really needed anymore.
 
 - name        : Afra
   img         : afra.png
@@ -56,8 +56,9 @@ oldtools:
 <h1>Major bioinformatic software tools that we develop include:</h1>
 {% for tool in page.tools %}
 <div class="row">
-        <div class="col-sm-2 col-md-2 hidden-xs">
-            <img src="{{ site.url }}/img/{{ tool.img }}" alt="{{ tool.name }}" style="height: 125px; margin-top: 15px;" class="img-rounded center-block img-responsive">
+    <div class="col-md-2 d-none d-md-block">
+        <!-- desktop image -->
+            <img src="{{ site.url }}/img/{{ tool.img }}" alt="{{ tool.name }}" style="height: 125px; margin-top: 15px;" class="img-rounded mx-auto d-block">
         </div>
         <div class="col-sm-10 col-md-9">
             <div class="caption">
@@ -84,8 +85,9 @@ oldtools:
                 </ul>
             </div>
         </div>
-        <div class="col-sm-2 col-md-2 visible-xs-inline ">
-            <img src="{{ site.url }}/img/{{ tool.img }}" alt="{{ tool.name }}" style="height: 125px; margin-top: 15px;" class="img-rounded center-block img-responsive">
+        <div class="col-md-12 d-md-none">
+            <!-- mobile image -->
+            <img src="{{ site.url }}/img/{{ tool.img }}" alt="{{ tool.name }}" style="height: 125px; margin: 15px auto;" class="img-rounded mx-auto d-block">
         </div>
         <div class="clearfix"></div>
 </div>
@@ -103,7 +105,7 @@ oldtools:
         Shell for minimalisting pipelining.
     </li>
     <li>
-      Python or <a href="http://bioruby.org">ruby</a> when text needs to be analysed. 
+      Python or <a href="http://bioruby.org">ruby</a> when text needs to be analysed.
     </li>
     <li>
         javascript/html/css for client-side stuff and some <a href="http://bionode.io">bioinformatics analysis pipelines</a>
@@ -121,8 +123,9 @@ oldtools:
 <p>oSwitch has been superceded by updates in docker. Afra has been used in our MSc course; it is currently somewhat out of sync with main Apollo. </p>
 {% for tool in page.oldtools %}
 <div class="row">
-        <div class="col-sm-2 col-md-2 hidden-xs">
-            <img src="{{ site.url }}/img/{{ tool.img }}" alt="{{ tool.name }}" style="height: 150px; margin-top: 15px;" class="img-rounded center-block img-responsive">
+    <div class="col-md-2 d-none d-md-block">
+        <!-- desktop image -->
+            <img src="{{ site.url }}/img/{{ tool.img }}" alt="{{ tool.name }}" style="height: 150px; margin-top: 15px;" class="img-rounded mx-auto d-block">
         </div>
         <div class="col-sm-10 col-md-9">
             <div class="caption">
@@ -149,8 +152,9 @@ oldtools:
                 </ul>
             </div>
         </div>
-        <div class="col-sm-2 col-md-2 visible-xs-inline ">
-            <img src="{{ site.url }}/img/{{ tool.img }}" alt="{{ tool.name }}" style="height: 150px; margin-top: 15px;" class="img-rounded center-block img-responsive">
+        <div class="col-md-12 d-md-none">
+            <!-- mobile image -->
+            <img src="{{ site.url }}/img/{{ tool.img }}" alt="{{ tool.name }}" style="height: 150px; margin-top: 15px;" class="img-rounded mx-auto d-block">
         </div>
         <div class="clearfix"></div>
 </div>
