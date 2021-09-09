@@ -9,7 +9,7 @@ categories:
  - labnews
  - bestpractices
  - bioinformatics
- 
+
 ---
 ![]({{ site.url }}/img/news/reproducibilitybanner.png)
 
@@ -17,7 +17,7 @@ categories:
 
 <strong> <a href="//www.slideshare.net/yannickwurm/2015-1218-popgroup-reproducibleresearch" title="2015 12-18- Avoid having to retract your genomics analysis - Popgroup Reproducible research presentation" target="_blank"><i>2016 Edit: slides are from a  15 minute talk representative of this blog at Popgroup december 2015 in Edinburgh:</i></a></strong>
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/Mc53Rs4vUFB1km" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-left: 100px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/Mc53Rs4vUFB1km" width="595" height="485" style="border:1px solid #CCC; border-width:1px; margin-left: 100px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
 
 ## Biology is a data-science
@@ -43,16 +43,16 @@ Crucially, data analysis problems can be invisible: the analysis runs, the resul
 Geoffrey Chang's story is an emblematic example. By the mid-2000s this young superstar professor crystallographer had won prestigious awards and published high-profile papers providing 3D-structures of important proteins. For example:
 
 * **Science**  (2001) Chang & Roth. *Structure of MsbA from E. coli: a homolog of the multidrug resistance ATP binding cassette (ABC) transporters.*
-* **Journal of Molecular Biology** (2003) Chang. *Structure of MsbA from Vibrio cholera: a multidrug resistance ABC transporter homolog in a closed conformation.* 
+* **Journal of Molecular Biology** (2003) Chang. *Structure of MsbA from Vibrio cholera: a multidrug resistance ABC transporter homolog in a closed conformation.*
 * **Science** (2005) Reyes & Chang. *Structure of the ABC transporter MsbA in complex with ADP vanadate and lipopolysaccharide.*
 * **Science** (2005) Pornillos et al. *X-ray structure of the EmrE multidrug transporter in complex with a substrate.* 310:1950-1953.
-* **PNAS** (2004) Ma & Chang. *Structure of the multidrug resistance efflux transporter EmrE from Escherichia coli.* 
+* **PNAS** (2004) Ma & Chang. *Structure of the multidrug resistance efflux transporter EmrE from Escherichia coli.*
 
-But in 2006, others independently obtained the 3D structure of [an ortholog to one of those proteins](http://www.nature.com/nature/journal/v443/n7108/full/nature05155.html). Surprisingly, the orthologous structure was essentially a **mirror-image** of Geoffrey Chang's result. 
+But in 2006, others independently obtained the 3D structure of [an ortholog to one of those proteins](http://www.nature.com/nature/journal/v443/n7108/full/nature05155.html). Surprisingly, the orthologous structure was essentially a **mirror-image** of Geoffrey Chang's result.
 
 Rigorously double-checking his scripts, Geoffrey Chang then realized that: [*"an in-house data reduction program introduced a change in sign [..,]"*](http://www.sciencemag.org/content/314/5807/1875.2.long).
 
-In other words, a simple +/- error led to plausible and highly publishable but dramatically flawed results. [He retracted all five papers](http://www.sciencemag.org/content/314/5807/1875.2.long). 
+In other words, a simple +/- error led to plausible and highly publishable but dramatically flawed results. [He retracted all five papers](http://www.sciencemag.org/content/314/5807/1875.2.long).
 
 **Devastating** for him, for his career, for the people working with him, for the hundreds of scientists who based follow-up analyses and experiments on the flawed 3D structures, and for the taxpayers or foundations funding the research. A small but costly mistake.
 
@@ -62,15 +62,15 @@ A +/- sign mistake seems like it should be easily detectable. But how do you ens
 
 We can **take inspiration from software developers in internet startups**: similarly to academic researchers, they form small teams of qualified people to do great things with new technologies. Their approaches for making software robust can help us  make our research robust.
 
-An important premise is that humans make mistakes. Thus (almost) all **analysis code includes mistakes** (at least initially; this includes unix commands, R, perl/python/ruby/node scripts, *et cetera*). Increasing robustness of our analyses thus requires becoming better at detecting mistakes – but also ensuring that we make fewer mistakes in the first place. Many approaches exist for this. For example: 
+An important premise is that humans make mistakes. Thus (almost) all **analysis code includes mistakes** (at least initially; this includes unix commands, R, perl/python/ruby/node scripts, *et cetera*). Increasing robustness of our analyses thus requires becoming better at detecting mistakes – but also ensuring that we make fewer mistakes in the first place. Many approaches exist for this. For example:
 
  * Every additional chunk of code can contain additional mistakes. Write less code, you'll make fewer mistakes. For this we should try to reuse our own code and that of others (e.g., by using [bio* libraries](http://www.open-bio.org/wiki/Projects)).
  * Every subset/function/method of every piece of code should be tested on fake data (edge cases) to ensure that results are as expected (see [unit](http://en.wikipedia.org/wiki/Unit_testing) and [integration testing](http://en.wikipedia.org/wiki/Integration_testing)). It can be defendable to write the fake datasets and tests even [before writing analysis code](http://en.wikipedia.org/wiki/Test-driven_development).
  * [Continuous integration](http://blastedbio.blogspot.de/2013/09/using-travis-ci-for-testing-galaxy-tools.html) involves tests being automatically rerun (almost) instantly whenever a change is made anywhere in the analysis. This helps detect errors rapidly before performing full analyses.
  * Style guides define formatting and variable naming conventions (e.g., for [ruby](https://github.com/bbatsov/ruby-style-guide) or [R](http://adv-r.had.co.nz/Style.html)). Respecting one makes it easier for you to go back over your analysis two years later (e.g., for paper revisions or a new collaboration); and for others to reuse and improve it. Tools can automatically test whether your code is in line with the style guide (e.g., [RLint](http://cran.r-project.org/web/packages/lint/index.html), [Rubocop](http://batsov.com/rubocop/), [PyLint](http://pylint.org)).
  * Rigorously tracking data and software versions and sticking to them reduces risks of unseen incompatibilities or inconsistencies. A [standardized project structure](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424) can help.
- * Code reviews: having others look through your code – by showing it to them in person, or by making it [open source](http://github.com) – helps to learn how to improve code structure, to detect mistakes and to ensure that our code will be reusable by ourselves and others. 
- * There are specialists who have years of experience in preventing and detecting mistakes in code or analyses. We should hire them. 
+ * Code reviews: having others look through your code – by showing it to them in person, or by making it [open source](http://github.com) – helps to learn how to improve code structure, to detect mistakes and to ensure that our code will be reusable by ourselves and others.
+ * There are specialists who have years of experience in preventing and detecting mistakes in code or analyses. We should hire them.
  * Having people independently reproduce analyses using independent laboratory and computational techniques on independently obtained samples might be the best validation overall...
 
 This list overlaps at least in part with what [has](http://wurmlab.github.io/publications/sannewurm2015myrmecologicalgenomics.pdf) [been](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745) [written](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285) [elsewhere](http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003506) and [my coursework material](http://wurmlab.github.io/teaching/). In [my lab](http://wurmlab.github.io) we do our best to follow best practices for the bioinformatics [tools](http://sequenceserver.com) [we](http://bionode.io) [develop](http://wurmlab.github.io/tools/) and our [research on social evolution](http://wurmlab.github.io/#research).
@@ -84,7 +84,7 @@ There is no way around it: analysing large datasets is hard.
 
 When genomics projects involved tens of millions of $, much of this went to teams of dedicated data scientists, statisticians and bioinformaticians who could ensure data quality and analysis rigor. As sequencing has gotten cheaper the challenges [and costs](http://genomebiology.com/2011/12/8/125/figure/F1?highres=y) have shifted even further towards data analysis. For large scale human resequencing projects this is well understood. Despite the challenges being even greater for organisms with only few genomic resources, surprisingly many PIs, researchers and funders focusing on such organisms suppose that individual researchers with little formal training will be able to perform all necessary analysis. This is worrying and suggests that important stakeholders who still have limited experience of large datasets underestimate how easily mistakes with major negative consequences occur and go undetected. We may have to see additional publication retractions for awareness of the risks to fully take hold.
 
-Thankfully, multiple initiatives are improving visibility of the data challenges we face (e.g., [1](http://www.nature.com/news/core-services-reward-bioinformaticians-1.17251), [2](https://www.epsrc.ac.uk/funding/calls/rsefellowships/), [3](http://www.nature.com/nature/journal/v498/n7453/full/498255a.html), [4](http://www.nytimes.com/2011/12/01/business/dna-sequencing-caught-in-deluge-of-data.html?_r=0), [5](http://ivory.idyll.org/blog/2015-docker-and-replicating-papers.html), [6](http://www.software.ac.uk)). Such visibility of the risks – and of how easy it is to implement practices that will improve research robustness – needs to grow among funders, researchers, PIs, journal editors and reviewers. This will ultimately bring more people to do better, more trustworthy science that will never need to be retracted. 
+Thankfully, multiple initiatives are improving visibility of the data challenges we face (e.g., [1](http://www.nature.com/news/core-services-reward-bioinformaticians-1.17251), [2](https://www.epsrc.ac.uk/funding/calls/rsefellowships/), [3](http://www.nature.com/nature/journal/v498/n7453/full/498255a.html), [4](http://www.nytimes.com/2011/12/01/business/dna-sequencing-caught-in-deluge-of-data.html?_r=0), [5](http://ivory.idyll.org/blog/2015-docker-and-replicating-papers.html), [6](http://www.software.ac.uk)). Such visibility of the risks – and of how easy it is to implement practices that will improve research robustness – needs to grow among funders, researchers, PIs, journal editors and reviewers. This will ultimately bring more people to do better, more trustworthy science that will never need to be retracted.
 
 
 ## Acknowledgements

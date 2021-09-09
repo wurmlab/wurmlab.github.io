@@ -152,7 +152,7 @@ papers:
   doi: 10.1093/molbev/msz185
   pdf: "/publications/Priyam2019CustomBlast.pdf"
   supplementary_pdf: "/publications/Priyam2019seqservSuppl.pdf"
-  software: http://sequenceserver.com
+  software: https://sequenceserver.com
   img: /img/sequenceserver_2.png
   img_width: 140
   tag: 'primary research'
@@ -820,37 +820,37 @@ papers:
 	 {% endif %}
       {% endif %}
       {% if paper.img %}
-      <a href="http://dx.doi.org/{{ paper.doi }}" class="img-publication" target="_blank">
+      <a href="http://dx.doi.org/{{ paper.doi }}" class="img-publication" target="_blank" rel="noopener">
         <img  style="float:right; width:{{ paper.img_width }}px;" src="{{ paper.img }}" alt="{{ paper.title }}"/>
       </a>
       {% endif %}
       {% if paper.doi %}
-      <a href="http://dx.doi.org/{{ paper.doi }}" target="_blank">
+      <a href="http://dx.doi.org/{{ paper.doi }}" target="_blank" rel="noopener">
         <b>{{ paper.title }}</b></a>
       {% elsif paper.url %}
-      <a href="{{ paper.url }}"  target="_blank">
+      <a href="{{ paper.url }}"  target="_blank" rel="noopener">
         <b>{{ paper.title }}</b>
       </a>
       {% else %}
         <b>{{ paper.title }}</b>
       {% endif %}
       {% if paper.software %}
-      <a href="{{ paper.software }}" target="_blank" >[Website]</a>
+      <a href="{{ paper.software }}" target="_blank" rel="noopener">[Website]</a>
       {% endif %}
       {% if paper.pdf %}
-      <a href="{{ paper.pdf }}" target="_blank">[PDF]</a>
+      <a href="{{ paper.pdf }}" target="_blank" rel="noopener">[PDF]</a>
       {% endif %}
       {% if paper.supplementary_pdf %}
-      <a href="{{ paper.supplementary_pdf }}" target="_blank">[Supplementary]</a>
+      <a href="{{ paper.supplementary_pdf }}" target="_blank" rel="noopener">[Supplementary]</a>
       {% endif %}
       {% if paper.abstract and paper.doi %}
-      <span class="wrap-collabsible">
-	<input id="collapsible-{{paper.doi}}" class="toggle" type="checkbox"/>
+      <div class="wrap-collabsible">
+        <input id="collapsible-{{paper.doi}}" class="toggle" type="checkbox"/>
 	<label for="collapsible-{{paper.doi}}" class="lbl-toggle" title="Show here">[Abstract]</label>
 	<div class="collapsible-content">
 	  <div class="content-inner"><p>{{ paper.abstract }}</p></div>
 	</div>
-      </span>
+</div>
       {% else %}
       <br/>
       {% endif %}

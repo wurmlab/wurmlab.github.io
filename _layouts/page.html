@@ -7,10 +7,10 @@
     <header class="jumbotron">
       <div class="container">
         <p><span class="title">Ants, Bees, Genomes &amp; Evolution</span><span class="subtitle"> @ Queen Mary
-            University London</p>
+            University London</span></p>
       </div> <!-- container -->
     </header> <!-- jumbotron -->
-      {{ content }}
+    {{ content }}
   </main><!-- container-->
   <hr />
   {% include footer.html %}
@@ -33,7 +33,7 @@
   <!-- Google Analytics -->
   <script type="text/javascript">
     var _gaq = _gaq || [];
-    var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+    var pluginUrl = 'https://www.google-analytics.com/plugins/ga/inpage_linkid.js';
     _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
     _gaq.push(['_setAccount', '{{ site.analytics.google.tracking_id }}']);
     _gaq.push(['_setDomainName', '{{ site.analytics.google.domain }}']);
@@ -43,12 +43,12 @@
 
     (function () {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
-  <script src="//rawgit.com/bartaz/sandbox.js/master/jquery.highlight.js"></script>
-  <script type='text/javascript' src='//d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+  <script src="https://rawgit.com/bartaz/sandbox.js/master/jquery.highlight.js"></script>
+  <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>

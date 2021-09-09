@@ -29,7 +29,7 @@ If you have any questions regarding scope or nature of the project, or whether y
 
 (apologies for the use of domain-specific jargon!)
 
-<div class="card" style="width: 80%; margin-left:50pt;">
+<div class="card" style="max-width: 664px; margin:5px auto;">
   <div class="card-body">
     <h3 class="card-title">Inferring gene function for emerging model organisms</h3>
 	<p class="card-text">The first generation of molecular-genetic research focused on traditional model organisms including mouse, yeast, zebrafish, Drosophila, and C. elegans. Genetic research increasingly uses diverse organisms that are much more relevant models for specific questions. For example, some such emerging organisms exhibit unique phenotypes including 100-fold intra-specific variation in lifespan, resistance to harsh environmental conditions, represent novel animal models for disease or development, provide crucial ecosystem services, or are key to food security because they are crops or may pollinate them.</p>
