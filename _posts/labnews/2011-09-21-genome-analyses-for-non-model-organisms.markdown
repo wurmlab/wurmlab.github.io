@@ -17,7 +17,7 @@ Using modern molecular tools on emerging (non-model) organism makes it possible 
 
 
 
- 
+
 
 
 
@@ -60,7 +60,7 @@ Genome fragmentation can make things challenging. Some tips from my experience w
   * Perhaps some paired reads do link them - but there were insufficient data for the assembler to be sure. With 454 assemblies, check newbler's output in the _454Scaffolds.txt_ and _454PairStatus.txt _files. These report where all paired reads map.
 
 
-  * Or map independently obtained transcriptome or proteome data onto your genome. Oksana Riba-Grognuz developed [an easy way of visualizing RNA mapped to genomes](https://github.com/ksanao/TGNet). 
+  * Or map independently obtained transcriptome or proteome data onto your genome. Oksana Riba-Grognuz developed [an easy way of visualizing RNA mapped to genomes](https://github.com/ksanao/TGNet).
 
 
   * Or check a closely related species - perhaps the region is better assembled there.
@@ -77,4 +77,4 @@ Genome fragmentation can make things challenging. Some tips from my experience w
 
 
 
- 
+

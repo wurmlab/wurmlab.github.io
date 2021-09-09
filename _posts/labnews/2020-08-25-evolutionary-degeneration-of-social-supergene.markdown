@@ -29,10 +29,11 @@ Dr. Mart&#237;nez-Ruiz, lead author of the study from Queen Mary University of L
 
 The study builds on earlier research by the authors on the evolution of social chromosomes. They have previously identified [differences in genes for chemical communication that may be responsible for perceiving queens](https://doi.org/10.1002/evl3.22), showed that [one social chromosome supergene variant has doubled in size](https://doi.org/10.1093/molbev/msy236), and that this [social chromosome supergene lacks genetic diversity](https://doi.org/10.1111/mec.14054). 
 
-**Research paper**: '[Genomic architecture and evolutionary antagonism drive allelic expression bias in the social supergene of red fire ants](https://doi.org/10.7554/eLife.55862)' Carlos Martinez-Ruiz, Rodrigo Pracana, Eckart Stolle, Carolina I. Paris, Richard A. Nichols, and Yannick Wurm, 2020. <em>eLife</em>, 9, p.e55862. Available at <a target="_blank" href="https://doi.org/10.7554/eLife.55862">https:/<wbr>/<wbr>doi.<wbr>org/<wbr>10.<wbr>7554/<wbr>eLife.<wbr>55862</a>.
+**Research paper**: '[Genomic architecture and evolutionary antagonism drive allelic expression bias in the social supergene of red fire ants](https://doi.org/10.7554/eLife.55862)' Carlos Martinez-Ruiz, Rodrigo Pracana, Eckart Stolle, Carolina I. Paris, Richard A. Nichols, and Yannick Wurm, 2020. <em>eLife</em>, 9, p.e55862. Available at <a href="https://doi.org/10.7554/eLife.55862" target="_blank" rel="noopener">https://doi.org/10.7554/eLife.55862</a>.
 
 
 
-![Fire ants on Illumina Miseq chip](/img/news/solenopsis-on-illumina-miseq.jpg#center "Fire ants on Miseq chip"){: width="70%"}
+![Fire ants on Illumina Miseq chip](/img/news/solenopsis-on-illumina-miseq.jpg#center "Fire ants on Miseq chip"){: width="580" height="386" style="max-width:100%; height: auto"}
+
 Workers of the red fire ant Solenopsis invicta on an llumina Miseq sequencing chip used to analyse the genes in their social chromosome (credit: E Favreau & Y Wurm). 
 

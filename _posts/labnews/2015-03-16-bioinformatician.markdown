@@ -10,7 +10,7 @@ categories:
  - jobs
 ---
 
-Our department is recruiting a bioinformatician/genomicist. Apply by **March 29th**. 
+Our department is recruiting a bioinformatician/genomicist. Apply by **March 29th**.
 
 ![Bioinformatician animation ad]({{site.url}}/img/news/qmul_bioinformatician_job.gif)
 

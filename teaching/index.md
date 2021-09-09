@@ -4,9 +4,7 @@ title: Data Science, Bioinformatics & Evolutionary Genomics Teaching
 ---
 
 <div class="row">
-
 <h1>Teaching: Data Science, Bioinformatics & Evolutionary Genomics</h1>
-<p>
 <div class="col-sm-12 col-md-12">
   <p>Courses Yannick has taught on include: Evolution, Ecological and Evolutionary Genomics, Genome Bioinformatics, Research Frontiers, Research Methods.</p>
   <p>Much of the material we use is QMUL's QMPlus content management system. Some of is also on GitHub or below.</p>
@@ -23,7 +21,8 @@ title: Data Science, Bioinformatics & Evolutionary Genomics Teaching
   </ul>
 </div>
 
-<div class="col-sm-10 col-md-10" id="programming_in_r">
+<div class="col-sm-7 col-md-9" id="programming_in_r">
+
   <h2>Learning how to program in R</h2> As biology is becoming a data science its increasingly important to be able to wrangle large datasets. We use variations of the following for QMUL's SBC361 (3rd year Research Methods) and Bio781p (MSc Statistics &amp; Bioinformatics):
   <ul>
     <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical1.html">Practical 1: R refresher and regular expressions</a></li>
@@ -31,19 +30,20 @@ title: Data Science, Bioinformatics & Evolutionary Genomics Teaching
     <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical3.html">Practical 3: Practice to pull it all together</a></li>
   </ul>
 </div>
-<div class="col-sm-2 col-md-2">
+
+<div class="col-sm-5 col-md-3">
   <div style="left: 0px; width: 100%; height: 0px; position: relative; padding-bottom: 75.0019%; padding-top: 38px;">
-    <iframe src="//www.slideshare.net/slideshow/embed_code/key/jCQoRUBEZOsam0" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="top: 0px; left: 0px; width: 100%; height: 100%; position: absolute;"></iframe>
+    <iframe src="https://www.slideshare.net//slideshow/embed_code/key/jCQoRUBEZOsam0" allowfullscreen style="top: 0px; left: 0px; width: 100%; height: 100%; position: absolute;" ></iframe>
   </div>
 </div>
 
-<div class="col-sm-10 col-md-10" id="programming_in_r">
+<div class="col-sm-10 col-md-10">
   <h2>Some older stuff</h2>
   <h3 id="bioinformatics--population-genomics">Bioinformatics &amp; Population Genomics</h3>
-  <p><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/">Practicals</a> prepared with Rodrigo Pracana, Julien Roux, Rob Waterhouse and Stefan Schiffels for a 1 week <a href="https://www.sib.swiss/training/course/2016-05-joint-spring-school-bioinformatics-and-population-genomics">Bioinformatics &amp; Population Genomics </a> course. <a href="//www.slideshare.net/yannickwurm/2016-0529introsibspringschoolleuker-bad">[Overview slides]</a>. We use similar material for <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL’s Bioinformatics MSc</a> and our <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121430.html">Ecological and Evolutionary Genomics MSc</a>:</p>
+  <p><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/">Practicals</a> prepared with Rodrigo Pracana, Julien Roux, Rob Waterhouse and Stefan Schiffels for a 1 week <a href="https://www.sib.swiss/training/course/2016-05-joint-spring-school-bioinformatics-and-population-genomics">Bioinformatics &amp; Population Genomics </a> course. <a href="https://www.slideshare.net//yannickwurm/2016-0529introsibspringschoolleuker-bad">[Overview slides]</a>. We use similar material for <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL’s Bioinformatics MSc</a> and our <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121430.html">Ecological and Evolutionary Genomics MSc</a>:</p>
   <ul>
     <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/reference_genome/assembly">Reads to genome to gene predictions</a>:
-      <br> Short read cleaning, genome assembly, quality control, gene prediction, quality control. <a href="//www.slideshare.net/yannickwurm/2016-0530mondayassembly">[Slides]</a></li>
+      <br> Short read cleaning, genome assembly, quality control, gene prediction, quality control. <a href="https://www.slideshare.net//yannickwurm/2016-0530mondayassembly">[Slides]</a></li>
     <li>Population sequencing to genotypes to population genetics statistics:
       <ul>
         <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/population_genetics/map_call">Mapping reads, calling variants, visualizing variant calls.</a></li>
@@ -95,40 +95,45 @@ title: Data Science, Bioinformatics & Evolutionary Genomics Teaching
     </ul>
 </div>
 
+<section class="container">
 <div class="col-sm-12 col-md-12">
-    <h2>Evolution</h2> 1st year introduction (part of QMUL's BIO113):
-</div>
-<div class="col-sm-2 col-md-2" style="padding-bottom:38px;">
-    <!-- 1 -->
-    <div style="width: 100%; height: 0px; position: relative; padding-bottom: 75.0019%; padding-top: 38px;">
-        <iframe src="//www.slideshare.net/slideshow/embed_code/key/DxhOYKI8g76CcU" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%; position: absolute;"></iframe>
-    </div>
-</div>
-<div class="col-sm-2 col-md-2">
-    <!-- 2 -->
-    <div style="width: 100%; height: 0px; position: relative; padding-bottom: 75.0019%; padding-top: 38px;">
-        <iframe src="//www.slideshare.net/slideshow/embed_code/key/6n2KuXrF13QOay" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%; position: absolute;"> </iframe>
-    </div>
-</div>
-<div class="col-sm-2 col-md-2">
-    <!-- 3 -->
-    <div style="width: 100%; height: 0px; position: relative; padding-bottom: 75.0019%; padding-top: 38px;">
-        <iframe src="//www.slideshare.net/slideshow/embed_code/key/EbEcpxCEUx66x1" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%; position: absolute;"> </iframe>
-    </div>
-</div>
-<div class="col-sm-2 col-md-2">
-    <!-- 4 -->
-    <div style="width: 100%; height: 0px; position: relative; padding-bottom: 75.0019%; padding-top: 38px;">
-        <iframe src="//www.slideshare.net/slideshow/embed_code/key/Y9nUUktwu7G2u" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%; position: absolute;"> </iframe>
-    </div>
-</div>
-<div class="col-sm-2 col-md-2">
-    <!-- 5 -->
-    <div style="width: 100%; height: 0px; position: relative; padding-bottom: 75.0019%; padding-top: 38px;">
-        <iframe src="//www.slideshare.net/slideshow/embed_code/key/LOuf0tvzOMHvwr" frameborder="0" allowfullscreen="" style="width: 100%; height: 100%; position: absolute;"> </iframe>
-    </div>
+    <h2>Evolution</h2>
+    <p>1st year introduction (part of QMUL's BIO113):</p>
 </div>
 
+<div class="row g-4">
+<div class="col-md-4 col-lg-3">
+    <!-- 1 -->
+    <div style="width: 100%; height: 0px; position: relative; padding-bottom: 75.0019%; ">
+        <iframe src="https://www.slideshare.net//slideshow/embed_code/key/DxhOYKI8g76CcU" allowfullscreen style="width: 100%; height: 100%; position: absolute;"></iframe>
+    </div>
+</div>
+<div class="col-md-4 col-lg-3">
+    <!-- 2 -->
+    <div style="width: 100%; height: 0px; position: relative; padding-bottom: 75.0019%; ">
+        <iframe src="https://www.slideshare.net//slideshow/embed_code/key/6n2KuXrF13QOay" allowfullscreen style="width: 100%; height: 100%; position: absolute;"> </iframe>
+    </div>
+</div>
+<div class="col-md-4 col-lg-3">
+    <!-- 3 -->
+    <div style="width: 100%; height: 0px; position: relative; padding-bottom: 75.0019%; ">
+        <iframe src="https://www.slideshare.net//slideshow/embed_code/key/EbEcpxCEUx66x1" allowfullscreen style="width: 100%; height: 100%; position: absolute;"> </iframe>
+    </div>
+</div>
+<div class="col-md-4 col-lg-3">
+    <!-- 4 -->
+    <div style="width: 100%; height: 0px; position: relative; padding-bottom: 75.0019%; ">
+        <iframe src="https://www.slideshare.net//slideshow/embed_code/key/Y9nUUktwu7G2u" allowfullscreen style="width: 100%; height: 100%; position: absolute;"> </iframe>
+    </div>
+</div>
+<div class="col-md-4 col-lg-3">
+    <!-- 5 -->
+    <div style="width: 100%; height: 0px; position: relative; padding-bottom: 75.0019%; ">
+        <iframe src="https://www.slideshare.net//slideshow/embed_code/key/LOuf0tvzOMHvwr" allowfullscreen style="width: 100%; height: 100%; position: absolute;"> </iframe>
+    </div>
+</div>
+</div>
+</section>
 <br/>
 
 
@@ -136,11 +141,11 @@ title: Data Science, Bioinformatics & Evolutionary Genomics Teaching
   <br/>
   <h3>2012 Swiss Bioinformatics Institute Summerschool</h3> From 2012 Swiss Bioinformatics Institute <a href="//www.isb-sib.ch/education/sib-phd-training-network/events/past-events/phd-summer-school-2012.html">summerschool in Bioinformatics and Population Genomics</a> (with Oksana Riba-Grognuz, Kate Ridout and Eyal Privman). This is largely superceded by the newer version (see above):
     <ul>
-        <li><a href="//www.slideshare.net/yannickwurm/20120622-fridayadelboden" title="20120622 fridayadelboden" target="_blank">Overview and summary slides</a></li>
+        <li><a href="https://www.slideshare.net//yannickwurm/20120622-fridayadelboden" title="20120622 fridayadelboden" target="_blank" rel="noopener" >Overview and summary slides</a></li>
         <li><a href="DAY1_exercises.docx.html">UNIX introduction, <em>de novo</em> genome assembly &amp; <em>de novo</em> transcriptome assembly, and cross-validation using Cytoscape of the genome and transcriptome assemblies</a> [<a href="//docs.google.com/document/pub?id=1lx8cGQlyBZV8RXm7gSLqFafcOUfPq6_GjadqBxqiAzQ">Google Docs link</a>]</li>
         <li><a href="MWAS%20practical.docx.html">Automated gene model prediction and manual refinement</a> [<a href="//docs.google.com/document/pub?id=10P7oSJ3M_Jg6EzSPbsKx1HV6WQprOURcpvIBxa5Yk6g">Google Docs link</a>]</li>
         <li><a href="DAY3_exercises_Oksana_WORKS_denovo.docx.html">Differential gene expression with tophat/cufflinks/cummerbund</a> [<a href="//docs.google.com/document/pub?id=1UB8I67AqW1nPbIo1JN4td76Bbyu1b1hGxnr9Yoe2t-k">Google Docs link</a>]</li>
-        <li><a href="//www.slideshare.net/yannickwurm/20120622-fridayadelboden">Some random tips</a> and <a href="Experimental%20design%20for%20genomics.html">discussion topics</a> [<a href="//docs.google.com/document/pub?id=1WcHIJPzkOXXjnViwJt_ZVERlJz2YUqhM6yXQ1OLQTxQ">Google Docs link</a>]</li>
+        <li><a href="https://www.slideshare.net//yannickwurm/20120622-fridayadelboden">Some random tips</a> and <a href="Experimental%20design%20for%20genomics.html">discussion topics</a> [<a href="//docs.google.com/document/pub?id=1WcHIJPzkOXXjnViwJt_ZVERlJz2YUqhM6yXQ1OLQTxQ">Google Docs link</a>]</li>
     </ul>
 </div>
 
