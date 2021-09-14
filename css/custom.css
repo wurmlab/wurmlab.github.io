@@ -504,8 +504,8 @@ aside.news {
 
 .btn.btn-sm {
   color: #ffffff;
-  background-color: #95a5a6;
-  border-color: #95a5a6;
+  background-color: #4D5B5B;
+  border-color: #4D5B5B;
   margin-bottom: 16px;
 }
 
@@ -618,4 +618,10 @@ ul.doi-badges li {
 ul.doi-badges li svg {
  vertical-align:baseline;
 
+}
+
+/* improve contrast ratio of blog publish dates and code blocks */
+
+.published-date, pre code{
+  color: #4D5B5B;
 }
