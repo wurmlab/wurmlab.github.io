@@ -13,11 +13,11 @@ title: Data Science, Bioinformatics & Evolutionary Genomics Teaching
   <h2 id="genome-bioinformatics">Genome Bioinformatics (Masters)</h2>
   <p>This module from the <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL's Bioinformatics MSc</a> covers the essential aspects of next generation sequence  analysis, including genome assembly, variant calling and population genetics. Also covers essential computer skills needed for bioinformatics, such as Linux and using our high performance computing cluster.</p>
   <ul>
-    <li><a href="https://wurmlab.github.io/genomicscourse/2019/practicals/reference_genome/read-cleaning">Practical 1:</a> Read cleaning.</li>
-    <li><a href="https://wurmlab.github.io/genomicscourse/2019/practicals/reference_genome/assembly">Practical 2:</a> Genome assembly.</li>
-    <li><a href="http://wurmlab.github.io/genomicscourse/2019/practicals/reference_genome/prediction">Practical 3:</a> Gene prediction.</li>
-    <li><a href="https://wurmlab.github.io/genomicscourse/2019/practicals/population_genetics/map_call">Practical 4:</a> Read mapping and variant calling.</li>
-    <li><a href="http://wurmlab.github.io/genomicscourse/2019/practicals/population_genetics/popgen">Practical 5:</a> Population genetics in R.</li>
+    <li><a href="https://wurmlab.github.io/genomicscourse/2021/practicals/reference_genome/read-cleaning">Practical 1:</a> Read cleaning.</li>
+    <li><a href="https://wurmlab.github.io/genomicscourse/2021/practicals/reference_genome/assembly">Practical 2:</a> Genome assembly.</li>
+    <li><a href="http://wurmlab.github.io/genomicscourse/2021/practicals/reference_genome/prediction">Practical 3:</a> Gene prediction.</li>
+    <li><a href="https://wurmlab.github.io/genomicscourse/2021/practicals/population_genetics/map_call">Practical 4:</a> Read mapping and variant calling.</li>
+    <li><a href="http://wurmlab.github.io/genomicscourse/2021/practicals/population_genetics/popgen">Practical 5:</a> Population genetics in R.</li>
   </ul>
 </div>
 
