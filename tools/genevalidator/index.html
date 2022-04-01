@@ -3,176 +3,186 @@ layout: page
 title: GeneValidator
 ---
 <br>
-<div
-  class="media">
-  <a
-    href="/img/genevalidator.png"
-    class="pull-right thumbnail"
-    style="margin: 50px 0 0 30px">
-    <img
-    class="media-object"
-    src="/img/genevalidator.png" alt="GeneValidator screenshot"
-    style="height:380px;">
-  </a>
-  <div
-    class="media-body">
-    <h2
-      class="media-heading">
-      GeneValidator
-      <small>
-        [
-          <a
-            href="https://github.com/wurmlab/genevalidator" target="_blank">
-            <i class="fa fa-github"></i> Source code
-          </a>
-        ]
-        &nbsp;
-        [
-          <a
-            href="https://genevalidator.wurmlab.com" target="_blank">
-            <i class="fa fa-server"></i> Demo server
-          </a>
-        ]
-        &nbsp;
-        [
-          <a
-            href="https://academic.oup.com/bioinformatics/article/32/10/1559/1742817" target="_blank">
-            <i class="fa fa-file-text"></i> Publication
-          </a>
-        ]
-      </small>
-    </h2>
-    <p
-      style="text-align: justify;">
-      GeneValidator is a tool to identify problematic gene predictions based on
-      comparisons between gene predictions and similar sequences in public
-      databases (e.g., SwissProt). Funded by
-      <a
-        href="http://informatics.nescent.org/wiki/Phyloinformatics_Summer_of_Code_2013" target="_blank">
-        NESCent Google Summer of Code 2013</a>
-      and BBSRC TRDF.
-    </p>
-    <p
-      style="text-align: justify;">
-      GeneValidator works locally from the command line or from a web browser
-      (suitable for &lt;100 queries). Either amino acid sequences or nucleotide
-      sequences (e.g., putative CDS) can be used as input. Output formats
-      include HTML report and plain (parseable) text. Some examples below.
-    </p>
-    <table
-      class="table table-condensed"
-      style="margin-bottom: 5px">
-      <thead>
-        <tr>
-          <th>
-            Description
-          </th>
-          <th style="width: 10%">
-            Input
-          </th>
-          <th style="width: 30%">
-            Output<sup>*</sup>
-          </th>
-        </tr>
-      </thead>
-      <tr>
-        <td style="text-align: justify;">
-          Nucleotide sequences (picked from <a href="http://www.ebi.ac.uk/ena"  target="_blank">
-            European Nucleotide Archive</a>)
-        </td>
-        <td>
-          <a download  href="exemplar_data/genetic_input/genetic_query.fa">FASTA</a>
-        </td>
-        <td class="col-md-2">
-          <a href="exemplar_data/genetic_input/genetic_query_results" target="_blank">HTML</a>,&nbsp;
-          <a download href="exemplar_data/genetic_input/genetic_query_results.json">JSON</a>,&nbsp;
-          <a download href="exemplar_data/genetic_input/genetic_query_results.csv">CSV</a>,&nbsp;
-          <a download href="exemplar_data/genetic_input/genetic_query_summary.csv">Summary&nbsp;CSV</a>
-        </td>
-      </tr>
-      <tr>
-        <td style="text-align: justify;">
-          Amino acid sequences (picked from ongoing genome projects)
-        </td>
-        <td>
-          <a download  href="exemplar_data/protein_input/protein_query.fa">FASTA</a>
-        </td>
-        <td>
-          <a href="exemplar_data/protein_input/protein_query_results" target="_blank">HTML</a>,&nbsp;
-          <a download href="exemplar_data/protein_input/protein_query_results.json">JSON</a>,&nbsp;
-          <a download href="exemplar_data/protein_input/protein_query_results.csv">CSV</a>,&nbsp;
-          <a download href="exemplar_data/protein_input/protein_query_summary.csv">Summary&nbsp;CSV</a>
-        </td>
-      </tr>
-    </table>
-    <p>
-      <small>
-        <small>
-          <sup>*</sup> Generated using GeneValidator 2.1.5, using SwissProt
-          database downloaded on 17th August, 2018 as reference.
-        </small>
-      </small>
-    </p>
-    <div
-      class="well">
-      Please cite: <a target="_blank" href="https://academic.oup.com/bioinformatics/article/32/10/1559/1742817">Dragan M<sup>&Dagger;</sup>, Moghul MI<sup>&Dagger;</sup>, Priyam A, Bustos C &amp; Wurm Y. 2015. GeneValidator: identify problems with protein-coding gene predictions". <em>Bioinformatics</em>, doi: 10.1093/bioinformatics/btw015</a>.
-    </div>
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <br>
+    <div class="media">
+      <a href="/img/genevalidator.png" class="pull-right thumbnail" style="margin: 50px 0 0 30px">
+        <img class="media-object" src="/img/genevalidator.png" alt="GeneValidator screenshot" style="height:380px;">
+      </a>
 
-    <h4>Installation and usage</h4>
-    <p>To install GeneValidator on a Unix-based system (e.g. Linux or Mac OS), please run the following in the terminal:</p>
-    <pre style="color:#000;">sh -c "$(curl -fsSL https://install-genevalidator.wurmlab.com)"</pre>
-    <p>Please see this <a href="https://github.com/wurmlab/genevalidator">page</a> for more information on installation and usage. </p>
-    <p
-      style="text-align: justify;">
-      Alternatively, we host a web server appropriate for &lt; 10 query sequences at a time:
-      <ul
-        style="padding-left: 15px;">
-        <li>
-          <a
-            href="https://genevalidator.wurmlab.com" target="_blank">
-            GeneValidator web app.
-          </a>
+      <div class="media-body">
+        <h2 class="media-heading">
+          GeneValidator
+          <small class="text-muted" style="font-size:21px">
+            [
+            <a href="https://github.com/wurmlab/genevalidator" target="_blank">
+              <i class="fa fa-github"></i> Source code
+            </a>
+            ]
+            &nbsp;
+            [
+            <a href="https://genevalidator.wurmlab.com" target="_blank">
+              <i class="fa fa-server"></i> Demo server
+            </a>
+            ]
+            &nbsp;
+            [
+            <a href="https://academic.oup.com/bioinformatics/article/32/10/1559/1742817" target="_blank">
+              <i class="fa fa-file-text"></i> Publication
+            </a>
+            ]
+          </small>
+        </h2>
+
+        <p style="text-align: justify;">
+          GeneValidator is a tool to identify problematic gene predictions based on
+          comparisons between gene predictions and similar sequences in public
+          databases (e.g., SwissProt). Funded by
+          <a href="http://informatics.nescent.org/wiki/Phyloinformatics_Summer_of_Code_2013" target="_blank">
+            NESCent Google Summer of Code 2013</a>
+          and BBSRC TRDF.
+        </p>
+
+        <p style="text-align: justify;">
+          GeneValidator works locally from the command line or from a web browser
+          (suitable for &lt;100 queries). Either amino acid sequences or nucleotide
+          sequences (e.g., putative CDS) can be used as input. Output formats
+          include HTML report and plain (parseable) text. Some examples below.
+        </p>
+
+        <table class="table table-condensed" style="margin-bottom: 5px">
+          <thead>
+            <tr>
+              <th>
+                Description
+              </th>
+              <th style="width: 10%">
+                Input
+              </th>
+              <th style="width: 30%">
+                Output<sup>*</sup>
+              </th>
+            </tr>
+          </thead>
+          <tr>
+            <td style="text-align: justify;">
+              Nucleotide sequences (picked from <a href="http://www.ebi.ac.uk/ena" target="_blank">
+                European Nucleotide Archive</a>)
+            </td>
+            <td>
+              <a download href="exemplar_data/genetic_input/genetic_query.fa">FASTA</a>
+            </td>
+            <td class="col-md-2">
+              <a href="exemplar_data/genetic_input/genetic_query_results" target="_blank">HTML</a>,&nbsp;
+              <a download href="exemplar_data/genetic_input/genetic_query_results.json">JSON</a>,&nbsp;
+              <a download href="exemplar_data/genetic_input/genetic_query_results.csv">CSV</a>,&nbsp;
+              <a download href="exemplar_data/genetic_input/genetic_query_summary.csv">Summary&nbsp;CSV</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: justify;">
+              Amino acid sequences (picked from ongoing genome projects)
+            </td>
+            <td>
+              <a download href="exemplar_data/protein_input/protein_query.fa">FASTA</a>
+            </td>
+            <td>
+              <a href="exemplar_data/protein_input/protein_query_results" target="_blank">HTML</a>,&nbsp;
+              <a download href="exemplar_data/protein_input/protein_query_results.json">JSON</a>,&nbsp;
+              <a download href="exemplar_data/protein_input/protein_query_results.csv">CSV</a>,&nbsp;
+              <a download href="exemplar_data/protein_input/protein_query_summary.csv">Summary&nbsp;CSV</a>
+            </td>
+          </tr>
+        </table>
+        <p>
+          <small>
+            <small>
+              <sup>*</sup> Generated using GeneValidator 2.1.5, using SwissProt
+              database downloaded on 17th August, 2018 as reference.
+            </small>
+          </small>
+        </p>
+        <div class="well">
+          Please cite: <a target="_blank"
+            href="https://academic.oup.com/bioinformatics/article/32/10/1559/1742817">Dragan M<sup>&Dagger;</sup>,
+            Moghul MI<sup>&Dagger;</sup>, Priyam A, Bustos C &amp; Wurm Y. 2015. GeneValidator: identify problems with
+            protein-coding gene predictions". <em>Bioinformatics</em>, doi: 10.1093/bioinformatics/btw015</a>.
+        </div>
+
+        <h4>Installation and usage</h4>
+        <p>To install GeneValidator on a Unix-based system (e.g. Linux or Mac OS), please run the following in the
+          terminal:</p>
+        <pre style="color:#000;">sh -c "$(curl -fsSL https://install-genevalidator.wurmlab.com)"</pre>
+        <p>Please see this <a href="https://github.com/wurmlab/genevalidator">page</a> for more information on
+          installation and usage. </p>
+        <p style="text-align: justify;">
+          Alternatively, we host a web server appropriate for &lt; 10 query sequences at a time:
+        <ul style="padding-left: 15px;">
+          <li>
+            <a href="https://genevalidator.wurmlab.com" target="_blank">
+              GeneValidator web app.
+            </a>
+          </li>
+        </ul>
+        </p>
+      </div>
+
+      <h4>Mini-tutorial for interactive use on one or few gene predictions</h4>
+      <p>Despite recent improvements in genome sequencing and gene prediction technologies, many gene predictions remain
+        problematic. GeneValidator can be used to help assess the quality of a large set of gene predictions, but also
+        for individual sequences. Here we focus on the latter.</p>
+
+      <ol>
+        <li>Take one or several gene predictions in FASTA format - protein (e.g., <a href="tutorial/A.fasta">A</a>, <a
+            href="tutorial/B.fasta">B</a>, <a href="tutorial/C.fasta">C</a>) or nucleotide sequence (e.g., <a
+            href="tutorial/D.fasta">D</a>).</li>
+        <li>Go to the <a href="https://genevalidator.wurmlab.com" target="_blank">GeneValidator web app</a>.</li>
+        <li>Paste your gene prediction into the text field and click the <strong>Analyse Sequences</strong> button.
+          <br /><small>GeneValidator will BLAST your gene prediction against a database (default: SwissProt), and
+            perform multiple comparisons between your gene prediction and the sequences in the database. This should
+            take less than 2 minutes.</small></li>
+        <li>Examine the output report:
+          <ul>
+            <li>GeneValidator will only report results if it identified sufficient similar sequences in the database.
+            </li>
+            <li>Each test result is shown in a different column. The question mark buttons provide details about the
+              test.</li>
+            <li>Each test result is accompanied by an indication of consistency between the gene prediction and the
+              BLAST hits.</li>
+            <li>GeneValidator produces visual graphs to help understand the characteristics of the gene prediction data.
+            </li>
+          </ul>
         </li>
-      </ul>
-    </p>
-  </div>
+      </ol>
+      <p>What can you conclude regarding your query gene prediction sequences? Regarding the example sequences given
+        above, the following can help you understand GeneValidator's output:</p>
+      <ol type="A">
+        <li>There appear to be several problems with this gene:
+          <ul>
+            <li><small>It is longer than most BLAST hits (see <em>Length Cluster</em> graph)</small></li>
+            <li><small>Each BLAST hit aligns either to the first part or to the second part of the query sequence (see
+                second <em>Gene Merge</em> graph). This (along with the first <em>Gene Merge</em> graph) suggests the
+                query may be a fusion of two genes (this happens occasionally for tandem genes).</small></li>
+          </ul>
+        <li>There is no evidence of any problems with this gene.</li>
+        <li>A region of the gene aligns multiple times to a single BLAST hit as indicated by the duplication result.
+          This suggests that our query gene prediction may include a single exon twice (e.g., as a result of prediction
+          software incorrectly merging tandem (adjacent) duplicated gene copies into a single prediction.</li>
+        <li>This sequence likely contains a frameshift. This is indicated by BLAST hits not all aligning in a single
+          reading frame and by the presence of two main open reading frames.</li>
+      </ol>
 
-  <h4>Mini-tutorial for interactive use on one or few gene predictions</h4>
-  <p>Despite recent improvements in genome sequencing and gene prediction technologies, many gene predictions remain problematic. GeneValidator can be used to help assess the quality of a large set of gene predictions, but also for individual sequences. Here we focus on the latter.</p>
-
-  <ol>
-     <li>Take one or several gene predictions in FASTA format - protein (e.g., <a href="tutorial/A.fasta">A</a>, <a href="tutorial/B.fasta">B</a>, <a href="tutorial/C.fasta">C</a>) or nucleotide sequence (e.g., <a href="tutorial/D.fasta">D</a>).</li>
-     <li>Go to the <a href="https://genevalidator.wurmlab.com" target="_blank">GeneValidator web app</a>.</li>
-     <li>Paste your gene prediction into the text field and click the <strong>Analyse Sequences</strong> button. <br/><small>GeneValidator will BLAST your gene prediction against a database (default: SwissProt), and perform multiple comparisons between your gene prediction and the sequences in the database. This should take less than 2 minutes.</small></li>
-     <li>Examine the output report:
-       <ul>
-	 <li>GeneValidator will only report results if it identified sufficient similar sequences in the database.</li>
-	 <li>Each test result is shown in a different column. The question mark buttons provide details about the test.</li>
-	 <li>Each test result is accompanied by an indication of consistency between the gene prediction and the BLAST hits.</li>
-	 <li>GeneValidator produces visual graphs to help understand the characteristics of the gene prediction data.</li>
-       </ul>
-     </li>
-  </ol>
-  <p>What can you conclude regarding your query gene prediction sequences? Regarding the example sequences given above, the following can help you understand GeneValidator's output:</p>
-  <ol type="A">
-    <li>There appear to be several problems with this gene:
-	<ul>
-	  <li><small>It is longer than most BLAST hits (see <em>Length Cluster</em> graph)</small></li>
-	  <li><small>Each BLAST hit aligns either to the first part or to the second part of the query sequence (see second <em>Gene Merge</em> graph). This (along with the first <em>Gene Merge</em> graph) suggests the query may be a fusion of two genes (this happens occasionally for tandem genes).</small></li>
-	</ul>
-    <li>There is no evidence of any problems with this gene.</li>
-    <li>A region of the gene aligns multiple times to a single BLAST hit as indicated by the duplication result. This suggests that our query gene prediction may include a single exon twice (e.g., as a result of prediction software incorrectly merging tandem (adjacent) duplicated gene copies into a single prediction.</li>
-    <li>This sequence likely contains a frameshift. This is indicated by BLAST hits not all aligning in a single reading frame and by the presence of two main open reading frames.</li>
-  </ol>
-
-<!-- <p>Questions for going further:</p>
+      <!-- <p>Questions for going further:</p>
  <ul>
    <li>What are GeneValidator's shortcomings?</li>
    <li></li>
  </ul>
 -->
 
-</div>
+    </div>
 
-<!--  LocalWords:  JSON cDNA app genome differnet GeneValidator's
+    <!--  LocalWords:  JSON cDNA app genome differnet GeneValidator's
 -->
+  </div>
+</div>

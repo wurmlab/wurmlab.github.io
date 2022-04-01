@@ -14,44 +14,44 @@ Ok so Covid made Yannick *et al* head for the woods. But what about internet acc
 
 **It took some time but I figured it out**. It is now fast and reliable. Low ping. Fast download. Fast upload. Amazing.
 
-I suspect others in remote places could benefit from what I learnt.  Two things were needed. 
+I suspect others in remote places could benefit from what I learnt.  Two things were needed.
 
-![chateau.png](/img/news/2020-07-lte_setup/chateau.png#center)
+![chateau.png](/img/news/2020-07-lte_setup/chateau.png#center){: width="196" height="200" style="max-width:100%; height: auto"}
 
 ### A high performance 4G/LTE router
 
-The MikroTik Chateau is incredible. 
+The MikroTik Chateau is incredible.
 
 Put a SIM card inside, and its already *much* faster than:
- - a phone, 
- - a mifi hotspot, 
- - or a "simple" 90 euro 4G/LTE router like the Dlink DWR 921. 
+ - a phone,
+ - a mifi hotspot,
+ - or a "simple" 90 euro 4G/LTE router like the Dlink DWR 921.
 
-But plug in a dual antenna and it's crazy fast. 
+But plug in a dual antenna and it's crazy fast.
 
-![fast_speedtest_chateau_lte_mimo.png](/img/news/2020-07-lte_setup/fast_speedtest_chateau_lte_mimo.png#center)
+![fast_speedtest_chateau_lte_mimo.png](/img/news/2020-07-lte_setup/fast_speedtest_chateau_lte_mimo.png#center){: width="470" height="200" style="max-width:100%; height: auto"}
 
-
-FYI, those 180 Mbps are despite having only 3 bars of reception. 
+FYI, those 180 Mbps are despite having only 3 bars of reception.
 
 It turns out that this router is [Category 12 LTE](https://en.wikipedia.org/wiki/E-UTRA#UE_Category), which means that it connects to the cell tower 3 times. So you get **more combined bandwidth, and more resilience to interruptions** - say if one of the cell towers were to become overloaded or fail.
 
-MikroTik design and build these in Latvia. Most of their stuff is geared towards  professionals. So the user interface offers immense flexibility - but is not easy to use. And it didn't just "plug and play". 
+MikroTik design and build these in Latvia. Most of their stuff is geared towards  professionals. So the user interface offers immense flexibility - but is not easy to use. And it didn't just "plug and play".
 
-FWIW the Microtik Chateau is [~200 GBP in UK](https://amzn.to/2B2gZhP). If out of stock, or you want something more user friendly, the [Netgear Orbi](https://amzn.to/2MEjXOS) is super-fast, or [TP-link Archer MR600](https://amzn.to/3ovQ0xH) is cheap but slower (Cat 6). All of these have antennas built in - so if signal is strong enough, no external antenna is needed.  
+FWIW the Microtik Chateau is [~200 GBP in UK](https://amzn.to/2B2gZhP). If out of stock, or you want something more user friendly, the [Netgear Orbi](https://amzn.to/2MEjXOS) is super-fast, or [TP-link Archer MR600](https://amzn.to/3ovQ0xH) is cheap but slower (Cat 6). All of these have antennas built in - so if signal is strong enough, no external antenna is needed.
 
 <br/>
 
 ### A Yagi MIMO directional antenna on the roof
 
-This had to be pointed at the nearest 4G phone tower - which I located using this [handy map](https://www.cellmapper.net/). 
+This had to be pointed at the nearest 4G phone tower - which I located using this [handy map](https://www.cellmapper.net/).
 
-This made a huge improvement in cell reception. 
+This made a huge improvement in cell reception.
 
-(This type of [pair of directional antennas is ~100 GBP](https://amzn.to/3teeZsT)). If you want to avoid the hassle of precise pointing, at the cost of lower sensitivity, get an [omni-directional antenna](https://amzn.to/2YHF4mp) that can just be stuck to the wall or window. 
+(This type of [pair of directional antennas is ~100 GBP](https://amzn.to/3teeZsT)). If you want to avoid the hassle of precise pointing, at the cost of lower sensitivity, get an [omni-directional antenna](https://amzn.to/2YHF4mp) that can just be stuck to the wall or window.
 
 
-![coflex_mimo_lte_antenna.jpg](/img/news/2020-07-lte_setup/coflex_mimo_lte_antenna.jpg#center)
+![coflex_mimo_lte_antenna.jpg](/img/news/2020-07-lte_setup/coflex_mimo_lte_antenna.jpg#center){: width="452" height="300" style="max-width:100%; height: auto"}
+
 ### MikroTik Chateau configuration
 
 Every small thing you could want to imagine can be tuned on this router - and bazillions of things I am not even close to imagining (!).
@@ -66,10 +66,10 @@ However, it didn't work right away. I had to specifically:
 /interface lte set lte1 apn-profiles=internet.it
 ```
 
-**2.  In the Quick interface** 
+**2.  In the Quick interface**
  * Specifically tell it to use both antennas
  * Rename network, add password
- * Update the OS to the latest development version 
+ * Update the OS to the latest development version
  
 **3.  In the WebFig interface**
 * Tell it to accept incoming SMS
@@ -79,7 +79,7 @@ However, it didn't work right away. I had to specifically:
 
 ### Getting internet while traveling
 
-On the road (train, hotel rooms...), tethering to the iPhone is sometimes ok... but throughput is really much better with a dedicated device. 
+On the road (train, hotel rooms...), tethering to the iPhone is sometimes ok... but throughput is really much better with a dedicated device.
 
 I stick a SIM card into a [Netgear Aircard 790](https://amzn.to/3oyCqd0). Its wonderful and works right away; their newer [NightHawk M2](https://amzn.to/36r3cO5) is likely even better. If signal is weak, I take a [portable mini LTE-antenna](https://amzn.to/2MICl9a) that can just be plugged into the aircard or nighthawk and stick that to the window. Obviously, if signal is very weak, a bigger antenna setup (like above) is needed...
 

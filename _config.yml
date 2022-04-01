@@ -1,9 +1,11 @@
 markdown: kramdown
 
 title: Ants, Genomes & Evolution @ Queen Mary University London
+description: "We examine the evolutionary and genomic tradeoffs of social behavior in ants and other social animals. We develop data-rich approaches to understand the health of wild animals including pollinating bees. We produce bioinformatics tools to accelerate biological insight from large and complex molecular-genomic datasets."
+url: '//wurmlab.com'
 
-url: '//wurmlab.github.io'
-production_url: 'https://wurmlab.github.io'
+url: 'https://wurmlab.com'
+production_url: 'https://wurmlab.com'
 
 permalink: "/news/:year-:month-:day-:title/"
 
@@ -27,5 +29,11 @@ analytics:
 
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'Rakefile']
 
-gems:
-  - jekyll-redirect-from
+
+## Deprecation: The 'gems' configuration option has been renamed to 'plugins'. updated the config file accordingly. see below -mh
+# gems:
+#   - jekyll-redirect-from
+
+plugins:
+    - jekyll-seo-tag
+    - jekyll-redirect-from

@@ -4,159 +4,210 @@ title: Ants, Genomes &amp; Evolution Lab @ Queen Mary University London
 comments: false
 ---
 <div class="row">
-  <div class="column col-sm-7 col-md-7">
-    <div id="section1" class="row">
-      <div class="col-sm-12">
-        <h1>Evolutionary genomics of social insects</h1>
-      </div>
-      <div class="col-md-7">
-        <p>Extensive theoretical work has explained how and why complex societies evolve. However, only little is known about the genes and molecular mechanisms responsible for social phenotypes.</p>
-        <p>We have been identifying genes and mechanisms involved in the evolution of insect societies using modern genomics approaches, combining comparative genomics and transcriptomics with population genomics and behavioral experiments.</p>
-        <btn id="section1-more-btn" onclick="$('#section1-extra').show();$('#section1-more-btn').hide();" class="btn btn-default btn-sm">Read More</btn>
-      </div>
-      <div class="col-md-5 hidden-xs hidden-sm">
-        <img src="{{ site.url }}/img/frontpage/fireants-ongenome480w.jpg" class="img-rounded img-responsive center-block" alt="fire ants on the genomic sequence of their social chromosome">
-      </div>
-      <div id="section1-extra" class="col-sm-12" style="display:none;">
-        <p> We are interested in themes including the genetics of behavior, the interplay between social evolution and genome evolution, and the molecular mechanisms responsible for differences between castes.</p>
-        <p>For example we:</p>
-        <ul>
-          <li>reviewed the most up-to-date research on ant omics (<a href="https://doi.org/10.1016/j.cois.2017.12.001">Current Opinion in Insect Science 2018</a>).</li>
-          <li>characterized the genomic features of the variants of the social chromosome, showing high genetic diversity between them (<a href="http://onlinelibrary.wiley.com/doi/10.1111/mec.14054/abstract">Molecular Ecology 2017</a> and <a href="http://dx.doi.org/10.1002/evl3.22">Evolution Letters 2017</a>).</li>
-          <li>discovered that the number of queens accepted in a fire ant colony is determined by variants of a social chromosome (<a href="http://dx.doi.org/10.1038/nature11832">Nature 2013</a>).</li>
-          <li>sequenced and analyzed the genome of the invasive red fire ant <em>Solenopsis invicta</em> (<a href="http://dx.doi.org/10.1073/pnas.1009690108">PNAS 2011</a>).</li>
-          <li>described the gene expression changes that occur in a virgin queen when she is given the opportunity of replacing her mother (<a href= "http://dx.doi.org/10.1111/j.1365-294X.2010.04561.x">Molecular Ecology 2010</a>).</li>
-          <li>examined selective regime (positive vs. neutral selection) and fate of duplicated genes (conserved vs. subfunctionalized vs. neofunctionalization) for gene families including <a href="http://rspb.royalsocietypublishing.org/content/280/1758/20122968">sex-determination loci (tranfsormer/feminiser)</a>, <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045715">clock genes</a>, <a href="http://www.nature.com/hdy/journal/v110/n6/full/hdy2012122a.html">chemosensory proteins (CSPs)</a>, <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0016289">olfactory binding proteins (OBPs)</a>, <a href="http://dx.doi.org/10.1073/pnas.1009690108">olfactory receptors</a> and <a href="http://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1003730">vitellogenin genes</a>.</li>
-        </ul>
-        <btn id="section1-less-btn" onclick="$('#section1-extra').hide();$('#section1-more-btn').show();" class="btn btn-default btn-sm">Read Less</btn>
-      </div>
-      <div class="col-md-5 visible-xs-inline visible-sm-inline">
-        <img src="{{ site.url }}/img/frontpage/fireants-ongenome480w.jpg" class="img-rounded img-responsive center-block" alt="fire ants on the genomic sequence of their social chromosome">
-      </div>
+
+<section class="column col-sm-7">
+<article id="section1" class="row">
+    <h2>Evolutionary genomics of social insects</h2>
+    <div class="col-lg-7">
+      <p>Extensive theoretical work has explained how and why complex societies evolve. However, only little is known
+        about the genes and molecular mechanisms responsible for social phenotypes.</p>
+      <p>We have been identifying genes and mechanisms involved in the evolution of insect societies using modern
+        genomics approaches, combining comparative genomics and transcriptomics with population genomics and behavioral
+        experiments.</p>
+      <button id="section1-more-btn" onclick="$('#section1-extra').show();$('#section1-more-btn').hide();"
+        class="btn btn-sm">Read More</button>
     </div>
-    <div class="clearfix"></div>
-    <hr>
-    <div id="section2" class="row">
-      <div class="col-sm-12">
-        <h1>Genome bioinformatics</h1>
-      </div>
-      <div class="col-md-7">
-        <p>The recent 10,000-fold drop in the cost of DNA sequencing means that any lab can sequence anything - and lots of it. This brings exciting opportunities but also new challenges, in particular with regards to data handling, data analysis and visualization.</p>
-        <p>We develop innovative tools and approaches to facilitate modern biological work on established and emerging model organisms. We pay special attention to visualization and user experience.</p>
-        <btn id="section2-more-btn" onclick="$('#section2-extra').show();$('#section2-more-btn').hide();" class="btn btn-default btn-sm">Read More</btn>
-      </div>
-      <div class="col-md-5 hidden-xs hidden-sm">
-        <img src="{{ site.url }}/img/frontpage/analyze-final.gif" class="img-rounded img-responsive center-block" alt="how tools should be">
-      </div>
-      <div id="section2-extra" class="col-sm-12" style="display:none;">
-        <ul>
-          <li>BLAST is the most commonly used bioinformatics tool. But setting it up for private data and using it is counter-intuitive. Furthermore the standard graphical user interfaces for BLAST are clunky. We developed <a href="http://www.sequenceserver.com">SequenceServer</a> to overcome these hurdles. </li>
-          <li>Sequencing genomes has become straightforward. But correctly identifying genes in a genome sequence remains challenging. This is a huge problem for multi-species multi-gene analyses on emerging model organisms (trash in trash out).
-            <ul>
-              <li>We developed <a href="/tools/genevalidator/">GeneValidator</a> for automated identification and visualization of problems with gene predictions.</li>
-              <li>Many gene predictions need to be inspected and manually fixed before performing analyses. We are developing infrastructure to <a href="http://afra.sbcs.qmul.ac.uk">crowd-source gene curation to students as part of improved learning experience</a>. </li>
-            </ul>
-          </li>
-          <li>Because genomics data types and analysis algorithms remain young, many analyses require jumping back and forth between multiple tools. The tools themselves are young, can be challenging to install and can require frequent updates. But for reproducibility a given project may want to stick to specific versions of specific tools. Based on the <a href="http://docker.io/">docker</a> container architecture, <a href="https://github.com/yeban/oswitch">oSwitch enables lightweight switching from one virtual operating system to another</a>. It is a powerful tool for pipelines and for hacking.
-          <li>We are also developping <a href="http://www.bionode.io/">BioNode</a>, an Open Source community to build highly reusable tools and code for bioinformatics by leveraging the Node.JS ecosystem. We want to process big genomic data using Node.JS Streams. We welcome all kinds of contributions at all levels of experience.
-          </li>
-        </ul>
-        <btn id="section2-less-btn" onclick="$('#section2-extra').hide();$('#section2-more-btn').show();" class="btn btn-default btn-sm">Read Less</btn>
-      </div>
-      <div class="col-md-5 visible-xs-inline visible-sm-inline">
-        <img src="{{ site.url }}/img/frontpage/analyze-final.gif" class="img-rounded img-responsive center-block" alt="how tools should be">
-      </div>
+    <div class="col-md-5 d-none d-lg-block">
+      <!-- desktop image -->
+      <img src="{{ site.url }}/img/frontpage/fireants-ongenome480w.jpg"  width="480" height="265" class="img-rounded img-fluid"
+        alt="fire ants on the genomic sequence of their social chromosome">
     </div>
-    <div class="clearfix"></div>
-    <hr>
-    <div id="section3" class="row">
-      <div class="col-sm-12">
-        <h1>Pollinator health</h1>
-      </div>
-      <div class="col-md-7">
-        <p>Bees and other pollinators are essential for preserving biodiversity and ensuring agricultural yields. Reports of their declines worldwide are thus concerning. We take inspiration from biomedical approaches for understanding cancer biology and personalised medecine to improve our understanding of pollinator health. In particular, we use modern molecular tools including population genomics and gene expression analyses to understand how pollinators are affected by changing environments (e.g., pesticide exposure, habitat loss, changing climates) and their ability to cope with such changes.</p>
-	<btn id="section3-more-btn" onclick="$('#section3-extra').show();$('#section3-more-btn').hide();" class="btn btn-default btn-sm">Read More</btn>
-      </div>
-
-
-      <div class="col-md-5 hidden-xs hidden-sm">
-        <img src="{{ site.url }}/img/frontpage/bumblebee-240.jpg" class="img-rounded img-responsive center-block" alt="bumblebee on flower">
-      </div>
-
-      <div id="section3-extra" class="col-sm-12" style="display:none;">
-        <ul>
-
-	  <li>We are quantifying the effects of pesticide exposure on gene expression in various bee species. (<a href="https://www.sciencedirect.com/science/article/pii/S016953471930357X">Trends in Ecology & Evolution 2020</a>).</li>
-	  <li>We are characterising the selection pressures affecting wild bees using population genomics approaches.</li>
-	  <li>We have contributed to several experiments examining the impact of pesticides on field colonies.</li>
-        </ul>
-	<btn id="section3-less-btn" onclick="$('#section3-extra').hide();$('#section3-more-btn').show();" class="btn btn-default btn-sm">Read Less</btn>
-      </div>
+    <div id="section1-extra" class="col-sm-12" style="display:none;">
+      <p> We are interested in themes including the genetics of behavior, the interplay between social evolution and
+        genome evolution, and the molecular mechanisms responsible for differences between castes.</p>
+      <p>For example we:</p>
+      <ul>
+        <li>reviewed the most up-to-date research on ant omics (<a
+            href="https://doi.org/10.1016/j.cois.2017.12.001">Current Opinion in Insect Science 2018</a>).</li>
+        <li>characterized the genomic features of the variants of the social chromosome, showing high genetic diversity
+          between them (<a href="https://onlinelibrary.wiley.com/doi/10.1111/mec.14054/abstract">Molecular Ecology
+            2017</a> and <a href="https://dx.doi.org/10.1002/evl3.22">Evolution Letters 2017</a>).</li>
+        <li>discovered that the number of queens accepted in a fire ant colony is determined by variants of a social
+          chromosome (<a href="https://dx.doi.org/10.1038/nature11832">Nature 2013</a>).</li>
+        <li>sequenced and analyzed the genome of the invasive red fire ant <em>Solenopsis invicta</em> (<a
+            href="https://dx.doi.org/10.1073/pnas.1009690108">PNAS 2011</a>).</li>
+        <li>described the gene expression changes that occur in a virgin queen when she is given the opportunity of
+          replacing her mother (<a href="https://dx.doi.org/10.1111/j.1365-294X.2010.04561.x">Molecular Ecology
+            2010</a>).</li>
+        <li>examined selective regime (positive vs. neutral selection) and fate of duplicated genes (conserved vs.
+          subfunctionalized vs. neofunctionalization) for gene families including <a
+            href="https://rspb.royalsocietypublishing.org/content/280/1758/20122968">sex-determination loci
+            (tranfsormer/feminiser)</a>, <a
+            href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045715">clock genes</a>, <a
+            href="https://www.nature.com/hdy/journal/v110/n6/full/hdy2012122a.html">chemosensory proteins (CSPs)</a>, <a
+            href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0016289">olfactory binding proteins
+            (OBPs)</a>, <a href="https://dx.doi.org/10.1073/pnas.1009690108">olfactory receptors</a> and <a
+            href="https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1003730">vitellogenin genes</a>.
+        </li>
+      </ul>
+      <button id="section1-less-btn" onclick="$('#section1-extra').hide();$('#section1-more-btn').show();"
+        class="btn btn-sm">Read Less</button>
     </div>
+    <div class="col-md-12 d-lg-none">
+      <!-- mobile image -->
+      <img src="{{ site.url }}/img/frontpage/fireants-ongenome480w.jpg"  width="480" height="265" class="img-rounded mx-auto d-block img-fluid"
+        alt="fire ants on the genomic sequence of their social chromosome">
+    </div>
+  </article>
+  <hr>
+  <article id="section2" class="row">
+    <h2>Genome bioinformatics</h2>
+    <div class="col-lg-7">
+      <p>The recent 10,000-fold drop in the cost of DNA sequencing means that any lab can sequence anything - and lots
+        of it. This brings exciting opportunities but also new challenges, in particular with regards to data handling,
+        data analysis and visualization.</p>
+      <p>We develop innovative tools and approaches to facilitate modern biological work on established and emerging
+        model organisms. We pay special attention to visualization and user experience.</p>
+      <button id="section2-more-btn" onclick="$('#section2-extra').show();$('#section2-more-btn').hide();"
+        class="btn btn-sm">Read More</button>
+    </div>
+    <div class="col-md-5 d-none d-lg-block">
+      <!-- desktop image -->
+      <img src="{{ site.url }}/img/frontpage/analyze-final.gif" width="440" height="240" class="img-rounded img-fluid"
+        alt="how tools should be">
+    </div>
+    <div id="section2-extra" class="col-sm-12" style="display:none;">
+      <ul>
+        <li>BLAST is the most commonly used bioinformatics tool. But setting it up for private data and using it is
+          counter-intuitive. Furthermore the standard graphical user interfaces for BLAST are clunky. We developed <a
+            href="https://www.sequenceserver.com">SequenceServer</a> to overcome these hurdles. </li>
+        <li>Sequencing genomes has become straightforward. But correctly identifying genes in a genome sequence remains
+          challenging. This is a huge problem for multi-species multi-gene analyses on emerging model organisms (trash
+          in trash out).
+          <ul>
+            <li>We developed <a href="/tools/genevalidator/">GeneValidator</a> for automated identification and
+              visualization of problems with gene predictions.</li>
+            <li>Many gene predictions need to be inspected and manually fixed before performing analyses. We are
+              developing infrastructure to <a href="https://afra.sbcs.qmul.ac.uk">crowd-source gene curation to students
+                as part of improved learning experience</a>. </li>
+          </ul>
+        </li>
+        <li>Because genomics data types and analysis algorithms remain young, many analyses require jumping back and
+          forth between multiple tools. The tools themselves are young, can be challenging to install and can require
+          frequent updates. But for reproducibility a given project may want to stick to specific versions of specific
+          tools. Based on the <a href="https://docker.io/">docker</a> container architecture, <a
+            href="https://github.com/yeban/oswitch">oSwitch enables lightweight switching from one virtual operating
+            system to another</a>. It is a powerful tool for pipelines and for hacking.
+        <li>We are also developping <a href="https://www.bionode.io/">BioNode</a>, an Open Source community to build
+          highly reusable tools and code for bioinformatics by leveraging the Node.JS ecosystem. We want to process big
+          genomic data using Node.JS Streams. We welcome all kinds of contributions at all levels of experience.
+        </li>
+      </ul>
+      <button id="section2-less-btn" onclick="$('#section2-extra').hide();$('#section2-more-btn').show();"
+        class="btn btn-sm">Read Less</button>
+    </div>
+    <div class="col-md-12 d-lg-none">
+      <!-- mobile image -->
+      <img src="{{ site.url }}/img/frontpage/analyze-final.gif" width="440" height="240" class="img-rounded mx-auto d-block img-fluid"
+        alt="how tools should be">
+    </div>
+  </article>
+  <hr>
+  <article id="section3" class="row">
+    <h2>Pollinator health</h2>
+    <div class="col-lg-7">
+      <p>Bees and other pollinators are essential for preserving biodiversity and ensuring agricultural yields. Reports
+        of their declines worldwide are thus concerning. We take inspiration from biomedical approaches for
+        understanding cancer biology and personalised medecine to improve our understanding of pollinator health. In
+        particular, we use modern molecular tools including population genomics and gene expression analyses to
+        understand how pollinators are affected by changing environments (e.g., pesticide exposure, habitat loss,
+        changing climates) and their ability to cope with such changes.</p>
+      <button id="section3-more-btn" onclick="$('#section3-extra').show();$('#section3-more-btn').hide();"
+        class="btn btn-sm">Read More</button>
+    </div>
+    <div class="col-md-5 d-none d-lg-block">
+      <!-- desktop image -->
+      <img src="{{ site.url }}/img/frontpage/bumblebee-240.jpg" width="360" height="240" class="img-rounded img-fluid"
+        alt="bumblebee on flower">
+    </div>
+    <div id="section3-extra" class="col-sm-12" style="display:none;">
+      <ul>
+        <li>We are quantifying the effects of pesticide exposure on gene expression in various bee species. (<a
+            href="https://www.sciencedirect.com/science/article/pii/S016953471930357X">Trends in Ecology & Evolution
+            2020</a>).</li>
+        <li>We are characterising the selection pressures affecting wild bees using population genomics approaches.</li>
+        <li>We have contributed to several experiments examining the impact of pesticides on field colonies.</li>
+      </ul>
+      <button id="section3-less-btn" onclick="$('#section3-extra').hide();$('#section3-more-btn').show();"
+        class="btn btn-sm">Read Less</button>
+    </div>
+    <div class="col-md-12 d-lg-none">
+      <!-- mobile image -->
+      <img src="{{ site.url }}/img/frontpage/bumblebee-240.jpg" width="360" height="240" class="img-rounded mx-auto d-block img-fluid"
+        alt="how tools should be">
+    </div>
+  </article>
+</section>
+<aside class="column col-sm-5 col-md-5">
+  <h3><strong><a href="/news">Latest news</a></strong></h3>
+  <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee">
+    {% for post in site.categories.labnews offset: 0 limit: 3 %}
+    <li style="line-height:120%; margin-bottom: 5pt">
+      <strong><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></strong> ({{ post.date | date: "%B %d" }})
+    </li>
+    {% endfor %}
+  </ul>
+  <h3><strong><a href="/publications">Latest publications</a></strong></h3>
+  <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee;  line-height:120% ">
+    <li style="margin-bottom:5pt">
+      <a href="https://dx.doi.org/10.7554/eLife.55862">
+        <b>Genomic architecture and evolutionary antagonism drive allelic expression bias in the social supergene of red
+          fire ants</b>
+      </a>
+      Martinez-Ruiz et al. eLife (2020)
+    </li>
+    <li style="margin-bottom:5pt">
+      <a href="https://dx.doi.org/10.1016/j.cub.2020.09.023">
+        <b>The legacy of endosymbiosis in ants</b>
+      </a>
+      Jackson et al. Current Biology (2020)
+    </li>
+    <li style="margin-bottom:5pt">
+      <a href="https://doi.org/10.1016/j.tree.2019.12.012">
+        <b>Healthy pollinators: evaluating pesticides with molecular medicine approaches</b>
+      </a>
+      López-Osorio and Wurm Trends in Ecology & Evolution (2020).
+    </li>
+    <li style="margin-bottom:5pt">
+      <a href="https://dx.doi.org/10.1111/mec.15047">
+        <b>Caste- and pesticide-specific effects of neonicotinoid pesticide exposure on gene expression in
+          bumblebees.</b>
+      </a>
+      Colgan <em>et al</em> Molecular Ecology (2019).
+    </li>
+    <li style="margin-bottom:5pt">
+      <a href="https://dx.doi.org/10.1093/molbev/msy236">
+        <b>Degenerative expansion of a young supergene</b>
+      </a>
+      Stolle <em>et al</em> Molecular Biology and Evolution (2019).
+    </li>
+  </ul>
+  <div>
+    <a class="twitter-timeline" data-height="700"
+      href="https://twitter.com/yannick__/lists/labtweets?ref_src=twsrc%5Etfw"></a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
-  <div class="column col-sm-5 col-md-5">
-    <h3><strong><a href="/news">Latest news</a></strong></h3>
-    <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee">
-      {% for post in site.categories.labnews offset: 0 limit: 3 %}
-      <li style="line-height:120%; margin-bottom: 5pt">
-	<strong><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></strong> ({{ post.date | date: "%B %d" }})
-      </li>
-      {% endfor %}
-    </ul>
-
-    <h3><strong><a href="/publications">Latest publications</a></strong></h3>
-    <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee;  line-height:120% ">
-      <li style="margin-bottom:5pt">
-        <a href="http://dx.doi.org/10.7554/eLife.55862">
-	  <b>Genomic architecture and evolutionary antagonism drive allelic expression bias in the social supergene of red fire ants</b>
-	</a>
-	Martinez-Ruiz et al. eLife (2020)
-      </li>
-      <li style="margin-bottom:5pt">
-	<a href="http://dx.doi.org/10.1016/j.cub.2020.09.023">
-	  <b>The legacy of endosymbiosis in ants</b>
-	</a>
-	Jackson et al. Current Biology (2020)
-      </li>
-      <li style="margin-bottom:5pt">
-	<a href="https://doi.org/10.1016/j.tree.2019.12.012">
-          <b>Healthy pollinators: evaluating pesticides with molecular medicine approaches</b>
-	</a>
-	López-Osorio and Wurm Trends in Ecology & Evolution (2020). 
-      </li>
-      <li style="margin-bottom:5pt">
-	<a href="http://dx.doi.org/10.1111/mec.15047">
-          <b>Caste- and pesticide-specific effects of neonicotinoid pesticide exposure on gene expression in bumblebees.</b>
-	</a>
-	Colgan <em>et al</em> Molecular Ecology (2019). 
-      </li>
-      <li style="margin-bottom:5pt">
-	<a href="http://dx.doi.org/10.1093/molbev/msy236">
-	<b>Degenerative expansion of a young supergene</b>
-	</a>
-	Stolle <em>et al</em> Molecular Biology and Evolution (2019).
-      </li>
-    </ul>
-
-    <div>
-      <a class="twitter-timeline" data-height="700" href="https://twitter.com/yannick__/lists/labtweets?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-    </div>
+</aside>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <p>We are grateful for support from our funders:</p>
+    <img class="img-fluid" src="{{ site.url }}/img/logos/allstuck-bw.png" alt="funding bodies"
+    width="1117" height="25" style="max-height: 200px;">
   </div>
 </div>
-
-  <div class="clearfix"></div>
-
-  <hr>
-
-  <div class="row">
-    <div class="col-sm-12 col-md-12">
-      <p>We are grateful for support from our funders:</p>
-      <img class="img-responsive" src="{{ site.url }}/img/logos/allstuck-bw.png" alt="funding bodies" style="max-height: 200px;">
-    </div>
-  </div>
-
-  <!--  LocalWords:  visualisation SequenceServer genomes genome curation html Sk
+<!--  LocalWords:  visualisation SequenceServer genomes genome curation html Sk
     -->
-  <!--  LocalWords:  genomics
+<!--  LocalWords:  genomics
     -->

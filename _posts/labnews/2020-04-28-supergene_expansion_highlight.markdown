@@ -21,8 +21,7 @@ We tested whether this pattern holds for the fire ant social chromosomes: is the
 Surprisingly, the opposite is true: the non-recombining b is almost twice as big as the B. 
 
 
-<img src="/img/news/supergene_expansion.png" alt="Non-recombinig supergene" class="center-block img-responsive"/>
-
+![/img/news/supergene_expansion.png](/img/news/supergene_expansion.png#center){: width="629" height="357" style="max-width:100%; height: auto"}
 
 This is due to a process called **"degenerative expansion"**. We found the first evidence of it in an animal (there was a previous report in Papaya). 
 
@@ -34,11 +33,11 @@ It turns out that immediately after recombination is suppressed, massive loss of
 
 Instead, degeneration of a non-recombining region occurs in 3 steps: 
 
- 1. Accumulation of "mildly" deleterious mutations (e.g., repeats) 
-	➜ Slow degradation of functional elements 
+ 1. Accumulation of "mildly" deleterious mutations (e.g., repeats)
+	➜ Slow degradation of functional elements
 	➜ Degenerative expansion
  2. Compensatory mutations in the rest of the genome are selected for (e.g., dosage compensation, gene relocation)
- 3. Cost of losing genes is lower  
+ 3. Cost of losing genes is lower
 	➜ Bigger chunks of the genome can now be lost
 
 ### Why is it rare to observe the growth of a non-recombining region?
