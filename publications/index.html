@@ -859,6 +859,7 @@ papers:
       <a href="{{ paper.supplementary_pdf }}" target="_blank" rel="noopener">[Supplementary]</a>
       {% endif %}
       {% if paper.internal_page %}
+      <span>&nbsp;</span>
       <a href="http://dx.doi.org/{{ paper.doi }}" target="_blank" rel="noopener">[DOI]</a>
       {% endif %}
       {% if paper.abstract and paper.doi %}
