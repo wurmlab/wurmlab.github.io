@@ -9,6 +9,7 @@ papers:
 # added by -mh
 - title: 'Recurring adaptive introgression of a supergene variant that determines social organization'
   doi: https://doi.org/10.1038/s41467-022-28806-7
+  internal_page: /recurring-adaptive-introgression/
   journal: "Nat Communications 13, 1180 (2022)"
   authors:
   - <b>E Stolle</b>
@@ -833,11 +834,16 @@ papers:
         <img  style="float:right; width:{{ paper.img_width }}px;" src="{{ paper.img }}" alt="{{ paper.title }}"/>
       </a>
       {% endif %}
-      {% if paper.doi %}
+      {% if paper.doi and paper.internal_page == nil %}
       <a href="http://dx.doi.org/{{ paper.doi }}" target="_blank" rel="noopener">
-        <b>{{ paper.title }}</b></a>
+        <b>{{ paper.title }}</b>
+      </a>
       {% elsif paper.url %}
       <a href="{{ paper.url }}"  target="_blank" rel="noopener">
+        <b>{{ paper.title }}</b>
+      </a>
+      {% elsif paper.internal_page %}
+      <a href="{{ paper.internal_page }}"  target="_blank" rel="noopener">
         <b>{{ paper.title }}</b>
       </a>
       {% else %}
@@ -852,14 +858,17 @@ papers:
       {% if paper.supplementary_pdf %}
       <a href="{{ paper.supplementary_pdf }}" target="_blank" rel="noopener">[Supplementary]</a>
       {% endif %}
+      {% if paper.internal_page %}
+      <a href="http://dx.doi.org/{{ paper.doi }}" target="_blank" rel="noopener">[DOI]</a>
+      {% endif %}
       {% if paper.abstract and paper.doi %}
       <div class="wrap-collabsible">
         <input id="collapsible-{{paper.doi}}" class="toggle" type="checkbox"/>
-	<label for="collapsible-{{paper.doi}}" class="lbl-toggle" title="Show here">[Abstract]</label>
-	<div class="collapsible-content">
-	  <div class="content-inner"><p>{{ paper.abstract }}</p></div>
-	</div>
-</div>
+        <label for="collapsible-{{paper.doi}}" class="lbl-toggle" title="Show here">[Abstract]</label>
+        <div class="collapsible-content">
+          <div class="content-inner"><p>{{ paper.abstract }}</p></div>
+        </div>
+      </div>
       {% else %}
       <br/>
       {% endif %}
