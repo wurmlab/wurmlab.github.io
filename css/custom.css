@@ -625,3 +625,28 @@ ul.doi-badges li svg {
 .published-date, pre code{
   color: #4D5B5B;
 }
+
+/* Publications styling */
+
+.publication-content .info-text {
+  color: #0688c9;
+}
+
+.publication-content ol li {
+  margin-bottom: 5px;
+}
+
+.publication-content .publication-image {
+  border: 2px solid #d5d5d5;
+  padding: 20px 10px 5px;
+}
+
+.publication-content .publication-image img {
+  margin: 15px 0;
+}
+
+@media (max-width: 480px) {
+  .publication-content a {
+    word-break: break-all;
+  }
+}
