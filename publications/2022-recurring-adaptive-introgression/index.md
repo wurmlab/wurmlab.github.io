@@ -235,14 +235,14 @@ The authors declare no competing interests.
 ## Supplementary information
 <hr />
 
-#### [Supplementary Information](/publications-pages/files/rai-supplementary-Information.pdf)
-#### [Peer Review File](/publications-pages/files/rai-peer-review-file.pdf)
-#### [Description of Additional Supplementary Files](/publications-pages/files/rai-description-of-additional-supplementary-files.pdf)
-#### [Supplementary Data 1](/publications-pages/files/rai-supplementary-data-1.xlsx)
-#### [Supplementary Data 2](/publications-pages/files/rai-supplementary-data-2.xlsx)
-#### [Supplementary Data 3](/publications-pages/files/rai-supplementary-data-3.xlsx)
-#### [Supplementary Data 4](/publications-pages/files/rai-supplementary-data-4.xlsx)
-#### [Reporting Summary](/publications-pages/files/rai-reporting-summary.pdf)
+#### [Supplementary Information](/publications/2022-recurring-adaptive-introgression/rai-supplementary-Information.pdf)
+#### [Peer Review File](/publications/2022-recurring-adaptive-introgression/rai-peer-review-file.pdf)
+#### [Description of Additional Supplementary Files](/publications/2022-recurring-adaptive-introgression/rai-description-of-additional-supplementary-files.pdf)
+#### [Supplementary Data 1](/publications/2022-recurring-adaptive-introgression/rai-supplementary-data-1.xlsx)
+#### [Supplementary Data 2](/publications/2022-recurring-adaptive-introgression/rai-supplementary-data-2.xlsx)
+#### [Supplementary Data 3](/publications/2022-recurring-adaptive-introgression/rai-supplementary-data-3.xlsx)
+#### [Supplementary Data 4](/publications/2022-recurring-adaptive-introgression/rai-supplementary-data-4.xlsx)
+#### [Reporting Summary](/publications/2022-recurring-adaptive-introgression/rai-reporting-summary.pdf)
 
 <br />
 
