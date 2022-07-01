@@ -10,6 +10,7 @@ papers:
 - title: 'Recurring adaptive introgression of a supergene variant that determines social organization'
   doi: https://doi.org/10.1038/s41467-022-28806-7
   internal_page: /recurring-adaptive-introgression/
+  press_release: /news/2022-03-11-scientists-find-new-colony-structure-of-fire-ants/
   journal: "Nat Communications 13, 1180 (2022)"
   authors:
   - <b>E Stolle</b>
@@ -861,6 +862,9 @@ papers:
       {% if paper.internal_page %}
       <span>&nbsp;</span>
       <a href="http://dx.doi.org/{{ paper.doi }}" target="_blank" rel="noopener">[DOI]</a>
+      {% endif %}
+      {% if paper.press_release %}
+      <a href="{{ paper.press_release }}" target="_blank" rel="noopener">[Press release]</a>
       {% endif %}
       {% if paper.abstract and paper.doi %}
       <div class="wrap-collabsible">
