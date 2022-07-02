@@ -3,10 +3,10 @@ author: yannick
 comments: true
 date: 2022-03-11 19:00:00
 layout: post
-slug: scientists-find-new-colony-structure-of-fire-ants
-title: Scientists find new colony structure of fire ants evolved in one species before spreading to others.
+slug: adaptive-introgression-in-fire-ants
+title: Scientists find new colony structure of fire ants evolved in one species before spreading to others
 categories:
-  #- labnews
+  - labnews
   - press-release
 ---
 
