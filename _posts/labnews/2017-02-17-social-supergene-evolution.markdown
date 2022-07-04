@@ -84,7 +84,7 @@ diversity but high divergence from SB' by Rodrigo Pracana, Anurag
 Priyam, Ilya Levantis, Richard A. Nichols, and Yannick Wurm is
 published in the journal <em>Molecular Ecology</em> on Tuesday 21
 February.</li>
-<li><a href="http://wurmlab.github.io/">The Wurm lab</a> study the
+<li><a href="https://wurmlab.github.io/">The Wurm lab</a> study the
 lives of social insects including ants and bees. They combine
 behavioural experiments with genomics and bioinformatics
 approaches.</li>
@@ -92,7 +92,6 @@ approaches.</li>
 
 
 <div class="inlineImg image-caption"><img src=
-"http://www.qmul.ac.uk/media/qmul/media/news/items/se/red-fire-ant-c-Yannick-Wurm640.jpg"  alt="fire ants on genome" style="text-align: center"><br>
+"https://www.qmul.ac.uk/media/qmul/media/news/items/se/red-fire-ant-c-Yannick-Wurm640.jpg"  alt="fire ants on genome" style="text-align: center"><br>
 Credit: Romain Libbrecht and Yannick Wurm</div>
 <br/>
-
