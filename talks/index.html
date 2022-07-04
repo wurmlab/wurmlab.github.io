@@ -76,9 +76,9 @@ prediction quality (including beautiful graphs!)</a></li>
           <h3>{{ talk.context }}</h3> {% endif %}
           <p>{{ talk.about }} </p>
           {% if talk.youtubeid %}
-          <iframe id="ytplayer{{talk.youtubeid}}" type="text/html" width="400" height="300" src="//www.youtube.com/embed/{{ talk.youtubeid }}" frameborder="0"></iframe>
+          <iframe id="ytplayer{{talk.youtubeid}}" type="text/html" width="400" height="300" src="//www.youtube.com/embed/{{ talk.youtubeid }}" frameborder="0" style="max-width:100%;"></iframe>
           {% endif %} {% if talk.slideshareid %}
-          <iframe src="//www.slideshare.net/slideshow/embed_code/key/{{talk.slidesharekey}}" width="320" height="240" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""> </iframe>
+          <iframe src="//www.slideshare.net/slideshow/embed_code/key/{{talk.slidesharekey}}" width="320" height="240" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px;max-width:100%;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""> </iframe>
           {% endif %}
       </div><br/>
     {% cycle '', '</div> <div class="row">' %}

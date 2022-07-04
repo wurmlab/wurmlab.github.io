@@ -451,13 +451,15 @@ body {
   text-decoration: none;
 }
 
-.jumbotron p {
+.jumbotron p,
+.jumbotron h1 {
   font-size: 24pt;
   font-weight: bold;
-  padding-left: -10px;
+  padding-left: 5px;
   padding-top: 120px;
   padding-bottom: 00px;
   margin-bottom: 0;
+  line-height: 46px;
   letter-spacing: -1px;
 }
 
