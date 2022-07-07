@@ -1,7 +1,8 @@
----                                                                                                                                                                     
+---
 layout:  page
-title: "Bioinformatics consulting; genome analysis consulting"
----    
+title: "Bioinformatics &amp; genomics analysis consulting"
+description: "Bioinformatics &amp; genomics analysis consulting"
+---
 
 # Consulting
 
@@ -17,8 +18,6 @@ We are available for consultancy work on bioinformatics and genomics projects. W
  - caveats of different data types and algorithms
  - robust, reproducible and reliable analysis code
 
-References, and example projects available upon request. We have done consultancy work for the private sector (human population or disease genomics) and public sector (ecological & evolutionary questions & data). 
+References, and example projects available upon request. We have done consultancy work for the private sector (human population or disease genomics) and public sector (ecological & evolutionary questions & data).
 
-If your project needs help, drop Yannick a line. 
-
-
+If your project needs help, drop Yannick a line.
