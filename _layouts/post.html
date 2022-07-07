@@ -12,12 +12,12 @@ layout: page
 </div>
 <div class="column col-sm-12">
     <p>
-        <!--    | <a href="#disqus_thread" data-disqus-identifier="{{ page.url }}"><i class="icon-comment"></i></a>    
+        <!--    | <a href="#disqus_thread" data-disqus-identifier="{{ page.url }}"><i class="icon-comment"></i></a>
     <br /> -->
         <!--   <i class="icon-tags"></i> Tags :{% for tag in page.tags %} <a href="/tags/{{ tag }}" rel="tooltip" title="View pages tagged with &quot;{{ tag }}&quot;"><span class="label label-info">{{ tag }}</span></a>  {% if forloop.last != true %} {% endif %} {% endfor %} -->
         <br />
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="{{ site.author.twitter }}">Tweet</a>
-        <g:plusone size="medium"></g:plusone>
+        {% comment %}<g:plusone size="medium"></g:plusone>{% endcomment %}
     </p>
     {% if page.comments %}
     <!-- for some reason it doesnt get the config from config file... -->
@@ -50,15 +50,17 @@ layout: page
         }
     }(document, "script", "twitter-wjs");
     </script>
-    <!-- Google + -->
-    <script type="text/javascript">
-    (function() {
-        var po = document.createElement('script');
-        po.type = 'text/javascript';
-        po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(po, s);
-    })();
-    </script>
+    {% comment %}
+        <!-- Google + -->
+        <script type="text/javascript">
+        (function() {
+            var po = document.createElement('script');
+            po.type = 'text/javascript';
+            po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(po, s);
+        })();
+        </script>
+    {% endcomment %}
 </div>
