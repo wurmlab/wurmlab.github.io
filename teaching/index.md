@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Data Science, Bioinformatics & Evolutionary Genomics Teaching
+title: Bioinformatics, programming in R and evolutionary genomics course material
+description: Bioinformatics, programming in R and evolutionary genomics course material
 ---
 
 <div class="row">

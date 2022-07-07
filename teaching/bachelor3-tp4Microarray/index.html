@@ -1,6 +1,7 @@
 ---
 layout: page
-title: TP4 Analyse de donnees d'expression
+title: Microarray analysis tutorial for introduction to bioinformatics class
+description: Microarray analysis tutorial for introduction to bioinformatics class
 ---
 
 <h1>TP4: Analyse de donnees d'expression</h1>
@@ -76,8 +77,8 @@ title: TP4 Analyse de donnees d'expression
 
 <p>Dans R, effectuons la meme transformation sur le jeu de donnees entier:</p>
 <pre>
-> expressionMoyennePourChaqueGene = (data$Heart + data$Heart.1 + data$CardiacMyocytes + data$CardiacMyocytes.1 
-  + data$SmoothMuscle + data$SmoothMuscle.1 + data$SkeletalMuscle + data$SkeletalMuscle.1 + data$TONGUE 
+> expressionMoyennePourChaqueGene = (data$Heart + data$Heart.1 + data$CardiacMyocytes + data$CardiacMyocytes.1
+  + data$SmoothMuscle + data$SmoothMuscle.1 + data$SkeletalMuscle + data$SkeletalMuscle.1 + data$TONGUE
   + data$TONGUE.1) / 10</pre>
 <pre>
 > dataRelative = data / expressionMoyennePourChaqueGene
@@ -96,7 +97,7 @@ title: TP4 Analyse de donnees d'expression
 </pre>
 <p>On precise que pour chaque tissus, on a deux microarrays, et on les nomme avec leurs initiales (H = heart, C = CardiacMyocyte...):</p>
 <pre>
-> design = model.matrix(~ -1 + factor(c(1,1,2,2,3,3,4,4,5,5))) 
+> design = model.matrix(~ -1 + factor(c(1,1,2,2,3,3,4,4,5,5)))
 > colnames(design) = c("H", "C", "Sm", "Sk", "T")
 </pre>
 <p>on precise que toutes comparaisons de tissus 2 a 2 doivent etre faites:</p>
@@ -141,7 +142,7 @@ title: TP4 Analyse de donnees d'expression
 <div class="question"> Quels types de genes sont surrepresentes parmi les genes surexprimes dans le coeur?</div>
 <h2>Conclusion</h2>
 <div class="question">Pourquoi ces genes sont-ils surexprimes dans le coeur? Emettez une hypothese biologique.</div>
-<p>Regardez dans les donnees supplementaires du <a href="http://www.pnas.org/cgi/content/full/101/16/6062" target="_blank">papier</a>.</p> 
+<p>Regardez dans les donnees supplementaires du <a href="http://www.pnas.org/cgi/content/full/101/16/6062" target="_blank">papier</a>.</p>
 <div class="question">Comment ont ete obtenus les echantillons de tissus? Avez-vous une explication biologique alternative concernant les genes surexprimes dans le coeur? Que dire concernant le plan experimental?</div>
 
 <h2>Question bonus pour les rapides</h2>
@@ -153,4 +154,3 @@ Astuce 1: il faudra refaire un ajustement de modele lineaire avec:</p>
 <p>Astuce 2: les fonctions <code>decideTests(eBayesResultat)</code> et <code>?apply</code> sont tes amis.... <code>summary()</code> peut servir aussi.</p>
 <h2>Compte-rendu</h2>
 <p>Merci d'envoyer a <img src="tp4-files/email.png" alt="demandez l'adresse"/> les reponses aux questions en surlignees avec [TP4 Bioinfo] comme sujet.</p>
-

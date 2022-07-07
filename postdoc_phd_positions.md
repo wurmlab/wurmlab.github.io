@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "PhD and Postdoc positions"
+title: "Open Postdoctoral and PhD positions - evolutionary genomics in London"
+description: "Open Postdoctoral and PhD positions - evolutionary genomics in London"
 ---
 
 # Joining the lab
@@ -25,7 +26,7 @@ These can include:
 
 PhD funding exists as part of multiple schemes. These include:
 
- * RCUK Doctoral training programmes - application deadlines in January. The two programmes are slightly different, in that NERC is typically more for ecology &amp; evolution type questions, while BBSRC has historically been more mechanistic. However, the boundary is very fuzzy - it can be relevant to apply to both. These programmes are accessible to UK residents and to EU citizens. 
+ * RCUK Doctoral training programmes - application deadlines in January. The two programmes are slightly different, in that NERC is typically more for ecology &amp; evolution type questions, while BBSRC has historically been more mechanistic. However, the boundary is very fuzzy - it can be relevant to apply to both. These programmes are accessible to UK residents and to EU citizens.
     * [London NERC Doctoral Training Programme](http://london-nerc-dtp.org)
     * [BBSRC London Interdisciplinary Doctoral Programme](http://lido-dtp.ac.uk)
 
@@ -38,7 +39,7 @@ PhD funding exists as part of multiple schemes. These include:
 	* US citizens can come with [Marshall](http://www.marshallscholarship.org/applications/eligible) or [Fullbright](http://www.fulbright.org.uk/going-to-the-uk/postgraduate-student-awards) scholarships.
  * Occasionally, we have specific funding for PhD positions.
  * In some circumstances we accept self-funded PhD candidates.
- 
+
 Please get in touch if you want to apply for a PhD position.
 
 ## Internships
