@@ -4,14 +4,14 @@ comments: true
 date: 2014-10-31 17:07:12
 layout: post
 slug: 2014-10-31-pollinator-population-genomicist
-title: 3 year Postdoc for Pollinator Population Genomics and Transcriptomics
-categories: 
+title: Recruiting 3 year Postdoc for Pollinator Population Genomics and Transcriptomics
+categories:
  - labnews
  - jobs
 ---
-We are recruiting an evolutionary-minded person with strong population genomics and bioinformatics skills for a 3 year postdoc position analysing large pollinator genomics and transcriptomics datasets to address questions regarding pollinator health, pesticide impact, and social evolution using novel molecular approaches. This is a NERC-funded position in collaboration with [Richard Gill](http://www.imperial.ac.uk/people/r.gill), [Nigel Raine](http://scholar.google.com/citations?user=YJ9feCAAAAAJ&hl=en) and [Lars Chittka](http://chittkalab.sbcs.qmul.ac.uk). 
+We are recruiting an evolutionary-minded person with strong population genomics and bioinformatics skills for a 3 year postdoc position analysing large pollinator genomics and transcriptomics datasets to address questions regarding pollinator health, pesticide impact, and social evolution using novel molecular approaches. This is a NERC-funded position in collaboration with [Richard Gill](http://www.imperial.ac.uk/people/r.gill), [Nigel Raine](http://scholar.google.com/citations?user=YJ9feCAAAAAJ&hl=en) and [Lars Chittka](http://chittkalab.sbcs.qmul.ac.uk).
 
-[Full ad is here](http://jobs.qmul.ac.uk/5213) on QMUL's Human Resources Website. Apply by November 15th (warning: the HR site requires some paperwork). 
+[Full ad is here](http://jobs.qmul.ac.uk/5213) on QMUL's Human Resources Website. Apply by November 15th (warning: the HR site requires some paperwork).
 
 Potential applicants are encouraged to submit an informal application (CV and covering letter outlining your suitability for the position) to Yannick Wurm (y.wurm [at!] qmul.ac.uk) before the formal deadline.
 
