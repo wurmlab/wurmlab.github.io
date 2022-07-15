@@ -1,8 +1,7 @@
 ---
 title: 'Recurring adaptive introgression of a supergene variant that determines social organization'
 layout: publication
-permalink: /recurring-adaptive-introgression/
-#publication_page: true
+permalink: /publications/recurring-adaptive-introgression/
 ---
 
 <br />

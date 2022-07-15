@@ -32,7 +32,7 @@ Some of these changes in gene activity may represent the mechanisms that link in
 
 &nbsp;
 
-<iframe src="//www.youtube.com/embed/GRiE8z-3ZtI#center" allowfullscreen width="560" height="400" frameborder="0" style="max-width:100%;"></iframe>{: .d-block style="max-width:100%; margin: 0 auto;"}
+<iframe src="//www.youtube.com/embed/GRiE8z-3ZtI" allowfullscreen width="560" height="400" frameborder="0" style="max-width:100%; margin: 0 auto;"></iframe>{: .d-block }
 
 &nbsp;
 
