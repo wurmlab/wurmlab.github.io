@@ -26,6 +26,6 @@ In Paris, Tatiana Giraud and her team including Jay Paul and Ricardo Rodriguez d
 
 &nbsp;
 
-<iframe src="//www.youtube.com/embed/kcZQXUnoNGM" allowfullscreen width="720" height="405" frameborder="0" style="max-width:100%; height: auto;"></iframe>{: .d-block style="max-width:100%; margin: 0 auto;"}
+<iframe src="//www.youtube.com/embed/kcZQXUnoNGM" allowfullscreen width="720" height="405" frameborder="0" style="max-width:100%; margin: 0 auto;"></iframe>{: .d-block }
 
 &nbsp;
