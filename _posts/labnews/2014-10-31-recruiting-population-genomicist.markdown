@@ -3,7 +3,8 @@ author: yannick
 comments: true
 date: 2014-10-31 17:07:12
 layout: post
-slug: 2014-10-31-pollinator-population-genomicist
+slug: pollinator-population-genomicist
+redirect_from: '/news/2014-10-31-2014-10-31-pollinator-population-genomicist'
 title: Recruiting 3 year Postdoc for Pollinator Population Genomics and Transcriptomics
 categories:
  - labnews
