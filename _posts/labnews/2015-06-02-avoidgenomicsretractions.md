@@ -5,7 +5,8 @@ date: 2015-06-02 12:07:12
 layout: post
 slug: 2015-06-02-avoid-retracting-genomics-analysis
 title: Avoid having to retract your genomics analysis.
-categories: 
+description: The dramatic plunge in DNA sequencing costs means that a single MSc or PhD student can now generate data that would have cost $15,000,000 only ten years ago.
+categories:
  - labnews
  - bestpractices
  - bioinformatics
