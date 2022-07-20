@@ -6,7 +6,7 @@ permalink: /publications/ants-have-a-higher-prevalence-of-viruses/
 
 <br />
 
-<p class="info-text">Published: 20 November 2021</p>
+<p class="info-text">First published: 20 November 2021</p>
 
 # Larger, more connected societies of ants have a higher prevalence of viruses
 
