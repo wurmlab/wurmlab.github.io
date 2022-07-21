@@ -151,53 +151,93 @@ The data sets used in this study are available in the [Supporting Information](#
 
 **Supplementary Material**
 
-[mec16284-sup-0001-SupInfo.xlsx](/publications/2021-ants-have-a-higher-prevalence-of-viruses/mec16284-sup-0001-supinfo.xlsx) – [application/excel, 778.3 KB]
+[mec16284-sup-0001-SupInfo.xlsx](/publications/2022-ants-have-a-higher-prevalence-of-viruses/mec16284-sup-0001-supinfo.xlsx) – [application/excel, 778.3 KB]
 
 *Please note: The publisher is not responsible for the content or functionality of any supporting information supplied by the authors. Any queries (other than missing content) should be directed to the corresponding author for the article.*
 
 <br />
 
-## References []()
+## References
 <hr />
 
 1. Allen, C., Valles, S. M., & Strong, C. A. (2011). Multiple virus infections occur in individual polygyne and monogyne *Solenopsis invicta* ants. *Journal of Invertebrate Pathology*, **107**(2), 107– 111. [https://doi.org/10.1016/j.jip.2011.03.005](https://doi.org/10.1016/j.jip.2011.03.005)
+
 2. Arsenault, S. V., King, J. T., Kay, S., Lacy, K. D., Ross, K. G., & Hunt, B. G. (2020). Simple inheritance, complex regulation: Supergene-mediated fire ant queen polymorphism. *Molecular Ecology*, **29**, 3622– 3636. [https://doi.org/10.1111/mec.15581](https://doi.org/10.1111/mec.15581)
+
 3. Ascunce, M. S., Yang, C.-C., Oakey, J., Calcaterra, L., Wu, W.-J., Shih, C.-J., & Shoemaker, D. (2011). Global invasion history of the fire ant *Solenopsis invicta*. *Science*, **331**(6020), 1066– 1068. [https://doi.org/10.1126/science.1198734](https://doi.org/10.1126/science.1198734)
+
 4. Brister, J. R., Ako-Adjei, D., Bao, Y., & Blinkova, O. (2015). NCBI viral genomes resource. *Nucleic Acids Research*, **43**(D1), D571– D577. [https://doi.org/10.1093/nar/gku1207](https://doi.org/10.1093/nar/gku1207)
+
 5. Chandra, V., Fetter-Pruneda, I., Oxley, P. R., Ritger, A. L., McKenzie, S. K., Libbrecht, R., & Kronauer, D. J. C. (2018). Social regulation of insulin signaling and the evolution of eusociality in ants. *Science*, **361**(6400), 398– 402. [https://doi.org/10.1126/science.aar5723](https://doi.org/10.1126/science.aar5723)
+
 6. Cooling, M., Gruber, M. A. M., Hoffmann, B. D., Sébastien, A., & Lester, P. J. (2017). A metatranscriptomic survey of the invasive yellow crazy ant, *Anoplolepis gracilipes*, identifies several potential viral and bacterial pathogens and mutualists. *Insectes Sociaux*, **64**(2), 197– 207. [https://doi.org/10.1007/s00040-016-0531-x](https://doi.org/10.1007/s00040-016-0531-x)
+
 7. Cremer, S., Armitage, S. A. O., & Schmid-Hempel, P. (2007). Social immunity. *Current Biology*, **17**(16), R693– R702. [https://doi.org/10.1016/j.cub.2007.06.008](https://doi.org/10.1016/j.cub.2007.06.008)
+
 8. Giehr, J., & Heinze, J. (2018). Queens stay, workers leave: Caste-specific responses to fatal infections in an ant. *BMC Evolutionary Biology*, **18**(1), 202. [https://doi.org/10.1186/s12862-018-1320-0](https://doi.org/10.1186/s12862-018-1320-0)
+
 9. Gruber, M. A. M., Cooling, M., Baty, J. W., Buckley, K., Friedlander, A., Quinn, O., Russell, J. F. E. J., Sébastien, A., & Lester, P. J. (2017). Single-stranded RNA viruses infecting the invasive Argentine ant, Linepithema humile. *Scientific Reports*, **7**(1), 3304. [https://doi.org/10.1038/s41598-017-03508-z](https://doi.org/10.1038/s41598-017-03508-z)
+
 10. Käfer, S., Paraskevopoulou, S., Zirkel, F., Wieseke, N., Donath, A., Petersen, M., Jones, T. C., Liu, S., Zhou, X., Middendorf, M., Junglen, S., Misof, B., & Drosten, C. (2019). Re-assessing the diversity of negative strand RNA viruses in insects. *PLoS Path*, **15**(12), e1008224. [https://doi.org/10.1371/journal.ppat.1008224](https://doi.org/10.1371/journal.ppat.1008224)
+
 11. Keller, L., & Ross, K. G. (1993). Phenotypic plasticity and “cultural transmission” of alternative social organizations in the fire ant *Solenopsis invicta*. *Behavioral Ecology and Sociobiology*, **33**(2), 121– 129. [https://doi.org/10.1007/BF00171663](https://doi.org/10.1007/BF00171663)
+
 12. Levitt, A. L., Singh, R., Cox-Foster, D. L., Rajotte, E., Hoover, K., Ostiguy, N., & Holmes, E. C. (2013). Cross-species transmission of honey bee viruses in associated arthropods. *Virus Research*, **176**(1–2), 232– 240. [https://doi.org/10.1016/j.virusres.2013.06.013](https://doi.org/10.1016/j.virusres.2013.06.013)
+
 13. Manfredini, F., Martinez-Ruiz, C., Wurm, Y., Shoemaker, D. W., & Brown, M. J. F. (2021). Social isolation and group size are associated with divergent gene expression in the brain of ant queens. *Genes, Brain and Behavior*. e12758. [https://doi.org/10.1111/gbb.12758](https://doi.org/10.1111/gbb.12758)
+
 14. Martinez-Ruiz, C., Pracana, R., Stolle, E., Paris, C. I., Nichols, R. A., & Wurm, Y. (2020). Genomic architecture and evolutionary antagonism drive allelic expression bias in the social supergene of red fire ants. *eLife*, **9**, e55862. [https://doi.org/10.7554/eLife.55862](https://doi.org/10.7554/eLife.55862)
+
 15. McMahon, D. P., Fürst, M. A., Caspar, J., Theodorou, P., Brown, M. J. F., & Paxton, R. J. (2015). A sting in the spit: Widespread cross-infection of multiple RNA viruses across wild and managed bees. *Journal of Animal Ecology*, **84**(3), 615– 624. [https://doi.org/10.1111/1365-2656.12345](https://doi.org/10.1111/1365-2656.12345)
+
 16. Morandin, C., Tin, M. M. Y., Abril, S., Gómez, C., Pontieri, L., Schiøtt, M., Sundström, L., Tsuji, K., Pedersen, J. S., Helanterä, H., & Mikheyev, A. S. (2016). Comparative transcriptomics reveals the conserved building blocks involved in parallel evolution of diverse phenotypic traits in ants. *Genome Biology*, **17**(1), 43. [https://doi.org/10.1186/s13059-016-0902-7](https://doi.org/10.1186/s13059-016-0902-7)
+
 17. Nunn, C. L., Jordán, F., McCabe, C. M., Verdolin, J. L., & Fewell, J. H. (2015). Infectious disease and group size: More than just a numbers game. *Philosophical Transactions of the Royal Society B: Biological Sciences*, **370**(1669), 20140111. [https://doi.org/10.1098/rstb.2014.0111](https://doi.org/10.1098/rstb.2014.0111)
+
 18. Pracana, R., Levantis, I., Martínez-Ruiz, C., Stolle, E., Priyam, A., & Wurm, Y. (2017). Fire ant social chromosomes: Differences in number, sequence and expression of odorant binding proteins. *Evolution Letters*, **1**(4), 199– 210. [https://doi.org/10.1002/evl3.22](https://doi.org/10.1002/evl3.22)
+
 19. Pracana, R., Priyam, A., Levantis, I., Nichols, R. A., & Wurm, Y. (2017). The fire ant social chromosome supergene variant *Sb* shows low diversity but high divergence from *SB. Molecular Ecology*, **26**(11), 2864– 2879. [https://doi.org/10.1111/mec.14054](https://doi.org/10.1111/mec.14054)
+
 20. Reber, A., Castella, G., Christe, P., & Chapuisat, M. (2008). Experimentally increased group diversity improves disease resistance in an ant species. *Ecology Letters*, **11**(7), 682– 689. [https://doi.org/10.1111/j.1461-0248.2008.01177.x](https://doi.org/10.1111/j.1461-0248.2008.01177.x)
+
 21. Ross, K. G. (1993). The breeding system of the fire ant *Solenopsis invicta*: Effects on colony genetic structure. *The American Naturalist*, **141**(4), 554– 576. [https://doi.org/10.1086/285491](https://doi.org/10.1086/285491)
+
 22. Ross, K. G., & Keller, L. (1996). Ecology and evolution of social organization: Insights from fire ants and other highly eusocial insects. *Annual Review of Ecology and Systematics*, **26**, 631– 656.
+
 23. Schläppi, D., Lattrell, P., Yañez, O., Chejanovsky, N., & Neumann, P. (2019). Foodborne transmission of deformed wing virus to ants (*Myrmica rubra*). *Insects*, **10**(11), 394. [https://doi.org/10.3390/insects10110394](https://doi.org/10.3390/insects10110394)
+
 24. Schmid-Hempel, P. (2017). Parasites and their social hosts. *Trends in Parasitology*, **33**(6), 453– 462. [https://doi.org/10.1016/j.pt.2017.01.003](https://doi.org/10.1016/j.pt.2017.01.003)
+
 25. Schwenke, R. A., Lazzaro, B. P., & Wolfner, M. F. (2016). Reproduction–immunity trade-offs in insects. *Annual Review of Entomology*, **61**(1), 239– 256. [https://doi.org/10.1146/annurev-ento-010715-023924](https://doi.org/10.1146/annurev-ento-010715-023924)
+
 26. Sébastien, A., Lester, P. J., Hall, R. J., Wang, J., Moore, N. E., & Gruber, M. A. M. (2015). Invasive ants carry novel viruses in their new range and form reservoirs for a honeybee pathogen. *Biology Letters*, **11**(9), 20150610. [https://doi.org/10.1098/rsbl.2015.0610](https://doi.org/10.1098/rsbl.2015.0610)
+
 27. Steinhauer, N., Kulhanek, K., Antúnez, K., Human, H., Chantawannakul, P., Chauzat, M.-P., & vanEngelsdorp, D. (2018). Drivers of colony losses. *Current Opinion in Insect Science*, **26**, 142– 148. [https://doi.org/10.1016/j.cois.2018.02.004](https://doi.org/10.1016/j.cois.2018.02.004)
+
 28. Stolle, E., Pracana, R., Howard, P., Paris, C. I., Brown, S. J., Castillo-Carrillo, C., Rossiter, S. J., & Wurm, Y. (2019). Degenerative expansion of a young supergene. *Molecular Biology and Evolution*, **36**(3), 553– 561. [https://doi.org/10.1093/molbev/msy236](https://doi.org/10.1093/molbev/msy236)
+
 29. Tschinkel, W. R. (2006). *The fire ants*. The Belknap Press of Harvard University Press.
+
 30. Valles, S. M. (2012). Positive-strand RNA viruses infecting the red imported fire ant, *Solenopsis invicta. Psyche: A Journal of Entomology*, **2012**, 1– 14. [https://doi.org/10.1155/2012/821591](https://doi.org/10.1155/2012/821591)
+
 31. Valles, S. M., Oi, D. H., & Porter, S. D. (2010). Seasonal variation and the co-occurrence of four pathogens and a group of parasites among monogyne and polygyne fire ant colonies. *Biological Control*, **54**, 342– 348. [https://doi.org/10.1016/j.biocontrol.2010.06.006](https://doi.org/10.1016/j.biocontrol.2010.06.006)
+
 32. Valles, S. M., & Porter, S. D. (2003). Identification of polygyne and monogyne fire ant colonies (*Solenopsis invicta*) by multiplex PCR of Gp-9 alleles. *Insectes Sociaux*, **50**(2), 199– 200. [https://doi.org/10.1007/s00040-003-0662-8](https://doi.org/10.1007/s00040-003-0662-8)
+
 33. Valles, S. M., & Rivers, A. R. (2019). Nine new RNA viruses associated with the fire ant *Solenopsis invicta* from its native range. *Virus Genes*, **55**(3), 368– 380. [https://doi.org/10.1007/s11262-019-01652-4](https://doi.org/10.1007/s11262-019-01652-4)
+
 34. van Baalen, M., & Beekman, M. (2006). The costs and benefits of genetic heterogeneity in resistance against parasites in social insects. *The American Naturalist*, **167**(4), 568– 577. [https://doi.org/10.1086/501169](https://doi.org/10.1086/501169)
+
 35. Vander Meer, R. K., Obin, M. S., & Morel, L. (1990). Nestmate recognition in fire ants: Monogyne and polygyne populations. In R. K. Vander Meer, K. Jaffe & A. Cedeno, *Applied Myrmecology: A world perspective*. Boulder, Colorado: Westview Press.
+
 36. Vargo, E. L. (1992). Mutual pheromonal inhibition among queens in polygyne colonies of the fire ant *Solenopsis invicta*. *Behavioral Ecology and Sociobiology*, **31**(3), 205– 210. [https://doi.org/10.1007/BF00168648](https://doi.org/10.1007/BF00168648)
+
 37. Vogel, V., Pedersen, J. S., d’Ettorre, P., Lehmann, L., & Keller, L. (2009). Dynamics and genetic structure of Argentine ant supercolonies in their native range. *Evolution*, **63**(6), 1627– 1639. [https://doi.org/10.1111/j.1558-5646.2009.00628.x](https://doi.org/10.1111/j.1558-5646.2009.00628.x)
+
 38. Wang, J., Wurm, Y., Nipitwattanaphon, M., Riba-Grognuz, O., Huang, Y.-C., Shoemaker, D., & Keller, L. (2013). A Y-like social chromosome causes alternative colony organization in fire ants. *Nature*, **493**(7434), 664– 668. [https://doi.org/10.1038/nature11832](https://doi.org/10.1038/nature11832)
+
 39. Wood, D. E., Lu, J., & Langmead, B. (2019). Improved metagenomic analysis with Kraken2. *Genome Biology*, **20**(1), 257. [https://doi.org/10.1186/s13059-019-1891-0](https://doi.org/10.1186/s13059-019-1891-0)
+
 40. Wurm, Y., Wang, J., Riba-Grognuz, O., Corona, M., Nygaard, S., Hunt, B. G., Ingram, K. K., Falquet, L., Nipitwattanaphon, M., Gotzek, D., Dijkstra, M. B., Oettler, J., Comtesse, F., Shih, C.-J., Wu, W.-J., Yang, C.-C., Thomas, J., Beaudoing, E., Pradervand, S., … Keller, L. (2011). The genome of the fire ant *Solenopsis invicta*. *Proceedings of the National Academy of Sciences*, **108**(14), 5679– 5684. [https://doi.org/10.1073/pnas.1009690108](https://doi.org/10.1073/pnas.1009690108)
+
 41. Xavier, C. A. D., Allen, M. L., & Whitfield, A. E. (2021). Ever-increasing viral diversity associated with the red imported fire ant *Solenopsis invicta* (Formicidae: Hymenoptera). *Virology Journal*, **18**(1), 5. [https://doi.org/10.1186/s12985-020-01469-w](https://doi.org/10.1186/s12985-020-01469-w)
