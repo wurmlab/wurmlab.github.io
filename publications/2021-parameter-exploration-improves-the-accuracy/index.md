@@ -319,7 +319,7 @@ perspectives. *Oncotarget*. 2015;**6**:5477–89.
 
 47. Li H, Handsaker B, Wysoker A, Fennell T, Ruan J, Homer N, et al. The Sequence Alignment/Map format and SAMtools. *Bioinformatics*. 2009;**25**:2078–9.
 
-48. Canu Parameter Reference. [https://canu.readthedocs.io/en/latest/parameter-reference.html]https://canu.readthedocs.io/en/latest/parameter-reference.html. Accessed 21 October 2017.
+48. Canu Parameter Reference. [https://canu.readthedocs.io/en/latest/parameter-reference.html](https://canu.readthedocs.io/en/latest/parameter-reference.html). Accessed 21 October 2017.
 
 49. Berlin K, Koren S, Chin C-S, Drake JP, Landolin JM, Phillippy AM. Assembling large genomes with single-molecule sequencing and locality-sensitive hashing. *Nat Biotechnol.* 2015;**33**:623–30.
 
