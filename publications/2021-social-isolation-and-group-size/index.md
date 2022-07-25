@@ -1,7 +1,7 @@
 ---
 title: 'Social isolation and group size are associated with divergent gene expression in the brain of ant queens'
 layout: publication
-permalink: /publications/social-isolation-and-group-size/
+permalink: /publications/social-isolation-changes-gene-expression/
 ---
 
 <br />

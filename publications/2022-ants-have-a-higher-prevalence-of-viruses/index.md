@@ -1,7 +1,7 @@
 ---
 title: 'Larger, more connected societies of ants have a higher prevalence of viruses'
 layout: publication
-permalink: /publications/ants-have-a-higher-prevalence-of-viruses/
+permalink: /publications/large-ant-colonies-have-many-viruses/
 ---
 
 <br />

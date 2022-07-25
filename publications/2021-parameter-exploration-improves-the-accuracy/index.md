@@ -1,7 +1,7 @@
 ---
 title: 'Parameter exploration improves the accuracy of long-read genome assembly'
 layout: publication
-permalink: /publications/parameter-exploration-improves-the-accuracy/
+permalink: /publications/parameter-exploration-improves-genome-assembly-accuracy/
 ---
 
 <br />
