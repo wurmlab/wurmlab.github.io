@@ -1,7 +1,7 @@
 ---
 title: 'Only a Single Taxonomically Restricted Gene Family in the <em>Drosophila melanogaster</em> Subgroup Can Be Identified with High Confidence'
 layout: publication
-permalink: /publications/restricted-gene-family-in-the-drosophila-melanogaster-subgroup/
+permalink: /publications/lack-of-reliable-taxonomically-restricted-genes/
 ---
 
 <br />

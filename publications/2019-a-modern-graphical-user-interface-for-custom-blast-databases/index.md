@@ -1,7 +1,7 @@
 ---
 title: 'Sequenceserver: A Modern Graphical User Interface for Custom BLAST Databases'
 layout: publication
-permalink: /publications/modern-graphical-user-interface-for-custom-blast-databases/
+permalink: /publications/SequenceServer-BLAST-analysis-server-for-unpublished-and-custom-data/
 ---
 
 <br />
