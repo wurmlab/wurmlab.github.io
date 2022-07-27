@@ -378,7 +378,7 @@ K.Z. and J.M. designed the project. K.Z. developed the methods, performed the an
 
 © The Author(s) 2020. Published by Oxford University Press on behalf of the Society for Molecular Biology and Evolution.
 
-This is an Open Access article distributed under the terms of the Creative Commons Attribution License ([//creativecommons.org/licenses/by/4.0/](creativecommons.org/licenses/by/4.0/){:target="_blank"}), which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License ([creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/){:target="_blank"}), which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.
 
 © The Author(s) 2020. Published by Oxford University Press on behalf of the Society for Molecular Biology and Evolution.
 
