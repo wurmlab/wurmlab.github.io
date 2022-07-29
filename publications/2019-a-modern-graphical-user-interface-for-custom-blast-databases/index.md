@@ -66,7 +66,7 @@ Importantly, Sequenceserver also represents a main querying mechanism for more t
 
 <br />
 
-## Outlook <span class="info-text"></span>
+## Outlook
 <hr />
 
 In creating Sequenceserver, we aimed to respect user-centric design principles, open-source, and sustainable software engineering practices (<span class="info-text">Supplementary Material</span> online). Our software is built using Ruby and Javascript frameworks commonly used for professional software development. The resulting robust architecture and flexibility facilitate customization and integration with other tools. This has led to contributions of improvements and bug-fixes by 21 bioinformaticians unrelated to the initial project; many are now coauthors. Our community is testing the ability to import preexisting BLAST or DIAMOND XML result files (<span class="info-text">Buchfink et al. 2015</span>), and new manners of visualizing results (<span class="info-text">Wintersinger and Wasmuth 2015</span>; <span class="info-text">Cui et al. 2016</span>). Such efforts will continue to improve the ability of researchers to analyze and interpret genomic data.

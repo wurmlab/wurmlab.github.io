@@ -66,7 +66,7 @@ genevalidator --db genevalidator/blast_db/swissprot \
 
 <br />
 
-## 3. GeneValidator Workflows <span class="info-text"></span>
+## 3. GeneValidator Workflows
 <hr />
 
 A gene set will almost inevitably contain some gene predictions with low scores. It can be desirable to curate these manually. Here, we begin by providing two approaches to facilitate inspection of these low-scoring predictions. First (Subheading <span class="info-text">3.1</span>), we show how to use GV’s JSON output to extract the sequence identifiers of low-scoring gene predictions. Among other things, these can be used to subset the initial gene set, to prioritize inspection in a genome browser <span class="info-text">[11]</span>, or for annotation editing in a tool such as Apollo <span class="info-text">[12]</span>. Second (Subheading <span class="info-text">3.2</span>), we show how to create a new HTML report by subsetting GV’s JSON output. This can reduce the need to navigate through a long HTML report. Subsequently (Subheading <span class="info-text">3.3</span>), we introduce GV’s graphical interface. This is helpful for rapidly viewing how GV’s validation results change during manual curation.

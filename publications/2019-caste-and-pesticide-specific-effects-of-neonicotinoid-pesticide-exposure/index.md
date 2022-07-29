@@ -111,7 +111,7 @@ We also investigated changes in gene expression in response to imidacloprid expo
   <h5><em>Table 1 – <strong>Genes with differential expression after neonicotinoid exposure in bumblebees. For each treatment, the number of genes with differential amplitude and differential splicing per caste is shown</strong></em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/table-genes-with-differential-expression.webp" />
-    <img src="/img/publications/table-genes-with-differential-expression.jpeg" width="1092" height="1252" alt="Chronic clothianidin exposure" />
+    <img src="/img/publications/table-genes-with-differential-expression.jpeg" width="1092" height="319" alt="Genes with differential expression" />
   </picture>
 </div>
 
