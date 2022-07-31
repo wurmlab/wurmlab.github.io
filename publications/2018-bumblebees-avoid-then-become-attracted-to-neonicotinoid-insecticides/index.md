@@ -42,7 +42,7 @@ We conducted an experiment that provided foraging bumblebees access to sucrose c
   <h5><em>Figure 1</em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/experimental-set-up.webp" />
-    <img src="/img/publications/experimental-set-up.jpg" width="1092" height="538" alt="Experimental set-up showing the wooden nest box attached to a foraging arena" />
+    <img src="/img/publications/experimental-set-up.jpg" width="1092" height="2255" alt="Experimental set-up showing the wooden nest box attached to a foraging arena" />
   </picture>
   <p class="mt-2">
     (<em>a</em>) Experimental set-up showing the wooden nest box attached to a foraging arena; (<em>b</em>) each colony was provided with a choice of six feeders (two per concentration) placed in two rows positioned (<em>a</em>) 50 and (<em>b</em>) 60 cm from the entrance to the arena (grey rectangle); (<em>c</em>) video image showing tagged bees feeding. We also present colony level data for (<em>d</em>) the volume of sucrose consumed from each concentration (<em>n</em> = 300) and (<em>e</em>) boxplots showing the median and interquartile range for the proportion of observed foraging visits to each concentration (<em>n</em> = 9542). Circles represent the back transformed mean predictions from the mixed effects models and the grey line represents the null expectation for bees visiting each concentration equally. (Online version in colour.)
