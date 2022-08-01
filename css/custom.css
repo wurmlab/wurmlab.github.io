@@ -653,6 +653,10 @@ ul.doi-badges li svg {
   margin: 15px 0;
 }
 
+.publication-content .publication-quote ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 @media (max-width: 480px) {
   .publication-content a {
     word-break: break-all;
