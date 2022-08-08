@@ -1,7 +1,7 @@
 ---
 title: 'Genomic architecture and evolutionary antagonism drive allelic expression bias in the social supergene of red fire ants'
 layout: publication
-permalink: /publications/genomic-architecture-and-evolutionary-antagonism/
+permalink: /publications/social-intragenomic-conflict-allelic-bias-and-degeneration-with-supergene-variants/
 ---
 
 <br />
