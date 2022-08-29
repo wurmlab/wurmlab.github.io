@@ -1,0 +1,26 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset0 CenturySchoolbook;\f1\froman\fcharset0 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10060\viewh14780\viewkind0
+\deftab720
+\pard\pardeftab720\ri-583\sl480\slmult1\qj
+
+\f0\b\fs20 \cf0 Additional File 1: 
+\f1\b0 Notes on implementation.
+\f0\b \
+\pard\tx1560\pardeftab720\li1440\ri-583\sl480\slmult1\qj
+\cf0 On assembly:\
+\pard\tx1560\pardeftab720\li2160\ri-583\sl480\slmult1\qj
+
+\b0 \cf0 In its current version, neither cluster nor contig identifiers generated during assembly are carried over from one assembly run to another. However, a tab-delimited text file is generated at the end of assembly run, showing correspondence between input sequences and contigs. Using this file, the history of which clones belong to which contig can be manually retraced. \
+\pard\tx1560\pardeftab720\li1440\ri-583\sl480\slmult1\qj
+
+\b \cf0 On database implementation:\
+\pard\tx1560\pardeftab720\li2160\ri-583\sl480\slmult1\qj
+
+\b0 \cf0 For each assembly \'93project\'94\'a0(meaning \'93species\'94), the MySQL database contains summary information referencing sequence, assembly, and annotations. Neither sequence nor annotation data are stored in the database, thus streamlining its size. Input data and cluster assembly information is stored in individual files; assembled sequence and blast results are respectively stored in indexed FASTA files and BLAST report files. All files are stored in project-specific directory hierarchies.\
+Adding data for a new species is straightforward: a new species identifier is created in the database, and a new directory hierarchy is created on disk.
+\fs24 \
+\pard\pardeftab720\ri-583\ql\qnatural
+\cf0 \
+}
