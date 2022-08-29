@@ -29,7 +29,11 @@ These can include:
 
 ## PhD positions
 
-PhD funding exists as part of multiple schemes. These include:
+**2022-08-30: We have an open "UK-fees" PhD position. Apply by 2022-09-15 with a CV and cover letter. This covers UK stipend and "UK home fees" to the university. It does not cover international fees.**
+
+---
+
+PhD funding normally exists as part of multiple schemes. These include:
 
  * RCUK Doctoral training programmes - application deadlines in January. The two programmes are slightly different, in that NERC is typically more for ecology &amp; evolution type questions, while BBSRC has historically been more mechanistic. However, the boundary is very fuzzy - it can be relevant to apply to both. These programmes are accessible to UK residents and to EU citizens.
     * [London NERC Doctoral Training Programme](http://london-nerc-dtp.org)
