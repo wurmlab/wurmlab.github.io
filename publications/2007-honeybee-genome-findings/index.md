@@ -20,9 +20,10 @@ permalink: /publications/honeybee-genome-findings/
 
 Honeybees, termites and ants occupy the ‘pinnacle of social evolution’ with societies of a complexity that rivals our own. The sequencing of the honeybee genome will provide a strong foundation for studying the genetic basis of complex social behavior.
 
-<span class="info-text"><em>Go to the ant, thou sluggard; consider her ways, and be wise</em>
-
-<h4 class="info-text">Proverbs 6:6</h4>
+<div class="publication-quote bg-light border p-2 mb-3">
+  <p class="info-text"><em>Go to the ant, thou sluggard; consider her ways, and be wise</em></p>
+  <h6 class="info-text">Proverbs 6:6</h6>
+</div>
 
 This well-known Bible verse appropriately illustrates the long fascination of human beings for the complexity of social insect colonies and the industrious nature of their workers. The major organizing principle of ant, bee and termite societies is reproductive division of labor whereby one or a few individuals, the queens, specialize in reproduction while the others, the workers, participate in cooperative tasks such as building the nest, collecting food, rearing the young and defending the colony. This social organization provides numerous advantages and is the basis for the tremendous ecological success of social insects <span class="info-text">[1]</span>. The sequencing of the honeybee genome <span class="info-text">[2]</span> is an exciting step towards uncovering the molecular events underlying the evolution of altruism and complex behaviors.
 

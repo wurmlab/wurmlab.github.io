@@ -23,12 +23,13 @@ The sequencing of three *Nasonia* genomes provides new insights on the molecular
 
 <br />
 
-## Main Text <span class="info-text"></span>
+## Main Text
 <hr />
 
-<span class="info-text"><em>“I cannot persuade myself that a beneficent and omnipotent God would have designedly created the Ichneumonidae with the express intention of their feeding within the living bodies of caterpillars.”</em></span>
-
-<span class="info-text">Charles Darwin, May 22nd, 1860</span>
+<div class="publication-quote bg-light border p-2 mb-3">
+  <p class="info-text"><em>“I cannot persuade myself that a beneficent and omnipotent God would have designedly created the Ichneumonidae with the express intention of their feeding within the living bodies of caterpillars.”</em></p>
+  <h6 class="info-text">Charles Darwin, May 22nd, 1860</h6>
+</div>
 
 With these words to his theist friend, the renowned botanist Asa Gray, Darwin expressed his astonishment at the extremely specialized and selfish lifestyles exhibited by parasitoid wasps. For example, adult females of the jewel wasp *Nasonia vitripennis* locate pupae of filth fly hosts, drill through the pupae's exoskeleton, inject a potent venom and deposit a few dozen eggs. The young feed on the paralyzed host until development is complete. After eclosion, males do not disperse and typically mate with their sisters. This unusual mating system has attracted much attention by naturalists and evolutionary biologists, in particular because it allows quantitative tests of sex ratio evolution and adaptation <span class="info-text">[1, 2, 3, 4]</span>. The sequencing of three *Nasonia* genomes <span class="info-text">[5]</span>now opens new doors to study many aspects of *Nasonia*'s life history in molecular and genetic terms, as attested by the publication of more than thirty companion papers.
 
