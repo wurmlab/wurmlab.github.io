@@ -763,6 +763,7 @@ papers:
 - title: Behind the scenes of an ant genome project
   journal: 'Formosan Entomologist (2011) 31:149-56'
   authors: <b>Y Wurm</b>
+  internal_page: /publications/how-ant-genome-was-sequenced/
   pdf: '/publications/wurm2011antGenomeBehindTheScenes.pdf'
   url: 'http://entsocjournal.yabee.com.tw/Preview.aspx?SendDOI=10.6661/TESFE.2011012'
   tag: 'review'
@@ -912,7 +913,7 @@ papers:
       <a href="http://dx.doi.org/{{ paper.doi }}" target="_blank" rel="noopener">
         <b>{{ paper.title }}</b>
       </a>
-      {% elsif paper.url %}
+      {% elsif paper.url and paper.internal_page == nil %}
       <a href="{{ paper.url }}"  target="_blank" rel="noopener">
         <b>{{ paper.title }}</b>
       </a>
