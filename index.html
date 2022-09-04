@@ -8,13 +8,13 @@ comments: false
 
 <section class="column col-sm-7">
 <article id="section1" class="row">
-    <h2>Evolutionary genomics of social insects</h2>
+    <h2>Genomic bases of sociality in insects</h2>
     <div class="col-lg-7">
-      <p>Extensive theoretical work has explained how and why complex societies evolve. However, only little is known
-        about the genes and molecular mechanisms responsible for social phenotypes.</p>
-      <p>We have been identifying genes and mechanisms involved in the evolution of insect societies using modern
-        genomics approaches, combining comparative genomics and transcriptomics with population genomics and behavioral
-        experiments.</p>
+      <p>Theory can explain benefits and costs of social evolution, but we are only beginning to understand
+        its molecular bases.</p>
+      <p>We examine the interplay between social evolution and genome evolution.
+        As part of this, we identify genes and mechanisms involved in the evolution of insect societies. </p>
+        <p>Our findings have general impacts on understanding how new phenotypes evolve.</p>
       <button id="section1-more-btn" onclick="$('#section1-extra').show();$('#section1-more-btn').hide();"
         class="btn btn-sm">Read More</button>
     </div>
@@ -24,23 +24,29 @@ comments: false
         alt="fire ants on the genomic sequence of their social chromosome">
     </div>
     <div id="section1-extra" class="col-sm-12" style="display:none;">
-      <p> We are interested in themes including the genetics of behavior, the interplay between social evolution and
-        genome evolution, and the molecular mechanisms responsible for differences between castes.</p>
-      <p>For example we:</p>
+      <p>We use the 15,000 species of ants as a set of
+        model systems to address questions about major transitions, the genetics of behavior, the genomic constraints modulating
+        social evolution, and the molecular mechanisms responsible for differences between castes. We combine
+        animal experiments and laboratory work with population genomics, molecular evolution, and comparative transcriptomics.
+        </p>
+      <p>For example:</p>
       <ul>
-        <li>reviewed the most up-to-date research on ant omics (<a
+        <li>We discovered that alternate variants of a supergene carried by a pair of &#8220;social chromosomes&#8221; determine whether
+          fire ant colonies include one or multiple queens (Nature 2013).
+        <li>We discovered the degenerative expansion of the Sb fire ant supergene variant: it carries almost 2x as much DNA as the SB variant (MBE 2019). This represents a rarely seen early stage of supergene evolution.</li>
+        <li>We disentangled adaptive and neutral forces affecting gene expression in the supergene (eLife 2020). Some genes are socially antagonistic, while others have dosage compensation for the degeneration due to recombination suppression.</li>
+        <li>We revealed the introgression of the fire ant social supergene across species boundaries (Nature Communications 2022).</li>
+        <li>We found high divergence between supergene variants, and strikingly different patterns of genetic diversity (<a href="https://onlinelibrary.wiley.com/doi/10.1111/mec.14054/abstract">Molecular Ecology
+              2017</a> and <a href="https://dx.doi.org/10.1002/evl3.22">Evolution Letters 2017</a>).</li>
+        <li>We discovered that another social supergene convergently evolved in a second lineage of ants (Current Biology 2014).</li>
+        <li>We reviewed recent research on ants (<a
             href="https://doi.org/10.1016/j.cois.2017.12.001">Current Opinion in Insect Science 2018</a>).</li>
-        <li>characterized the genomic features of the variants of the social chromosome, showing high genetic diversity
-          between them (<a href="https://onlinelibrary.wiley.com/doi/10.1111/mec.14054/abstract">Molecular Ecology
-            2017</a> and <a href="https://dx.doi.org/10.1002/evl3.22">Evolution Letters 2017</a>).</li>
-        <li>discovered that the number of queens accepted in a fire ant colony is determined by variants of a social
-          chromosome (<a href="https://dx.doi.org/10.1038/nature11832">Nature 2013</a>).</li>
-        <li>sequenced and analyzed the genome of the invasive red fire ant <em>Solenopsis invicta</em> (<a
+        <li>We sequenced and analyzed the genome of the invasive red fire ant <em>Solenopsis invicta</em> (<a
             href="https://dx.doi.org/10.1073/pnas.1009690108">PNAS 2011</a>).</li>
-        <li>described the gene expression changes that occur in a virgin queen when she is given the opportunity of
-          replacing her mother (<a href="https://dx.doi.org/10.1111/j.1365-294X.2010.04561.x">Molecular Ecology
+        <li>We described the gene expression changes that occur in a virgin queen when she has the opportunity to
+          replace her mother (<a href="https://dx.doi.org/10.1111/j.1365-294X.2010.04561.x">Molecular Ecology
             2010</a>).</li>
-        <li>examined selective regime (positive vs. neutral selection) and fate of duplicated genes (conserved vs.
+        <li>We examined selective regime (positive vs. neutral selection) and fate of duplicated genes (conserved vs.
           subfunctionalized vs. neofunctionalization) for gene families including <a
             href="https://rspb.royalsocietypublishing.org/content/280/1758/20122968">sex-determination loci
             (tranfsormer/feminiser)</a>, <a
@@ -62,13 +68,11 @@ comments: false
   </article>
   <hr>
   <article id="section2" class="row">
-    <h2>Genome bioinformatics</h2>
+    <h2>Empowering genomic data scientists</h2>
     <div class="col-lg-7">
-      <p>The recent 10,000-fold drop in the cost of DNA sequencing means that any lab can sequence anything - and lots
-        of it. This brings exciting opportunities but also new challenges, in particular with regards to data handling,
-        data analysis and visualization.</p>
-      <p>We develop innovative tools and approaches to facilitate modern biological work on established and emerging
-        model organisms. We pay special attention to visualization and user experience.</p>
+      <p>The dramatic drop in the cost of DNA sequencing means that anyone can sequence anything - and lots
+        of it. This creates exciting opportunities but also new challenges: how should we reliably and effectively handle, analyze and visualize large datasets?</p>
+      <p>We develop innovative tools and approaches to facilitate modern biological work on species across the tree of life. We pay special attention to visualization and user experience.</p>
       <button id="section2-more-btn" onclick="$('#section2-extra').show();$('#section2-more-btn').hide();"
         class="btn btn-sm">Read More</button>
     </div>
@@ -79,31 +83,24 @@ comments: false
     </div>
     <div id="section2-extra" class="col-sm-12" style="display:none;">
       <ul>
-        <li>BLAST is the most commonly used bioinformatics tool. But setting it up for private data and using it is
-          counter-intuitive. Furthermore the standard graphical user interfaces for BLAST are clunky. We developed <a
-            href="https://www.sequenceserver.com">SequenceServer</a> to overcome these hurdles. </li>
-        <li>Sequencing genomes has become straightforward. But correctly identifying genes in a genome sequence remains
-          challenging. This is a huge problem for multi-species multi-gene analyses on emerging model organisms (trash
-          in trash out).
+        <li><strong>Genome Assembly.</strong> How do you know which genome assembly software or parameter works best for your species? Our <a href="https://doi.org/10.1101/2021.05.28.446135">CompareGenomeQualities</a> software can help. </li>
+        <li><strong>Comparative Genomics.</strong> Our <a href="https://www.sequenceserver.com/">SequenceServer</a> BLAST interface is used by thousands daily and is cited weekly. It enables researchers to:
           <ul>
-            <li>We developed <a href="/tools/genevalidator/">GeneValidator</a> for automated identification and
-              visualization of problems with gene predictions.</li>
-            <li>Many gene predictions need to be inspected and manually fixed before performing analyses. We are
-              developing infrastructure to <a href="https://afra.sbcs.qmul.ac.uk">crowd-source gene curation to students
-                as part of improved learning experience</a>. </li>
+            <li>run BLAST on private unpublished datasets;</li>
+            <li>access an intuitive graphical user interface that provides helpful visualization for interpreting genomic comparisons;</li>
+            <li>run BLAST against Uniprot or NR without having to wait in NCBI's queue;</li>
+            <li>help labs or communities share a BLAST server.</li>
           </ul>
         </li>
-        <li>Because genomics data types and analysis algorithms remain young, many analyses require jumping back and
-          forth between multiple tools. The tools themselves are young, can be challenging to install and can require
-          frequent updates. But for reproducibility a given project may want to stick to specific versions of specific
-          tools. Based on the <a href="https://docker.io/">docker</a> container architecture, <a
-            href="https://github.com/yeban/oswitch">oSwitch enables lightweight switching from one virtual operating
-            system to another</a>. It is a powerful tool for pipelines and for hacking.
-        <li>We are also developping <a href="https://www.bionode.io/">BioNode</a>, an Open Source community to build
-          highly reusable tools and code for bioinformatics by leveraging the Node.JS ecosystem. We want to process big
-          genomic data using Node.JS Streams. We welcome all kinds of contributions at all levels of experience.
+        <li><strong>Genome Evolution.</strong> We created a framework for simulating genome evolution of the ~15% of animal species with haplo-diploid sex determination systems (Pracana et al 2022).</li>
+        <li><strong>Gene Prediction.</strong> Correctly identifying genes in a genome sequence remains challenging. This is a huge problem for multi-species multi-gene analyses on emerging model organisms (trash
+          in trash out).
+          <ul>
+            <li><a href="/tools/genevalidator/">GeneValidator</a> identifies problems with gene predictions. Use it to prioritize curation or to choose the best geneset.</li>
+            <li>How can you transfer high quality gene predictions from an old genome assembly to a newer one? Our <a href="https://github.com/wurmlab/flo">flo GFF transfer tool</a> helps with that.</li>
+          </ul>
         </li>
-      </ul>
+        </ul>
       <button id="section2-less-btn" onclick="$('#section2-extra').hide();$('#section2-more-btn').show();"
         class="btn btn-sm">Read Less</button>
     </div>
@@ -115,14 +112,14 @@ comments: false
   </article>
   <hr>
   <article id="section3" class="row">
-    <h2>Pollinator health</h2>
+    <h2>Protecting pollinators, biodiversity and crops</h2>
     <div class="col-lg-7">
-      <p>Bees and other pollinators are essential for preserving biodiversity and ensuring agricultural yields. Reports
-        of their declines worldwide are thus concerning. We take inspiration from biomedical approaches for
-        understanding cancer biology and personalised medecine to improve our understanding of pollinator health. In
-        particular, we use modern molecular tools including population genomics and gene expression analyses to
-        understand how pollinators are affected by changing environments (e.g., pesticide exposure, habitat loss,
-        changing climates) and their ability to cope with such changes.</p>
+      <p>Wild pollinators including bumblebees, solitary bees, butterflies, wasps, moths, and beetles are essential
+        for ecosystem stability and food production. Their worldwide declines are thus worrying.</p>
+        <p>
+        A key challenge is our lack of tools for measuring pollinator health: we know whether an individual is dead, but when an insect is alive,
+        one cannot tell whether it is unwell. We are <strong>developing high-resolution tools</strong> to improve our ability to measure pollinator health.</p>
+
       <button id="section3-more-btn" onclick="$('#section3-extra').show();$('#section3-more-btn').hide();"
         class="btn btn-sm">Read More</button>
     </div>
@@ -132,11 +129,17 @@ comments: false
         alt="bumblebee on flower">
     </div>
     <div id="section3-extra" class="col-sm-12" style="display:none;">
+      <p>We aim to improve pollinator health to protect biodiversity and agriculture. For this, we take inspiration from biomedical approaches for
+        understanding cancer biology and personalized medicine. In particular, we use high-resolution molecular tools
+        including population genomics and gene expression analyses to
+        understand how pollinators are affected by changing environments (e.g., pesticide exposure, habitat loss,
+        changing climates) and their ability to cope with such changes. We aim to give regulators the tools they need to better evaluate the potential impacts of insecticides, and to establish manners of monitoring pollinator health.</p>
       <ul>
-        <li>We are quantifying the effects of pesticide exposure on gene expression in various bee species. (<a
-            href="https://www.sciencedirect.com/science/article/pii/S016953471930357X">Trends in Ecology & Evolution
-            2020</a>).</li>
-        <li>We are characterising the selection pressures affecting wild bees using population genomics approaches.</li>
+        <li>We have outlined a vision of how molecular approaches can help to better evaluate the impacts of pesticides on beneficial pollinators (<a href="https://www.sciencedirect.com/science/article/pii/S016953471930357X">Trends in Ecology & Evolution 2020</a>)</li>
+        <li>We found that two insecticides targeting the same receptor disrupt organismal function in very different manners (<a href="http://dx.doi.org/10.1111/mec.15047">Molecular Ecology 2019</a>).</li>
+        <li>We find that bumblebee queens and workers are affected differently by the same insecticide (<a href="http://dx.doi.org/10.1111/mec.15047">Molecular Ecology 2019</a>). </li>
+        <li>We are quantifying the effects of pesticide exposure on gene expression in various bee species.</li>
+        <li>By surveying populations of wild <em>Bombus terrestris</em> bumblebees, we have detected the genetic changes that have helped them respond to recent environmental pressures (<a href="http://dx.doi.org/10.1093/molbev/msab366">MBE 2022)</a>.</li>
         <li>We have contributed to several experiments examining the impact of pesticides on field colonies.</li>
       </ul>
       <button id="section3-less-btn" onclick="$('#section3-extra').hide();$('#section3-more-btn').show();"
@@ -150,6 +153,7 @@ comments: false
   </article>
 </section>
 <aside class="column col-sm-5 col-md-5">
+  <h3><strong><a href="/postdoc_phd_positions">Open Postdoc &amp; PhD positions</a></h3>
   <h3><strong><a href="/news">Latest news</a></strong></h3>
   <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee">
     {% for post in site.categories.labnews offset: 0 limit: 3 %}
@@ -158,8 +162,13 @@ comments: false
     </li>
     {% endfor %}
   </ul>
-  <h3><strong><a href="/publications">Latest publications</a></strong></h3>
+  <h3><strong><a href="/publications">Recent publications</a></strong></h3>
   <ul style="list-style-type: none; padding-left: 5px; border-bottom: 1px solid #eee;  line-height:120% ">
+    <li style="margin-bottom: 5pt">
+      <a href="http://dx.doi.org/10.1093/gbe/evac062">
+      <strong>Individual-based modeling of genome evolution in haplodiploid organisms</strong>
+      </a> Pracana et al GBE (2022)
+    </li>
     <li style="margin-bottom:5pt">
       <a href="https://doi.org/10.1038/s41467-022-28806-7">
         <b>Recurring adaptive introgression of a supergene variant that determines social organization</b>
@@ -184,12 +193,6 @@ comments: false
         <b>The legacy of endosymbiosis in ants</b>
       </a>
       Jackson et al. Current Biology (2020)
-    </li>
-    <li style="margin-bottom:5pt">
-      <a href="https://doi.org/10.1016/j.tree.2019.12.012">
-        <b>Healthy pollinators: evaluating pesticides with molecular medicine approaches</b>
-      </a>
-      López-Osorio and Wurm Trends in Ecology & Evolution (2020).
     </li>
   </ul>
   <div>
