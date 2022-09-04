@@ -926,18 +926,21 @@ papers:
       {% else %}
         <b>{{ paper.title }}</b>
       {% endif %}
+      {% if paper.internal_page and paper.doi %}
+      <span>&nbsp;</span>
+      <a href="http://dx.doi.org/{{ paper.doi }}" target="_blank" rel="noopener">[DOI]</a>
+      {% endif %}
       {% if paper.software %}
       <a href="{{ paper.software }}" target="_blank" rel="noopener">[Website]</a>
       {% endif %}
       {% if paper.pdf %}
+        {% unless paper.internal_page and paper.doi %}
+        <span>&nbsp;</span>
+        {% endunless %}
       <a href="{{ paper.pdf }}" target="_blank" rel="noopener">[PDF]</a>
       {% endif %}
       {% if paper.supplementary_pdf %}
       <a href="{{ paper.supplementary_pdf }}" target="_blank" rel="noopener">[Supplementary]</a>
-      {% endif %}
-      {% if paper.internal_page and paper.doi %}
-      <span>&nbsp;</span>
-      <a href="http://dx.doi.org/{{ paper.doi }}" target="_blank" rel="noopener">[DOI]</a>
       {% endif %}
       {% if paper.press_release %}
       <a href="{{ paper.press_release }}" target="_blank" rel="noopener">[Press release]</a>
