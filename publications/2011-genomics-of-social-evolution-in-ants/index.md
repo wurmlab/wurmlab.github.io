@@ -91,7 +91,7 @@ The use of different sequencing technologies and depth of coverage across the se
   <h5><em>Figure 1</em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/phylogenetic-relationship-of-the-seven-sequenced.webp" />
-    <img src="/img/publications/phylogenetic-relationship-of-the-seven-sequenced.jpg" width="1092" height="1101" alt="Phylogenetic relationship of the seven sequenced ant species" />
+    <img src="/img/publications/phylogenetic-relationship-of-the-seven-sequenced.jpg" width="1092" height="553" alt="Phylogenetic relationship of the seven sequenced ant species" />
   </picture>
   <p class="mt-2">
     Phylogenetic relationship of the seven sequenced ant species and the two other sequenced hymenopteran taxa (outgroups). The phylogenetic relationship and timescale are based on Brady et al. <span class="info-text">[6]</span> and Moreau et al. <span class="info-text">[7]</span>; none of which are valid for the two outgroups (<em>Apis mellifera</em> and <em>Nasonia vitripennis</em>). As all the ants, the honeybee <em>A. mellifera</em> belongs to the aculeate Hymenoptera and, therefore, is more closely related to the ants than is <em>N. vitripennis</em>, a parasitoid wasp in the species-rich superfamily Chalcidoidea. Geologic timescale is shown for reference. Ant photos produced, with permission, from Alexander Wild (<a href="//myrmecos.net/" target="_blank">http://myrmecos.net/</a>). Abbreviation: mya, million years ago.
