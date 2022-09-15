@@ -634,6 +634,12 @@ ul.doi-badges li svg {
   color: #0688c9;
 }
 
+.publication-content .sm-text {
+  font-size: .65em;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
 .publication-content ol li {
   margin-bottom: 5px;
 }
@@ -645,6 +651,10 @@ ul.doi-badges li svg {
 
 .publication-content .publication-image img {
   margin: 15px 0;
+}
+
+.publication-content .publication-quote ul li:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 @media (max-width: 480px) {
