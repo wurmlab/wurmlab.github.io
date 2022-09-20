@@ -49,7 +49,7 @@ We applied this method to 22 685 contigs in 1978 scaffolds of the recently assem
   <h5><em>Fig. 1.</em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/global-alignment-views-in-cytoscape.webp" />
-    <img src="/img/publications/global-alignment-views-in-cytoscape.jpg" width="1092" height="560" alt="Global alignment views in Cytoscape" />
+    <img src="/img/publications/global-alignment-views-in-cytoscape.jpeg" width="1092" height="560" alt="Global alignment views in Cytoscape" />
   </picture>
   <p class="mt-2">
     Global alignment views in Cytoscape. (<b>A</b>) Contig-level: nodes represent scaffolded contigs, vertical dashes indicate contig adjacency according to scaffolding information in the order indicated by an arrow, full lines connect nodes with common aligned transcripts. (<b>B</b>) Scaffold-level: nodes represent scaffolds and unscaffolded contigs, full lines connect nodes with common aligned transcripts, zigzag lines indicate inconsistency between scaffolding and transcript mapping information, arrows indicate merge (circle) and join cases (triangle, indicates order). In (A) and (B), node sizes are proportional to contig and scaffold lengths, and line widths are proportional to transcript lengths. Line colors indicate mapping strands. Force-directed layout used in Cytoscape was manually adjusted to fit printing space constraints. (<b>C</b>) Legend.

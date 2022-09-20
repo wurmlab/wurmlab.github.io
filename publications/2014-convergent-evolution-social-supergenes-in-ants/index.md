@@ -94,7 +94,7 @@ Identifying genomic regions associated with colony social organization raises im
   <h5><em>Table 1. – <strong>Genotype and Allele Frequencies of Individuals from Monogynous, Oligogynous, and Polygynous Field Colonies</strong></em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/table-1-genotype-and-allele-frequencies.webp" />
-    <img src="/img/publications/table-1-genotype-and-allele-frequencies.png" width="1092" height="742" alt="Genotype and Allele Frequencies" />
+    <img src="/img/publications/table-1-genotype-and-allele-frequencies.jpg" width="1092" height="742" alt="Genotype and Allele Frequencies" />
   </picture>
   <p class="mt-2">
     N refers to the number of colonies used; n refers to the total sample of individuals.

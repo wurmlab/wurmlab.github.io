@@ -94,7 +94,7 @@ The CSP gene family has expanded in ants compared to four copies in *Drosophila*
   <h5><em>Table 1 – </em><strong>Number of putative CSP genes and pseudogenes in ants and other insects, and the dN/dS ratios as calculated by SLAC and codeml in each species</strong></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/table-1-number-of-putative-csp.webp" />
-    <img src="/img/publications/table-1-number-of-putative-csp.jpg" width="1092" height="393" alt="Number of putative CSP genes" />
+    <img src="/img/publications/table-1-number-of-putative-csp.png" width="1092" height="393" alt="Number of putative CSP genes" />
   </picture>
   <p class="mt-2">
     <sup>a</sup>dN/dS ratios were not calculated for <em>D. melanogaster</em> because of so few genes.

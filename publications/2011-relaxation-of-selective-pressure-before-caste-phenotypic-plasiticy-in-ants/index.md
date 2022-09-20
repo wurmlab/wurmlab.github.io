@@ -50,7 +50,7 @@ Microarray analyses conducted on whole bodies of adult and pupal males, queens, 
   <h5><em>Fig. 1</em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/distinct-gene-expression-profiles.webp" />
-    <img src="/img/publications/distinct-gene-expression-profiles.jpg" width="1092" height="904" alt="Distinct gene expression profiles" />
+    <img src="/img/publications/distinct-gene-expression-profiles.jpeg" width="1092" height="904" alt="Distinct gene expression profiles" />
   </picture>
   <p class="mt-2">
     <em>
@@ -65,7 +65,7 @@ We found that the rate of protein evolution [measured as the ratio between the r
   <h5><em>Fig. 2</em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/associations-between-metrics-of-gene-expression.webp" />
-    <img src="/img/publications/associations-between-metrics-of-gene-expression.jpg" width="1092" height="491" alt="Associations between metrics of gene expression and protein" />
+    <img src="/img/publications/associations-between-metrics-of-gene-expression.jpeg" width="1092" height="491" alt="Associations between metrics of gene expression and protein" />
   </picture>
   <p class="mt-2">
     <em>
@@ -80,7 +80,7 @@ The correlations between the degree of gene expression bias and protein evolutio
   <h5><em>Fig. 3</em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/relaxed-selection-is-ubiquitously-associated.webp" />
-    <img src="/img/publications/relaxed-selection-is-ubiquitously-associated.jpg" width="1092" height="1486" alt="Genomic divergence and subgenomic structure" />
+    <img src="/img/publications/relaxed-selection-is-ubiquitously-associated.jpeg" width="1092" height="1486" alt="Genomic divergence and subgenomic structure" />
   </picture>
   <p class="mt-2">
     <em>
@@ -117,7 +117,7 @@ Remarkably, the rate of evolution of genes in the *N. vitripennis* lineage was s
   <h5><em>Fig. 4</em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/evolutionary-histories-of-genes.webp" />
-    <img src="/img/publications/evolutionary-histories-of-genes.jpg" width="1092" height="628" alt="Evolutionary histories of genes with biased expression" />
+    <img src="/img/publications/evolutionary-histories-of-genes.jpeg" width="1092" height="628" alt="Evolutionary histories of genes with biased expression" />
   </picture>
   <p class="mt-2">
     <em>
