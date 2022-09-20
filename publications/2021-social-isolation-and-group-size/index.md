@@ -177,7 +177,7 @@ The authors declare no conflict of interest.
 
 #### Data Availability Statement
 
-RNAseq data that support the findings of this study have been deposited in NCBI BioProject Submissions with the SubmissionID: SUB5134076s and BioProject ID: PRJNA525584 [www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA525584](www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA525584). All codes used for the analyses described in the manuscript are publicly available on GitHub [github.com/FabioManfre/Solenopsis_RNAseq_founding-queens](github.com/FabioManfre/Solenopsis_RNAseq_founding-queens).
+RNAseq data that support the findings of this study have been deposited in NCBI BioProject Submissions with the SubmissionID: SUB5134076s and BioProject ID: PRJNA525584 [www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA525584](https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA525584){:target="_blank"}. All codes used for the analyses described in the manuscript are publicly available on GitHub [github.com/FabioManfre/Solenopsis_RNAseq_founding-queens](https://github.com/FabioManfre/Solenopsis_RNAseq_founding-queens){:target="_blank"}.
 
 <br />
 
@@ -186,22 +186,22 @@ RNAseq data that support the findings of this study have been deposited in NCBI 
 <hr />
 
 - **Appendix S1**: Supporting information. Detailed methods for molecular work. Comparison between large vs. small groups of queens. Comparative network analyses. <br />
-[gbb12758-sup-0001-Supinfo.docx](/publications/2021-social-isolation-and-group-size/gbb12758-sup-0001-Supinfo.docx) – [Word 2007 document, 3.9 MB]
+[gbb12758-sup-0001-supinfo.docx](/publications/2021-social-isolation-and-group-size/gbb12758-sup-0001-supinfo.docx) – [Word 2007 document, 3.9 MB]
 
 - **Dataset S1**: Sample details for RNAseq experiments. Details on ant queens selected for RNAseq, and quantities and quality of RNA samples from queens' brains that were used to prepare libraries. Only samples labeled in red were used in the end. <br />
-[gbb12758-sup-0002-DatasetS1.xlsx](/publications/2021-social-isolation-and-group-size/gbb12758-sup-0002-DatasetS1.xlsx) – [Excel 2007 spreadsheet, 16.2 KB]
+[gbb12758-sup-0002-datasets1.xlsx](/publications/2021-social-isolation-and-group-size/gbb12758-sup-0002-datasets1.xlsx) – [Excel 2007 spreadsheet, 16.2 KB]
 
 - **Dataset S2**: Pairwise comparisons at 3dpf. Details are provided about gene expression analyses (fold-change differences, p-values and corrected p-values for all genes analyzed) and Gene Ontology analyses (GO terms overrepresented at corrected p-values<0.05) for all pairwise comparisons. <br />
-[gbb12758-sup-0003-DatasetS2.xlsx](/publications/2021-social-isolation-and-group-size/gbb12758-sup-0003-DatasetS2.xlsx) – [Excel 2007 spreadsheet, 2.6 MB]
+[gbb12758-sup-0003-datasets2.xlsx](/publications/2021-social-isolation-and-group-size/gbb12758-sup-0003-datasets2.xlsx) – [Excel 2007 spreadsheet, 2.6 MB]
 
 - **Dataset S3**: Pairwise comparisons at 25dpf. Details are provided about gene expression analyses (fold-change differences, p-values and corrected p-values for all genes analyzed) and Gene Ontology analyses (GO terms overrepresented at corrected p-values<0.05) for all pairwise comparisons. <br />
-[gbb12758-sup-0004-DatasetS3.xlsx](/publications/2021-social-isolation-and-group-size/gbb12758-sup-0004-DatasetS3.xlsx) – [Excel 2007 spreadsheet, 4.9 MB]
+[gbb12758-sup-0004-datasets3.xlsx](/publications/2021-social-isolation-and-group-size/gbb12758-sup-0004-datasets3.xlsx) – [Excel 2007 spreadsheet, 4.9 MB]
 
 - **Dataset S4**: WGCNA modules significantly associated with phenotypes of interest. Details are provided of the gene to gene correlation for all genes included in the module. <br />
-[gbb12758-sup-0005-DatasetS4.xlsx](/publications/2021-social-isolation-and-group-size/gbb12758-sup-0005-DatasetS4.xlsx) – [Excel 2007 spreadsheet, 258.7 KB]
+[gbb12758-sup-0005-datasets4.xlsx](/publications/2021-social-isolation-and-group-size/gbb12758-sup-0005-datasets4.xlsx) – [Excel 2007 spreadsheet, 258.7 KB]
 
 - **Dataset S5**: Eigenvalues and loadings for all PCs obtained at the two timepoints. <br />
-[gbb12758-sup-0006-DatasetS5.xlsx](/publications/2021-social-isolation-and-group-size/gbb12758-sup-0006-DatasetS5.xlsx) – [Excel 2007 spreadsheet, 8.3 MB]
+[gbb12758-sup-0006-datasets5.xlsx](/publications/2021-social-isolation-and-group-size/gbb12758-sup-0006-datasets5.xlsx) – [Excel 2007 spreadsheet, 8.3 MB]
 
 *Please note: The publisher is not responsible for the content or functionality of any supporting information supplied by the authors. Any queries (other than missing content) should be directed to the corresponding author for the article.*
 
