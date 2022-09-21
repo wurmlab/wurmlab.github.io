@@ -57,3 +57,5 @@ We can potentially deploy our solution for other courses. If you're interested, 
 
 ![/img/news/2020-11-01-unix_bioinf_cloud/panel.png](/img/news/2020-11-01-unix_bioinf_cloud/panel.png){: width="499" height="397" style="max-width:100%; height: auto"}
 
+![/img/news/2020-11-01-unix_bioinf_cloud/cloud-computer-web-interface.png](/img/news/2020-11-01-unix_bioinf_cloud/cloud-computer-web-interface.png){: width="1141" height="532" style="max-width:100%; height: auto"}
+
