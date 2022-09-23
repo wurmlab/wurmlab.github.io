@@ -66,7 +66,7 @@ Publications of the first genome projects of humans and traditional laboratory o
   <h5><em>Figure 1</em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/solenopsis-invicta-fire-ants.webp" />
-    <img src="/img/publications/solenopsis-invicta-fire-ants.jpeg" width="320" height="482" alt="Solenopsis invicta fire ants" style="display: block; margin: 15px auto; max-width: 320px;" />
+    <img src="/img/publications/solenopsis-invicta-fire-ants.jpg" width="320" height="482" alt="Solenopsis invicta fire ants" style="display: block; margin: 15px auto; max-width: 320px;" />
   </picture>
   <p class="mt-2">
     <a href="https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/solenopsis-invicta" target="_blank"><em>Solenopsis invicta</em></a> fire ants (smaller) defending a region of the social chromosome supergene against a <em>Pogonomyrmex rugosus</em> <a href="https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/harvester-ant" target="_blank">harvester ant</a> worker (larger) symbolizes the amicable competition between early ant genome projects.

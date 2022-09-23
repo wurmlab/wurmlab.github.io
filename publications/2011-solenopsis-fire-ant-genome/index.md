@@ -32,7 +32,7 @@ In addition to being critically important members of many terrestrial ecosystems
   <h5><em>Fig. 1</em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/depart-on-mating-flight.webp" />
-    <img src="/img/publications/depart-on-mating-flight.jpg" width="1092" height="872" alt="S. invicta males depart on mating flight" />
+    <img src="/img/publications/depart-on-mating-flight.jpeg" width="1092" height="872" alt="S. invicta males depart on mating flight" />
   </picture>
   <p class="mt-2">
     <em>(<b>A</b>) S. invicta males (larger, with wings) depart on mating flight while workers (smaller, wingless) patrol (photo by Yannick Wurm). (<b>B</b>) A fire ant researcher was stung by his study subject (photo by Daniel P. Wojcik, US Department of Agriculture Agricultural Research Service).</em>
@@ -73,7 +73,7 @@ A combination of ab initio, EST-based, and sequence similarity-based methods gen
   <h5><em>Fig. 2</em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/taxonomic-distribution-of-best-blastp.webp" />
-    <img src="/img/publications/taxonomic-distribution-of-best-blastp.jpg" width="1092" height="1538" alt="Taxonomic distribution of best blastp hits" />
+    <img src="/img/publications/taxonomic-distribution-of-best-blastp.jpeg" width="1092" height="1538" alt="Taxonomic distribution of best blastp hits" />
   </picture>
   <p class="mt-2">
     <em>Taxonomic distribution of best blastp hits of S. invicta proteins to the nonredundant (nr) protein database (E < 10<sup>−5</sup>). Results were first plotted using MEGAN software (<span class="info-text">22</span>) and then branches with fewer than 20 hits were removed, branch lengths were reduced for compactness, and tree topology was adjusted to reflect consensus phylogenies (<span class="info-text">23, 24</span>).</em>
@@ -92,7 +92,7 @@ In contrast to other insects that mainly have only one or two vitellogenins, the
   <h5><em>Fig. 3</em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/s-invicta-vitellogenins.webp" />
-    <img src="/img/publications/s-invicta-vitellogenins.jpg" width="1092" height="441" alt="S. invicta vitellogenins" />
+    <img src="/img/publications/s-invicta-vitellogenins.jpeg" width="1092" height="441" alt="S. invicta vitellogenins" />
   </picture>
   <p class="mt-2">
     <em>S. invicta vitellogenins. (<b>A</b>) Four vitellogenins are located within a single 40,000-bp region of the S. invicta genome. (<b>B</b>) Parsimony tree of known hymenopteran vitellogenin protein sequences suggests that two rounds of vitellogenin duplication occurred after the split between ants and other hymenopterans including bees and wasps. (<b>C</b>) Quantitative RT-PCR of the four putative S. invicta vitellogenins on whole bodies of major workers (W) and mated queens (Q) (n = 10). The y axis indicates mRNA concentrations for the different vitellogenins. Values depicted by each bar are shown below the x-axis labels. Error bars represent SEs. Expression differences between queens and workers were significant (Bonferroni-corrected two-tailed t tests: *P < 0.05, ***P < 10<sup>−10</sup>).</em>

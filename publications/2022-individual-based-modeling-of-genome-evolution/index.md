@@ -40,7 +40,7 @@ We tested whether our simulations follow the expectations from analytical models
   <h5><em>Figure.1</em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/the-effect-of-haplodiploidy.webp" />
-    <img src="/img/publications/the-effect-of-haplodiploidy.jpg" width="1092" height="1259" alt="The effect of haplodiploidy on the fixation rate" />
+    <img src="/img/publications/the-effect-of-haplodiploidy.jpeg" width="1092" height="1259" alt="The effect of haplodiploidy on the fixation rate" />
   </picture>
   <p class="mt-2">
     The effect of haplodiploidy on the fixation rate of (<em>A</em>) neutral mutations, (<em>B</em>) advantageous mutations, (<em>C</em>) deleterious mutations, and (<em>D</em>) advantageous mutations with different levels of dominance. Each line represents one simulation run (only 20 of 200 shown for each treatment). On each plot, we also show the average difference in the number of fixed mutations between haplodiploid and diploid simulations after 35,000 generations and a burn-in period of 15,000 generations (Wilcoxon rank-sum test; <span class="info-text">supplementary table S1</span>, <span class="info-text">Supplementary Material </span> online). For the simulations in (<em>A</em>) to (<em>C</em>), mutations were fully recessive (dominance coefficient <em>h</em> = 0) and had a range of selection coefficients (s, as shown); for the simulations in (<em>D</em>), mutations had <em>s</em> = 0.001 and a range of dominance coefficients (<em>h</em>, as shown). In (<em>C</em>), < 5% of simulation runs with s = −0.3% and no simulation run with <em>s</em> = −1% had any fixed mutation.

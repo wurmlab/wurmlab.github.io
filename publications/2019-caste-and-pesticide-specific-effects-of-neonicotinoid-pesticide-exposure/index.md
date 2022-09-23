@@ -88,7 +88,7 @@ We determined that 55 genes are significantly differentially expressed in worker
   <h5><em>Figure 1</em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/chronic-clothianidin-exposure.webp" />
-    <img src="/img/publications/chronic-clothianidin-exposure.jpeg" width="1092" height="1252" alt="Chronic clothianidin exposure" />
+    <img src="/img/publications/chronic-clothianidin-exposure.jpg" width="1092" height="1252" alt="Chronic clothianidin exposure" />
   </picture>
   <p class="mt-2">
     Chronic clothianidin exposure leads to gene expression changes in bumblebee workers and queens. Heatmaps displaying genes differentially expressed in workers (a; <em>n</em> = 55) and in queens (b; <em>n</em> = 17) between clothianidin-exposed and control colonies. For each differentially expressed gene, we show the log fold change for each biological replicate, as well as the gene identifier and NCBI's functional gene description. The single gene differentially expressed in both castes is indicated in bold. The single gene also differentially expressed in imidacloprid-exposed workers is indicated in italics. The two genes identified to be differentially expressed and alternatively spliced within clothianidin-exposed workers are indicated in bold and italics [Colour figure can be viewed at <a href="https://onlinelibrary.wiley.com/" target="_blank">wileyonlinelibrary.com</a>]
@@ -111,7 +111,7 @@ We also investigated changes in gene expression in response to imidacloprid expo
   <h5><em>Table 1 – <strong>Genes with differential expression after neonicotinoid exposure in bumblebees. For each treatment, the number of genes with differential amplitude and differential splicing per caste is shown</strong></em></h5>
   <picture>
     <source type="image/webp" srcset="/img/publications/table-genes-with-differential-expression.webp" />
-    <img src="/img/publications/table-genes-with-differential-expression.jpeg" width="1092" height="319" alt="Genes with differential expression" />
+    <img src="/img/publications/table-genes-with-differential-expression.jpg" width="1092" height="319" alt="Genes with differential expression" />
   </picture>
 </div>
 
