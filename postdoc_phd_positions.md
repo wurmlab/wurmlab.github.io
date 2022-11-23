@@ -14,7 +14,7 @@ If you're interested in joining us, please provide by email a CV, and a short pr
 
 ## Postdocs
 
-**2022-08-30: We have an open 18-month postdoc position (potential for extension). Topic: evolutionary genomics / pollinator health (some flexibility in details). Email us with a CV for more information. Official ad will be online soon. Partial remote work possible if its in the UK. Part time possible. Pay 34,000 - 46,000 per year pro rata depending on experience.**
+**Apply by 2022-11-27: We have an open 18-month postdoc position (potential for extension). Topic: evolutionary genomics / pollinator health (some flexibility in details). [Official ad here](https://www.qmul.ac.uk/jobs/vacancies/items/7736.html). Partial remote work possible if its in the UK. Part time possible. Pay 34,000 - 46,000 per year pro rata depending on experience.**
 
 
 ---
