@@ -1,5 +1,6 @@
 ---
 title: 'New research on bees shows current safety tests of insecticides are inadequate'
+description: 'Queen Mary researchers have revealed unexpected variation in bee neural receptors, challenging current safety assessments of insecticides, which work by targeting these receptors.'
 layout: publication
 permalink: /publications/new-research-on-bees-shows-current-safety-tests-of-insecticides-are-inadequate/
 ---
@@ -11,10 +12,6 @@ permalink: /publications/new-research-on-bees-shows-current-safety-tests-of-inse
 # New research on bees shows current safety tests of insecticides are inadequate
 
 <h5 class="info-text my-4">Press release</h5>
-
-[*Molecular Ecology*](https://doi.org/10.1111/mec.16811), December 2022
-
-<br />
 
 <hr />
 
