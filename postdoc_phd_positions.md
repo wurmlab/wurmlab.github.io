@@ -13,10 +13,6 @@ If you're interested in joining us, please provide by email a CV, and a short pr
 
 
 ## Postdocs
-
-**Apply by 2022-11-27: We have an open 18-month postdoc position (potential for extension). Topic: evolutionary genomics / pollinator health (some flexibility in details). [Official ad here](https://www.qmul.ac.uk/jobs/vacancies/items/7736.html). Partial remote work possible if its in the UK. Part time possible. Pay 34,000 - 46,000 per year pro rata depending on experience.**
-
-
 ---
 
 We invite applications for fellowships (Marie Sk&#322;odowska-Curie & Royal Society). The biggest effort is usually to come up with a good project. Once a proposal is written it is often worth applying to several funding sources.
@@ -29,7 +25,14 @@ These can include:
 
 ## PhD positions
 
-**2022-08-30: We have an open "UK-fees" PhD position. Apply by 2022-09-15 with a CV and cover letter. This covers UK stipend and "UK home fees" to the university. It does not cover international fees.**
+We are currently recruiting PhD students using the following schemes:
+ * Deadline 2024-01-31 [QMUL BAME PhD studentship](https://www.qmul.ac.uk/scholarships/items/uk-bame-phd-studentships-1.html) - for those from an underrepresented group in research: "Black, Asian and other Minority Ethnic". This covers UK stipend and "UK home fees" to the university. It does not cover international fees. Please get in touch with me so I can support your application.
+ * Open as of 2023-11-15 until filled. We have a [joint PhD studentship](https://www.nhm.ac.uk/our-science/study/postgraduate/phd-opportunities/projects/meiofaunal-molecular-systematics.html) with Chris Laumer at the NHM. Includes cool flatworms, transcriptome skimming and nanopores.
+ * Open CONACYT PhD studentship for those from Mexico - on "Genomic innovations in the superorganismal evolution"
+ * Open CSC China scolarship - apply by 2023-01-31.
+
+
+~~2022-08-30: We have an open "UK-fees" PhD position. Apply by 2022-09-15 with a CV and cover letter. This covers UK stipend and "UK home fees" to the university. It does not cover international fees.~~
 
 ---
 
