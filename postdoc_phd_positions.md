@@ -26,13 +26,12 @@ These can include:
 ## PhD positions
 
 We are currently recruiting PhD students using the following schemes:
- * Deadline 2024-01-31 [QMUL BAME PhD studentship](https://www.qmul.ac.uk/scholarships/items/uk-bame-phd-studentships-1.html) - for those from an underrepresented group in research: "Black, Asian and other Minority Ethnic". This covers UK stipend and "UK home fees" to the university. It does not cover international fees. Please get in touch with me so I can support your application.
- * Open as of 2023-11-15 until filled. We have a [joint PhD studentship](https://www.nhm.ac.uk/our-science/study/postgraduate/phd-opportunities/projects/meiofaunal-molecular-systematics.html) with Chris Laumer at the NHM. Includes cool flatworms, transcriptome skimming and nanopores.
- * Open CONACYT PhD studentship for those from Mexico - on "Genomic innovations in the superorganismal evolution"
- * Open CSC China scolarship - apply by 2023-01-31.
-
-
-~~2022-08-30: We have an open "UK-fees" PhD position. Apply by 2022-09-15 with a CV and cover letter. This covers UK stipend and "UK home fees" to the university. It does not cover international fees.~~
+ * Deadline: 2024-04-14: We're thrilled [to announce](https://www.findaphd.com/phds/project/transforming-meiofaunal-molecular-systematics-and-community-ecology-through-nanopore-based-transcriptome-skimming/?p170251) an exciting new PhD position in collaboration with Chris Laumer at the Natural History Museum. Apply now to join our team and contribute to cutting-edge research in this field.
+ * ~~Deadline 2024-01-31 [QMUL BAME PhD studentship](https://www.qmul.ac.uk/scholarships/items/uk-bame-phd-studentships-1.html) - for those from an underrepresented group in research: "Black, Asian and other Minority Ethnic". This covers UK stipend and "UK home fees" to the university. It does not cover international fees. Please get in touch with me so I can support your application.~~
+ * ~~Open as of 2023-11-15 until filled. We have a [joint PhD studentship](https://www.nhm.ac.uk/our-science/study/postgraduate/phd-opportunities/projects/meiofaunal-molecular-systematics.html) with Chris Laumer at the NHM. Includes cool flatworms, transcriptome skimming and nanopores.~~
+ * ~~Open CONACYT PhD studentship for those from Mexico - on "Genomic innovations in the superorganismal evolution"~~
+ * ~~Open CSC China scolarship - apply by 2023-01-31.~~
+ * ~~2022-08-30: We have an open "UK-fees" PhD position. Apply by 2022-09-15 with a CV and cover letter. This covers UK stipend and "UK home fees" to the university. It does not cover international fees.~~
 
 ---
 
