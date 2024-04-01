@@ -198,7 +198,7 @@ Fourmidable is publicly available <span class="info-text">[27]</span>. It has be
 
 28. The GO Consortium: The Gene Ontology (GO) project in 2006. *Nucleic Acids Res.* 2006, **34** (Suppl 1): D322-326. 10.1093/nar/gkj021.
 
-29. Durbin KJ, Baylor College of Medicine Human Genome Sequencing Center: Baylor College of Medicine Trace Viewer. [http://www.hgsc.bcm.tmc.edu/downloads/software/trace_viewer/](//www.hgsc.bcm.tmc.edu/downloads/software/trace_viewer/){:target="_blank"}
+29. Durbin KJ, Baylor College of Medicine Human Genome Sequencing Center: Baylor College of Medicine Trace Viewer.
 
 30. Wang J, Jemielity S, Uva P, Wurm Y, Graff J, Keller L: An annotated cDNA library and microarray for large-scale gene-expression studies in the ant Solenopsis invicta. *Genome Biol.* 2007, **8**: R9-10.1186/gb-2007-8-1-r9.
 

@@ -68,7 +68,7 @@ To search for transcripts encoding putative neuropeptide or peptide hormone prec
 
 #### 2.3. De novo-based identification of candidate neuropeptide precursors in *Asterias rubens*
 
-A list of potential ORFs that were generated from the *A. rubens* transcriptome sequence data were analysed using a hidden Markov model described in <span class="info-text">[44,45]</span>. The top 500 candidate sequences were then screened for the presence of a signal peptide and short sequences flanked by canonical Gly-Lys-Arg motifs characteristic of prohormone convertase cleavage sites. The transcriptome sequence data were also analysed using a novel neuropeptide-prediction tool NpSearch, which uses characteristics of neuropeptide precursors (signal peptide, dibasic cleavage sites) to identify novel neuropeptides and their precursors ([https://rubygems.org/gems/NpSearch](https://rubygems.org/gems/NpSearch){:target="_blank"}) <span class="info-text">[46]</span>.
+A list of potential ORFs that were generated from the *A. rubens* transcriptome sequence data were analysed using a hidden Markov model described in <span class="info-text">[44,45]</span>. The top 500 candidate sequences were then screened for the presence of a signal peptide and short sequences flanked by canonical Gly-Lys-Arg motifs characteristic of prohormone convertase cleavage sites. The transcriptome sequence data were also analysed using a novel neuropeptide-prediction tool NpSearch, which uses characteristics of neuropeptide precursors (signal peptide, dibasic cleavage sites) to identify novel neuropeptides and their precursors ([https://rubygems.org/gems/npsearch](https://rubygems.org/gems/npsearch){:target="_blank"}) <span class="info-text">[46]</span>.
 
 #### 2.4. Analysis of the sequences of neuropeptide precursor transcripts identified in *Asterias rubens*
 
@@ -85,7 +85,7 @@ The protein sequences of candidate neuropeptide precursors and polypeptide hormo
   </p>
 </div>
 
-The sequences of *A. rubens* precursor proteins or the putative neuropeptides/polypeptide hormones derived from them were aligned with homologous proteins/peptides in other bilaterian species, some of which were identified here for the first time. Alignments were generated and edited using Jalview <span class="info-text">[47]</span> and MAFFT <span class="info-text">[48]</span> with JABAWS web service <span class="info-text">[49]</span>, employing default settings (gap opening penalty at local pairwise alignment = −2, similarity matrix = Blosum62, gap open penalty = 1.53, group size = 20, group-to-group gap extension penalty = 0.123). GeneDoc ([https://genedoc.software.informer.com/](https://genedoc.software.informer.com/){:target="_blank"}) was used to annotate the alignments and prepare alignment figures.
+The sequences of *A. rubens* precursor proteins or the putative neuropeptides/polypeptide hormones derived from them were aligned with homologous proteins/peptides in other bilaterian species, some of which were identified here for the first time. Alignments were generated and edited using Jalview <span class="info-text">[47]</span> and MAFFT <span class="info-text">[48]</span> with JABAWS web service <span class="info-text">[49]</span>, employing default settings (gap opening penalty at local pairwise alignment = −2, similarity matrix = Blosum62, gap open penalty = 1.53, group size = 20, group-to-group gap extension penalty = 0.123). GeneDoc was used to annotate the alignments and prepare alignment figures.
 
 <br />
 
