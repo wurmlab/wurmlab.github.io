@@ -13,12 +13,12 @@ Join us in Guarujá!
 
 We (Emeline, Carlos & Yannick) are excited to host a symposium on the evolution of social organisation at the upcoming [IUSSI conference](http://iussi2018.com/).
   * [Tim Linksvayer](http://www.bio.upenn.edu/people/timothy-linksvayer) will give a plenary talk.
-  * We invite abstract submissions for talks and posters (<a href="https://iussi2018.com/node/1014">deadline March 2nd!</a>). 
+  * We invite abstract submissions for talks and posters deadline March 2nd!.
 
-We welcome a diversity of approaches and study systems. If you're unsure about the relevance of your work, don't hesitate to get in touch. 
+We welcome a diversity of approaches and study systems. If you're unsure about the relevance of your work, don't hesitate to get in touch.
 
 
-Full symposium title and abstract below: 
+Full symposium title and abstract below:
 
 ### Evolution of social organization
 
@@ -29,7 +29,4 @@ Understanding how and when changes in social lifestyle occur is central to the s
 Encompassing the complexities of such multifaceted topics requires interdisciplinary discussion. This symposium will thus include both theoretical and empirical research addressing the topic from a variety of scales and angles.
 
 
-
-<a href="https://iussi2018.com/node/1014" target="_blank">
-	<img src="/img/news/2018_iussi_logo.jpg" title="IUSSI 2018 Brazil" class="center-block img-responsive" style="width:40%"/>
-</a>
+<img src="/img/news/2018_iussi_logo.jpg" title="IUSSI 2018 Brazil" class="center-block img-responsive" style="width:40%"/>

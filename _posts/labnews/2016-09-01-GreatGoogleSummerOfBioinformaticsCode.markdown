@@ -16,11 +16,10 @@ Google summer of code 2016 has just came to an end. Thanks to our host organisat
    <a href="/news/2016-08-23-hiten-blast-visualization-gsoc"><img src="/img/news/2016-08-23-hiten/circos-final.png" class="img-responsive center-block"/></a>
 
 
-   
- * After reviewing in detail the [strengths and weaknesses of bash, make, snakemake and nextflow as biological analysis pipelines](//github.com/thejmazz/jmazz.me/blob/master/content/post/ngs-workflow.md), [Julian Mazzitelli](//www.jmazz.me) created [Bionode waterwheel](//github.com/bionode/bionode-watermill), a tool demonstrating the capabilities of javascript streams for real-time analysis of biological data. [Read more about how it works.](//github.com/bionode/bionode-watermill/blob/master/README.md)
+
+ * After reviewing in detail the [strengths and weaknesses of bash, make, snakemake and nextflow as biological analysis pipelines](https://github.com/thejmazz/jmazz.me/blob/master/_posts/NGS-Workflows.md), Julian Mazzitelli created [Bionode waterwheel](//github.com/bionode/bionode-watermill), a tool demonstrating the capabilities of javascript streams for real-time analysis of biological data. [Read more about how it works.](//github.com/bionode/bionode-watermill/blob/master/README.md)
 
    <img src="/img/news/2016-09/waterwheel-mini.png" class="img-responsive center-block" />
 
 
 As the finishing touches are implemented, we look forward to being able to deploy the work of these students into production releases of [SequenceServer](//www.sequenceserver.com) and [Bionode](//bionode.io).
-

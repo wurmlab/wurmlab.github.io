@@ -21,7 +21,7 @@ Exciting announcement of a new dirt-cheap machine-less DNA sequencing technology
   * it supposedly provide 100,000bp long reads. This will eliminate [most scaffolding issues]({{ site.url }}/news/2011-09-21-genome-analyses-for-non-model-organisms/) we have with assembling _de novo _genome sequence.
 
 
-  * using the [USB thumb-chip version](http://www.nanoporetech.com/technology/minion-a-miniaturised-sensing-instrument), no machine is required. Thus when you are [out in the field](http://vimeo.com/21287431), you can sequence right then and there - a potential workaround for worrying about tissue sample export permits... at least until new regulations appear!
+  * using the USB thumb-chip version, no machine is required. Thus when you are [out in the field](http://vimeo.com/21287431), you can sequence right then and there - a potential workaround for worrying about tissue sample export permits... at least until new regulations appear!
 
 
 
@@ -31,7 +31,7 @@ Exciting announcement of a new dirt-cheap machine-less DNA sequencing technology
 
 
 
- 
+
 
 
 

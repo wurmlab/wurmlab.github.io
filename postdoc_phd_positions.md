@@ -41,12 +41,12 @@ PhD funding normally exists as part of multiple schemes. These include:
     * [London NERC Doctoral Training Programme](http://london-nerc-dtp.org)
     * [BBSRC London Interdisciplinary Doctoral Programme](http://lido-dtp.ac.uk)
 
- * Many national schemes exist (e.g., from your country of origin). Some of these are listed [on QMUL's page](http://www.sbcs.qmul.ac.uk/postgraduate/research/index.html) including:
+ * Many national schemes exist (e.g., from your country of origin). Some of these are listed on QMUL's page including:
     * CONACYT (Mexico)
     * Colfuturo (Colombia) provide 2 years of funding and we can potentially figure out the rest.
     * Commonwealth Scholarships
     * Newton fund (e.g., [Newton-Bhabha](https://www.britishcouncil.in/programmes/higher-education/newton-fund))
-	* [Commonwealth scholarships  for high income countries (Canada, Australia, Trinidad...)](http://cscuk.dfid.gov.uk/apply/phd-scholarships-high-income-countries/)
+	* Commonwealth scholarships  for high income countries (Canada, Australia, Trinidad...)
 	* US citizens can come with [Marshall](http://www.marshallscholarship.org/applications/eligible) or [Fullbright](http://www.fulbright.org.uk/going-to-the-uk/postgraduate-student-awards) scholarships.
  * Occasionally, we have specific funding for PhD positions.
  * In some circumstances we accept self-funded PhD candidates.
@@ -62,6 +62,6 @@ This is much easier if you come with your own funding. Minimal duration is 5 mon
 
 Our department hosts at least 3 MSc progams that are relevant to our research - these programs typically last one year for full-time students, include taught courses and a 6-9 month research project.
 
- * [Bioinformatics MSc program](http://www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169225.html)
- * [Evolutionary Genomics MSc program](http://www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169221.html)
- * [Ecology and Evolution MSc program](http://www.sbcs.qmul.ac.uk/postgraduate/masters/courses/169220.html)
+ * Bioinformatics MSc program
+ * Evolutionary Genomics MSc program
+ * Ecology and Evolution MSc program

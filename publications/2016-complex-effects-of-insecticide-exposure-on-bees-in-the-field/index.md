@@ -342,7 +342,7 @@ R scripts and data sets are uploaded to online supporting information and Dryad 
 
 57. Stanley, D.A., Russell, A.L., Morrison, S.J., Rogers, C. & Raine, N.E. (2016) Investigating the impacts of field-realistic exposure to a neonicotinoid pesticide on bumblebee foraging, homing ability and colony growth. *Journal of Applied Ecology*, 53, 1440– 1449.
 
-58. Thompson, H., Harrington, P., Wilkins, W., Pietravalle, S., Sweet, D. & Jones, A. (2013) Effects of neonicotinoid seed treatments on bumble bee colonies under field conditions. Available at: [http://www.fera.co.uk/ccss/documents/defraBumbleBeeReportPS2371V4a.pdf](http://www.fera.co.uk/ccss/documents/defraBumbleBeeReportPS2371V4a.pdf){:target="_blank"}.
+58. Thompson, H., Harrington, P., Wilkins, W., Pietravalle, S., Sweet, D. & Jones, A. (2013) Effects of neonicotinoid seed treatments on bumble bee colonies under field conditions.
 
 59. Thompson, H., Coulson, M., Ruddle, N., Wilkins, S. & Harkin, S. (2016) Thiamethoxam: assessing flight activity of honeybees foraging on treated oilseed rape using radio frequency identification technology. *Environmental Toxicology and Chemistry*, 35, 385– 393.
 

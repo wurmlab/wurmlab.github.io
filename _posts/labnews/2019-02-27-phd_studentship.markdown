@@ -9,28 +9,28 @@ categories:
  - labnews
 ---
 
-We have an exciting PhD position open through the London NERC DTP. 
+We have an exciting PhD position open through the London NERC DTP.
 
-[**Apply by March 18th**](https://www.qmul.ac.uk/sbcs/postgraduate/phd-programmes/projects/display-title-655614-en.html) on the QMUL website. 
+**Apply by March 18th** on the QMUL website.
 
 
 The studentship is funded by the London NERC DTP will cover tuition fees and provide an annual tax-free maintenance allowance for 4 years at the Research Council rate (£17,009 in 2019/20). Candidates must meet <a href="https://london-nerc-dtp.org/apply-to-the-london-nerc-dtp/#eligibility">RCUK eligibility criteria</a> (I think this means ok for UK citizens and medium-term residents).
 
 The project is *highly* interdisciplinary.
 
-Great candidates fulfill at least 3 of the following 4 criteria: 
+Great candidates fulfill at least 3 of the following 4 criteria:
  * smart
  * hard working
  * understands genomes or social insects
  * not scared of data analysis or coding.
 
-We can adapt the project to the students’ interests and background. 
+We can adapt the project to the students’ interests and background.
 
 If you have any questions regarding prerequisites, scope or nature of the project, please don't hesitate to get in touch with me (Yannick).
 
 ## Research context
 
-We have two main lines of research, in collaboration with national and international colleagues and stakeholders. 
+We have two main lines of research, in collaboration with national and international colleagues and stakeholders.
 
 **Genetics of social behaviour**. Social animals exhibit a broad range of behaviors, and some theoretical understanding exists of the tradeoffs between different forms of social organisation. However, we know little about the genes and processes underpinning social organisation or how it evolves. The diversity of social behaviors across the 20,000 species of ants represents a unique opportunity to empirically understand the mechanisms and tradeoffs involved in social change. We use highly molecular approaches, including genomics and bioinformatics but also potentially behavioural or field work to address major questions about social evolution. We aim to generate exciting new insights into genes and processes underpinning a major social transition, with implications on understanding evolution of complex phenotypes.
 
@@ -39,4 +39,3 @@ We have two main lines of research, in collaboration with national and internati
 ## Training
 
 The student will receive extensive training in big data bioinformatics, phylogenomics, data visualisation, and experimental research approaches in evolution and genomics. Furthermore, they will receive hands-on training in interdisciplinary project management, communicating science in writing and verbally, including by presenting at workshops and conferences.
-

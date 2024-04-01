@@ -7,7 +7,7 @@ description: Microarray analysis tutorial for introduction to bioinformatics cla
 <h1>TP4: Analyse de donnees d'expression</h1>
 <p>Merci d'envoyer a <img src="tp4-files/email.png" alt="demandez l'adresse"/> les reponses aux questions en surlignees avec [TP4 Bioinfo] comme sujet. Vu qu'il necessite que plusieurs logiciels soient installes, il est conseille de le faire en salles Pol204.2 ou Bio1928.</p>
 <p>Votre sujet de recherche sont les tissus musculaires. En particulier, vous voulez caracteriser le coeur d'un point de vue moleculaire.</p>
-<p>A travers une recherche bibliographique vous trouvez une etude extensive des transcriptomes humains et murins. Peut-etre qu'il y aura des donnees interessantes! En 2004, Su et al., ont quantifie l'expression de genes au sein de 79 tissus humains et 61 tissus de souris a l'aide de puces a ADN. Pour l'Homme, ils se sont servis d'une puce Affymetrix basee sur la puce Affymetrix Human U133A. Dans l'<a href="http://www.pnas.org/cgi/content/full/101/16/6062" target="_blank">article</a> (tres cite) figure un lien vers les <a href="http://wombat.gnf.org/" target="_blank">donnees brutes</a>.</p>
+<p>A travers une recherche bibliographique vous trouvez une etude extensive des transcriptomes humains et murins. Peut-etre qu'il y aura des donnees interessantes! En 2004, Su et al., ont quantifie l'expression de genes au sein de 79 tissus humains et 61 tissus de souris a l'aide de puces a ADN. Pour l'Homme, ils se sont servis d'une puce Affymetrix basee sur la puce Affymetrix Human U133A. Dans l'<a href="http://www.pnas.org/cgi/content/full/101/16/6062" target="_blank">article</a> (tres cite) figure un lien vers les donnees brutes.</p>
 <h2>Mise en place des donnees</h2>
 <p>Telechargez le jeu de donnees Human U133A + GNF1H (MAS5-condensed).</p>
 <p>Decompressez ce jeu de donnees. Depuis Excel, ouvrez le fichier de donnees GNF1Hdata.txt qui est au format texte, chaque colonne etant separee par une "tabulation". Essayez de comprendre le contenu du fichier.</p> <div class="question">Que represente chaque ligne? Chaque colonne?</div>
@@ -59,7 +59,7 @@ description: Microarray analysis tutorial for introduction to bioinformatics cla
 <ul><li>que le niveau d'expression est bas pour la plupart des genes</li>
 <li>que les medianes des niveaux d'expression sont homogenes entre puces</li>
 </ul>
-<p>Dans un cas reel on ferrait plusieurs autres analyses preliminaires pour valider la qualite des donnees. Plusieurs <a href="http://www.bioconductor.org/packages/release/Software.html">packages Bioconductor</a> pourront nous aider.</p>
+<p>Dans un cas reel on ferrait plusieurs autres analyses preliminaires pour valider la qualite des donnees. Plusieurs packages Bioconductor pourront nous aider.</p>
 <h2>Transformation des donnees</h2>
 <p>Nous avons des valeurs d'expression absolues pour chaque gene. Deux questions biologiques peuvent se poser:</p>
 <ul>
@@ -137,7 +137,7 @@ description: Microarray analysis tutorial for introduction to bioinformatics cla
 <div class="question">Joignez-la au compte-rendu</div>
 <h2>Test de sur- ou sous-representation de termes d'annotation fonctionnelle</h2>
 <p>Il est possible de tester si au sein d'une liste de genes, certaines categories Gene Ontology sont sur-representees par rapport a une reference. </p>
-<p>Connectez-vous a <a href="http://david.abcc.ncifcrf.gov/" target="_blank">DAVID</a>. Dans la colonne de gauche, sous Upload / Step 1 collez votre liste de genes. Il s'agit d'identifiants Affymerix. AFFY_ID. C'est une Gene List. Une fois uploadee, rajoutez HG-U133A comme liste Background.</p>
+<p>Connectez-vous a DAVID. Dans la colonne de gauche, sous Upload / Step 1 collez votre liste de genes. Il s'agit d'identifiants Affymerix. AFFY_ID. C'est une Gene List. Une fois uploadee, rajoutez HG-U133A comme liste Background.</p>
 <p>Functional Annotation Clustering.</p>
 <div class="question"> Quels types de genes sont surrepresentes parmi les genes surexprimes dans le coeur?</div>
 <h2>Conclusion</h2>

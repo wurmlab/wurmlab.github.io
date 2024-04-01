@@ -16,7 +16,7 @@ categories:
 ## Timepark
 
 
-Development report (for my school, Insa de Lyon). [Timepark-report January 2004](http://yannick.poulet.org/dev/timepark_report-jan2004.pdf).
+Development report (for my school, Insa de Lyon).
 
 
 
@@ -46,18 +46,16 @@ An open source modeling and simulation framework, used as the backend for Timepa
 
 
 
-	
+
   * An object's position is defined by it's (x,y,z) properties; object classes may inherit these and additionally defined properties.
 
-	
+
   * A property's value can be defined by ordinary differential equations (ODEs).
 
-	
+
   * A property can evolve differently depending on the system's state through the use of control statements which are functions of any of the system's objects properties (eg: if _light is green_ then _d(x)/dt = 10_ else _d(x)/dt =0_.
 
 
 Technologies: C++ STL, Flex/Yacc, Xerces, OpenGL
 
 Download Source and documentation soon...
-
-
