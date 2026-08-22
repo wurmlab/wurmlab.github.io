@@ -190,7 +190,7 @@ the entire set of DNA sequences (or genes) of a species represented by the core 
 the inference of the phylogenetic relationships among different lineages of organisms from genome-wide data.
 
 ##### Reference genome
-a contiguous and accurate genome assembly representative of a species in which the coordinates of genes and other important features are annotated. Current definitions of reference genome quality are given in <span class="info-text">[2.]</span> and [https://www.earthbiogenome.org/assembly-standards](https://www.earthbiogenome.org/assembly-standards).
+a contiguous and accurate genome assembly representative of a species in which the coordinates of genes and other important features are annotated. Current definitions of reference genome quality are given in <span class="info-text">[2.]</span> and assembly standards.
 
 <br />
 

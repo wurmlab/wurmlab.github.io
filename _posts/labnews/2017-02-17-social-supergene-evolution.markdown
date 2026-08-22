@@ -24,7 +24,7 @@ queens. The team had previously discovered that colony type is
 determined by a chromosome that carries one of two variants of a
 ‘supergene’ region containing more than 500 genes.</p>
 <p>In a new research paper, published in the journal <em>Molecular Ecology</em>, the team from QMUL’s <a href=
-"http://www.sbcs.qmul.ac.uk/">School of Biological and Chemical
+"https://www.qmul.ac.uk/sbbs/">School of Biological and Chemical
 Sciences</a> <a href="https://doi.org/10.1111/mec.14054">sequenced the DNA and compared the genomes of two
 types of individuals: those carrying the supergene version</a>
 responsible for colonies with a single queen, and those carrying
@@ -35,9 +35,9 @@ homogeneously over the entire length of the supergene. This
 suggests that a single event, such as a large chromosomal
 rearrangement, was responsible for the origin of this remarkable
 system for determining social organisation,” said lead author
-<a href="http://www.sbcs.qmul.ac.uk/staff/yannickwurm.html">Dr
+<a href="https://www.qmul.ac.uk/sbbs/staff/yannickwurm.html">Dr
 Yannick Wurm</a> from QMUL’s <a href=
-"http://www.sbcs.qmul.ac.uk/">School of Biological and Chemical
+"https://www.qmul.ac.uk/sbbs/">School of Biological and Chemical
 Sciences</a>.</p>
 <h3>Evolutionary advantage?</h3>
 <p>The team also discovered a large number of unfavourable
@@ -50,9 +50,7 @@ advantages of having several queens in the colony outweigh the
 costs of the unfavourable mutations in the supergene region.”</p>
 <p>This finding can help scientists understand how chromosomes
 evolve over time.</p>
-<p><a href=
-"http://www.sbcs.qmul.ac.uk/staff/rodrigopracana.html">Rodrigo
-Pracana</a>, a PhD student at QMUL and first author of the study,
+<p>Rodrigo Pracana, a PhD student at QMUL and first author of the study,
 said: “We know that the Y chromosome in mammals has also been
 affected by unfavourable mutations. It is exciting to see that the
 fire ant social chromosome has evolved in a similar way to the

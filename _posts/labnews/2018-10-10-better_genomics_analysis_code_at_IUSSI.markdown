@@ -24,7 +24,7 @@ This disruptive shift is largely due to the **50,000-fold drop in DNA sequencing
 
 A major challenge for small research labs now wielding in large genomic datasets is that it is easy to make a small mistake that [has](http://science.sciencemag.org/content/314/5807/1856.full) [high](http://science.sciencemag.org/content/351/6275/aaf3945) [costs](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0649-6).
 
-In light of this, as part of a [workshop on genomics approaches](https://www.iussi2018.com/news) organised with Tim Linksvayer and Alex Mikheyev, I gave an overview of some of the lessons we can transfer from the worlds of "other" data sciences to our expanding world of social insect genomics. This includes:
+In light of this, as part of a workshop on genomics approaches organised with Tim Linksvayer and Alex Mikheyev, I gave an overview of some of the lessons we can transfer from the worlds of "other" data sciences to our expanding world of social insect genomics. This includes:
  - writing analysis code for humans;
  - respecting style guides for code (e.g., [R style guide](http://adv-r.had.co.nz/Style.html)), and for [how to structure a genomic analysis](http://wurmlab.github.io/news/2018-10-01-project_structures/);
  - benefits of peer-reviewing code, and of peer-coding sessions;
@@ -47,5 +47,3 @@ It is worth highlighting three additional, important points raised during the co
 
 
 A fun and highly stimulating conference.
-
-

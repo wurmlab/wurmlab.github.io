@@ -179,7 +179,7 @@ Paralog-specific primers used for qRT-PCR (5′-3′ order).<br />
 ## Acknowledgments
 <hr />
 
-We thank Hannes Richter for technical support in performing the qRT-PCR, Gene Robinson, Alicia Santiago, Carlos Blanco and Susana Fredin for their useful comments on the manuscript. Computation was performed at the Vital-IT High Performance Computing Center of the Swiss Institute of Bioinformatics ([https://www.vital-it.ch/](https://www.vital-it.ch/){:target="_blank"}) and the EPSRC funded MidPlus cluster at Queen Mary, University of London ([http://informatics.sbcs.qmul.ac.uk/](//informatics.sbcs.qmul.ac.uk/){:target="_blank"}).
+We thank Hannes Richter for technical support in performing the qRT-PCR, Gene Robinson, Alicia Santiago, Carlos Blanco and Susana Fredin for their useful comments on the manuscript. Computation was performed at the Vital-IT High Performance Computing Center of the Swiss Institute of Bioinformatics ([https://www.vital-it.ch/](https://www.vital-it.ch/){:target="_blank"}) and the EPSRC funded MidPlus cluster at Queen Mary, University of London.
 
 <br />
 

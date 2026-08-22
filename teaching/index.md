@@ -26,9 +26,9 @@ description: Bioinformatics, programming in R and evolutionary genomics course m
 
   <h2>Learning how to program in R</h2> As biology is becoming a data science its increasingly important to be able to wrangle large datasets. We use variations of the following for QMUL's SBC361 (3rd year Research Methods) and Bio781p (MSc Statistics &amp; Bioinformatics):
   <ul>
-    <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical1.html">Practical 1: R refresher and regular expressions</a></li>
-    <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical2.html">Practical 2: Functions and for loops</a></li>
-    <li><a href="//wurmlab.github.io/SBC361-programming-in-R/practical3.html">Practical 3: Practice to pull it all together</a></li>
+    <li>Practical 1: R refresher and regular expressions</li>
+    <li>Practical 2: Functions and for loops</li>
+    <li>Practical 3: Practice to pull it all together</li>
   </ul>
 </div>
 
@@ -41,7 +41,7 @@ description: Bioinformatics, programming in R and evolutionary genomics course m
 <div class="col-sm-10 col-md-10">
   <h2>Some older stuff</h2>
   <h3 id="bioinformatics--population-genomics">Bioinformatics &amp; Population Genomics</h3>
-  <p><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/">Practicals</a> prepared with Rodrigo Pracana, Julien Roux, Rob Waterhouse and Stefan Schiffels for a 1 week <a href="https://www.sib.swiss/training/course/2016-05-joint-spring-school-bioinformatics-and-population-genomics">Bioinformatics &amp; Population Genomics </a> course. <a href="https://www.slideshare.net//yannickwurm/2016-0529introsibspringschoolleuker-bad">[Overview slides]</a>. We use similar material for <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL’s Bioinformatics MSc</a> and our <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121430.html">Ecological and Evolutionary Genomics MSc</a>:</p>
+  <p><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/">Practicals</a> prepared with Rodrigo Pracana, Julien Roux, Rob Waterhouse and Stefan Schiffels for a 1 week <a href="https://www.sib.swiss/training/course/2016-05-joint-spring-school-bioinformatics-and-population-genomics">Bioinformatics &amp; Population Genomics </a> course. <a href="https://www.slideshare.net//yannickwurm/2016-0529introsibspringschoolleuker-bad">[Overview slides]</a>. We use similar material for <a href="https://www.qmul.ac.uk/postgraduate/taught/coursefinder/courses/121410.html?gclid=EAIaIQobChMIgfrbmr7T2QIVT7ftCh3HeAo1EAAYASAAEgLQcPD_BwE">QMUL’s Bioinformatics MSc</a> and our Ecological and Evolutionary Genomics MSc:</p>
   <ul>
     <li><a href="//wurmlab.github.io/genomicscourse/2016-SIB/practicals/reference_genome/assembly">Reads to genome to gene predictions</a>:
       <br> Short read cleaning, genome assembly, quality control, gene prediction, quality control. <a href="https://www.slideshare.net//yannickwurm/2016-0530mondayassembly">[Slides]</a></li>
@@ -140,7 +140,7 @@ description: Bioinformatics, programming in R and evolutionary genomics course m
 
 <div class="col-sm-12 col-md-12">
   <br/>
-  <h3>2012 Swiss Bioinformatics Institute Summerschool</h3> From 2012 Swiss Bioinformatics Institute <a href="//www.isb-sib.ch/education/sib-phd-training-network/events/past-events/phd-summer-school-2012.html">summerschool in Bioinformatics and Population Genomics</a> (with Oksana Riba-Grognuz, Kate Ridout and Eyal Privman). This is largely superceded by the newer version (see above):
+  <h3>2012 Swiss Bioinformatics Institute Summerschool</h3> From 2012 Swiss Bioinformatics Institute summerschool in Bioinformatics and Population Genomics (with Oksana Riba-Grognuz, Kate Ridout and Eyal Privman). This is largely superceded by the newer version (see above):
     <ul>
         <li><a href="https://www.slideshare.net//yannickwurm/20120622-fridayadelboden" title="20120622 fridayadelboden" target="_blank" rel="noopener" >Overview and summary slides</a></li>
         <li><a href="DAY1_exercises.docx.html">UNIX introduction, <em>de novo</em> genome assembly &amp; <em>de novo</em> transcriptome assembly, and cross-validation using Cytoscape of the genome and transcriptome assemblies</a> [<a href="//docs.google.com/document/pub?id=1lx8cGQlyBZV8RXm7gSLqFafcOUfPq6_GjadqBxqiAzQ">Google Docs link</a>]</li>

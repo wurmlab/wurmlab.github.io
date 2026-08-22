@@ -357,11 +357,11 @@ The following additional data are available with the online version of this pape
 
 53. Ye J, Fang L, Zheng H, Zhang Y, Chen J, Zhang Z, Wang J, Li S, Li R, Bolund L, et al: WEGO: a web tool for plotting GO annotations. *Nucleic Acids Res.* 2006, **34**: W293-W297. 10.1093/nar/gkl031.
 
-54. Fourmidable Ant Sequence Database. [http://fourmidable.unil.ch/](//fourmidable.unil.ch/){:target="_blank"}
+54. Fourmidable Ant Sequence Database.
 
 55. Zdobnov EM, Apweiler R: InterProScan - an integration platform for the signature-recognition methods in InterPro. *Bioinformatics*. 2001, **17**: 847-848. 10.1093/bioinformatics/17.9.847.
 
-56. BeeBase. [http://racerx00.tamu.edu/cgi-bin/gbrowse/bee_genome2_chromo](//racerx00.tamu.edu/cgi-bin/gbrowse/bee_genome2_chromo){:target="_blank"}
+56. BeeBase.
 
 57. Diehl F, Grahlmann S, Beier M, Hoheisel JD: Manufacturing DNA microarrays of high spot homogeneity and reduced background signal. *Nucleic Acids Res.* 2001, **29**: E38-10.1093/nar/29.7.e38.
 

@@ -13,7 +13,7 @@ Getting into big data science can be a big leap if you're a biologist who is new
 
 We try to cut that down into a series of smaller, more manageable steps.
 
-As part of that, we run a hands-on [genome bioinformatics course](http://wurmlab.github.io/genomicscourse/practicals) that introduces students to UNIX, and covers topics from Illumina read cleaning to genome assembly, annotation, population genomics and genome-wide association mapping.
+As part of that, we run a hands-on genome bioinformatics course that introduces students to UNIX, and covers topics from Illumina read cleaning to genome assembly, annotation, population genomics and genome-wide association mapping.
 
 For obvious 2020 reasons, we needed to do this online in a manner that:
  - has **manageable costs but sufficient power for genomics analyses**;
@@ -58,4 +58,3 @@ We can potentially deploy our solution for other courses. If you're interested, 
 ![/img/news/2020-11-01-unix_bioinf_cloud/panel.png](/img/news/2020-11-01-unix_bioinf_cloud/panel.png){: width="499" height="397" style="max-width:100%; height: auto"}
 
 ![/img/news/2020-11-01-unix_bioinf_cloud/cloud-computer-web-interface.png](/img/news/2020-11-01-unix_bioinf_cloud/cloud-computer-web-interface.png){: width="1141" height="532" style="max-width:100%; height: auto"}
-

@@ -24,7 +24,7 @@ categories:
             <dt>31.01.2011</dt>
             <dd><a href="http://asunews.asu.edu/20110201_4antgenomes">Arizona State University: <strong>New quartet of ant genomes advanced by experts</strong></a><a href="{{ site.url }}/pressCoverage/pressRelease/2011-01-31-ASUPressRelease4genomes.pdf"> [pdf]</a></dd>
             <dt>02.02.2011</dt>
-            <dd><a href="http://www.isb-sib.ch/news-a-events/news/463.html">Swiss Institute of Bioinformatics: <strong>Fire ant: The biggest genome ever sequenced in Switzerland </strong></a><a href="{{ site.url }}/pressCoverage/pressRelease/2011-02-01-FireAntPressReleaseEng.pdf"> [pdf]</a></dd>
+            <dd>Swiss Institute of Bioinformatics: <strong>Fire ant: The biggest genome ever sequenced in Switzerland </strong><a href="{{ site.url }}/pressCoverage/pressRelease/2011-02-01-FireAntPressReleaseEng.pdf"> [pdf]</a></dd>
         </dl>
         <h4>Scientific Coverage</h4>
         <dl>
@@ -42,11 +42,11 @@ categories:
         <h4>Traditional News Media</h4>
         <dl>
             <dt>04.02.2011</dt>
-            <dd><span class="highlight"><a href="http://www.24heures.ch/genome-nouvelle-arme-contre-vilaines-fourmis-2011-02-04">Tribune de Geneve: <strong>Le genome, nouvelle arme contre les vilaines fourmis</strong></a><a href="{{ site.url }}/pressCoverage/normalPress/2011-02-04-TribunedeGeneve.pdf"> [pdf]</a></span></dd>
+            <dd><span class="highlight">Tribune de Geneve: <strong>Le genome, nouvelle arme contre les vilaines fourmis</strong><a href="{{ site.url }}/pressCoverage/normalPress/2011-02-04-TribunedeGeneve.pdf"> [pdf]</a></span></dd>
             <dt>01.02.2011</dt>
             <dd><span class="highlight"><a href="http://www.myscience.ch/wire/fourmi_de_feu_le_plus_grand_genome_jamais_sequence_en_suisse-2011-unil">myScience: <strong>Fourmi de feu: le plus grand genome jamais sequence en Suisse</strong></a><a href="{{ site.url }}/pressCoverage/normalPress/2011-02-01-mySciencePortal-AntGenome.pdf"> [pdf]</a></span></dd>
             <dt>01.02.2011</dt>
-            <dd><a href="http://www.tdg.ch/universite-lausanne-genome-fourmi-feu-sequence-2011-02-01">Tribune de Geneve: <strong>Universite? de Lausanne: le genome de la fourmi de feu sequence</strong></a><a href="{{ site.url }}/pressCoverage/normalPress/2011-02-01-TribunedeGeneve.pdf"> [pdf]</a></dd>
+            <dd>Tribune de Geneve: <strong>Universite? de Lausanne: le genome de la fourmi de feu sequence</strong><a href="{{ site.url }}/pressCoverage/normalPress/2011-02-01-TribunedeGeneve.pdf"> [pdf]</a></dd>
             <dt>01.02.2011</dt>
             <dd><a href="http://www.lematin.ch/actu/suisse/universite-lausanne-genome-fourmi-feu-sequence-381142">Le Matin: <strong>Universite de Lausanne: le genome de la fourmi de feu sequence</strong></a><a href="{{ site.url }}/pressCoverage/normalPress/2011-02-01-lematin.pdf"> [pdf]</a> </dd>
             <dt>01.02.2011</dt>
@@ -54,13 +54,13 @@ categories:
             <dt>01.02.2011</dt>
             <dd><a href="http://bazonline.ch/wissen/natur/Forscher-entschluesseln-das-Erbgut-von-drei-Ameisenarten/story/26371516">Basler Zeitung: <strong>Forscher entschlusseln das Erbgut von drei Ameisenarten</strong></a><a href="{{ site.url }}/pressCoverage/normalPress/2011-02-01-baslerZeitungAntGenome.pdf"> [pdf]</a> </dd>
             <dt>01.02.2011</dt>
-            <dd><a href="http://www.swissinfo.ch/eng/science_technology/Genome_research_could_combat_ant_pest_.html?cid=29387808">SwissInfo: <strong>Genome research could combat ant pest</strong></a><a href="{{ site.url }}/pressCoverage/normalPress/2011-02-01-swissinfoch.pdf"> [pdf]</a> </dd>
+            <dd>SwissInfo: <strong>Genome research could combat ant pest</strong><a href="{{ site.url }}/pressCoverage/normalPress/2011-02-01-swissinfoch.pdf"> [pdf]</a> </dd>
             <dt>01.02.2011</dt>
             <dd><a href="http://www.derbund.ch/wissen/natur/Forscher-entschluesseln-das-Erbgut-von-drei-Ameisenarten/story/26371516">Der Bund : <strong>Forscher entschlusseln das Erbgut von drei Ameisenarten</strong></a><a href="{{ site.url }}/pressCoverage/normalPress/2011-02-01-derbund-ch.pdf"> [pdf]</a> </dd>
             <dt>01.02.2011</dt>
-            <dd><a href="http://tt.bernerzeitung.ch/wissen/natur/Forscher-entschluesseln-das-Erbgut-von-drei-Ameisenarten/story/26371516">Thuner Tagblatt: <strong>Forscher entschlusseln das Erbgut von drei Ameisenarten</strong></a><a href="{{ site.url }}/pressCoverage/normalPress/2011-02-01-thunerTagblatt.pdf"> [pdf]</a> </dd>
+            <dd>Thuner Tagblatt: <strong>Forscher entschlusseln das Erbgut von drei Ameisenarten</strong><a href="{{ site.url }}/pressCoverage/normalPress/2011-02-01-thunerTagblatt.pdf"> [pdf]</a> </dd>
             <dt>01.02.2011</dt>
-            <dd><a href="http://www.24heures.ch/universite-lausanne-genome-fourmi-feu-sequence-2011-02-01">24heures: <strong>Universite de Lausanne: le genome de la fourmi de feu sequence</strong></a><a href="{{ site.url }}/pressCoverage/normalPress/2011-01-02-24heures.pdf"> [pdf]</a> </dd>
+            <dd>24heures: <strong>Universite de Lausanne: le genome de la fourmi de feu sequence</strong><a href="{{ site.url }}/pressCoverage/normalPress/2011-01-02-24heures.pdf"> [pdf]</a> </dd>
             <dt>02.02.2011</dt>
             <dd><a href="http://www.tsr.ch/info/suisse/1105502-rsr-matinale-speciale-1ere-partie-27-fevrier-journal-du-matin.html">Radio Suisse Romande: <strong>informations matinales</strong></a></dd>
         </dl>
@@ -71,9 +71,9 @@ categories:
             <dt>01.02.2011</dt>
             <dd><span class="highlight"><a href="http://www.genomeweb.com/sequencing/international-teams-publish-three-new-ant-genome-studies">GenomeWeb: <strong>International Teams Publish Three New Ant Genome Studies</strong></a><a href="{{ site.url }}/pressCoverage/mentionedWithOthers/2011-02-01-GenomeWeb-withsinvictaquotes.pdf"> [pdf]</a></span></dd>
             <dt>01.02.2011</dt>
-            <dd><a href="http://articles.sfgate.com/2011-02-01/news/27093366_1_argentine-ants-neil-d-tsutsui-leaf-cutter">SF Chronicle: <strong>Ants' genome project might unlock mysteries</strong></a><a href="{{ site.url }}/pressCoverage/mentionedWithOthers/2011-02-01-SFGate-SFChronicle.pdf"> [pdf]</a> </dd>
+            <dd>SF Chronicle: <strong>Ants' genome project might unlock mysteries</strong><a href="{{ site.url }}/pressCoverage/mentionedWithOthers/2011-02-01-SFGate-SFChronicle.pdf"> [pdf]</a> </dd>
             <dt>01.02.2011</dt>
-            <dd><a href="http://www.futurity.org/science-technology/genome-of-menacing-ant-sequenced/">Futurity: <strong>Genomes of menacing ants sequenced</strong></a><a href="{{ site.url }}/pressCoverage/mentionedWithOthers/2011-01-31-futurity.pdf"> [pdf]</a> </dd>
+            <dd>Futurity: <strong>Genomes of menacing ants sequenced</strong><a href="{{ site.url }}/pressCoverage/mentionedWithOthers/2011-01-31-futurity.pdf"> [pdf]</a> </dd>
         </dl>
     </div>
     <div class="column col-sm-1 col-md-1"></div>

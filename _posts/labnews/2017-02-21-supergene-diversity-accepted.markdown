@@ -16,7 +16,7 @@ The fire ant social chromosomes carry a supergene that controls the number of qu
 * There is a large number non-synonymous substitutions between the two variants.
 * The never recombining variant Sb is almost fixed in the North American population.
 
-You can check out [the press release](http://www.qmul.ac.uk/media/news/items/se/192904.html), which covers some of the details about our work.
+You can check out the press release, which covers some of the details about our work.
 
 The full reference is:
 R Pracana, A Priyam, I Levantis, RA Nichols and Y Wurm. (2017) *The fire ant social chromosome supergene variant Sb shows low diversity but high divergence from SB* Molecular Ecology. DOI: 10.1111/mec.14054

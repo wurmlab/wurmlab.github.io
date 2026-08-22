@@ -3,7 +3,7 @@ layout: post
 author: Hiten Chowdhary
 title: Blast Visualization Google Summer of Code
 modified: 2016-08-23
-categories: 
+categories:
  - labnews
 image:
   feature: gsoc.png
@@ -13,7 +13,7 @@ comments: true
 share: true
 ---
 
-*Written by [Hiten Chowdhary](http://www.hiten.io/), cross-posted from [http://www.hiten.io/blog/articles/gsoc-16/](http://www.hiten.io/blog/articles/gsoc-16/)*
+*Written by [Hiten Chowdhary](http://www.hiten.io/), cross-posted from www.hiten.io/blog/articles/gsoc-16/*
 
 This post is going to be about my GSoC 2016 project under Open Genome Informatics
 organisation along with Anurag Priyam and Yannick Wurm as my mentors.

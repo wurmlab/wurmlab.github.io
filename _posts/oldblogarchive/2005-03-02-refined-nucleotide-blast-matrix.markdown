@@ -18,13 +18,13 @@ blastn is not good at finding these sequence's homologues:
 
 
 
-	
+
   * blastn searches for homologous sequences by trying to identify windows of 12 identical nucleotides.
 
-	
+
   * for blastn, a C-T mismatch is just like any other mismatch. For bisulfite treated sequences, we know that many Ts are in fact Cs which have been modified by chemical treatment. Thus we should penalize them less.
 
-	
+
   * blastn is optimized for speed, not flexibility. That means the window-size and scoring matrix are hard-coded - the user cannot edit them.
 
 
@@ -41,13 +41,13 @@ Poking around on the internet for alternatives did not turn anything up, so I as
 >
 >6. Remember that your scores will be making some wrong assumptions about using proteins. You should still find the hits you are looking for.
 
-Contacting NCBI confirmed this... Wayne Matten pointed me towards a METHODS [paper](http://blast.wustl.edu/doc/ntmats.pdf) describing *The Use of BlastP For Nucleic Acid Searches*. He also indicated [example matrices](ftp://ftp.ncbi.nlm.nih.gov/blast/matrices/).
+Contacting NCBI confirmed this... Wayne Matten pointed me towards a METHODS paper describing *The Use of BlastP For Nucleic Acid Searches*. He also indicated [example matrices](ftp://ftp.ncbi.nlm.nih.gov/blast/matrices/).
 So the next step was downloading and compiling [NCBI Blast](http://www.ncbi.nlm.nih.gov/BLAST/) sources, and getting [Apple-Genentech's G5-optimized Blastall](http://www.apple.com/acg/). Then for each nucleotide sequence database I wanted to blast against, I had to:
 
-	
+
   * call formatdb (supplied with ncbi's Blast: `~/bin/blast-2.2.10/bin/formatdb -i Group10_20050120.fa -l Group10.formatdb.log -t "Apis Contig Group10"`
 
-	
+
   * blast my sequences against this database: `~/bin/blastall-2.2.9-apple-genentech -p blastp -d genomes/Amel20050120-freeze/contigs/Group10_20050120.fa -i ~/treatedSequence.fasta -o /Users/admin/Documents/Perl/generated\ data/heleneTest.2005-feb-25-mini -M BLOSUM80 -F F`
 
 
@@ -59,22 +59,22 @@ This let me test the custom scoring matrix to give an increased difference in sc
 
 
 
-	
+
   * not penalizing Ns or other non-ACGT bases
 
-	
+
   * giving increased importance to conserved C-C alignments (rare since in in a lightly methylated sequence, most Cs are transformed to Ts)
 
-	
+
   * not penalizing C-T alignments when C is in a "normal" sequence and T is in bisulfite-treated sequence.
 
-	
+
   * reducing positive influence of T-T alignments (in bisulfite-treated sequence, T could really be a modified C).
 
-	
+
   * Venues not explored include:
 
-	
+
   * modifying influence of transversions and transitions, since the probability of their occuring differs, especially between related species.
 
 
